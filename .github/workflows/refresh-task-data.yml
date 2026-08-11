@@ -1,0 +1,45 @@
+name: Refresh Tarkov task data
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 5 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: RaidPlan_1.0_wiki_validated_sync
+
+    steps:
+      - name: Check out RaidPlan
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Refresh task data
+        run: node sync-data.mjs
+
+      - name: Commit refreshed data
+        working-directory: .
+        run: |
+          git config user.name "RaidPlan Data Bot"
+          git config user.email "actions@users.noreply.github.com"
+
+          git add RaidPlan_1.0_wiki_validated_sync/tasks.snapshot.json
+          git add RaidPlan_1.0_wiki_validated_sync/data-audit.json
+
+          if git diff --cached --quiet; then
+            echo "No task data changes."
+          else
+            git commit -m "chore: refresh Tarkov task data"
+            git push
+          fi
