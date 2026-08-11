@@ -1,4 +1,4 @@
-// RaidPlan 1.0 data synchroniser
+// RaidPlan data synchroniser — prerequisite-aware
 // Node.js 18+
 // Combines json.tarkov.dev structured data with the current Escape from Tarkov Fandom Wiki.
 // The Wiki is used as a validation layer so struck/deleted objectives are not treated as current.
@@ -181,14 +181,92 @@ function inferMarker(text) {
   const m = d.match(/\b(?:with|using)\s+(?:an?\s+)?([^,.;]*\bMarker\b)/i);
   return m ? { name: tidyGearPhrase(m[1]), qty:1 } : null;
 }
+
+function statusArray(v) {
+  if (Array.isArray(v)) return v.map(x => clean(typeof x === "string" ? x : (x?.name || x?.status || x?.value || ""))).filter(Boolean);
+  if (typeof v === "string") return [clean(v)].filter(Boolean);
+  if (v && typeof v === "object") return Object.values(v).map(x => clean(typeof x === "string" ? x : (x?.name || x?.status || x?.value || ""))).filter(Boolean);
+  return [];
+}
+function normalizeTaskRequirements(t) {
+  return arr(t?.taskRequirements).map(r => {
+    const taskId = idOf(r?.task || r?.requiredTask || r?.requirement || r);
+    const statuses = uniq([
+      ...statusArray(r?.status),
+      ...statusArray(r?.statuses),
+      ...statusArray(r?.requiredStatus)
+    ]);
+    return taskId ? { taskId, statuses } : null;
+  }).filter(Boolean);
+}
+
+
+const RAID_MAP_ANY="Any";
+function specificMaps(v){return uniq(arr(v).map(clean).filter(x=>x && x!==RAID_MAP_ANY))}
+function raidClassForObjective(record){
+  const text=clean(record?.text).toLowerCase();
+  const maps=specificMaps(record?.maps);
+  const cat=clean(record?.category);
+  const raw=clean(record?.rawType).toLowerCase();
+  const fir=arr(record?.fir);
+
+  if(maps.length)return "MAP_BOUND";
+  if(fir.length)return "ANY_RAID";
+
+  // Structured/combat/location objectives necessarily require a raid even without a fixed map.
+  if(["Kill","Place","Locate","Survive"].includes(cat))return "ANY_RAID";
+  if(/shoot|kill|visit|location|mark|plant|place|extract|survive/i.test(raw))return "ANY_RAID";
+
+  // Strong wording that clearly requires the PMC to enter a raid/location.
+  if(/\b(?:eliminate|kill|survive|extract|locate|visit|discover|mark|plant|place|stash|hide|install|use the transit|transit from|reach the|scout|search the|pick up|retrieve|secure the package|find .*\bin raid\b|obtain .*\bin raid\b|find .*\bduring (?:a |the )?raid\b|obtain .*\bduring (?:a |the )?raid\b)\b/i.test(text))return "ANY_RAID";
+
+  // Explicit non-raid/shop/stash actions. These objectives may be prerequisites, but are not raid-plannable.
+  if(/\b(?:modify|build|assemble|craft|purchase|buy|sell|hand over|turn in|give .* to|talk to|ask .* about|return to .* and ask|reach loyalty level|reach level|pay |transfer |insure |repair |complete the weapon|comply with .*specification)\b/i.test(text))return "NON_RAID";
+
+  // A generic find/obtain objective is not assumed to require a raid unless FIR/map data says so.
+  if(cat==="Find / Hand over")return "NON_RAID";
+  return "NON_RAID";
+}
+function finalizeObjectiveRaid(record){
+  const maps=specificMaps(record?.maps);
+  const next={...record,maps};
+  next.raidClass=raidClassForObjective(next);
+  next.raidRequired=next.raidClass!=="NON_RAID";
+  return next;
+}
+function taskRaidMeta(records){
+  const rs=arr(records).map(finalizeObjectiveRaid);
+  const mapBoundMaps=uniq(rs.filter(o=>o.raidClass==="MAP_BOUND").flatMap(o=>o.maps||[]));
+  const hasAnyRaidObjectives=rs.some(o=>o.raidClass==="ANY_RAID");
+  const raidRelevant=mapBoundMaps.length>0 || hasAnyRaidObjectives;
+  return {
+    objectiveRecords:rs,
+    raidRelevant,
+    raidClass:mapBoundMaps.length?"MAP_BOUND":hasAnyRaidObjectives?"ANY_RAID":"NON_RAID",
+    mapBoundMaps,
+    hasAnyRaidObjectives
+  };
+}
+function publicObjectiveDetails(records){
+  return arr(records).map(o=>({
+    text:o.text,
+    category:o.category,
+    maps:specificMaps(o.maps),
+    raidClass:o.raidClass||raidClassForObjective(o),
+    raidRequired:(o.raidClass||raidClassForObjective(o))!=="NON_RAID"
+  }));
+}
+
 function normalizeTask(t, ctx) {
   const os = arr(t.objectives);
   const tm = name(t.map, ctx.maps);
   let maps = uniq([tm, ...os.flatMap(o => mapNames(o, ctx.maps))]);
   if (!maps.length) maps = ["Any"];
 
-  const objectiveRecords = os.map(o => {
+  let objectiveRecords = os.map(o => {
     const text = objectiveText(o);
+    const rawType=clean(o.type||o.__typename||"");
+    const objectiveMaps=mapNames(o,ctx.maps);
     const requirements = [], restrictions = [], fir = [];
     const add = (kind, n, count=1, slot=null, itemId="") => {
       n = clean(n); if (!n) return;
@@ -222,13 +300,30 @@ function normalizeTask(t, ctx) {
         if (x.name) fir.push({ name:x.name, qty:qty(o), itemId:x.id, sourceObjective:text });
       }
     }
-    return { text, category:category(o), requirements, restrictions, fir };
+    return { text, rawType, maps:objectiveMaps, category:category(o), requirements, restrictions, fir };
   });
+
+  // If the upstream task exposes one fixed task map but the objectives omit maps,
+  // use that fixed task map only for objectives already known to require a raid.
+  const taskFallbackMap=(tm && tm!==RAID_MAP_ANY)?tm:"";
+  if(taskFallbackMap && !objectiveRecords.some(o=>specificMaps(o.maps).length)){
+    objectiveRecords=objectiveRecords.map(o=>{
+      const first=finalizeObjectiveRaid(o);
+      return first.raidRequired?finalizeObjectiveRaid({...o,maps:[taskFallbackMap]}):first;
+    });
+  }
+  const raidMeta=taskRaidMeta(objectiveRecords);
+  objectiveRecords=raidMeta.objectiveRecords;
+  maps=raidMeta.mapBoundMaps.length?raidMeta.mapBoundMaps:(raidMeta.hasAnyRaidObjectives?[RAID_MAP_ANY]:[]);
 
   return {
     id:idOf(t), name:clean(t.name), trader:name(t.trader,ctx.traders)||"Unknown",
     maps, minLevel:Number(t.minPlayerLevel||0)||0, wikiLink:clean(t.wikiLink||""),
-    objectiveRecords, source:"json.tarkov.dev"
+    taskRequirements:normalizeTaskRequirements(t),
+    objectiveRecords,
+    raidRelevant:raidMeta.raidRelevant,raidClass:raidMeta.raidClass,
+    mapBoundMaps:raidMeta.mapBoundMaps,hasAnyRaidObjectives:raidMeta.hasAnyRaidObjectives,
+    source:"json.tarkov.dev"
   };
 }
 
@@ -386,6 +481,36 @@ function mergeRecordsByKey(records){
   return out;
 }
 
+function isConsumablePlacementRequirement(r){
+  if(r?.kind!=="item")return false;
+  const n=clean(r.name).toLowerCase();
+  const objective=clean(r.sourceObjective||"");
+  return /marker|camera|jammer|beacon|transmitter|repeater|device/i.test(n)
+    || /\b(?:mark|plant|place|stash|hide|install|leave|deposit)\b/i.test(objective);
+}
+function mergeTaskRequirements(records){
+  const grouped=new Map();
+  for(const r of records){
+    const k=[r.kind,r.name,r.slot||"",r.itemId||""].join("|").toLowerCase();
+    if(!grouped.has(k))grouped.set(k,[]);
+    grouped.get(k).push(r);
+  }
+  const out=[];
+  for(const rows of grouped.values()){
+    const first={...rows[0]};
+    if(isConsumablePlacementRequirement(first)){
+      // Each placement objective consumes its own item. Rows have already been
+      // deduplicated inside each objective, so summing here represents the raid total.
+      first.qty=rows.reduce((n,r)=>n+(Number(r.qty)||1),0);
+    }else{
+      // Reusable gear/keys should not multiply just because multiple objectives mention them.
+      first.qty=Math.max(...rows.map(r=>Number(r.qty)||1));
+    }
+    out.push(first);
+  }
+  return out;
+}
+
 function applyWikiValidation(task, wiki) {
   const parsed=extractObjectivesSection(wiki.html);
   if(!parsed || !parsed.current.length){
@@ -439,20 +564,24 @@ function applyWikiValidation(task, wiki) {
     requirements=mergeRecordsByKey(requirements);
     restrictions=mergeRecordsByKey(restrictions);
 
-    finalRecords.push({
+    const inferredMaps=specificMaps(inferMapsFromText(wikiText));
+    const sourceMaps=(bestSource && bestScore>=0.65)?specificMaps(bestSource.maps):[];
+    finalRecords.push(finalizeObjectiveRaid({
       text:wikiText,
+      rawType:bestSource?.rawType||"",
+      maps:inferredMaps.length?inferredMaps:sourceMaps,
       category:category({description:wikiText}),
       requirements,restrictions,fir
-    });
+    }));
   }
 
-  // Recalculate task maps from the current Wiki wording whenever possible.
-  const wikiMaps=uniq(finalRecords.flatMap(o=>inferMapsFromText(o.text)));
-  const finalMaps=wikiMaps.length?wikiMaps:task.maps;
+  const raidMeta=taskRaidMeta(finalRecords);
+  const classifiedRecords=raidMeta.objectiveRecords;
+  const finalMaps=raidMeta.mapBoundMaps.length?raidMeta.mapBoundMaps:(raidMeta.hasAnyRaidObjectives?[RAID_MAP_ANY]:[]);
 
-  const cats=uniq(finalRecords.map(x=>x.category).filter(x=>x!=="Other"));
+  const cats=uniq(classifiedRecords.map(x=>x.category).filter(x=>x!=="Other"));
   const requirements=[],restrictions=[],fir=[];
-  for(const o of finalRecords){
+  for(const o of classifiedRecords){
     requirements.push(...o.requirements);
     restrictions.push(...o.restrictions);
     fir.push(...o.fir);
@@ -461,11 +590,15 @@ function applyWikiValidation(task, wiki) {
   const finalTask={
     id:task.id,name:task.name,trader:task.trader,maps:finalMaps,
     type:cats.length?cats.slice(0,3).join(" / "):"Other",
-    objectives:finalRecords.map(o=>o.text),
-    requirements:mergeRecordsByKey(requirements),
+    objectives:classifiedRecords.map(o=>o.text),
+    objectiveDetails:publicObjectiveDetails(classifiedRecords),
+    requirements:mergeTaskRequirements(requirements),
     restrictions:mergeRecordsByKey(restrictions),
     fir,
     minLevel:task.minLevel,wikiLink:task.wikiLink,
+    taskRequirements:task.taskRequirements||[],
+    raidRelevant:raidMeta.raidRelevant,raidClass:raidMeta.raidClass,
+    mapBoundMaps:raidMeta.mapBoundMaps,hasAnyRaidObjectives:raidMeta.hasAnyRaidObjectives,
     source:"json.tarkov.dev + Tarkov Wiki",
     wikiRevision:wiki.revid
   };
@@ -507,24 +640,30 @@ const validated = await pooled(rawTasks, async task => {
   return {...result,wikiTitle:wiki.title,revid:wiki.revid};
 }, CONCURRENCY);
 
-const finalTasks=[], audit=[];
+const allFinalTasks=[], audit=[];
 for (let i=0;i<rawTasks.length;i++) {
   const original=rawTasks[i],r=validated[i];
   if (!r || r.error) {
     // Conservative fallback: retain upstream task if wiki validation failed.
     const req=[],res=[],fir=[];
-    for(const o of original.objectiveRecords){req.push(...o.requirements);res.push(...o.restrictions);fir.push(...o.fir)}
-    const cats=uniq(original.objectiveRecords.map(o=>o.category).filter(x=>x!=="Other"));
-    finalTasks.push({
-      id:original.id,name:original.name,trader:original.trader,maps:original.maps,
+    const fallbackMeta=taskRaidMeta(original.objectiveRecords);
+    for(const o of fallbackMeta.objectiveRecords){req.push(...o.requirements);res.push(...o.restrictions);fir.push(...o.fir)}
+    const cats=uniq(fallbackMeta.objectiveRecords.map(o=>o.category).filter(x=>x!=="Other"));
+    allFinalTasks.push({
+      id:original.id,name:original.name,trader:original.trader,
+      maps:fallbackMeta.mapBoundMaps.length?fallbackMeta.mapBoundMaps:(fallbackMeta.hasAnyRaidObjectives?[RAID_MAP_ANY]:[]),
       type:cats.slice(0,3).join(" / ")||"Other",
-      objectives:original.objectiveRecords.map(o=>o.text),
-      requirements:req,restrictions:res,fir,minLevel:original.minLevel,wikiLink:original.wikiLink,
+      objectives:fallbackMeta.objectiveRecords.map(o=>o.text),
+      objectiveDetails:publicObjectiveDetails(fallbackMeta.objectiveRecords),
+      requirements:mergeTaskRequirements(req),restrictions:res,fir,minLevel:original.minLevel,wikiLink:original.wikiLink,
+      taskRequirements:original.taskRequirements||[],
+      raidRelevant:fallbackMeta.raidRelevant,raidClass:fallbackMeta.raidClass,
+      mapBoundMaps:fallbackMeta.mapBoundMaps,hasAnyRaidObjectives:fallbackMeta.hasAnyRaidObjectives,
       source:"json.tarkov.dev (wiki validation unavailable)"
     });
     audit.push({task:original.name,status:"wiki-error",error:r?.error||"unknown"});
   } else {
-    finalTasks.push(r.task);
+    allFinalTasks.push(r.task);
     audit.push({
       task:original.name,status:r.status,wikiTitle:r.wikiTitle,revid:r.revid,
       removedObjectives:r.removed,
@@ -534,6 +673,13 @@ for (let i=0;i<rawTasks.length;i++) {
   }
 }
 
+const nonRaidTasks=allFinalTasks.filter(t=>!t.raidRelevant);
+const finalTasks=allFinalTasks.filter(t=>t.raidRelevant);
+const dependencyCatalog=Object.fromEntries(allFinalTasks.map(t=>[t.id,{
+  name:t.name,
+  raidRelevant:!!t.raidRelevant,
+  taskRequirements:t.taskRequirements||[]
+}]));
 finalTasks.sort((a,b)=>a.trader.localeCompare(b.trader)||a.name.localeCompare(b.name));
 
 const generatedAt=new Date().toISOString();
@@ -542,6 +688,8 @@ await writeFile("tasks.snapshot.json",JSON.stringify({
   mode:MODE,
   sources:["json.tarkov.dev","escapefromtarkov.fandom.com"],
   taskCount:finalTasks.length,
+  excludedNonRaidCount:nonRaidTasks.length,
+  dependencyCatalog,
   tasks:finalTasks
 },null,2));
 
@@ -557,8 +705,12 @@ await writeFile("data-audit.json",JSON.stringify({
     removedObjectives:changed.reduce((n,x)=>n+x.removedObjectives.length,0),
     wordingMismatches:audit.reduce((n,x)=>n+(x.wordingMismatches?.length||0),0),
     wikiErrors:wikiErrors.length,
-    unparsedWikiPages:unparsed.length
+    unparsedWikiPages:unparsed.length,
+    excludedNonRaidTasks:nonRaidTasks.length,
+    mapBoundTasks:finalTasks.filter(t=>t.raidClass==="MAP_BOUND").length,
+    anyRaidTasks:finalTasks.filter(t=>t.raidClass==="ANY_RAID").length
   },
+  excludedNonRaid:nonRaidTasks.map(t=>({id:t.id,name:t.name,trader:t.trader})),
   corrections:changed,
   wikiErrors,
   unparsed
@@ -566,7 +718,8 @@ await writeFile("data-audit.json",JSON.stringify({
 
 console.log("");
 console.log("RaidPlan data sync complete");
-console.log(`Tasks: ${finalTasks.length}`);
+console.log(`Raid-plannable tasks: ${finalTasks.length}`);
+console.log(`Excluded non-raid tasks: ${nonRaidTasks.length}`);
 console.log(`Tasks corrected by Wiki: ${changed.length}`);
 console.log(`Objectives removed as stale/struck: ${changed.reduce((n,x)=>n+x.removedObjectives.length,0)}`);
 console.log(`Wiki errors: ${wikiErrors.length}`);
