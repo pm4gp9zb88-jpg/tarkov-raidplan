@@ -1031,12 +1031,85 @@ body.inRaidOpen{overflow:hidden}
   .progressCompleteActions{grid-template-columns:1fr}
 }
 
+
+/* 1.18 — first-run personalisation flow */
+.onboardingBox{width:min(760px,100%)}
+.onboardingHeroCopy{margin-top:18px}
+.onboardingHeroCopy h2{font-size:27px;line-height:1.12;margin:5px 0 8px;max-width:650px}
+.onboardingIntro{max-width:680px;font-size:11px;line-height:1.6}
+.onboardingRecommended{
+  margin-top:16px;border:1px solid #6b5b38;border-radius:8px;
+  background:linear-gradient(135deg,#1e1d14,#141714);overflow:hidden;
+  box-shadow:inset 0 0 0 1px rgba(211,182,111,.035)
+}
+.onboardingRecommendedTop{
+  padding:8px 11px;border-bottom:1px solid #4b452f;
+  display:flex;align-items:center;gap:8px;color:#93886b;font-size:8px;
+  font-weight:800;letter-spacing:.4px
+}
+.recommendedPill{
+  padding:3px 5px;border:1px solid #806b3e;border-radius:3px;
+  background:#252116;color:#e1c474;font-size:7px;font-weight:950;letter-spacing:.55px
+}
+.onboardingRecommendedBody{
+  padding:13px;display:flex;align-items:center;justify-content:space-between;gap:18px
+}
+.onboardingRecommendedBody strong{display:block;font-size:14px;color:#e4e1d6}
+.onboardingRecommendedBody p{
+  margin:5px 0 0;max-width:510px;color:#8e9893;font-size:9px;line-height:1.55
+}
+.onboardingTrust{display:flex;gap:12px;flex-wrap:wrap;margin-top:9px;color:#91a28f;font-size:8px}
+.onboardingPrimary{
+  min-width:188px;min-height:48px;font-size:10px;flex:0 0 auto;
+  box-shadow:0 0 0 1px rgba(214,184,108,.1)
+}
+.onboardingFlow{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:10px
+}
+.onboardingFlow>div{
+  display:flex;gap:8px;padding:9px;border:1px solid #303734;
+  background:#101414;border-radius:6px;min-width:0
+}
+.onboardingFlow b{
+  width:22px;height:22px;display:flex;align-items:center;justify-content:center;
+  flex:0 0 auto;border:1px solid #51482f;border-radius:4px;color:#c3aa66;
+  background:#191912;font-size:9px
+}
+.onboardingFlow span{color:#76817c;font-size:8px;line-height:1.4}
+.onboardingFlow strong{display:block;color:#c7cac4;font-size:9px;margin-bottom:2px}
+.onboardingSkip{
+  display:flex;justify-content:flex-end;align-items:center;gap:10px;
+  margin-top:13px;padding-top:11px;border-top:1px solid #303634
+}
+.onboardingSkip>span{color:#747d79;font-size:8px}
+.onboardingSkip .btn{
+  color:#959d99;border-color:#3b413e;background:transparent
+}
+.firstRunProgressIntro{
+  margin:0 0 11px;padding:11px 12px;border:1px solid #65583a;border-radius:6px;
+  background:linear-gradient(135deg,#1b1a13,#121514)
+}
+.firstRunProgressBadge{
+  display:inline-block;padding:3px 5px;margin-bottom:6px;border:1px solid #766239;
+  border-radius:3px;background:#211e14;color:#d5b86e;font-size:7px;
+  font-weight:950;letter-spacing:.55px
+}
+.firstRunProgressIntro strong{display:block;color:#ddd9ca;font-size:11px}
+.firstRunProgressIntro span{display:block;color:#89938e;font-size:9px;line-height:1.5;margin-top:4px}
+@media(max-width:720px){
+  .onboardingRecommendedBody{align-items:stretch;flex-direction:column}
+  .onboardingPrimary{width:100%}
+  .onboardingFlow{grid-template-columns:1fr}
+  .onboardingSkip{align-items:stretch;flex-direction:column}
+  .onboardingSkip .btn{width:100%}
+}
+
 </style>
 </head>
 <body>
 <header>
   <div class="brandLockup"><div class="brandMark">IQ</div><div><div class="logo">RAID<span>IQ</span></div><div class="brandTagline">TACTICAL RAID INTELLIGENCE</div></div></div>
-  <div class="version">1.17.1 · PROGRESS FLOW</div>
+  <div class="version">1.18 · FIRST-RUN UX</div>
   <button id="mobileTasksBtn" class="mobileHeaderBtn">☰ TASKS <b id="mobileHeaderCount">0</b></button>
   <button id="progressProfileBtn" class="progressProfileBtn">MY PMC <b id="profileLevelTop">Lv —</b></button>
   <div class="spacer"></div>
@@ -1340,17 +1413,41 @@ body.inRaidOpen{overflow:hidden}
 <div id="onboardingModal" class="modalBackdrop onboardingModal">
   <div class="modal onboardingBox">
     <div class="onboardingBrand"><div class="brandMark">IQ</div><div><div class="logo">RAID<span>IQ</span></div><div class="brandTagline">TACTICAL RAID INTELLIGENCE</div></div></div>
-    <div class="eyebrow" style="margin-top:18px">WELCOME TO RAIDIQ</div>
-    <h2>Turn your Tarkov tasks into a focused raid.</h2>
-    <p class="muted onboardingIntro">RaidIQ turns your available Escape from Tarkov quests into a practical raid plan. It identifies which map offers the best progression, groups objectives that make sense to complete together, catches conflicting weapon or gear requirements, and builds a live checklist of what to do and what to bring.</p>
-    <div class="onboardingSteps">
-      <div class="onboardingStep"><b>1</b><div><strong>Choose your progress</strong><span>Select quests yourself or let RaidIQ identify the most productive map for your available tasks.</span></div></div>
-      <div class="onboardingStep"><b>2</b><div><strong>Build a compatible raid</strong><span>Combine useful objectives, catch weapon or gear conflicts, and see exactly what needs to come into raid.</span></div></div>
-      <div class="onboardingStep"><b>3</b><div><strong>Take RaidIQ in-raid</strong><span>Use the live checklist to track objectives, update progress and hand completed tasks in locally.</span></div></div>
+
+    <div class="onboardingHeroCopy">
+      <div class="eyebrow">WELCOME TO RAIDIQ</div>
+      <h2>Turn your Tarkov tasks into a smarter next raid.</h2>
+      <p class="muted onboardingIntro">RaidIQ works out which map gives you the best progression, combines tasks that make sense together, catches weapon and gear conflicts, and gives you a live checklist for the raid.</p>
     </div>
-    <div class="onboardingActions">
-      <button id="onboardingStart" class="btn">START PLANNING</button>
-      <button id="onboardingAddPmc" class="btn secondary">ADD MY PMC</button>
+
+    <div class="onboardingRecommended">
+      <div class="onboardingRecommendedTop">
+        <span class="recommendedPill">RECOMMENDED</span>
+        <span>Best RaidIQ experience</span>
+      </div>
+      <div class="onboardingRecommendedBody">
+        <div>
+          <strong>Personalise RaidIQ to your wipe</strong>
+          <p>Choose up to three tasks you currently have. RaidIQ uses them to work backwards through your quest progression, safely identify completed history and personalise which tasks and raids it recommends.</p>
+          <div class="onboardingTrust">
+            <span>✓ About 30 seconds</span>
+            <span>✓ No Tarkov login</span>
+            <span>✓ Stored locally</span>
+          </div>
+        </div>
+        <button id="onboardingAddPmc" class="btn onboardingPrimary">PERSONALISE MY RAIDIQ</button>
+      </div>
+    </div>
+
+    <div class="onboardingFlow">
+      <div><b>1</b><span><strong>Tell us where you are</strong>Pick up to 3 tasks currently in your quest list.</span></div>
+      <div><b>2</b><span><strong>RaidIQ learns your progression</strong>Only proven history is applied; uncertain branches are confirmed with you.</span></div>
+      <div><b>3</b><span><strong>Get your Suggested Raid</strong>Recommendations immediately reflect your personalised task pool.</span></div>
+    </div>
+
+    <div class="onboardingSkip">
+      <span>Just want to browse or plan manually?</span>
+      <button id="onboardingStart" class="btn ghost">CONTINUE WITHOUT PERSONALISATION</button>
     </div>
   </div>
 </div>
@@ -1363,6 +1460,12 @@ body.inRaidOpen{overflow:hidden}
     </div>
 
     <div id="progressAnchorStage">
+      <div id="firstRunProgressIntro" class="firstRunProgressIntro hidden">
+        <div class="firstRunProgressBadge">RECOMMENDED SETUP</div>
+        <strong>Start with tasks you can see in Tarkov right now.</strong>
+        <span>You do not need to remember everything you have completed. Search for up to three quests currently shown in your Tasks screen and RaidIQ will do the difficult part.</span>
+      </div>
+
       <p class="muted">Select <b>up to three tasks you currently have</b>. Three tasks from different traders or questlines usually give RaidIQ the strongest picture of your wipe. RaidIQ treats them as evidence — it will never assume an earlier quest is complete unless the task graph proves it.</p>
 
       <div class="progressIntelStageHead">
@@ -1373,7 +1476,7 @@ body.inRaidOpen{overflow:hidden}
       <div id="progressAnchorSlots" class="progressAnchorSlots"></div>
       <div id="progressAnchorGuidance" class="progressAnchorGuidance"></div>
 
-      <input id="quickProgressSearch" class="search" type="search" placeholder="Search tasks you currently have…">
+      <input id="quickProgressSearch" class="search" type="search" placeholder="Search a task currently shown in Tarkov…">
       <div id="quickProgressResults" class="quickProgressResults progressAnchorResults"></div>
 
       <div class="actions progressWizardActions">
@@ -1411,13 +1514,13 @@ body.inRaidOpen{overflow:hidden}
 
       <div class="progressCompleteNext">
         <div>
-          <strong>What happens next?</strong>
-          <span>You do not need to manually review every task. Start planning and RaidIQ will use this profile automatically. You can come back to Manage Tasks at any time if you want to correct or fine-tune something.</span>
+          <strong>Your personalised RaidIQ is ready.</strong>
+          <span>You do not need to review every task manually. RaidIQ will now use this progression automatically when deciding what is available and which raid gives you the best next step. You can fine-tune your task history later from Manage Tasks.</span>
         </div>
       </div>
 
       <div class="progressCompleteActions">
-        <button id="progressStartPlanning" class="btn progressPrimaryCta">START PLANNING MY RAID</button>
+        <button id="progressStartPlanning" class="btn progressPrimaryCta">SHOW MY SUGGESTED RAID</button>
         <button id="progressReviewTasks" class="btn secondary">REVIEW MY TASKS</button>
         <button id="progressEditSetup" class="btn ghost">EDIT PROGRESS SETUP</button>
       </div>
@@ -1523,6 +1626,7 @@ const DATA_URLS=[
 
 let TASKS=[], byId={}, TASK_META={}, DATA_QA={}, generatedAt=null, activeMap=null, mode="tasks", mapPlanSelection=null;
 let quickProgressAnchorIds=[],quickProgressAnswers={},quickProgressSkipped=new Set(),quickProgressAnalysis=null;
+let quickProgressFirstRun=false;
 const selected=new Set();
 
 const $=id=>document.getElementById(id);
@@ -2127,8 +2231,9 @@ function renderProgressAnalysis(){
     </div>
     ${autoProven.length?`<details class="progressInferenceDetails"><summary>VIEW ${autoProven.length} PROVEN COMPLETED TASK${autoProven.length!==1?"S":""}</summary><div class="progressInferencePills">${autoProven.sort((x,y)=>taskMetaName(x).localeCompare(taskMetaName(y))).slice(0,60).map(id=>`<span class="progressInferencePill">${esc(taskMetaName(id))}</span>`).join("")}${autoProven.length>60?`<span class="progressInferencePill">+${autoProven.length-60} more</span>`:""}</div></details>`:""}`;
 }
-function openQuickProgressSetup(){
+function openQuickProgressSetup({firstRun=false}={}){
   closeModals();
+  quickProgressFirstRun=!!firstRun;
   quickProgressAnchorIds=uniq((PROFILE.progressAnchors||[]).filter(id=>byId[id]||TASK_META[id])).slice(0,3);
   quickProgressAnswers={...(PROFILE.progressAnswers||{})};
   quickProgressSkipped=new Set();
@@ -2137,6 +2242,7 @@ function openQuickProgressSetup(){
   $("progressAnchorStage").classList.remove("hidden");
   $("progressAnalysisStage").classList.add("hidden");
   $("progressCompleteStage").classList.add("hidden");
+  $("firstRunProgressIntro").classList.toggle("hidden",!quickProgressFirstRun);
   renderQuickProgressResults();
   $("quickProgressModal").classList.add("open");
   requestAnimationFrame(()=>$("quickProgressSearch").focus());
@@ -4031,14 +4137,16 @@ $("onboardingStart").addEventListener("click",()=>{
 });
 $("onboardingAddPmc").addEventListener("click",()=>{
   completeOnboarding();
-  openManualProfileEditor();
+  // First-run personalisation should prove value immediately. The optional
+  // name/level/faction editor remains available later from MY PMC / EDIT PMC.
+  openQuickProgressSetup({firstRun:true});
 });
 $("resumeRaidBtn").addEventListener("click",resumeSavedRaid);
 $("discardResumeRaid").addEventListener("click",()=>{
   clearSavedRaid();
   toast("Saved raid discarded");
 });
-$("openQuickProgress").addEventListener("click",openQuickProgressSetup);
+$("openQuickProgress").addEventListener("click",()=>openQuickProgressSetup({firstRun:false}));
 $("quickProgressSearch").addEventListener("input",renderQuickProgressResults);
 $("cancelQuickProgress").addEventListener("click",returnToProgressManager);
 $("cancelQuickProgressAnalysis").addEventListener("click",returnToProgressManager);
@@ -4047,16 +4155,20 @@ $("editProgressAnchors").addEventListener("click",showProgressAnchorStage);
 $("applyQuickProgress").addEventListener("click",applyProgressIntelligence);
 $("progressStartPlanning").addEventListener("click",()=>{
   closeModals();
+  quickProgressFirstRun=false;
   renderPlanner();
   window.scrollTo({top:0,behavior:"smooth"});
   setTimeout(()=>{
     const target=hasProfile()&&!$("personalRaid").classList.contains("hidden")
       ?$("personalRaid")
       :$("planner");
-    target?.scrollIntoView({behavior:"smooth",block:"start"});
+    target?.scrollIntoView({behavior:"smooth",block:"center"});
   },180);
 });
-$("progressReviewTasks").addEventListener("click",returnToProgressManager);
+$("progressReviewTasks").addEventListener("click",()=>{
+  quickProgressFirstRun=false;
+  returnToProgressManager();
+});
 $("progressEditSetup").addEventListener("click",()=>{
   showProgressAnchorStage();
 });
