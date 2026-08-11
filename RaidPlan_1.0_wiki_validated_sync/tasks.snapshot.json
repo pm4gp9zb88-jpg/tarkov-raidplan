@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-11T17:19:25.188Z",
+  "generatedAt": "2026-08-11T21:46:30.553Z",
   "mode": "regular",
   "sources": [
     "json.tarkov.dev",
@@ -7,6 +7,12 @@
   ],
   "taskCount": 429,
   "excludedNonRaidCount": 81,
+  "qa": {
+    "status": "pass",
+    "checkCount": 3879,
+    "criticalCount": 0,
+    "warningCount": 0
+  },
   "dependencyCatalog": {
     "657315ddab5a49b71f098853": {
       "name": "First in Line",
@@ -7930,7 +7936,7 @@
       "requirements": [
         {
           "kind": "gear",
-          "name": "y AK-series assault rifle",
+          "name": "AK-series assault rifle",
           "qty": 1,
           "slot": "weapon",
           "itemId": "",
@@ -7996,6 +8002,22 @@
       "maps": [
         "Any"
       ],
+      "type": "Survive",
+      "objectives": [
+        "Extract from the location with the \"Unknown toxin\" status effect"
+      ],
+      "objectiveDetails": [
+        {
+          "text": "Extract from the location with the \"Unknown toxin\" status effect",
+          "category": "Survive",
+          "maps": [],
+          "raidClass": "ANY_RAID",
+          "raidRequired": true
+        }
+      ],
+      "requirements": [],
+      "restrictions": [],
+      "fir": [],
       "minLevel": 0,
       "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Immunity",
       "taskRequirements": [
@@ -8006,24 +8028,12 @@
           ]
         }
       ],
-      "objectiveRecords": [
-        {
-          "text": "Extract from the location with the \"Unknown toxin\" status effect",
-          "rawType": "extract",
-          "maps": [],
-          "category": "Survive",
-          "requirements": [],
-          "restrictions": [],
-          "fir": [],
-          "raidClass": "ANY_RAID",
-          "raidRequired": true
-        }
-      ],
       "raidRelevant": true,
       "raidClass": "ANY_RAID",
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
-      "source": "json.tarkov.dev"
+      "source": "json.tarkov.dev + Tarkov Wiki",
+      "wikiRevision": 350661
     },
     {
       "id": "66d9cbb67b491f9d5304f6e6",
@@ -9816,6 +9826,14 @@
           "slot": "weapon",
           "itemId": "",
           "sourceObjective": "Eliminate 10 Scavs while using melee weapons on daytime Factory"
+        },
+        {
+          "kind": "gear",
+          "name": "melee weapons on daytime Factory",
+          "qty": 1,
+          "slot": "weapon",
+          "itemId": "",
+          "sourceObjective": "Eliminate 10 Scavs while using melee weapons on daytime Factory"
         }
       ],
       "restrictions": [],
@@ -10855,20 +10873,6 @@
         },
         {
           "kind": "not-wearing",
-          "name": "Hexatac HPC Plate Carrier (MultiCam)",
-          "itemId": "67ab2eecfe82855dcc0f2af6",
-          "slot": null,
-          "sourceObjective": "Eliminate PMC operatives without using any armor or helmets on Woods"
-        },
-        {
-          "kind": "not-wearing",
-          "name": "HighCom Trooper TFO body armor (Coyote)",
-          "itemId": "67ab2f94dafe3b22670c912c",
-          "slot": "armor",
-          "sourceObjective": "Eliminate PMC operatives without using any armor or helmets on Woods"
-        },
-        {
-          "kind": "not-wearing",
           "name": "Interceptor OTV body armor (Woodland)",
           "itemId": "68a89942431252e29a02dbf6",
           "slot": "armor",
@@ -10883,30 +10887,9 @@
         },
         {
           "kind": "not-wearing",
-          "name": "BNTI Kirasa-N body armor (Green)",
-          "itemId": "67ab2f28dafe3b22670c9116",
-          "slot": "armor",
-          "sourceObjective": "Eliminate PMC operatives without using any armor or helmets on Woods"
-        },
-        {
-          "kind": "not-wearing",
           "name": "NPP KlASS Korund-VM body armor (Kamysh)",
           "itemId": "68a97093431252e29a02dc06",
           "slot": "armor",
-          "sourceObjective": "Eliminate PMC operatives without using any armor or helmets on Woods"
-        },
-        {
-          "kind": "not-wearing",
-          "name": "FORT Redut-M body armor (SK Woodland)",
-          "itemId": "67ab2f5adafe3b22670c911f",
-          "slot": "armor",
-          "sourceObjective": "Eliminate PMC operatives without using any armor or helmets on Woods"
-        },
-        {
-          "kind": "not-wearing",
-          "name": "5.11 Tactical TacTec plate carrier (Storm)",
-          "itemId": "67ab4b2d6f7ae4aa550bbcf6",
-          "slot": null,
           "sourceObjective": "Eliminate PMC operatives without using any armor or helmets on Woods"
         },
         {
@@ -10934,13 +10917,6 @@
           "kind": "not-wearing",
           "name": "Crye Precision JPC Plate Carrier (MultiCam)",
           "itemId": "693fd0e9deee848f70054999",
-          "slot": null,
-          "sourceObjective": "Eliminate PMC operatives without using any armor or helmets on Woods"
-        },
-        {
-          "kind": "not-wearing",
-          "name": "Crye Precision AVS plate carrier (MultiCam)",
-          "itemId": "67ab49aab9c7a1e18c095686",
           "slot": null,
           "sourceObjective": "Eliminate PMC operatives without using any armor or helmets on Woods"
         },
@@ -13567,6 +13543,14 @@
         {
           "kind": "gear",
           "name": "bolt-action rifle",
+          "qty": 1,
+          "slot": "weapon",
+          "itemId": "",
+          "sourceObjective": "Eliminate 5 Sniper Scavs while using a bolt-action rifle"
+        },
+        {
+          "kind": "gear",
+          "name": "bolt-action rifle in the time period of 21:00-05:00",
           "qty": 1,
           "slot": "weapon",
           "itemId": "",
@@ -16735,7 +16719,7 @@
       "requirements": [
         {
           "kind": "gear",
-          "name": "y 9x39 caliber weapon",
+          "name": "9x39 caliber weapon",
           "qty": 1,
           "slot": "weapon",
           "itemId": "",
@@ -21340,6 +21324,14 @@
       "requirements": [
         {
           "kind": "gear",
+          "name": "5.56 UN weapons",
+          "qty": 1,
+          "slot": "weapon",
+          "itemId": "",
+          "sourceObjective": "Eliminate 12 Scavs while using a UNTAR helmet , MF-UNTAR armor , and 5.56 UN weapons on Woods or Reserve"
+        },
+        {
+          "kind": "gear",
           "name": "UNTAR helmet",
           "qty": 1,
           "slot": "headwear",
@@ -21352,6 +21344,14 @@
           "qty": 1,
           "slot": "armor",
           "itemId": "5ab8e4ed86f7742d8e50c7fa",
+          "sourceObjective": "Eliminate 12 Scavs while using a UNTAR helmet , MF-UNTAR armor , and 5.56 UN weapons on Woods or Reserve"
+        },
+        {
+          "kind": "gear",
+          "name": "M4A1 or M16 rifle",
+          "qty": 1,
+          "slot": "weapon",
+          "itemId": "",
           "sourceObjective": "Eliminate 12 Scavs while using a UNTAR helmet , MF-UNTAR armor , and 5.56 UN weapons on Woods or Reserve"
         }
       ],
@@ -23000,6 +23000,22 @@
           "slot": "weapon",
           "itemId": "",
           "sourceObjective": "Eliminate 10 Scavs while using a suppressed M4A1 , ADAR or TX-15 on Shoreline"
+        },
+        {
+          "kind": "gear",
+          "name": "ADAR or TX-15",
+          "qty": 1,
+          "slot": "weapon",
+          "itemId": "",
+          "sourceObjective": "Eliminate 10 Scavs while using a suppressed M4A1 , ADAR or TX-15 on Shoreline"
+        },
+        {
+          "kind": "gear",
+          "name": "ADAR",
+          "qty": 1,
+          "slot": "weapon",
+          "itemId": "",
+          "sourceObjective": "Eliminate 10 Scavs while using a suppressed M4A1 , ADAR or TX-15 on Shoreline"
         }
       ],
       "restrictions": [],
@@ -23403,7 +23419,7 @@
       "requirements": [
         {
           "kind": "gear",
-          "name": "R-15 platform weapons",
+          "name": "AR-15 platform weapons",
           "qty": 1,
           "slot": "weapon",
           "itemId": "",
@@ -23751,7 +23767,7 @@
       "requirements": [
         {
           "kind": "gear",
-          "name": "K-74 series weapons",
+          "name": "AK-74 series weapons",
           "qty": 1,
           "slot": "weapon",
           "itemId": "",
@@ -24496,7 +24512,7 @@
       "requirements": [
         {
           "kind": "gear",
-          "name": "ssault rifles or Assault carbines",
+          "name": "Assault rifles or Assault carbines",
           "qty": 1,
           "slot": "weapon",
           "itemId": "",
@@ -26821,6 +26837,14 @@
       "requirements": [
         {
           "kind": "gear",
+          "name": "SVDS 7.62x54R sniper rifle or TKPD 9.3x64 carbine",
+          "qty": 1,
+          "slot": "weapon",
+          "itemId": "",
+          "sourceObjective": "Eliminate 10 Scavs while using an SVDS 7.62x54R sniper rifle or TKPD 9.3x64 carbine on Lighthouse"
+        },
+        {
+          "kind": "gear",
           "name": "Scav Vest",
           "qty": 1,
           "slot": "rig",
@@ -26995,6 +27019,38 @@
         {
           "kind": "gear",
           "name": "specified weapons ( Light Machine Guns",
+          "qty": 1,
+          "slot": "weapon",
+          "itemId": "",
+          "sourceObjective": "Eliminate 30 PMC operatives while using specified weapons ( Light Machine Guns , 9x39mm weapons such as AS Val or SR-3M, SVDS 7.62x54R sniper rifle, TKPD 9.3x64 carbine , Kalashnikov AKS-74U series weapon or Kalashnikov AKM 7.62x39 assault rifle series weapon) on Lighthouse , Shoreline , Reserve , Ground Zero or The Lab"
+        },
+        {
+          "kind": "gear",
+          "name": "9x39mm weapons such as AS Val or SR-3M",
+          "qty": 1,
+          "slot": "weapon",
+          "itemId": "",
+          "sourceObjective": "Eliminate 30 PMC operatives while using specified weapons ( Light Machine Guns , 9x39mm weapons such as AS Val or SR-3M, SVDS 7.62x54R sniper rifle, TKPD 9.3x64 carbine , Kalashnikov AKS-74U series weapon or Kalashnikov AKM 7.62x39 assault rifle series weapon) on Lighthouse , Shoreline , Reserve , Ground Zero or The Lab"
+        },
+        {
+          "kind": "gear",
+          "name": "SVDS 7.62x54R sniper rifle",
+          "qty": 1,
+          "slot": "weapon",
+          "itemId": "",
+          "sourceObjective": "Eliminate 30 PMC operatives while using specified weapons ( Light Machine Guns , 9x39mm weapons such as AS Val or SR-3M, SVDS 7.62x54R sniper rifle, TKPD 9.3x64 carbine , Kalashnikov AKS-74U series weapon or Kalashnikov AKM 7.62x39 assault rifle series weapon) on Lighthouse , Shoreline , Reserve , Ground Zero or The Lab"
+        },
+        {
+          "kind": "gear",
+          "name": "TKPD 9.3x64 carbine",
+          "qty": 1,
+          "slot": "weapon",
+          "itemId": "",
+          "sourceObjective": "Eliminate 30 PMC operatives while using specified weapons ( Light Machine Guns , 9x39mm weapons such as AS Val or SR-3M, SVDS 7.62x54R sniper rifle, TKPD 9.3x64 carbine , Kalashnikov AKS-74U series weapon or Kalashnikov AKM 7.62x39 assault rifle series weapon) on Lighthouse , Shoreline , Reserve , Ground Zero or The Lab"
+        },
+        {
+          "kind": "gear",
+          "name": "Kalashnikov AKS-74U series weapon or Kalashnikov AKM 7.62x39 assault rifle series weapon)",
           "qty": 1,
           "slot": "weapon",
           "itemId": "",

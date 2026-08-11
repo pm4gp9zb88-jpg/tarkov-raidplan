@@ -1,15 +1,26 @@
 {
-  "generatedAt": "2026-08-11T17:19:25.188Z",
+  "generatedAt": "2026-08-11T21:46:30.553Z",
   "summary": {
     "tasks": 429,
     "tasksWithCorrections": 1,
     "removedObjectives": 1,
     "wordingMismatches": 130,
     "wikiErrors": 97,
-    "unparsedWikiPages": 1,
+    "unparsedWikiPages": 0,
     "excludedNonRaidTasks": 81,
     "mapBoundTasks": 334,
-    "anyRaidTasks": 95
+    "anyRaidTasks": 95,
+    "qaStatus": "pass",
+    "qaChecks": 3879,
+    "qaCritical": 0,
+    "qaWarnings": 0
+  },
+  "qa": {
+    "status": "pass",
+    "checkCount": 3879,
+    "criticalCount": 0,
+    "warningCount": 0,
+    "issues": []
   },
   "excludedNonRaid": [
     {
@@ -925,15 +936,5 @@
       "error": "The page you specified doesn't exist."
     }
   ],
-  "unparsed": [
-    {
-      "task": "Immunity",
-      "status": "unparsed",
-      "wikiTitle": "Immunity",
-      "revid": 344065,
-      "removedObjectives": [],
-      "wordingMismatches": [],
-      "struckObjectives": []
-    }
-  ]
+  "unparsed": []
 }
