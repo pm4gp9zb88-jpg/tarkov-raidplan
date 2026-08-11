@@ -162,9 +162,9 @@ function looksWeapon(v) {
 function inferWeapon(text) {
   const d = clean(text), out = [];
   const patterns = [
-    /\bwhile using\s+(?:an?|the|any)?\s*([^,.;]+?)(?=\s+(?:on|at|in|from|while|without|during)\b|[,.;]|$)/ig,
-    /\busing\s+(?:an?|the|any)?\s*([^,.;]+?)(?=\s+(?:on|at|in|from|while|without|during)\b|[,.;]|$)/ig,
-    /\bwith\s+(?:an?|the|any)?\s*([^,.;]+?(?:weapon(?:s)?|rifle(?:s)?|shotgun(?:s)?|pistol(?:s)?|smg(?:s)?|carbine(?:s)?|sniper rifle(?:s)?|assault rifle(?:s)?|marksman rifle(?:s)?|machine gun(?:s)?))(?=\s+(?:on|at|in|from|while|during)\b|[,.;]|$)/ig
+    /\bwhile using\s+(?:(?:an?|the|any)\s+)?([^,.;]+?)(?=\s+(?:on|at|in|from|while|without|during)\b|[,.;]|$)/ig,
+    /\busing\s+(?:(?:an?|the|any)\s+)?([^,.;]+?)(?=\s+(?:on|at|in|from|while|without|during)\b|[,.;]|$)/ig,
+    /\bwith\s+(?:(?:an?|the|any)\s+)?([^,.;]+?(?:weapon(?:s)?|rifle(?:s)?|shotgun(?:s)?|pistol(?:s)?|smg(?:s)?|carbine(?:s)?|sniper rifle(?:s)?|assault rifle(?:s)?|marksman rifle(?:s)?|machine gun(?:s)?))(?=\s+(?:on|at|in|from|while|during)\b|[,.;]|$)/ig
   ];
   for (const re of patterns) {
     let m;
@@ -173,6 +173,15 @@ function inferWeapon(text) {
       if (looksWeapon(p)) out.push(p);
     }
   }
+
+  const usingTail=d.match(/\b(?:while\s+)?using\s+(.+)$/i);
+  if(usingTail){
+    for(const part of usingTail[1].split(/\s*,\s*|\s+\band\b\s+/i)){
+      const p=tidyGearPhrase(clean(part).replace(/^and\s+/i,""));
+      if(looksWeapon(p))out.push(p);
+    }
+  }
+
   return uniq(out);
 }
 function inferMarker(text) {
@@ -624,9 +633,124 @@ async function pooled(items, worker, concurrency=5) {
   return results;
 }
 
+// ---------- Automated data QA ----------
+
+function runDataQA(allTasks, raidTasks, nonRaidTasks) {
+  const issues=[];
+  let checkCount=0;
+  const add=(severity,code,task,message,details={})=>issues.push({severity,code,task:task||null,message,...details});
+  const check=(condition,severity,code,task,message,details={})=>{
+    checkCount++;
+    if(!condition)add(severity,code,task,message,details);
+  };
+
+  const allById=new Map(allTasks.map(t=>[t.id,t]));
+  const raidByName=new Map(raidTasks.map(t=>[t.name,t]));
+  const ids=allTasks.map(t=>t.id);
+  check(new Set(ids).size===ids.length,"critical","DUPLICATE_TASK_ID",null,"Task IDs must be unique.");
+
+  for(const t of raidTasks){
+    check(!!t.raidRelevant,"critical","NON_RAID_IN_RAID_POOL",t.name,"Raid task pool contains a task classified as non-raid.");
+    check((t.objectiveDetails||[]).some(o=>o.raidRequired!==false),"critical","NO_RAID_OBJECTIVE",t.name,"Raid-plannable task has no raid-required objective.");
+
+    if(t.raidClass==="MAP_BOUND"){
+      check(Array.isArray(t.mapBoundMaps)&&t.mapBoundMaps.length>0,"critical","MAP_BOUND_WITHOUT_MAP",t.name,"MAP_BOUND task has no committed map metadata.");
+      check((t.objectiveDetails||[]).some(o=>o.raidClass==="MAP_BOUND"&&(o.maps||[]).length),"critical","MAP_OBJECTIVE_WITHOUT_MAP",t.name,"MAP_BOUND task has no map-bound objective with a map.");
+    }
+    if(t.raidClass==="ANY_RAID"){
+      check((t.objectiveDetails||[]).some(o=>o.raidClass==="ANY_RAID"),"critical","ANY_RAID_WITHOUT_OBJECTIVE",t.name,"ANY_RAID task has no ANY_RAID objective.");
+    }
+
+    check(!/^Gunsmith\s*-/i.test(t.name),"critical","GUNSMITH_IN_RAID_POOL",t.name,"Gunsmith tasks must not be raid-plannable.");
+
+    const weaponObjectives=(t.objectives||[]).flatMap(text=>inferWeapon(text).map(name=>({text,name})));
+    if(weaponObjectives.length){
+      const weaponReq=(t.requirements||[]).filter(r=>r.kind==="gear"&&r.slot==="weapon");
+      check(weaponReq.length>0,"critical","MISSING_WEAPON_REQUIREMENT",t.name,"Weapon-restricted objective has no weapon requirement.",{objectives:weaponObjectives});
+    }
+
+    const markerObjectives=(t.objectives||[]).filter(text=>/\bmark\b/i.test(text)&&/\bMS2000\s+Marker\b/i.test(text));
+    if(markerObjectives.length){
+      const markerQty=(t.requirements||[])
+        .filter(r=>clean(r.name).toLowerCase()==="ms2000 marker")
+        .reduce((n,r)=>n+(Number(r.qty)||1),0);
+      check(markerQty>=markerObjectives.length,"critical","MARKER_QUANTITY_UNDERCOUNT",t.name,`Task has ${markerObjectives.length} MS2000 placement objectives but only ${markerQty} marker quantity in requirements.`);
+    }
+
+    for(const r of (t.requirements||[])){
+      const source=clean(r.sourceObjective);
+      if(/^K-\d/i.test(clean(r.name))&&/\bAK-\d/i.test(source)){
+        check(false,"critical","TRUNCATED_AK_REQUIREMENT",t.name,`Weapon requirement "${r.name}" appears to have lost the leading A from AK-.`,{sourceObjective:source});
+      }
+    }
+
+    for(const r of (t.taskRequirements||[])){
+      check(allById.has(r.taskId),"warning","ORPHAN_PREREQUISITE",t.name,`Prerequisite ID ${r.taskId} is missing from the dependency catalogue.`);
+    }
+  }
+
+  const visiting=new Set(),visited=new Set(),cyclePaths=[];
+  function dfs(id,path=[]){
+    if(visiting.has(id)){cyclePaths.push([...path,id]);return}
+    if(visited.has(id))return;
+    visiting.add(id);
+    const t=allById.get(id);
+    for(const r of (t?.taskRequirements||[])){
+      const statuses=(r.statuses||[]).map(x=>clean(x).toLowerCase());
+      if(statuses.some(x=>x.includes("complete")))dfs(r.taskId,[...path,id]);
+    }
+    visiting.delete(id);visited.add(id);
+  }
+  for(const id of allById.keys())dfs(id);
+  check(cyclePaths.length===0,"warning","PREREQUISITE_CYCLE",null,"Quest prerequisite graph contains a cycle.",{cycles:cyclePaths.slice(0,5)});
+
+  const human=raidByName.get("Humanitarian Supplies");
+  if(human){
+    check(!(human.objectives||[]).some(x=>/wearing a UN uniform|MF-UNTAR body armor.*UNTAR helmet/i.test(x)),
+      "critical","REGRESSION_HUMANITARIAN_STALE_UNIFORM",human.name,"Removed Humanitarian Supplies UN-uniform objective has returned.");
+  }
+
+  const peace=raidByName.get("Peacekeeping Mission");
+  if(peace&&(peace.objectives||[]).some(x=>/5\.56\s+UN weapons/i.test(x))){
+    check((peace.requirements||[]).some(r=>r.slot==="weapon"&&/5\.56\s+UN weapons/i.test(r.name)),
+      "critical","REGRESSION_PEACEKEEPING_WEAPON",peace.name,"Peacekeeping Mission is missing its 5.56 UN weapon requirement.");
+  }
+
+  const punisher=raidByName.get("The Punisher - Part 2");
+  if(punisher&&(punisher.objectives||[]).some(x=>/AKM series weapon/i.test(x))){
+    check((punisher.requirements||[]).some(r=>r.slot==="weapon"&&/AKM series weapon/i.test(r.name)),
+      "critical","REGRESSION_PUNISHER_AKM",punisher.name,"Punisher Part 2 is missing its AKM-series weapon requirement.");
+  }
+
+  const revision=raidByName.get("Revision - Reserve")||raidByName.get("Revision");
+  if(revision){
+    const count=(revision.objectives||[]).filter(x=>/\bmark\b/i.test(x)&&/MS2000/i.test(x)).length;
+    if(count){
+      const qty=(revision.requirements||[]).filter(r=>/MS2000 Marker/i.test(r.name)).reduce((n,r)=>n+(Number(r.qty)||1),0);
+      check(qty>=count,"critical","REGRESSION_REVISION_MARKERS",revision.name,`Revision requires ${count} marker placements but only ${qty} markers were generated.`);
+    }
+  }
+
+  const hot=raidByName.get("Hot Wheels");
+  if(hot&&(hot.objectives||[]).some(x=>/MS2000/i.test(x))){
+    check((hot.requirements||[]).some(r=>/MS2000 Marker/i.test(r.name)),
+      "critical","REGRESSION_HOT_WHEELS_MARKER",hot.name,"Hot Wheels is missing its MS2000 Marker requirement.");
+  }
+
+  const bestJob=raidByName.get("Best Job in the World");
+  if(bestJob&&(bestJob.objectives||[]).some(x=>/AK-74 series weapons/i.test(x))){
+    check((bestJob.requirements||[]).some(r=>r.slot==="weapon"&&/AK-74 series weapons/i.test(r.name)),
+      "critical","REGRESSION_AK74_TRUNCATION",bestJob.name,"Best Job in the World should retain the full AK-74 weapon-family name.");
+  }
+
+  const critical=issues.filter(x=>x.severity==="critical");
+  const warnings=issues.filter(x=>x.severity==="warning");
+  return {status:critical.length?"fail":warnings.length?"review":"pass",checkCount,criticalCount:critical.length,warningCount:warnings.length,issues};
+}
+
 // ---------- Run ----------
 
-console.log("RaidPlan sync: loading json.tarkov.dev…");
+console.log("RaidIQ sync: loading json.tarkov.dev…");
 const [td,md,rd]=await Promise.all([translated("tasks"),translated("maps"),translated("traders")]);
 const ctx={quest:lookup(td,"questItems"),maps:lookup(md,"maps"),traders:lookup(rd,"traders")};
 const rawTasks=arr(td.tasks).map(t=>normalizeTask(t,ctx)).filter(t=>t.id&&t.name);
@@ -682,6 +806,12 @@ const dependencyCatalog=Object.fromEntries(allFinalTasks.map(t=>[t.id,{
 }]));
 finalTasks.sort((a,b)=>a.trader.localeCompare(b.trader)||a.name.localeCompare(b.name));
 
+const qa=runDataQA(allFinalTasks,finalTasks,nonRaidTasks);
+console.log(`Automated QA: ${qa.status.toUpperCase()} · ${qa.checkCount} checks · ${qa.criticalCount} critical · ${qa.warningCount} warnings`);
+for(const issue of qa.issues.slice(0,25)){
+  console.log(`[QA ${issue.severity.toUpperCase()}] ${issue.code}${issue.task?` · ${issue.task}`:""}: ${issue.message}`);
+}
+
 const generatedAt=new Date().toISOString();
 await writeFile("tasks.snapshot.json",JSON.stringify({
   generatedAt,
@@ -689,6 +819,7 @@ await writeFile("tasks.snapshot.json",JSON.stringify({
   sources:["json.tarkov.dev","escapefromtarkov.fandom.com"],
   taskCount:finalTasks.length,
   excludedNonRaidCount:nonRaidTasks.length,
+  qa:{status:qa.status,checkCount:qa.checkCount,criticalCount:qa.criticalCount,warningCount:qa.warningCount},
   dependencyCatalog,
   tasks:finalTasks
 },null,2));
@@ -708,8 +839,13 @@ await writeFile("data-audit.json",JSON.stringify({
     unparsedWikiPages:unparsed.length,
     excludedNonRaidTasks:nonRaidTasks.length,
     mapBoundTasks:finalTasks.filter(t=>t.raidClass==="MAP_BOUND").length,
-    anyRaidTasks:finalTasks.filter(t=>t.raidClass==="ANY_RAID").length
+    anyRaidTasks:finalTasks.filter(t=>t.raidClass==="ANY_RAID").length,
+    qaStatus:qa.status,
+    qaChecks:qa.checkCount,
+    qaCritical:qa.criticalCount,
+    qaWarnings:qa.warningCount
   },
+  qa,
   excludedNonRaid:nonRaidTasks.map(t=>({id:t.id,name:t.name,trader:t.trader})),
   corrections:changed,
   wikiErrors,
@@ -717,11 +853,15 @@ await writeFile("data-audit.json",JSON.stringify({
 },null,2));
 
 console.log("");
-console.log("RaidPlan data sync complete");
+console.log("RaidIQ data sync complete");
 console.log(`Raid-plannable tasks: ${finalTasks.length}`);
 console.log(`Excluded non-raid tasks: ${nonRaidTasks.length}`);
 console.log(`Tasks corrected by Wiki: ${changed.length}`);
 console.log(`Objectives removed as stale/struck: ${changed.reduce((n,x)=>n+x.removedObjectives.length,0)}`);
 console.log(`Wiki errors: ${wikiErrors.length}`);
 console.log(`Unparsed pages: ${unparsed.length}`);
+console.log(`QA checks: ${qa.checkCount} · critical: ${qa.criticalCount} · warnings: ${qa.warningCount}`);
 console.log("Wrote tasks.snapshot.json and data-audit.json");
+if(qa.criticalCount){
+  throw new Error(`RaidIQ data QA failed with ${qa.criticalCount} critical issue${qa.criticalCount!==1?"s":""}. Refusing to publish this refresh.`);
+}

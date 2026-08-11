@@ -143,9 +143,124 @@ select{width:100%;padding:9px;border:1px solid var(--line);background:var(--pane
 .modalBackdrop.open{display:flex}.modal{width:min(620px,100%);max-height:85vh;overflow:auto;border:1px solid var(--line);background:#111516;border-radius:9px;padding:18px;box-shadow:0 30px 80px rgba(0,0,0,.55)}
 .modalHead{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.modalClose{border:1px solid var(--line);background:#15191a;color:var(--muted);border-radius:4px;width:30px;height:30px;cursor:pointer}
 .textArea{width:100%;min-height:150px;background:#0d1112;color:var(--text);border:1px solid var(--line);border-radius:6px;padding:11px;resize:vertical;outline:none}
-.mobileCard{position:fixed;inset:0;background:#090b0c;z-index:80;display:none;overflow:auto}
-.mobileCard.open{display:block}.mobileTop{position:sticky;top:0;background:#0d1011;border-bottom:1px solid var(--line);padding:14px;display:flex;justify-content:space-between;gap:10px;align-items:center}
-.mobileBody{padding:14px;max-width:620px;margin:auto}.mobileSection{border:1px solid var(--line);background:#121617;border-radius:8px;padding:14px;margin-bottom:10px}
+.mobileCard{
+  position:fixed;inset:0;background:#090b0c;z-index:110;display:none;overflow:auto
+}
+.mobileCard.open{display:block}
+.inRaidMode{
+  background:
+    radial-gradient(circle at 88% 0%,rgba(211,182,111,.055),transparent 28%),
+    #090b0c
+}
+.inRaidTop{
+  position:sticky;top:0;z-index:10;background:rgba(11,14,14,.97);
+  border-bottom:1px solid #363b38;padding:12px 18px;
+  display:flex;justify-content:space-between;gap:16px;align-items:center;
+  backdrop-filter:blur(8px)
+}
+.inRaidBrand{display:flex;align-items:center;gap:9px}
+.inRaidModeLabel{
+  margin-top:4px;font-size:7px;font-weight:850;letter-spacing:1.4px;
+  color:#9a8960
+}
+.inRaidTopActions{display:flex;align-items:center;gap:7px}
+.inRaidBody{padding:18px;max-width:1220px;margin:auto}
+.inRaidHero{
+  display:flex;align-items:flex-end;justify-content:space-between;gap:18px;
+  padding:7px 2px 16px;border-bottom:1px solid #2d3330;margin-bottom:14px
+}
+.inRaidHero h1{font-size:34px;line-height:1;margin:3px 0 6px}
+.inRaidHeroMeta{color:#8d9793;font-size:11px}
+.inRaidProgressBox{width:min(360px,42vw)}
+.inRaidProgressHead{
+  display:flex;justify-content:space-between;gap:12px;color:#9ca49f;
+  font-size:9px;margin-bottom:6px
+}
+.inRaidProgressTrack{height:7px;border-radius:6px;background:#171c1b;overflow:hidden}
+.inRaidProgressFill{height:100%;background:#b79d5c;border-radius:6px;transition:width .18s}
+.inRaidGrid{
+  display:grid;grid-template-columns:minmax(0,1.55fr) minmax(330px,.85fr);
+  gap:14px;align-items:start
+}
+.inRaidSide{display:grid;gap:14px}
+.inRaidPanel{
+  border:1px solid #343b38;background:#101414;border-radius:8px;
+  padding:14px;min-width:0
+}
+.inRaidPanelHead{
+  display:flex;justify-content:space-between;gap:10px;align-items:center;
+  margin-bottom:10px;padding-bottom:9px;border-bottom:1px solid #272d2b
+}
+.inRaidPanelHead h2{font-size:13px;margin:0}
+.inRaidPanelHead span{font-size:9px;color:#87908d}
+.inRaidTask{
+  border:1px solid #2e3532;background:#111615;border-radius:6px;
+  padding:11px;margin-bottom:9px
+}
+.inRaidTask:last-child{margin-bottom:0}
+.inRaidTaskHead{
+  display:flex;justify-content:space-between;gap:10px;align-items:flex-start;
+  margin-bottom:8px
+}
+.inRaidTaskHead strong{font-size:12px}
+.inRaidTrader{display:block;color:#818b87;font-size:9px;margin-top:2px}
+.inRaidObjective{
+  display:flex;gap:10px;align-items:flex-start;padding:8px 0;
+  border-top:1px solid #242a28;color:#c5cbc7;line-height:1.42;
+  cursor:pointer
+}
+.inRaidObjective:first-of-type{border-top:0}
+.inRaidObjective input{
+  width:18px;height:18px;flex:0 0 auto;margin:0;margin-top:1px;
+  accent-color:#c3a65e
+}
+.inRaidObjective.done span{text-decoration:line-through;color:#69726e}
+.inRaidCompletedTask{
+  border-color:#35503b;background:#121914;color:#9bb09e
+}
+.inRaidCompletedTask strong{color:#a8cca3}
+.inRaidItem{
+  display:flex;align-items:center;gap:9px;padding:9px 0;
+  border-bottom:1px solid #272d2b
+}
+.inRaidItem:last-child{border-bottom:0}
+.inRaidItemCheck{
+  width:16px;height:16px;border:1px solid #555c58;border-radius:3px;
+  flex:0 0 auto
+}
+.inRaidItem strong{font-size:11px}
+.inRaidItem span{display:block;color:#7d8783;font-size:9px;margin-top:2px}
+.inRaidWarning{margin-bottom:8px}
+.inRaidWarning:last-child{margin-bottom:0}
+.inRaidEmpty{color:#7d8682;font-size:10px;padding:5px 0}
+.inRaidAfterRaid{
+  margin-top:7px;padding-top:7px;border-top:1px solid #292f2c;
+  color:#9b8a60;font-size:9px
+}
+.inRaidHandIn{
+  margin-top:9px;display:flex;justify-content:flex-end
+}
+.inRaidHandIn .btn{min-height:36px}
+body.inRaidOpen{overflow:hidden}
+
+@media(max-width:850px){
+  .inRaidTop{padding:10px 12px}
+  .inRaidTopActions{gap:5px}
+  #inRaidFullscreen{display:none}
+  .inRaidTopActions .btn{font-size:8px;padding:8px}
+  .inRaidBody{padding:12px;padding-bottom:calc(24px + env(safe-area-inset-bottom))}
+  .inRaidHero{display:block}
+  .inRaidHero h1{font-size:29px}
+  .inRaidProgressBox{width:100%;margin-top:12px}
+  .inRaidGrid{grid-template-columns:1fr}
+  .inRaidPanel{padding:11px}
+  .inRaidObjective{min-height:44px;padding:10px 0}
+}
+@media(max-width:430px){
+  .inRaidBrand .brandMark{display:none}
+  .inRaidTop .logo{font-size:14px}
+  .inRaidModeLabel{font-size:6px}
+}
 .footerNote{margin-top:14px;color:#666f6d;font-size:10px;text-align:right}
 .toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);background:#191e1f;border:1px solid var(--line);padding:10px 13px;border-radius:5px;opacity:0;pointer-events:none;transition:.2s;z-index:100}
 .toast.show{opacity:1;transform:translate(-50%,0)}
@@ -477,12 +592,451 @@ select{width:100%;padding:9px;border:1px solid var(--line);background:var(--pane
 }
 .personalRaidText b{color:#d9cfb0}
 
+
+/* 1.10 — manual-only PMC + difficulty-aware recommendations */
+.pmcCollapsed{min-height:0}
+.pmcStoredProfileHint{
+  margin-top:8px;padding:7px 8px;border:1px solid #403c2e;background:#171814;
+  border-radius:5px;color:#a6a08a;font-size:9px;line-height:1.4
+}
+.pmcCard.pmcOff{border-color:#383d3a;background:linear-gradient(135deg,#151918,#111414)}
+.pmcCard.pmcOff .pmcDisconnected h2{font-size:17px;margin-bottom:4px}
+.difficultyBadge{
+  display:inline-flex;align-items:center;border:1px solid #4c4634;background:#171713;
+  padding:3px 6px;border-radius:3px;font-size:8px;font-weight:850;text-transform:uppercase;
+  letter-spacing:.45px;margin-left:7px;vertical-align:3px
+}
+.difficultyBadge.easy{color:#9dc391;border-color:#36513a}
+.difficultyBadge.medium{color:#d1bd84;border-color:#594e34}
+.difficultyBadge.hard{color:#d59a70;border-color:#65432f}
+.difficultyBadge.ultra{color:#dc7e75;border-color:#693731}
+.whyRaidItem.difficulty b.easy{color:#9dc391}
+.whyRaidItem.difficulty b.medium{color:#d1bd84}
+.whyRaidItem.difficulty b.hard{color:#d59a70}
+.whyRaidItem.difficulty b.ultra{color:#dc7e75}
+#profileFilter:disabled{opacity:.48;cursor:not-allowed}
+
+
+/* 1.11 — weapon compatibility */
+.weaponConflictTag{
+  display:inline-flex;align-items:center;border:1px solid #6b3833;background:#211413;
+  color:#e18e84;padding:3px 6px;border-radius:3px;font-size:8px;font-weight:850;
+  text-transform:uppercase;letter-spacing:.45px
+}
+.weaponReviewTag{
+  display:inline-flex;align-items:center;border:1px solid #62502f;background:#201a11;
+  color:#d5b46c;padding:3px 6px;border-radius:3px;font-size:8px;font-weight:850;
+  text-transform:uppercase;letter-spacing:.45px
+}
+
+
+.conflictActions{
+  display:flex;gap:7px;flex-wrap:wrap;margin-top:9px
+}
+.conflictActions .btn{
+  flex:0 1 auto
+}
+@media(max-width:690px){
+  .conflictActions{flex-direction:column}
+  .conflictActions .btn{width:100%}
+}
+
+
+/* 1.13 — task hand-in + completed raid tasks */
+.taskSummary.completedTaskSummary{
+  border-color:#34513a;background:linear-gradient(135deg,#141b16,#111514)
+}
+.taskSummary.completedTaskSummary .taskSummaryHead{margin-bottom:0}
+.taskCompletedBadge{
+  display:inline-flex;align-items:center;margin-left:6px;padding:2px 5px;
+  border:1px solid #3e6245;border-radius:3px;background:#162019;
+  color:#9bc78f;font-size:8px;font-weight:850;letter-spacing:.35px;
+  text-transform:uppercase;vertical-align:2px
+}
+.taskCompletedBody{
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  margin-top:9px;padding:8px 9px;border:1px solid #2f4333;border-radius:5px;
+  background:#121914;color:#91a796;font-size:10px
+}
+.taskCompletedBody strong{color:#a9d09e}
+.handInWrap{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  margin-top:10px;padding:9px 10px;border:1px solid #605238;border-radius:5px;
+  background:linear-gradient(135deg,#211f16,#171914)
+}
+.handInWrap strong{display:block;color:#dfcf9f;font-size:11px}
+.handInWrap span{display:block;color:#858d89;font-size:9px;margin-top:3px;line-height:1.35}
+.handInWrap .btn{flex:0 0 auto;min-width:135px}
+@media(max-width:690px){
+  .handInWrap,.taskCompletedBody{align-items:stretch;flex-direction:column}
+  .handInWrap .btn{width:100%}
+}
+
+
+.handoverObjective{
+  display:flex;gap:9px;align-items:flex-start;margin-top:8px;line-height:1.45;
+  color:#b7b7ad;padding:7px 8px;border-left:2px solid #685a36;
+  background:linear-gradient(90deg,rgba(198,169,98,.055),transparent 75%);
+  border-radius:2px
+}
+.handoverObjectiveIcon{
+  width:16px;height:16px;flex:0 0 auto;margin-top:1px;border:1px solid #665a3b;
+  border-radius:3px;display:flex;align-items:center;justify-content:center;
+  color:#d2b96f;font-size:9px;font-weight:900;background:#191810
+}
+.handoverObjectiveText{min-width:0}
+.handoverObjectiveText small{
+  display:inline-flex;margin-left:6px;padding:2px 4px;border:1px solid #5d5136;
+  border-radius:3px;color:#c6ad68;font-size:7px;font-weight:850;
+  letter-spacing:.35px;text-transform:uppercase;vertical-align:1px
+}
+@media(max-width:860px){
+  .handoverObjective{min-height:44px;padding:10px 8px}
+}
+
+
+/* 1.13.2 — completed-task editor */
+.completedEditNotice{
+  margin:0 0 10px;padding:8px 10px;border:1px solid #40503f;border-radius:5px;
+  background:#141a15;color:#9fb29f;font-size:9px;line-height:1.45
+}
+.progressQuest.completedEditRow{
+  border-color:#3b523f;background:linear-gradient(135deg,#151c17,#111514)
+}
+.progressQuest.completedEditRow .statusBadge{margin-top:5px}
+.btn.undoComplete{
+  border-color:#6a5936;color:#d8be78;background:#1b1912
+}
+.btn.undoComplete:hover{border-color:#8a7444}
+
+
+/* 1.14 — collapsed smart suggestions */
+.suggestionSection{overflow:hidden}
+.suggestionHeader{margin-bottom:0}
+.suggestionToggle{
+  appearance:none;border:1px solid #5b5035;background:#181811;color:#d8c27d;
+  border-radius:5px;padding:6px 8px;display:flex;align-items:center;gap:7px;
+  cursor:pointer;min-height:32px;flex:0 0 auto
+}
+.suggestionToggle:hover{border-color:#806d43;background:#1d1d14}
+.suggestionCountBadge{
+  display:inline-flex;align-items:center;justify-content:center;min-width:78px;
+  font-size:8px;font-weight:900;letter-spacing:.45px;color:#e1c97f
+}
+.suggestionChevron{font-size:13px;line-height:1;transition:transform .16s ease}
+.suggestionSection:not(.collapsed) .suggestionChevron{transform:rotate(180deg)}
+.suggestionBody{padding-top:11px}
+.suggestionSection.collapsed .suggestionBody{display:none}
+.suggestionBodyActions{
+  display:flex;justify-content:flex-end;margin:0 0 8px;padding-bottom:8px;
+  border-bottom:1px solid var(--line)
+}
+.suggestionSection.collapsed{
+  background:linear-gradient(135deg,#141814,#111414);
+  border-color:#3e4035
+}
+.suggestionSection.collapsed .suggestionHeader h3,
+.suggestionSection.collapsed .suggestionHeader h2{margin-bottom:0}
+@media(max-width:690px){
+  .suggestionHeader{align-items:flex-start}
+  .suggestionToggle{min-height:44px}
+  .suggestionBodyActions .btn{width:100%}
+}
+
+
+
+/* 1.15.1 — PMC header status */
+.progressProfileBtn.pmcActive{
+  border-color:#3e5b42;background:#141b16;
+}
+.progressProfileBtn.pmcActive b{color:#9ec690}
+.progressProfileBtn.pmcInactive{
+  border-color:#464b48;background:#141817;
+}
+.progressProfileBtn.pmcInactive b{color:#8d9692}
+.progressProfileBtn.pmcAdd{
+  border-color:#5c5035;background:#181812;
+}
+.progressProfileBtn.pmcAdd b{color:#d3b66f}
+
+
+/* 1.15.2 — task detail discoverability */
+.taskDetailTrigger{
+  appearance:none;border:0;background:transparent;padding:2px 4px 2px 0;
+  margin:-2px 0 -2px 0;color:inherit;display:inline-flex;align-items:center;
+  gap:7px;max-width:100%;cursor:pointer;text-align:left;border-radius:4px;
+  font:inherit;font-weight:850;transition:background .14s ease,color .14s ease
+}
+.taskDetailTrigger .taskDetailName{
+  min-width:0;overflow:hidden;text-overflow:ellipsis
+}
+.taskDetailCue{
+  display:inline-flex;align-items:center;gap:3px;flex:0 0 auto;
+  padding:2px 5px;border:1px solid #4d4633;border-radius:3px;
+  background:#171713;color:#9d906c;font-size:7px;font-weight:900;
+  letter-spacing:.45px;text-transform:uppercase;line-height:1.25;
+  transition:border-color .14s ease,color .14s ease,background .14s ease
+}
+.taskDetailArrow{
+  font-size:10px;line-height:1;transform:translateY(-.2px);
+  transition:transform .14s ease
+}
+.taskDetailTrigger:hover,
+.taskDetailTrigger:focus-visible{
+  color:#e4d4a4;background:rgba(211,182,111,.055);outline:none
+}
+.taskDetailTrigger:hover .taskDetailCue,
+.taskDetailTrigger:focus-visible .taskDetailCue{
+  border-color:#7a6840;background:#1e1c14;color:#d7bd76
+}
+.taskDetailTrigger:hover .taskDetailArrow,
+.taskDetailTrigger:focus-visible .taskDetailArrow{
+  transform:translate(2px,-.2px)
+}
+.taskDetailTrigger:focus-visible{
+  box-shadow:0 0 0 1px #6d5e3b
+}
+.taskSummary.completedTaskSummary .taskDetailTrigger{
+  color:#b2d1ad
+}
+.taskSummary.completedTaskSummary .taskDetailCue{
+  border-color:#38523d;color:#8eb087;background:#141b16
+}
+@media(max-width:690px){
+  .taskDetailTrigger{min-height:36px}
+  .taskDetailCue{font-size:7px;padding:3px 5px}
+}
+
+
+/* 1.16 — launch readiness */
+.resumeRaid{border-color:#5b5037;background:linear-gradient(135deg,#1b1d17,#111514)}
+.resumeRaidMain{display:flex;align-items:center;justify-content:space-between;gap:18px}
+.resumeRaid h2{font-size:20px;margin:4px 0 5px}
+.resumeRaidActions{display:flex;gap:7px;flex:0 0 auto}
+.resumeRaidProgress{margin-top:9px;max-width:520px}
+.resumeRaidProgressHead{display:flex;justify-content:space-between;font-size:9px;color:#89928e;margin-bottom:5px}
+.resumeRaidTrack{height:5px;border-radius:5px;overflow:hidden;background:#232826}
+.resumeRaidFill{height:100%;background:#b89c58;border-radius:5px}
+.personalReasoning{margin-top:10px;padding:9px 10px;border:1px solid #454538;border-radius:5px;background:#151815;color:#979f9b;font-size:9px;line-height:1.5}
+.personalReasoning strong{color:#d6c798}
+.personalReasoning .reasonCompare{margin-top:4px;color:#7f8884}
+.ready.raidReady{border-color:#3b6242;color:#a6d19c;background:#142018}
+.ready.actionRequired{border-color:#713c35;color:#e69a8f;background:#221514}
+.ready.reviewRaid{border-color:#705c31;color:#dfbd72;background:#211b11}
+.ready.raidComplete{border-color:#416349;color:#a9d39f;background:#142019}
+.quickProgressPrompt{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:9px 10px;margin:8px 0 10px;border:1px solid #4b4735;border-radius:6px;background:linear-gradient(135deg,#191a14,#121514)}
+.quickProgressPrompt strong{display:block;color:#dacb9d;font-size:10px}
+.quickProgressPrompt span{display:block;color:#858e8a;font-size:9px;margin-top:3px;line-height:1.35}
+.quickProgressResults{display:grid;gap:5px;max-height:280px;overflow:auto;margin-top:10px;padding-right:3px}
+.quickProgressTask{appearance:none;width:100%;text-align:left;border:1px solid #303735;background:#101414;border-radius:5px;padding:9px 10px;color:#d6d7d1;cursor:pointer}
+.quickProgressTask:hover,.quickProgressTask.selected{border-color:#6d5d3b;background:#1a1a14}
+.quickProgressTask strong{display:block;font-size:11px}
+.quickProgressTask span{display:block;color:#7f8985;font-size:9px;margin-top:3px}
+.quickProgressPreview{margin-top:10px;padding:10px;border:1px solid #3c4d3f;background:#131a15;border-radius:6px;color:#9fad9e;font-size:9px;line-height:1.5}
+.quickProgressPreview strong{color:#b8d3b2}
+.quickProgressPreview .inferenceList{margin-top:7px;display:flex;gap:4px;flex-wrap:wrap}
+.quickProgressPreview .inferencePill{padding:3px 5px;border:1px solid #3b4f3e;border-radius:3px;background:#152018;color:#a5bca7;font-size:8px}
+.onboardingModal{z-index:160}
+.onboardingBox{width:min(720px,100%)}
+.onboardingBrand{display:flex;align-items:center;gap:9px}
+.onboardingBox h2{font-size:26px;margin:5px 0 7px}
+.onboardingSteps{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:16px}
+.onboardingStep{border:1px solid #363d39;background:#101414;border-radius:7px;padding:12px;display:flex;gap:9px;min-width:0}
+.onboardingStep>b{width:25px;height:25px;display:flex;align-items:center;justify-content:center;flex:0 0 auto;border:1px solid #65583a;background:#201e15;border-radius:4px;color:#d4b86d}
+.onboardingStep strong{display:block;font-size:11px}
+.onboardingStep span{display:block;font-size:9px;color:#818a86;margin-top:4px;line-height:1.45}
+.onboardingActions{display:flex;justify-content:flex-end;gap:8px;margin-top:16px}
+.dataMetaNotice .qaPass{color:#9ac38f}.dataMetaNotice .qaReview{color:#d6b56d}
+@media(max-width:760px){
+  .resumeRaidMain{align-items:stretch;flex-direction:column}
+  .resumeRaidActions{display:grid;grid-template-columns:1fr 1fr}
+  .onboardingSteps{grid-template-columns:1fr}
+  .onboardingActions{display:grid;grid-template-columns:1fr}
+  .quickProgressPrompt{align-items:stretch;flex-direction:column}
+  .quickProgressPrompt .btn{width:100%}
+}
+
+
+/* 1.16.1 — suggestion alternative + modal flow */
+.onboardingIntro{max-width:650px;line-height:1.55}
+.quickProgressModal{z-index:175}
+.personalReasoning .reasonCompare.altRaidOption{
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  margin-top:8px;padding-top:8px;border-top:1px solid #34382f
+}
+.altRaidOptionText{min-width:0}
+.altRaidOptionText b{color:#d5c38e}
+.altRaidBtn{flex:0 0 auto;white-space:nowrap}
+@media(max-width:690px){
+  .personalReasoning .reasonCompare.altRaidOption{
+    align-items:stretch;flex-direction:column
+  }
+  .altRaidBtn{width:100%}
+}
+
+
+/* 1.17 — Progress Intelligence */
+.progressIntelModal{width:min(820px,100%)}
+.progressIntelStageHead{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  margin:13px 0 8px;color:#a99561;font-size:8px;font-weight:900;letter-spacing:.7px
+}
+.progressIntelStageHead>b{color:#d8c27d}
+.progressAnchorSlots{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-bottom:8px}
+.progressAnchorSlot{
+  min-height:71px;border:1px dashed #3d4541;border-radius:6px;background:#0f1313;
+  padding:9px;display:flex;align-items:center;justify-content:center;text-align:center;
+  color:#69736f;font-size:9px
+}
+.progressAnchorSlot.filled{
+  border-style:solid;border-color:#65583a;background:linear-gradient(135deg,#1b1b14,#131614);
+  color:#c7c9c2;justify-content:space-between;text-align:left;gap:8px
+}
+.progressAnchorSlot strong{display:block;color:#e0ddd2;font-size:10px}
+.progressAnchorSlot span{display:block;color:#7e8884;font-size:8px;margin-top:3px}
+.progressAnchorRemove{
+  appearance:none;border:1px solid #414845;background:#111616;color:#89928e;border-radius:4px;
+  width:27px;height:27px;cursor:pointer;flex:0 0 auto
+}
+.progressAnchorGuidance{
+  min-height:33px;padding:7px 9px;margin-bottom:9px;border:1px solid #343b38;
+  border-radius:5px;background:#111514;color:#89938e;font-size:9px;line-height:1.4
+}
+.progressAnchorGuidance.good{border-color:#38533d;color:#9eb49d;background:#121a14}
+.progressAnchorGuidance.warn{border-color:#655630;color:#c3a968;background:#1c1911}
+.progressAnchorGuidance.bad{border-color:#713c35;color:#db9187;background:#211514}
+.progressAnchorResults{max-height:250px}
+.quickProgressTask.anchorSelected{border-color:#78663e;background:#201d14}
+.quickProgressTask.anchorBlocked{opacity:.42;cursor:not-allowed}
+.quickProgressTask .anchorAddCue{
+  float:right;color:#b8a15f;font-size:8px;font-weight:900;letter-spacing:.4px
+}
+.progressWizardActions{margin-top:11px}
+.progressAnalysisSummary{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-bottom:10px
+}
+.progressAnalysisStat{
+  border:1px solid #343b38;background:#101414;border-radius:6px;padding:9px
+}
+.progressAnalysisStat span{display:block;color:#78837f;font-size:7px;letter-spacing:.55px;text-transform:uppercase}
+.progressAnalysisStat b{display:block;font-size:18px;margin-top:4px;color:#e1ded4}
+.progressAnalysisStat.good b{color:#9fc897}
+.progressAnalysisStat.warn b{color:#d4b86f}
+.progressVerification{
+  border:1px solid #363e3a;background:#101414;border-radius:7px;padding:12px;min-height:145px
+}
+.progressReady{
+  border-left:3px solid #4b754f;padding:3px 0 3px 10px;color:#9fbea0
+}
+.progressReady strong{display:block;color:#b7d6b1;font-size:12px}
+.progressReady span{display:block;color:#84908a;font-size:9px;margin-top:5px;line-height:1.5}
+.progressQuestionEyebrow{color:#aa9865;font-size:8px;font-weight:900;letter-spacing:.6px}
+.progressQuestion h3{font-size:16px;margin:5px 0}
+.progressQuestionMeta{
+  border:1px solid #3a413d;background:#121716;border-radius:5px;padding:8px 9px;
+  color:#89938f;font-size:9px;line-height:1.45;margin:9px 0
+}
+.progressQuestionMeta b{color:#c8b77e}
+.progressQuestionActions{display:grid;grid-template-columns:1fr 1fr auto;gap:7px}
+.progressQuestionActions .btn{min-height:40px}
+.progressQuestionActions .completedChoice{border-color:#416046;color:#a8cca1;background:#142018}
+.progressQuestionActions .unfinishedChoice{border-color:#675631;color:#d6b66b;background:#1d1911}
+.progressUnresolvedNote{
+  margin-top:9px;color:#817e70;font-size:8px;line-height:1.4
+}
+.progressInferenceDetails{
+  margin-top:9px;border-top:1px solid #2f3532;padding-top:9px
+}
+.progressInferenceDetails summary{
+  cursor:pointer;color:#9a8a61;font-size:8px;font-weight:850;letter-spacing:.4px
+}
+.progressInferencePills{display:flex;gap:4px;flex-wrap:wrap;margin-top:7px}
+.progressInferencePill{
+  border:1px solid #36463a;background:#131b15;color:#99b09d;border-radius:3px;
+  padding:3px 5px;font-size:8px
+}
+.progressAnchorContradiction{
+  border:1px solid #713c35;background:#211514;color:#dc9389;border-radius:5px;
+  padding:9px;margin-bottom:9px;font-size:9px;line-height:1.45
+}
+.progressSetupBadge{
+  display:inline-flex;padding:2px 4px;margin-left:5px;border:1px solid #42543f;border-radius:3px;
+  color:#92b38e;background:#141c15;font-size:7px;font-weight:900;vertical-align:1px
+}
+@media(max-width:720px){
+  .progressAnchorSlots{grid-template-columns:1fr}
+  .progressAnchorSlot{min-height:58px}
+  .progressAnalysisSummary{grid-template-columns:1fr 1fr}
+  .progressQuestionActions{grid-template-columns:1fr}
+}
+
+
+/* 1.17.1 — clear completion / proceed flow */
+.progressCompleteHero{
+  display:flex;gap:14px;align-items:flex-start;padding:15px;
+  border:1px solid #416047;border-radius:8px;
+  background:linear-gradient(135deg,#152019,#101614);
+  margin-bottom:10px
+}
+.progressCompleteIcon{
+  width:42px;height:42px;border-radius:7px;display:flex;align-items:center;
+  justify-content:center;flex:0 0 auto;border:1px solid #4f7254;
+  background:#19251b;color:#a8d09f;font-size:23px;font-weight:900
+}
+.progressCompleteHero h2{font-size:22px;margin:4px 0 6px;color:#e7e5dc}
+.progressCompleteHero p{
+  margin:0;color:#8f9c95;font-size:10px;line-height:1.55;max-width:650px
+}
+.progressCompleteStats{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin:10px 0
+}
+.progressCompleteStat{
+  padding:10px;border:1px solid #343c38;border-radius:6px;background:#101414
+}
+.progressCompleteStat span{
+  display:block;color:#76817d;font-size:7px;font-weight:850;
+  letter-spacing:.5px;text-transform:uppercase
+}
+.progressCompleteStat b{
+  display:block;color:#e3e0d6;font-size:19px;margin-top:4px
+}
+.progressCompleteStat.good b{color:#9fc897}
+.progressCompleteStat.current b{color:#d2b76e}
+.progressCompleteNext{
+  border:1px solid #454536;background:#161815;border-radius:7px;
+  padding:11px 12px;margin:10px 0 12px
+}
+.progressCompleteNext strong{display:block;color:#d7c896;font-size:10px}
+.progressCompleteNext span{
+  display:block;color:#89928e;font-size:9px;line-height:1.5;margin-top:4px
+}
+.progressCompleteActions{
+  display:grid;grid-template-columns:minmax(210px,1.3fr) 1fr auto;gap:8px
+}
+.progressCompleteActions .btn{min-height:43px}
+.progressPrimaryCta{
+  font-size:11px;letter-spacing:.25px;
+  box-shadow:0 0 0 1px rgba(217,185,105,.08)
+}
+.quickProgressPrompt.progressConfigured{
+  border-color:#3c563f;background:linear-gradient(135deg,#151d17,#111514)
+}
+.quickProgressPrompt.progressConfigured strong{color:#a8cba3}
+.quickProgressPrompt.progressConfigured .btn{
+  border-color:#455c47;color:#a7bda5;background:#151b16
+}
+@media(max-width:720px){
+  .progressCompleteHero{align-items:center;flex-direction:column}
+  .progressCompleteStats{grid-template-columns:1fr 1fr}
+  .progressCompleteActions{grid-template-columns:1fr}
+}
+
 </style>
 </head>
 <body>
 <header>
   <div class="brandLockup"><div class="brandMark">IQ</div><div><div class="logo">RAID<span>IQ</span></div><div class="brandTagline">TACTICAL RAID INTELLIGENCE</div></div></div>
-  <div class="version">1.9 · PLANNING UX</div>
+  <div class="version">1.17.1 · PROGRESS FLOW</div>
   <button id="mobileTasksBtn" class="mobileHeaderBtn">☰ TASKS <b id="mobileHeaderCount">0</b></button>
   <button id="progressProfileBtn" class="progressProfileBtn">MY PMC <b id="profileLevelTop">Lv —</b></button>
   <div class="spacer"></div>
@@ -515,7 +1069,7 @@ select{width:100%;padding:9px;border:1px solid var(--line);background:var(--pane
       <option value="Survive">Survive / Extract</option>
       <option value="Other">Other</option>
     </select>
-    <select id="profileFilter" class="taskStatusFilter">
+    <select id="profileFilter" class="taskStatusFilter" disabled>
       <option value="all">My status: All tasks</option>
       <option value="eligible">My status: Eligible now</option>
       <option value="unfinished">My status: Unfinished</option>
@@ -545,7 +1099,7 @@ select{width:100%;padding:9px;border:1px solid var(--line);background:var(--pane
       <div>
         <div class="eyebrow">RAIDIQ // SMART RAID PLANNER</div>
         <h1>Plan smarter. Make every raid count.</h1>
-        <p class="muted">Connect your PMC or plan manually. RaidIQ turns your available tasks into a focused raid: where to go, what to complete, what to bring, and which objectives are worth combining.</p>
+        <p class="muted">Add your PMC for personalised planning, or use RaidIQ without a profile. RaidIQ turns available tasks into a focused raid: where to go, what to complete, what to bring, and which objectives are worth combining.</p>
       </div>
       <div class="modeSwitch">
         <button class="modeBtn active" data-mode="tasks">PLAN FROM TASKS</button>
@@ -563,18 +1117,33 @@ select{width:100%;padding:9px;border:1px solid var(--line);background:var(--pane
 
 
 
+
+  <div id="resumeRaid" class="section card resumeRaid hidden">
+    <div class="resumeRaidMain">
+      <div>
+        <div class="eyebrow">RAIDIQ // SAVED RAID</div>
+        <h2 id="resumeRaidMap">Resume your raid</h2>
+        <div id="resumeRaidMeta" class="muted"></div>
+        <div id="resumeRaidProgress" class="resumeRaidProgress"></div>
+      </div>
+      <div class="resumeRaidActions">
+        <button id="resumeRaidBtn" class="btn">RESUME RAID</button>
+        <button id="discardResumeRaid" class="btn ghost">DISCARD</button>
+      </div>
+    </div>
+  </div>
+
   <div id="progressPanel" class="section card pmcCard">
     <div id="pmcDisconnected">
-      <div class="pmcDisconnected">
+      <div class="pmcDisconnected pmcCollapsed">
         <div>
           <div class="eyebrow">RAIDIQ // MY PMC</div>
-          <h2>Connect My PMC</h2>
-          <div class="muted">Sync your completed TarkovTracker tasks automatically, or set up your progression manually. RaidIQ will use it to filter completed quests, check known prerequisites and plan around your PMC.</div>
-          <div class="pmcPrivacy">RaidIQ does not need your Tarkov password. TarkovTracker syncing uses a read-progress API token; the token is kept in this browser and sent only through RaidIQ's sync endpoint when you request a refresh.</div>
+          <h2 id="pmcDisconnectedTitle">Add My PMC</h2>
+          <div id="pmcDisconnectedText" class="muted">Add your PMC level and manual task progress to personalise eligibility and RaidIQ's suggested raid.</div>
+          <div id="pmcStoredProfileHint" class="pmcStoredProfileHint hidden"></div>
         </div>
         <div class="pmcConnectActions">
-          <button id="connectTracker" class="btn">SYNC TARKOVTRACKER</button>
-          <button id="setupManual" class="btn secondary">MANUAL SETUP</button>
+          <button id="addPmc" class="btn">ADD PMC</button>
         </div>
       </div>
     </div>
@@ -590,9 +1159,8 @@ select{width:100%;padding:9px;border:1px solid var(--line);background:var(--pane
           </div>
         </div>
         <div class="pmcButtons">
-          <button id="syncNow" class="btn good small">SYNC NOW</button>
           <button id="openProgressManager" class="btn secondary small">MANAGE TASKS</button>
-          <button id="editProfile" class="btn ghost small">EDIT</button>
+          <button id="editProfile" class="btn ghost small">EDIT PMC</button>
           <button id="disconnectProfile" class="btn ghost small">DISCONNECT</button>
         </div>
       </div>
@@ -614,6 +1182,7 @@ select{width:100%;padding:9px;border:1px solid var(--line);background:var(--pane
         <h2 id="personalRaidMap">—</h2>
         <div id="personalRaidText" class="muted"></div>
         <div id="personalWhy" class="whyRaid"></div>
+        <div id="personalReasoning" class="personalReasoning"></div>
         <div id="personalTaskNames" class="personalTaskNames"></div>
       </div>
       <div class="personalRaidAction">
@@ -666,22 +1235,28 @@ select{width:100%;padding:9px;border:1px solid var(--line);background:var(--pane
     <div id="mapChoices"><div class="empty">Select at least one task to build a raid.</div></div>
   </div>
 
-  <div id="compatibleSection" class="section card hidden">
-    <div class="sectionTitle">
+  <div id="compatibleSection" class="section card hidden suggestionSection collapsed">
+    <div class="sectionTitle suggestionHeader">
       <div><div class="eyebrow">Smart suggestions</div><h2 style="margin-top:4px">Compatible tasks you could add</h2></div>
-      <button id="addAllCompatible" class="btn secondary small">ADD COMPATIBLE</button>
+      <button class="suggestionToggle" data-suggestion-toggle="compatibleSection" aria-expanded="false"><span id="compatibleSuggestionCount" class="suggestionCountBadge">0 SUGGESTIONS</span><span class="suggestionChevron">⌄</span></button>
     </div>
-    <div id="compatibleList" class="compatList"></div>
+    <div class="suggestionBody">
+      <div class="suggestionBodyActions"><button id="addAllCompatible" class="btn secondary small">ADD COMPATIBLE</button></div>
+      <div id="compatibleList" class="compatList"></div>
+    </div>
   </div>
 
-  <div id="anyRaidSection" class="section card anyRaidSection hidden">
-    <div class="sectionTitle">
-      <div><div class="eyebrow">While you're raiding</div><h2 style="margin-top:4px">Any-Raid Opportunities</h2><div class="muted" style="font-size:11px;margin-top:3px">These unfinished objectives can progress on this map, but this map is not specifically required.</div></div>
+  <div id="anyRaidSection" class="section card anyRaidSection hidden suggestionSection collapsed">
+    <div class="sectionTitle suggestionHeader">
+      <div><div class="eyebrow">While you're raiding</div><h2 style="margin-top:4px">Any-Raid Opportunities</h2><div class="muted" style="font-size:11px;margin-top:3px">Useful optional progress that fits the current plan without being tied specifically to this map.</div></div>
+      <button class="suggestionToggle" data-suggestion-toggle="anyRaidSection" aria-expanded="false"><span id="anyRaidSuggestionCount" class="suggestionCountBadge">0 SUGGESTIONS</span><span class="suggestionChevron">⌄</span></button>
     </div>
-    <div id="anyRaidList"></div>
+    <div class="suggestionBody">
+      <div id="anyRaidList"></div>
+    </div>
   </div>
 
-  <div class="footerNote"><b>RaidIQ</b> is an unofficial Escape from Tarkov planning tool and is not affiliated with Battlestate Games. Personal progression is stored in your browser; optional TarkovTracker sync uses a read-progress token.</div>
+  <div class="footerNote"><b>RaidIQ</b> is an unofficial Escape from Tarkov planning tool and is not affiliated with Battlestate Games. Optional PMC information and manual task progress are stored locally in your browser.</div>
 </section>
 
 <section id="summary" class="hidden">
@@ -714,19 +1289,25 @@ select{width:100%;padding:9px;border:1px solid var(--line);background:var(--pane
       <div id="conflicts"></div>
     </div>
 
-    <div id="raidCompatible" class="card wide hidden">
-      <div class="sectionTitle">
-        <div><h3>Add Compatible Tasks</h3><div class="muted" style="font-size:11px;margin-top:3px">Extra unfinished tasks on this map that are eligible by RaidIQ's known level/prerequisite data and don't create a hard gear conflict.</div></div>
-        <button id="raidAddAllCompatible" class="btn secondary small">ADD ALL</button>
+    <div id="raidCompatible" class="card wide hidden suggestionSection collapsed">
+      <div class="sectionTitle suggestionHeader">
+        <div><h3>Add Compatible Tasks</h3><div class="muted" style="font-size:11px;margin-top:3px">RaidIQ's best map-specific additions for the raid you have already built.</div></div>
+        <button class="suggestionToggle" data-suggestion-toggle="raidCompatible" aria-expanded="false"><span id="raidCompatibleCount" class="suggestionCountBadge">0 SUGGESTIONS</span><span class="suggestionChevron">⌄</span></button>
       </div>
-      <div id="raidCompatibleList" class="compatList"></div>
+      <div class="suggestionBody">
+        <div class="suggestionBodyActions"><button id="raidAddAllCompatible" class="btn secondary small">ADD ALL</button></div>
+        <div id="raidCompatibleList" class="compatList"></div>
+      </div>
     </div>
 
-    <div id="raidAnyRaid" class="card wide anyRaidSection hidden">
-      <div class="sectionTitle">
-        <div><h3>Any-Raid Opportunities</h3><div class="muted" style="font-size:11px;margin-top:3px">Optional progress that can be made here, but is not tied specifically to this map.</div></div>
+    <div id="raidAnyRaid" class="card wide anyRaidSection hidden suggestionSection collapsed">
+      <div class="sectionTitle suggestionHeader">
+        <div><h3>Any-Raid Opportunities</h3><div class="muted" style="font-size:11px;margin-top:3px">Optional tasks that fit your current loadout and can progress on any map.</div></div>
+        <button class="suggestionToggle" data-suggestion-toggle="raidAnyRaid" aria-expanded="false"><span id="raidAnyRaidCount" class="suggestionCountBadge">0 SUGGESTIONS</span><span class="suggestionChevron">⌄</span></button>
       </div>
-      <div id="raidAnyRaidList"></div>
+      <div class="suggestionBody">
+        <div id="raidAnyRaidList"></div>
+      </div>
     </div>
   </div>
 
@@ -734,7 +1315,7 @@ select{width:100%;padding:9px;border:1px solid var(--line);background:var(--pane
     <button id="copyFull" class="btn">COPY FULL CHECKLIST</button>
     <button id="copyItems" class="btn secondary">COPY ITEMS ONLY</button>
     <button id="shareRaid" class="btn secondary">SHARE RAID PLAN</button>
-    <button id="mobileRaid" class="btn secondary">MOBILE RAID CARD</button>
+    <button id="mobileRaid" class="btn secondary">IN-RAID MODE</button>
     <button id="back" class="btn ghost">BACK TO TASKS</button>
   </div>
 </section>
@@ -750,29 +1331,96 @@ select{width:100%;padding:9px;border:1px solid var(--line);background:var(--pane
 
 <aside id="detail" class="detail" aria-hidden="true">
   <div class="detailHead">
-    <div><div class="eyebrow">Task details</div><h2 id="detailTitle" style="margin-top:5px"></h2><div id="detailMeta" class="muted" style="margin-top:5px"></div></div>
+    <div><div class="eyebrow">TASK DETAILS // SELECTED QUEST</div><h2 id="detailTitle" style="margin-top:5px"></h2><div id="detailMeta" class="muted" style="margin-top:5px"></div></div>
     <button id="detailClose" class="detailClose">×</button>
   </div>
   <div id="detailBody"></div>
 </aside>
 
-<div id="trackerModal" class="modalBackdrop">
-  <div class="modal">
+<div id="onboardingModal" class="modalBackdrop onboardingModal">
+  <div class="modal onboardingBox">
+    <div class="onboardingBrand"><div class="brandMark">IQ</div><div><div class="logo">RAID<span>IQ</span></div><div class="brandTagline">TACTICAL RAID INTELLIGENCE</div></div></div>
+    <div class="eyebrow" style="margin-top:18px">WELCOME TO RAIDIQ</div>
+    <h2>Turn your Tarkov tasks into a focused raid.</h2>
+    <p class="muted onboardingIntro">RaidIQ turns your available Escape from Tarkov quests into a practical raid plan. It identifies which map offers the best progression, groups objectives that make sense to complete together, catches conflicting weapon or gear requirements, and builds a live checklist of what to do and what to bring.</p>
+    <div class="onboardingSteps">
+      <div class="onboardingStep"><b>1</b><div><strong>Choose your progress</strong><span>Select quests yourself or let RaidIQ identify the most productive map for your available tasks.</span></div></div>
+      <div class="onboardingStep"><b>2</b><div><strong>Build a compatible raid</strong><span>Combine useful objectives, catch weapon or gear conflicts, and see exactly what needs to come into raid.</span></div></div>
+      <div class="onboardingStep"><b>3</b><div><strong>Take RaidIQ in-raid</strong><span>Use the live checklist to track objectives, update progress and hand completed tasks in locally.</span></div></div>
+    </div>
+    <div class="onboardingActions">
+      <button id="onboardingStart" class="btn">START PLANNING</button>
+      <button id="onboardingAddPmc" class="btn secondary">ADD MY PMC</button>
+    </div>
+  </div>
+</div>
+
+<div id="quickProgressModal" class="modalBackdrop quickProgressModal">
+  <div class="modal progressIntelModal">
     <div class="modalHead">
-      <div><div class="eyebrow">Automatic progression</div><h2 style="margin-top:4px">Connect TarkovTracker</h2></div>
+      <div><div class="eyebrow">MY PMC // PROGRESS INTELLIGENCE</div><h2 style="margin-top:4px">Quick Progress Setup</h2></div>
       <button class="modalClose" data-close-modal>×</button>
     </div>
-    <div class="syncHelp">
-      <strong>How it works</strong><br>
-      In TarkovTracker, sign in and create a Progress API token under <b>Settings → API Tokens</b>. Paste that token here. RaidIQ reads your player level and task-completion progress; it does not need your Tarkov login credentials.
-      <div style="margin-top:8px"><a href="https://tarkovtracker.org" target="_blank" rel="noopener" style="color:var(--gold)">OPEN TARKOVTRACKER ↗</a></div>
+
+    <div id="progressAnchorStage">
+      <p class="muted">Select <b>up to three tasks you currently have</b>. Three tasks from different traders or questlines usually give RaidIQ the strongest picture of your wipe. RaidIQ treats them as evidence — it will never assume an earlier quest is complete unless the task graph proves it.</p>
+
+      <div class="progressIntelStageHead">
+        <span>STEP 1 // CURRENT TASKS</span>
+        <b id="progressAnchorCount">0 / 3 SELECTED</b>
+      </div>
+
+      <div id="progressAnchorSlots" class="progressAnchorSlots"></div>
+      <div id="progressAnchorGuidance" class="progressAnchorGuidance"></div>
+
+      <input id="quickProgressSearch" class="search" type="search" placeholder="Search tasks you currently have…">
+      <div id="quickProgressResults" class="quickProgressResults progressAnchorResults"></div>
+
+      <div class="actions progressWizardActions">
+        <button id="analyseQuickProgress" class="btn" disabled>ANALYSE PROGRESS</button>
+        <button id="cancelQuickProgress" class="btn ghost">BACK TO TASKS</button>
+      </div>
     </div>
-    <div class="syncForm">
-      <div class="fieldGroup"><label>Progress API token</label><input id="trackerToken" class="syncToken" type="password" autocomplete="off" placeholder="PVP_… / PVE_… / SZN_…"></div>
-      <label class="toggleRow"><input id="rememberTrackerToken" type="checkbox"> Remember token on this device <span class="muted">(otherwise this browser tab/session only)</span></label>
-      <div id="trackerError" class="syncError hidden"></div>
-      <div id="trackerWorking" class="syncWorking hidden"><span class="spinner"></span><span>Syncing TarkovTracker progression…</span></div>
-      <button id="confirmTracker" class="btn">CONNECT & SYNC</button>
+
+    <div id="progressAnalysisStage" class="hidden">
+      <div class="progressIntelStageHead">
+        <span>STEP 2 // PROGRESSION ANALYSIS</span>
+        <button id="editProgressAnchors" class="btn ghost small">EDIT CURRENT TASKS</button>
+      </div>
+
+      <div id="progressAnalysisSummary" class="progressAnalysisSummary"></div>
+      <div id="progressVerification" class="progressVerification"></div>
+
+      <div class="actions progressWizardActions">
+        <button id="applyQuickProgress" class="btn">APPLY PROGRESS SETUP</button>
+        <button id="cancelQuickProgressAnalysis" class="btn ghost">BACK TO TASKS</button>
+      </div>
+    </div>
+
+    <div id="progressCompleteStage" class="hidden">
+      <div class="progressCompleteHero">
+        <div class="progressCompleteIcon">✓</div>
+        <div>
+          <div class="eyebrow">STEP 3 // READY TO PLAN</div>
+          <h2>Your PMC progress is ready.</h2>
+          <p>RaidIQ has applied the progression it can confidently establish and will now use it to filter unavailable quests, remove completed tasks from recommendations, and personalise your Suggested Raid.</p>
+        </div>
+      </div>
+
+      <div id="progressCompleteStats" class="progressCompleteStats"></div>
+
+      <div class="progressCompleteNext">
+        <div>
+          <strong>What happens next?</strong>
+          <span>You do not need to manually review every task. Start planning and RaidIQ will use this profile automatically. You can come back to Manage Tasks at any time if you want to correct or fine-tune something.</span>
+        </div>
+      </div>
+
+      <div class="progressCompleteActions">
+        <button id="progressStartPlanning" class="btn progressPrimaryCta">START PLANNING MY RAID</button>
+        <button id="progressReviewTasks" class="btn secondary">REVIEW MY TASKS</button>
+        <button id="progressEditSetup" class="btn ghost">EDIT PROGRESS SETUP</button>
+      </div>
     </div>
   </div>
 </div>
@@ -780,19 +1428,21 @@ select{width:100%;padding:9px;border:1px solid var(--line);background:var(--pane
 <div id="manualProfileModal" class="modalBackdrop">
   <div class="modal">
     <div class="modalHead">
-      <div><div class="eyebrow">Manual progression</div><h2 style="margin-top:4px">Set up My PMC</h2></div>
+      <div><div class="eyebrow">RAIDIQ // MY PMC</div><h2 id="manualProfileTitle" style="margin-top:4px">Add My PMC</h2></div>
       <button class="modalClose" data-close-modal>×</button>
     </div>
-    <p class="muted">Use this if you don't use TarkovTracker. You can still enter your level and mark completed quests yourself.</p>
+    <p class="muted">PMC data is entered manually and stored only in this browser. Saving turns on level, completed-task and known prerequisite filtering.</p>
     <div class="manualGrid">
       <div class="fieldGroup"><label>PMC / character name</label><input id="manualName" maxlength="32" placeholder="Optional"></div>
       <div class="fieldGroup"><label>PMC level</label><input id="manualLevel" type="number" min="1" max="79" inputmode="numeric" placeholder="e.g. 28"></div>
       <div class="fieldGroup"><label>Game mode</label><select id="manualMode"><option value="pvp">PvP</option><option value="pve">PvE</option><option value="seasonal">Seasonal PvP</option></select></div>
       <div class="fieldGroup"><label>Faction</label><select id="manualFaction"><option value="">Not set</option><option value="USEC">USEC</option><option value="BEAR">BEAR</option></select></div>
     </div>
+    <div id="manualProfileState" class="syncHelp" style="margin-top:10px"></div>
     <div class="actions">
-      <button id="saveManualProfile" class="btn">SAVE PMC</button>
-      <button id="openManualProgress" class="btn secondary">MANAGE COMPLETED TASKS</button>
+      <button id="saveManualProfile" class="btn">SAVE & USE PMC</button>
+      <button id="openManualProgress" class="btn secondary">MANAGE TASKS</button>
+      <button id="removeAllPmcData" class="btn ghost">REMOVE ALL PMC DATA</button>
     </div>
   </div>
 </div>
@@ -800,16 +1450,21 @@ select{width:100%;padding:9px;border:1px solid var(--line);background:var(--pane
 <div id="progressModal" class="modalBackdrop progressModal">
   <div class="modal">
     <div class="modalHead">
-      <div><div class="eyebrow">My PMC</div><h2 style="margin-top:4px">Manage task progress</h2></div>
+      <div><div class="eyebrow">My PMC</div><h2 id="progressModalTitle" style="margin-top:4px">Manage task progress</h2></div>
       <button class="modalClose" data-close-modal>×</button>
     </div>
     <p id="progressManagerNote" class="muted">Mark tasks complete or unfinished. Completed quests are excluded from personal recommendations.</p>
+    <div id="quickProgressPrompt" class="quickProgressPrompt allTasksOnly">
+      <div><strong id="quickProgressPromptTitle">Quick Progress Setup</strong><span id="quickProgressPromptText">Select up to three quests you currently have. RaidIQ will prove safe history, identify ambiguous branches, and ask only the checks that improve your raid suggestions.</span></div>
+      <button id="openQuickProgress" class="btn secondary small">SET UP PROGRESS</button>
+    </div>
     <input id="progressSearch" class="search" type="search" placeholder="Search tasks…">
     <div id="progressQuestList" class="progressList"></div>
     <div class="actions">
+      <button id="editCompletedTasks" class="btn secondary">EDIT COMPLETED TASKS</button>
       <button id="exportProgress" class="btn secondary">EXPORT BACKUP</button>
       <button id="importProgress" class="btn ghost">IMPORT BACKUP</button>
-      <button id="clearProfile" class="btn ghost">CLEAR PROFILE</button>
+      <button id="clearProfile" class="btn ghost">REMOVE ALL PMC DATA</button>
     </div>
   </div>
 </div>
@@ -838,9 +1493,21 @@ select{width:100%;padding:9px;border:1px solid var(--line);background:var(--pane
   </div>
 </div>
 
-<div id="mobileCard" class="mobileCard">
-  <div class="mobileTop"><div class="logo">RAID<span>PLAN</span> <span class="muted" style="font-weight:600;font-size:11px">RAID CARD</span></div><button id="closeMobile" class="btn ghost small">CLOSE</button></div>
-  <div id="mobileBody" class="mobileBody"></div>
+<div id="mobileCard" class="mobileCard inRaidMode" aria-hidden="true">
+  <div class="inRaidTop">
+    <div class="inRaidBrand">
+      <div class="brandMark">IQ</div>
+      <div>
+        <div class="logo">RAID<span>IQ</span></div>
+        <div class="inRaidModeLabel">IN-RAID MODE</div>
+      </div>
+    </div>
+    <div class="inRaidTopActions">
+      <button id="inRaidFullscreen" class="btn secondary small">FULL SCREEN</button>
+      <button id="closeMobile" class="btn ghost small">EXIT IN-RAID MODE</button>
+    </div>
+  </div>
+  <div id="mobileBody" class="inRaidBody"></div>
 </div>
 
 <div id="toast" class="toast"></div>
@@ -854,7 +1521,8 @@ const DATA_URLS=[
   "https://raw.githubusercontent.com/pm4gp9zb88-jpg/tarkov-raidplan/main/RaidPlan_1.0_wiki_validated_sync/tasks.snapshot.json"
 ];
 
-let TASKS=[], byId={}, TASK_META={}, generatedAt=null, activeMap=null, mode="tasks", mapPlanSelection=null;
+let TASKS=[], byId={}, TASK_META={}, DATA_QA={}, generatedAt=null, activeMap=null, mode="tasks", mapPlanSelection=null;
+let quickProgressAnchorIds=[],quickProgressAnswers={},quickProgressSkipped=new Set(),quickProgressAnalysis=null;
 const selected=new Set();
 
 const $=id=>document.getElementById(id);
@@ -895,46 +1563,63 @@ function relevantObjectiveText(t,map){return mapObjectives(t,map)[0]?.text||"Map
 function taskMetaName(id){return byId[id]?.name||TASK_META[id]?.name||"a previous task"}
 const store=()=>{try{return localStorage}catch(e){return null}};
 const checkStoreKey="raidplan-concept-checks-v1";
+const activeRaidStoreKey="raidiq-active-raid-v1";
+const onboardingStoreKey="raidiq-onboarding-v1";
 
 
 const legacyProgressStoreKey="raidplan-progress-v1";
 const profileStoreKey="raidplan-profile-v2";
-const trackerSessionKey="raidplan-tracker-token-session";
-const trackerLocalKey="raidplan-tracker-token-local";
-const trackerRememberKey="raidplan-tracker-remember";
 
 function safeLocal(){try{return localStorage}catch(e){return null}}
-function safeSession(){try{return sessionStorage}catch(e){return null}}
 
 function emptyProfile(){
   return {
-    pmcName:"",level:0,faction:"",gameMode:"",gameEdition:null,
-    source:"",hideCompleted:false,completed:[],failed:[],
-    lastSync:null
+    enabled:false,pmcName:"",level:0,faction:"",gameMode:"",gameEdition:null,
+    source:"manual",hideCompleted:false,completed:[],failed:[],lastSync:null,
+    progressAnchors:[],progressAutoCompleted:[],progressCurrent:[],
+    progressUnavailable:[],progressAnswers:{},progressSetupAt:null
   };
+}
+function profileHasData(p){
+  p=p||PROFILE;
+  return !!(clean(p?.pmcName)||Number(p?.level)||clean(p?.faction)||clean(p?.gameMode)
+    ||(Array.isArray(p?.completed)&&p.completed.length)
+    ||(Array.isArray(p?.progressAnchors)&&p.progressAnchors.length)
+    ||(Array.isArray(p?.progressCurrent)&&p.progressCurrent.length)
+    ||(Array.isArray(p?.progressUnavailable)&&p.progressUnavailable.length));
 }
 function loadProfile(){
   try{
     const saved=JSON.parse(safeLocal()?.getItem(profileStoreKey)||"null");
     if(saved){
-      return {...emptyProfile(),...saved,
+      const p={...emptyProfile(),...saved,
+        source:"manual",
         level:Number(saved.level)||0,
         completed:Array.isArray(saved.completed)?saved.completed:[],
-        failed:Array.isArray(saved.failed)?saved.failed:[]
+        failed:[],
+        progressAnchors:Array.isArray(saved.progressAnchors)?saved.progressAnchors:[],
+        progressAutoCompleted:Array.isArray(saved.progressAutoCompleted)?saved.progressAutoCompleted:[],
+        progressCurrent:Array.isArray(saved.progressCurrent)?saved.progressCurrent:[],
+        progressUnavailable:Array.isArray(saved.progressUnavailable)?saved.progressUnavailable:[],
+        progressAnswers:saved.progressAnswers&&typeof saved.progressAnswers==="object"?saved.progressAnswers:{}
       };
+      // Older RaidIQ builds had no enabled flag. Preserve their saved profile as active.
+      p.enabled=typeof saved.enabled==="boolean"?saved.enabled:profileHasData(p);
+      return p;
     }
   }catch(e){}
-  // Migrate the earlier local-only RaidIQ progress format.
   try{
     const old=JSON.parse(safeLocal()?.getItem(legacyProgressStoreKey)||"null");
     if(old){
-      return {...emptyProfile(),
+      const p={...emptyProfile(),
         pmcName:clean(old.pmcName||""),
         level:Number(old.level)||0,
         hideCompleted:!!old.hideCompleted,
         completed:Array.isArray(old.completed)?old.completed:[],
         source:"manual"
       };
+      p.enabled=profileHasData(p);
+      return p;
     }
   }catch(e){}
   return emptyProfile();
@@ -944,40 +1629,25 @@ let PROFILE=loadProfile();
 function saveProfile(){
   try{safeLocal()?.setItem(profileStoreKey,JSON.stringify(PROFILE))}catch(e){}
 }
-function hasProfile(){
-  return !!(PROFILE.source||PROFILE.pmcName||PROFILE.level||PROFILE.completed.length);
-}
-function getTrackerToken(){
-  return clean(safeSession()?.getItem(trackerSessionKey)||safeLocal()?.getItem(trackerLocalKey)||"");
-}
-function saveTrackerToken(token,remember){
-  try{
-    safeSession()?.removeItem(trackerSessionKey);
-    safeLocal()?.removeItem(trackerLocalKey);
-    if(remember){
-      safeLocal()?.setItem(trackerLocalKey,token);
-      safeLocal()?.setItem(trackerRememberKey,"1");
-    }else{
-      safeSession()?.setItem(trackerSessionKey,token);
-      safeLocal()?.removeItem(trackerRememberKey);
-    }
-  }catch(e){}
-}
-function clearTrackerToken(){
-  try{
-    safeSession()?.removeItem(trackerSessionKey);
-    safeLocal()?.removeItem(trackerLocalKey);
-    safeLocal()?.removeItem(trackerRememberKey);
-  }catch(e){}
-}
-function validTrackerToken(token){return /^(PVP_|PVE_|SZN_)[A-Za-z0-9_-]{8,}$/.test(clean(token))}
-function isCompleted(id){return PROFILE.completed.includes(id)}
+function hasProfile(){return PROFILE.enabled===true&&profileHasData(PROFILE)}
+function storedCompleted(id){return PROFILE.completed.includes(id)}
+function isCompleted(id){return hasProfile()&&storedCompleted(id)}
 function setCompleted(id,done){
   const s=new Set(PROFILE.completed);
   done?s.add(id):s.delete(id);
   PROFILE.completed=[...s];
-  if(!PROFILE.source)PROFILE.source="manual";
-  saveProfile();renderTaskList();renderPlanner();renderProgressManager();
+
+  // A direct manual action overrides any state previously inferred by Quick Progress.
+  PROFILE.progressAutoCompleted=(PROFILE.progressAutoCompleted||[]).filter(x=>x!==id);
+  PROFILE.progressCurrent=(PROFILE.progressCurrent||[]).filter(x=>x!==id);
+  PROFILE.progressUnavailable=(PROFILE.progressUnavailable||[]).filter(x=>x!==id);
+  if(done)PROFILE.progressAnchors=(PROFILE.progressAnchors||[]).filter(x=>x!==id);
+  if(PROFILE.progressAnswers&&typeof PROFILE.progressAnswers==="object")delete PROFILE.progressAnswers[id];
+
+  PROFILE.source="manual";
+  PROFILE.lastSync=new Date().toISOString();
+  saveProfile();renderTaskList();renderPlanner();renderProgressManager();updateProfileUI();
+  if(isRaidViewActive())renderRaid();
 }
 function requirementNeedsCompletion(r){
   const statuses=(r?.statuses||[]).map(x=>clean(x).toLowerCase()).filter(Boolean);
@@ -992,7 +1662,7 @@ function prerequisiteIdsForTask(id,out=new Set(),path=new Set()){
   if(!id||path.has(id))return out;
   path.add(id);
   for(const r of taskRequirementRows(id)){
-    if(!r?.taskId||!requirementNeedsCompletion(r))continue;
+    if(!r?.taskId||!strictRequirementProvesCompletion(r))continue;
     out.add(r.taskId);
     prerequisiteIdsForTask(r.taskId,out,path);
   }
@@ -1000,7 +1670,9 @@ function prerequisiteIdsForTask(id,out=new Set(),path=new Set()){
   return out;
 }
 function completedHistoryIds(){
-  const out=new Set(PROFILE.completed);
+  const out=new Set();
+  if(!hasProfile())return out;
+  for(const id of PROFILE.completed)out.add(id);
   for(const id of PROFILE.completed){
     for(const pre of prerequisiteIdsForTask(id,new Set(),new Set()))out.add(pre);
   }
@@ -1012,49 +1684,78 @@ function planningHistoricalIds(){
     for(const pre of prerequisiteIdsForTask(id,new Set(),new Set()))out.add(pre);
   }
   for(const id of selected)out.delete(id);
-  for(const id of PROFILE.completed)out.delete(id);
+  if(hasProfile())for(const id of PROFILE.completed)out.delete(id);
   return out;
 }
-function isHistoricalForPlanning(id){
-  return !isCompleted(id)&&planningHistoricalIds().has(id);
+function isHistoricalForPlanning(id){return !isCompleted(id)&&planningHistoricalIds().has(id)}
+function normalisedRequirementStatuses(r){
+  const raw=(r?.statuses||[]).map(x=>clean(x).toLowerCase()).filter(Boolean);
+  if(!raw.length)return ["complete"];
+  return uniq(raw.map(x=>{
+    if(/complete|success|finish/.test(x))return "complete";
+    if(/active|start/.test(x))return "active";
+    if(/fail/.test(x))return "failed";
+    return x;
+  }));
+}
+function profileTaskState(id){
+  if(completedHistoryIds().has(id))return "complete";
+  if((PROFILE.progressCurrent||[]).includes(id)||(PROFILE.progressAnchors||[]).includes(id))return "active";
+  if((PROFILE.progressUnavailable||[]).includes(id))return "failed";
+  return null;
+}
+function requirementSatisfiedByProfile(r){
+  if(!r?.taskId)return true;
+  const known=profileTaskState(r.taskId);
+  if(!known)return false;
+  return normalisedRequirementStatuses(r).includes(known);
 }
 function taskAvailability(t,{includeSelectionInference=true}={}){
   if(isCompleted(t.id))return {state:"completed",label:"Complete"};
-  if(includeSelectionInference&&isHistoricalForPlanning(t.id)){
-    return {
-      state:"historical",
-      label:"Earlier in chain",
-      reason:"A selected or completed later quest proves this prerequisite is already behind the player for planning."
-    };
+  if(hasProfile()&&(PROFILE.progressUnavailable||[]).includes(t.id)){
+    return {state:"historical",label:"Unavailable branch",reason:"Your Quick Progress answers place this task on a failed or unavailable quest branch."};
   }
-  if(PROFILE.level && t.minLevel && Number(t.minLevel)>PROFILE.level){
+  if(hasProfile()&&((PROFILE.progressAnchors||[]).includes(t.id)||(PROFILE.progressCurrent||[]).includes(t.id))){
+    return {state:"eligible",label:"Current",reason:"Identified as a current/active task by Quick Progress."};
+  }
+  if(includeSelectionInference&&isHistoricalForPlanning(t.id)){
+    return {state:"historical",label:"Earlier in chain",reason:"A selected or completed later quest strictly proves this prerequisite is already behind the player for planning."};
+  }
+  if(hasProfile()&&PROFILE.level&&t.minLevel&&Number(t.minLevel)>PROFILE.level){
     return {state:"level",label:`Level ${t.minLevel}`,reason:`Requires PMC level ${t.minLevel}`};
   }
   if(hasProfile()){
-    const reqs=(t.taskRequirements||[]).filter(r=>r?.taskId && requirementNeedsCompletion(r));
-    const history=completedHistoryIds();
-    const missing=reqs.filter(r=>!history.has(r.taskId));
+    const reqs=(t.taskRequirements||[]).filter(r=>r?.taskId);
+    const missing=reqs.filter(r=>!requirementSatisfiedByProfile(r));
     if(missing.length){
-      return {
-        state:"prereq",label:"Prerequisite",missing,
-        reason:`Needs ${missing.map(r=>taskMetaName(r.taskId)).slice(0,2).join(", ")}${missing.length>2?"…":""}`
-      };
+      return {state:"prereq",label:"Prerequisite",missing,
+        reason:`Needs ${missing.map(r=>taskMetaName(r.taskId)).slice(0,2).join(", ")}${missing.length>2?"…":""}`};
     }
   }
   return {state:"eligible",label:hasProfile()?"Eligible":"Untracked"};
 }
-function levelEligible(t){return taskAvailability(t,{includeSelectionInference:false}).state!=="level"}
-function eligibleForSuggestions(t){
-  if(selected.has(t.id))return false;
-  if(isCompleted(t.id)||isHistoricalForPlanning(t.id))return false;
-  if(!hasProfile())return levelEligible(t);
+function levelEligible(t){
+  if(!hasProfile())return true;
+  return taskAvailability(t,{includeSelectionInference:false}).state!=="level";
+}
+function isFenceTask(t){return clean(t?.trader).toLowerCase()==="fence"}
+function baseEligibleForSuggestions(t){
+  if(selected.has(t.id)||isCompleted(t.id)||isHistoricalForPlanning(t.id))return false;
+  if(!hasProfile())return true;
   return taskAvailability(t,{includeSelectionInference:false}).state==="eligible";
+}
+function hasRemainingNonFenceSuggestionTask(){
+  return TASKS.some(t=>baseEligibleForSuggestions(t)&&!isFenceTask(t));
+}
+function eligibleForSuggestions(t){
+  if(!baseEligibleForSuggestions(t))return false;
+  // Fence is a fallback suggestion source. RaidIQ only recommends Fence when
+  // there are no unfinished/eligible non-Fence raid tasks left to suggest.
+  if(isFenceTask(t)&&hasRemainingNonFenceSuggestionTask())return false;
+  return true;
 }
 function profileModeLabel(v){
   return v==="pve"?"PvE":v==="seasonal"||v==="pvp-season"?"Seasonal PvP":v==="pvp"||v==="regular"?"PvP":clean(v);
-}
-function sourceLabel(){
-  return PROFILE.source==="tarkovtracker"?"TARKOVTRACKER":PROFILE.source?"LOCAL":"";
 }
 function initials(){
   const n=clean(PROFILE.pmcName);
@@ -1068,89 +1769,582 @@ function profileCounts(){
   const locked=TASKS.filter(t=>["level","prereq"].includes(taskAvailability(t).state)).length;
   return {completed,unfinished,eligible,locked};
 }
+function storedProfileSummary(){
+  const bits=[];
+  if(PROFILE.pmcName)bits.push(PROFILE.pmcName);
+  if(PROFILE.level)bits.push(`Lv ${PROFILE.level}`);
+  if(PROFILE.gameMode)bits.push(profileModeLabel(PROFILE.gameMode));
+  if(PROFILE.completed.length)bits.push(`${PROFILE.completed.length} task${PROFILE.completed.length!==1?"s":""} marked complete`);
+  if((PROFILE.progressAnchors||[]).length)bits.push(`${PROFILE.progressAnchors.length} current task anchor${PROFILE.progressAnchors.length!==1?"s":""}`);
+  return bits.join(" · ");
+}
 function updateProfileUI(){
-  const active=hasProfile();
+  const active=hasProfile(),stored=profileHasData(PROFILE);
+  $("progressPanel").classList.toggle("pmcOff",!active);
   $("pmcDisconnected").classList.toggle("hidden",active);
   $("pmcConnected").classList.toggle("hidden",!active);
-  $("hideCompleted").checked=!!PROFILE.hideCompleted;
-  $("profileLevelTop").textContent=PROFILE.level?`Lv ${PROFILE.level}`:"SET UP";
+
+  $("profileFilter").disabled=!active;
+  if(!active)$("profileFilter").value="all";
+
+  const headerPmcStatus=active
+    ?(PROFILE.level?`ON · LV ${PROFILE.level}`:"ON")
+    :(stored?"OFF":"ADD");
+  $("profileLevelTop").textContent=headerPmcStatus;
+  $("progressProfileBtn").classList.toggle("pmcActive",active);
+  $("progressProfileBtn").classList.toggle("pmcInactive",!active&&stored);
+  $("progressProfileBtn").classList.toggle("pmcAdd",!active&&!stored);
+  $("progressProfileBtn").title=active
+    ?`PMC personalisation is active${PROFILE.level?` · Level ${PROFILE.level}`:""}`
+    :(stored?"PMC personalisation is off · click to edit or reconnect":"Add your PMC");
   $("profileFilterHint").textContent=active
-    ?`Eligibility uses your level, completed tasks and known quest-chain prerequisites.`
-    :`Connect your PMC to make eligibility personal.`;
+    ?`Eligibility uses your manually entered level, completed tasks and known quest-chain prerequisites.`
+    :`PMC personalisation is off. No level, completed-task or PMC prerequisite filtering is being applied.`;
+
   if(!active){
+    $("pmcDisconnectedTitle").textContent=stored?"PMC Personalisation Off":"Add My PMC";
+    $("pmcDisconnectedText").textContent=stored
+      ?"Your saved PMC data is still on this device, but RaidIQ is currently ignoring it for planning."
+      :"Add your PMC level and completed tasks to personalise eligibility and RaidIQ's suggested raid.";
+    $("pmcStoredProfileHint").classList.toggle("hidden",!stored);
+    $("pmcStoredProfileHint").textContent=stored?`Saved locally: ${storedProfileSummary()}`:"";
     $("personalRaid").classList.add("hidden");
     return;
   }
+
+  $("hideCompleted").checked=!!PROFILE.hideCompleted;
   $("pmcAvatar").textContent=initials();
   $("pmcDisplayName").textContent=PROFILE.pmcName||"My PMC";
-  const badge=$("pmcSourceBadge");
-  badge.textContent=sourceLabel();
-  badge.className=`sourceBadge ${PROFILE.source==="tarkovtracker"?"sync":"manual"}`;
+  $("pmcSourceBadge").textContent="LOCAL";
+  $("pmcSourceBadge").className="sourceBadge manual";
   const meta=[];
   if(PROFILE.level)meta.push(`Level ${PROFILE.level}`);
   if(PROFILE.faction)meta.push(PROFILE.faction);
   if(PROFILE.gameMode)meta.push(profileModeLabel(PROFILE.gameMode));
-  if(PROFILE.gameEdition)meta.push(`Edition ${PROFILE.gameEdition}`);
+  if((PROFILE.progressAnchors||[]).length)meta.push(`${PROFILE.progressAnchors.length} progress anchor${PROFILE.progressAnchors.length!==1?"s":""}`);
   $("pmcMeta").innerHTML=meta.map(x=>`<span>${esc(x)}</span>`).join("");
+
   const c=profileCounts();
   $("completedStat").textContent=c.completed;
   $("eligibleStat").textContent=c.eligible;
   $("lockedStat").textContent=c.locked;
   $("unfinishedStat").textContent=c.unfinished;
-  const tokenAvailable=!!getTrackerToken();
-  $("syncNow").classList.toggle("hidden",PROFILE.source!=="tarkovtracker");
-  $("syncNow").textContent=tokenAvailable?"SYNC NOW":"RECONNECT";
   $("pmcLastSync").textContent=PROFILE.lastSync
-    ?`Last ${PROFILE.source==="tarkovtracker"?"TarkovTracker sync":"profile update"}: ${new Date(PROFILE.lastSync).toLocaleString("en-GB")}${PROFILE.source==="tarkovtracker"&&!tokenAvailable?" · token not stored — reconnect to sync again":""}`
-    :"Progress saved locally.";
+    ?`Last local profile update: ${new Date(PROFILE.lastSync).toLocaleString("en-GB")}`
+    :"PMC data is stored locally in this browser.";
   renderPersonalRaid();
 }
+function strictRequirementProvesCompletion(r){
+  const statuses=normalisedRequirementStatuses(r);
+  return !!statuses.length&&statuses.every(x=>x==="complete");
+}
+function strictPrerequisiteRows(id){
+  return taskRequirementRows(id).filter(r=>r?.taskId&&strictRequirementProvesCompletion(r));
+}
+function safelyInferredPrerequisites(id,out=new Set(),path=new Set()){
+  if(!id||path.has(id))return out;
+  path.add(id);
+  for(const r of strictPrerequisiteRows(id)){
+    out.add(r.taskId);
+    safelyInferredPrerequisites(r.taskId,out,path);
+  }
+  path.delete(id);
+  return out;
+}
+function allProgressTaskEntries(){
+  const map=new Map();
+  for(const t of TASKS)map.set(t.id,{
+    id:t.id,name:t.name,trader:t.trader,minLevel:t.minLevel||0,
+    raidRelevant:true,taskRequirements:t.taskRequirements||[]
+  });
+  for(const [id,m] of Object.entries(TASK_META||{})){
+    if(!map.has(id))map.set(id,{
+      id,name:m.name||"Unknown task",trader:"Non-raid task",minLevel:0,
+      raidRelevant:!!m.raidRelevant,taskRequirements:m.taskRequirements||[]
+    });
+  }
+  return [...map.values()].filter(x=>x.id&&x.name).sort((a,b)=>a.name.localeCompare(b.name));
+}
+function progressTaskEntry(id){
+  const t=byId[id];
+  if(t)return {id:t.id,name:t.name,trader:t.trader,minLevel:t.minLevel||0,raidRelevant:true,taskRequirements:t.taskRequirements||[]};
+  const m=TASK_META[id];
+  if(m)return {id,name:m.name||"Unknown task",trader:"Non-raid task",minLevel:0,raidRelevant:!!m.raidRelevant,taskRequirements:m.taskRequirements||[]};
+  return null;
+}
+function progressLineKey(entry){
+  const n=clean(entry?.name).replace(/\s*\[[^\]]+\]\s*/g," ").trim();
+  const part=n.match(/^(.+?)\s*-\s*Part\s*\d+/i);
+  if(part)return `${clean(entry?.trader).toLowerCase()}|${part[1].toLowerCase()}`;
+  const family=n.match(/^(The (?:Tarkov Shooter|Punisher|Survivalist Path|Huntsman Path)|Chemical|Spa Tour|Health Care Privacy|Cargo X|Wet Job|Polikhim|Revision)\b/i);
+  if(family)return `${clean(entry?.trader).toLowerCase()}|${family[1].toLowerCase()}`;
+  return `${clean(entry?.trader).toLowerCase()}|${n.toLowerCase().split(/\s+/).slice(0,3).join(" ")}`;
+}
+function manualCompletedForProgressSetup(){
+  const oldAuto=new Set(PROFILE.progressAutoCompleted||[]);
+  return new Set((PROFILE.completed||[]).filter(id=>!oldAuto.has(id)));
+}
+function progressStateSetForRequirement(r){
+  return new Set(normalisedRequirementStatuses(r));
+}
+function intersectStateSets(a,b){
+  if(!a)return new Set(b);
+  const x=new Set([...a].filter(v=>b.has(v)));
+  return x;
+}
+function progressReverseGraph(){
+  const rev=new Map();
+  for(const node of allProgressTaskEntries()){
+    for(const r of (node.taskRequirements||[])){
+      if(!r?.taskId)continue;
+      if(!rev.has(r.taskId))rev.set(r.taskId,new Set());
+      rev.get(r.taskId).add(node.id);
+    }
+  }
+  return rev;
+}
+function relatedRaidImpact(id){
+  const rev=progressReverseGraph(),seen=new Set(),q=[id];
+  let count=0;
+  while(q.length){
+    const x=q.shift();
+    for(const dep of (rev.get(x)||[])){
+      if(seen.has(dep))continue;
+      seen.add(dep);q.push(dep);
+      const node=progressTaskEntry(dep);
+      if(node?.raidRelevant&&(!PROFILE.level||!node.minLevel||node.minLevel<=PROFILE.level))count++;
+    }
+  }
+  return count;
+}
+function quickProgressContradictions(anchorIds){
+  const out=[];
+  for(let i=0;i<anchorIds.length;i++)for(let j=i+1;j<anchorIds.length;j++){
+    const a=anchorIds[i],b=anchorIds[j];
+    if(safelyInferredPrerequisites(a,new Set(),new Set()).has(b)){
+      out.push(`${taskMetaName(a)} strictly requires ${taskMetaName(b)} to be completed, so both cannot be current at the same time.`);
+    }
+    if(safelyInferredPrerequisites(b,new Set(),new Set()).has(a)){
+      out.push(`${taskMetaName(b)} strictly requires ${taskMetaName(a)} to be completed, so both cannot be current at the same time.`);
+    }
+  }
+  return uniq(out);
+}
+function analyseProgressEvidence(anchorIds,answers={}){
+  const constraints=new Map(),sources=new Map(),contradictions=[];
+  const traversed=new Set();
+  const manualCompleted=manualCompletedForProgressSetup();
+
+  function constrain(id,states,source){
+    if(!id||!states?.size)return;
+    const existing=constraints.get(id);
+    const merged=intersectStateSets(existing,states);
+    if(existing&&merged.size===0){
+      contradictions.push(`${taskMetaName(id)} has conflicting progression evidence from your selected current tasks.`);
+      return;
+    }
+    constraints.set(id,merged);
+    if(source){
+      if(!sources.has(id))sources.set(id,new Set());
+      sources.get(id).add(source);
+    }
+  }
+  function traverse(id){
+    if(!id||traversed.has(id))return;
+    traversed.add(id);
+    for(const r of taskRequirementRows(id)){
+      if(!r?.taskId)continue;
+      const allowed=progressStateSetForRequirement(r);
+      constrain(r.taskId,allowed,id);
+      // complete / active / failed all imply the prerequisite task was reached,
+      // therefore its own unlock requirements had to be satisfied.
+      if([...allowed].every(x=>["complete","active","failed"].includes(x)))traverse(r.taskId);
+    }
+  }
+
+  for(const id of manualCompleted){
+    constrain(id,new Set(["complete"]),"manual");
+    traverse(id);
+  }
+  for(const id of anchorIds){
+    constrain(id,new Set(["active"]),"anchor");
+    traverse(id);
+  }
+
+  // User verification narrows ambiguous evidence.
+  for(const [id,answer] of Object.entries(answers||{})){
+    const possible=constraints.get(id);
+    if(!possible)continue;
+    if(answer==="completed"){
+      constrain(id,new Set(["complete"]),"answer");
+    }else if(answer==="not-completed"){
+      const remaining=new Set([...possible].filter(x=>x!=="complete"));
+      if(remaining.size)constraints.set(id,remaining);
+      else contradictions.push(`${taskMetaName(id)} cannot be marked unfinished with the current task evidence.`);
+    }
+  }
+
+  const proven=new Set(),current=new Set(),unavailable=new Set(),uncertain=[];
+  for(const [id,possible] of constraints){
+    if(!possible.size)continue;
+    if([...possible].every(x=>x==="complete"))proven.add(id);
+    else if(possible.size===1&&possible.has("active"))current.add(id);
+    else if(possible.size===1&&possible.has("failed"))unavailable.add(id);
+    else{
+      const canComplete=possible.has("complete");
+      const nonComplete=[...possible].filter(x=>x!=="complete");
+      uncertain.push({
+        id,possible:[...possible],canComplete,
+        binaryResolvable:canComplete&&nonComplete.length>0,
+        impact:relatedRaidImpact(id),
+        sourceCount:(sources.get(id)||new Set()).size
+      });
+    }
+  }
+
+  // Anchors are explicitly current and must never be auto-completed.
+  for(const id of anchorIds){proven.delete(id);current.add(id)}
+
+  const questions=uncertain
+    .filter(x=>x.binaryResolvable&&answers[x.id]!=="completed"&&answers[x.id]!=="not-completed"&&!quickProgressSkipped.has(x.id))
+    .sort((a,b)=>(b.impact-a.impact)||(b.sourceCount-a.sourceCount)||taskMetaName(a.id).localeCompare(taskMetaName(b.id)));
+
+  const relevantUnresolved=uncertain.filter(x=>{
+    const node=progressTaskEntry(x.id);
+    return node?.raidRelevant&&(!PROFILE.level||!node.minLevel||node.minLevel<=PROFILE.level);
+  });
+
+  const coveredRaid=new Set();
+  for(const id of new Set([...proven,...current,...unavailable])){
+    const node=progressTaskEntry(id);
+    if(node?.raidRelevant)coveredRaid.add(id);
+    const rev=progressReverseGraph(),q=[id],seen=new Set();
+    while(q.length){
+      const x=q.shift();
+      for(const dep of (rev.get(x)||[])){
+        if(seen.has(dep))continue;
+        seen.add(dep);q.push(dep);
+        const dn=progressTaskEntry(dep);
+        if(dn?.raidRelevant&&(!PROFILE.level||!dn.minLevel||dn.minLevel<=PROFILE.level))coveredRaid.add(dep);
+      }
+    }
+  }
+
+  return {
+    anchors:[...anchorIds],manualCompleted,proven,current,unavailable,
+    uncertain,questions,relevantUnresolved,coveredRaid,
+    contradictions:uniq([...quickProgressContradictions(anchorIds),...contradictions])
+  };
+}
+function renderQuickProgressAnchorSlots(){
+  const entries=quickProgressAnchorIds.map(progressTaskEntry);
+  $("progressAnchorCount").textContent=`${quickProgressAnchorIds.length} / 3 SELECTED`;
+  $("progressAnchorSlots").innerHTML=[0,1,2].map(i=>{
+    const e=entries[i];
+    if(!e)return `<div class="progressAnchorSlot">CURRENT TASK ${i+1}<br>Not selected</div>`;
+    return `<div class="progressAnchorSlot filled"><div><strong>${esc(e.name)}</strong><span>${esc(e.trader)}${e.minLevel?` · Lv ${e.minLevel}`:""}</span></div><button class="progressAnchorRemove" data-remove-progress-anchor="${esc(e.id)}" aria-label="Remove ${esc(e.name)}">×</button></div>`;
+  }).join("");
+
+  const contradictions=quickProgressContradictions(quickProgressAnchorIds);
+  const traders=uniq(entries.filter(Boolean).map(x=>clean(x.trader)).filter(x=>x&&x!=="Non-raid task"));
+  const lines=uniq(entries.filter(Boolean).map(progressLineKey));
+  let cls="",msg="";
+  if(contradictions.length){
+    cls="bad";msg=`⚠ ${contradictions[0]} Choose a different current task before analysing.`;
+  }else if(!entries.length){
+    msg="Choose a task you currently have. You can analyse with one or two, but three independent anchors normally give RaidIQ a much stronger picture.";
+  }else if(entries.length<3){
+    msg=`${entries.length} selected. Add ${3-entries.length} more current task${3-entries.length!==1?"s":""} for stronger coverage — ideally from another trader or questline.`;
+  }else if(traders.length>=2&&lines.length>=2){
+    cls="good";msg="✓ Good spread. These three anchors cover multiple progression branches and should give RaidIQ stronger inference.";
+  }else{
+    cls="warn";msg="These three tasks are closely related. RaidIQ can still analyse them, but swapping one for a different trader or questline would usually improve coverage.";
+  }
+  $("progressAnchorGuidance").className=`progressAnchorGuidance ${cls}`.trim();
+  $("progressAnchorGuidance").textContent=msg;
+  $("analyseQuickProgress").disabled=!quickProgressAnchorIds.length||contradictions.length>0;
+}
+function renderQuickProgressResults(){
+  const q=clean($("quickProgressSearch").value).toLowerCase();
+  const full=quickProgressAnchorIds.length>=3;
+  const rows=allProgressTaskEntries()
+    .filter(x=>!q||`${x.name} ${x.trader}`.toLowerCase().includes(q))
+    .slice(0,80);
+  $("quickProgressResults").innerHTML=rows.map(x=>{
+    const selected=quickProgressAnchorIds.includes(x.id);
+    const blocked=full&&!selected;
+    return `<button class="quickProgressTask ${selected?"anchorSelected":""} ${blocked?"anchorBlocked":""}" data-progress-anchor="${esc(x.id)}" ${blocked?"disabled":""}><span class="anchorAddCue">${selected?"SELECTED":blocked?"3/3":"ADD"}</span><strong>${esc(x.name)}</strong><span>${esc(x.trader)}${x.minLevel?` · Lv ${x.minLevel}`:""}${x.raidRelevant?"":" · non-raid"}</span></button>`;
+  }).join("")||'<div class="empty">No matching tasks.</div>';
+  renderQuickProgressAnchorSlots();
+}
+function renderProgressAnalysis(){
+  quickProgressAnalysis=analyseProgressEvidence(quickProgressAnchorIds,quickProgressAnswers);
+  const a=quickProgressAnalysis;
+  const autoProven=[...a.proven].filter(id=>!a.manualCompleted.has(id));
+  const unresolved=a.relevantUnresolved.length;
+
+  $("progressAnalysisSummary").innerHTML=`
+    <div class="progressAnalysisStat good"><span>Proven completed</span><b>${a.proven.size}</b></div>
+    <div class="progressAnalysisStat"><span>Current / active</span><b>${a.current.size}</b></div>
+    <div class="progressAnalysisStat warn"><span>Needs confirmation</span><b>${unresolved}</b></div>
+    <div class="progressAnalysisStat"><span>Raid tasks influenced</span><b>${a.coveredRaid.size}</b></div>`;
+
+  if(a.contradictions.length){
+    $("progressVerification").innerHTML=`<div class="progressAnchorContradiction"><strong>Progress evidence conflict</strong><br>${a.contradictions.map(esc).join("<br>")}</div>`;
+    $("applyQuickProgress").disabled=true;
+    return;
+  }
+  $("applyQuickProgress").disabled=false;
+
+  const q=a.questions[0];
+  if(q){
+    const possible=q.possible.map(x=>x==="complete"?"completed":x==="active"?"current/active":x==="failed"?"failed":x).join(" or ");
+    $("progressVerification").innerHTML=`
+      <div class="progressQuestion">
+        <div class="progressQuestionEyebrow">HIGH-VALUE CHECK // ${a.relevantUnresolved.length} RELEVANT UNCERTAINT${a.relevantUnresolved.length===1?"Y":"IES"} REMAIN</div>
+        <h3>Have you completed ${esc(taskMetaName(q.id))}?</h3>
+        <div class="progressQuestionMeta">Your three current-task anchors only prove that this quest is <b>${esc(possible)}</b>. Confirming it can affect the availability/history of <b>${q.impact}</b> related raid task${q.impact!==1?"s":""}, so RaidIQ is asking this before lower-impact uncertainties.</div>
+        <div class="progressQuestionActions">
+          <button class="btn completedChoice" data-progress-answer="completed" data-progress-question="${esc(q.id)}">YES, COMPLETED</button>
+          <button class="btn unfinishedChoice" data-progress-answer="not-completed" data-progress-question="${esc(q.id)}">NO, NOT COMPLETED</button>
+          <button class="btn ghost" data-progress-answer="unsure" data-progress-question="${esc(q.id)}">NOT SURE</button>
+        </div>
+        <div class="progressUnresolvedNote">Each answer recalculates the graph. Questions that become unnecessary disappear automatically.</div>
+      </div>`;
+    return;
+  }
+
+  const skipped=[...quickProgressSkipped].filter(id=>a.uncertain.some(x=>x.id===id));
+  const nonBinary=a.relevantUnresolved.filter(x=>!x.binaryResolvable);
+  const remaining=uniq([...skipped,...nonBinary.map(x=>x.id)]);
+  const ready=remaining.length===0;
+  $("progressVerification").innerHTML=`
+    <div class="progressReady">
+      <strong>${ready?"✓ RAID PLANNING PROGRESS VERIFIED":"PROGRESS ANALYSIS COMPLETE"}</strong>
+      <span>${ready
+        ?`RaidIQ has resolved the prerequisite uncertainty exposed by your selected current tasks. ${autoProven.length} task${autoProven.length!==1?"s":""} can be added to your completed history automatically, while your current anchors remain unfinished.`
+        :`${remaining.length} lower-certainty task state${remaining.length!==1?"s":""} remain unresolved because they were skipped or cannot be reduced safely to a completed/not-completed question. RaidIQ will leave those states unknown rather than guess.`}</span>
+    </div>
+    ${autoProven.length?`<details class="progressInferenceDetails"><summary>VIEW ${autoProven.length} PROVEN COMPLETED TASK${autoProven.length!==1?"S":""}</summary><div class="progressInferencePills">${autoProven.sort((x,y)=>taskMetaName(x).localeCompare(taskMetaName(y))).slice(0,60).map(id=>`<span class="progressInferencePill">${esc(taskMetaName(id))}</span>`).join("")}${autoProven.length>60?`<span class="progressInferencePill">+${autoProven.length-60} more</span>`:""}</div></details>`:""}`;
+}
+function openQuickProgressSetup(){
+  closeModals();
+  quickProgressAnchorIds=uniq((PROFILE.progressAnchors||[]).filter(id=>byId[id]||TASK_META[id])).slice(0,3);
+  quickProgressAnswers={...(PROFILE.progressAnswers||{})};
+  quickProgressSkipped=new Set();
+  quickProgressAnalysis=null;
+  $("quickProgressSearch").value="";
+  $("progressAnchorStage").classList.remove("hidden");
+  $("progressAnalysisStage").classList.add("hidden");
+  $("progressCompleteStage").classList.add("hidden");
+  renderQuickProgressResults();
+  $("quickProgressModal").classList.add("open");
+  requestAnimationFrame(()=>$("quickProgressSearch").focus());
+}
+function showProgressAnchorStage(){
+  $("progressAnchorStage").classList.remove("hidden");
+  $("progressAnalysisStage").classList.add("hidden");
+  $("progressCompleteStage").classList.add("hidden");
+  renderQuickProgressResults();
+}
+function showProgressAnalysisStage(){
+  $("progressAnchorStage").classList.add("hidden");
+  $("progressAnalysisStage").classList.remove("hidden");
+  $("progressCompleteStage").classList.add("hidden");
+  renderProgressAnalysis();
+}
+function showProgressCompleteStage(applied){
+  $("progressAnchorStage").classList.add("hidden");
+  $("progressAnalysisStage").classList.add("hidden");
+  $("progressCompleteStage").classList.remove("hidden");
+
+  const eligible=TASKS.filter(t=>taskAvailability(t,{includeSelectionInference:false}).state==="eligible").length;
+  const locked=TASKS.filter(t=>{
+    const s=taskAvailability(t,{includeSelectionInference:false}).state;
+    return s==="level"||s==="prereq";
+  }).length;
+  const completed=completedHistoryIds().size;
+  const anchors=(PROFILE.progressAnchors||[]).length;
+
+  $("progressCompleteStats").innerHTML=`
+    <div class="progressCompleteStat good"><span>Completed history</span><b>${completed}</b></div>
+    <div class="progressCompleteStat current"><span>Current tasks</span><b>${anchors}</b></div>
+    <div class="progressCompleteStat good"><span>Eligible now</span><b>${eligible}</b></div>
+    <div class="progressCompleteStat"><span>Locked / later</span><b>${locked}</b></div>`;
+}
+function returnToProgressManager(){
+  closeModals();
+  progressManagerMode="all";
+  $("progressSearch").value="";
+  setProgressManagerMode("all");
+  $("progressModal").classList.add("open");
+}
+function applyProgressIntelligence(){
+  const a=analyseProgressEvidence(quickProgressAnchorIds,quickProgressAnswers);
+  if(a.contradictions.length){toast("Resolve the current-task conflict first");return}
+
+  const oldAuto=new Set(PROFILE.progressAutoCompleted||[]);
+  const manual=(PROFILE.completed||[]).filter(id=>!oldAuto.has(id));
+  const auto=[...a.proven].filter(id=>!manual.includes(id)&&!quickProgressAnchorIds.includes(id));
+
+  PROFILE.completed=uniq([...manual,...auto]);
+  PROFILE.progressAutoCompleted=auto;
+  PROFILE.progressAnchors=[...quickProgressAnchorIds];
+  PROFILE.progressCurrent=uniq([...a.current].filter(id=>!quickProgressAnchorIds.includes(id)));
+  PROFILE.progressUnavailable=[...a.unavailable];
+  PROFILE.progressAnswers={...quickProgressAnswers};
+  PROFILE.progressSetupAt=new Date().toISOString();
+  PROFILE.source="manual";
+  PROFILE.enabled=true;
+  PROFILE.lastSync=new Date().toISOString();
+  saveProfile();
+
+  updateProfileUI();renderTaskList();renderPlanner();
+  showProgressCompleteStage({
+    autoCompleted:auto.length,
+    anchors:quickProgressAnchorIds.length
+  });
+  toast("PMC progress ready");
+}
+
+let progressManagerMode="all";
+
+function setProgressManagerMode(mode){
+  progressManagerMode=mode==="completed"?"completed":"all";
+  const completedMode=progressManagerMode==="completed";
+  $("progressModalTitle").textContent=completedMode?"Edit completed tasks":"Manage task progress";
+  $("editCompletedTasks").textContent=completedMode?"BACK TO ALL TASKS":"EDIT COMPLETED TASKS";
+  $("progressSearch").placeholder=completedMode?"Search completed tasks…":"Search tasks…";
+  $("quickProgressPrompt").classList.toggle("hidden",completedMode);
+  renderProgressManager();
+}
+
 function renderProgressManager(){
   if(!TASKS.length)return;
   const q=clean($("progressSearch")?.value).toLowerCase();
+  const completedMode=progressManagerMode==="completed";
+
+  $("progressModalTitle").textContent=completedMode?"Edit completed tasks":"Manage task progress";
+  $("editCompletedTasks").textContent=completedMode?"BACK TO ALL TASKS":"EDIT COMPLETED TASKS";
+
+  const hasProgressSetup=!!PROFILE.progressSetupAt&&(PROFILE.progressAnchors||[]).length>0;
+  $("quickProgressPrompt").classList.toggle("progressConfigured",hasProgressSetup);
+  $("quickProgressPromptTitle").textContent=hasProgressSetup?"Progress Intelligence active":"Quick Progress Setup";
+  $("quickProgressPromptText").textContent=hasProgressSetup
+    ?`RaidIQ is currently using ${(PROFILE.progressAnchors||[]).length} current task anchor${(PROFILE.progressAnchors||[]).length!==1?"s":""} and your verification answers to personalise eligibility and Suggested Raid.`
+    :"Select up to three quests you currently have. RaidIQ will prove safe history, identify ambiguous branches, and ask only the checks that improve your raid suggestions.";
+  $("openQuickProgress").textContent=hasProgressSetup?"UPDATE PROGRESS":"SET UP PROGRESS";
+
+  if(completedMode){
+    $("progressManagerNote").innerHTML=`<div class="completedEditNotice"><strong>Edit completed tasks</strong><br>Use <b>MARK UNFINISHED</b> to remove a saved completion. RaidIQ immediately recalculates your available task pool and suggestions. Quest-chain rules still apply, so an earlier quest may remain historical if a later quest is still marked complete.</div>`;
+
+    const completedRaidTasks=TASKS
+      .filter(t=>storedCompleted(t.id))
+      .filter(t=>!q||searchableBlob(t).includes(q))
+      .sort((a,b)=>a.name.localeCompare(b.name));
+
+    const depIds=uniq(TASKS.flatMap(t=>(t.taskRequirements||[]).map(r=>r.taskId))
+      .filter(id=>id&&!byId[id]&&TASK_META[id]&&storedCompleted(id)))
+      .filter(id=>!q||clean(TASK_META[id]?.name).toLowerCase().includes(q))
+      .sort((a,b)=>clean(TASK_META[a]?.name).localeCompare(clean(TASK_META[b]?.name)));
+
+    const raidRows=completedRaidTasks.map(t=>`<div class="progressQuest completedEditRow done">
+      <div>
+        <strong>${esc(t.name)}</strong>
+        <small>${esc(t.trader)} · ${esc(taskMaps(t).join(" / "))}${t.minLevel?` · Lv ${t.minLevel}`:""}</small>
+        <span class="questStatus statusBadge complete">✓ COMPLETE</span>
+      </div>
+      <button class="btn small undoComplete" data-toggle-complete="${esc(t.id)}">MARK UNFINISHED</button>
+    </div>`).join("");
+
+    const depRows=depIds.map(id=>{
+      const meta=TASK_META[id];
+      return `<div class="progressQuest completedEditRow done">
+        <div>
+          <strong>${esc(meta.name)}</strong>
+          <small>Non-raid prerequisite · hidden from the RaidIQ raid task library</small>
+          <span class="questStatus statusBadge complete">✓ COMPLETE</span>
+        </div>
+        <button class="btn small undoComplete" data-toggle-complete="${esc(id)}">MARK UNFINISHED</button>
+      </div>`;
+    }).join("");
+
+    $("progressQuestList").innerHTML=
+      raidRows+
+      (depRows?`<div class="reqLabel" style="margin-top:15px">COMPLETED NON-RAID PREREQUISITES</div>${depRows}`:"")
+      ||'<div class="empty">No completed tasks match your search.</div>';
+    return;
+  }
+
   const list=TASKS.filter(t=>!q||searchableBlob(t).includes(q)).sort((a,b)=>{
     const order={eligible:0,prereq:1,level:2,historical:3,completed:4};
     const av=taskAvailability(a),bv=taskAvailability(b);
     return (order[av.state]??9)-(order[bv.state]??9)||a.name.localeCompare(b.name);
   }).slice(0,300);
-  $("progressManagerNote").textContent=PROFILE.source==="tarkovtracker"
-    ?"This snapshot came from TarkovTracker. You can make local adjustments here, but the next TarkovTracker sync will replace the completion list with the tracker data."
-    :"Mark tasks complete or unfinished. Completed quests are excluded from personal recommendations.";
+
+  $("progressManagerNote").textContent="Mark tasks complete or unfinished manually. When PMC personalisation is active, completed quests are excluded from suggestions and known prerequisites are used for eligibility.";
+
   const raidRows=list.map(t=>{
-    const av=taskAvailability(t),done=av.state==="completed",historical=av.state==="historical";
+    const av=taskAvailability(t),done=storedCompleted(t.id),historical=av.state==="historical"&&!done;
+    const progressCurrent=(PROFILE.progressAnchors||[]).includes(t.id)||(PROFILE.progressCurrent||[]).includes(t.id);
     const cls=done?"done":av.state==="eligible"?"available":"locked";
-    const badgeClass=av.state==="eligible"?"available":done?"complete":historical?"historical":av.state==="prereq"?"prereq":"locked";
+    const badgeClass=done?"complete":progressCurrent?"available":av.state==="eligible"?"available":historical?"historical":av.state==="prereq"?"prereq":"locked";
+    const label=done?"Complete":progressCurrent?"Current":av.label;
     return `<div class="progressQuest ${cls}">
-      <div><strong>${esc(t.name)}</strong><small>${esc(t.trader)} · ${esc(taskMaps(t).join(" / "))}${t.minLevel?` · Lv ${t.minLevel}`:""}</small><span class="questStatus statusBadge ${badgeClass}">${esc(av.label)}</span>${av.reason?`<small>${esc(av.reason)}</small>`:""}</div>
+      <div><strong>${esc(t.name)}</strong><small>${esc(t.trader)} · ${esc(taskMaps(t).join(" / "))}${t.minLevel?` · Lv ${t.minLevel}`:""}</small><span class="questStatus statusBadge ${badgeClass}">${esc(label)}</span>${av.reason?`<small>${esc(av.reason)}</small>`:""}</div>
       <button class="btn ${done?"good":"secondary"} small" data-toggle-complete="${esc(t.id)}">${done?"✓ COMPLETE":"MARK DONE"}</button>
     </div>`;
   }).join("");
+
   const depIds=uniq(TASKS.flatMap(t=>(t.taskRequirements||[]).map(r=>r.taskId)).filter(id=>id&&!byId[id]&&TASK_META[id]));
-  const depRows=(PROFILE.source==="tarkovtracker"?[]:depIds.filter(id=>{
+  const depRows=depIds.filter(id=>{
     const n=clean(TASK_META[id]?.name);
     return !q||n.toLowerCase().includes(q);
-  })).map(id=>{
-    const meta=TASK_META[id],done=isCompleted(id);
+  }).map(id=>{
+    const meta=TASK_META[id],done=storedCompleted(id);
     return `<div class="progressQuest ${done?"done":"locked"}">
       <div><strong>${esc(meta.name)}</strong><small>Non-raid prerequisite · hidden from the RaidIQ task library</small><span class="questStatus statusBadge prereq">PREREQUISITE ONLY</span></div>
       <button class="btn ${done?"good":"secondary"} small" data-toggle-complete="${esc(id)}">${done?"✓ COMPLETE":"MARK DONE"}</button>
     </div>`;
   }).join("");
+
   $("progressQuestList").innerHTML=raidRows+(depRows?`<div class="reqLabel" style="margin-top:15px">NON-RAID PREREQUISITES</div>${depRows}`:"")||'<div class="empty">No matching tasks.</div>';
 }
 function greedyCompatible(candidates,limit=5){
   const chosen=[];
   for(const t of candidates){
     if(chosen.length>=limit)break;
-    if(!conflictList([...chosen,t]).some(c=>c.severity==="hard"))chosen.push(t);
+    if(!conflictList([...chosen,t]).some(c=>
+      c.severity==="hard" || c.kind==="weapon-review"
+    ))chosen.push(t);
   }
   return chosen;
 }
+
+const MAP_DIFFICULTY={
+  "Ground Zero":{tier:"Easy",weight:1.25},
+  "Reserve":{tier:"Hard",weight:.68},
+  "Interchange":{tier:"Hard",weight:.68},
+  "Streets of Tarkov":{tier:"Hard",weight:.68},
+  "Streets":{tier:"Hard",weight:.68},
+  "Lighthouse":{tier:"Hard",weight:.68},
+  "The Lab":{tier:"Ultra",weight:.38},
+  "Labs":{tier:"Ultra",weight:.38},
+  "The Labyrinth":{tier:"Ultra",weight:.38},
+  "Labyrinth":{tier:"Ultra",weight:.38},
+  "Icebreaker":{tier:"Ultra",weight:.38}
+};
+function mapDifficulty(map){return MAP_DIFFICULTY[map]||{tier:"Medium",weight:1}}
+function recommendationScore({candidates,chosen,mapObjectivesTotal,soft,map}){
+  const d=mapDifficulty(map);
+  const productivity=(chosen.length*20)+(Math.min(mapObjectivesTotal,12)*2)+Math.min(candidates.length,10);
+  return (productivity*d.weight)-(soft*2);
+}
 function personalRaidRecommendation(){
   if(!hasProfile())return null;
-  const eligible=TASKS.filter(t=>taskAvailability(t).state==="eligible"&&t.raidClass==="MAP_BOUND");
+  const eligible=TASKS.filter(t=>eligibleForSuggestions(t)&&t.raidClass==="MAP_BOUND");
   const maps=uniq(eligible.flatMap(t=>t.mapBoundMaps||taskMaps(t))).filter(m=>m!=="Any");
-  let best=null;
+  const ranked=[];
   for(const map of maps){
     const candidates=eligible.filter(t=>taskRequiresMap(t,map)).sort((a,b)=>{
       const d=mapObjectives(b,map).length-mapObjectives(a,map).length;
@@ -1159,83 +2353,144 @@ function personalRaidRecommendation(){
     const chosen=greedyCompatible(candidates,5);
     if(!chosen.length)continue;
     const mapObjectivesTotal=mapObjectiveCount(chosen,map);
-    const soft=conflictList(chosen).filter(c=>c.severity==="soft").length;
-    const score=chosen.length*1000+mapObjectivesTotal*100-soft;
-    if(!best||score>best.score)best={map,candidates,chosen,mapObjectivesTotal,soft,score};
+    const conflicts=conflictList(chosen);
+    const hard=conflicts.filter(c=>c.severity==="hard").length;
+    const soft=conflicts.filter(c=>c.severity==="soft").length;
+    const difficulty=mapDifficulty(map);
+    const score=recommendationScore({candidates,chosen,mapObjectivesTotal,soft,map});
+    ranked.push({map,candidates,chosen,mapObjectivesTotal,hard,soft,difficulty,score});
   }
-  return best;
+  ranked.sort((a,b)=>b.score-a.score||b.mapObjectivesTotal-a.mapObjectivesTotal||a.map.localeCompare(b.map));
+  if(!ranked.length)return null;
+  return {...ranked[0],runnerUp:ranked[1]||null,eligibleTaskPool:eligible.length};
 }
 function renderPersonalRaid(){
   const rec=personalRaidRecommendation();
   if(!rec){$("personalRaid").classList.add("hidden");return}
-  $("personalRaidMap").textContent=rec.map;
+  const cls=rec.difficulty.tier.toLowerCase();
+  $("personalRaidMap").innerHTML=`${esc(rec.map)} <span class="difficultyBadge ${cls}">${esc(rec.difficulty.tier)} map</span>`;
   $("personalRaidActionTitle").textContent=`Build the suggested ${rec.map} raid`;
-  $("personalRaidText").innerHTML=`<b>${esc(rec.map)} is RaidIQ's strongest current raid suggestion.</b> ${rec.candidates.length} available task${rec.candidates.length!==1?"s":""} specifically require the map. This suggested build combines <b>${rec.chosen.length}</b> of them and covers <b>${rec.mapObjectivesTotal}</b> map-specific objective${rec.mapObjectivesTotal!==1?"s":""}.${rec.soft?` It carries ${rec.soft} loadout warning${rec.soft!==1?"s":""} for review.`:" There are no loadout warnings in the suggested combination."}`;
-  $("personalWhy").innerHTML=`<div class="whyRaidItem"><span>Available here</span><b>${rec.candidates.length}</b></div><div class="whyRaidItem"><span>Tasks in build</span><b>${rec.chosen.length}</b></div><div class="whyRaidItem"><span>Objectives covered</span><b>${rec.mapObjectivesTotal}</b></div><div class="whyRaidItem"><span>Warnings</span><b>${rec.soft}</b></div>`;
+  $("personalRaidText").innerHTML=`<b>${esc(rec.map)} is RaidIQ's strongest current raid suggestion.</b> It gives you ${rec.mapObjectivesTotal} map-specific objective${rec.mapObjectivesTotal!==1?"s":""} across ${rec.chosen.length} compatible task${rec.chosen.length!==1?"s":""}, while applying the ${esc(rec.difficulty.tier.toLowerCase())}-map difficulty weighting.${rec.soft?` ${rec.soft} loadout review${rec.soft!==1?"s":""} remains.`:" No loadout conflicts were found."}`;
+  $("personalWhy").innerHTML=`<div class="whyRaidItem"><span>Available here</span><b>${rec.candidates.length}</b></div><div class="whyRaidItem"><span>Tasks in build</span><b>${rec.chosen.length}</b></div><div class="whyRaidItem"><span>Objectives covered</span><b>${rec.mapObjectivesTotal}</b></div><div class="whyRaidItem difficulty"><span>Map difficulty</span><b class="${cls}">${esc(rec.difficulty.tier)}</b></div>`;
+  const runner=rec.runnerUp;
+  $("personalReasoning").innerHTML=`<strong>Why ${esc(rec.map)}?</strong> RaidIQ compared ${rec.eligibleTaskPool} eligible map-bound task${rec.eligibleTaskPool!==1?"s":""} across your available maps, prioritising compatible objective coverage while penalising harder maps and loadout warnings.${runner?`<div class="reasonCompare altRaidOption"><div class="altRaidOptionText">Next best: <b>${esc(runner.map)}</b> · ${runner.mapObjectivesTotal} objectives · ${esc(runner.difficulty.tier)} difficulty${runner.soft?` · ${runner.soft} review${runner.soft!==1?"s":""}`:" · clean loadout"}.</div><button class="btn ghost small altRaidBtn" data-alt-suggested-map="${esc(runner.map)}" data-alt-suggested-tasks="${esc(runner.chosen.map(t=>t.id).join(","))}">BUILD ${esc(runner.map.toUpperCase())} RAID</button></div>`:""}${DATA_QA?.status==="pass"?`<div class="reasonCompare">Dataset status: <b>automated QA passed</b>${DATA_QA.checkCount?` · ${DATA_QA.checkCount} checks`:""}.</div>`:""}`;
   $("personalTaskNames").innerHTML=rec.chosen.map(t=>`<span class="personalTaskName">${esc(t.name)} · ${mapObjectives(t,rec.map).length} obj</span>`).join("");
   $("buildPersonalRaid").dataset.map=rec.map;
   $("buildPersonalRaid").dataset.tasks=rec.chosen.map(t=>t.id).join(",");
   $("personalRaid").classList.remove("hidden");
 }
-function applyTrackerProgress(payload){
-  const d=payload?.data||{};
-  const p=Array.isArray(d.tasksProgress)?d.tasksProgress:[];
-  PROFILE.pmcName=clean(d.displayName||PROFILE.pmcName||"");
-  PROFILE.level=Number(d.playerLevel)||PROFILE.level||0;
-  PROFILE.faction=clean(d.pmcFaction||PROFILE.faction||"");
-  PROFILE.gameEdition=d.gameEdition??PROFILE.gameEdition??null;
-  PROFILE.gameMode=clean(payload?.meta?.gameMode||d.gameMode||PROFILE.gameMode||"");
-  PROFILE.completed=uniq(p.filter(x=>x?.complete===true && x?.invalid!==true).map(x=>clean(x.id)).filter(Boolean));
-  PROFILE.failed=uniq(p.filter(x=>x?.failed===true && x?.invalid!==true).map(x=>clean(x.id)).filter(Boolean));
-  PROFILE.source="tarkovtracker";
-  PROFILE.lastSync=new Date().toISOString();
-  saveProfile();
-}
-async function syncTarkovTracker(token,{remember=false,silent=false}={}){
-  token=clean(token||getTrackerToken());
-  if(!validTrackerToken(token)){
-    if(!silent){$("trackerError").textContent="That does not look like a current TarkovTracker Progress API token. It should begin PVP_, PVE_ or SZN_.";$("trackerError").classList.remove("hidden")}
-    throw new Error("invalid-token");
-  }
-  if(!silent){
-    $("trackerError").classList.add("hidden");$("trackerWorking").classList.remove("hidden");$("confirmTracker").disabled=true;
-  }
-  try{
-    const r=await fetch("/.netlify/functions/tarkovtracker-progress",{
-      method:"POST",headers:{"content-type":"application/json"},
-      body:JSON.stringify({token})
-    });
-    let j={};try{j=await r.json()}catch(e){}
-    if(!r.ok||!j?.success)throw new Error(j?.error||`Sync failed (${r.status})`);
-    saveTrackerToken(token,remember);
-    applyTrackerProgress(j);
-    closeModals();updateProfileUI();renderTaskList();renderPlanner();
-    toast("TarkovTracker progress synced");
-    return true;
-  }catch(e){
-    if(!silent){
-      $("trackerError").textContent=e.message==="Failed to fetch"
-        ?"RaidIQ's TarkovTracker sync endpoint is unavailable in this preview. It will work after the Netlify function is deployed."
-        :(e.message||"TarkovTracker sync failed.");
-      $("trackerError").classList.remove("hidden");
-    }
-    throw e;
-  }finally{
-    if(!silent){$("trackerWorking").classList.add("hidden");$("confirmTracker").disabled=false}
-  }
-}
-async function maybeAutoSync(){
-  const token=getTrackerToken();
-  if(!token||PROFILE.source!=="tarkovtracker")return;
-  const last=PROFILE.lastSync?Date.parse(PROFILE.lastSync):0;
-  if(Date.now()-last<15*60*1000)return;
-  try{await syncTarkovTracker(token,{remember:!!safeLocal()?.getItem(trackerRememberKey),silent:true})}catch(e){}
-}
-
-
 function loadChecks(){try{return JSON.parse(store()?.getItem(checkStoreKey)||"{}")||{}}catch(e){return {}}}
 function saveChecks(obj){try{store()?.setItem(checkStoreKey,JSON.stringify(obj))}catch(e){}}
 function checkId(kind,taskId,index,name=""){return `${activeMap||"none"}|${kind}|${taskId||""}|${index}|${name}`}
+function objectiveCheckSuffix(taskId,index,name=""){
+  return `|objective|${taskId||""}|${index}|${name}`;
+}
+function objectiveDoneAnywhere(taskId,index,name,checks=loadChecks()){
+  const suffix=objectiveCheckSuffix(taskId,index,name);
+  return Object.entries(checks).some(([k,v])=>!!v&&k.endsWith(suffix));
+}
+function isHandInObjective(text){
+  return /\b(?:hand over|turn in|give|deliver)\b/i.test(clean(text));
+}
+
+function raidObjectivesForCompletion(t){
+  const details=objectiveDetails(t);
+  return (t.objectives||[]).map((text,index)=>{
+    const d=details.find(x=>x.text===text);
+    const raidRequired=d?d.raidRequired!==false:true;
+    return {text,index,raidRequired};
+  }).filter(x=>x.raidRequired);
+}
+function taskReadyToHandIn(t,checks=loadChecks()){
+  if(!t||storedCompleted(t.id))return false;
+  const objectives=raidObjectivesForCompletion(t);
+  if(!objectives.length)return false;
+  return objectives.every(o=>objectiveDoneAnywhere(t.id,o.index,o.text,checks));
+}
+function handInMarkup(t,checks=loadChecks()){
+  if(!taskReadyToHandIn(t,checks))return "";
+  return `<div class="handInWrap" data-hand-in-wrap="${esc(t.id)}"><div><strong>Raid objectives complete</strong><span>Hand the task in to mark it completed on this device and remove its raid requirements.</span></div><button class="btn good" data-hand-in-task="${esc(t.id)}">HAND IN TASK</button></div>`;
+}
+function refreshHandInControl(taskId){
+  const t=byId[taskId],host=document.querySelector(`[data-task-hand-in="${CSS.escape(taskId)}"]`);
+  if(!t||!host)return;
+  host.innerHTML=handInMarkup(t);
+}
+
+
+function loadSavedRaid(){
+  try{
+    const saved=JSON.parse(store()?.getItem(activeRaidStoreKey)||"null");
+    if(!saved||!saved.map||!Array.isArray(saved.tasks)||!saved.tasks.length)return null;
+    return saved;
+  }catch(e){return null}
+}
+function clearSavedRaid(){
+  try{store()?.removeItem(activeRaidStoreKey)}catch(e){}
+  renderResumeRaidCard();
+}
+function savedRaidProgress(saved){
+  const checks=loadChecks();
+  let total=0,done=0;
+  for(const id of saved.tasks||[]){
+    const t=byId[id];
+    if(!t||storedCompleted(id))continue;
+    for(const [i,o] of (t.objectives||[]).entries()){
+      const d=objectiveDetails(t).find(x=>x.text===o);
+      const relevant=d?.raidClass==="ANY_RAID"||(d?.raidClass==="MAP_BOUND"&&(d.maps||[]).includes(saved.map));
+      if(!relevant)continue;
+      total++;
+      if(objectiveDoneAnywhere(t.id,i,o,checks))done++;
+    }
+  }
+  return {total,done,pct:total?Math.round(done/total*100):100};
+}
+function persistActiveRaid(){
+  if(!activeMap||!raidTasks().length)return;
+  const payload={version:1,map:activeMap,tasks:raidTasks().map(t=>t.id),updatedAt:new Date().toISOString()};
+  try{store()?.setItem(activeRaidStoreKey,JSON.stringify(payload))}catch(e){}
+  renderResumeRaidCard();
+}
+function renderResumeRaidCard(){
+  const card=$("resumeRaid");
+  if(!card||isRaidViewActive()){card?.classList.add("hidden");return}
+  const saved=loadSavedRaid();
+  if(!saved){card.classList.add("hidden");return}
+  const valid=saved.tasks.filter(id=>byId[id]);
+  if(!valid.length){
+    try{store()?.removeItem(activeRaidStoreKey)}catch(e){}
+    card.classList.add("hidden");
+    return;
+  }
+  const p=savedRaidProgress({...saved,tasks:valid});
+  $("resumeRaidMap").textContent=`Resume ${saved.map}`;
+  $("resumeRaidMeta").textContent=`${valid.length} saved task${valid.length!==1?"s":""}${saved.updatedAt?` · saved ${new Date(saved.updatedAt).toLocaleString("en-GB")}`:""}`;
+  $("resumeRaidProgress").innerHTML=`<div class="resumeRaidProgressHead"><span>OBJECTIVE PROGRESS</span><b>${p.done}/${p.total} · ${p.pct}%</b></div><div class="resumeRaidTrack"><div class="resumeRaidFill" style="width:${p.pct}%"></div></div>`;
+  card.classList.remove("hidden");
+}
+function resumeSavedRaid(){
+  const saved=loadSavedRaid();
+  if(!saved)return;
+  selected.clear();
+  saved.tasks.forEach(id=>{if(byId[id])selected.add(id)});
+  renderPlanner();
+  if(selected.size)buildRaid(saved.map);
+  else clearSavedRaid();
+}
+function clearRaidHash(){
+  if(location.hash.startsWith("#raid="))history.replaceState(null,"",location.pathname+location.search);
+}
+function onboardingSeen(){
+  try{return store()?.getItem(onboardingStoreKey)==="1"}catch(e){return false}
+}
+function completeOnboarding(){
+  try{store()?.setItem(onboardingStoreKey,"1")}catch(e){}
+  $("onboardingModal").classList.remove("open");
+}
+function maybeShowOnboarding(){
+  if(onboardingSeen()||isRaidViewActive()||loadSavedRaid()||location.hash.startsWith("#raid="))return;
+  $("onboardingModal").classList.add("open");
+}
 
 function toast(msg){
   const el=$("toast");el.textContent=msg;el.classList.add("show");
@@ -1249,7 +2504,7 @@ async function loadData(){
       if(!r.ok)continue;
       const j=await r.json();
       if(j&&Array.isArray(j.tasks)&&j.tasks.length){
-        setData(j.tasks,j.generatedAt,"live",j.dependencyCatalog||{});
+        setData(j.tasks,j.generatedAt,"live",j.dependencyCatalog||{},j.qa||{});
         return;
       }
     }catch(e){}
@@ -1261,20 +2516,25 @@ async function loadData(){
   $("taskList").innerHTML='<div class="empty">Task data could not be loaded.</div>';
   $("statTasks").textContent="—";
 }
-function setData(tasks,updated,sourceMode,dependencyCatalog={}){
+function setData(tasks,updated,sourceMode,dependencyCatalog={},qa={}){
   TASKS=tasks.filter(Boolean).map(normaliseClientTask).filter(t=>t.raidRelevant);
   byId=Object.fromEntries(TASKS.map(t=>[t.id,t]));
   TASK_META=dependencyCatalog||{};
+  DATA_QA=qa||{};
   generatedAt=updated||null;
   $("dataDot").className=`dot ${sourceMode==="live"?"ok":"bad"}`;
-  $("dataLabel").textContent=sourceMode==="live"?`Wiki-validated · ${TASKS.length} tasks`:`Concept demo · ${TASKS.length} tasks`;
+    const qaLabel=DATA_QA?.status==="pass"?" · QA passed":DATA_QA?.status==="review"?" · QA review":"";
+  $("dataLabel").textContent=sourceMode==="live"?`Wiki-validated · ${TASKS.length} tasks${qaLabel}`:`Concept demo · ${TASKS.length} tasks`;
   $("statTasks").textContent=TASKS.length;
   $("statMaps").textContent=uniq(TASKS.flatMap(taskMaps)).filter(x=>x!=="Any").length;
   $("dataNotice").className=`notice dataMetaNotice${sourceMode==="live"?"":" bad"}`;
   $("dataNotice").innerHTML=sourceMode==="live"
-    ?`<span>●</span><span>Task data updated <b>${esc(new Date(generatedAt).toLocaleString("en-GB",{day:"2-digit",month:"short",year:"numeric",hour:"2-digit",minute:"2-digit"}))}</b> · Wiki-validated</span>`
+    ?`<span>●</span><span>Task data updated <b>${esc(new Date(generatedAt).toLocaleString("en-GB",{day:"2-digit",month:"short",year:"numeric",hour:"2-digit",minute:"2-digit"}))}</b> · Wiki-validated${DATA_QA?.status==="pass"?` · <b class="qaPass">QA passed${DATA_QA.checkCount?` (${DATA_QA.checkCount} checks)`:""}</b>`:DATA_QA?.status==="review"?` · <b class="qaReview">QA review</b>`:""}</span>`
     :`<span>!</span><span>Live task data unavailable · local fallback in use</span>`;
-  buildFilters();updateProfileUI();renderTaskList();renderPlanner();restoreSharedPlan();maybeAutoSync();
+  buildFilters();updateProfileUI();renderTaskList();renderPlanner();
+  const restoredShared=restoreSharedPlan();
+  if(!restoredShared)renderResumeRaidCard();
+  maybeShowOnboarding();
 }
 
 function buildFilters(){
@@ -1288,7 +2548,7 @@ function buildFilters(){
 function searchableBlob(t){
   return [
     t.name,t.trader,t.type,...taskMaps(t),...(t.objectives||[]),
-    ...(t.requirements||[]).flatMap(r=>[r.name,r.kind,r.slot]),
+    ...taskRequirementsForPlanning(t,null).flatMap(r=>[r.name,r.kind,r.slot]),
     ...(t.restrictions||[]).flatMap(r=>[r.name,r.kind,r.slot]),
     ...(t.fir||[]).flatMap(f=>[f.name,"found in raid","fir"])
   ].join(" ").toLowerCase();
@@ -1320,12 +2580,15 @@ function resetRaidPlanning(){
   document.querySelectorAll(".modeBtn").forEach(btn=>btn.classList.toggle("active",btn.dataset.mode==="tasks"));
   $("summary").classList.add("hidden");
   $("planner").classList.remove("hidden");
+  ["compatibleSection","anyRaidSection","raidCompatible","raidAnyRaid"].forEach(id=>setSuggestionCollapsed(id,true));
   closeTaskDrawer();
   updateSidebarMode();
   renderTaskList();
+  clearSavedRaid();
+  clearRaidHash();
   renderPlanner();
+  renderResumeRaidCard();
   window.scrollTo({top:0,behavior:"smooth"});
-  writeShareHash(false);
 }
 
 function updateSidebarMode(){
@@ -1469,6 +2732,7 @@ function showPlannerMobile(){
   $("planner").classList.remove("hidden");
   updateSidebarMode();
   renderTaskList();
+  renderResumeRaidCard();
   window.scrollTo({top:0,behavior:"smooth"});
   updateMobileNav();
 }
@@ -1563,43 +2827,69 @@ function renderMapPlan(){
   $("mapTaskSuggestions").innerHTML=`<div class="sectionTitle"><div><h3>${esc(mapPlanSelection)} map-specific tasks</h3><div class="muted" style="font-size:11px;margin-top:3px">${tasks.length} shown · only tasks that specifically require ${esc(mapPlanSelection)}</div></div><button class="btn secondary small" data-add-map-selection="${esc(mapPlanSelection)}">ADD ALL SHOWN</button></div>
     <div class="compatList">${tasks.map(t=>`<div class="compatTask"><div><strong>${esc(t.name)}</strong><small>${esc(t.trader)}<span class="objectiveReason"><b>${esc(mapPlanSelection)}:</b> ${esc(relevantObjectiveText(t,mapPlanSelection))}</span></small></div><button class="btn ${selected.has(t.id)?"good":"secondary"} small" data-map-add-task="${esc(t.id)}">${selected.has(t.id)?"✓ ADDED":"ADD"}</button></div>`).join("")}</div>`;
 }
+function setSuggestionCollapsed(id,collapsed=true){
+  const sec=$(id);
+  if(!sec)return;
+  sec.classList.toggle("collapsed",collapsed);
+  const toggle=sec.querySelector("[data-suggestion-toggle]");
+  if(toggle)toggle.setAttribute("aria-expanded",collapsed?"false":"true");
+}
+function collapseRaidSuggestionSections(){
+  ["raidCompatible","raidAnyRaid"].forEach(id=>setSuggestionCollapsed(id,true));
+}
+function suggestionCountText(n){
+  return `${Math.min(6,n)} SUGGESTION${Math.min(6,n)===1?"":"S"}`;
+}
+
 function renderCompatiblePlanner(list,maps,forcedMap){
   const map=forcedMap||maps.filter(([m])=>m!=="Any")[0]?.[0];
   const sec=$("compatibleSection");
-  if(!map||!list.length){sec.classList.add("hidden");renderAnyRaidIQner(null);return}
+  if(!map||!list.length){sec.classList.add("hidden");renderAnyRaidIQner(null,[]);return}
   const included=list.filter(t=>taskRequiresMap(t,map)||t.raidClass==="ANY_RAID");
   const compat=findCompatible(map,included).slice(0,6);
   if(!compat.length)sec.classList.add("hidden");
   else{
     sec.dataset.map=map;
     $("compatibleList").innerHTML=compat.map(t=>compatibleRow(t,map)).join("");
-    $("addAllCompatible").textContent=`ADD ${compat.length} COMPATIBLE`;
+    $("compatibleSuggestionCount").textContent=suggestionCountText(compat.length);
+    $("addAllCompatible").textContent=`ADD ${compat.length}`;
     sec.classList.remove("hidden");
   }
-  renderAnyRaidIQner(map);
+  renderAnyRaidIQner(map,included);
 }
 function compatibleRow(t,map){
-  const req=(t.requirements||[]).map(r=>r.name).filter(Boolean).slice(0,2).join(", ");
+  const req=taskRequirementsForPlanning(t,map).map(r=>r.name).filter(Boolean).slice(0,2).join(", ");
   const av=taskAvailability(t);
   return `<div class="compatTask"><div><strong>${esc(t.name)}</strong><small>${esc(t.trader)} · ${hasProfile()?esc(av.label):"Unfinished"}<span class="objectiveReason"><b>${esc(map)}:</b> ${esc(relevantObjectiveText(t,map))}</span>${req?`<span class="objectiveReason">Bring: ${esc(req)}</span>`:""}</small></div><div style="display:flex;gap:7px;align-items:center"><span class="compatScore">MAP-SPECIFIC</span><button class="btn secondary small" data-add-compatible="${esc(t.id)}">ADD</button></div></div>`;
 }
-function findAnyRaidOpportunities(){
+function findAnyRaidOpportunities(baseTasks=[],map=activeMap){
   const historical=planningHistoricalIds();
+  const base=baseTasks||[];
   return TASKS.filter(t=>{
     if(selected.has(t.id)||historical.has(t.id))return false;
     if(t.raidClass!=="ANY_RAID")return false;
-    return eligibleForSuggestions(t);
-  }).sort((a,b)=>anyRaidObjectives(b).length-anyRaidObjectives(a).length||a.name.localeCompare(b.name));
+    if(!eligibleForSuggestions(t))return false;
+    // "Any raid" does not mean "any loadout". Keep the suggestion aligned to
+    // the raid the player has already built.
+    return !conflictList([...base,t]).some(c=>
+      c.severity==="hard" || c.kind==="weapon-review"
+    );
+  }).sort((a,b)=>{
+    const scoreDiff=logicalSuggestionScore(b,map,base,{anyRaid:true})-logicalSuggestionScore(a,map,base,{anyRaid:true});
+    if(scoreDiff)return scoreDiff;
+    return anyRaidObjectives(b).length-anyRaidObjectives(a).length||a.name.localeCompare(b.name);
+  });
 }
 function anyRaidRow(t){
   const objs=anyRaidObjectives(t);
   return `<div class="anyRaidTask"><div><strong>${esc(t.name)}</strong><small>${esc(t.trader)}<span class="objectiveReason">${esc(objs[0]?.text||"Can progress in any raid")}</span></small></div><div style="display:flex;gap:7px;align-items:center"><span class="anyRaidBadge">ANY RAID</span><button class="btn ghost small" data-add-anyraid="${esc(t.id)}">ADD</button></div></div>`;
 }
-function renderAnyRaidIQner(map){
+function renderAnyRaidIQner(map,baseTasks=[]){
   const sec=$("anyRaidSection");
   if(!map){sec.classList.add("hidden");return}
-  const items=findAnyRaidOpportunities().slice(0,5);
+  const items=findAnyRaidOpportunities(baseTasks,map).slice(0,6);
   if(!items.length){sec.classList.add("hidden");return}
+  $("anyRaidSuggestionCount").textContent=suggestionCountText(items.length);
   $("anyRaidList").innerHTML=items.map(anyRaidRow).join("");
   sec.classList.remove("hidden");
 }
@@ -1633,9 +2923,93 @@ function effectiveTaskRequirementQty(t,r){
   // Never reduce a structured quantity; use objective count only when it proves more are needed.
   return Math.max(structured,matching||1);
 }
+function tidyObjectiveWeaponPhrase(value){
+  let s=clean(value)
+    .replace(/^[\s,:;–—-]+|[\s,:;.!–—-]+$/g,"")
+    .replace(/^and\s+/i,"")
+    .replace(/^(?:an?|the|any)\s+/i,"")
+    .replace(/\s+/g," ");
+  s=s.replace(/\s+(?:on|at|in)\s+(?:Ground Zero|Streets(?: of Tarkov)?|The Labyrinth|Labyrinth|The Lab|Labs|Factory|Customs|Shoreline|Reserve|Woods|Interchange|Lighthouse|Icebreaker)\b.*$/i,"");
+  return s.trim();
+}
+function looksLikeObjectiveWeapon(value){
+  const s=clean(value);
+  return /\b(?:weapon|weapons|rifle|rifles|shotgun|shotguns|pistol|pistols|handgun|handguns|smg|smgs|submachine gun|carbine|carbines|sniper rifle|assault rifle|marksman rifle|machine gun|light machine gun|akm|ak-?\d|aks-?\d|svd|svds|sv-?\d|m4a1|m16|hk416|adar|mosin|tkpd|mp-?\d|vpo-?\d|saiga|rsass|suppressed)\b/i.test(s)
+    || /\b\d+(?:\.\d+)?\s*[x×]\s*\d+(?:\.\d+)?(?:r)?\s*(?:mm)?\b/i.test(s)
+    || /\b\d+\.\d+\s+UN\s+weapons?\b/i.test(s);
+}
+function inferWeaponPhrasesFromObjective(value){
+  const text=clean(value),out=[];
+  const using=text.match(/\b(?:while\s+)?using\s+(.+)$/i);
+  if(using){
+    for(const part of using[1].split(/\s*,\s*|\s+\band\b\s+/i)){
+      const p=tidyObjectiveWeaponPhrase(part);
+      if(looksLikeObjectiveWeapon(p))out.push(p);
+    }
+  }
+
+  const patterns=[
+    /\b(?:with|using|wielding|armed with)\s+(?:an?|the|any)?\s*([^,.;]+?(?:weapon(?:s)?|rifle(?:s)?|shotgun(?:s)?|pistol(?:s)?|handgun(?:s)?|smg(?:s)?|submachine gun(?:s)?|carbine(?:s)?|sniper rifle(?:s)?|assault rifle(?:s)?|marksman rifle(?:s)?|machine gun(?:s)?))(?=\s+(?:on|at|in|from|while|during)\b|[,.;]|$)/ig,
+    /\bwith\s+([^,.;]*?\b\d+(?:\.\d+)?\s*[x×]\s*\d+(?:\.\d+)?(?:r)?\s*(?:mm)?\b[^,.;]*?(?:weapon(?:s)?|rifle(?:s)?|carbine(?:s)?))(?=\s+(?:on|at|in|from|while|during)\b|[,.;]|$)/ig
+  ];
+  for(const rx of patterns){
+    let m;
+    while((m=rx.exec(text))){
+      const p=tidyObjectiveWeaponPhrase(m[1]);
+      if(looksLikeObjectiveWeapon(p))out.push(p);
+    }
+  }
+
+  const specials=[
+    /\bAKM series weapon\b/i,
+    /\bAKS-?74U series assault rifle\b/i,
+    /\bAK-?74 series (?:weapon|assault rifle)\b/i,
+    /\b5\.56\s+UN weapons?\b/i,
+    /\b9[x×]39mm caliber weapons?\b/i,
+    /\b7\.62[x×]39mm caliber weapons?\b/i,
+    /\b7\.62[x×]54Rmm? caliber weapons?\b/i
+  ];
+  for(const rx of specials){
+    const m=text.match(rx);
+    if(m)out.push(tidyObjectiveWeaponPhrase(m[0]));
+  }
+  return uniq(out);
+}
+function raidRelevantObjectiveTexts(t,map=activeMap){
+  const details=objectiveDetails(t);
+  if(!details.length)return (t.objectives||[]).map(clean).filter(Boolean);
+  if(!map)return details.filter(o=>o.raidRequired!==false).map(o=>clean(o.text)).filter(Boolean);
+  return details.filter(o=>
+    o.raidClass==="ANY_RAID" ||
+    (o.raidClass==="MAP_BOUND"&&(o.maps||[]).includes(map))
+  ).map(o=>clean(o.text)).filter(Boolean);
+}
+function inferredWeaponRequirements(t,map=activeMap){
+  const out=[];
+  for(const text of raidRelevantObjectiveTexts(t,map)){
+    for(const name of inferWeaponPhrasesFromObjective(text)){
+      out.push({kind:"gear",name,qty:1,slot:"weapon",itemId:"",sourceObjective:text,inferred:true});
+    }
+  }
+  return out;
+}
+function taskRequirementsForPlanning(t,map=activeMap){
+  const records=[
+    ...(t.requirements||[]).map(r=>({...r})),
+    ...inferredWeaponRequirements(t,map)
+  ];
+  const merged=new Map();
+  for(const r of records){
+    const k=reqKey(r).toLowerCase(),prev=merged.get(k);
+    if(!prev)merged.set(k,{...r});
+    else if(r.kind==="gear")prev.qty=Math.max(Number(prev.qty)||1,Number(r.qty)||1);
+  }
+  return [...merged.values()];
+}
+
 function aggregateReq(list){
   const map=new Map();
-  for(const t of list)for(const r of (t.requirements||[])){
+  for(const t of list)for(const r of taskRequirementsForPlanning(t,activeMap)){
     const qty=effectiveTaskRequirementQty(t,r);
     const k=reqKey(r),prev=map.get(k);
     if(prev){
@@ -1649,14 +3023,236 @@ function aggregateReq(list){
   return [...map.values()];
 }
 
+function normaliseWeaponRequirementName(value){
+  return clean(value).toLowerCase()
+    .replace(/[()]/g," ")
+    .replace(/[–—]/g,"-")
+    .replace(/\s+/g," ").trim();
+}
+const WEAPON_PROFILES={
+  "akm":{caliber:"762x39",classes:["assault"]},
+  "akmn":{caliber:"762x39",classes:["assault"]},
+  "akms":{caliber:"762x39",classes:["assault"]},
+  "akmsn":{caliber:"762x39",classes:["assault"]},
+  "ak103":{caliber:"762x39",classes:["assault"]},
+  "ak104":{caliber:"762x39",classes:["assault"]},
+  "ak74":{caliber:"545x39",classes:["assault"]},
+  "ak74n":{caliber:"545x39",classes:["assault"]},
+  "aks74":{caliber:"545x39",classes:["assault"]},
+  "aks74n":{caliber:"545x39",classes:["assault"]},
+  "aks74u":{caliber:"545x39",classes:["assault"]},
+  "aks74ub":{caliber:"545x39",classes:["assault"]},
+  "aks74un":{caliber:"545x39",classes:["assault"]},
+  "ak105":{caliber:"545x39",classes:["assault"]},
+  "m4a1":{caliber:"556x45",classes:["assault"]},
+  "m16":{caliber:"556x45",classes:["assault"]},
+  "adar":{caliber:"556x45",classes:["carbine"]},
+  "hk416":{caliber:"556x45",classes:["assault"]},
+  "ak101":{caliber:"556x45",classes:["assault"]},
+  "ak102":{caliber:"556x45",classes:["assault"]},
+  "svd":{caliber:"762x54r",classes:["marksman"]},
+  "svds":{caliber:"762x54r",classes:["marksman"]},
+  "mosin":{caliber:"762x54r",classes:["bolt"]},
+  "sv98":{caliber:"762x54r",classes:["bolt"]},
+  "tkpd":{caliber:"93x64",classes:["carbine"]},
+  "mp153":{caliber:"12g",classes:["shotgun"]},
+  "mp155":{caliber:"12g",classes:["shotgun"]},
+  "m870":{caliber:"12g",classes:["shotgun"]},
+  "saiga12":{caliber:"12g",classes:["shotgun"]},
+  "mp133":{caliber:"12g",classes:["shotgun"]}
+};
+function weaponConstraint(value){
+  const s=normaliseWeaponRequirementName(value);
+  const c={raw:value,families:null,calibers:new Set(),classes:new Set(),modifierOnly:false,known:false};
+
+  // Modifier-only restrictions can normally be layered onto another weapon requirement.
+  if(/\b(?:suppressed|silenced) (?:weapon|weapons|firearm|firearms)\b/.test(s)){
+    c.modifierOnly=true;c.known=true;return c;
+  }
+  if(/\bany (?:weapon|weapons|firearm|firearms)\b/.test(s)){
+    c.known=true;return c;
+  }
+
+  const familySets=[];
+  if(/\bakm(?: |-)?series\b/.test(s)){
+    familySets.push(["akm","akmn","akms","akmsn","ak103","ak104"]);
+  }
+  if(/\bak-?74(?: |-)?series\b|\baks-?74(?:u)?(?: |-)?series\b/.test(s)){
+    familySets.push(["ak74","ak74n","aks74","aks74n","aks74u","aks74ub","aks74un","ak105"]);
+  }
+  if(/\b5\.?56\b.*\bun\b|\bun\b.*\b5\.?56\b|\bm4a1\s*(?:\/|or)\s*m16\b/.test(s)){
+    familySets.push(["m4a1","m16"]);
+  }
+  if(/\bsvd(?:s)?(?: |-)?series\b/.test(s))familySets.push(["svd","svds"]);
+
+  const exactPatterns=[
+    [/\bm4a1\b/,"m4a1"],[/\bm16(?:a\d)?\b/,"m16"],[/\badar\b/,"adar"],[/\bhk\s*416\b/,"hk416"],
+    [/\bak-?101\b/,"ak101"],[/\bak-?102\b/,"ak102"],
+    [/\bakmn\b/,"akmn"],[/\bakmsn\b/,"akmsn"],[/\bakms\b/,"akms"],[/\bakm\b/,"akm"],
+    [/\bak-?103\b/,"ak103"],[/\bak-?104\b/,"ak104"],
+    [/\baks-?74ub\b/,"aks74ub"],[/\baks-?74un\b/,"aks74un"],[/\baks-?74u\b/,"aks74u"],
+    [/\baks-?74n\b/,"aks74n"],[/\baks-?74\b/,"aks74"],[/\bak-?74n\b/,"ak74n"],[/\bak-?74\b/,"ak74"],
+    [/\bak-?105\b/,"ak105"],[/\bsvds\b/,"svds"],[/\bsvd\b/,"svd"],
+    [/\bmosin\b/,"mosin"],[/\bsv-?98\b/,"sv98"],[/\btkpd\b/,"tkpd"],
+    [/\bmp-?153\b/,"mp153"],[/\bmp-?155\b/,"mp155"],[/\bmp-?133\b/,"mp133"],
+    [/\bm870\b|\bremington 870\b/,"m870"],[/\bsaiga-?12\b/,"saiga12"]
+  ];
+  if(!familySets.length){
+    for(const [rx,id] of exactPatterns)if(rx.test(s)){familySets.push([id]);break}
+  }
+  if(familySets.length){
+    c.families=new Set(familySets.flat());c.known=true;
+    for(const f of c.families){
+      const p=WEAPON_PROFILES[f];
+      if(p?.caliber)c.calibers.add(p.caliber);
+      for(const cl of (p?.classes||[]))c.classes.add(cl);
+    }
+  }
+
+  const caliberPatterns=[
+    [/7\.62\s*[x×]\s*39|762x39/,"762x39"],
+    [/5\.45\s*[x×]\s*39|545x39/,"545x39"],
+    [/5\.56\s*[x×]\s*45|556x45|\b5\.56\b/,"556x45"],
+    [/7\.62\s*[x×]\s*54r?|762x54r/,"762x54r"],
+    [/7\.62\s*[x×]\s*51|762x51|\.308/,"762x51"],
+    [/9\.3\s*[x×]\s*64|93x64/,"93x64"],
+    [/\b12\s*(?:gauge|ga)\b|\b12\/70\b|\b12\/76\b/,"12g"],
+    [/\b20\s*(?:gauge|ga)\b/,"20g"],
+    [/\b9\s*[x×]\s*19|9x19/,"9x19"],
+    [/\b9\s*[x×]\s*39|9x39/,"9x39"]
+  ];
+  for(const [rx,id] of caliberPatterns)if(rx.test(s)){c.calibers.add(id);c.known=true}
+
+  const classPatterns=[
+    [/\bshotgun(?:s)?\b/,"shotgun"],
+    [/\bbolt[- ]action(?: rifle)?s?\b/,"bolt"],
+    [/\bmarksman rifle(?:s)?\b|\bdmr(?:s)?\b/,"marksman"],
+    [/\bassault rifle(?:s)?\b/,"assault"],
+    [/\bcarbine(?:s)?\b/,"carbine"],
+    [/\bpistol(?:s)?\b|\bhandgun(?:s)?\b/,"pistol"],
+    [/\bsmg(?:s)?\b|\bsubmachine gun(?:s)?\b/,"smg"],
+    [/\bsniper rifle(?:s)?\b/,"bolt"]
+  ];
+  for(const [rx,id] of classPatterns)if(rx.test(s)){c.classes.add(id);c.known=true}
+
+  return c;
+}
+function setIntersection(a,b){for(const x of a)if(b.has(x))return true;return false}
+function allFamiliesSatisfyConstraint(families,constraint){
+  let known=0,match=0;
+  for(const f of families){
+    const p=WEAPON_PROFILES[f];
+    if(!p)continue;
+    known++;
+    const caliberOK=!constraint.calibers.size||constraint.calibers.has(p.caliber);
+    const classOK=!constraint.classes.size||(p.classes||[]).some(x=>constraint.classes.has(x));
+    if(caliberOK&&classOK)match++;
+  }
+  return {known,match};
+}
+function weaponConstraintRelation(aName,bName){
+  const a=weaponConstraint(aName),b=weaponConstraint(bName);
+  if(normaliseWeaponRequirementName(aName)===normaliseWeaponRequirementName(bName))return "compatible";
+  if(a.modifierOnly||b.modifierOnly)return "compatible";
+
+  if(a.families&&b.families){
+    return setIntersection(a.families,b.families)?"compatible":"conflict";
+  }
+  if(a.calibers.size&&b.calibers.size&&!setIntersection(a.calibers,b.calibers))return "conflict";
+
+  if(a.families&&(b.calibers.size||b.classes.size)){
+    const r=allFamiliesSatisfyConstraint(a.families,b);
+    if(r.match)return "compatible";
+    if(r.known===a.families.size)return "conflict";
+  }
+  if(b.families&&(a.calibers.size||a.classes.size)){
+    const r=allFamiliesSatisfyConstraint(b.families,a);
+    if(r.match)return "compatible";
+    if(r.known===b.families.size)return "conflict";
+  }
+
+  if(a.classes.size&&b.classes.size){
+    // Some classes can overlap conceptually, but these pairs are definitely exclusive.
+    const exclusive=[
+      ["shotgun","pistol"],["shotgun","smg"],["shotgun","assault"],["shotgun","bolt"],["shotgun","marksman"],
+      ["pistol","assault"],["pistol","bolt"],["pistol","marksman"],
+      ["smg","bolt"],["smg","marksman"],["bolt","marksman"]
+    ];
+    for(const [x,y] of exclusive){
+      if((a.classes.has(x)&&b.classes.has(y))||(a.classes.has(y)&&b.classes.has(x)))return "conflict";
+    }
+    if(setIntersection(a.classes,b.classes))return "compatible";
+  }
+
+  return a.known&&b.known?"unknown":"unknown";
+}
+function splitWeaponAlternatives(record){
+  const name=clean(record.name);
+  const parts=name.split(/\s+or\s+/i).map(tidyObjectiveWeaponPhrase).filter(Boolean);
+  if(parts.length>1&&parts.every(looksLikeObjectiveWeapon)){
+    return parts.map(x=>({...record,name:x}));
+  }
+  return [record];
+}
+function taskWeaponGroups(task){
+  const inferred=inferredWeaponRequirements(task,activeMap);
+  if(inferred.length){
+    const groups=new Map();
+    for(const r of inferred){
+      const key=clean(r.sourceObjective)||"__weapon__";
+      if(!groups.has(key))groups.set(key,[]);
+      groups.get(key).push(...splitWeaponAlternatives(r));
+    }
+    return [...groups.values()];
+  }
+
+  const req=taskRequirementsForPlanning(task,activeMap).filter(r=>r.kind==="gear"&&r.slot==="weapon");
+  const groups=new Map();
+  for(const r of req){
+    const key=clean(r.sourceObjective)||"__weapon__";
+    if(!groups.has(key))groups.set(key,[]);
+    groups.get(key).push(...splitWeaponAlternatives(r));
+  }
+  return [...groups.values()];
+}
+function weaponGroupRelation(aGroup,bGroup){
+  let sawUnknown=false;
+  for(const a of aGroup)for(const b of bGroup){
+    const rel=weaponConstraintRelation(a.name,b.name);
+    if(rel==="compatible")return "compatible"; // alternatives overlap
+    if(rel==="unknown")sawUnknown=true;
+  }
+  return sawUnknown?"unknown":"conflict";
+}
+function weaponConflictBetweenTasks(a,b){
+  const ag=taskWeaponGroups(a),bg=taskWeaponGroups(b);
+  if(!ag.length||!bg.length)return null;
+  let unknownPair=null;
+  for(const ga of ag)for(const gb of bg){
+    const rel=weaponGroupRelation(ga,gb);
+    if(rel==="conflict"){
+      return {severity:"hard",kind:"weapon",a,b,slot:"weapon",
+        av:ga.map(x=>x.name).join(" OR "),bv:gb.map(x=>x.name).join(" OR ")};
+    }
+    if(rel==="unknown"&&!unknownPair){
+      unknownPair={severity:"soft",kind:"weapon-review",a,b,slot:"weapon",
+        av:ga.map(x=>x.name).join(" OR "),bv:gb.map(x=>x.name).join(" OR ")};
+    }
+  }
+  return unknownPair;
+}
 function conflictList(list){
   const out=[];
   for(let i=0;i<list.length;i++)for(let j=i+1;j<list.length;j++){
     const a=list[i],b=list[j];
-    for(const ar of (a.requirements||[]).filter(r=>r.kind==="gear")){
-      for(const br of (b.requirements||[]).filter(r=>r.kind==="gear")){
+
+    const wc=weaponConflictBetweenTasks(a,b);
+    if(wc)out.push(wc);
+
+    for(const ar of (a.requirements||[]).filter(r=>r.kind==="gear"&&r.slot!=="weapon")){
+      for(const br of (b.requirements||[]).filter(r=>r.kind==="gear"&&r.slot!=="weapon")){
         if(!ar.slot||!br.slot||ar.slot!==br.slot||clean(ar.name).toLowerCase()===clean(br.name).toLowerCase())continue;
-        if(ar.slot==="weapon"||ar.slot==="weapon-mod"){
+        if(ar.slot==="weapon-mod"){
           out.push({severity:"soft",kind:"loadout",a,b,slot:ar.slot,av:ar.name,bv:br.name});
         }else out.push({severity:"hard",kind:"slot",a,b,slot:ar.slot,av:ar.name,bv:br.name});
       }
@@ -1666,26 +3262,60 @@ function conflictList(list){
     }
   }
   const seen=new Set();
-  return out.filter(c=>{const k=[c.a.id,c.b.id,c.kind,c.slot,c.av,c.bv].join("|");if(seen.has(k))return false;seen.add(k);return true});
+  return out.filter(c=>{
+    const k=[c.a.id,c.b.id,c.kind,c.slot,c.av,c.bv].join("|");
+    if(seen.has(k))return false;seen.add(k);return true;
+  });
 }
 
+function suggestionRequirementProfile(t,map){
+  const req=taskRequirementsForPlanning(t,map);
+  return {
+    req,
+    keys:new Set(req.map(r=>reqKey(r).toLowerCase())),
+    weaponCount:req.filter(r=>r.kind==="gear"&&r.slot==="weapon").length
+  };
+}
+function logicalSuggestionScore(t,map,baseTasks,{anyRaid=false}={}){
+  const base=baseTasks||[];
+  const baseKeys=new Set(base.flatMap(x=>taskRequirementsForPlanning(x,map).map(r=>reqKey(r).toLowerCase())));
+  const p=suggestionRequirementProfile(t,map);
+  const newReq=p.req.filter(r=>!baseKeys.has(reqKey(r).toLowerCase())).length;
+  const sharedReq=p.req.filter(r=>baseKeys.has(reqKey(r).toLowerCase())).length;
+  const conflict=conflictList([...base,t]);
+  const soft=conflict.filter(c=>c.severity==="soft").length;
+  const objectiveValue=anyRaid?anyRaidObjectives(t).length:mapObjectives(t,map).length;
+  const sameTrader=base.some(x=>clean(x.trader).toLowerCase()===clean(t.trader).toLowerCase())?1:0;
+
+  // Objective coverage is the main driver. RaidIQ then favours tasks that reuse
+  // the current kit and avoids adding unnecessary specialist equipment.
+  return (objectiveValue*100)
+    +(sharedReq*12)
+    +(sameTrader*3)
+    -(newReq*8)
+    -(soft*25)
+    -(p.weaponCount*2);
+}
 function findCompatible(map,baseTasks){
   const historical=planningHistoricalIds();
+  const base=baseTasks||[];
   return TASKS.filter(t=>{
     if(selected.has(t.id))return false;
-    // Never recommend a prerequisite backwards from a selected/completed downstream quest.
-    // Example: The Bunker - Part 2 means Part 1 is historical for this planner.
     if(historical.has(t.id))return false;
     if(!eligibleForSuggestions(t))return false;
     if(!taskRequiresMap(t,map))return false;
-    return !conflictList([...baseTasks,t]).some(c=>c.severity==="hard");
+    return !conflictList([...base,t]).some(c=>
+      c.severity==="hard" || c.kind==="weapon-review"
+    );
   }).sort((a,b)=>{
+    const scoreDiff=logicalSuggestionScore(b,map,base)-logicalSuggestionScore(a,map,base);
+    if(scoreDiff)return scoreDiff;
     const objDiff=mapObjectives(b,map).length-mapObjectives(a,map).length;
     if(objDiff)return objDiff;
-    const aReq=(a.requirements||[]).length,bReq=(b.requirements||[]).length;
-    return aReq-bReq||a.name.localeCompare(b.name);
+    return a.name.localeCompare(b.name);
   });
 }
+
 function recommendedItems(req){
   const out=[];
   const markers=req.filter(r=>/marker/i.test(r.name));
@@ -1715,44 +3345,80 @@ function buildRaid(map){
   activeMap=map;
   const list=raidTasks();
   if(!list.length)return;
+  collapseRaidSuggestionSections();
   $("planner").classList.add("hidden");$("summary").classList.remove("hidden");
   updateSidebarMode();
   renderTaskList();
   renderRaid();
   window.scrollTo(0,0);
-  writeShareHash(false);
+  persistActiveRaid();
 }
 
 function raidTasks(){return current().filter(t=>taskRequiresMap(t,activeMap)||t.raidClass==="ANY_RAID")}
+function activeRaidTasks(){return raidTasks().filter(t=>!storedCompleted(t.id))}
 
+
+function taskDetailTriggerMarkup(t){
+  return `<button class="taskDetailTrigger" data-detail="${esc(t.id)}" aria-label="View details for ${esc(t.name)}"><span class="taskDetailName">${esc(t.name)}</span><span class="taskDetailCue">DETAILS <span class="taskDetailArrow">›</span></span></button>`;
+}
 
 function renderRaid(){
-  const list=raidTasks(),req=aggregateReq(list),conf=conflictList(list);
+  const list=raidTasks(),activeList=activeRaidTasks(),completedCount=list.length-activeList.length;
+  const req=aggregateReq(activeList),conf=conflictList(activeList);
   const hard=conf.filter(c=>c.severity==="hard"),soft=conf.filter(c=>c.severity==="soft");
   $("summaryMap").textContent=activeMap;
-  $("summaryMeta").textContent=`${list.length} task${list.length!==1?"s":""} · ${objectiveCount(list)} objectives · data ${generatedAt?`updated ${new Date(generatedAt).toLocaleDateString("en-GB")}`:"current"}`;
-  $("summaryStatus").textContent=!list.length?"ADD TASKS":hard.length?`⚠ ${hard.length} HARD CONFLICT${hard.length!==1?"S":""}`:soft.length?`△ ${soft.length} LOADOUT WARNING${soft.length!==1?"S":""}`:"✓ GOOD COMBINATION";
-  $("summaryStatus").className=`ready${list.length?(hard.length?" bad":soft.length?" soft":""):" soft"}`;
-  $("summaryTaskCount").textContent=`${list.length} selected`;
+  const activeObjectives=objectiveCount(activeList);
+  $("summaryMeta").textContent=`${list.length} task${list.length!==1?"s":""}${completedCount?` · ${completedCount} completed`:""} · ${activeObjectives} active objective${activeObjectives!==1?"s":""} · data ${generatedAt?`updated ${new Date(generatedAt).toLocaleDateString("en-GB")}`:"current"}`;
+  const weaponHard=hard.filter(c=>c.kind==="weapon").length;
+  const readiness=!list.length
+    ?{text:"ADD TASKS",cls:""}
+    :!activeList.length
+      ?{text:"✓ RAID COMPLETE",cls:"raidComplete"}
+      :hard.length
+        ?{text:`⚠ ACTION REQUIRED · ${hard.length} CONFLICT${hard.length!==1?"S":""}`,cls:"actionRequired"}
+        :soft.length
+          ?{text:`△ REVIEW BEFORE RAID · ${soft.length}`,cls:"reviewRaid"}
+          :{text:"✓ RAID READY",cls:"raidReady"};
+  $("summaryStatus").textContent=readiness.text;
+  $("summaryStatus").className=`ready ${readiness.cls}`;
+  $("summaryTaskCount").textContent=completedCount?`${list.length} selected · ${completedCount} complete`:`${list.length} selected`;
 
   const checks=loadChecks();
-  $("summaryTasks").innerHTML=list.length?list.map(t=>`<div class="taskSummary">
-    <div class="taskSummaryHead">
-      <div><button style="all:unset;cursor:pointer;font-weight:850" data-detail="${esc(t.id)}">${esc(t.name)}</button>
-      <div class="muted">${esc(t.trader)} · ${esc(t.type||"Other")} · ${String(t.source||"").toLowerCase().includes("wiki")?"✓ Wiki verified":"Structured data"}</div></div>
-      <button class="iconRemove" data-remove="${esc(t.id)}">×</button>
-    </div>
-    ${(t.objectives||[]).map((o,i)=>{
-      const id=checkId("objective",t.id,i,o),done=!!checks[id];
-      const d=objectiveDetails(t).find(x=>x.text===o);
-      const relevant=d?.raidClass==="ANY_RAID"||(d?.raidClass==="MAP_BOUND"&&(d.maps||[]).includes(activeMap));
-      return `<label class="objectiveCheck ${done?"done":""}" style="${relevant?"":"opacity:.42"}"><input type="checkbox" data-check-id="${esc(id)}" ${done?"checked":""} ${relevant?"":"disabled"}><span>${esc(o)}${relevant?"":` <small class="muted">(not for this raid)</small>`}</span></label>`;
-    }).join("")}
-  </div>`).join(""):`<div class="raidEmptyState"><strong>No tasks selected for ${esc(activeMap)}</strong>Use the left task list to add tasks directly into this raid.</div>`;
+  $("summaryTasks").innerHTML=list.length?list.map(t=>{
+    const completed=storedCompleted(t.id);
+    if(completed){
+      return `<div class="taskSummary completedTaskSummary">
+        <div class="taskSummaryHead">
+          <div>${taskDetailTriggerMarkup(t)}<span class="taskCompletedBadge">✓ Completed</span>
+          <div class="muted">${esc(t.trader)} · ${esc(t.type||"Other")} · saved locally</div></div>
+          <button class="iconRemove" data-remove="${esc(t.id)}">×</button>
+        </div>
+        <div class="taskCompletedBody"><div><strong>Task handed in</strong><div>Objectives are collapsed and this task no longer contributes items, gear or compatibility requirements to the raid.</div></div></div>
+      </div>`;
+    }
+    return `<div class="taskSummary">
+      <div class="taskSummaryHead">
+        <div>${taskDetailTriggerMarkup(t)}
+        <div class="muted">${esc(t.trader)} · ${esc(t.type||"Other")} · ${String(t.source||"").toLowerCase().includes("wiki")?"✓ Wiki verified":"Structured data"}</div></div>
+        <button class="iconRemove" data-remove="${esc(t.id)}">×</button>
+      </div>
+      ${(t.objectives||[]).map((o,i)=>{
+        const id=checkId("objective",t.id,i,o),done=objectiveDoneAnywhere(t.id,i,o,checks);
+        const d=objectiveDetails(t).find(x=>x.text===o);
+        const relevant=d?.raidClass==="ANY_RAID"||(d?.raidClass==="MAP_BOUND"&&(d.maps||[]).includes(activeMap));
+        const handInObjective=!relevant&&isHandInObjective(o);
+        if(handInObjective){
+          return `<div class="handoverObjective"><span class="handoverObjectiveIcon">↳</span><div class="handoverObjectiveText">${esc(o)}<small>HAND IN</small></div></div>`;
+        }
+        return `<label class="objectiveCheck ${done?"done":""}" style="${relevant?"":"opacity:.42"}"><input type="checkbox" data-check-id="${esc(id)}" data-task-id="${esc(t.id)}" ${done?"checked":""} ${relevant?"":"disabled"}><span>${esc(o)}${relevant?"":` <small class="muted">(not for this raid)</small>`}</span></label>`;
+      }).join("")}
+      <div data-task-hand-in="${esc(t.id)}">${handInMarkup(t,checks)}</div>
+    </div>`;
+  }).join(""):`<div class="raidEmptyState"><strong>No tasks selected for ${esc(activeMap)}</strong>Use the left task list to add tasks directly into this raid.</div>`;
 
   const must=req;
   const rec=recommendedItems(req);
-  const obtain=obtainedDuringRaid(list);
+  const obtain=obtainedDuringRaid(activeList);
   let html="";
   html+=renderReqGroup("MUST BRING","Required by the selected tasks",must,"must");
   html+=renderSimpleGroup("RECOMMENDED","Helpful rather than mandatory",rec,"recommended");
@@ -1762,28 +3428,37 @@ function renderRaid(){
 
   $("conflictCount").textContent=conf.length?`${conf.length} warning${conf.length!==1?"s":""}`:"Clear";
   $("conflicts").innerHTML=conf.length?conf.map(c=>{
-    if(c.severity==="soft")return `<div class="alert soft"><strong>△ LOADOUT WARNING — ${esc(c.a.name)} ↔ ${esc(c.b.name)}</strong><span class="why">${esc(c.a.name)} wants <b>${esc(c.av)}</b>, while ${esc(c.b.name)} wants <b>${esc(c.bv)}</b>. Technically possible, but RaidIQ recommends splitting these weapon-specific objectives unless you deliberately want to carry both setups.</span><button class="btn secondary small" style="margin-top:8px" data-remove="${esc(c.b.id)}">REMOVE ${esc(c.b.name.toUpperCase())}</button></div>`;
-    return `<div class="alert"><strong>⚠ HARD CONFLICT — ${esc(c.a.name)} ↔ ${esc(c.b.name)}</strong><span class="why">These tasks compete for the same ${esc(c.slot||"equipment")} requirement: <b>${esc(c.av)}</b> vs <b>${esc(c.bv)}</b>.</span><button class="btn secondary small" style="margin-top:8px" data-remove="${esc(c.b.id)}">REMOVE ${esc(c.b.name.toUpperCase())}</button></div>`;
-  }).join(""):`<div class="alert ok"><strong>✓ Good combination.</strong><span class="why">No hard gear conflicts or inefficient weapon combinations were detected among these tasks.</span></div>`;
+    if(c.kind==="weapon"){
+      return `<div class="alert"><strong>⚠ WEAPON CONFLICT — ${esc(c.a.name)} ↔ ${esc(c.b.name)}</strong><span class="why">These objectives require different weapon setups and cannot be satisfied with the same weapon: <b>${esc(c.av)}</b> vs <b>${esc(c.bv)}</b>. You could technically carry two weapons, but RaidIQ does not treat this as a compatible single-raid task combination.</span><div class="conflictActions"><button class="btn secondary small" data-remove="${esc(c.a.id)}">REMOVE ${esc(c.a.name.toUpperCase())}</button><button class="btn secondary small" data-remove="${esc(c.b.id)}">REMOVE ${esc(c.b.name.toUpperCase())}</button></div></div>`;
+    }
+    if(c.kind==="weapon-review"){
+      return `<div class="alert soft"><strong>△ WEAPON COMPATIBILITY REVIEW — ${esc(c.a.name)} ↔ ${esc(c.b.name)}</strong><span class="why">RaidIQ detected two weapon requirements but cannot confidently prove that one weapon satisfies both: <b>${esc(c.av)}</b> vs <b>${esc(c.bv)}</b>. This combination is excluded from automatic compatible-task suggestions.</span><div class="conflictActions"><button class="btn secondary small" data-remove="${esc(c.a.id)}">REMOVE ${esc(c.a.name.toUpperCase())}</button><button class="btn secondary small" data-remove="${esc(c.b.id)}">REMOVE ${esc(c.b.name.toUpperCase())}</button></div></div>`;
+    }
+    if(c.severity==="soft")return `<div class="alert soft"><strong>△ LOADOUT WARNING — ${esc(c.a.name)} ↔ ${esc(c.b.name)}</strong><span class="why">${esc(c.a.name)} wants <b>${esc(c.av)}</b>, while ${esc(c.b.name)} wants <b>${esc(c.bv)}</b>. Review the two requirements before committing to the raid.</span><div class="conflictActions"><button class="btn secondary small" data-remove="${esc(c.a.id)}">REMOVE ${esc(c.a.name.toUpperCase())}</button><button class="btn secondary small" data-remove="${esc(c.b.id)}">REMOVE ${esc(c.b.name.toUpperCase())}</button></div></div>`;
+    return `<div class="alert"><strong>⚠ HARD CONFLICT — ${esc(c.a.name)} ↔ ${esc(c.b.name)}</strong><span class="why">These tasks compete for the same ${esc(c.slot||"equipment")} requirement: <b>${esc(c.av)}</b> vs <b>${esc(c.bv)}</b>.</span><div class="conflictActions"><button class="btn secondary small" data-remove="${esc(c.a.id)}">REMOVE ${esc(c.a.name.toUpperCase())}</button><button class="btn secondary small" data-remove="${esc(c.b.id)}">REMOVE ${esc(c.b.name.toUpperCase())}</button></div></div>`;
+  }).join(""):`<div class="alert ok"><strong>✓ Good combination.</strong><span class="why">RaidIQ found no incompatible equipment or weapon requirements among these tasks.</span></div>`;
 
-  const compat=findCompatible(activeMap,list).slice(0,6);
+  const compat=findCompatible(activeMap,activeList).slice(0,6);
   $("raidCompatible").classList.toggle("hidden",!compat.length);
+  $("raidCompatibleCount").textContent=suggestionCountText(compat.length);
   $("raidCompatibleList").innerHTML=compat.map(t=>compatibleRow(t,activeMap)).join("");
-  $("raidAddAllCompatible").textContent=`ADD ${compat.length}`;
-  const anyOps=findAnyRaidOpportunities().slice(0,5);
+  $("raidAddAllCompatible").textContent=`ADD ALL ${compat.length}`;
+  const anyOps=findAnyRaidOpportunities(activeList,activeMap).slice(0,6);
   $("raidAnyRaid").classList.toggle("hidden",!anyOps.length);
+  $("raidAnyRaidCount").textContent=suggestionCountText(anyOps.length);
   $("raidAnyRaidList").innerHTML=anyOps.map(anyRaidRow).join("");
 
   updateProgress();
   updateMobileNav();
   updateSidebarMode();
   renderTaskList();
-  writeShareHash(false);
+  refreshInRaidMode();
+  if(list.length)persistActiveRaid();else clearSavedRaid();
 }
 
 function requirementTaskNames(r){
   const target=clean(r.name).toLowerCase();
-  return raidTasks().filter(t=>(t.requirements||[]).some(x=>
+  return activeRaidTasks().filter(t=>taskRequirementsForPlanning(t,activeMap).some(x=>
     clean(x.name).toLowerCase()===target && (x.kind===r.kind || !x.kind || !r.kind)
   )).map(t=>t.name);
 }
@@ -1818,7 +3493,7 @@ function openDetail(id){
   $("detailTitle").textContent=t.name;
   const verified=String(t.source||"").toLowerCase().includes("wiki");
   $("detailMeta").textContent=`${t.trader} · ${taskMaps(t).join(" / ")} · ${t.type||"Other"}`;
-  const req=(t.requirements||[]).map(r=>`${r.kind==="key"?"🔑":r.kind==="gear"?"⚙":"🎒"} ${r.name}${r.qty>1?` ×${r.qty}`:""}`);
+  const req=taskRequirementsForPlanning(t,activeMap).map(r=>`${r.kind==="key"?"🔑":r.kind==="gear"?"⚙":"🎒"} ${r.name}${r.qty>1?` ×${r.qty}`:""}${r.inferred?" · objective-derived":""}`);
   const fir=(t.fir||[]).map(f=>`📦 Found in Raid: ${f.name}${f.qty>1?` ×${f.qty}`:""}`);
   $("detailBody").innerHTML=`
     <div class="detailSection">
@@ -1826,7 +3501,7 @@ function openDetail(id){
     </div>
     <div class="detailSection">
       <div class="detailProgressBox">
-        <div class="row"><div><strong>My progression</strong><div class="detailAvail">${(()=>{const av=taskAvailability(t);return esc(av.reason||av.label)})()}</div></div><button class="btn ${isCompleted(t.id)?"good":"secondary"} small" data-toggle-complete="${esc(t.id)}">${isCompleted(t.id)?"✓ COMPLETE":"MARK COMPLETE"}</button></div>
+        <div class="row"><div><strong>My progression</strong><div class="detailAvail">${(()=>{const av=taskAvailability(t);return esc(av.reason||av.label)})()}</div></div><button class="btn ${storedCompleted(t.id)?"good":"secondary"} small" data-toggle-complete="${esc(t.id)}">${storedCompleted(t.id)?"✓ COMPLETE":"MARK COMPLETE"}</button></div>
         <p>RaidIQ eligibility uses your PMC level plus known task prerequisites from the task dataset. Special in-game conditions may still need checking.</p>
       </div>
     </div>
@@ -1842,10 +3517,10 @@ function closeDetail(){$("detail").classList.remove("open");$("detail").setAttri
 function closeModals(){document.querySelectorAll(".modalBackdrop").forEach(x=>x.classList.remove("open"))}
 
 function checklist(itemsOnly=false){
-  const list=raidTasks(),req=aggregateReq(list),rec=recommendedItems(req),obtain=obtainedDuringRaid(list),lines=[];
+  const list=raidTasks(),activeList=activeRaidTasks(),req=aggregateReq(activeList),rec=recommendedItems(req),obtain=obtainedDuringRaid(activeList),lines=[];
   if(!itemsOnly){
     lines.push(`RAIDIQ // ${activeMap.toUpperCase()} RAID`,"",`TASKS (${list.length})`);
-    for(const t of list){lines.push(`☐ ${t.name} — ${t.trader}`);for(const o of (t.objectives||[]))lines.push(`   ☐ ${o}`)}
+    for(const t of list){if(storedCompleted(t.id)){lines.push(`✓ ${t.name} — ${t.trader} — COMPLETED`);continue}lines.push(`☐ ${t.name} — ${t.trader}`);for(const o of (t.objectives||[]))lines.push(`   ☐ ${o}`)}
     lines.push("","MUST BRING");
   }
   for(const r of req)lines.push(`☐ ${r.name}${r.qty>1?` ×${r.qty}`:""}`);
@@ -1853,8 +3528,8 @@ function checklist(itemsOnly=false){
   if(!itemsOnly&&rec.length){lines.push("","RECOMMENDED",...rec.map(r=>`☐ ${r.name}${r.qty>1?` ×${r.qty}`:""}`))}
   if(!itemsOnly&&obtain.length){lines.push("","OBTAIN DURING RAID",...obtain.map(r=>`☐ ${r.name}${r.qty>1?` ×${r.qty}`:""}`))}
   if(!itemsOnly){
-    const c=conflictList(list);
-    lines.push("","COMPATIBILITY",...(c.length?c.map(x=>`- ${x.severity==="soft"?"LOADOUT WARNING":"HARD CONFLICT"}: ${x.a.name} vs ${x.b.name} — ${x.av} / ${x.bv}`):["✓ Good combination — no conflicts detected"]));
+    const c=conflictList(activeList);
+    lines.push("","COMPATIBILITY",...(c.length?c.map(x=>`- ${x.kind==="weapon"?"WEAPON CONFLICT":x.kind==="weapon-review"?"WEAPON REVIEW":x.severity==="soft"?"LOADOUT WARNING":"HARD CONFLICT"}: ${x.a.name} vs ${x.b.name} — ${x.av} / ${x.bv}`):["✓ Good combination — no conflicts detected"]));
   }
   return lines.join("\n");
 }
@@ -1880,7 +3555,7 @@ function writeShareHash(openModal=true){
 }
 function restoreSharedPlan(){
   const m=location.hash.match(/#raid=([^&]+)/);
-  if(!m)return;
+  if(!m)return false;
   try{
     const payload=JSON.parse(decodeURIComponent(escape(atob(m[1]))));
     if(payload&&Array.isArray(payload.tasks)){
@@ -1888,27 +3563,223 @@ function restoreSharedPlan(){
       renderPlanner();
       if(payload.map&&current().length)buildRaid(payload.map);
       toast("Shared raid plan loaded");
+      return true;
     }
   }catch(e){}
+  return false;
 }
 
+function inRaidObjectiveRows(t,checks){
+  const details=objectiveDetails(t);
+  const rows=[];
+  const afterRaid=[];
+  (t.objectives||[]).forEach((o,i)=>{
+    const d=details.find(x=>x.text===o);
+    const relevant=d?.raidClass==="ANY_RAID"||(d?.raidClass==="MAP_BOUND"&&(d.maps||[]).includes(activeMap));
+    if(!relevant){
+      if(isHandInObjective(o))afterRaid.push(o);
+      return;
+    }
+    const id=checkId("objective",t.id,i,o);
+    const done=objectiveDoneAnywhere(t.id,i,o,checks);
+    rows.push(`<label class="inRaidObjective ${done?"done":""}">
+      <input type="checkbox" data-check-id="${esc(id)}" data-task-id="${esc(t.id)}" ${done?"checked":""}>
+      <span>${esc(o)}</span>
+    </label>`);
+  });
+  return {rows,afterRaid};
+}
+function inRaidProgress(){
+  const checks=loadChecks();
+  let total=0,done=0;
+  for(const t of activeRaidTasks()){
+    const details=objectiveDetails(t);
+    (t.objectives||[]).forEach((o,i)=>{
+      const d=details.find(x=>x.text===o);
+      const relevant=d?.raidClass==="ANY_RAID"||(d?.raidClass==="MAP_BOUND"&&(d.maps||[]).includes(activeMap));
+      if(!relevant)return;
+      total++;
+      if(objectiveDoneAnywhere(t.id,i,o,checks))done++;
+    });
+  }
+  return {total,done,pct:total?Math.round(done/total*100):100};
+}
+function inRaidModeMarkup(){
+  const list=raidTasks(),activeList=activeRaidTasks();
+  const req=aggregateReq(activeList),conf=conflictList(activeList),checks=loadChecks();
+  const progress=inRaidProgress();
+
+  const tasks=list.map(t=>{
+    if(storedCompleted(t.id)){
+      return `<div class="inRaidTask inRaidCompletedTask">
+        <div class="inRaidTaskHead"><div><strong>✓ ${esc(t.name)}</strong><span class="inRaidTrader">${esc(t.trader)} · completed locally</span></div></div>
+        <div class="inRaidEmpty">Task handed in. No remaining raid requirements.</div>
+      </div>`;
+    }
+
+    const obj=inRaidObjectiveRows(t,checks);
+    return `<div class="inRaidTask">
+      <div class="inRaidTaskHead">
+        <div><strong>${esc(t.name)}</strong><span class="inRaidTrader">${esc(t.trader)}</span></div>
+      </div>
+      ${obj.rows.join("")||'<div class="inRaidEmpty">No objectives for the current map.</div>'}
+      ${obj.afterRaid.length?`<div class="inRaidAfterRaid">AFTER RAID · ${obj.afterRaid.map(esc).join(" · ")}</div>`:""}
+      <div class="inRaidHandIn" data-inraid-hand-in="${esc(t.id)}">${taskReadyToHandIn(t,checks)?`<button class="btn good small" data-hand-in-task="${esc(t.id)}">HAND IN TASK</button>`:""}</div>
+    </div>`;
+  }).join("");
+
+  const items=req.length?req.map(r=>`<div class="inRaidItem">
+    <span class="inRaidItemCheck"></span>
+    <div><strong>${esc(r.name)}${r.qty>1?` ×${r.qty}`:""}</strong><span>${esc(r.kind==="gear"?"Required gear":r.kind==="key"?"Required key":"Required item")}</span></div>
+  </div>`).join(""):'<div class="inRaidEmpty">Nothing special required.</div>';
+
+  const warnings=conf.length?conf.map(c=>`<div class="alert inRaidWarning ${c.severity==="soft"?"soft":""}">
+    <strong>${c.kind==="weapon"?"⚠ Weapon conflict":c.kind==="weapon-review"?"△ Weapon review":c.severity==="soft"?"△ Loadout warning":"⚠ Conflict"}</strong>
+    <span class="why">${esc(c.a.name)} ↔ ${esc(c.b.name)}${c.av&&c.bv?` · ${esc(c.av)} vs ${esc(c.bv)}`:""}</span>
+  </div>`).join(""):'<div class="alert ok">✓ Good combination</div>';
+
+  return `
+    <div class="inRaidHero">
+      <div>
+        <div class="eyebrow">LIVE RAID CHECKLIST</div>
+        <h1>${esc(activeMap)}</h1>
+        <div class="inRaidHeroMeta">${list.length} task${list.length!==1?"s":""} · ${activeList.length} active · ${progress.total} current-map objective${progress.total!==1?"s":""}</div>
+      </div>
+      <div class="inRaidProgressBox">
+        <div class="inRaidProgressHead"><span>RAID PROGRESS</span><strong>${progress.done}/${progress.total} · ${progress.pct}%</strong></div>
+        <div class="inRaidProgressTrack"><div class="inRaidProgressFill" style="width:${progress.pct}%"></div></div>
+      </div>
+    </div>
+    <div class="inRaidGrid">
+      <section class="inRaidPanel">
+        <div class="inRaidPanelHead"><h2>TASKS & OBJECTIVES</h2><span>${progress.done}/${progress.total} complete</span></div>
+        ${tasks||'<div class="inRaidEmpty">No tasks selected.</div>'}
+      </section>
+      <div class="inRaidSide">
+        <section class="inRaidPanel">
+          <div class="inRaidPanelHead"><h2>MUST BRING</h2><span>${req.length} requirement${req.length!==1?"s":""}</span></div>
+          ${items}
+        </section>
+        <section class="inRaidPanel">
+          <div class="inRaidPanelHead"><h2>COMPATIBILITY</h2><span>${conf.length?`${conf.length} warning${conf.length!==1?"s":""}`:"clear"}</span></div>
+          ${warnings}
+        </section>
+      </div>
+    </div>`;
+}
+function refreshInRaidMode(){
+  if(!$("mobileCard").classList.contains("open"))return;
+  $("mobileBody").innerHTML=inRaidModeMarkup();
+}
 function renderMobile(){
-  const list=raidTasks(),req=aggregateReq(list),conf=conflictList(list);
-  $("mobileBody").innerHTML=`
-    <div style="margin-bottom:13px"><div class="eyebrow">Raid card</div><h1 style="font-size:30px;margin-top:3px">${esc(activeMap)}</h1><div class="muted">${list.length} tasks · ${objectiveCount(list)} objectives</div></div>
-    <div class="mobileSection"><h3 style="margin-bottom:8px">OBJECTIVES</h3>${list.map(t=>`<div style="margin:11px 0"><strong>${esc(t.name)}</strong>${(t.objectives||[]).map(o=>`<div class="objective" style="margin-top:5px">☐ ${esc(o)}</div>`).join("")}</div>`).join("")}</div>
-    <div class="mobileSection"><h3 style="margin-bottom:8px">MUST BRING</h3>${req.length?req.map(r=>`<div class="detailLine">☐ ${esc(r.name)}${r.qty>1?` ×${r.qty}`:""}</div>`).join(""):'<div class="muted">Nothing special required.</div>'}</div>
-    <div class="mobileSection"><h3 style="margin-bottom:8px">WARNINGS</h3>${conf.length?conf.map(c=>`<div class="alert ${c.severity==="soft"?"soft":""}">${c.severity==="soft"?"△":"⚠"} ${esc(c.a.name)} / ${esc(c.b.name)}</div>`).join(""):'<div class="alert ok">✓ Good combination</div>'}</div>`;
+  if(!activeMap){toast("Build a raid first");return}
+  $("mobileBody").innerHTML=inRaidModeMarkup();
   $("mobileCard").classList.add("open");
+  $("mobileCard").setAttribute("aria-hidden","false");
+  document.body.classList.add("inRaidOpen");
+}
+async function toggleInRaidFullscreen(){
+  try{
+    if(document.fullscreenElement){
+      await document.exitFullscreen();
+      return;
+    }
+    if($("mobileCard").requestFullscreen)await $("mobileCard").requestFullscreen();
+    else toast("Full screen is not supported by this browser");
+  }catch(e){
+    toast("Unable to enter full screen");
+  }
+}
+async function closeInRaidMode(){
+  if(document.fullscreenElement){
+    try{await document.exitFullscreen()}catch(e){}
+  }
+  $("mobileCard").classList.remove("open");
+  $("mobileCard").setAttribute("aria-hidden","true");
+  document.body.classList.remove("inRaidOpen");
 }
 
 document.addEventListener("click",e=>{
+  const altRaid=e.target.closest("[data-alt-suggested-map]");
+  if(altRaid){
+    const map=altRaid.dataset.altSuggestedMap;
+    const ids=clean(altRaid.dataset.altSuggestedTasks).split(",").filter(Boolean);
+    selected.clear();
+    ids.forEach(id=>{if(byId[id])selected.add(id)});
+    renderPlanner();
+    if(map&&selected.size)buildRaid(map);
+    return;
+  }
+
+  const anchor=e.target.closest("[data-progress-anchor]");
+  if(anchor){
+    const id=anchor.dataset.progressAnchor;
+    if(quickProgressAnchorIds.includes(id)){
+      quickProgressAnchorIds=quickProgressAnchorIds.filter(x=>x!==id);
+      delete quickProgressAnswers[id];
+    }else if(quickProgressAnchorIds.length<3){
+      quickProgressAnchorIds.push(id);
+    }
+    renderQuickProgressResults();
+    return;
+  }
+
+  const removeAnchor=e.target.closest("[data-remove-progress-anchor]");
+  if(removeAnchor){
+    const id=removeAnchor.dataset.removeProgressAnchor;
+    quickProgressAnchorIds=quickProgressAnchorIds.filter(x=>x!==id);
+    delete quickProgressAnswers[id];
+    renderQuickProgressResults();
+    return;
+  }
+
+  const progressAnswer=e.target.closest("[data-progress-answer]");
+  if(progressAnswer){
+    const id=progressAnswer.dataset.progressQuestion,answer=progressAnswer.dataset.progressAnswer;
+    if(answer==="unsure"){
+      quickProgressSkipped.add(id);
+      delete quickProgressAnswers[id];
+    }else{
+      quickProgressAnswers[id]=answer;
+      quickProgressSkipped.delete(id);
+    }
+    renderProgressAnalysis();
+    return;
+  }
+
+  const suggestionToggle=e.target.closest("[data-suggestion-toggle]");
+  if(suggestionToggle){
+    const id=suggestionToggle.dataset.suggestionToggle,sec=$(id);
+    if(sec){
+      const collapse=!sec.classList.contains("collapsed");
+      setSuggestionCollapsed(id,collapse);
+    }
+    return;
+  }
+
+  const handIn=e.target.closest("[data-hand-in-task]");
+  if(handIn){
+    const id=handIn.dataset.handInTask,t=byId[id];
+    if(!t)return;
+    if(!taskReadyToHandIn(t)){
+      toast("Finish the remaining raid objectives first");
+      return;
+    }
+    setCompleted(id,true);
+    toast(`${t.name} handed in`);
+    return;
+  }
+
   const complete=e.target.closest("[data-toggle-complete]");
   if(complete){
     const id=complete.dataset.toggleComplete;
-    setCompleted(id,!isCompleted(id));
+    const wasComplete=storedCompleted(id);
+    setCompleted(id,!wasComplete);
+    if(progressManagerMode==="completed")renderProgressManager();
     if($("detail").classList.contains("open"))openDetail(id);
-    toast(isCompleted(id)?"Task marked complete":"Task marked unfinished");
+    toast(storedCompleted(id)
+      ?"Task marked complete"
+      :"Completion removed — task eligibility recalculated");
     return;
   }
 
@@ -1983,8 +3854,17 @@ document.addEventListener("change",e=>{
   const box=e.target.closest("[data-check-id]");
   if(box){
     const checks=loadChecks();checks[box.dataset.checkId]=box.checked;saveChecks(checks);
-    box.closest(".objectiveCheck,.checkRow")?.classList.toggle("done",box.checked);
+
+    document.querySelectorAll("[data-check-id]").forEach(peer=>{
+      if(peer.dataset.checkId===box.dataset.checkId){
+        peer.checked=box.checked;
+        peer.closest(".objectiveCheck,.checkRow,.inRaidObjective")?.classList.toggle("done",box.checked);
+      }
+    });
+
+    if(box.dataset.taskId)refreshHandInControl(box.dataset.taskId);
     updateProgress();
+    refreshInRaidMode();
   }
 });
 
@@ -2010,10 +3890,10 @@ $("buildRecommended").addEventListener("click",e=>buildRaid(e.currentTarget.data
 $("addAllCompatible").addEventListener("click",()=>{
   const map=$("compatibleSection").dataset.map;
   const base=current().filter(t=>taskRequiresMap(t,map)||t.raidClass==="ANY_RAID");
-  findCompatible(map,base).slice(0,5).forEach(t=>selected.add(t.id));renderPlanner();toast("Compatible tasks added")
+  findCompatible(map,base).slice(0,6).forEach(t=>selected.add(t.id));renderPlanner();toast("Compatible tasks added")
 });
 $("raidAddAllCompatible").addEventListener("click",()=>{
-  findCompatible(activeMap,raidTasks()).slice(0,6).forEach(t=>selected.add(t.id));renderRaid();toast("Compatible tasks added")
+  findCompatible(activeMap,activeRaidTasks()).slice(0,6).forEach(t=>selected.add(t.id));renderRaid();toast("Compatible tasks added")
 });
 $("back").addEventListener("click",()=>{showPlannerMobile();renderPlanner()});
 $("copyFull").addEventListener("click",()=>copyText(checklist(false),"Full raid checklist copied"));
@@ -2021,117 +3901,164 @@ $("copyItems").addEventListener("click",()=>copyText(checklist(true),"Raid requi
 $("shareRaid").addEventListener("click",()=>writeShareHash(true));
 $("copyShare").addEventListener("click",()=>copyText($("shareText").value,"Share link copied"));
 $("mobileRaid").addEventListener("click",renderMobile);
-$("closeMobile").addEventListener("click",()=>$("mobileCard").classList.remove("open"));
+$("inRaidFullscreen").addEventListener("click",toggleInRaidFullscreen);
+$("closeMobile").addEventListener("click",closeInRaidMode);
 $("detailClose").addEventListener("click",closeDetail);
 document.querySelectorAll(".modeBtn").forEach(btn=>btn.addEventListener("click",()=>{
   mode=btn.dataset.mode;document.querySelectorAll(".modeBtn").forEach(x=>x.classList.toggle("active",x===btn));
   renderPlanner();
 }));
 $("shareModal").addEventListener("click",e=>{if(e.target===$("shareModal"))closeModals()});
-["trackerModal","manualProfileModal","progressModal","importProgressModal"].forEach(id=>{
+["onboardingModal","quickProgressModal","manualProfileModal","progressModal","importProgressModal"].forEach(id=>{
   $(id).addEventListener("click",e=>{if(e.target===$(id))closeModals()});
 });
 
 
 
-function openProfilePanel(){
-  showPlannerMobile();
-  $("progressPanel").scrollIntoView({behavior:"smooth",block:"center"});
+function openManualProfileEditor(){
+  const stored=profileHasData(PROFILE);
+  $("manualProfileTitle").textContent=stored?"Edit My PMC":"Add My PMC";
+  $("manualName").value=PROFILE.pmcName||"";
+  $("manualLevel").value=PROFILE.level||"";
+  $("manualMode").value=PROFILE.gameMode||"pvp";
+  $("manualFaction").value=PROFILE.faction||"";
+  $("manualProfileState").innerHTML=stored
+    ?`<strong>Saved locally</strong><br>${esc(storedProfileSummary()||"PMC data is stored on this device.")}${hasProfile()?" · Personalisation is currently ON.":" · Personalisation is currently OFF."}`
+    :`<strong>No PMC saved yet</strong><br>Add the details you want RaidIQ to use, then optionally mark completed tasks manually.`;
+  $("removeAllPmcData").classList.toggle("hidden",!stored);
+  $("manualProfileModal").classList.add("open");
 }
-$("progressProfileBtn").addEventListener("click",openProfilePanel);
-$("connectTracker").addEventListener("click",()=>{
-  $("trackerToken").value=getTrackerToken();
-  $("rememberTrackerToken").checked=!!safeLocal()?.getItem(trackerRememberKey);
-  $("trackerError").classList.add("hidden");
-  $("trackerModal").classList.add("open");
+$("progressProfileBtn").addEventListener("click",openManualProfileEditor);
+$("addPmc").addEventListener("click",()=>{
+  if(profileHasData(PROFILE)){
+    PROFILE.enabled=true;
+    PROFILE.lastSync=new Date().toISOString();
+    saveProfile();updateProfileUI();renderTaskList();renderPlanner();
+    toast("PMC personalisation enabled");
+  }else openManualProfileEditor();
 });
-$("setupManual").addEventListener("click",()=>{
-  $("manualName").value=PROFILE.pmcName||"";
-  $("manualLevel").value=PROFILE.level||"";
-  $("manualMode").value=PROFILE.gameMode||"pvp";
-  $("manualFaction").value=PROFILE.faction||"";
-  $("manualProfileModal").classList.add("open");
-});
-$("editProfile").addEventListener("click",()=>{
-  $("manualName").value=PROFILE.pmcName||"";
-  $("manualLevel").value=PROFILE.level||"";
-  $("manualMode").value=PROFILE.gameMode||"pvp";
-  $("manualFaction").value=PROFILE.faction||"";
-  $("manualProfileModal").classList.add("open");
-});
-$("confirmTracker").addEventListener("click",async()=>{
-  try{await syncTarkovTracker($("trackerToken").value,{remember:$("rememberTrackerToken").checked})}catch(e){}
-});
-$("syncNow").addEventListener("click",async()=>{
-  const token=getTrackerToken();
-  if(!token){$("connectTracker").click();return}
-  $("syncNow").disabled=true;$("syncNow").textContent="SYNCING…";
-  try{await syncTarkovTracker(token,{remember:!!safeLocal()?.getItem(trackerRememberKey),silent:true});updateProfileUI();renderPlanner();toast("TarkovTracker progress synced")}
-  catch(e){toast("Sync failed — reconnect your token")}
-  finally{$("syncNow").disabled=false;updateProfileUI()}
-});
+$("editProfile").addEventListener("click",openManualProfileEditor);
 $("saveManualProfile").addEventListener("click",()=>{
   PROFILE.pmcName=clean($("manualName").value);
   PROFILE.level=Math.max(0,Math.min(79,Number($("manualLevel").value)||0));
   PROFILE.gameMode=$("manualMode").value;
   PROFILE.faction=$("manualFaction").value;
-  PROFILE.source=PROFILE.source==="tarkovtracker"?"manual":"manual";
+  PROFILE.source="manual";
+  PROFILE.enabled=profileHasData(PROFILE);
   PROFILE.lastSync=new Date().toISOString();
-  saveProfile();closeModals();updateProfileUI();renderTaskList();renderPlanner();toast("PMC profile saved");
+  saveProfile();closeModals();updateProfileUI();renderTaskList();renderPlanner();
+  toast(PROFILE.enabled?"PMC saved and enabled":"PMC data saved");
 });
 $("openManualProgress").addEventListener("click",()=>{
-  closeModals();renderProgressManager();$("progressModal").classList.add("open");
+  closeModals();
+  progressManagerMode="all";
+  $("progressSearch").value="";
+  setProgressManagerMode("all");
+  $("progressModal").classList.add("open");
 });
 $("openProgressManager").addEventListener("click",()=>{
-  renderProgressManager();$("progressModal").classList.add("open");
+  closeModals();
+  progressManagerMode="all";
+  $("progressSearch").value="";
+  setProgressManagerMode("all");
+  $("progressModal").classList.add("open");
 });
 $("hideCompleted").addEventListener("change",e=>{
   PROFILE.hideCompleted=e.target.checked;saveProfile();renderTaskList();updateProfileUI();
 });
 $("progressSearch").addEventListener("input",renderProgressManager);
+$("editCompletedTasks").addEventListener("click",()=>{
+  setProgressManagerMode(progressManagerMode==="completed"?"all":"completed");
+});
 $("disconnectProfile").addEventListener("click",()=>{
-  clearTrackerToken();
-  if(PROFILE.source==="tarkovtracker")PROFILE.source="manual";
-  saveProfile();updateProfileUI();renderTaskList();renderPlanner();
-  toast("Disconnected — imported progress kept locally");
+  PROFILE.enabled=false;
+  PROFILE.hideCompleted=false;
+  PROFILE.lastSync=new Date().toISOString();
+  saveProfile();
+  $("profileFilter").value="all";
+  updateProfileUI();renderTaskList();renderPlanner();
+  toast("PMC disconnected — personal filtering is off");
 });
-$("clearProfile").addEventListener("click",()=>{
-  PROFILE=emptyProfile();clearTrackerToken();
+function removeAllPmcData(){
+  PROFILE=emptyProfile();
   try{safeLocal()?.removeItem(profileStoreKey);safeLocal()?.removeItem(legacyProgressStoreKey)}catch(e){}
-  closeModals();updateProfileUI();renderTaskList();renderPlanner();toast("PMC profile cleared");
-});
+  closeModals();
+  $("profileFilter").value="all";
+  updateProfileUI();renderTaskList();renderPlanner();
+  toast("All PMC data removed");
+}
+$("removeAllPmcData").addEventListener("click",removeAllPmcData);
+$("clearProfile").addEventListener("click",removeAllPmcData);
 $("exportProgress").addEventListener("click",()=>{
-  const payload={version:2,exportedAt:new Date().toISOString(),profile:{...PROFILE,source:PROFILE.source==="tarkovtracker"?"tarkovtracker-snapshot":PROFILE.source}};
-  copyText(JSON.stringify(payload,null,2),"PMC profile backup copied");
+  copyText(JSON.stringify({version:4,exportedAt:new Date().toISOString(),profile:{...PROFILE,source:"manual"}},null,2),"PMC profile backup copied");
 });
 $("importProgress").addEventListener("click",()=>{
   $("importProgressText").value="";$("importProgressModal").classList.add("open");
 });
 $("confirmImportProgress").addEventListener("click",()=>{
   try{
-    const p=JSON.parse($("importProgressText").value);
-    const raw=p.profile||p;
+    const p=JSON.parse($("importProgressText").value),raw=p.profile||p;
     PROFILE={...emptyProfile(),
+      enabled:raw.enabled!==false,
       pmcName:clean(raw.pmcName||""),
       level:Math.max(0,Math.min(79,Number(raw.level)||0)),
       faction:clean(raw.faction||""),
       gameMode:clean(raw.gameMode||""),
-      gameEdition:raw.gameEdition??null,
       source:"manual",
       hideCompleted:!!raw.hideCompleted,
-      completed:Array.isArray(raw.completed)?raw.completed.filter(id=>byId[id]):[],
-      failed:Array.isArray(raw.failed)?raw.failed.filter(id=>byId[id]):[],
+      completed:Array.isArray(raw.completed)?raw.completed.filter(id=>byId[id]||TASK_META[id]):[],
+      progressAnchors:Array.isArray(raw.progressAnchors)?raw.progressAnchors.filter(id=>byId[id]||TASK_META[id]).slice(0,3):[],
+      progressAutoCompleted:Array.isArray(raw.progressAutoCompleted)?raw.progressAutoCompleted.filter(id=>byId[id]||TASK_META[id]):[],
+      progressCurrent:Array.isArray(raw.progressCurrent)?raw.progressCurrent.filter(id=>byId[id]||TASK_META[id]):[],
+      progressUnavailable:Array.isArray(raw.progressUnavailable)?raw.progressUnavailable.filter(id=>byId[id]||TASK_META[id]):[],
+      progressAnswers:raw.progressAnswers&&typeof raw.progressAnswers==="object"?raw.progressAnswers:{},
+      progressSetupAt:raw.progressSetupAt||null,
       lastSync:new Date().toISOString()
     };
+    PROFILE.enabled=PROFILE.enabled&&profileHasData(PROFILE);
     saveProfile();closeModals();updateProfileUI();renderTaskList();renderPlanner();toast("PMC profile imported");
   }catch(e){toast("That RaidIQ profile export is not valid JSON")}
 });
 $("buildPersonalRaid").addEventListener("click",e=>{
-  const ids=clean(e.currentTarget.dataset.tasks).split(",").filter(Boolean);
-  const map=e.currentTarget.dataset.map;
+  const ids=clean(e.currentTarget.dataset.tasks).split(",").filter(Boolean),map=e.currentTarget.dataset.map;
   selected.clear();ids.forEach(id=>{if(byId[id])selected.add(id)});
   renderPlanner();
   if(map&&ids.length)buildRaid(map);
+});
+$("onboardingStart").addEventListener("click",()=>{
+  completeOnboarding();
+  $("search").focus();
+});
+$("onboardingAddPmc").addEventListener("click",()=>{
+  completeOnboarding();
+  openManualProfileEditor();
+});
+$("resumeRaidBtn").addEventListener("click",resumeSavedRaid);
+$("discardResumeRaid").addEventListener("click",()=>{
+  clearSavedRaid();
+  toast("Saved raid discarded");
+});
+$("openQuickProgress").addEventListener("click",openQuickProgressSetup);
+$("quickProgressSearch").addEventListener("input",renderQuickProgressResults);
+$("cancelQuickProgress").addEventListener("click",returnToProgressManager);
+$("cancelQuickProgressAnalysis").addEventListener("click",returnToProgressManager);
+$("analyseQuickProgress").addEventListener("click",showProgressAnalysisStage);
+$("editProgressAnchors").addEventListener("click",showProgressAnchorStage);
+$("applyQuickProgress").addEventListener("click",applyProgressIntelligence);
+$("progressStartPlanning").addEventListener("click",()=>{
+  closeModals();
+  renderPlanner();
+  window.scrollTo({top:0,behavior:"smooth"});
+  setTimeout(()=>{
+    const target=hasProfile()&&!$("personalRaid").classList.contains("hidden")
+      ?$("personalRaid")
+      :$("planner");
+    target?.scrollIntoView({behavior:"smooth",block:"start"});
+  },180);
+});
+$("progressReviewTasks").addEventListener("click",returnToProgressManager);
+$("progressEditSetup").addEventListener("click",()=>{
+  showProgressAnchorStage();
 });
 $("mobileTasksBtn").addEventListener("click",openTaskDrawer);
 $("mobileTasksNav").addEventListener("click",openTaskDrawer);
