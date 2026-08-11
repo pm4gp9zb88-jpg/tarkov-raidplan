@@ -252,16 +252,27 @@ function stripTags(s) {
 function wikiTitle(name) {
   return name.replace(/\s+/g,"_");
 }
-async function fetchWikiPage(taskName) {
+function wikiPageCandidate(task){
+  if(task.wikiLink){
+    try{
+      const u=new URL(task.wikiLink);
+      const part=u.pathname.split("/wiki/")[1];
+      if(part)return decodeURIComponent(part).replace(/_/g," ");
+    }catch(e){}
+  }
+  return task.name.replace(/\s*\[PVP ZONE\]\s*$/i,"").trim();
+}
+async function fetchWikiPage(task) {
+  const pageName=wikiPageCandidate(task);
   const params = new URLSearchParams({
     action:"parse", format:"json", origin:"*",
-    page:taskName, prop:"text|revid", redirects:"1"
+    page:pageName, prop:"text|revid", redirects:"1"
   });
   const r = await fetch(`${FANDOM_API}?${params}`, { headers:{ "User-Agent":"RaidPlan/1.0 task-validation" }});
   if (!r.ok) throw new Error(`wiki ${r.status}`);
   const j = await r.json();
   if (j.error) throw new Error(j.error.info || "wiki parse error");
-  return { html:j.parse?.text?.["*"] || "", revid:j.parse?.revid || null, title:j.parse?.title || taskName };
+  return { html:j.parse?.text?.["*"] || "", revid:j.parse?.revid || null, title:j.parse?.title || pageName };
 }
 function extractObjectivesSection(html) {
   // Find the Objectives heading and stop at the next h2.
@@ -311,82 +322,159 @@ function bestMatch(text, candidates) {
   }
   return { text:best, score };
 }
+
+const CURRENT_MAP_NAMES=[
+  "Ground Zero 21+","Ground Zero","Streets of Tarkov","The Labyrinth","The Lab",
+  "Night Factory","Factory","Customs","Shoreline","Reserve","Woods",
+  "Interchange","Lighthouse","Icebreaker"
+];
+
+function cleanWikiObjectiveText(value){
+  let s=clean(value);
+  // Fandom nested optional hints can get flattened into the parent <li>.
+  // Keep the actual objective and discard the appended optional hint.
+  s=s.replace(/\s*\(\s*Optional\s*\)\s*.*$/i,"").trim();
+  return s;
+}
+function inferMapsFromText(value){
+  const s=clean(value);
+  const found=[];
+  for(const map of CURRENT_MAP_NAMES){
+    const re=new RegExp(`\\b${map.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")}\\b`,"i");
+    if(re.test(s))found.push(map);
+  }
+  if(/\bany location\b/i.test(s))found.push("Any");
+  return uniq(found);
+}
+function inferWearingFromText(value){
+  const s=clean(value);
+  const m=s.match(/\bwhile wearing\s+(.+?)(?=\s+(?:on|at|in|while|during|and eliminating|and kill)\b|[,.;]|$)/i);
+  if(!m)return [];
+  return m[1].split(/\s+(?:and|&)\s+/i).map(tidyGearPhrase).filter(Boolean);
+}
+function inferNotWearingFromText(value){
+  const s=clean(value);
+  const m=s.match(/\b(?:without wearing|while not wearing|not wearing)\s+(.+?)(?=\s+(?:on|at|in|while|during)\b|[,.;]|$)/i);
+  if(!m)return [];
+  return m[1].split(/\s+(?:and|&)\s+/i).map(tidyGearPhrase).filter(Boolean);
+}
+function inferRequirementsFromCurrentText(value){
+  const requirements=[],restrictions=[];
+  const text=cleanWikiObjectiveText(value);
+  const add=(kind,name,qty=1,slot=null,itemId="")=>{
+    name=clean(name); if(!name)return;
+    requirements.push({kind,name,qty:Number(qty)||1,slot,itemId,sourceObjective:text});
+  };
+
+  const marker=inferMarker(text);
+  if(marker)add("item",marker.name,marker.qty);
+
+  for(const weapon of inferWeapon(text))add("gear",weapon,1,"weapon");
+  for(const worn of inferWearingFromText(text))add("gear",worn,1,slotForName(worn));
+  for(const excluded of inferNotWearingFromText(text)){
+    restrictions.push({kind:"not-wearing",name:excluded,itemId:"",slot:slotForName(excluded),sourceObjective:text});
+  }
+  return {requirements,restrictions,fir:[]};
+}
+function mergeRecordsByKey(records){
+  const out=[],seen=new Set();
+  for(const r of records){
+    const k=[r.kind,r.name,r.slot||"",r.itemId||""].join("|").toLowerCase();
+    if(seen.has(k))continue;
+    seen.add(k);out.push(r);
+  }
+  return out;
+}
+
 function applyWikiValidation(task, wiki) {
-  const parsed = extractObjectivesSection(wiki.html);
-  if (!parsed || !parsed.current.length) {
-    return { task, status:"unparsed", removed:[], wikiCurrent:[], wikiRemoved:[] };
+  const parsed=extractObjectivesSection(wiki.html);
+  if(!parsed || !parsed.current.length){
+    return {task,status:"unparsed",removed:[],mismatches:[],wikiCurrent:[],wikiRemoved:[]};
   }
 
-  const kept=[], removed=[];
-  for (const obj of task.objectiveRecords) {
-    const currentMatch=bestMatch(obj.text, parsed.current);
-    const removedMatch=bestMatch(obj.text, parsed.removed);
+  const currentWiki=uniq(parsed.current.map(cleanWikiObjectiveText).filter(Boolean));
+  const removedWiki=uniq(parsed.removed.map(cleanWikiObjectiveText).filter(Boolean));
 
-    // Explicit strike-through wins when it matches reasonably well.
-    if (removedMatch.score >= 0.52 && removedMatch.score >= currentMatch.score) {
-      removed.push({source:obj.text,wiki:removedMatch.text,reason:"struck-on-wiki",score:removedMatch.score});
-      continue;
-    }
-
-    // If the current Wiki wording matches, use it.
-    if (currentMatch.score >= 0.40) {
-      kept.push({...obj, text:currentMatch.text || obj.text});
-      continue;
-    }
-
-    // IMPORTANT: absence/wording mismatch alone is NOT enough to delete an objective.
-    // Keep the structured Tarkov.dev objective and record the mismatch for audit.
-    // Only explicit Wiki strike-through currently removes an objective automatically.
-    kept.push({...obj, wikiMismatch:{
-      bestWikiText:currentMatch.text || null,
-      score:currentMatch.score
-    }});
-  }
-
-  // Multiple structured sub-objectives can map to the same visible Wiki objective.
-  // Merge them so the UI doesn't show duplicates, while preserving all requirements.
-  const mergedMap=new Map();
-  for(const o of kept){
-    const key=normObjective(o.text);
-    if(!mergedMap.has(key)){
-      mergedMap.set(key,{...o,
-        requirements:[...(o.requirements||[])],
-        restrictions:[...(o.restrictions||[])],
-        fir:[...(o.fir||[])]
+  // Explicit strike-throughs are authoritative removals.
+  const removed=[];
+  for(const obj of task.objectiveRecords){
+    const removedMatch=bestMatch(obj.text,removedWiki);
+    if(removedMatch.score>=0.52){
+      removed.push({
+        source:obj.text,wiki:removedMatch.text,
+        reason:"struck-on-wiki",score:removedMatch.score
       });
-    }else{
-      const existing=mergedMap.get(key);
-      existing.requirements.push(...(o.requirements||[]));
-      existing.restrictions.push(...(o.restrictions||[]));
-      existing.fir.push(...(o.fir||[]));
     }
   }
-  const merged=[...mergedMap.values()];
-  const cats=uniq(merged.map(x=>x.category).filter(x=>x!=="Other"));
+
+  // The CURRENT Wiki objective list is authoritative for visible objectives.
+  // Attach structured source metadata only when it still matches strongly.
+  const finalRecords=[];
+  const mismatches=[];
+
+  for(const wikiText of currentWiki){
+    let bestSource=null,bestScore=0;
+    for(const source of task.objectiveRecords){
+      // Do not reattach metadata from an explicitly removed objective.
+      if(removed.some(r=>r.source===source.text))continue;
+      const score=similarity(source.text,wikiText);
+      if(score>bestScore){bestScore=score;bestSource=source}
+    }
+
+    const inferred=inferRequirementsFromCurrentText(wikiText);
+    let requirements=[...inferred.requirements];
+    let restrictions=[...inferred.restrictions];
+    let fir=[...inferred.fir];
+
+    // Strong matches may safely retain structured item/key/FIR metadata.
+    // Weak matches mean the quest changed: discard stale metadata and use Wiki text inference.
+    if(bestSource && bestScore>=0.65){
+      requirements.push(...(bestSource.requirements||[]).map(r=>({...r,sourceObjective:wikiText})));
+      restrictions.push(...(bestSource.restrictions||[]).map(r=>({...r,sourceObjective:wikiText})));
+      fir.push(...(bestSource.fir||[]).map(r=>({...r,sourceObjective:wikiText})));
+    }else if(bestSource){
+      mismatches.push({source:bestSource.text,wiki:wikiText,score:bestScore});
+    }
+
+    requirements=mergeRecordsByKey(requirements);
+    restrictions=mergeRecordsByKey(restrictions);
+
+    finalRecords.push({
+      text:wikiText,
+      category:category({description:wikiText}),
+      requirements,restrictions,fir
+    });
+  }
+
+  // Recalculate task maps from the current Wiki wording whenever possible.
+  const wikiMaps=uniq(finalRecords.flatMap(o=>inferMapsFromText(o.text)));
+  const finalMaps=wikiMaps.length?wikiMaps:task.maps;
+
+  const cats=uniq(finalRecords.map(x=>x.category).filter(x=>x!=="Other"));
   const requirements=[],restrictions=[],fir=[];
-  for (const o of merged) {
+  for(const o of finalRecords){
     requirements.push(...o.requirements);
     restrictions.push(...o.restrictions);
     fir.push(...o.fir);
   }
 
   const finalTask={
-    id:task.id,name:task.name,trader:task.trader,maps:task.maps,
+    id:task.id,name:task.name,trader:task.trader,maps:finalMaps,
     type:cats.length?cats.slice(0,3).join(" / "):"Other",
-    objectives:merged.map(o=>o.text),
-    requirements,restrictions,fir,
+    objectives:finalRecords.map(o=>o.text),
+    requirements:mergeRecordsByKey(requirements),
+    restrictions:mergeRecordsByKey(restrictions),
+    fir,
     minLevel:task.minLevel,wikiLink:task.wikiLink,
     source:"json.tarkov.dev + Tarkov Wiki",
     wikiRevision:wiki.revid
   };
-  const mismatches=merged.filter(o=>o.wikiMismatch).map(o=>({
-    source:o.text,
-    wiki:o.wikiMismatch.bestWikiText,
-    score:o.wikiMismatch.score
-  }));
-  return { task:finalTask,status:"validated",removed,mismatches,wikiCurrent:parsed.current,wikiRemoved:parsed.removed };
-}
 
+  return {
+    task:finalTask,status:"validated",removed,mismatches,
+    wikiCurrent:currentWiki,wikiRemoved:removedWiki
+  };
+}
 async function pooled(items, worker, concurrency=5) {
   const results = new Array(items.length);
   let next = 0;
@@ -414,7 +502,7 @@ console.log(`Structured tasks loaded: ${rawTasks.length}`);
 console.log("Validating quest pages against the Tarkov Wiki…");
 
 const validated = await pooled(rawTasks, async task => {
-  const wiki = await fetchWikiPage(task.name);
+  const wiki = await fetchWikiPage(task);
   const result = applyWikiValidation(task,wiki);
   return {...result,wikiTitle:wiki.title,revid:wiki.revid};
 }, CONCURRENCY);
