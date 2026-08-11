@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-11T10:21:12.381Z",
+  "generatedAt": "2026-08-11T10:36:21.248Z",
   "mode": "regular",
   "sources": [
     "json.tarkov.dev",
@@ -20,6 +20,7 @@
         "Hand over 2 Salty Dog beef sausages to the BTR Driver ( Optional ) Obtain 2 Salty Dog beef sausages",
         "Talk to the BTR Driver",
         "Hand over 4 Rye croutons to the BTR Driver ( Optional ) Obtain 4 Rye croutons",
+        "Obtain the item: Bottle of Tarkovskaya vodka",
         "Hand over 4 Bottles of Tarkovskaya vodka to the BTR Driver ( Optional ) Obtain 4 Bottles of Tarkovskaya vodka",
         "Survive and extract from the location"
       ],
@@ -315,8 +316,7 @@
       "type": "Place",
       "objectives": [
         "Mark the transit to Lighthouse with an MS2000 Marker on Woods",
-        "Use the transit from Woods to Lighthouse",
-        "Mark the transit to Lighthouse with an MS2000 Marker on Woods"
+        "Use the transit from Woods to Lighthouse"
       ],
       "requirements": [
         {
@@ -819,21 +819,13 @@
         "Find a Ded Moroz figurine in raid",
         "Hand over the item to Fence",
         "Find a Politician Mutkevich figurine in raid",
-        "Hand over the item to Fence",
         "Find a Killa figurine in raid",
-        "Hand over the item to Fence",
         "Find a Reshala figurine in raid",
-        "Hand over the item to Fence",
         "Find a Ryzhy figurine in raid",
-        "Hand over the item to Fence",
         "Find a Scav figurine in raid",
-        "Hand over the item to Fence",
         "Find a Tagilla figurine in raid",
-        "Hand over the item to Fence",
         "Find a Cultist figurine in raid",
-        "Hand over the item to Fence",
-        "Find a Den figurine in raid",
-        "Hand over the item to Fence"
+        "Find a Den figurine in raid"
       ],
       "requirements": [],
       "restrictions": [],
@@ -936,8 +928,12 @@
       "maps": [
         "Any"
       ],
-      "type": "Other",
-      "objectives": [],
+      "type": "Find / Hand over",
+      "objectives": [
+        "Hand over the found in raid Iskra ration packs",
+        "Hand over the found in raid Packs of instant noodles",
+        "Hand over the found in raid Cans of beef stew (Large)"
+      ],
       "requirements": [],
       "restrictions": [],
       "fir": [],
@@ -1019,8 +1015,9 @@
         "Shoreline",
         "Streets of Tarkov"
       ],
-      "type": "Locate / Find / Hand over",
+      "type": "Kill / Locate / Find / Hand over",
       "objectives": [
+        "Locate and neutralize Priest",
         "Locate the ritual spot on Chekannaya st. on Streets of Tarkov",
         "Stash a Cultist knife at the ritual spot"
       ],
@@ -2673,8 +2670,9 @@
       "maps": [
         "Streets of Tarkov"
       ],
-      "type": "Other",
+      "type": "Kill",
       "objectives": [
+        "Eliminate any target in the train depot on reserve (6)",
         "Shoot a yellow signal flare in the Train depot."
       ],
       "requirements": [],
@@ -2736,6 +2734,7 @@
       "type": "Kill / Find / Hand over",
       "objectives": [
         "Locate and neutralize Kollontay",
+        "Eliminate Kollontay's guards",
         "Hand over the found in raid Kollontay 's police baton"
       ],
       "requirements": [],
@@ -2809,8 +2808,9 @@
       "maps": [
         "Factory"
       ],
-      "type": "Find / Hand over",
+      "type": "Kill / Find / Hand over",
       "objectives": [
+        "Locate and neutralize Tagilla",
         "Find 1 BOSS cap in raid",
         "Hand over 1 BOSS cap to Jaeger"
       ],
@@ -2892,8 +2892,15 @@
         "Reserve",
         "Shoreline"
       ],
-      "type": "Other",
-      "objectives": [],
+      "type": "Kill",
+      "objectives": [
+        "Locate and neutralize Tagilla",
+        "Locate and neutralize Killa",
+        "Locate and neutralize Reshala",
+        "Locate and neutralize Shturman",
+        "Locate and neutralize Glukhar",
+        "Locate and neutralize Sanitar"
+      ],
       "requirements": [],
       "restrictions": [],
       "fir": [],
@@ -2909,8 +2916,10 @@
       "maps": [
         "Shoreline"
       ],
-      "type": "Other",
-      "objectives": [],
+      "type": "Kill",
+      "objectives": [
+        "Locate and neutralize Sanitar"
+      ],
       "requirements": [],
       "restrictions": [],
       "fir": [],
@@ -2946,9 +2955,10 @@
       "maps": [
         "Interchange"
       ],
-      "type": "Find / Hand over",
+      "type": "Find / Hand over / Kill",
       "objectives": [
         "Find 1 Killa's Maska-1SCh bulletproof helmet in raid",
+        "Locate and neutralize Killa",
         "Hand over 1 Killa's Maska-1SCh bulletproof helmet to Jaeger"
       ],
       "requirements": [],
@@ -2966,9 +2976,10 @@
       "maps": [
         "Customs"
       ],
-      "type": "Find / Hand over",
+      "type": "Find / Hand over / Kill",
       "objectives": [
         "Find 1 Reshala's Golden TT in raid",
+        "Locate and neutralize Reshala",
         "Hand over 1 Reshala's Golden TT to Jaeger"
       ],
       "requirements": [],
@@ -2986,9 +2997,10 @@
       "maps": [
         "Woods"
       ],
-      "type": "Find / Hand over",
+      "type": "Find / Hand over / Kill",
       "objectives": [
         "Find 1 Shturman's stash key in raid",
+        "Locate and neutralize Shturman",
         "Hand over 1 Shturman's stash key to Jaeger"
       ],
       "requirements": [],
@@ -3206,8 +3218,6 @@
       ],
       "type": "Find / Hand over",
       "objectives": [
-        "Stash 1 Iskra ration pack in the ZB-016 bunker on Woods",
-        "Stash 1 Bottle of water in the ZB-016 bunker on Woods",
         "Stash 1 Iskra ration pack in the ZB-016 bunker on Woods",
         "Stash 1 Bottle of water in the ZB-016 bunker on Woods"
       ],
@@ -4156,7 +4166,7 @@
         "Customs",
         "The Labyrinth"
       ],
-      "type": "Find / Hand over",
+      "type": "Locate",
       "objectives": [
         "Locate the secret exfil on Customs ( Optional ) Obtain the special item to extract through the secret exfil"
       ],
@@ -4839,6 +4849,7 @@
       "type": "Find / Hand over",
       "objectives": [
         "Find 5 Malboro cigarettes in raid",
+        "Hand over 5 Malboro cigarettes to Mechanic",
         "Find 5 Strike cigarettes in raid",
         "Find 5 Wilston cigarettes in raid"
       ],
@@ -5039,7 +5050,6 @@
       "objectives": [
         "Find the data on water pump operation",
         "Find the data on pumping station operation",
-        "Hand over the extracted data",
         "Hand over the extracted data"
       ],
       "requirements": [],
@@ -5174,6 +5184,7 @@
       "type": "Find / Hand over",
       "objectives": [
         "Find 2 Power cords in raid",
+        "Hand over 2 Power cords to Mechanic",
         "Find 4 T-Shaped Plugs in raid",
         "Find 2 Printed circuit boards in raid"
       ],
@@ -5236,7 +5247,9 @@
       "type": "Find / Hand over",
       "objectives": [
         "Find 5 Bundle of wires in raid",
-        "Find 5 Capacitors in raid"
+        "Find 5 Capacitors in raid",
+        "Hand over the wires",
+        "Hand over the capacitors"
       ],
       "requirements": [],
       "restrictions": [],
@@ -5808,7 +5821,6 @@
       "type": "Locate / Find / Hand over",
       "objectives": [
         "Locate a good lead related to Knossos LLC",
-        "Find a way inside the Knossos LLC facility (Optional) Locate and obtain the Knossos LLC facility key",
         "Find a way inside the Knossos LLC facility (Optional) Locate and obtain the Knossos LLC facility key"
       ],
       "requirements": [],
@@ -5830,9 +5842,10 @@
       "type": "Find / Hand over / Locate",
       "objectives": [
         "Locate and obtain the AK-50 barrel on Reserve ( Optional ) Locate Glukhar 's workshop on Reserve",
-        "Locate and obtain the AK-50 barrel on Reserve ( Optional ) Locate Glukhar 's workshop on Reserve",
         "Locate and obtain the AK-50 dust cover at one of Tarkov's security checkpoints ( Optional ) Locate the checkpoint with seized cargo",
+        "Locate the checkpoint with seized cargo",
         "Stash the AK-50 body at the specified spot on Customs ( Optional ) Build the AK-50 body",
+        "Build the AK-50 body",
         "Stash the AK-50 handguard at the specified spot on Customs",
         "Stash the AK-50 barrel at the specified spot on Customs",
         "Stash the AK-50 dust cover at the specified spot on Customs"
@@ -5876,6 +5889,7 @@
       "objectives": [
         "Find 1 UHF RFID Fixed Reader in raid",
         "Find 1 VPX Flash Storage Module in raid",
+        "Hand over 1 UHF RFID Fixed Reader to Mechanic",
         "Hand over 1 VPX Flash Storage Module to Mechanic"
       ],
       "requirements": [],
@@ -6235,7 +6249,8 @@
       ],
       "type": "Find / Hand over",
       "objectives": [
-        "Find out what is behind the Health Resort bunker door on Shoreline ( Optional ) Obtain the Labrys access keycard"
+        "Find out what is behind the Health Resort bunker door on Shoreline ( Optional ) Obtain the Labrys access keycard",
+        "Obtain the Labrys access keycard"
       ],
       "requirements": [],
       "restrictions": [],
@@ -6274,6 +6289,7 @@
       ],
       "type": "Kill",
       "objectives": [
+        "Reach the required Bolt-action Rifles skill level",
         "Eliminate any 15 targets without dying while using a bolt-action rifle"
       ],
       "requirements": [
@@ -6303,7 +6319,6 @@
       ],
       "type": "Locate / Find / Hand over",
       "objectives": [
-        "Access the lab scientist's office on Ground Zero ( Optional ) Locate the USEC group at the parking lot of the TerraGroup complex",
         "Access the lab scientist's office on Ground Zero ( Optional ) Locate the USEC group at the parking lot of the TerraGroup complex",
         "( Optional ) Locate the lab scientist in the TerraGroup complex",
         "Locate and obtain the scientist's hard drive",
@@ -7893,10 +7908,6 @@
       ],
       "type": "Place",
       "objectives": [
-        "Mark any of the weather stations with an MS2000 Marker on Woods",
-        "Mark any of the weather stations with an MS2000 Marker on Woods",
-        "Mark any of the weather stations with an MS2000 Marker on Woods",
-        "Mark any of the weather stations with an MS2000 Marker on Woods",
         "Mark any of the weather stations with an MS2000 Marker on Woods"
       ],
       "requirements": [
@@ -7997,7 +8008,6 @@
       ],
       "type": "Find / Hand over",
       "objectives": [
-        "Stash a Trijicon REAP-IR scope behind the trash containers at the \"new\" gas station on Customs",
         "Stash a Trijicon REAP-IR scope behind the trash containers at the \"new\" gas station on Customs"
       ],
       "requirements": [],
@@ -8231,7 +8241,6 @@
       "type": "Locate / Find / Hand over",
       "objectives": [
         "Locate the boat hidden next to the breakwater on Shoreline",
-        "Stash the multitool in the boat",
         "Stash the multitool in the boat"
       ],
       "requirements": [],
@@ -8249,11 +8258,9 @@
       "maps": [
         "Shoreline"
       ],
-      "type": "Place / Locate / Find / Hand over",
+      "type": "Place / Find / Hand over",
       "objectives": [
         "Locate and mark the first truck with an MS2000 Marker ( Optional ) Locate the first truck that was holding the lost UN cargo on Shoreline",
-        "Locate and mark the first truck with an MS2000 Marker ( Optional ) Locate the first truck that was holding the lost UN cargo on Shoreline",
-        "Locate and mark the second truck with an MS2000 Marker ( Optional ) Locate the second truck that was holding the lost UN cargo on Shoreline",
         "Locate and mark the second truck with an MS2000 Marker ( Optional ) Locate the second truck that was holding the lost UN cargo on Shoreline",
         "Obtain 5 MRE ration packs",
         "Hand over 5 MRE ration packs to Peacekeeper"
@@ -8297,8 +8304,10 @@
         "Woods",
         "Shoreline"
       ],
-      "type": "Other",
-      "objectives": [],
+      "type": "Kill",
+      "objectives": [
+        "Eliminate PMC operatives in the time period of 21:00-06:00 (excluding Factory and The Lab)"
+      ],
       "requirements": [],
       "restrictions": [],
       "fir": [],
@@ -8447,9 +8456,7 @@
         "Eliminate 12 Scavs while using a UNTAR helmet , MF-UNTAR armor , and 5.56 UN weapons on Woods or Reserve",
         "Eliminate 12 Scavs while using a UNTAR helmet , MF-UNTAR armor , and 5.56 UN weapons on Customs or Lighthouse",
         "Eliminate 12 Scavs while using a UNTAR helmet , MF-UNTAR armor , and 5.56 UN weapons on Ground Zero or Interchange",
-        "Eliminate 12 Scavs while using a UNTAR helmet , MF-UNTAR armor , and 5.56 UN weapons on Shoreline or Streets of Tarkov",
-        "Eliminate 12 Scavs while using a UNTAR helmet , MF-UNTAR armor , and 5.56 UN weapons on Shoreline or Streets of Tarkov",
-        "Eliminate 12 Scavs while using a UNTAR helmet , MF-UNTAR armor , and 5.56 UN weapons on Ground Zero or Interchange"
+        "Eliminate 12 Scavs while using a UNTAR helmet , MF-UNTAR armor , and 5.56 UN weapons on Shoreline or Streets of Tarkov"
       ],
       "requirements": [
         {
@@ -8506,6 +8513,22 @@
           "qty": 1,
           "slot": "headwear",
           "itemId": "5aa7d03ae5b5b00016327db5",
+          "sourceObjective": "Eliminate Scavs while using a UNTAR helmet, MF-UNTAR armor, and M4A1 or M16 rifle on Ground Zero"
+        },
+        {
+          "kind": "gear",
+          "name": "MF-UNTAR body armor",
+          "qty": 1,
+          "slot": "armor",
+          "itemId": "5ab8e4ed86f7742d8e50c7fa",
+          "sourceObjective": "Eliminate Scavs while using a UNTAR helmet, MF-UNTAR armor, and M4A1 or M16 rifle on Ground Zero"
+        },
+        {
+          "kind": "gear",
+          "name": "UNTAR helmet",
+          "qty": 1,
+          "slot": "headwear",
+          "itemId": "5aa7d03ae5b5b00016327db5",
           "sourceObjective": "Eliminate Scavs while using a UNTAR helmet, MF-UNTAR armor, and M4A1 or M16 rifle on Shoreline"
         },
         {
@@ -8531,22 +8554,6 @@
           "slot": "armor",
           "itemId": "5ab8e4ed86f7742d8e50c7fa",
           "sourceObjective": "Eliminate Scavs while using a UNTAR helmet, MF-UNTAR armor, and M4A1 or M16 rifle on Streets of Tarkov"
-        },
-        {
-          "kind": "gear",
-          "name": "UNTAR helmet",
-          "qty": 1,
-          "slot": "headwear",
-          "itemId": "5aa7d03ae5b5b00016327db5",
-          "sourceObjective": "Eliminate Scavs while using a UNTAR helmet, MF-UNTAR armor, and M4A1 or M16 rifle on Ground Zero"
-        },
-        {
-          "kind": "gear",
-          "name": "MF-UNTAR body armor",
-          "qty": 1,
-          "slot": "armor",
-          "itemId": "5ab8e4ed86f7742d8e50c7fa",
-          "sourceObjective": "Eliminate Scavs while using a UNTAR helmet, MF-UNTAR armor, and M4A1 or M16 rifle on Ground Zero"
         }
       ],
       "restrictions": [],
@@ -8761,17 +8768,9 @@
         "Find 1 M.U.L.E. stimulant injector in raid",
         "Hand over 1 M.U.L.E. stimulant injector to Peacekeeper",
         "Find 1 Obdolbos cocktail injector in raid",
-        "Hand over 1 M.U.L.E. stimulant injector to Peacekeeper",
         "Find 1 Meldonin stimulant injector in raid",
-        "Hand over 1 M.U.L.E. stimulant injector to Peacekeeper",
         "Find 1 AHF1-M stimulant injector in raid",
-        "Hand over 1 M.U.L.E. stimulant injector to Peacekeeper",
-        "Find 1 P22 (Product 22) stimulant injector in raid",
-        "Hand over 1 M.U.L.E. stimulant injector to Peacekeeper",
-        "Find 1 M.U.L.E. stimulant injector in raid",
-        "Hand over 1 M.U.L.E. stimulant injector to Peacekeeper",
-        "Find 1 M.U.L.E. stimulant injector in raid",
-        "Hand over 1 M.U.L.E. stimulant injector to Peacekeeper"
+        "Find 1 P22 (Product 22) stimulant injector in raid"
       ],
       "requirements": [],
       "restrictions": [],
@@ -9038,7 +9037,7 @@
         "Find 5 Virtex programmable processors in raid",
         "Find 5 Military COFDM Wireless Signal Transmitters in raid",
         "Find 4 Military flash drives in raid",
-        "Find 5 VPX Flash Storage Modules in raid",
+        "Hand over the signal transmitters",
         "Handover 4 Military flash drives"
       ],
       "requirements": [],
@@ -9077,8 +9076,10 @@
       "maps": [
         "Reserve"
       ],
-      "type": "Other",
-      "objectives": [],
+      "type": "Kill",
+      "objectives": [
+        "Eliminate 10 Raiders or Black Division operatives on Reserve or The Lab"
+      ],
       "requirements": [],
       "restrictions": [],
       "fir": [],
@@ -9184,13 +9185,8 @@
       "objectives": [
         "Survive and extract from Woods or Interchange with the \"Survived\" exit status",
         "Survive and extract from Factory or Customs with the \"Survived\" exit status",
-        "Survive and extract from Woods or Interchange with the \"Survived\" exit status",
-        "Survive and extract from Shoreline or Reserve with the \"Survived\" exit status",
-        "Survive and extract from Factory or Customs with the \"Survived\" exit status",
-        "Survive and extract from The Lab or Lighthouse with the \"Survived\" exit status",
         "Survive and extract from Shoreline or Reserve with the \"Survived\" exit status",
         "Survive and extract from The Lab or Lighthouse with the \"Survived\" exit status",
-        "Survive and extract from Ground Zero or Streets of Tarkov with the \"Survived\" exit status",
         "Survive and extract from Ground Zero or Streets of Tarkov with the \"Survived\" exit status"
       ],
       "requirements": [],
@@ -9210,8 +9206,6 @@
       ],
       "type": "Place",
       "objectives": [
-        "Locate and mark any UN Tigr vehicle with an MS2000 Marker on Customs",
-        "Locate and mark any UN Tigr vehicle with an MS2000 Marker on Customs",
         "Locate and mark any UN Tigr vehicle with an MS2000 Marker on Customs"
       ],
       "requirements": [
@@ -9353,7 +9347,8 @@
       ],
       "type": "Find / Hand over",
       "objectives": [
-        "Obtain a list of the resort's tenants on Shoreline"
+        "Obtain a list of the resort's tenants on Shoreline",
+        "Hand over the list of tenants to Peacekeeper"
       ],
       "requirements": [],
       "restrictions": [],
@@ -9390,8 +9385,10 @@
       "maps": [
         "Any"
       ],
-      "type": "Other",
-      "objectives": [],
+      "type": "Kill",
+      "objectives": [
+        "Reach the required Bolt-action Rifles skill level"
+      ],
       "requirements": [],
       "restrictions": [],
       "fir": [],
@@ -9526,7 +9523,6 @@
       "type": "Find / Hand over",
       "objectives": [
         "Obtain the Bronze pocket watch on a chain on Customs ( Optional ) Obtain the key to the fuel tanker truck",
-        "Obtain the Bronze pocket watch on a chain on Customs ( Optional ) Obtain the key to the fuel tanker truck",
         "Hand over the pocket watch"
       ],
       "requirements": [],
@@ -9546,7 +9542,7 @@
         "Night Factory",
         "Factory"
       ],
-      "type": "Locate / Find / Hand over / Survive",
+      "type": "Find / Hand over / Survive",
       "objectives": [
         "Locate and obtain Secure Folder 0031 in one of the bunkhouses on Customs ( Optional ) Gain access to the locked room in the office hallway on the third floor on Factory",
         "( Optional ) Obtain the Portable bunkhouse key",
@@ -9587,9 +9583,20 @@
       "maps": [
         "Any"
       ],
-      "type": "Other",
-      "objectives": [],
-      "requirements": [],
+      "type": "Kill",
+      "objectives": [
+        "Eliminate any 30 enemies with AK-74 series weapons on Reserve or Lighthouse"
+      ],
+      "requirements": [
+        {
+          "kind": "gear",
+          "name": "K-74 series weapons",
+          "qty": 1,
+          "slot": "weapon",
+          "itemId": "",
+          "sourceObjective": "Eliminate any target from over 100 meters away while using AK-74 series weapons"
+        }
+      ],
       "restrictions": [],
       "fir": [],
       "minLevel": 25,
@@ -9691,7 +9698,6 @@
       ],
       "type": "Kill",
       "objectives": [
-        "Eliminate 12 PMC operatives at any Scav base on Customs , Woods , or Shoreline",
         "Eliminate 12 PMC operatives at any Scav base on Customs , Woods , or Shoreline"
       ],
       "requirements": [],
@@ -9709,8 +9715,11 @@
       "maps": [
         "Any"
       ],
-      "type": "Other",
-      "objectives": [],
+      "type": "Kill / Find / Hand over",
+      "objectives": [
+        "Eliminate Scavs on any location",
+        "Hand over the item: MP-133 12ga shotgun"
+      ],
       "requirements": [],
       "restrictions": [],
       "fir": [],
@@ -9836,7 +9845,6 @@
         "Eliminate 2 PMC operatives on Woods",
         "Eliminate 2 PMC operatives on Interchange",
         "Eliminate 2 PMC operatives in The Lab",
-        "Eliminate 2 PMC operatives on Ground Zero",
         "Eliminate 2 PMC operatives on Ground Zero"
       ],
       "requirements": [],
@@ -10016,8 +10024,10 @@
       "maps": [
         "Any"
       ],
-      "type": "Other",
-      "objectives": [],
+      "type": "Kill",
+      "objectives": [
+        "Eliminate PMC operatives while using hand grenades"
+      ],
       "requirements": [],
       "restrictions": [],
       "fir": [],
@@ -10306,8 +10316,10 @@
       "maps": [
         "Customs"
       ],
-      "type": "Other",
-      "objectives": [],
+      "type": "Kill",
+      "objectives": [
+        "Eliminate Scavs on Customs"
+      ],
       "requirements": [],
       "restrictions": [],
       "fir": [],
@@ -10452,9 +10464,8 @@
       "maps": [
         "Customs"
       ],
-      "type": "Find / Hand over / Locate",
+      "type": "Find / Hand over",
       "objectives": [
-        "Obtain the valuable item in dorm room 203 on Customs ( Optional ) Gain access to dorm room 214",
         "Obtain the valuable item in dorm room 203 on Customs ( Optional ) Gain access to dorm room 214",
         "Hand over the valuable item"
       ],
@@ -10735,7 +10746,6 @@
         "Locate the hermetic door leading to the hospital (White Bishop) on Reserve",
         "Locate one of two hermetic doors leading to the academy building (Black Bishop) on Reserve",
         "Locate one of two hermetic doors leading to barracks #1 (Black Pawn) on Reserve",
-        "Locate one of two hermetic doors leading to barracks #1 (Black Pawn) on Reserve",
         "Locate the hermetic door leading to the building of the air control center (King) on Reserve",
         "Survive and extract from the location"
       ],
@@ -10827,9 +10837,20 @@
       "maps": [
         "Shoreline"
       ],
-      "type": "Other",
-      "objectives": [],
-      "requirements": [],
+      "type": "Kill",
+      "objectives": [
+        "Eliminate 25 Scavs while using an AKS-74U series assault rifle on Customs"
+      ],
+      "requirements": [
+        {
+          "kind": "gear",
+          "name": "AKM series weapon",
+          "qty": 1,
+          "slot": "weapon",
+          "itemId": "",
+          "sourceObjective": "Eliminate Scavs while using an AKM series weapon on Shoreline"
+        }
+      ],
       "restrictions": [],
       "fir": [],
       "minLevel": 17,
@@ -10844,9 +10865,11 @@
       "maps": [
         "Reserve"
       ],
-      "type": "Kill",
+      "type": "Kill / Find / Hand over",
       "objectives": [
-        "Eliminate 15 Scavs while using an AKM series weapon on Shoreline"
+        "Eliminate 15 Scavs while using an AKM series weapon on Shoreline",
+        "Find Lower half-masks in raid",
+        "Hand over the half-masks"
       ],
       "requirements": [
         {
@@ -10872,8 +10895,10 @@
       "maps": [
         "Customs"
       ],
-      "type": "Other",
-      "objectives": [],
+      "type": "Kill",
+      "objectives": [
+        "Eliminate Scavs while using an AKS-74U on Customs"
+      ],
       "requirements": [],
       "restrictions": [],
       "fir": [],
@@ -10891,7 +10916,6 @@
       ],
       "type": "Kill / Find / Hand over",
       "objectives": [
-        "Eliminate 10 Scavs while wearing a Scav Vest on Lighthouse",
         "Eliminate 10 Scavs while wearing a Scav Vest on Lighthouse",
         "Find 5 Bars A-2607 95Kh18 knives in raid",
         "Hand over the 5 Bars A-2607 95Kh18 knives"
@@ -11248,16 +11272,82 @@
       "maps": [
         "Any"
       ],
-      "type": "Find / Hand over",
+      "type": "Find / Hand over / Kill",
       "objectives": [
         "Find any Kalashnikov AK-74 assault rifle in raid",
         "Hand over the AK-74",
         "Find a Colt M4A1 assault rifle in raid",
         "Hand over the M4A1",
         "Find any 2 Makarov PM pistols in raid",
-        "Hand over the pistols"
+        "Hand over the pistols",
+        "Eliminate PMC operatives while wearing a PACA body armor and 6B47 helmet"
       ],
-      "requirements": [],
+      "requirements": [
+        {
+          "kind": "gear",
+          "name": "PACA Soft Armor",
+          "qty": 1,
+          "slot": "armor",
+          "itemId": "5648a7494bdc2d9d488b4583",
+          "sourceObjective": "Eliminate PMC operatives while wearing a PACA body armor and 6B47 helmet"
+        },
+        {
+          "kind": "gear",
+          "name": "6B47 Ratnik-BSh helmet (EMR cover)",
+          "qty": 1,
+          "slot": "headwear",
+          "itemId": "5aa7cfc0e5b5b00015693143",
+          "sourceObjective": "Eliminate PMC operatives while wearing a PACA body armor and 6B47 helmet"
+        },
+        {
+          "kind": "gear",
+          "name": "PACA Soft Armor",
+          "qty": 1,
+          "slot": "armor",
+          "itemId": "5648a7494bdc2d9d488b4583",
+          "sourceObjective": "Eliminate PMC operatives while wearing a PACA body armor and 6B47 helmet"
+        },
+        {
+          "kind": "gear",
+          "name": "6B47 Ratnik-BSh helmet (Olive Drab)",
+          "qty": 1,
+          "slot": "headwear",
+          "itemId": "5a7c4850e899ef00150be885",
+          "sourceObjective": "Eliminate PMC operatives while wearing a PACA body armor and 6B47 helmet"
+        },
+        {
+          "kind": "gear",
+          "name": "PACA Soft Armor (Rivals Edition)",
+          "qty": 1,
+          "slot": "armor",
+          "itemId": "607f20859ee58b18e41ecd90",
+          "sourceObjective": "Eliminate PMC operatives while wearing a PACA body armor and 6B47 helmet"
+        },
+        {
+          "kind": "gear",
+          "name": "6B47 Ratnik-BSh helmet (EMR cover)",
+          "qty": 1,
+          "slot": "headwear",
+          "itemId": "5aa7cfc0e5b5b00015693143",
+          "sourceObjective": "Eliminate PMC operatives while wearing a PACA body armor and 6B47 helmet"
+        },
+        {
+          "kind": "gear",
+          "name": "PACA Soft Armor (Rivals Edition)",
+          "qty": 1,
+          "slot": "armor",
+          "itemId": "607f20859ee58b18e41ecd90",
+          "sourceObjective": "Eliminate PMC operatives while wearing a PACA body armor and 6B47 helmet"
+        },
+        {
+          "kind": "gear",
+          "name": "6B47 Ratnik-BSh helmet (Olive Drab)",
+          "qty": 1,
+          "slot": "headwear",
+          "itemId": "5a7c4850e899ef00150be885",
+          "sourceObjective": "Eliminate PMC operatives while wearing a PACA body armor and 6B47 helmet"
+        }
+      ],
       "restrictions": [],
       "fir": [],
       "minLevel": 20,
@@ -11280,12 +11370,21 @@
         "Woods",
         "Lighthouse"
       ],
-      "type": "Find / Hand over",
+      "type": "Kill / Find / Hand over",
       "objectives": [
-        "Hand over any 10 BEAR or USEC dogtags",
+        "Eliminate PMC operatives while using an SVD rifle (excluding Factory)",
         "Hand over any 10 BEAR or USEC dogtags"
       ],
-      "requirements": [],
+      "requirements": [
+        {
+          "kind": "gear",
+          "name": "SVD rifle (excluding Factory)",
+          "qty": 1,
+          "slot": "weapon",
+          "itemId": "",
+          "sourceObjective": "Eliminate PMC operatives while using an SVD rifle (excluding Factory)"
+        }
+      ],
       "restrictions": [],
       "fir": [],
       "minLevel": 20,
@@ -11491,7 +11590,10 @@
         "Find 10 Bottles of Dan Jackiel whiskey in raid",
         "Find 3 Canister with purified water in raid",
         "Find 20 Bottles of Pevko Light beer in raid",
-        "Hand over 10 Bottles of Tarkovskaya vodka to Ragman"
+        "Hand over 10 Bottles of Tarkovskaya vodka to Ragman",
+        "Hand over 10 Bottles of Dan Jackiel whiskey to Ragman",
+        "Hand over the superwater",
+        "Hand over 20 Bottles of Pevko Light beer to Ragman"
       ],
       "requirements": [],
       "restrictions": [],
@@ -11704,6 +11806,7 @@
       "objectives": [
         "Find 2 Kinda Cowboy hats in raid",
         "Find 2 Ushanka ear-flap caps in raid",
+        "Hand over the ushankas",
         "Hand over 2 Kinda Cowboy hats to Ragman"
       ],
       "requirements": [],
@@ -11987,8 +12090,10 @@
       "maps": [
         "Interchange"
       ],
-      "type": "Other",
-      "objectives": [],
+      "type": "Kill",
+      "objectives": [
+        "Eliminate PMC operatives inside the ULTRA mall on Interchange"
+      ],
       "requirements": [],
       "restrictions": [],
       "fir": [],
@@ -12264,8 +12369,10 @@
       "maps": [
         "Any"
       ],
-      "type": "Other",
-      "objectives": [],
+      "type": "Kill",
+      "objectives": [
+        "Reach the required Search skill level"
+      ],
       "requirements": [],
       "restrictions": [],
       "fir": [],
@@ -12327,7 +12434,7 @@
       ],
       "type": "Find / Hand over",
       "objectives": [
-        "Hand over the chest rigs",
+        "Obtain BNTI Gzhel-K armor in 0-50% durability",
         "Hand over the chest rigs"
       ],
       "requirements": [],
@@ -12347,7 +12454,6 @@
       ],
       "type": "Find / Hand over",
       "objectives": [
-        "Hand over the armor",
         "Hand over the armor"
       ],
       "requirements": [],
@@ -12365,8 +12471,12 @@
       "maps": [
         "Any"
       ],
-      "type": "Other",
-      "objectives": [],
+      "type": "Find / Hand over",
+      "objectives": [
+        "Find WARTECH TV-109 + TV-106 chest rigs in raid",
+        "Hand over the chest rigs",
+        "Find BlackRock chest rigs in raid"
+      ],
       "requirements": [],
       "restrictions": [],
       "fir": [],
@@ -12387,13 +12497,9 @@
         "Find Sanitar's bag in raid",
         "Hand over the equipment",
         "Find Crye Precision AVS plate carrier (Tagilla Edition) in raid",
-        "Hand over the equipment",
         "Find LBT-1961A Load Bearing Chest Rig (Goons Edition) in raid",
-        "Hand over the equipment",
         "Find Mystery Ranch NICE COMM 3 BVS frame system (Coyote) in raid",
-        "Hand over the equipment",
-        "Find Crye Precision CPC plate carrier (Goons Edition) in raid",
-        "Hand over the equipment"
+        "Find Crye Precision CPC plate carrier (Goons Edition) in raid"
       ],
       "requirements": [],
       "restrictions": [],
@@ -12433,7 +12539,8 @@
       ],
       "type": "Find / Hand over",
       "objectives": [
-        "Stash the IDEA cash register key at Register #9 on Interchange."
+        "Stash the IDEA cash register key at Register #9 on Interchange.",
+        "Hand over the key"
       ],
       "requirements": [],
       "restrictions": [],
@@ -12455,7 +12562,6 @@
         "Find 5 Aramid fabrics in raid",
         "Hand over 5 Aramid fabrics to Ragman",
         "Find 10 Ripstop fabrics in raid",
-        "Hand over 5 Aramid fabrics to Ragman",
         "Find 3 Paracords in raid",
         "Hand over 3 Paracords to Ragman"
       ],
@@ -12479,7 +12585,6 @@
         "Find 5 Aramid fabrics in raid",
         "Hand over 5 Aramid fabrics to Ragman",
         "Find 10 Ripstop fabrics in raid",
-        "Hand over 5 Aramid fabrics to Ragman",
         "Find 3 Paracords in raid",
         "Hand over 3 Paracords to Ragman"
       ],
@@ -12503,7 +12608,6 @@
         "Find 10 Fleece fabrics in raid",
         "Hand over 10 Fleece fabrics to Ragman",
         "Find 10 Cordura polyamide fabrics in raid",
-        "Hand over 10 Fleece fabrics to Ragman",
         "Find 5 KEKTAPE duct tapes in raid",
         "Hand over 5 KEKTAPE duct tapes to Ragman"
       ],
@@ -12527,7 +12631,6 @@
         "Find 10 Fleece fabrics in raid",
         "Hand over 10 Fleece fabrics to Ragman",
         "Find 10 Cordura polyamide fabrics in raid",
-        "Hand over 10 Fleece fabrics to Ragman",
         "Find 5 KEKTAPE duct tapes in raid",
         "Hand over 5 KEKTAPE duct tapes to Ragman"
       ],
@@ -12602,7 +12705,8 @@
       ],
       "type": "Find / Hand over",
       "objectives": [
-        "Find 4 Fuel conditioners in raid"
+        "Find 4 Fuel conditioners in raid",
+        "Hand over 4 Fuel conditioners to Ragman"
       ],
       "requirements": [],
       "restrictions": [],
@@ -12686,7 +12790,8 @@
       "type": "Find / Hand over",
       "objectives": [
         "Obtain the Clothes design handbook - Part 1 on Interchange",
-        "Obtain the Clothes design handbook - Part 1 on Interchange"
+        "Hand over the first book",
+        "Hand over the second book"
       ],
       "requirements": [],
       "restrictions": [],
@@ -13220,12 +13325,10 @@
       "maps": [
         "Customs"
       ],
-      "type": "Find / Hand over / Place",
+      "type": "Find / Hand over",
       "objectives": [
         "Obtain information about the Deputy Chief's past life on Customs ( Optional ) Locate the sleeping place of the former Deputy Chief of Security on Customs",
-        "Obtain information about the Deputy Chief's past life on Customs ( Optional ) Locate the sleeping place of the former Deputy Chief of Security on Customs",
         "Obtain items that can help the investigation",
-        "Hand over the information to Skier",
         "Hand over the information to Skier"
       ],
       "requirements": [],
@@ -13620,8 +13723,11 @@
       "maps": [
         "Customs"
       ],
-      "type": "Other",
-      "objectives": [],
+      "type": "Find / Hand over",
+      "objectives": [
+        "Find the Golden Zibbo lighter Hand over the Golden Zibbo lighter to Skier",
+        "Stash a regular zibbo lighter at Doom room 303 on Customs"
+      ],
       "requirements": [],
       "restrictions": [],
       "fir": [],
@@ -13723,7 +13829,6 @@
       ],
       "type": "Find / Hand over",
       "objectives": [
-        "Install a WI-FI Camera to watch the sawmill dock on Woods",
         "Install a WI-FI Camera to watch the sawmill dock on Woods",
         "Install a WI-FI Camera to watch the Kiba Arms store entrance on Interchange"
       ],
@@ -13968,8 +14073,9 @@
       "maps": [
         "Shoreline"
       ],
-      "type": "Kill",
+      "type": "Locate / Kill",
       "objectives": [
+        "Locate the smugglers' base on Shoreline",
         "Eliminate any 10 enemies in the base area"
       ],
       "requirements": [],
@@ -14073,19 +14179,8 @@
       "objectives": [
         "( Optional ) Locate the first ATM on Klimov Street on Streets of Tarkov",
         "( Optional ) Locate the second ATM on Klimov Street on Streets of Tarkov",
-        "( Optional ) Locate the first ATM on Klimov Street on Streets of Tarkov",
         "( Optional ) Locate the first group of ATMs on Klimov Street on Streets of Tarkov",
-        "( Optional ) Locate the first ATM on Klimov Street on Streets of Tarkov",
-        "( Optional ) Locate the first group of ATMs on Klimov Street on Streets of Tarkov",
-        "( Optional ) Locate the second ATM on Klimov Street on Streets of Tarkov",
-        "( Optional ) Locate the first group of ATMs on Klimov Street on Streets of Tarkov",
-        "( Optional ) Locate the first group of ATMs on Klimov Street on Streets of Tarkov",
-        "( Optional ) Locate the third ATM on Klimov Street on Streets of Tarkov",
-        "( Optional ) Locate the first ATM on Klimov Street on Streets of Tarkov",
-        "( Optional ) Locate the first ATM on Klimov Street on Streets of Tarkov",
-        "( Optional ) Locate the second ATM on Klimov Street on Streets of Tarkov",
-        "( Optional ) Locate the third ATM on Klimov Street on Streets of Tarkov",
-        "( Optional ) Locate the first ATM on Klimov Street on Streets of Tarkov"
+        "( Optional ) Locate the third ATM on Klimov Street on Streets of Tarkov"
       ],
       "requirements": [],
       "restrictions": [],
@@ -14447,7 +14542,6 @@
       ],
       "type": "Kill",
       "objectives": [
-        "Eliminate 20 Scavs while using a suppressed 12 gauge shotgun",
         "Eliminate 20 Scavs while using a suppressed 12 gauge shotgun"
       ],
       "requirements": [
@@ -14482,9 +14576,20 @@
       "maps": [
         "Any"
       ],
-      "type": "Other",
-      "objectives": [],
-      "requirements": [],
+      "type": "Kill",
+      "objectives": [
+        "Eliminate any 10 target with pistols on Factory"
+      ],
+      "requirements": [
+        {
+          "kind": "gear",
+          "name": "pistols",
+          "qty": 1,
+          "slot": "weapon",
+          "itemId": "",
+          "sourceObjective": "Eliminate PMC operatives while using pistols"
+        }
+      ],
       "restrictions": [],
       "fir": [],
       "minLevel": 8,
@@ -14519,9 +14624,10 @@
       "maps": [
         "Customs"
       ],
-      "type": "Find / Hand over / Place",
+      "type": "Find / Hand over / Locate / Place",
       "objectives": [
         "Obtain the hidden valuable cargo on Customs ( Optional ) Locate the messengers body",
+        "Locate the messenger's body on Customs",
         "( Optional ) Find the place where the messenger hid the cargo",
         "Hand over the valuable cargo to Skier"
       ],
@@ -14731,12 +14837,6 @@
       ],
       "type": "Place",
       "objectives": [
-        "Mark any of the special TerraGroup cargo boxes with an MS2000 Marker on Customs ( Optional ) Locate the first special TerraGroup cargo on Customs",
-        "Mark any of the special TerraGroup cargo boxes with an MS2000 Marker on Customs ( Optional ) Locate the first special TerraGroup cargo on Customs",
-        "Mark any of the special TerraGroup cargo boxes with an MS2000 Marker on Customs ( Optional ) Locate the first special TerraGroup cargo on Customs",
-        "Mark any of the special TerraGroup cargo boxes with an MS2000 Marker on Customs ( Optional ) Locate the first special TerraGroup cargo on Customs",
-        "Mark any of the special TerraGroup cargo boxes with an MS2000 Marker on Customs ( Optional ) Locate the first special TerraGroup cargo on Customs",
-        "Mark any of the special TerraGroup cargo boxes with an MS2000 Marker on Customs ( Optional ) Locate the first special TerraGroup cargo on Customs",
         "Mark any of the special TerraGroup cargo boxes with an MS2000 Marker on Customs ( Optional ) Locate the first special TerraGroup cargo on Customs"
       ],
       "requirements": [
@@ -14897,8 +14997,7 @@
         "Scout the server room in The Lab (In one raid)",
         "Locate the passage leading to Streets of Tarkov in The Lab (In one raid)",
         "Scout the hazard dome in The Lab (In one raid)",
-        "Scout the control room in The Lab (In one raid)",
-        "Locate the passage leading to Streets of Tarkov in The Lab (In one raid)"
+        "Scout the control room in The Lab (In one raid)"
       ],
       "requirements": [],
       "restrictions": [],
@@ -15151,7 +15250,6 @@
       ],
       "type": "Find / Hand over",
       "objectives": [
-        "Obtain Medical record #1 on Reserve",
         "Obtain Medical record #1 on Reserve",
         "Hand over the first journal to Therapist",
         "Hand over the second journal to Therapist"
@@ -15528,9 +15626,8 @@
       "maps": [
         "Customs"
       ],
-      "type": "Find / Hand over / Locate",
+      "type": "Find / Hand over",
       "objectives": [
-        "Obtain the case containing the device on Customs ( Optional ) Locate the paramedic's car on Customs",
         "Obtain the case containing the device on Customs ( Optional ) Locate the paramedic's car on Customs",
         "( Optional ) Get into two-story dorm room 114 on Customs",
         "Hand over the case"
@@ -15652,7 +15749,8 @@
       ],
       "type": "Find / Hand over",
       "objectives": [
-        "Find 2 Gas analyzers in raid"
+        "Find 2 Gas analyzers in raid",
+        "Hand over the 2 Gas analyzers to Therapist"
       ],
       "requirements": [],
       "restrictions": [],
@@ -15711,7 +15809,8 @@
       ],
       "type": "Find / Hand over",
       "objectives": [
-        "Find 3 Salewa first aid kit in raid"
+        "Find 3 Salewa first aid kit in raid",
+        "Hand over the 3 first aid kits"
       ],
       "requirements": [],
       "restrictions": [],
