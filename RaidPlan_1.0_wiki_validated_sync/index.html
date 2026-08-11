@@ -3,689 +3,1045 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>RaidPlan 1.0 — Tarkov Task Planner</title>
+<title>RaidPlan — Escape from Tarkov Raid Task Planner</title>
 <style>
 :root{
- --bg:#090b0c;--panel:#131718;--panel2:#181d1e;--panel3:#0f1314;
- --line:#303637;--line2:#252a2b;--text:#e9ecea;--muted:#929a98;
- --gold:#c8aa70;--gold2:#6c5e40;--red:#d45b52;--redbg:#261716;
- --green:#7da36d;--greenbg:#182018;--amber:#caa25d;--amberbg:#241f15;
- --shadow:0 18px 50px rgba(0,0,0,.25)
+  --bg:#090b0c;--panel:#131718;--panel2:#181d1e;--panel3:#0f1314;
+  --line:#303637;--line2:#252a2b;--text:#e9ecea;--muted:#929a98;
+  --gold:#c8aa70;--gold2:#6c5e40;--red:#d45b52;--redbg:#261716;
+  --green:#7da36d;--greenbg:#182018;--amber:#caa25d;--amberbg:#241f15;
+  --blue:#7f9db0;--bluebg:#172026;--shadow:0 18px 50px rgba(0,0,0,.28)
 }
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:radial-gradient(circle at 72% -8%,rgba(114,132,105,.11),transparent 34%),linear-gradient(180deg,#0e1112,#090b0c 45%,#080a0b);color:var(--text);font:14px Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
-button,input,select{font:inherit}button{ -webkit-tap-highlight-color:transparent}
-header{height:68px;padding:0 24px;display:flex;align-items:center;gap:13px;border-bottom:1px solid var(--line);background:rgba(10,13,14,.96);backdrop-filter:blur(12px);position:sticky;top:0;z-index:20}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:
+  radial-gradient(circle at 76% -8%,rgba(125,163,109,.12),transparent 32%),
+  radial-gradient(circle at 15% 35%,rgba(200,170,112,.05),transparent 28%),
+  linear-gradient(180deg,#0e1112,#090b0c 45%,#080a0b);
+  color:var(--text);font:14px Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+button,input,select{font:inherit}
+button{ -webkit-tap-highlight-color:transparent}
+a{color:inherit}
+header{height:70px;padding:0 24px;display:flex;align-items:center;gap:13px;border-bottom:1px solid var(--line);
+  background:rgba(10,13,14,.96);backdrop-filter:blur(12px);position:sticky;top:0;z-index:30}
 .logo{font-weight:950;letter-spacing:1.5px;font-size:18px}.logo span{color:var(--gold)}
 .version{font-size:9px;letter-spacing:.55px;color:var(--muted);border:1px solid var(--line);padding:5px 7px;border-radius:4px}
-.spacer{flex:1}.dataStatus{display:flex;align-items:center;gap:7px;color:var(--muted);font-size:11px}.dot{width:7px;height:7px;border-radius:50%;background:var(--amber);box-shadow:0 0 8px rgba(202,162,93,.3)}.dot.ok{background:var(--green)}.dot.bad{background:var(--red)}
+.spacer{flex:1}
+.statusWrap{display:flex;gap:12px;align-items:center}
+.dataStatus{display:flex;align-items:center;gap:7px;color:var(--muted);font-size:11px}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--amber);box-shadow:0 0 8px rgba(202,162,93,.3)}
+.dot.ok{background:var(--green)}.dot.bad{background:var(--red)}
 .selectedTop{font-size:12px;color:var(--muted)}.selectedTop b{color:var(--gold)}
-.layout{display:grid;grid-template-columns:360px minmax(0,1fr);min-height:calc(100vh - 68px)}
-.sidebar{border-right:1px solid var(--line);padding:18px;background:linear-gradient(180deg,#0f1213,#0d1011)}
-.main{padding:22px;max-width:1240px;width:100%;margin:0 auto}
-h1,h2,h3{margin:0}.muted{color:var(--muted)}.eyebrow{font-size:10px;letter-spacing:1.45px;color:var(--gold);text-transform:uppercase}
-.search{width:100%;padding:12px 13px;border-radius:6px;border:1px solid var(--line);background:var(--panel2);color:var(--text);outline:none}.search:focus{border-color:var(--gold2)}
+.layout{display:grid;grid-template-columns:365px minmax(0,1fr);min-height:calc(100vh - 70px)}
+.sidebar{border-right:1px solid var(--line);padding:18px;background:linear-gradient(180deg,#0f1213,#0d1011);position:sticky;top:70px;height:calc(100vh - 70px)}
+.main{padding:22px;max-width:1280px;width:100%;margin:0 auto}
+h1,h2,h3,h4{margin:0}.muted{color:var(--muted)}.eyebrow{font-size:10px;letter-spacing:1.45px;color:var(--gold);text-transform:uppercase}
+.search{width:100%;padding:12px 13px;border-radius:6px;border:1px solid var(--line);background:var(--panel2);color:var(--text);outline:none}
+.search:focus{border-color:var(--gold2)}
 .filters{display:grid;grid-template-columns:1fr;gap:7px;margin:9px 0}
 select{width:100%;padding:9px;border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:5px;outline:none}
-.sideActions{display:flex;gap:7px;margin:9px 0 11px}.taskList{display:grid;gap:7px;max-height:calc(100vh - 285px);overflow:auto;padding-right:4px}
+.sideActions{display:flex;gap:7px;margin:9px 0 11px;flex-wrap:wrap}
+.taskList{display:grid;gap:7px;max-height:calc(100vh - 340px);overflow:auto;padding-right:4px}
 .taskList::-webkit-scrollbar{width:8px}.taskList::-webkit-scrollbar-thumb{background:#2b3031;border-radius:10px}
-.taskCard{display:block;width:100%;text-align:left;color:var(--text);background:var(--panel);border:1px solid var(--line2);border-radius:6px;padding:12px;cursor:pointer;transition:.14s}
-.taskCard:hover{border-color:#6c6048;transform:translateY(-1px)}.taskCard.selected{border-color:var(--gold);background:#1d1e19;box-shadow:inset 3px 0 var(--gold)}
-.taskTop{display:flex;justify-content:space-between;gap:8px}.taskName{font-weight:850;line-height:1.2}.taskMeta,.taskObj{font-size:12px;color:var(--muted);margin-top:5px;line-height:1.4}
+.taskCard{display:block;width:100%;text-align:left;color:var(--text);background:var(--panel);border:1px solid var(--line2);border-radius:7px;padding:12px;cursor:pointer;transition:.14s}
+.taskCard:hover{border-color:#6c6048;transform:translateY(-1px)}
+.taskCard.selected{border-color:var(--gold);background:#1d1e19;box-shadow:inset 3px 0 var(--gold)}
+.taskTop{display:flex;justify-content:space-between;gap:8px}.taskName{font-weight:850;line-height:1.2}
+.taskMeta,.taskObj{font-size:12px;color:var(--muted);margin-top:5px;line-height:1.4}
 .mapTag{font-size:9px;color:var(--gold);text-transform:uppercase;white-space:nowrap;border:1px solid #49412e;padding:3px 5px;border-radius:3px}
-.firMini{font-size:8px;color:#a9d8d0;border:1px solid #35544f;border-radius:3px;padding:2px 4px;margin-left:4px;vertical-align:2px}
-.hero,.card{border:1px solid var(--line);background:rgba(19,23,24,.96);border-radius:8px;padding:17px;box-shadow:var(--shadow)}
-.hero{padding:24px;background:linear-gradient(135deg,#181d1d,#111415)}.hero h1{font-size:30px;margin:6px 0 7px;letter-spacing:-.4px}.hero p{max-width:800px;line-height:1.58;margin:0}
-.notice{margin-top:12px;padding:10px 12px;border:1px solid #3b382c;background:#181712;border-radius:6px;color:#c0b798;font-size:12px;display:flex;gap:9px;align-items:flex-start}.notice.bad{border-color:#65322e;background:#211413;color:#df9b95}
+.firMini,.verifiedMini{font-size:8px;border-radius:3px;padding:2px 4px;margin-left:4px;vertical-align:2px}
+.firMini{color:#a9d8d0;border:1px solid #35544f}.verifiedMini{color:#a7c89b;border:1px solid #3b5639}
+.card,.hero{border:1px solid var(--line);background:rgba(19,23,24,.96);border-radius:9px;padding:17px;box-shadow:var(--shadow)}
+.hero{padding:24px;background:linear-gradient(135deg,#181d1d,#111415)}
+.hero h1{font-size:31px;margin:6px 0 7px;letter-spacing:-.4px}.hero p{max-width:830px;line-height:1.58;margin:0}
+.heroTop{display:flex;gap:16px;align-items:flex-start;justify-content:space-between}
+.modeSwitch{display:flex;gap:5px;border:1px solid var(--line);background:#0e1213;padding:4px;border-radius:7px;min-width:max-content}
+.modeBtn{border:0;background:transparent;color:var(--muted);padding:8px 10px;border-radius:5px;font-weight:800;font-size:11px;cursor:pointer}
+.modeBtn.active{background:#24251f;color:var(--gold)}
+.notice{margin-top:12px;padding:10px 12px;border:1px solid #3b382c;background:#181712;border-radius:6px;color:#c0b798;font-size:12px;display:flex;gap:9px;align-items:flex-start}
+.notice.bad{border-color:#65322e;background:#211413;color:#df9b95}
 .section{margin-top:14px}.sectionTitle{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:11px}.sectionTitle h3{font-size:14px}
-.selectedPills{display:flex;gap:6px;flex-wrap:wrap;max-height:120px;overflow:auto}.pill{border:1px solid #4b4d43;background:#20231e;padding:6px 8px;border-radius:4px}.pill button{all:unset;cursor:pointer}.pill .x{margin-left:6px;color:#999}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.breakRow{display:flex;align-items:center;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--line2)}.breakRow:last-child{border:0}.count{color:var(--gold);font-weight:850}
-.mapGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.mapChoice{border:1px solid var(--line);background:linear-gradient(180deg,#171b1c,#141819);border-radius:7px;padding:14px;position:relative;overflow:hidden}.mapChoice:before{content:"";position:absolute;inset:0 auto 0 0;width:3px;background:var(--gold);opacity:.48}.mapChoice strong{font-size:17px}.mapChoice p{color:var(--muted);font-size:12px;min-height:38px;line-height:1.45}.mapActions{display:flex;gap:7px;flex-wrap:wrap}
-.btn{border:0;background:var(--gold);color:#15120c;font-weight:850;padding:10px 12px;border-radius:5px;cursor:pointer}.btn:hover{filter:brightness(1.05)}.btn.secondary{background:#1a1f20;color:var(--text);border:1px solid var(--line)}.btn.ghost{background:transparent;color:var(--muted);border:1px solid var(--line)}.btn.small{padding:7px 9px;font-size:11px}
-.empty{padding:24px;text-align:center;color:var(--muted);border:1px dashed #343a3a;border-radius:6px;background:#101415}.hidden{display:none!important}
-.loading{padding:28px 12px;text-align:center;color:var(--muted)}.spinner{width:22px;height:22px;border:2px solid #313737;border-top-color:var(--gold);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 10px}@keyframes spin{to{transform:rotate(360deg)}}
-.summaryHead{display:flex;justify-content:space-between;gap:15px;align-items:flex-start;margin-bottom:13px}.summaryHead h1{font-size:31px;margin-top:4px}.ready{padding:7px 9px;border-radius:4px;font-size:11px;font-weight:850;background:var(--greenbg);color:#9bc18b;border:1px solid #395038}.ready.bad{background:var(--redbg);color:#ef9189;border-color:#6f3330}.ready.soft{background:var(--amberbg);color:#dfbe7e;border-color:#655531}
-.summaryGrid{display:grid;grid-template-columns:1.15fr .85fr;gap:12px}.summaryGrid .wide{grid-column:1/-1}.taskSummary{padding:12px 0;border-bottom:1px solid var(--line2)}.taskSummary:last-child{border:0}.taskSummaryHead{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}.objective{color:var(--muted);margin-top:5px;line-height:1.45}.iconRemove{border:1px solid var(--line);background:#171b1c;color:#aaa;border-radius:4px;width:26px;height:26px;cursor:pointer}
-.reqLabel{font-size:10px;letter-spacing:.9px;text-transform:uppercase;color:var(--muted);margin:12px 0 4px}.checkRow{display:flex;align-items:center;gap:9px;padding:10px 0;border-bottom:1px solid var(--line2)}.checkRow:last-child{border:0}.checkRow input{accent-color:var(--gold);width:16px;height:16px}.typeTag{margin-left:auto;color:var(--gold);font-size:9px;border:1px solid #4a4434;padding:3px 5px;border-radius:3px}.firTag{margin-left:auto;color:#a9d8d0;font-size:9px;border:1px solid #35544f;padding:3px 5px;border-radius:3px}
-.alert{border-left:3px solid var(--red);background:var(--redbg);padding:12px;margin:7px 0;line-height:1.45}.alert.ok{border-left-color:var(--green);background:var(--greenbg)}.alert.soft{border-left-color:var(--amber);background:var(--amberbg)}.alert.warn{border-left-color:var(--amber);background:var(--amberbg)}.alert .why{display:block;color:var(--muted);margin-top:4px}
-.actions{display:flex;gap:8px;margin-top:13px;flex-wrap:wrap}.detail{position:fixed;right:0;top:68px;bottom:0;width:min(460px,92vw);background:#101415;border-left:1px solid var(--line);box-shadow:-20px 0 60px rgba(0,0,0,.35);z-index:30;padding:20px;overflow:auto;transform:translateX(102%);transition:.2s}.detail.open{transform:translateX(0)}
-.detailHead{display:flex;justify-content:space-between;gap:12px}.detailClose{background:transparent;border:1px solid var(--line);color:var(--muted);border-radius:4px;width:30px;height:30px;cursor:pointer}.detailSection{margin-top:18px}.detailSection h3{font-size:11px;text-transform:uppercase;letter-spacing:.9px;color:#c9cfcd;margin-bottom:8px}.detailLine{padding:8px 0;border-bottom:1px solid var(--line2);color:var(--muted)}
-.footerNote{margin-top:14px;color:#666f6d;font-size:10px;text-align:right}.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);background:#191e1f;border:1px solid var(--line);padding:10px 13px;border-radius:5px;opacity:0;pointer-events:none;transition:.2s;z-index:50}.toast.show{opacity:1;transform:translate(-50%,0)}
-@media(max-width:960px){.layout{grid-template-columns:1fr}.sidebar{border-right:0;border-bottom:1px solid var(--line)}.taskList{max-height:410px}.mapGrid{grid-template-columns:1fr 1fr}}
-@media(max-width:660px){header{padding:0 14px}.version,.dataStatus{display:none}.main{padding:14px}.grid2,.summaryGrid,.mapGrid{grid-template-columns:1fr}.summaryGrid .wide{grid-column:auto}.actions{flex-direction:column}.hero h1{font-size:25px}}
+.selectedPills{display:flex;gap:6px;flex-wrap:wrap;max-height:120px;overflow:auto}
+.pill{border:1px solid #4b4d43;background:#20231e;padding:6px 8px;border-radius:4px}.pill button{all:unset;cursor:pointer}.pill .x{margin-left:6px;color:#999}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.breakRow{display:flex;align-items:center;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--line2)}
+.breakRow:last-child{border:0}.count{color:var(--gold);font-weight:850}
+.mapGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.mapChoice{border:1px solid var(--line);background:linear-gradient(180deg,#171b1c,#141819);border-radius:8px;padding:14px;position:relative;overflow:hidden}
+.mapChoice:before{content:"";position:absolute;inset:0 auto 0 0;width:3px;background:var(--gold);opacity:.48}
+.mapChoice.recommended{border-color:#716442;background:linear-gradient(180deg,#1c1e18,#151816)}
+.mapChoice strong{font-size:17px}.mapChoice p{color:var(--muted);font-size:12px;min-height:38px;line-height:1.45}
+.mapActions{display:flex;gap:7px;flex-wrap:wrap}.recBadge{display:inline-flex;align-items:center;gap:5px;font-size:9px;color:#f0d59a;border:1px solid #665832;background:#2a2415;padding:4px 6px;border-radius:4px;margin-bottom:8px}
+.btn{border:0;background:var(--gold);color:#15120c;font-weight:850;padding:10px 12px;border-radius:5px;cursor:pointer}
+.btn:hover{filter:brightness(1.05)}.btn.secondary{background:#1a1f20;color:var(--text);border:1px solid var(--line)}
+.btn.ghost{background:transparent;color:var(--muted);border:1px solid var(--line)}
+.btn.good{background:#203022;color:#b6d5aa;border:1px solid #3b5639}
+.btn.small{padding:7px 9px;font-size:11px}
+.empty{padding:24px;text-align:center;color:var(--muted);border:1px dashed #343a3a;border-radius:6px;background:#101415}
+.hidden{display:none!important}
+.loading{padding:28px 12px;text-align:center;color:var(--muted)}
+.spinner{width:22px;height:22px;border:2px solid #313737;border-top-color:var(--gold);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 10px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.statRow{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.stat{border:1px solid var(--line);background:#111516;border-radius:6px;padding:9px 11px;font-size:11px;color:var(--muted)}
+.stat b{display:block;color:var(--text);font-size:15px;margin-top:2px}
+.recommendPanel{display:grid;grid-template-columns:1fr auto;gap:15px;align-items:center;border-color:#625738;background:linear-gradient(135deg,#1b1d17,#121615)}
+.recommendPanel h2{font-size:22px;margin:3px 0 5px}.recommendReasons{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px}
+.reasonChip{font-size:10px;border:1px solid #4d493a;background:#1e201a;color:#bfc2af;padding:5px 7px;border-radius:4px}
+.mapPicker{display:flex;gap:7px;flex-wrap:wrap}.mapPick{border:1px solid var(--line);background:#131718;color:var(--muted);padding:9px 11px;border-radius:5px;cursor:pointer}
+.mapPick.active{border-color:var(--gold);color:var(--gold);background:#201f18}
+.compatList{display:grid;gap:7px}.compatTask{display:flex;gap:10px;justify-content:space-between;align-items:center;padding:11px;border:1px solid var(--line2);background:#111516;border-radius:6px}
+.compatTask small{display:block;color:var(--muted);margin-top:3px}.compatScore{font-size:9px;color:#a7c89b;border:1px solid #3b5639;padding:3px 5px;border-radius:3px}
+.summaryHead{display:flex;justify-content:space-between;gap:15px;align-items:flex-start;margin-bottom:13px}
+.summaryHead h1{font-size:31px;margin-top:4px}
+.ready{padding:7px 9px;border-radius:4px;font-size:11px;font-weight:850;background:var(--greenbg);color:#9bc18b;border:1px solid #395038}
+.ready.bad{background:var(--redbg);color:#ef9189;border-color:#6f3330}.ready.soft{background:var(--amberbg);color:#dfbe7e;border-color:#655531}
+.summaryGrid{display:grid;grid-template-columns:1.1fr .9fr;gap:12px}.summaryGrid .wide{grid-column:1/-1}
+.taskSummary{padding:12px 0;border-bottom:1px solid var(--line2)}.taskSummary:last-child{border:0}
+.taskSummaryHead{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+.objectiveCheck{display:flex;gap:9px;align-items:flex-start;color:var(--muted);margin-top:8px;line-height:1.45;cursor:pointer}
+.objectiveCheck input,.checkRow input{accent-color:var(--gold);width:16px;height:16px;flex:0 0 auto;margin-top:2px}
+.objectiveCheck.done span,.checkRow.done .labelText{text-decoration:line-through;opacity:.48}
+.iconRemove{border:1px solid var(--line);background:#171b1c;color:#aaa;border-radius:4px;width:26px;height:26px;cursor:pointer}
+.reqLabel{font-size:10px;letter-spacing:.9px;text-transform:uppercase;color:var(--muted);margin:12px 0 4px}
+.reqGroup{border:1px solid var(--line2);background:#101415;border-radius:7px;padding:0 11px;margin-bottom:9px}
+.reqGroupTitle{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid var(--line2);font-size:11px}
+.reqGroupTitle strong{letter-spacing:.7px}
+.checkRow{display:flex;align-items:flex-start;gap:9px;padding:10px 0;border-bottom:1px solid var(--line2);cursor:pointer}
+.checkRow:last-child{border:0}.labelText{line-height:1.35}.subline{display:block;color:var(--muted);font-size:10px;margin-top:3px}
+.typeTag,.firTag,.verifyTag{margin-left:auto;font-size:9px;border-radius:3px;padding:3px 5px;white-space:nowrap}
+.typeTag{color:var(--gold);border:1px solid #4a4434}.firTag{color:#a9d8d0;border:1px solid #35544f}.verifyTag{color:#a7c89b;border:1px solid #3b5639}
+.alert{border-left:3px solid var(--red);background:var(--redbg);padding:12px;margin:7px 0;line-height:1.45}
+.alert.ok{border-left-color:var(--green);background:var(--greenbg)}
+.alert.soft{border-left-color:var(--amber);background:var(--amberbg)}
+.alert.info{border-left-color:var(--blue);background:var(--bluebg)}
+.alert .why{display:block;color:var(--muted);margin-top:4px}
+.actions{display:flex;gap:8px;margin-top:13px;flex-wrap:wrap}
+.progressWrap{margin-top:11px}.progressMeta{display:flex;justify-content:space-between;font-size:10px;color:var(--muted);margin-bottom:6px}
+.progressTrack{height:6px;background:#202526;border-radius:20px;overflow:hidden}.progressBar{height:100%;background:var(--gold);width:0%;transition:.2s}
+.detail{position:fixed;right:0;top:70px;bottom:0;width:min(480px,94vw);background:#101415;border-left:1px solid var(--line);box-shadow:-20px 0 60px rgba(0,0,0,.35);z-index:40;padding:20px;overflow:auto;transform:translateX(102%);transition:.2s}
+.detail.open{transform:translateX(0)}.detailHead{display:flex;justify-content:space-between;gap:12px}
+.detailClose{background:transparent;border:1px solid var(--line);color:var(--muted);border-radius:4px;width:30px;height:30px;cursor:pointer}
+.detailSection{margin-top:18px}.detailSection h3{font-size:11px;text-transform:uppercase;letter-spacing:.9px;color:#c9cfcd;margin-bottom:8px}
+.detailLine{padding:8px 0;border-bottom:1px solid var(--line2);color:var(--muted)}
+.dataCard{display:flex;align-items:center;gap:9px;padding:10px;border:1px solid var(--line2);border-radius:6px;background:#111516}
+.dataCard b{display:block;font-size:11px}.dataCard span{display:block;color:var(--muted);font-size:10px;margin-top:2px}
+.modalBackdrop{position:fixed;inset:0;background:rgba(0,0,0,.67);z-index:60;display:none;align-items:center;justify-content:center;padding:18px}
+.modalBackdrop.open{display:flex}.modal{width:min(620px,100%);max-height:85vh;overflow:auto;border:1px solid var(--line);background:#111516;border-radius:9px;padding:18px;box-shadow:0 30px 80px rgba(0,0,0,.55)}
+.modalHead{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.modalClose{border:1px solid var(--line);background:#15191a;color:var(--muted);border-radius:4px;width:30px;height:30px;cursor:pointer}
+.textArea{width:100%;min-height:150px;background:#0d1112;color:var(--text);border:1px solid var(--line);border-radius:6px;padding:11px;resize:vertical;outline:none}
+.mobileCard{position:fixed;inset:0;background:#090b0c;z-index:80;display:none;overflow:auto}
+.mobileCard.open{display:block}.mobileTop{position:sticky;top:0;background:#0d1011;border-bottom:1px solid var(--line);padding:14px;display:flex;justify-content:space-between;gap:10px;align-items:center}
+.mobileBody{padding:14px;max-width:620px;margin:auto}.mobileSection{border:1px solid var(--line);background:#121617;border-radius:8px;padding:14px;margin-bottom:10px}
+.footerNote{margin-top:14px;color:#666f6d;font-size:10px;text-align:right}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);background:#191e1f;border:1px solid var(--line);padding:10px 13px;border-radius:5px;opacity:0;pointer-events:none;transition:.2s;z-index:100}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+.mobileHeaderBtn,.mobileDrawerHead,.mobileBottomNav,.drawerBackdrop{display:none}
+.mobileHeaderBtn{border:1px solid var(--line);background:#15191a;color:var(--text);border-radius:6px;padding:8px 10px;font-weight:800;cursor:pointer}
+.mobileHeaderBtn b{color:var(--gold);margin-left:5px}
+.mobileDrawerHead{align-items:center;justify-content:space-between;gap:12px;padding-bottom:12px;margin-bottom:12px;border-bottom:1px solid var(--line)}
+.mobileDrawerHead strong{font-size:16px}
+.drawerBackdrop{position:fixed;inset:0;background:rgba(0,0,0,.66);z-index:84;opacity:0;pointer-events:none;transition:.18s}
+.drawerBackdrop.open{opacity:1;pointer-events:auto}
+.mobileBottomNav{position:fixed;left:0;right:0;bottom:0;z-index:75;background:rgba(12,15,16,.98);border-top:1px solid var(--line);padding:8px 10px calc(8px + env(safe-area-inset-bottom));gap:8px;grid-template-columns:.8fr .8fr 1.4fr;box-shadow:0 -14px 35px rgba(0,0,0,.32)}
+.mobileNavBtn{min-height:48px;border:1px solid var(--line);background:#15191a;color:var(--muted);border-radius:7px;font-weight:850;font-size:11px;cursor:pointer}
+.mobileNavBtn.primary{background:var(--gold);border-color:var(--gold);color:#15120c}
+.mobileNavBtn:disabled{opacity:.38;cursor:not-allowed}
+
+@media(max-width:980px){
+  .layout{grid-template-columns:1fr}
+  .mapGrid,.grid3{grid-template-columns:1fr 1fr}
+}
+@media(max-width:860px){
+  html,body{max-width:100%;overflow-x:hidden}
+  body{padding-bottom:76px}
+  header{height:60px;padding:0 12px;gap:8px}
+  .logo{font-size:16px}
+  .version,.dataStatus,.selectedTop{display:none}
+  .mobileHeaderBtn{display:block;margin-left:auto;min-height:40px}
+  .layout{display:block;min-height:calc(100vh - 60px)}
+  .main{padding:12px 12px 24px;max-width:100%}
+  .sidebar{
+    display:block;position:fixed;left:0;top:0;bottom:0;z-index:90;
+    width:min(92vw,430px);height:100dvh;padding:14px;
+    border-right:1px solid var(--line);border-bottom:0;
+    transform:translateX(-104%);transition:transform .2s ease;
+    overflow:hidden;background:#0d1011;box-shadow:22px 0 60px rgba(0,0,0,.45)
+  }
+  .sidebar.open{transform:translateX(0)}
+  .mobileDrawerHead{display:flex}
+  .drawerBackdrop{display:block}
+  .mobileBottomNav{display:grid}
+  .taskList{max-height:calc(100dvh - 285px);padding-bottom:12px}
+  .sideActions .btn{min-height:42px}
+  .search{min-height:46px;font-size:16px}
+  select{min-height:44px;font-size:16px}
+  .taskCard{padding:14px;min-height:78px}
+  .card,.hero{border-radius:8px;padding:14px;box-shadow:none}
+  .hero{padding:17px 14px}
+  .hero h1{font-size:27px;line-height:1.05;margin-top:7px}
+  .hero p{font-size:13px}
+  .heroTop,.summaryHead{display:block}
+  .modeSwitch{margin-top:14px;width:100%;display:grid;grid-template-columns:1fr 1fr}
+  .modeBtn{min-height:42px}
+  .grid2,.grid3,.summaryGrid,.mapGrid{grid-template-columns:1fr}
+  .summaryGrid .wide{grid-column:auto}
+  .recommendPanel{grid-template-columns:1fr}
+  .recommendPanel .btn{width:100%;min-height:46px}
+  .mapChoice{padding:15px}
+  .mapActions{display:grid;grid-template-columns:1fr 1fr}
+  .mapActions .btn{min-height:44px}
+  .mapPicker{display:grid;grid-template-columns:1fr 1fr}
+  .mapPick{min-height:44px}
+  .compatTask{align-items:flex-start;flex-direction:column}
+  .compatTask>div:last-child{width:100%;justify-content:space-between}
+  .compatTask .btn{min-height:42px}
+  .summaryHead h1{font-size:30px}
+  .ready{display:inline-block;margin-top:12px}
+  .objectiveCheck,.checkRow{min-height:48px;padding:11px 0}
+  .objectiveCheck input,.checkRow input{width:19px;height:19px}
+  .taskSummaryHead{gap:10px}
+  .iconRemove{width:40px;height:40px;flex:0 0 auto}
+  .actions{display:grid;grid-template-columns:1fr 1fr}
+  .actions .btn{min-height:46px}
+  .detail{top:0;width:100vw;max-width:none;z-index:105;padding:16px;padding-top:calc(16px + env(safe-area-inset-top))}
+  .mobileCard{z-index:115}
+  .mobileTop{padding-top:calc(14px + env(safe-area-inset-top))}
+  .footerNote{text-align:left;padding-bottom:4px}
+  .section{margin-top:11px}
+}
+@media(max-width:520px){
+  .main{padding-left:9px;padding-right:9px}
+  .card,.hero{padding:13px}
+  .hero h1{font-size:25px}
+  .statRow{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+  .stat{padding:8px;font-size:9px}.stat b{font-size:13px}
+  .sectionTitle{align-items:flex-start}
+  .mapActions,.actions{grid-template-columns:1fr}
+  .mapPicker{grid-template-columns:1fr 1fr}
+  .pill{max-width:100%}
+  .pill button:first-child{max-width:calc(100vw - 105px);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;vertical-align:bottom}
+  .notice{font-size:11px}
+  .summaryHead h1{font-size:28px}
+}
 </style>
 </head>
 <body>
 <header>
- <div class="logo">RAID<span>PLAN</span></div><div class="version">TARKOV TASK PLANNER · 1.0</div>
- <div class="spacer"></div>
- <div class="dataStatus"><span id="dataDot" class="dot"></span><span id="dataLabel">Loading current Tarkov data…</span></div>
- <div class="selectedTop"><b id="topCount">0</b> selected</div>
+  <div class="logo">RAID<span>PLAN</span></div>
+  <div class="version">1.1 · MOBILE READY</div>
+  <button id="mobileTasksBtn" class="mobileHeaderBtn">☰ TASKS <b id="mobileHeaderCount">0</b></button>
+  <div class="spacer"></div>
+  <div class="statusWrap">
+    <div class="dataStatus"><span id="dataDot" class="dot"></span><span id="dataLabel">Loading task data…</span></div>
+    <div class="selectedTop"><b id="topCount">0</b> selected</div>
+  </div>
 </header>
 
 <div class="layout">
-<aside class="sidebar">
- <h3 style="margin-bottom:10px">Tasks</h3>
- <input id="search" class="search" type="search" placeholder="Search task, trader or objective…" disabled>
- <div class="filters">
-  <select id="mapFilter" disabled><option>All maps</option></select>
-  <select id="traderFilter" disabled><option>All traders</option></select>
-  <select id="typeFilter" disabled><option>All types</option></select>
- </div>
- <div class="sideActions">
-  <button id="selectVisible" class="btn secondary small" disabled>SELECT VISIBLE</button>
-  <button id="clear" class="btn ghost small" disabled>CLEAR</button>
- </div>
- <div id="taskList" class="taskList"><div class="loading"><div class="spinner"></div>Importing tasks from json.tarkov.dev…</div></div>
+<aside id="taskSidebar" class="sidebar">
+  <div class="mobileDrawerHead">
+    <div><div class="eyebrow">Task library</div><strong>Select your tasks</strong></div>
+    <button id="closeTaskDrawer" class="btn ghost small">DONE</button>
+  </div>
+  <div class="eyebrow">Task library</div>
+  <h3 style="margin:5px 0 10px">Find tasks faster</h3>
+  <input id="search" class="search" type="search" placeholder="Task, trader, map, item, weapon, objective…">
+  <div class="filters">
+    <select id="mapFilter"><option>All maps</option></select>
+    <select id="traderFilter"><option>All traders</option></select>
+    <select id="typeFilter"><option>All types</option></select>
+  </div>
+  <div class="sideActions">
+    <button id="selectVisible" class="btn secondary small">SELECT VISIBLE</button>
+    <button id="clear" class="btn ghost small">CLEAR</button>
+  </div>
+  <div id="taskList" class="taskList"><div class="loading"><div class="spinner"></div>Loading RaidPlan data…</div></div>
 </aside>
 
 <main class="main">
 <section id="planner">
- <div class="hero">
-  <div class="eyebrow">Tarkov task planner</div>
-  <h1>Build your next raid.</h1>
-  <p class="muted">Search and select the tasks you want to work on. RaidPlan groups them by map, combines the equipment and access requirements, and flags requirements that cannot be satisfied together.</p>
- </div>
- <div id="dataNotice" class="notice"><span>●</span><span>Loading the latest standard PvP task data. The first load can take a moment; successful imports are cached on this device.</span></div>
+  <div class="hero">
+    <div class="heroTop">
+      <div>
+        <div class="eyebrow">Tarkov task planner</div>
+        <h1>Build the raid that moves you forward.</h1>
+        <p class="muted">Start from tasks or start from a map. RaidPlan finds the best raid, suggests compatible objectives, builds the loadout checklist and flags combinations worth splitting across separate raids.</p>
+      </div>
+      <div class="modeSwitch">
+        <button class="modeBtn active" data-mode="tasks">PLAN FROM TASKS</button>
+        <button class="modeBtn" data-mode="map">PLAN FROM MAP</button>
+      </div>
+    </div>
+    <div class="statRow">
+      <div class="stat">Task data<b id="statTasks">—</b></div>
+      <div class="stat">Last updated<b id="statUpdated">—</b></div>
+      <div class="stat">Selected<b id="statSelected">0</b></div>
+    </div>
+  </div>
 
- <div class="section card">
-  <div class="sectionTitle"><div><h3>Selected Tasks</h3><div class="muted" style="font-size:12px;margin-top:3px">Click a selected task name for full details.</div></div><span id="selectedCount" class="count">0</span></div>
-  <div id="selectedPills" class="selectedPills"><span class="muted">No tasks selected yet.</span></div>
- </div>
+  <div id="dataNotice" class="notice"><span>●</span><span>Loading the current RaidPlan dataset. RaidPlan uses the latest locally deployed task snapshot, with GitHub as a fallback source.</span></div>
 
- <div class="section grid2">
-  <div class="card"><div class="sectionTitle"><h3>Breakdown by Map</h3><span class="muted">Selected</span></div><div id="mapBreak"><div class="empty">Select tasks to see the breakdown.</div></div></div>
-  <div class="card"><div class="sectionTitle"><h3>Breakdown by Trader</h3><span class="muted">Selected</span></div><div id="traderBreak"><div class="empty">Select tasks to see the breakdown.</div></div></div>
- </div>
+  <div id="mapStart" class="section card hidden">
+    <div class="sectionTitle">
+      <div><div class="eyebrow">Plan from map</div><h2 style="margin-top:4px">Where are you raiding?</h2></div>
+      <span class="muted">Pick a map to surface relevant tasks</span>
+    </div>
+    <div id="mapPicker" class="mapPicker"></div>
+    <div id="mapTaskSuggestions" style="margin-top:13px"></div>
+  </div>
 
- <div class="section card">
-  <div class="sectionTitle"><div><div class="eyebrow">Custom raid</div><h2 style="margin-top:4px">Choose a Raid Map</h2></div><span class="muted">Only maps represented by selected tasks appear</span></div>
-  <div id="mapChoices"><div class="empty">Select at least one task to build a raid.</div></div>
- </div>
- <div class="footerNote">Task data: json.tarkov.dev + Escape from Tarkov Wiki validation · RaidPlan is an unofficial Escape from Tarkov companion.</div>
+  <div id="recommendSection" class="section card recommendPanel hidden">
+    <div>
+      <div class="eyebrow">Recommended next raid</div>
+      <h2 id="recommendedMap">Customs</h2>
+      <div id="recommendedText" class="muted"></div>
+      <div id="recommendedReasons" class="recommendReasons"></div>
+    </div>
+    <button id="buildRecommended" class="btn">BUILD THIS RAID</button>
+  </div>
+
+  <div class="section card">
+    <div class="sectionTitle">
+      <div><h3>Selected Tasks</h3><div id="selectedSummary" class="muted" style="font-size:12px;margin-top:3px">Nothing selected yet.</div></div>
+      <span id="selectedCount" class="count">0</span>
+    </div>
+    <div id="selectedPills" class="selectedPills"><span class="muted">No tasks selected yet.</span></div>
+  </div>
+
+  <div class="section grid2">
+    <div class="card"><div class="sectionTitle"><h3>Breakdown by Map</h3><span class="muted">Selected</span></div><div id="mapBreak"><div class="empty">Select tasks to see the breakdown.</div></div></div>
+    <div class="card"><div class="sectionTitle"><h3>Breakdown by Trader</h3><span class="muted">Selected</span></div><div id="traderBreak"><div class="empty">Select tasks to see the breakdown.</div></div></div>
+  </div>
+
+  <div class="section card">
+    <div class="sectionTitle">
+      <div><div class="eyebrow">Custom raid</div><h2 style="margin-top:4px">Choose a Raid Map</h2></div>
+      <span class="muted">Best fit is highlighted automatically</span>
+    </div>
+    <div id="mapChoices"><div class="empty">Select at least one task to build a raid.</div></div>
+  </div>
+
+  <div id="compatibleSection" class="section card hidden">
+    <div class="sectionTitle">
+      <div><div class="eyebrow">Smart suggestions</div><h2 style="margin-top:4px">Compatible tasks you could add</h2></div>
+      <button id="addAllCompatible" class="btn secondary small">ADD COMPATIBLE</button>
+    </div>
+    <div id="compatibleList" class="compatList"></div>
+  </div>
+
+  <div class="footerNote">RaidPlan is an unofficial Escape from Tarkov planning tool and is not affiliated with Battlestate Games.</div>
 </section>
 
 <section id="summary" class="hidden">
- <div class="summaryHead"><div><div class="eyebrow">Custom raid</div><h1 id="summaryMap"></h1><div id="summaryMeta" class="muted"></div></div><div id="summaryStatus" class="ready">✓ READY</div></div>
- <div class="summaryGrid">
-  <div class="card"><div class="sectionTitle"><h3>Tasks</h3><span id="summaryTaskCount" class="muted"></span></div><div id="summaryTasks"></div></div>
-  <div class="card"><div class="sectionTitle"><h3>Bring Into Raid</h3><span id="bringCount" class="muted"></span></div><div id="bringList"></div></div>
-  <div class="card wide"><div class="sectionTitle"><h3>Contradictions</h3><span id="conflictCount" class="muted">Clear</span></div><div id="conflicts"></div></div>
- </div>
- <div class="actions"><button id="copyFull" class="btn">COPY FULL CHECKLIST</button><button id="copyItems" class="btn secondary">COPY ITEMS ONLY</button><button id="back" class="btn ghost">BACK TO TASKS</button></div>
+  <div class="summaryHead">
+    <div>
+      <div class="eyebrow">Custom raid checklist</div>
+      <h1 id="summaryMap"></h1>
+      <div id="summaryMeta" class="muted"></div>
+      <div class="progressWrap">
+        <div class="progressMeta"><span>Raid checklist progress</span><span id="progressText">0%</span></div>
+        <div class="progressTrack"><div id="progressBar" class="progressBar"></div></div>
+      </div>
+    </div>
+    <div id="summaryStatus" class="ready">✓ GOOD COMBINATION</div>
+  </div>
+
+  <div class="summaryGrid">
+    <div class="card">
+      <div class="sectionTitle"><h3>Tasks & Objectives</h3><span id="summaryTaskCount" class="muted"></span></div>
+      <div id="summaryTasks"></div>
+    </div>
+
+    <div class="card">
+      <div class="sectionTitle"><h3>Bring Into Raid</h3><span id="bringCount" class="muted"></span></div>
+      <div id="bringList"></div>
+    </div>
+
+    <div class="card wide">
+      <div class="sectionTitle"><h3>Compatibility</h3><span id="conflictCount" class="muted">Clear</span></div>
+      <div id="conflicts"></div>
+    </div>
+
+    <div id="raidCompatible" class="card wide hidden">
+      <div class="sectionTitle">
+        <div><h3>Add Compatible Tasks</h3><div class="muted" style="font-size:11px;margin-top:3px">Extra tasks on this map that don't create a hard gear conflict.</div></div>
+        <button id="raidAddAllCompatible" class="btn secondary small">ADD ALL</button>
+      </div>
+      <div id="raidCompatibleList" class="compatList"></div>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button id="copyFull" class="btn">COPY FULL CHECKLIST</button>
+    <button id="copyItems" class="btn secondary">COPY ITEMS ONLY</button>
+    <button id="shareRaid" class="btn secondary">SHARE RAID PLAN</button>
+    <button id="mobileRaid" class="btn secondary">MOBILE RAID CARD</button>
+    <button id="back" class="btn ghost">BACK TO TASKS</button>
+  </div>
 </section>
 </main>
 </div>
 
+<div id="drawerBackdrop" class="drawerBackdrop"></div>
+<nav id="mobileBottomNav" class="mobileBottomNav" aria-label="Mobile RaidPlan navigation">
+  <button id="mobilePlanNav" class="mobileNavBtn">PLAN</button>
+  <button id="mobileTasksNav" class="mobileNavBtn">TASKS</button>
+  <button id="mobileRaidNav" class="mobileNavBtn primary" disabled>SELECT TASKS</button>
+</nav>
+
 <aside id="detail" class="detail" aria-hidden="true">
- <div class="detailHead"><div><div class="eyebrow">Task details</div><h2 id="detailTitle" style="margin-top:5px"></h2><div id="detailMeta" class="muted" style="margin-top:5px"></div></div><button id="detailClose" class="detailClose">×</button></div>
- <div id="detailBody"></div>
+  <div class="detailHead">
+    <div><div class="eyebrow">Task details</div><h2 id="detailTitle" style="margin-top:5px"></h2><div id="detailMeta" class="muted" style="margin-top:5px"></div></div>
+    <button id="detailClose" class="detailClose">×</button>
+  </div>
+  <div id="detailBody"></div>
 </aside>
+
+<div id="reportModal" class="modalBackdrop">
+  <div class="modal">
+    <div class="modalHead">
+      <div><div class="eyebrow">Data quality</div><h2 style="margin-top:4px">Report incorrect task data</h2></div>
+      <button class="modalClose" data-close-modal>×</button>
+    </div>
+    <p class="muted">This would give players a fast way to flag wipe changes without building a full support system.</p>
+    <textarea id="reportText" class="textArea"></textarea>
+    <div class="actions">
+      <button id="copyReport" class="btn">COPY REPORT</button>
+      <button id="openGithubReport" class="btn secondary">OPEN GITHUB ISSUE</button>
+    </div>
+  </div>
+</div>
+
+<div id="shareModal" class="modalBackdrop">
+  <div class="modal">
+    <div class="modalHead">
+      <div><div class="eyebrow">Squad sharing</div><h2 style="margin-top:4px">Share this raid plan</h2></div>
+      <button class="modalClose" data-close-modal>×</button>
+    </div>
+    <p class="muted">The prototype stores the raid in the URL hash. Once deployed on RaidPlan, sending this link would open the same selected tasks and map for a squadmate.</p>
+    <textarea id="shareText" class="textArea" style="min-height:90px"></textarea>
+    <div class="actions"><button id="copyShare" class="btn">COPY SHARE LINK</button></div>
+  </div>
+</div>
+
+<div id="mobileCard" class="mobileCard">
+  <div class="mobileTop"><div class="logo">RAID<span>PLAN</span> <span class="muted" style="font-weight:600;font-size:11px">RAID CARD</span></div><button id="closeMobile" class="btn ghost small">CLOSE</button></div>
+  <div id="mobileBody" class="mobileBody"></div>
+</div>
+
 <div id="toast" class="toast"></div>
 
 <script>
 (function(){
 "use strict";
 
-const BASE="https://json.tarkov.dev";
-const MODE="regular";
-const CACHE_KEY="raidplan-normalized-tasks-v2-weapon-requirements";
-const CACHE_AGE=12*60*60*1000;
-const FALLBACK=[{"id":"demo-debut","name":"Debut","trader":"Prapor","maps":["Ground Zero"],"type":"Kill / Find","objectives":["Eliminate Scavs","Hand over the required MP-133 shotguns"],"requirements":[],"restrictions":[],"wikiLink":"","source":"fallback"},{"id":"demo-bp","name":"BP Depot","trader":"Prapor","maps":["Customs"],"type":"Place","objectives":["Mark the fuel tanks","Survive and extract"],"requirements":[{"kind":"item","name":"MS2000 Marker","qty":4}],"restrictions":[],"wikiLink":"","source":"fallback"},{"id":"demo-humanitarian","name":"Humanitarian Supplies","trader":"Peacekeeper","maps":["Shoreline"],"type":"Kill / Place","objectives":["Mark the trucks","Eliminate Scavs while wearing UN gear"],"requirements":[{"kind":"gear","name":"UNTAR body armor","qty":1,"slot":"armor"}],"restrictions":[],"wikiLink":"","source":"fallback"}];
+const DATA_URLS=[
+  "./tasks.snapshot.json",
+  "https://raw.githubusercontent.com/pm4gp9zb88-jpg/tarkov-raidplan/main/RaidPlan_1.0_wiki_validated_sync/tasks.snapshot.json"
+];
 
-const SLOT_HINTS={
- armor:["body armor","body armour","paca","untar armor","untar armour","korund","zhuk","fort armor","fort armour","6b13","6b23","6b43"],
- rig:["tactical rig","chest rig","scav vest","security vest","bank robber"],
- headwear:["helmet","ushanka","cap","hat","beanie"],
- facecover:["balaclava","mask","respirator","shemagh"],
- eyewear:["glasses","goggles","eyewear"],
- earpiece:["headset","earpiece","comtac","sordin","razor"]
-};
-
-let TASKS=[], byId={}, activeMap=null;
+let TASKS=[], byId={}, generatedAt=null, activeMap=null, mode="tasks", mapPlanSelection=null, reportTask=null;
 const selected=new Set();
+
 const $=id=>document.getElementById(id);
-const arr=v=>Array.isArray(v)?v:(v&&typeof v==="object"?Object.values(v):[]);
-const idOf=v=>typeof v==="string"?v:(v&&typeof v==="object"?(v.id||v._id||""):"");
-const uniq=a=>[...new Set(a.filter(Boolean))];
 const clean=s=>String(s??"").trim();
+const uniq=a=>[...new Set(a.filter(Boolean))];
+const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
+const taskMaps=t=>Array.isArray(t.maps)&&t.maps.length?t.maps:["Any"];
+const store=()=>{try{return localStorage}catch(e){return null}};
+const checkStoreKey="raidplan-concept-checks-v1";
 
-function safeGetStore(){
- try{return window.localStorage}catch(e){return null}
-}
-function getCache(){
- try{
-  const s=safeGetStore(); if(!s)return null;
-  const raw=JSON.parse(s.getItem(CACHE_KEY)||"null");
-  if(!raw||!Array.isArray(raw.tasks)||!raw.savedAt)return null;
-  return raw;
- }catch(e){return null}
-}
-function setCache(tasks){
- try{const s=safeGetStore();if(s)s.setItem(CACHE_KEY,JSON.stringify({savedAt:Date.now(),tasks}))}catch(e){}
-}
+function loadChecks(){try{return JSON.parse(store()?.getItem(checkStoreKey)||"{}")||{}}catch(e){return {}}}
+function saveChecks(obj){try{store()?.setItem(checkStoreKey,JSON.stringify(obj))}catch(e){}}
+function checkId(kind,taskId,index,name=""){return `${activeMap||"none"}|${kind}|${taskId||""}|${index}|${name}`}
 
-function parsePath(path){
- if(typeof path!=="string"||!path.startsWith("$."))return null;
- const parts=path.slice(2).split("."); const out=[];
- for(const part of parts){
-  if(!part)return null;
-  if(part==="*"){out.push({kind:"wild"});continue}
-  if(part.endsWith("[*]")){out.push({kind:"array",key:part.slice(0,-3)});continue}
-  out.push({kind:"key",key:part});
- }
- return out;
-}
-function applyTranslationPath(root,steps,dict,index=0){
- if(root==null||typeof root!=="object"||index>=steps.length)return;
- const step=steps[index], last=index===steps.length-1;
- if(step.kind==="wild"){
-  const keys=Array.isArray(root)?root.keys():Object.keys(root);
-  for(const k of keys){
-   if(last){
-    const val=root[k]; if(typeof val==="string"&&Object.prototype.hasOwnProperty.call(dict,val))root[k]=dict[val];
-   }else applyTranslationPath(root[k],steps,dict,index+1);
-  }
-  return;
- }
- if(step.kind==="array"){
-  const list=root[step.key]; if(!Array.isArray(list))return;
-  for(let i=0;i<list.length;i++){
-   if(last){const val=list[i];if(typeof val==="string"&&Object.prototype.hasOwnProperty.call(dict,val))list[i]=dict[val]}
-   else applyTranslationPath(list[i],steps,dict,index+1);
-  }
-  return;
- }
- if(last){
-  const val=root[step.key]; if(typeof val==="string"&&Object.prototype.hasOwnProperty.call(dict,val))root[step.key]=dict[val];
- }else applyTranslationPath(root[step.key],steps,dict,index+1);
-}
-async function fetchTranslated(endpoint){
- const [baseRes,enRes]=await Promise.all([
-  fetch(`${BASE}/${MODE}/${endpoint}`,{headers:{Accept:"application/json"}}),
-  fetch(`${BASE}/${MODE}/${endpoint}_en`,{headers:{Accept:"application/json"}})
- ]);
- if(!baseRes.ok)throw new Error(`${endpoint}: ${baseRes.status}`);
- const base=await baseRes.json();
- let dict={};
- if(enRes.ok){const en=await enRes.json();dict=en&&en.data&&typeof en.data==="object"?en.data:{}}
- const copy=JSON.parse(JSON.stringify(base));
- if(Array.isArray(copy.translations)&&dict){
-  for(const p of copy.translations){const steps=parsePath(p);if(steps)applyTranslationPath(copy,steps,dict)}
- }
- return copy.data;
+function toast(msg){
+  const el=$("toast");el.textContent=msg;el.classList.add("show");
+  clearTimeout(window.__toast);window.__toast=setTimeout(()=>el.classList.remove("show"),1500)
 }
 
-function makeLookup(collection,key){
- const src=collection&&collection[key]!==undefined?collection[key]:collection;
- const map=new Map();for(const o of arr(src)){const id=idOf(o);if(id)map.set(id,o)}return map;
-}
-function refObj(v,...lookups){
- if(v&&typeof v==="object")return v;
- const id=idOf(v);if(!id)return {};
- for(const l of lookups){if(l&&l.has(id))return l.get(id)}
- return {id};
-}
-function refName(v,...lookups){
- const o=refObj(v,...lookups);
- return clean(o.name||o.shortName||o.normalizedName||"");
-}
-function qtyOf(o){
- const candidates=[o&&o.count,o&&o.quantity,o&&o.requiredCount,o&&o.amount];
- for(const n of candidates)if(Number.isFinite(Number(n))&&Number(n)>0)return Number(n);
- return 1;
-}
-function slotForName(name){
- const n=clean(name).toLowerCase();
- for(const [slot,words] of Object.entries(SLOT_HINTS))if(words.some(w=>n.includes(w)))return slot;
- return null;
-}
-function mapNamesFromObjective(o,maps){
- const names=[];
- for(const m of arr(o.maps))names.push(refName(m,maps));
- for(const z of arr(o.zones)){if(z&&z.map)names.push(refName(z.map,maps))}
- for(const p of arr(o.possibleLocations)){if(p&&p.map)names.push(refName(p.map,maps))}
- return uniq(names);
-}
-function objectiveText(o){
- return clean(o.description||o.name||o.text||o.type||"Objective");
-}
-function objectiveCategory(o){
- const t=clean(o.type||o.__typename||"").toLowerCase();
- const d=objectiveText(o).toLowerCase();
- if(o.markerItem||t.includes("mark")||d.includes("mark ")||d.includes("plant ")||d.includes("place "))return "Place";
- if(o.usingWeapon||t.includes("shoot")||t.includes("kill")||d.includes("eliminate")||d.includes("kill "))return "Kill";
- if(o.item||o.items||o.questItem||t.includes("find")||t.includes("give")||d.includes("find ")||d.includes("obtain ")||d.includes("hand over"))return "Find / Hand over";
- if(t.includes("visit")||t.includes("location")||d.includes("locate ")||d.includes("visit "))return "Locate";
- if(d.includes("survive")||d.includes("extract"))return "Survive";
- return "Other";
-}
-function itemList(v,quest){
- const raw=Array.isArray(v)?v:(v?[v]:[]);
- const out=[];
- for(const x of raw){
-  if(Array.isArray(x)){
-   for(const y of x)out.push({id:idOf(y),name:refName(y,quest)});
-  }else{
-   out.push({id:idOf(x),name:refName(x,quest)});
-  }
- }
- return out.filter(x=>x.id||x.name);
-}
-
-function tidyGearPhrase(value){
- let s=clean(value)
-   .replace(/^[\s:;-]+|[\s:;,.!-]+$/g,"")
-   .replace(/^(?:an?|the|any)\s+/i,"")
-   .replace(/\s+/g," ")
-   .trim();
-
- // Remove trailing location / method qualifiers that are not part of the gear.
- s=s.replace(/\s+(?:on|at|in)\s+(?:Customs|Shoreline|Reserve|Woods|Interchange|Factory|Lighthouse|Streets(?: of Tarkov)?|Ground Zero|The Lab|Labs)\b.*$/i,"");
- s=s.replace(/\s+(?:from a distance|at a distance|with headshots|during the night|during daytime)\b.*$/i,"");
- return s.trim();
-}
-
-function looksLikeWeaponPhrase(value){
- const s=clean(value).toLowerCase();
- if(!s)return false;
- return /\b(?:weapon|weapons|rifle|rifles|shotgun|shotguns|pistol|pistols|smg|smgs|carbine|carbines|sniper|assault rifle|marksman rifle|machine gun|akm|ak-?\d|aks-?\d|svd|sv-?\d|m4a1|m4|m1a|mp-?\d|vpo-?\d|sa-?\d|rsass|adar|mosin|revolver|suppressed)\b/i.test(s);
-}
-
-function inferWeaponRequirementsFromText(text){
- const d=clean(text);
- if(!d)return [];
- const found=[];
-
- const patterns=[
-  /\bwhile using\s+(?:an?|the|any)?\s*([^,.;]+?)(?=\s+(?:on|at|in|from|while|without|during)\b|[,.;]|$)/ig,
-  /\busing\s+(?:an?|the|any)?\s*([^,.;]+?)(?=\s+(?:on|at|in|from|while|without|during)\b|[,.;]|$)/ig,
-  /\bwith\s+(?:an?|the|any)?\s*([^,.;]+?(?:weapon(?:s)?|rifle(?:s)?|shotgun(?:s)?|pistol(?:s)?|smg(?:s)?|carbine(?:s)?|sniper rifle(?:s)?|assault rifle(?:s)?|marksman rifle(?:s)?|machine gun(?:s)?))(?=\s+(?:on|at|in|from|while|during)\b|[,.;]|$)/ig
- ];
-
- for(const re of patterns){
-  let m;
-  while((m=re.exec(d))){
-   const phrase=tidyGearPhrase(m[1]);
-   if(looksLikeWeaponPhrase(phrase))found.push(phrase);
-  }
- }
-
- // Common wording where the weapon family itself is the useful requirement.
- const familyPatterns=[
-  /\b(AKM(?:-series| series)? weapon(?:s)?)/i,
-  /\b(short AK series assault rifle(?:s)?)/i,
-  /\b(AK-74(?:-series| series)? (?:weapon(?:s)?|assault rifle(?:s)?))/i,
-  /\b(12ga shotgun(?:s)?)/i,
-  /\b(suppressed weapon(?:s)?)/i
- ];
- for(const re of familyPatterns){
-  const m=d.match(re);
-  if(m)found.push(tidyGearPhrase(m[1]));
- }
-
- return uniq(found);
-}
-
-function inferWornGearFromText(text){
- const d=clean(text);
- if(!d)return [];
- const m=d.match(/\bwhile wearing\s+([^,.;]+?)(?=\s+(?:on|at|in|while|during)\b|[,.;]|$)/i);
- if(!m)return [];
- return m[1]
-  .split(/\s+(?:and|&)\s+/i)
-  .map(tidyGearPhrase)
-  .filter(Boolean);
-}
-
-function inferMarkerRequirementFromText(text){
- const d=clean(text);
- if(!d)return null;
-
- // Common Tarkov task wording: "mark ... with an MS2000 Marker".
- if(/\bmark\b/i.test(d) && /\bMS2000\s+Marker\b/i.test(d)){
-   return {name:"MS2000 Marker",qty:1};
- }
-
- // Broader fallback for explicit "using/with a marker" wording.
- const m=d.match(/\b(?:with|using)\s+(?:an?\s+)?([^,.;]*\bMarker\b)/i);
- if(m){
-   const name=tidyGearPhrase(m[1]);
-   if(name)return {name,qty:1};
- }
- return null;
-}
-function requiredKeyNames(value,quest){
- const groups=arr(value), out=[];
- for(const g of groups){
-  const items=(Array.isArray(g)?g:[g]).map(x=>refName(x,quest)).filter(Boolean);
-  if(items.length)out.push(items.join(" OR "));
- }
- return out;
-}
-function normalizeTask(t,ctx){
- const objectives=arr(t.objectives);
- const taskMap=refName(t.map,ctx.maps);
- let maps=uniq([taskMap,...objectives.flatMap(o=>mapNamesFromObjective(o,ctx.maps))]);
- if(!maps.length)maps=["Any"];
-
- const cats=uniq(objectives.map(objectiveCategory).filter(x=>x!=="Other"));
- const type=cats.length?cats.slice(0,3).join(" / "):"Other";
- const requirements=[],restrictions=[],fir=[];
- const seenReq=new Set();
-
- function addReq(kind,name,qty=1,slot=null,itemId=""){
-  name=clean(name);if(!name)return;
-  const key=`${kind}|${name}|${slot||""}`;
-  const existing=requirements.find(r=>r._key===key);
-  if(existing){existing.qty+=Number(qty)||1;return}
-  requirements.push({_key:key,kind,name,qty:Number(qty)||1,slot:slot||null,itemId:itemId||""});
- }
- for(const o of objectives){
-  for(const keyName of requiredKeyNames(o.requiredKeys,ctx.quest))addReq("key",keyName,1,null);
-  let hasStructuredMarker=false;
-  if(o.markerItem){
-   const name=refName(o.markerItem,ctx.quest);
-   if(name){
-     addReq("item",name,qtyOf(o),null,idOf(o.markerItem));
-     hasStructuredMarker=true;
-   }
-  }
-
-  // Some tasks expose the marker only in the translated objective sentence.
-  // Count one marker per marking objective unless structured marker data already exists.
-  if(!hasStructuredMarker){
-    const inferredMarker=inferMarkerRequirementFromText(objectiveText(o));
-    if(inferredMarker)addReq("item",inferredMarker.name,inferredMarker.qty);
-  }
-
-  // Structured weapon requirements may be one item, an array, or a group.
-  for(const w of itemList(o.usingWeapon,ctx.quest))addReq("gear",w.name,1,"weapon",w.id);
-  for(const m of itemList(o.usingWeaponMods,ctx.quest))addReq("gear",m.name,1,"weapon-mod",m.id);
-  for(const w of itemList(o.wearing,ctx.quest))addReq("gear",w.name,1,slotForName(w.name),w.id);
-  for(const nw of itemList(o.notWearing,ctx.quest))restrictions.push({kind:"not-wearing",name:nw.name,itemId:nw.id,slot:slotForName(nw.name)});
-
-  // Some task feeds encode the restriction primarily in the objective sentence.
-  // Infer useful raid gear from that text instead of silently dropping it.
-  const objText=objectiveText(o);
-  for(const weapon of inferWeaponRequirementsFromText(objText))addReq("gear",weapon,1,"weapon");
-  for(const worn of inferWornGearFromText(objText))addReq("gear",worn,1,slotForName(worn));
-
-  const found=Boolean(o.foundInRaid||o.fir||o.foundInRaidOnly);
-  if(found){
-   const candidates=[...itemList(o.item,ctx.quest),...itemList(o.items,ctx.quest)];
-   for(const x of candidates)if(x.name)fir.push({name:x.name,qty:qtyOf(o),itemId:x.id});
-  }
- }
- for(const r of requirements)delete r._key;
- return {
-  id:idOf(t)||crypto.randomUUID(),name:clean(t.name)||"Unnamed task",
-  trader:refName(t.trader,ctx.traders)||"Unknown",
-  maps,type,objectives:objectives.map(objectiveText).filter(Boolean),
-  requirements,restrictions,fir:fir.filter((x,i,a)=>a.findIndex(y=>y.name===x.name&&y.qty===x.qty)===i),
-  minLevel:Number(t.minPlayerLevel||0)||0,wikiLink:clean(t.wikiLink||""),
-  source:"json.tarkov.dev"
- };
-}
-async function importTasks(){
- const [taskData,mapData,traderData]=await Promise.all([
-  fetchTranslated("tasks"),fetchTranslated("maps"),fetchTranslated("traders")
- ]);
- const ctx={
-  quest:makeLookup(taskData,"questItems"),
-  maps:makeLookup(mapData,"maps"),
-  traders:makeLookup(traderData,"traders")
- };
- return arr(taskData.tasks).map(t=>normalizeTask(t,ctx)).filter(t=>t.name&&t.id).sort((a,b)=>a.trader.localeCompare(b.trader)||a.name.localeCompare(b.name));
-}
-
-function setData(tasks,label,state){
- TASKS=tasks;byId=Object.fromEntries(tasks.map(t=>[t.id,t]));
- $("dataLabel").textContent=label;$("dataDot").className=`dot ${state||""}`;
- $("search").disabled=$("mapFilter").disabled=$("traderFilter").disabled=$("typeFilter").disabled=false;
- $("selectVisible").disabled=$("clear").disabled=false;
- buildFilters();renderTaskList();renderPlanner();
-}
-async function loadValidatedSnapshot(){
- try{
-  const r=await fetch("./tasks.snapshot.json",{cache:"no-store"});
-  if(!r.ok)return null;
-  const j=await r.json();
-  if(!j||!Array.isArray(j.tasks)||!j.tasks.length)return null;
-  return j;
- }catch(e){return null}
-}
 async function loadData(){
- const snapshot=await loadValidatedSnapshot();
- if(snapshot){
-  setData(snapshot.tasks,`Wiki-validated · ${snapshot.tasks.length} tasks`,"ok");
-  $("dataNotice").innerHTML=`<span>✓</span><span>Loaded RaidPlan's validated task snapshot (${snapshot.generatedAt?new Date(snapshot.generatedAt).toLocaleString():"current"}). Tarkov.dev provides the structured data and the Tarkov Wiki removes stale/crossed-out objectives before this file is published.</span>`;
-  return;
- }
- const cache=getCache();
- if(cache&&Date.now()-cache.savedAt<CACHE_AGE){
-  setData(cache.tasks,`Current data · ${cache.tasks.length} tasks · cached`,"ok");
-  $("dataNotice").innerHTML="<span>✓</span><span>Loaded the cached current task dataset. RaidPlan refreshes it automatically after 12 hours.</span>";
-  importTasks().then(tasks=>{if(tasks.length){setCache(tasks);setData(tasks,`Current data · ${tasks.length} tasks`,"ok")}}).catch(()=>{});
-  return;
- }
- try{
-  const tasks=await importTasks();
-  if(!tasks.length)throw new Error("No tasks returned");
-  setCache(tasks);setData(tasks,`Current data · ${tasks.length} tasks`,"ok");
-  $("dataNotice").innerHTML="<span>✓</span><span>Full current standard PvP task data loaded from json.tarkov.dev. Requirements shown in RaidPlan are generated from the structured objective data.</span>";
- }catch(err){
-  console.error(err);
-  if(cache&&cache.tasks.length){
-   setData(cache.tasks,`Cached data · ${cache.tasks.length} tasks`,"ok");
-   $("dataNotice").className="notice";$("dataNotice").innerHTML="<span>↻</span><span>The live refresh was blocked, so RaidPlan is using the last successful cached task import.</span>";
-  }else{
-   setData(FALLBACK,`Offline demo · ${FALLBACK.length} tasks`,"bad");
-   $("dataNotice").className="notice bad";
-   $("dataNotice").innerHTML="<span>!</span><span>This embedded preview could not reach json.tarkov.dev, so only a tiny offline demo is shown. Open this HTML in Chrome/Edge or host the project to load the full current task list automatically.</span>";
+  for(const url of DATA_URLS){
+    try{
+      const r=await fetch(url,{cache:"no-store"});
+      if(!r.ok)continue;
+      const j=await r.json();
+      if(j&&Array.isArray(j.tasks)&&j.tasks.length){
+        setData(j.tasks,j.generatedAt,"live");
+        return;
+      }
+    }catch(e){}
   }
- }
+  $("dataDot").className="dot bad";
+  $("dataLabel").textContent="Task data unavailable";
+  $("dataNotice").className="notice bad";
+  $("dataNotice").innerHTML="<span>!</span><span>RaidPlan could not load the current task snapshot. Refresh the page; if this persists, the data sync/deploy needs checking.</span>";
+  $("taskList").innerHTML='<div class="empty">Task data could not be loaded.</div>';
+  $("statTasks").textContent="—";
+}
+function setData(tasks,updated,sourceMode){
+  TASKS=tasks.filter(Boolean);
+  byId=Object.fromEntries(TASKS.map(t=>[t.id,t]));
+  generatedAt=updated||null;
+  $("dataDot").className=`dot ${sourceMode==="live"?"ok":"bad"}`;
+  $("dataLabel").textContent=sourceMode==="live"?`Wiki-validated · ${TASKS.length} tasks`:`Concept demo · ${TASKS.length} tasks`;
+  $("statTasks").textContent=TASKS.length;
+  $("statUpdated").textContent=generatedAt?new Date(generatedAt).toLocaleDateString("en-GB",{day:"2-digit",month:"short"}):"Unknown";
+  $("dataNotice").className=`notice${sourceMode==="live"?"":" bad"}`;
+  $("dataNotice").innerHTML=sourceMode==="live"
+    ?`<span>✓</span><span>Loaded RaidPlan's current Wiki-validated task snapshot. <b>Last updated ${esc(new Date(generatedAt).toLocaleString("en-GB"))}</b>. Search now includes objectives, maps, keys, markers and weapon requirements.</span>`
+    :`<span>!</span><span>The concept couldn't reach the live dataset, so a small demo set is being used. All 1.1 interactions still work.</span>`;
+  buildFilters();renderTaskList();renderPlanner();restoreSharedPlan();
 }
 
-function esc(v){return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]))}
-function taskMaps(t){return Array.isArray(t.maps)&&t.maps.length?t.maps:["Any"]}
 function buildFilters(){
- const maps=uniq(TASKS.flatMap(taskMaps)).sort(),traders=uniq(TASKS.map(t=>t.trader)).sort(),types=uniq(TASKS.map(t=>t.type)).sort();
- $("mapFilter").innerHTML="<option>All maps</option>"+maps.map(x=>`<option>${esc(x)}</option>`).join("");
- $("traderFilter").innerHTML="<option>All traders</option>"+traders.map(x=>`<option>${esc(x)}</option>`).join("");
- $("typeFilter").innerHTML="<option>All types</option>"+types.map(x=>`<option>${esc(x)}</option>`).join("");
+  const maps=uniq(TASKS.flatMap(taskMaps)).filter(x=>x!=="Any").sort();
+  const traders=uniq(TASKS.map(t=>t.trader)).sort();
+  const types=uniq(TASKS.map(t=>t.type)).sort();
+  $("mapFilter").innerHTML="<option>All maps</option>"+maps.map(x=>`<option>${esc(x)}</option>`).join("");
+  $("traderFilter").innerHTML="<option>All traders</option>"+traders.map(x=>`<option>${esc(x)}</option>`).join("");
+  $("typeFilter").innerHTML="<option>All types</option>"+types.map(x=>`<option>${esc(x)}</option>`).join("");
+  $("mapPicker").innerHTML=maps.map(m=>`<button class="mapPick" data-map-pick="${esc(m)}">${esc(m)}</button>`).join("");
+}
+
+function searchableBlob(t){
+  return [
+    t.name,t.trader,t.type,...taskMaps(t),...(t.objectives||[]),
+    ...(t.requirements||[]).flatMap(r=>[r.name,r.kind,r.slot]),
+    ...(t.restrictions||[]).flatMap(r=>[r.name,r.kind,r.slot]),
+    ...(t.fir||[]).flatMap(f=>[f.name,"found in raid","fir"])
+  ].join(" ").toLowerCase();
 }
 function matches(t){
- const q=clean($("search").value).toLowerCase(),mf=$("mapFilter").value,tf=$("traderFilter").value,yf=$("typeFilter").value;
- const blob=[t.name,t.trader,t.type,...taskMaps(t),...(t.objectives||[])].join(" ").toLowerCase();
- return (!q||blob.includes(q))&&(mf==="All maps"||taskMaps(t).includes(mf))&&(tf==="All traders"||t.trader===tf)&&(yf==="All types"||t.type===yf);
+  const q=clean($("search").value).toLowerCase();
+  const mf=$("mapFilter").value,tf=$("traderFilter").value,yf=$("typeFilter").value;
+  return (!q||searchableBlob(t).includes(q))
+    &&(mf==="All maps"||taskMaps(t).includes(mf)||taskMaps(t).includes("Any"))
+    &&(tf==="All traders"||t.trader===tf)
+    &&(yf==="All types"||t.type===yf);
 }
 function renderTaskList(){
- const visible=TASKS.filter(matches);
- $("taskList").innerHTML=visible.length?visible.map(t=>{
-  const fir=t.fir&&t.fir.length?'<span class="firMini">FIR</span>':"";
-  const map=taskMaps(t).join(" / ");
-  return `<button class="taskCard ${selected.has(t.id)?"selected":""}" data-task="${esc(t.id)}">
-   <div class="taskTop"><div class="taskName">${esc(t.name)} ${fir}</div><span class="mapTag">${esc(map)}</span></div>
-   <div class="taskMeta">${esc(t.trader)} · ${esc(t.type)}${t.minLevel?` · Lv ${t.minLevel}`:""}</div>
-   <div class="taskObj">${esc((t.objectives&&t.objectives[0])||"View task details")}</div></button>`;
- }).join(""):'<div class="empty">No matching tasks.</div>';
+  const taskListEl=$("taskList");
+  const scrollPos=taskListEl.scrollTop;
+  const visible=TASKS.filter(matches);
+  taskListEl.innerHTML=visible.length?visible.map(t=>{
+    const fir=t.fir&&t.fir.length?'<span class="firMini">FIR</span>':"";
+    const verified=String(t.source||"").toLowerCase().includes("wiki")?'<span class="verifiedMini">✓ WIKI</span>':"";
+    return `<button class="taskCard ${selected.has(t.id)?"selected":""}" data-task="${esc(t.id)}">
+      <div class="taskTop"><div class="taskName">${esc(t.name)} ${fir}${verified}</div><span class="mapTag">${esc(taskMaps(t).join(" / "))}</span></div>
+      <div class="taskMeta">${esc(t.trader)} · ${esc(t.type||"Other")}${t.minLevel?` · Lv ${t.minLevel}`:""}</div>
+      <div class="taskObj">${esc((t.objectives&&t.objectives[0])||"View task details")}</div>
+    </button>`;
+  }).join(""):'<div class="empty">No matching tasks. Try a weapon, marker, key, map or objective phrase.</div>';
+  if(isMobile())requestAnimationFrame(()=>{taskListEl.scrollTop=scrollPos});
 }
+
 function current(){return [...selected].map(id=>byId[id]).filter(Boolean)}
-function groupCounts(list,keyFn){const x={};for(const t of list)for(const k of keyFn(t))x[k]=(x[k]||0)+1;return Object.entries(x).sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0]))}
+function groupCounts(list,keyFn){
+  const x={};for(const t of list)for(const k of keyFn(t))x[k]=(x[k]||0)+1;
+  return Object.entries(x).sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0]));
+}
+function objectiveCount(list){return list.reduce((n,t)=>n+(t.objectives||[]).length,0)}
+
+
+function isMobile(){return window.matchMedia("(max-width:860px)").matches}
+function openTaskDrawer(){
+  if(!isMobile())return;
+  $("taskSidebar").classList.add("open");
+  $("drawerBackdrop").classList.add("open");
+  document.body.style.overflow="hidden";
+}
+function closeTaskDrawer(){
+  $("taskSidebar").classList.remove("open");
+  $("drawerBackdrop").classList.remove("open");
+  document.body.style.overflow="";
+}
+function showPlannerMobile(){
+  closeTaskDrawer();
+  $("summary").classList.add("hidden");
+  $("planner").classList.remove("hidden");
+  window.scrollTo({top:0,behavior:"smooth"});
+  updateMobileNav();
+}
+function recommendedMapForSelection(){
+  const list=current();
+  const maps=groupCounts(list,t=>taskMaps(t)).filter(([m])=>m!=="Any");
+  return maps[0]?.[0]||null;
+}
+function updateMobileNav(){
+  const count=selected.size;
+  $("mobileHeaderCount").textContent=count;
+  const raidVisible=!$("summary").classList.contains("hidden");
+  const map=raidVisible&&activeMap?activeMap:recommendedMapForSelection();
+  const btn=$("mobileRaidNav");
+  btn.disabled=!map;
+  btn.textContent=raidVisible&&activeMap?`RAID · ${activeMap.toUpperCase()}`:map?`BUILD · ${map.toUpperCase()}`:"SELECT TASKS";
+}
+
 function renderPlanner(){
- const list=current();$("selectedCount").textContent=$("topCount").textContent=list.length;renderTaskList();
- $("selectedPills").innerHTML=list.length?list.map(t=>`<span class="pill"><button data-detail="${esc(t.id)}">${esc(t.name)}</button><button class="x" data-unselect="${esc(t.id)}">×</button></span>`).join(""):'<span class="muted">No tasks selected yet.</span>';
- const maps=groupCounts(list,t=>taskMaps(t));
- $("mapBreak").innerHTML=maps.length?maps.map(([x,n])=>`<div class="breakRow"><span>${esc(x)}</span><span class="count">${n}</span></div>`).join(""):'<div class="empty">Select tasks to see the breakdown.</div>';
- const traders=groupCounts(list,t=>[t.trader]);
- $("traderBreak").innerHTML=traders.length?traders.map(([x,n])=>`<div class="breakRow"><span>${esc(x)}</span><span class="count">${n}</span></div>`).join(""):'<div class="empty">Select tasks to see the breakdown.</div>';
- const actualMaps=maps.filter(([m])=>m!=="Any");
- const choices=actualMaps.length?actualMaps:(maps.length?maps:[]);
- $("mapChoices").innerHTML=choices.length?`<div class="mapGrid">${choices.map(([map])=>{
-   const included=list.filter(t=>taskMaps(t).includes(map)||taskMaps(t).includes("Any"));
-   const objs=included.reduce((n,t)=>n+(t.objectives||[]).length,0);
-   const others=TASKS.filter(t=>!selected.has(t.id)&&(taskMaps(t).includes(map)||taskMaps(t).includes("Any"))).length;
-   return `<div class="mapChoice"><strong>${esc(map)}</strong><p>${included.length} selected task${included.length!==1?"s":""} · ${objs} objectives</p><div class="mapActions"><button class="btn small" data-build="${esc(map)}">BUILD RAID</button>${others?`<button class="btn secondary small" data-add-map="${esc(map)}">ADD ALL ON MAP (${others})</button>`:""}</div></div>`;
+  const list=current();
+  $("selectedCount").textContent=$("topCount").textContent=$("statSelected").textContent=list.length;
+  renderTaskList();
+  $("selectedPills").innerHTML=list.length?list.map(t=>`<span class="pill"><button data-detail="${esc(t.id)}">${esc(t.name)}</button><button class="x" data-unselect="${esc(t.id)}">×</button></span>`).join(""):'<span class="muted">No tasks selected yet.</span>';
+
+  const maps=groupCounts(list,t=>taskMaps(t));
+  const traders=groupCounts(list,t=>[t.trader]);
+  $("mapBreak").innerHTML=maps.length?maps.map(([x,n])=>`<div class="breakRow"><span>${esc(x)}</span><span class="count">${n}</span></div>`).join(""):'<div class="empty">Select tasks to see the breakdown.</div>';
+  $("traderBreak").innerHTML=traders.length?traders.map(([x,n])=>`<div class="breakRow"><span>${esc(x)}</span><span class="count">${n}</span></div>`).join(""):'<div class="empty">Select tasks to see the breakdown.</div>';
+
+  if(list.length){
+    const mapText=maps.slice(0,3).map(([m,n])=>`${m} ×${n}`).join(" · ");
+    $("selectedSummary").textContent=`${mapText}${traders.length?` · ${traders.length} trader${traders.length!==1?"s":""}`:""}`;
+  }else $("selectedSummary").textContent="Nothing selected yet.";
+
+  renderRecommendation(list,maps);
+  renderMapChoices(list,maps);
+  renderCompatiblePlanner(list,maps);
+  renderMapPlan();
+  updateMobileNav();
+}
+
+function renderRecommendation(list,maps){
+  const candidates=maps.filter(([m])=>m!=="Any");
+  const sec=$("recommendSection");
+  if(!list.length||!candidates.length){sec.classList.add("hidden");return}
+  const [map,count]=candidates[0];
+  const included=list.filter(t=>taskMaps(t).includes(map)||taskMaps(t).includes("Any"));
+  const req=aggregateReq(included);
+  const conf=conflictList(included);
+  const hard=conf.filter(c=>c.severity==="hard").length;
+  $("recommendedMap").textContent=map;
+  $("recommendedText").textContent=`${count} selected task${count!==1?"s":""} · ${objectiveCount(included)} objectives${hard?` · ${hard} hard conflict${hard!==1?"s":""}`:" · no hard conflicts"}`;
+  $("recommendedReasons").innerHTML=[
+    `${count} task${count!==1?"s":""} on map`,
+    `${objectiveCount(included)} objectives`,
+    `${req.length} detected raid requirement${req.length!==1?"s":""}`,
+    hard?"Needs conflict review":"Strong task fit"
+  ].map(x=>`<span class="reasonChip">${esc(x)}</span>`).join("");
+  $("buildRecommended").dataset.map=map;
+  sec.classList.remove("hidden");
+}
+
+function renderMapChoices(list,maps){
+  const candidates=maps.filter(([m])=>m!=="Any");
+  const best=candidates[0]?.[0];
+  $("mapChoices").innerHTML=candidates.length?`<div class="mapGrid">${candidates.map(([map])=>{
+    const included=list.filter(t=>taskMaps(t).includes(map)||taskMaps(t).includes("Any"));
+    const conflicts=conflictList(included);
+    const hard=conflicts.filter(c=>c.severity==="hard").length;
+    const compatible=findCompatible(map,included).length;
+    return `<div class="mapChoice ${map===best?"recommended":""}">
+      ${map===best?'<div class="recBadge">★ RECOMMENDED NEXT RAID</div>':""}
+      <strong>${esc(map)}</strong>
+      <p>${included.length} selected task${included.length!==1?"s":""} · ${objectiveCount(included)} objectives · ${hard?`${hard} hard conflict${hard!==1?"s":""}`:"clean combination"}</p>
+      <div class="mapActions">
+        <button class="btn small" data-build="${esc(map)}">BUILD RAID</button>
+        ${compatible?`<button class="btn secondary small" data-show-compatible="${esc(map)}">+ ${compatible} COMPATIBLE</button>`:""}
+      </div>
+    </div>`;
   }).join("")}</div>`:'<div class="empty">Select at least one task to build a raid.</div>';
 }
-function raidTasks(){return current().filter(t=>taskMaps(t).includes(activeMap)||taskMaps(t).includes("Any"))}
+
+function renderMapPlan(){
+  const wrap=$("mapStart");
+  wrap.classList.toggle("hidden",mode!=="map");
+  if(mode!=="map")return;
+  if(!mapPlanSelection){
+    $("mapTaskSuggestions").innerHTML='<div class="empty">Choose a map above. RaidPlan will show relevant tasks and let you add the ones you want.</div>';
+    return;
+  }
+  const tasks=TASKS.filter(t=>taskMaps(t).includes(mapPlanSelection)||taskMaps(t).includes("Any")).slice(0,30);
+  $("mapTaskSuggestions").innerHTML=`<div class="sectionTitle"><div><h3>${esc(mapPlanSelection)} tasks</h3><div class="muted" style="font-size:11px;margin-top:3px">${tasks.length} shown · search/filter still works in the sidebar</div></div><button class="btn secondary small" data-add-map-selection="${esc(mapPlanSelection)}">ADD ALL SHOWN</button></div>
+    <div class="compatList">${tasks.map(t=>`<div class="compatTask"><div><strong>${esc(t.name)}</strong><small>${esc(t.trader)} · ${esc((t.objectives||[])[0]||"Task objective")}</small></div><button class="btn ${selected.has(t.id)?"good":"secondary"} small" data-map-add-task="${esc(t.id)}">${selected.has(t.id)?"✓ ADDED":"ADD"}</button></div>`).join("")}</div>`;
+}
+
+function renderCompatiblePlanner(list,maps,forcedMap){
+  const map=forcedMap||maps.filter(([m])=>m!=="Any")[0]?.[0];
+  const sec=$("compatibleSection");
+  if(!map||!list.length){sec.classList.add("hidden");return}
+  const included=list.filter(t=>taskMaps(t).includes(map)||taskMaps(t).includes("Any"));
+  const compat=findCompatible(map,included).slice(0,5);
+  if(!compat.length){sec.classList.add("hidden");return}
+  sec.dataset.map=map;
+  $("compatibleList").innerHTML=compat.map(t=>compatibleRow(t,map)).join("");
+  $("addAllCompatible").textContent=`ADD ${compat.length} COMPATIBLE`;
+  sec.classList.remove("hidden");
+}
+function compatibleRow(t,map){
+  const req=(t.requirements||[]).map(r=>r.name).filter(Boolean).slice(0,2).join(", ");
+  return `<div class="compatTask"><div><strong>${esc(t.name)}</strong><small>${esc(t.trader)} · ${esc((t.objectives||[])[0]||"Task objective")}${req?` · Bring: ${esc(req)}`:""}</small></div><div style="display:flex;gap:7px;align-items:center"><span class="compatScore">NO HARD CONFLICT</span><button class="btn secondary small" data-add-compatible="${esc(t.id)}">ADD</button></div></div>`;
+}
+
 function reqKey(r){return `${r.kind}|${r.name}|${r.slot||""}`}
 function aggregateReq(list){
- const map=new Map();
- for(const t of list)for(const r of (t.requirements||[])){
-  const k=reqKey(r),prev=map.get(k);
-  if(prev)prev.qty+=(Number(r.qty)||1);else map.set(k,{...r,qty:Number(r.qty)||1});
- }
- return [...map.values()];
+  const map=new Map();
+  for(const t of list)for(const r of (t.requirements||[])){
+    const k=reqKey(r),prev=map.get(k);
+    if(prev)prev.qty+=(Number(r.qty)||1);
+    else map.set(k,{...r,qty:Number(r.qty)||1});
+  }
+  return [...map.values()];
 }
+
 function conflictList(list){
- const out=[];
- for(let i=0;i<list.length;i++)for(let j=i+1;j<list.length;j++){
-  const a=list[i],b=list[j];
-
-  for(const ar of (a.requirements||[]).filter(r=>r.kind==="gear")){
-   for(const br of (b.requirements||[]).filter(r=>r.kind==="gear")){
-    if(!ar.slot||!br.slot||ar.slot!==br.slot||ar.name===br.name)continue;
-
-    // Different primary weapon requirements are possible to carry together,
-    // but generally inefficient for normal questing. Treat as a soft conflict.
-    if(ar.slot==="weapon"){
-      out.push({
-        kind:"weapon-loadout",
-        severity:"soft",
-        a,b,slot:"weapon",av:ar.name,bv:br.name
-      });
-      continue;
+  const out=[];
+  for(let i=0;i<list.length;i++)for(let j=i+1;j<list.length;j++){
+    const a=list[i],b=list[j];
+    for(const ar of (a.requirements||[]).filter(r=>r.kind==="gear")){
+      for(const br of (b.requirements||[]).filter(r=>r.kind==="gear")){
+        if(!ar.slot||!br.slot||ar.slot!==br.slot||clean(ar.name).toLowerCase()===clean(br.name).toLowerCase())continue;
+        if(ar.slot==="weapon"||ar.slot==="weapon-mod"){
+          out.push({severity:"soft",kind:"loadout",a,b,slot:ar.slot,av:ar.name,bv:br.name});
+        }else out.push({severity:"hard",kind:"slot",a,b,slot:ar.slot,av:ar.name,bv:br.name});
+      }
+      for(const x of (b.restrictions||[])){
+        if(clean(x.name).toLowerCase()===clean(ar.name).toLowerCase())out.push({severity:"hard",kind:"exclude",a,b,slot:ar.slot,av:ar.name,bv:`must not use ${x.name}`});
+      }
     }
-
-    // Weapon mods are also advisory rather than impossible.
-    if(ar.slot==="weapon-mod"){
-      out.push({
-        kind:"weapon-mod-loadout",
-        severity:"soft",
-        a,b,slot:"weapon modification",av:ar.name,bv:br.name
-      });
-      continue;
-    }
-
-    // Armour / rig / headwear / other mutually exclusive equipment slots are hard conflicts.
-    out.push({
-      kind:"slot",
-      severity:"hard",
-      a,b,slot:ar.slot,av:ar.name,bv:br.name
-    });
-   }
-
-   for(const x of (b.restrictions||[])){
-    if((x.itemId&&ar.itemId&&x.itemId===ar.itemId)||clean(x.name).toLowerCase()===clean(ar.name).toLowerCase()){
-      out.push({
-        kind:"exclude",
-        severity:"hard",
-        a,b,slot:ar.slot||x.slot,av:ar.name,bv:`must not wear ${x.name}`
-      });
-    }
-   }
   }
-
-  for(const br of (b.requirements||[]).filter(r=>r.kind==="gear")){
-   for(const x of (a.restrictions||[])){
-    if((x.itemId&&br.itemId&&x.itemId===br.itemId)||clean(x.name).toLowerCase()===clean(br.name).toLowerCase()){
-      out.push({
-        kind:"exclude",
-        severity:"hard",
-        a,b,slot:br.slot||x.slot,av:`must not wear ${x.name}`,bv:br.name
-      });
-    }
-   }
-  }
- }
- const seen=new Set();
- return out.filter(c=>{
-   const k=[c.a.id,c.b.id,c.kind,c.slot,c.av,c.bv].join("|");
-   if(seen.has(k))return false;
-   seen.add(k);
-   return true;
- });
+  const seen=new Set();
+  return out.filter(c=>{const k=[c.a.id,c.b.id,c.kind,c.slot,c.av,c.bv].join("|");if(seen.has(k))return false;seen.add(k);return true});
 }
+
+function findCompatible(map,baseTasks){
+  return TASKS.filter(t=>{
+    if(selected.has(t.id))return false;
+    if(!(taskMaps(t).includes(map)||taskMaps(t).includes("Any")))return false;
+    return !conflictList([...baseTasks,t]).some(c=>c.severity==="hard");
+  }).sort((a,b)=>{
+    const aReq=(a.requirements||[]).length,bReq=(b.requirements||[]).length;
+    return aReq-bReq || a.name.localeCompare(b.name);
+  });
+}
+
+function recommendedItems(req){
+  const out=[];
+  const markers=req.filter(r=>/marker/i.test(r.name));
+  if(markers.length){
+    const total=markers.reduce((n,r)=>n+(r.qty||1),0);
+    out.push({name:"Spare MS2000 Marker",qty:1,why:`You need ${total} marker${total!==1?"s":""}; carrying one spare protects the raid if a placement goes wrong.`});
+  }
+  const weapons=req.filter(r=>r.kind==="gear"&&r.slot==="weapon");
+  for(const w of weapons.slice(0,2))out.push({name:`Extra ammo for ${w.name}`,qty:1,why:"Recommended because the selected objective depends on this weapon setup."});
+  return out;
+}
+
+function obtainedDuringRaid(list){
+  const out=[];
+  for(const t of list){
+    for(const f of (t.fir||[]))out.push({name:f.name,qty:Number(f.qty)||1,task:t.name,why:"Found in Raid objective — obtain during the raid rather than bringing it in."});
+    for(const o of (t.objectives||[])){
+      const m=String(o).match(/\b(?:obtain|find|retrieve|secure|pick up)\s+(.+?)(?=$|[,.;])/i);
+      if(m && !/location|signal|spot|area|room|building/i.test(m[1]))out.push({name:clean(m[1]),qty:1,task:t.name,why:"Objective wording suggests this is collected during the raid."});
+    }
+  }
+  const seen=new Set();return out.filter(x=>{const k=x.name.toLowerCase();if(seen.has(k))return false;seen.add(k);return true}).slice(0,8);
+}
+
 function buildRaid(map){
- activeMap=map;const list=raidTasks();if(!list.length)return;
- const req=aggregateReq(list),conf=conflictList(list);
- const hardConf=conf.filter(c=>c.severity==="hard"),softConf=conf.filter(c=>c.severity==="soft");
- $("summaryMap").textContent=map;$("summaryMeta").textContent=`${list.length} task${list.length!==1?"s":""} · ${list.reduce((n,t)=>n+(t.objectives||[]).length,0)} objectives`;
- $("summaryStatus").textContent=hardConf.length
-   ?`⚠ ${hardConf.length} HARD CONFLICT${hardConf.length!==1?"S":""}`
-   :softConf.length
-     ?`△ ${softConf.length} LOADOUT CONFLICT${softConf.length!==1?"S":""}`
-     :"✓ READY";
- $("summaryStatus").classList.toggle("bad",hardConf.length>0);
- $("summaryStatus").classList.toggle("soft",hardConf.length===0&&softConf.length>0);
- $("summaryTaskCount").textContent=`${list.length} selected`;
- $("summaryTasks").innerHTML=list.map(t=>`<div class="taskSummary"><div class="taskSummaryHead"><div><button style="all:unset;cursor:pointer;font-weight:850" data-detail="${esc(t.id)}">${esc(t.name)}</button><div class="muted">${esc(t.trader)} · ${esc(t.type)}</div></div><button class="iconRemove" data-remove="${esc(t.id)}">×</button></div>${(t.objectives||[]).map(o=>`<div class="objective">• ${esc(o)}</div>`).join("")}</div>`).join("");
-
- const groups=[["key","KEYS"],["item","TASK ITEMS / MARKERS"],["gear","GEAR"]];
- let html="";
- for(const [kind,label] of groups){
-  const rows=req.filter(r=>r.kind===kind);if(!rows.length)continue;
-  html+=`<div class="reqLabel">${label}</div>`+rows.map(r=>`<label class="checkRow"><input type="checkbox"><span><strong>${kind==="key"?"🔑":kind==="gear"?"⚙":"🎒"} ${esc(r.name)}${r.qty>1?` ×${r.qty}`:""}</strong></span><span class="typeTag">${kind.toUpperCase()}</span></label>`).join("");
- }
- const fir=[];for(const t of list)for(const f of (t.fir||[]))fir.push(f);
- if(fir.length){
-  html+=`<div class="reqLabel">FOUND IN RAID OBJECTIVES</div>`+fir.map(f=>`<div class="checkRow"><span>📦 <strong>${esc(f.name)}${f.qty>1?` ×${f.qty}`:""}</strong></span><span class="firTag">FIR REQUIRED</span></div>`).join("");
- }
- $("bringList").innerHTML=html||'<div class="alert ok"><strong>Nothing special required.</strong><br><span class="muted">No keys, markers or specific equipment were detected for these selected tasks.</span></div>';
- $("bringCount").textContent=`${req.length} raid requirement${req.length!==1?"s":""}`;
- $("conflictCount").textContent=conf.length?`${conf.length} found`:"Clear";
- $("conflicts").innerHTML=conf.length?conf.map(c=>{
-   if(c.severity==="soft"){
-     const explanation=c.kind==="weapon-loadout"
-       ?`<b>${esc(c.a.name)}</b> requires <b>${esc(c.av)}</b>, while <b>${esc(c.b.name)}</b> requires <b>${esc(c.bv)}</b>. You could carry both, but most players will be better completing these weapon-specific objectives in separate raids.`
-       :`These tasks require different weapon setups: <b>${esc(c.av)}</b> vs <b>${esc(c.bv)}</b>. They are technically compatible, but inefficient to combine.`;
-     return `<div class="alert soft"><strong>△ LOADOUT CONFLICT — ${esc(c.a.name)} ↔ ${esc(c.b.name)}</strong><span class="why">${explanation}</span><button class="btn secondary small" style="margin-top:8px" data-remove="${esc(c.b.id)}">REMOVE ${esc(c.b.name.toUpperCase())}</button></div>`;
-   }
-
-   const explanation=c.kind==="slot"
-     ?`Both tasks require different equipment in the same ${esc(c.slot||"equipment")} slot: <b>${esc(c.av)}</b> vs <b>${esc(c.bv)}</b>. These cannot be satisfied at the same time.`
-     :`One selected task requires <b>${esc(c.av)}</b> while the other explicitly excludes it.`;
-
-   return `<div class="alert"><strong>⚠ HARD CONFLICT — ${esc(c.a.name)} ↔ ${esc(c.b.name)}</strong><span class="why">${explanation}</span><button class="btn secondary small" style="margin-top:8px" data-remove="${esc(c.b.id)}">REMOVE ${esc(c.b.name.toUpperCase())}</button></div>`;
- }).join(""):'<div class="alert ok"><strong>✓ No task conflicts detected.</strong><br><span class="muted">RaidPlan found no hard conflicts or inefficient weapon-loadout combinations among these selected tasks.</span></div>';
- $("planner").classList.add("hidden");$("summary").classList.remove("hidden");window.scrollTo(0,0);
+  closeTaskDrawer();
+  activeMap=map;
+  const list=raidTasks();
+  if(!list.length)return;
+  renderRaid();
+  $("planner").classList.add("hidden");$("summary").classList.remove("hidden");
+  window.scrollTo(0,0);
+  writeShareHash(false);
 }
+
+function raidTasks(){return current().filter(t=>taskMaps(t).includes(activeMap)||taskMaps(t).includes("Any"))}
+
+function renderRaid(){
+  const list=raidTasks(),req=aggregateReq(list),conf=conflictList(list);
+  const hard=conf.filter(c=>c.severity==="hard"),soft=conf.filter(c=>c.severity==="soft");
+  $("summaryMap").textContent=activeMap;
+  $("summaryMeta").textContent=`${list.length} task${list.length!==1?"s":""} · ${objectiveCount(list)} objectives · data ${generatedAt?`updated ${new Date(generatedAt).toLocaleDateString("en-GB")}`:"current"}`;
+  $("summaryStatus").textContent=hard.length?`⚠ ${hard.length} HARD CONFLICT${hard.length!==1?"S":""}`:soft.length?`△ ${soft.length} LOADOUT WARNING${soft.length!==1?"S":""}`:"✓ GOOD COMBINATION";
+  $("summaryStatus").className=`ready${hard.length?" bad":soft.length?" soft":""}`;
+  $("summaryTaskCount").textContent=`${list.length} selected`;
+
+  const checks=loadChecks();
+  $("summaryTasks").innerHTML=list.map(t=>`<div class="taskSummary">
+    <div class="taskSummaryHead">
+      <div><button style="all:unset;cursor:pointer;font-weight:850" data-detail="${esc(t.id)}">${esc(t.name)}</button>
+      <div class="muted">${esc(t.trader)} · ${esc(t.type||"Other")} · ${String(t.source||"").toLowerCase().includes("wiki")?"✓ Wiki verified":"Structured data"}</div></div>
+      <button class="iconRemove" data-remove="${esc(t.id)}">×</button>
+    </div>
+    ${(t.objectives||[]).map((o,i)=>{
+      const id=checkId("objective",t.id,i,o),done=!!checks[id];
+      return `<label class="objectiveCheck ${done?"done":""}"><input type="checkbox" data-check-id="${esc(id)}" ${done?"checked":""}><span>${esc(o)}</span></label>`;
+    }).join("")}
+  </div>`).join("");
+
+  const must=req;
+  const rec=recommendedItems(req);
+  const obtain=obtainedDuringRaid(list);
+  let html="";
+  html+=renderReqGroup("MUST BRING","Required by the selected tasks",must,"must");
+  html+=renderSimpleGroup("RECOMMENDED","Helpful rather than mandatory",rec,"recommended");
+  html+=renderSimpleGroup("OBTAIN DURING RAID","Do not waste stash space bringing these",obtain,"obtain");
+  $("bringList").innerHTML=html||'<div class="alert ok"><strong>Nothing special required.</strong><span class="why">No key, marker, weapon, wearable or FIR requirement was detected.</span></div>';
+  $("bringCount").textContent=`${must.length} required · ${rec.length} recommended · ${obtain.length} obtain`;
+
+  $("conflictCount").textContent=conf.length?`${conf.length} warning${conf.length!==1?"s":""}`:"Clear";
+  $("conflicts").innerHTML=conf.length?conf.map(c=>{
+    if(c.severity==="soft")return `<div class="alert soft"><strong>△ LOADOUT WARNING — ${esc(c.a.name)} ↔ ${esc(c.b.name)}</strong><span class="why">${esc(c.a.name)} wants <b>${esc(c.av)}</b>, while ${esc(c.b.name)} wants <b>${esc(c.bv)}</b>. Technically possible, but RaidPlan recommends splitting these weapon-specific objectives unless you deliberately want to carry both setups.</span><button class="btn secondary small" style="margin-top:8px" data-remove="${esc(c.b.id)}">REMOVE ${esc(c.b.name.toUpperCase())}</button></div>`;
+    return `<div class="alert"><strong>⚠ HARD CONFLICT — ${esc(c.a.name)} ↔ ${esc(c.b.name)}</strong><span class="why">These tasks compete for the same ${esc(c.slot||"equipment")} requirement: <b>${esc(c.av)}</b> vs <b>${esc(c.bv)}</b>.</span><button class="btn secondary small" style="margin-top:8px" data-remove="${esc(c.b.id)}">REMOVE ${esc(c.b.name.toUpperCase())}</button></div>`;
+  }).join(""):`<div class="alert ok"><strong>✓ Good combination.</strong><span class="why">No hard gear conflicts or inefficient weapon combinations were detected among these tasks.</span></div>`;
+
+  const compat=findCompatible(activeMap,list).slice(0,6);
+  $("raidCompatible").classList.toggle("hidden",!compat.length);
+  $("raidCompatibleList").innerHTML=compat.map(t=>compatibleRow(t,activeMap)).join("");
+  $("raidAddAllCompatible").textContent=`ADD ${compat.length}`;
+
+  updateProgress();
+  updateMobileNav();
+}
+
+function renderReqGroup(title,subtitle,rows,kind){
+  if(!rows.length)return "";
+  const checks=loadChecks();
+  return `<div class="reqGroup"><div class="reqGroupTitle"><div><strong>${title}</strong><span class="subline">${subtitle}</span></div><span class="typeTag">${rows.length}</span></div>${rows.map((r,i)=>{
+    const id=checkId(kind,"",i,r.name),done=!!checks[id];
+    return `<label class="checkRow ${done?"done":""}"><input type="checkbox" data-check-id="${esc(id)}" ${done?"checked":""}><span class="labelText"><strong>${esc(r.name)}${r.qty>1?` ×${r.qty}`:""}</strong><span class="subline">${r.kind==="key"?"Access key":r.kind==="gear"?(r.slot==="weapon"?"Weapon setup":"Required wearable/gear"):/marker/i.test(r.name)?"Placement item":"Task item"}</span></span><span class="typeTag">${esc((r.kind||"item").toUpperCase())}</span></label>`;
+  }).join("")}</div>`;
+}
+function renderSimpleGroup(title,subtitle,rows,kind){
+  if(!rows.length)return "";
+  const checks=loadChecks();
+  return `<div class="reqGroup"><div class="reqGroupTitle"><div><strong>${title}</strong><span class="subline">${subtitle}</span></div><span class="typeTag">${rows.length}</span></div>${rows.map((r,i)=>{
+    const id=checkId(kind,"",i,r.name),done=!!checks[id];
+    return `<label class="checkRow ${done?"done":""}"><input type="checkbox" data-check-id="${esc(id)}" ${done?"checked":""}><span class="labelText"><strong>${esc(r.name)}${r.qty>1?` ×${r.qty}`:""}</strong><span class="subline">${esc(r.why||r.task||"")}</span></span><span class="${kind==="obtain"?"firTag":"typeTag"}">${kind==="obtain"?"IN RAID":"OPTIONAL"}</span></label>`;
+  }).join("")}</div>`;
+}
+
+function updateProgress(){
+  const boxes=[...document.querySelectorAll("#summary input[data-check-id]")];
+  const done=boxes.filter(b=>b.checked).length;
+  const pct=boxes.length?Math.round(done/boxes.length*100):0;
+  $("progressText").textContent=`${done}/${boxes.length} · ${pct}%`;
+  $("progressBar").style.width=`${pct}%`;
+}
+
 function openDetail(id){
- const t=byId[id];if(!t)return;$("detailTitle").textContent=t.name;$("detailMeta").textContent=`${t.trader} · ${taskMaps(t).join(" / ")} · ${t.type}${t.minLevel?` · Level ${t.minLevel}`:""}`;
- const req=(t.requirements||[]).map(r=>`${r.kind==="key"?"🔑":r.kind==="gear"?"⚙":"🎒"} ${r.name}${r.qty>1?` ×${r.qty}`:""}`);
- const rest=(t.restrictions||[]).map(r=>`⛔ Do not wear: ${r.name}`);
- const fir=(t.fir||[]).map(f=>`📦 Found in Raid: ${f.name}${f.qty>1?` ×${f.qty}`:""}`);
- $("detailBody").innerHTML=`<div class="detailSection"><h3>Objectives</h3>${(t.objectives||[]).map(o=>`<div class="detailLine">• ${esc(o)}</div>`).join("")||'<div class="detailLine">No objective text available.</div>'}</div><div class="detailSection"><h3>Requirements</h3>${[...req,...rest,...fir].map(x=>`<div class="detailLine">${esc(x)}</div>`).join("")||'<div class="detailLine">No special structured requirements detected.</div>'}</div>${t.wikiLink?`<div class="detailSection"><a class="btn secondary" href="${esc(t.wikiLink)}" target="_blank" rel="noopener">OPEN WIKI</a></div>`:""}`;
- $("detail").classList.add("open");$("detail").setAttribute("aria-hidden","false");
+  const t=byId[id];if(!t)return;
+  $("detailTitle").textContent=t.name;
+  const verified=String(t.source||"").toLowerCase().includes("wiki");
+  $("detailMeta").textContent=`${t.trader} · ${taskMaps(t).join(" / ")} · ${t.type||"Other"}`;
+  const req=(t.requirements||[]).map(r=>`${r.kind==="key"?"🔑":r.kind==="gear"?"⚙":"🎒"} ${r.name}${r.qty>1?` ×${r.qty}`:""}`);
+  const fir=(t.fir||[]).map(f=>`📦 Found in Raid: ${f.name}${f.qty>1?` ×${f.qty}`:""}`);
+  $("detailBody").innerHTML=`
+    <div class="detailSection">
+      <div class="dataCard"><div>${verified?"✓":"•"}</div><div><b>${verified?"Wiki verified":"Structured data"}</b><span>${verified?"Current task snapshot includes Tarkov Wiki validation.":"This task did not expose a Wiki validation marker in the dataset."}</span></div></div>
+    </div>
+    <div class="detailSection"><h3>Objectives</h3>${(t.objectives||[]).map(o=>`<div class="detailLine">• ${esc(o)}</div>`).join("")||'<div class="detailLine">No objective text available.</div>'}</div>
+    <div class="detailSection"><h3>Requirements</h3>${[...req,...fir].map(x=>`<div class="detailLine">${esc(x)}</div>`).join("")||'<div class="detailLine">No special structured requirements detected.</div>'}</div>
+    <div class="detailSection"><div class="actions">
+      ${t.wikiLink?`<a class="btn secondary" href="${esc(t.wikiLink)}" target="_blank" rel="noopener" style="text-decoration:none">OPEN WIKI</a>`:""}
+      <button class="btn ghost" data-report="${esc(t.id)}">REPORT INCORRECT DATA</button>
+    </div></div>`;
+  $("detail").classList.add("open");$("detail").setAttribute("aria-hidden","false");
 }
 function closeDetail(){$("detail").classList.remove("open");$("detail").setAttribute("aria-hidden","true")}
-function toast(msg){const el=$("toast");el.textContent=msg;el.classList.add("show");clearTimeout(window.__rt);window.__rt=setTimeout(()=>el.classList.remove("show"),1400)}
-function copyText(text,msg){if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(text).then(()=>toast(msg)).catch(()=>toast("Copy blocked in this preview"));else toast("Copy unavailable in this preview")}
+
+function openReport(id){
+  reportTask=byId[id];if(!reportTask)return;
+  $("reportText").value=`RaidPlan task data report
+
+Task: ${reportTask.name}
+Trader: ${reportTask.trader}
+Map: ${taskMaps(reportTask).join(" / ")}
+Data source: ${reportTask.source||"Unknown"}
+Snapshot updated: ${generatedAt?new Date(generatedAt).toISOString():"Unknown"}
+
+What's incorrect:
+[Describe the objective, map, item, weapon or gear requirement that needs updating]
+
+Current RaidPlan objective(s):
+${(reportTask.objectives||[]).map(o=>`- ${o}`).join("\n")}`;
+  $("reportModal").classList.add("open");
+}
+function closeModals(){document.querySelectorAll(".modalBackdrop").forEach(x=>x.classList.remove("open"))}
+
 function checklist(itemsOnly=false){
- const list=raidTasks(),req=aggregateReq(list),lines=[];
- if(!itemsOnly){lines.push(`${activeMap} RAID`,"","TASKS");for(const t of list){lines.push(`- ${t.name} (${t.trader})`);for(const o of (t.objectives||[]))lines.push(`  • ${o}`)}lines.push("","BRING INTO RAID")}
- for(const r of req)lines.push(`- ${r.kind.toUpperCase()}: ${r.name}${r.qty>1?` ×${r.qty}`:""}`);
- if(!req.length)lines.push("- No special requirements");
- if(!itemsOnly){
-  const c=conflictList(list);
-  lines.push("","CONTRADICTIONS",...(c.length?c.map(x=>`- ${x.severity==="soft"?"LOADOUT":"HARD"}: ${x.a.name} vs ${x.b.name}: ${x.av} / ${x.bv}`):["- None"]));
- }
- return lines.join("\n");
+  const list=raidTasks(),req=aggregateReq(list),rec=recommendedItems(req),obtain=obtainedDuringRaid(list),lines=[];
+  if(!itemsOnly){
+    lines.push(`RAIDPLAN — ${activeMap.toUpperCase()} RAID`,"",`TASKS (${list.length})`);
+    for(const t of list){lines.push(`☐ ${t.name} — ${t.trader}`);for(const o of (t.objectives||[]))lines.push(`   ☐ ${o}`)}
+    lines.push("","MUST BRING");
+  }
+  for(const r of req)lines.push(`☐ ${r.name}${r.qty>1?` ×${r.qty}`:""}`);
+  if(!req.length)lines.push("No special requirements");
+  if(!itemsOnly&&rec.length){lines.push("","RECOMMENDED",...rec.map(r=>`☐ ${r.name}${r.qty>1?` ×${r.qty}`:""}`))}
+  if(!itemsOnly&&obtain.length){lines.push("","OBTAIN DURING RAID",...obtain.map(r=>`☐ ${r.name}${r.qty>1?` ×${r.qty}`:""}`))}
+  if(!itemsOnly){
+    const c=conflictList(list);
+    lines.push("","COMPATIBILITY",...(c.length?c.map(x=>`- ${x.severity==="soft"?"LOADOUT WARNING":"HARD CONFLICT"}: ${x.a.name} vs ${x.b.name} — ${x.av} / ${x.bv}`):["✓ Good combination — no conflicts detected"]));
+  }
+  return lines.join("\n");
+}
+function copyText(text,msg){
+  if(navigator.clipboard?.writeText)navigator.clipboard.writeText(text).then(()=>toast(msg)).catch(()=>fallbackCopy(text,msg));
+  else fallbackCopy(text,msg);
+}
+function fallbackCopy(text,msg){
+  const ta=document.createElement("textarea");ta.value=text;document.body.appendChild(ta);ta.select();
+  try{document.execCommand("copy");toast(msg)}catch(e){toast("Copy unavailable in this preview")}
+  ta.remove();
 }
 
-$("taskList").addEventListener("click",e=>{const b=e.target.closest("[data-task]");if(!b)return;const id=b.dataset.task;selected.has(id)?selected.delete(id):selected.add(id);renderPlanner()});
-for(const id of ["search","mapFilter","traderFilter","typeFilter"])$(id).addEventListener(id==="search"?"input":"change",()=>{renderTaskList()});
-$("selectVisible").addEventListener("click",()=>{for(const t of TASKS.filter(matches))selected.add(t.id);renderPlanner();toast("Visible tasks selected")});
+function writeShareHash(openModal=true){
+  if(!activeMap)return;
+  const payload={v:1,map:activeMap,tasks:raidTasks().map(t=>t.id)};
+  let encoded="";
+  try{encoded=btoa(unescape(encodeURIComponent(JSON.stringify(payload))))}catch(e){return}
+  const base=location.href.split("#")[0];
+  const url=`${base}#raid=${encoded}`;
+  if(openModal){$("shareText").value=url;$("shareModal").classList.add("open")}
+  else history.replaceState(null,"",`#raid=${encoded}`);
+}
+function restoreSharedPlan(){
+  const m=location.hash.match(/#raid=([^&]+)/);
+  if(!m)return;
+  try{
+    const payload=JSON.parse(decodeURIComponent(escape(atob(m[1]))));
+    if(payload&&Array.isArray(payload.tasks)){
+      selected.clear();payload.tasks.forEach(id=>{if(byId[id])selected.add(id)});
+      renderPlanner();
+      if(payload.map&&current().length)buildRaid(payload.map);
+      toast("Shared raid plan loaded");
+    }
+  }catch(e){}
+}
+
+function renderMobile(){
+  const list=raidTasks(),req=aggregateReq(list),conf=conflictList(list);
+  $("mobileBody").innerHTML=`
+    <div style="margin-bottom:13px"><div class="eyebrow">Raid card</div><h1 style="font-size:30px;margin-top:3px">${esc(activeMap)}</h1><div class="muted">${list.length} tasks · ${objectiveCount(list)} objectives</div></div>
+    <div class="mobileSection"><h3 style="margin-bottom:8px">OBJECTIVES</h3>${list.map(t=>`<div style="margin:11px 0"><strong>${esc(t.name)}</strong>${(t.objectives||[]).map(o=>`<div class="objective" style="margin-top:5px">☐ ${esc(o)}</div>`).join("")}</div>`).join("")}</div>
+    <div class="mobileSection"><h3 style="margin-bottom:8px">MUST BRING</h3>${req.length?req.map(r=>`<div class="detailLine">☐ ${esc(r.name)}${r.qty>1?` ×${r.qty}`:""}</div>`).join(""):'<div class="muted">Nothing special required.</div>'}</div>
+    <div class="mobileSection"><h3 style="margin-bottom:8px">WARNINGS</h3>${conf.length?conf.map(c=>`<div class="alert ${c.severity==="soft"?"soft":""}">${c.severity==="soft"?"△":"⚠"} ${esc(c.a.name)} / ${esc(c.b.name)}</div>`).join(""):'<div class="alert ok">✓ Good combination</div>'}</div>`;
+  $("mobileCard").classList.add("open");
+}
+
+document.addEventListener("click",e=>{
+  const task=e.target.closest("[data-task]");
+  if(task){const id=task.dataset.task;selected.has(id)?selected.delete(id):selected.add(id);renderPlanner();return}
+
+  const un=e.target.closest("[data-unselect]");
+  if(un){selected.delete(un.dataset.unselect);renderPlanner();return}
+
+  const detail=e.target.closest("[data-detail]");
+  if(detail){openDetail(detail.dataset.detail);return}
+
+  const build=e.target.closest("[data-build]");
+  if(build){buildRaid(build.dataset.build);return}
+
+  const showCompat=e.target.closest("[data-show-compatible]");
+  if(showCompat){
+    const list=current(),maps=groupCounts(list,t=>taskMaps(t));
+    renderCompatiblePlanner(list,maps,showCompat.dataset.showCompatible);
+    $("compatibleSection").scrollIntoView({behavior:"smooth",block:"center"});
+    return;
+  }
+
+  const add=e.target.closest("[data-add-compatible]");
+  if(add){selected.add(add.dataset.addCompatible);renderPlanner();if(!$("summary").classList.contains("hidden"))renderRaid();toast("Compatible task added");return}
+
+  const remove=e.target.closest("[data-remove]");
+  if(remove){selected.delete(remove.dataset.remove);if(raidTasks().length)renderRaid();else{$("summary").classList.add("hidden");$("planner").classList.remove("hidden");renderPlanner()}return}
+
+  const report=e.target.closest("[data-report]");
+  if(report){openReport(report.dataset.report);return}
+
+  const pick=e.target.closest("[data-map-pick]");
+  if(pick){
+    mapPlanSelection=pick.dataset.mapPick;
+    document.querySelectorAll(".mapPick").forEach(x=>x.classList.toggle("active",x.dataset.mapPick===mapPlanSelection));
+    renderMapPlan();return;
+  }
+
+  const mapAdd=e.target.closest("[data-map-add-task]");
+  if(mapAdd){selected.add(mapAdd.dataset.mapAddTask);renderPlanner();return}
+
+  const addMap=e.target.closest("[data-add-map-selection]");
+  if(addMap){
+    TASKS.filter(t=>taskMaps(t).includes(addMap.dataset.addMapSelection)||taskMaps(t).includes("Any")).slice(0,30).forEach(t=>selected.add(t.id));
+    renderPlanner();toast("Map tasks added");return;
+  }
+
+  const modalClose=e.target.closest("[data-close-modal]");
+  if(modalClose){closeModals();return}
+});
+
+document.addEventListener("change",e=>{
+  const box=e.target.closest("[data-check-id]");
+  if(box){
+    const checks=loadChecks();checks[box.dataset.checkId]=box.checked;saveChecks(checks);
+    box.closest(".objectiveCheck,.checkRow")?.classList.toggle("done",box.checked);
+    updateProgress();
+  }
+});
+
+for(const id of ["search","mapFilter","traderFilter","typeFilter"]){
+  $(id).addEventListener(id==="search"?"input":"change",renderTaskList);
+}
+$("selectVisible").addEventListener("click",()=>{TASKS.filter(matches).forEach(t=>selected.add(t.id));renderPlanner();toast("Visible tasks selected")});
 $("clear").addEventListener("click",()=>{selected.clear();renderPlanner();toast("Selection cleared")});
-$("selectedPills").addEventListener("click",e=>{const x=e.target.closest("[data-unselect]");if(x){selected.delete(x.dataset.unselect);renderPlanner();return}const d=e.target.closest("[data-detail]");if(d)openDetail(d.dataset.detail)});
-$("mapChoices").addEventListener("click",e=>{const b=e.target.closest("[data-build]");if(b){buildRaid(b.dataset.build);return}const a=e.target.closest("[data-add-map]");if(a){for(const t of TASKS)if(taskMaps(t).includes(a.dataset.addMap)||taskMaps(t).includes("Any"))selected.add(t.id);renderPlanner();toast(`All ${a.dataset.addMap} tasks added`)}});
-$("summary").addEventListener("click",e=>{const d=e.target.closest("[data-detail]");if(d){openDetail(d.dataset.detail);return}const r=e.target.closest("[data-remove]");if(r){selected.delete(r.dataset.remove);if(raidTasks().length)buildRaid(activeMap);else{$("summary").classList.add("hidden");$("planner").classList.remove("hidden");renderPlanner()}}});
-$("back").addEventListener("click",()=>{$("summary").classList.add("hidden");$("planner").classList.remove("hidden");renderPlanner()});
+$("buildRecommended").addEventListener("click",e=>buildRaid(e.currentTarget.dataset.map));
+$("addAllCompatible").addEventListener("click",()=>{
+  const map=$("compatibleSection").dataset.map;
+  const base=current().filter(t=>taskMaps(t).includes(map)||taskMaps(t).includes("Any"));
+  findCompatible(map,base).slice(0,5).forEach(t=>selected.add(t.id));renderPlanner();toast("Compatible tasks added")
+});
+$("raidAddAllCompatible").addEventListener("click",()=>{
+  findCompatible(activeMap,raidTasks()).slice(0,6).forEach(t=>selected.add(t.id));renderRaid();toast("Compatible tasks added")
+});
+$("back").addEventListener("click",()=>{showPlannerMobile();renderPlanner()});
 $("copyFull").addEventListener("click",()=>copyText(checklist(false),"Full raid checklist copied"));
 $("copyItems").addEventListener("click",()=>copyText(checklist(true),"Raid requirements copied"));
+$("shareRaid").addEventListener("click",()=>writeShareHash(true));
+$("copyShare").addEventListener("click",()=>copyText($("shareText").value,"Share link copied"));
+$("mobileRaid").addEventListener("click",renderMobile);
+$("closeMobile").addEventListener("click",()=>$("mobileCard").classList.remove("open"));
 $("detailClose").addEventListener("click",closeDetail);
+$("copyReport").addEventListener("click",()=>copyText($("reportText").value,"Data report copied"));
+$("openGithubReport").addEventListener("click",()=>{
+  if(!reportTask)return;
+  const title=encodeURIComponent(`Task data: ${reportTask.name}`);
+  const body=encodeURIComponent($("reportText").value);
+  window.open(`https://github.com/pm4gp9zb88-jpg/tarkov-raidplan/issues/new?title=${title}&body=${body}`,"_blank","noopener");
+});
+document.querySelectorAll(".modeBtn").forEach(btn=>btn.addEventListener("click",()=>{
+  mode=btn.dataset.mode;document.querySelectorAll(".modeBtn").forEach(x=>x.classList.toggle("active",x===btn));
+  renderPlanner();
+}));
+$("reportModal").addEventListener("click",e=>{if(e.target===$("reportModal"))closeModals()});
+$("shareModal").addEventListener("click",e=>{if(e.target===$("shareModal"))closeModals()});
+
+
+$("mobileTasksBtn").addEventListener("click",openTaskDrawer);
+$("mobileTasksNav").addEventListener("click",openTaskDrawer);
+$("closeTaskDrawer").addEventListener("click",closeTaskDrawer);
+$("drawerBackdrop").addEventListener("click",closeTaskDrawer);
+$("mobilePlanNav").addEventListener("click",showPlannerMobile);
+$("mobileRaidNav").addEventListener("click",()=>{
+  if(!$("summary").classList.contains("hidden")&&activeMap){
+    closeTaskDrawer();
+    window.scrollTo({top:0,behavior:"smooth"});
+    return;
+  }
+  const map=recommendedMapForSelection();
+  if(map)buildRaid(map);
+});
+window.addEventListener("resize",()=>{
+  if(!isMobile())closeTaskDrawer();
+  updateMobileNav();
+});
+
 loadData();
 })();
 </script>
