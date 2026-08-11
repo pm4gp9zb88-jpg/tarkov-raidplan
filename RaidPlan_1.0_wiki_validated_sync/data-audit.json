@@ -1,0 +1,1597 @@
+{
+  "generatedAt": "2026-08-11T10:21:12.381Z",
+  "summary": {
+    "tasks": 510,
+    "tasksWithCorrections": 53,
+    "removedObjectives": 81,
+    "wikiErrors": 120,
+    "unparsedWikiPages": 2
+  },
+  "corrections": [
+    {
+      "task": "Debut",
+      "status": "validated",
+      "wikiTitle": "Debut",
+      "revid": 350482,
+      "removedObjectives": [
+        {
+          "source": "Eliminate Scavs on any location",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.2857142857142857
+        },
+        {
+          "source": "Hand over the item: MP-133 12ga shotgun",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0
+        }
+      ],
+      "struckObjectives": []
+    },
+    {
+      "task": "Shortage",
+      "status": "validated",
+      "wikiTitle": "Shortage",
+      "revid": 351878,
+      "removedObjectives": [
+        {
+          "source": "Hand over the items",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.4
+        }
+      ],
+      "struckObjectives": []
+    },
+    {
+      "task": "Acquaintance",
+      "status": "validated",
+      "wikiTitle": "Acquaintance",
+      "revid": 350321,
+      "removedObjectives": [
+        {
+          "source": "Hand over the found in raid Iskra ration packs",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.2857142857142857
+        },
+        {
+          "source": "Hand over the found in raid Packs of instant noodles",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.2857142857142857
+        },
+        {
+          "source": "Hand over the found in raid Cans of beef stew (Large)",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.2857142857142857
+        }
+      ],
+      "struckObjectives": []
+    },
+    {
+      "task": "The Huntsman Path - Trophy",
+      "status": "validated",
+      "wikiTitle": "The Huntsman Path - Trophy",
+      "revid": 350892,
+      "removedObjectives": [
+        {
+          "source": "Locate and neutralize Reshala",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.3333333333333333
+        }
+      ],
+      "struckObjectives": []
+    },
+    {
+      "task": "Work Smarter",
+      "status": "validated",
+      "wikiTitle": "Work Smarter",
+      "revid": 351520,
+      "removedObjectives": [
+        {
+          "source": "Locate the secret exfil on Customs",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.4444444444444444
+        }
+      ],
+      "struckObjectives": []
+    },
+    {
+      "task": "Bad Rep Evidence",
+      "status": "validated",
+      "wikiTitle": "Bad Rep Evidence",
+      "revid": 351894,
+      "removedObjectives": [
+        {
+          "source": "Locate and obtain Secure Folder 0031 in one of the bunkhouses on Customs",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.4375
+        }
+      ],
+      "struckObjectives": []
+    },
+    {
+      "task": "The Extortionist",
+      "status": "validated",
+      "wikiTitle": "The Extortionist",
+      "revid": 351164,
+      "removedObjectives": [
+        {
+          "source": "Locate the messenger's body on Customs",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.375
+        }
+      ],
+      "struckObjectives": []
+    },
+    {
+      "task": "Sanitary Standards - Part 2",
+      "status": "validated",
+      "wikiTitle": "Sanitary Standards - Part 2",
+      "revid": 351858,
+      "removedObjectives": [
+        {
+          "source": "Hand over the items",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.4
+        }
+      ],
+      "struckObjectives": []
+    },
+    {
+      "task": "Stirrup",
+      "status": "validated",
+      "wikiTitle": "Stirrup",
+      "revid": 351128,
+      "removedObjectives": [
+        {
+          "source": "Eliminate PMC operatives while using pistols",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.4
+        }
+      ],
+      "struckObjectives": []
+    },
+    {
+      "task": "Golden Swag",
+      "status": "validated",
+      "wikiTitle": "Golden Swag",
+      "revid": 350613,
+      "removedObjectives": [
+        {
+          "source": "Locate and obtain the golden Zibbo lighter on Customs",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.42857142857142855
+        },
+        {
+          "source": "Stash the lighter in the bunkhouse at the trailer park on Customs",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.42857142857142855
+        }
+      ],
+      "struckObjectives": []
+    },
+    {
+      "task": "Ice Cream Cones",
+      "status": "validated",
+      "wikiTitle": "Ice Cream Cones",
+      "revid": 351188,
+      "removedObjectives": [
+        {
+          "source": "Hand over the items",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.4
+        }
+      ],
+      "struckObjectives": []
+    },
+    {
+      "task": "Grenadier",
+      "status": "validated",
+      "wikiTitle": "Grenadier",
+      "revid": 350617,
+      "removedObjectives": [
+        {
+          "source": "Eliminate PMC operatives while using hand grenades",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.3333333333333333
+        }
+      ],
+      "struckObjectives": []
+    },
+    {
+      "task": "Polikhim Hobo",
+      "status": "validated",
+      "wikiTitle": "Polikhim Hobo",
+      "revid": 350787,
+      "removedObjectives": [
+        {
+          "source": "Eliminate Scavs on Customs",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.3333333333333333
+        }
+      ],
+      "struckObjectives": []
+    },
+    {
+      "task": "Humanitarian Supplies",
+      "status": "validated",
+      "wikiTitle": "Humanitarian Supplies",
+      "revid": 351915,
+      "removedObjectives": [
+        {
+          "source": "Eliminate Scavs while wearing a UN uniform (MF-UNTAR body armor and UNTAR helmet) on Shoreline",
+          "wiki": "Eliminate 10 Scavs while wearing a UN uniform ( MF-UNTAR body armor and UN helmet ) on Shoreline",
+          "reason": "struck-on-wiki",
+          "score": 1
+        }
+      ],
+      "struckObjectives": [
+        "Eliminate 10 Scavs while wearing a UN uniform ( MF-UNTAR body armor and UN helmet ) on Shoreline"
+      ]
+    },
+    {
+      "task": "Farming - Part 2",
+      "status": "validated",
+      "wikiTitle": "Farming - Part 2",
+      "revid": 351279,
+      "removedObjectives": [
+        {
+          "source": "Hand over the items",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.4
+        },
+        {
+          "source": "Hand over the items",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.4
+        },
+        {
+          "source": "Hand over the items",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.4
+        }
+      ],
+      "struckObjectives": []
+    },
+    {
+      "task": "Bad Habit",
+      "status": "validated",
+      "wikiTitle": "Bad Habit",
+      "revid": 351511,
+      "removedObjectives": [
+        {
+          "source": "Hand over the items",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.4
+        },
+        {
+          "source": "Hand over the items",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.4
+        },
+        {
+          "source": "Hand over the items",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.4
+        }
+      ],
+      "struckObjectives": []
+    },
+    {
+      "task": "The Huntsman Path - Factory Chief",
+      "status": "validated",
+      "wikiTitle": "The Huntsman Path - Factory Chief",
+      "revid": 350883,
+      "removedObjectives": [
+        {
+          "source": "Locate and neutralize Tagilla",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.3333333333333333
+        }
+      ],
+      "struckObjectives": []
+    },
+    {
+      "task": "The Huntsman Path - Woods Keeper",
+      "status": "validated",
+      "wikiTitle": "The Huntsman Path - Woods Keeper",
+      "revid": 352665,
+      "removedObjectives": [
+        {
+          "source": "Locate and neutralize Shturman",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.3333333333333333
+        }
+      ],
+      "struckObjectives": []
+    },
+    {
+      "task": "Wet Job - Part 4",
+      "status": "validated",
+      "wikiTitle": "Wet Job - Part 4",
+      "revid": 350996,
+      "removedObjectives": [
+        {
+          "source": "Hand over the found items",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.4
+        }
+      ],
+      "struckObjectives": []
+    },
+    {
+      "task": "Wet Job - Part 6",
+      "status": "validated",
+      "wikiTitle": "Wet Job - Part 6",
+      "revid": 350998,
+      "removedObjectives": [
+        {
+          "source": "Reach the required Bolt-action Rifles skill level",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0
+        }
+      ],
+      "struckObjectives": []
+    },
+    {
+      "task": "Dressed to Kill",
+      "status": "validated",
+      "wikiTitle": "Dressed to Kill",
+      "revid": 352940,
+      "removedObjectives": [
+        {
+          "source": "Hand over the ushankas",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.3333333333333333
+        }
+      ],
+      "struckObjectives": []
+    },
+    {
+      "task": "Offensive Reconnaissance",
+      "status": "validated",
+      "wikiTitle": "Offensive Reconnaissance",
+      "revid": 351052,
+      "removedObjectives": [
+        {
+          "source": "Obtain the Labrys access keycard",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.3076923076923077
+        }
+      ],
+      "struckObjectives": []
+    },
+    {
+      "task": "The Punisher - Part 1",
+      "status": "validated",
+      "wikiTitle": "The Punisher - Part 1",
+      "revid": 350900,
+      "removedObjectives": [
+        {
+          "source": "Eliminate Scavs while using an AKM series weapon on Shoreline",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.4444444444444444
+        }
+      ],
+      "struckObjectives": []
+    },
+    {
+      "task": "The Punisher - Part 2",
+      "status": "validated",
+      "wikiTitle": "The Punisher - Part 2",
+      "revid": 352647,
+      "removedObjectives": [
+        {
+          "source": "Find Lower half-masks in raid",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0
+        },
+        {
+          "source": "Hand over the half-masks",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0
+        }
+      ],
+      "struckObjectives": []
+    },
+    {
+      "task": "The Punisher - Part 3",
+      "status": "validated",
+      "wikiTitle": "The Punisher - Part 3",
+      "revid": 350902,
+      "removedObjectives": [
+        {
+          "source": "Eliminate Scavs while using an AKS-74U on Customs",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.3333333333333333
+        }
+      ],
+      "struckObjectives": []
+    },
+    {
+      "task": "The Punisher - Part 5",
+      "status": "validated",
+      "wikiTitle": "The Punisher - Part 5",
+      "revid": 350904,
+      "removedObjectives": [
+        {
+          "source": "Eliminate PMC operatives while wearing a PACA body armor and 6B47 helmet",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.3333333333333333
+        }
+      ],
+      "struckObjectives": []
+    },
+    {
+      "task": "The Punisher - Part 6",
+      "status": "validated",
+      "wikiTitle": "The Punisher - Part 6",
+      "revid": 350905,
+      "removedObjectives": [
+        {
+          "source": "Eliminate PMC operatives while using an SVD rifle (excluding Factory)",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.3333333333333333
+        }
+      ],
+      "struckObjectives": []
+    },
+    {
+      "task": "The Huntsman Path - Sadist",
+      "status": "validated",
+      "wikiTitle": "The Huntsman Path - Sadist",
+      "revid": 352689,
+      "removedObjectives": [
+        {
+          "source": "Locate and neutralize Sanitar",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.3333333333333333
+        }
+      ],
+      "struckObjectives": []
+    },
+    {
+      "task": "The Huntsman Path - Administrator",
+      "status": "validated",
+      "wikiTitle": "The Huntsman Path - Administrator",
+      "revid": 350874,
+      "removedObjectives": [
+        {
+          "source": "Eliminate any target at the Pinewood hotel on Streets of Tarkov",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.42857142857142855
+        }
+      ],
+      "struckObjectives": []
+    },
+    {
+      "task": "The Huntsman Path - Crooked Cop",
+      "status": "validated",
+      "wikiTitle": "The Huntsman Path - Crooked Cop",
+      "revid": 350872,
+      "removedObjectives": [
+        {
+          "source": "Eliminate Kollontay's guards",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.3333333333333333
+        }
+      ],
+      "struckObjectives": []
+    },
+    {
+      "task": "No Swiping",
+      "status": "validated",
+      "wikiTitle": "No Swiping",
+      "revid": 351045,
+      "removedObjectives": [
+        {
+          "source": "Locate the smugglers' base on Shoreline",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.2
+        }
+      ],
+      "struckObjectives": []
+    },
+    {
+      "task": "Insomnia",
+      "status": "validated",
+      "wikiTitle": "Insomnia",
+      "revid": 352637,
+      "removedObjectives": [
+        {
+          "source": "Eliminate PMC operatives in the time period of 21:00-06:00 (excluding Factory and The Lab)",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.2727272727272727
+        }
+      ],
+      "struckObjectives": []
+    },
+    {
+      "task": "Sew it Good - Part 2",
+      "status": "validated",
+      "wikiTitle": "Sew it Good - Part 2",
+      "revid": 351562,
+      "removedObjectives": [
+        {
+          "source": "Obtain BNTI Gzhel-K armor in 0-50% durability",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0
+        },
+        {
+          "source": "Obtain BNTI Gzhel-K armor in 50-100% durability",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0
+        }
+      ],
+      "struckObjectives": []
+    },
+    {
+      "task": "Sew it Good - Part 4",
+      "status": "validated",
+      "wikiTitle": "Sew it Good - Part 4",
+      "revid": 352802,
+      "removedObjectives": [
+        {
+          "source": "Find WARTECH TV-109 + TV-106 chest rigs in raid",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0
+        },
+        {
+          "source": "Hand over the chest rigs",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.3333333333333333
+        },
+        {
+          "source": "Find BlackRock chest rigs in raid",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0
+        },
+        {
+          "source": "Hand over the chest rigs",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.3333333333333333
+        }
+      ],
+      "struckObjectives": []
+    },
+    {
+      "task": "The Blood of War - Part 2",
+      "status": "validated",
+      "wikiTitle": "The Blood of War - Part 2",
+      "revid": 351287,
+      "removedObjectives": [
+        {
+          "source": "Hand over the items",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.4
+        }
+      ],
+      "struckObjectives": []
+    },
+    {
+      "task": "Best Job in the World",
+      "status": "validated",
+      "wikiTitle": "Best Job in the World",
+      "revid": 350377,
+      "removedObjectives": [
+        {
+          "source": "Eliminate any target from over 100 meters away while using AK-74 series weapons",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.4444444444444444
+        }
+      ],
+      "struckObjectives": []
+    },
+    {
+      "task": "The Key to Success",
+      "status": "validated",
+      "wikiTitle": "The Key to Success",
+      "revid": 351560,
+      "removedObjectives": [
+        {
+          "source": "Hand over the first book",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.2857142857142857
+        },
+        {
+          "source": "Hand over the second book",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.2857142857142857
+        }
+      ],
+      "struckObjectives": []
+    },
+    {
+      "task": "Psycho Sniper",
+      "status": "validated",
+      "wikiTitle": "Psycho Sniper",
+      "revid": 350819,
+      "removedObjectives": [
+        {
+          "source": "Reach the required Bolt-action Rifles skill level",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.2222222222222222
+        }
+      ],
+      "struckObjectives": []
+    },
+    {
+      "task": "Broadcast - Part 5",
+      "status": "validated",
+      "wikiTitle": "Broadcast - Part 5",
+      "revid": 350395,
+      "removedObjectives": [
+        {
+          "source": "Locate and neutralize Priest",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.3333333333333333
+        }
+      ],
+      "struckObjectives": []
+    },
+    {
+      "task": "Scavenger",
+      "status": "validated",
+      "wikiTitle": "Scavenger",
+      "revid": 351099,
+      "removedObjectives": [
+        {
+          "source": "Reach the required Search skill level",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0
+        }
+      ],
+      "struckObjectives": []
+    },
+    {
+      "task": "Fertilizers",
+      "status": "validated",
+      "wikiTitle": "Fertilizers",
+      "revid": 352990,
+      "removedObjectives": [
+        {
+          "source": "Hand over the wires",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.25
+        },
+        {
+          "source": "Hand over the capacitors",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.3333333333333333
+        }
+      ],
+      "struckObjectives": []
+    },
+    {
+      "task": "The Huntsman Path - Sellout",
+      "status": "validated",
+      "wikiTitle": "The Huntsman Path - Sellout",
+      "revid": 352833,
+      "removedObjectives": [
+        {
+          "source": "Locate and neutralize Killa",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.3333333333333333
+        }
+      ],
+      "struckObjectives": []
+    },
+    {
+      "task": "Import",
+      "status": "validated",
+      "wikiTitle": "Import",
+      "revid": 352988,
+      "removedObjectives": [
+        {
+          "source": "Hand over the reader",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.42857142857142855
+        }
+      ],
+      "struckObjectives": []
+    },
+    {
+      "task": "Supervisor",
+      "status": "validated",
+      "wikiTitle": "Supervisor",
+      "revid": 352831,
+      "removedObjectives": [
+        {
+          "source": "Hand over the key",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.16666666666666666
+        }
+      ],
+      "struckObjectives": []
+    },
+    {
+      "task": "Capturing Outposts",
+      "status": "validated",
+      "wikiTitle": "Capturing Outposts",
+      "revid": 350405,
+      "removedObjectives": [
+        {
+          "source": "Eliminate PMC operatives at the Health Resort on Shoreline",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.4444444444444444
+        }
+      ],
+      "struckObjectives": []
+    },
+    {
+      "task": "Hobby Club",
+      "status": "validated",
+      "wikiTitle": "Hobby Club",
+      "revid": 351029,
+      "removedObjectives": [
+        {
+          "source": "Locate the checkpoint with seized cargo",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.36363636363636365
+        },
+        {
+          "source": "Build the AK-50 body",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.3333333333333333
+        }
+      ],
+      "struckObjectives": []
+    },
+    {
+      "task": "Fair Price - Part 2",
+      "status": "validated",
+      "wikiTitle": "Fair Price - Part 2",
+      "revid": 350539,
+      "removedObjectives": [
+        {
+          "source": "Locate the stash spot",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.42857142857142855
+        }
+      ],
+      "struckObjectives": []
+    },
+    {
+      "task": "The Cleaner",
+      "status": "validated",
+      "wikiTitle": "The Cleaner",
+      "revid": 351159,
+      "removedObjectives": [
+        {
+          "source": "Eliminate Raiders on Reserve",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.42857142857142855
+        }
+      ],
+      "struckObjectives": []
+    },
+    {
+      "task": "Long Line",
+      "status": "validated",
+      "wikiTitle": "Long Line",
+      "revid": 350714,
+      "removedObjectives": [
+        {
+          "source": "Eliminate PMC operatives inside the ULTRA mall on Interchange",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.2857142857142857
+        }
+      ],
+      "struckObjectives": []
+    },
+    {
+      "task": "Booze",
+      "status": "validated",
+      "wikiTitle": "Booze",
+      "revid": 350386,
+      "removedObjectives": [
+        {
+          "source": "Hand over the whiskey",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.42857142857142855
+        },
+        {
+          "source": "Hand over the superwater",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.3333333333333333
+        },
+        {
+          "source": "Hand over the beer",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.42857142857142855
+        }
+      ],
+      "struckObjectives": []
+    },
+    {
+      "task": "The Huntsman Path - Relentless",
+      "status": "validated",
+      "wikiTitle": "The Huntsman Path - Relentless",
+      "revid": 352686,
+      "removedObjectives": [
+        {
+          "source": "Locate and neutralize Tagilla",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.3333333333333333
+        },
+        {
+          "source": "Locate and neutralize Killa",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.3333333333333333
+        },
+        {
+          "source": "Locate and neutralize Reshala",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.3333333333333333
+        },
+        {
+          "source": "Locate and neutralize Shturman",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.3333333333333333
+        },
+        {
+          "source": "Locate and neutralize Glukhar",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.3333333333333333
+        },
+        {
+          "source": "Locate and neutralize Sanitar",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.3333333333333333
+        }
+      ],
+      "struckObjectives": []
+    },
+    {
+      "task": "Special Equipment",
+      "status": "validated",
+      "wikiTitle": "Special Equipment",
+      "revid": 351112,
+      "removedObjectives": [
+        {
+          "source": "Hand over the RFID readers",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.4
+        },
+        {
+          "source": "Hand over the programmable processors",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.4
+        },
+        {
+          "source": "Hand over the signal transmitters",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.2857142857142857
+        }
+      ],
+      "struckObjectives": []
+    },
+    {
+      "task": "A Bitter Victory",
+      "status": "validated",
+      "wikiTitle": "A Bitter Victory",
+      "revid": 350308,
+      "removedObjectives": [
+        {
+          "source": "Obtain the item: Bottle of Fierce Hatchling moonshine",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.4444444444444444
+        },
+        {
+          "source": "Obtain the item: Salty Dog beef sausage",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.4444444444444444
+        },
+        {
+          "source": "Obtain the item: Rye croutons",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.42857142857142855
+        },
+        {
+          "source": "Obtain the item: Bottle of Tarkovskaya vodka",
+          "wiki": null,
+          "reason": "not-present-in-current-wiki-objectives",
+          "score": 0.375
+        }
+      ],
+      "struckObjectives": []
+    }
+  ],
+  "wikiErrors": [
+    {
+      "task": "Gunsmith - Part 1",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "The Tarkov Shooter - Part 8",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "The Huntsman Path - Evil Watchman",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Sanitary Standards - Part 1",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Gunsmith - Part 2",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "BP Depot",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Operation Aquarius - Part 1",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Operation Aquarius - Part 2",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Gunsmith - Part 3",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Painkiller",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Friend From the West - Part 1",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Gunsmith - Part 4",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Easy Money - Part 1 [PVP ZONE]",
+      "status": "wiki-error",
+      "error": "Bad title \"Easy Money - Part 1 [PVP ZONE]\"."
+    },
+    {
+      "task": "The Bunker - Part 1",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Gunsmith - Part 5",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Balancing - Part 1 [PVP ZONE]",
+      "status": "wiki-error",
+      "error": "Bad title \"Balancing - Part 1 [PVP ZONE]\"."
+    },
+    {
+      "task": "Create a Distraction - Part 1 [PVP ZONE]",
+      "status": "wiki-error",
+      "error": "Bad title \"Create a Distraction - Part 1 [PVP ZONE]\"."
+    },
+    {
+      "task": "Balancing - Part 2 [PVP ZONE]",
+      "status": "wiki-error",
+      "error": "Bad title \"Balancing - Part 2 [PVP ZONE]\"."
+    },
+    {
+      "task": "Easy Money - Part 2 [PVP ZONE]",
+      "status": "wiki-error",
+      "error": "Bad title \"Easy Money - Part 2 [PVP ZONE]\"."
+    },
+    {
+      "task": "To Great Heights! - Part 4 [PVP ZONE]",
+      "status": "wiki-error",
+      "error": "Bad title \"To Great Heights! - Part 4 [PVP ZONE]\"."
+    },
+    {
+      "task": "Create a Distraction - Part 2 [PVP ZONE]",
+      "status": "wiki-error",
+      "error": "Bad title \"Create a Distraction - Part 2 [PVP ZONE]\"."
+    },
+    {
+      "task": "Between Two Fires [PVP ZONE]",
+      "status": "wiki-error",
+      "error": "Bad title \"Between Two Fires [PVP ZONE]\"."
+    },
+    {
+      "task": "Against the Conscience - Part 2 [PVP ZONE]",
+      "status": "wiki-error",
+      "error": "Bad title \"Against the Conscience - Part 2 [PVP ZONE]\"."
+    },
+    {
+      "task": "Surprise [PVP ZONE]",
+      "status": "wiki-error",
+      "error": "Bad title \"Surprise [PVP ZONE]\"."
+    },
+    {
+      "task": "To Great Heights! - Part 5 [PVP ZONE]",
+      "status": "wiki-error",
+      "error": "Bad title \"To Great Heights! - Part 5 [PVP ZONE]\"."
+    },
+    {
+      "task": "Decisions, Decisions [PVP ZONE]",
+      "status": "wiki-error",
+      "error": "Bad title \"Decisions, Decisions [PVP ZONE]\"."
+    },
+    {
+      "task": "To Great Heights! - Part 1 [PVP ZONE]",
+      "status": "wiki-error",
+      "error": "Bad title \"To Great Heights! - Part 1 [PVP ZONE]\"."
+    },
+    {
+      "task": "To Great Heights! - Part 2 [PVP ZONE]",
+      "status": "wiki-error",
+      "error": "Bad title \"To Great Heights! - Part 2 [PVP ZONE]\"."
+    },
+    {
+      "task": "To Great Heights! - Part 3 [PVP ZONE]",
+      "status": "wiki-error",
+      "error": "Bad title \"To Great Heights! - Part 3 [PVP ZONE]\"."
+    },
+    {
+      "task": "Arena Business [PVP ZONE]",
+      "status": "wiki-error",
+      "error": "Bad title \"Arena Business [PVP ZONE]\"."
+    },
+    {
+      "task": "Professional Fitness - Part 1 [PVP ZONE]",
+      "status": "wiki-error",
+      "error": "Bad title \"Professional Fitness - Part 1 [PVP ZONE]\"."
+    },
+    {
+      "task": "Professional Fitness - Part 2 [PVP ZONE]",
+      "status": "wiki-error",
+      "error": "Bad title \"Professional Fitness - Part 2 [PVP ZONE]\"."
+    },
+    {
+      "task": "To Great Heights! - Part 6 [PVP ZONE]",
+      "status": "wiki-error",
+      "error": "Bad title \"To Great Heights! - Part 6 [PVP ZONE]\"."
+    },
+    {
+      "task": "Hold the Lead [PVP ZONE]",
+      "status": "wiki-error",
+      "error": "Bad title \"Hold the Lead [PVP ZONE]\"."
+    },
+    {
+      "task": "Against the Conscience - Part 1 [PVP ZONE]",
+      "status": "wiki-error",
+      "error": "Bad title \"Against the Conscience - Part 1 [PVP ZONE]\"."
+    },
+    {
+      "task": "Trust Regain",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "No Offence",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Farming - Part 1",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Signal - Part 1",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Spa Tour - Part 1",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "The Cult - Part 1",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Spa Tour - Part 3",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Spa Tour - Part 4",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Spa Tour - Part 5",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Spa Tour - Part 7",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Cargo X - Part 1",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Cargo X - Part 2",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Signal - Part 2",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Cargo X - Part 4",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Pets Won't Need It - Part 1",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Gunsmith - Part 6",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Farming - Part 3",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Farming - Part 4",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "A Shooter Born in Heaven",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Gunsmith - Part 7",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Database - Part 2",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Inventory Check",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "The Blood of War - Part 1",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Database - Part 1",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Gunsmith - Part 8",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Gunsmith - Old Friend's Request",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "New Day, New Paths",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Ambulances Again",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Test Drive - Part 1",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "The Cult - Part 2",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Easy Job - Part 1",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Gunsmith - Part 9",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Gunsmith - Part 10",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "The Huntsman Path - Eraser - Part 1",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Gendarmerie - Mall Cop",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Gendarmerie - Tickets, Please",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Gendarmerie - District Patrol",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "No Questions Asked",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Colleagues - Part 1",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Colleagues - Part 2",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Vitamins - Part 1",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Glory to CPSU - Part 2",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Test Drive - Part 2",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Gunsmith - Part 11",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Vitamins - Part 2",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Colleagues - Part 3",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Beyond the Red Meat - Part 1",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Beyond the Red Meat - Part 2",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Gunsmith - Part 12",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Neuanfang",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Lend-Lease - Part 1",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Ambulance",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Test Drive - Part 3",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Gunsmith - Part 13",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Developer's Secrets - Part 1",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Developer's Secrets - Part 2",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Gunsmith - Part 14",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Living High is Not a Crime - Part 1",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Test Drive - Part 4",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Gunsmith - Part 15",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Neuanfang",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Sales Night",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "The Huntsman Path - Eraser - Part 2",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Lend-Lease - Part 2",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "The Blood of War - Part 3",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Gunsmith - Part 16",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Living High is Not a Crime - Part 2",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Gunsmith - Part 17",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Test Drive - Part 5",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Hunter",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Gunsmith - Part 18",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "House Arrest - Part 1",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Neuanfang",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Surprise Gift [PVP ZONE]",
+      "status": "wiki-error",
+      "error": "Bad title \"Surprise Gift [PVP ZONE]\"."
+    },
+    {
+      "task": "Test Drive - Part 6",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Postponed Reward [PVP ZONE]",
+      "status": "wiki-error",
+      "error": "Bad title \"Postponed Reward [PVP ZONE]\"."
+    },
+    {
+      "task": "Gunsmith - Part 19",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Gunsmith - Part 20",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Gunsmith - Part 21",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Gunsmith - Part 22",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Gunsmith - Part 23",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Gunsmith - Part 24",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Gunsmith - Part 25",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Neuanfang",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    },
+    {
+      "task": "Swift One",
+      "status": "wiki-error",
+      "error": "The page you specified doesn't exist."
+    }
+  ],
+  "unparsed": [
+    {
+      "task": "Reserve",
+      "status": "unparsed",
+      "wikiTitle": "Reserve",
+      "revid": 346590,
+      "removedObjectives": [],
+      "struckObjectives": []
+    },
+    {
+      "task": "Immunity",
+      "status": "unparsed",
+      "wikiTitle": "Immunity",
+      "revid": 344065,
+      "removedObjectives": [],
+      "struckObjectives": []
+    }
+  ]
+}
