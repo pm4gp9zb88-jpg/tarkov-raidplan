@@ -1166,12 +1166,37 @@ body.inRaidOpen{overflow:hidden}
   .raidClearedCta{grid-column:1/-1;width:100%}
 }
 
+
+/* 1.18.7 — current-raid objective progress */
+.inRaidPlanComplete{
+  margin:0 0 10px;padding:10px 11px;border:1px solid #4c704f;border-radius:6px;
+  background:linear-gradient(135deg,#17231a,#111814)
+}
+.inRaidPlanComplete strong{
+  display:block;color:#aad1a2;font-size:10px;letter-spacing:.3px
+}
+.inRaidPlanComplete span{
+  display:block;margin-top:4px;color:#839184;font-size:8px;line-height:1.45
+}
+
+
+/* 1.18.8 — full local factory reset */
+.dangerResetBtn{
+  border-color:#66413d!important;
+  color:#c89b92!important;
+}
+.dangerResetBtn:hover{
+  background:#241715!important;
+  border-color:#855049!important;
+  color:#e1aca2!important;
+}
+
 </style>
 </head>
 <body>
 <header>
   <div class="brandLockup"><div class="brandMark">IQ</div><div><div class="logo">RAID<span>IQ</span></div><div class="brandTagline">TACTICAL RAID INTELLIGENCE</div></div></div>
-  <div class="version">1.18.5 · RAID COMPLETION</div>
+  <div class="version">1.18.8 · FACTORY RESET</div>
   <button id="mobileTasksBtn" class="mobileHeaderBtn">☰ TASKS <b id="mobileHeaderCount">0</b></button>
   <button id="progressProfileBtn" class="progressProfileBtn">MY PMC <b id="profileLevelTop">Lv —</b></button>
   <div class="spacer"></div>
@@ -1608,7 +1633,7 @@ body.inRaidOpen{overflow:hidden}
     <div class="actions">
       <button id="saveManualProfile" class="btn">SAVE & USE PMC</button>
       <button id="openManualProgress" class="btn secondary">MANAGE TASKS</button>
-      <button id="removeAllPmcData" class="btn ghost">REMOVE ALL PMC DATA</button>
+      <button id="removeAllPmcData" class="btn ghost dangerResetBtn">RESET RAIDIQ DATA</button>
     </div>
   </div>
 </div>
@@ -1630,7 +1655,7 @@ body.inRaidOpen{overflow:hidden}
       <button id="editCompletedTasks" class="btn secondary">EDIT COMPLETED TASKS</button>
       <button id="exportProgress" class="btn secondary">EXPORT BACKUP</button>
       <button id="importProgress" class="btn ghost">IMPORT BACKUP</button>
-      <button id="clearProfile" class="btn ghost">REMOVE ALL PMC DATA</button>
+      <button id="clearProfile" class="btn ghost dangerResetBtn">RESET RAIDIQ DATA</button>
     </div>
   </div>
 </div>
@@ -2537,7 +2562,7 @@ function renderProgressManager(){
     return (order[av.state]??9)-(order[bv.state]??9)||a.name.localeCompare(b.name);
   }).slice(0,300);
 
-  $("progressManagerNote").textContent="Mark tasks complete or unfinished manually. Completing a quest also completes any earlier quests that RaidIQ can prove through completion-only prerequisite links. Active/failed/ambiguous prerequisite states are never guessed.";
+  $("progressManagerNote").textContent="Mark tasks complete or unfinished manually. Completing a quest also completes earlier quests RaidIQ can prove through completion-only prerequisite links. RESET RAIDIQ DATA clears all local progression, objective ticks and saved raids and returns this browser to first-time setup.";
 
   const raidRows=list.map(t=>{
     const av=taskAvailability(t),done=storedCompleted(t.id),historical=av.state==="historical"&&!done;
@@ -2590,6 +2615,23 @@ const MAP_DIFFICULTY={
   "Icebreaker":{tier:"Ultra",weight:.38}
 };
 function mapDifficulty(map){return MAP_DIFFICULTY[map]||{tier:"Medium",weight:1}}
+function isUltraMap(map){return mapDifficulty(map).tier==="Ultra"}
+function taskExplicitlyCurrent(t){
+  return (PROFILE.progressAnchors||[]).includes(t.id)||(PROFILE.progressCurrent||[]).includes(t.id);
+}
+function taskHasPositiveProgressionEvidence(t){
+  if(taskExplicitlyCurrent(t))return true;
+
+  // A proven prerequisite chain is positive evidence that the quest has
+  // actually been reached. An empty prerequisite array is NOT evidence.
+  const reqs=(t.taskRequirements||[]).filter(r=>r?.taskId);
+  if(!reqs.length)return false;
+  return reqs.every(r=>requirementSatisfiedByProfile(r));
+}
+function ultraTaskEligibleForAutoSuggestion(t,map){
+  if(!isUltraMap(map))return true;
+  return taskExplicitlyCurrent(t)||taskHasPositiveProgressionEvidence(t);
+}
 function recommendationScore({candidates,chosen,mapObjectivesTotal,soft,map}){
   const d=mapDifficulty(map);
   const productivity=(chosen.length*20)+(Math.min(mapObjectivesTotal,12)*2)+Math.min(candidates.length,10);
@@ -2597,27 +2639,68 @@ function recommendationScore({candidates,chosen,mapObjectivesTotal,soft,map}){
 }
 function personalRaidRecommendation(){
   if(!hasProfile())return null;
+
   const eligible=TASKS.filter(t=>eligibleForSuggestions(t)&&t.raidClass==="MAP_BOUND");
-  const maps=uniq(eligible.flatMap(t=>t.mapBoundMaps||taskMaps(t))).filter(m=>m!=="Any");
-  const ranked=[];
+  const maps=uniq(eligible.flatMap(t=>remainingMapSet(t))).filter(m=>m!=="Any");
+  const plans=[];
+
   for(const map of maps){
-    const candidates=eligible.filter(t=>taskRequiresMap(t,map)).sort((a,b)=>{
-      const d=mapObjectives(b,map).length-mapObjectives(a,map).length;
-      return d||((a.requirements||[]).length-(b.requirements||[]).length)||a.name.localeCompare(b.name);
-    });
+    let candidates=eligible
+      .filter(t=>taskRequiresMap(t,map))
+      .filter(t=>ultraTaskEligibleForAutoSuggestion(t,map))
+      .sort((a,b)=>{
+        const d=remainingMapObjectives(b,map).length-remainingMapObjectives(a,map).length;
+        return d||((a.requirements||[]).length-(b.requirements||[]).length)||a.name.localeCompare(b.name);
+      });
+
     const chosen=greedyCompatible(candidates,5);
     if(!chosen.length)continue;
+
     const mapObjectivesTotal=mapObjectiveCount(chosen,map);
     const conflicts=conflictList(chosen);
     const hard=conflicts.filter(c=>c.severity==="hard").length;
     const soft=conflicts.filter(c=>c.severity==="soft").length;
     const difficulty=mapDifficulty(map);
+    const explicitCurrentCount=chosen.filter(taskExplicitlyCurrent).length;
     const score=recommendationScore({candidates,chosen,mapObjectivesTotal,soft,map});
-    ranked.push({map,candidates,chosen,mapObjectivesTotal,hard,soft,difficulty,score});
+
+    plans.push({
+      map,candidates,chosen,mapObjectivesTotal,hard,soft,difficulty,score,
+      explicitCurrentCount
+    });
   }
-  ranked.sort((a,b)=>b.score-a.score||b.mapObjectivesTotal-a.mapObjectivesTotal||a.map.localeCompare(b.map));
+
+  // Ultra maps are intentionally a late/fallback suggestion tier.
+  // RaidIQ may recommend one when:
+  // 1) the player explicitly says they currently have an Ultra-map quest, OR
+  // 2) there is no viable Easy/Medium/Hard plan left.
+  const lowerTier=plans.filter(p=>p.difficulty.tier!=="Ultra");
+  const explicitUltra=plans.filter(p=>p.difficulty.tier==="Ultra"&&p.explicitCurrentCount>0);
+  const fallbackUltra=plans.filter(p=>p.difficulty.tier==="Ultra");
+
+  let ranked;
+  if(explicitUltra.length){
+    ranked=[...lowerTier,...explicitUltra];
+  }else if(lowerTier.length){
+    ranked=lowerTier;
+  }else{
+    ranked=fallbackUltra;
+  }
+
+  ranked.sort((a,b)=>
+    b.score-a.score ||
+    b.mapObjectivesTotal-a.mapObjectivesTotal ||
+    b.chosen.length-a.chosen.length ||
+    a.map.localeCompare(b.map)
+  );
+
   if(!ranked.length)return null;
-  return {...ranked[0],runnerUp:ranked[1]||null,eligibleTaskPool:eligible.length};
+  return {
+    ...ranked[0],
+    runnerUp:ranked[1]||null,
+    eligibleTaskPool:eligible.length,
+    ultraMapsSuppressed:plans.filter(p=>p.difficulty.tier==="Ultra").length-ranked.filter(p=>p.difficulty.tier==="Ultra").length
+  };
 }
 function renderPersonalRaid(){
   const rec=personalRaidRecommendation();
@@ -2625,10 +2708,10 @@ function renderPersonalRaid(){
   const cls=rec.difficulty.tier.toLowerCase();
   $("personalRaidMap").innerHTML=`${esc(rec.map)} <span class="difficultyBadge ${cls}">${esc(rec.difficulty.tier)} map</span>`;
   $("personalRaidActionTitle").textContent=`Build the suggested ${rec.map} raid`;
-  $("personalRaidText").innerHTML=`<b>${esc(rec.map)} is RaidIQ's strongest current raid suggestion.</b> It gives you ${rec.mapObjectivesTotal} map-specific objective${rec.mapObjectivesTotal!==1?"s":""} across ${rec.chosen.length} compatible task${rec.chosen.length!==1?"s":""}, while applying the ${esc(rec.difficulty.tier.toLowerCase())}-map difficulty weighting.${rec.soft?` ${rec.soft} loadout review${rec.soft!==1?"s":""} remains.`:" No loadout conflicts were found."}`;
+  $("personalRaidText").innerHTML=`<b>${esc(rec.map)} is RaidIQ's strongest current raid suggestion.</b> It gives you ${rec.mapObjectivesTotal} map-specific objective${rec.mapObjectivesTotal!==1?"s":""} across ${rec.chosen.length} compatible task${rec.chosen.length!==1?"s":""}, while applying the ${esc(rec.difficulty.tier.toLowerCase())}-map difficulty weighting.${rec.difficulty.tier==="Ultra"&&rec.explicitCurrentCount?` RaidIQ is allowing this Ultra-map recommendation because ${rec.explicitCurrentCount} selected current task${rec.explicitCurrentCount!==1?"s are":" is"} confirmed there.`:""}${rec.soft?` ${rec.soft} loadout review${rec.soft!==1?"s":""} remains.`:" No loadout conflicts were found."}`;
   $("personalWhy").innerHTML=`<div class="whyRaidItem"><span>Available here</span><b>${rec.candidates.length}</b></div><div class="whyRaidItem"><span>Tasks in build</span><b>${rec.chosen.length}</b></div><div class="whyRaidItem"><span>Objectives covered</span><b>${rec.mapObjectivesTotal}</b></div><div class="whyRaidItem difficulty"><span>Map difficulty</span><b class="${cls}">${esc(rec.difficulty.tier)}</b></div>`;
   const runner=rec.runnerUp;
-  $("personalReasoning").innerHTML=`<strong>Why ${esc(rec.map)}?</strong> RaidIQ compared ${rec.eligibleTaskPool} eligible map-bound task${rec.eligibleTaskPool!==1?"s":""} across your available maps, prioritising compatible objective coverage while penalising harder maps and loadout warnings.${runner?`<div class="reasonCompare altRaidOption"><div class="altRaidOptionText">Next best: <b>${esc(runner.map)}</b> · ${runner.mapObjectivesTotal} objectives · ${esc(runner.difficulty.tier)} difficulty${runner.soft?` · ${runner.soft} review${runner.soft!==1?"s":""}`:" · clean loadout"}.</div><button class="btn ghost small altRaidBtn" data-alt-suggested-map="${esc(runner.map)}" data-alt-suggested-tasks="${esc(runner.chosen.map(t=>t.id).join(","))}">BUILD ${esc(runner.map.toUpperCase())} RAID</button></div>`:""}${DATA_QA?.status==="pass"?`<div class="reasonCompare">Dataset status: <b>automated QA passed</b>${DATA_QA.checkCount?` · ${DATA_QA.checkCount} checks`:""}.</div>`:""}`;
+  $("personalReasoning").innerHTML=`<strong>Why ${esc(rec.map)}?</strong> RaidIQ compared ${rec.eligibleTaskPool} eligible map-bound task${rec.eligibleTaskPool!==1?"s":""} across your available maps, prioritising compatible objective coverage while penalising harder maps and loadout warnings. Ultra maps require positive progression evidence and are treated as a fallback unless you have explicitly identified a current quest there.${rec.ultraMapsSuppressed?` <b>${rec.ultraMapsSuppressed} unsupported Ultra-map plan${rec.ultraMapsSuppressed!==1?"s were":" was"} excluded.</b>`:""}${runner?`<div class="reasonCompare altRaidOption"><div class="altRaidOptionText">Next best: <b>${esc(runner.map)}</b> · ${runner.mapObjectivesTotal} objectives · ${esc(runner.difficulty.tier)} difficulty${runner.soft?` · ${runner.soft} review${runner.soft!==1?"s":""}`:" · clean loadout"}.</div><button class="btn ghost small altRaidBtn" data-alt-suggested-map="${esc(runner.map)}" data-alt-suggested-tasks="${esc(runner.chosen.map(t=>t.id).join(","))}">BUILD ${esc(runner.map.toUpperCase())} RAID</button></div>`:""}${DATA_QA?.status==="pass"?`<div class="reasonCompare">Dataset status: <b>automated QA passed</b>${DATA_QA.checkCount?` · ${DATA_QA.checkCount} checks`:""}.</div>`:""}`;
   $("personalTaskNames").innerHTML=rec.chosen.map(t=>`<span class="personalTaskName">${esc(t.name)} · ${mapObjectives(t,rec.map).length} obj</span>`).join("");
   $("buildPersonalRaid").dataset.map=rec.map;
   $("buildPersonalRaid").dataset.tasks=rec.chosen.map(t=>t.id).join(",");
@@ -2661,6 +2744,38 @@ function taskReadyToHandIn(t,checks=loadChecks()){
   const objectives=raidObjectivesForCompletion(t);
   if(!objectives.length)return false;
   return objectives.every(o=>objectiveDoneAnywhere(t.id,o.index,o.text,checks));
+}
+
+function currentRaidObjectiveProgress(list=raidTasks(),map=activeMap,checks=loadChecks()){
+  let total=0,done=0;
+
+  for(const t of list){
+    const details=objectiveDetails(t);
+    (t.objectives||[]).forEach((text,index)=>{
+      const d=details.find(x=>x.text===text);
+      const relevant=
+        d?.raidClass==="ANY_RAID" ||
+        (d?.raidClass==="MAP_BOUND"&&(d.maps||[]).includes(map));
+
+      // Greyed-out / other-map / hand-in-only objectives do not belong in this
+      // raid's progress bar.
+      if(!relevant)return;
+
+      total++;
+      if(storedCompleted(t.id)||objectiveDoneAnywhere(t.id,index,text,checks))done++;
+    });
+  }
+
+  const allTasksAlreadyComplete=list.length>0&&list.every(t=>storedCompleted(t.id));
+  const complete=allTasksAlreadyComplete||(total>0&&done===total);
+
+  return {
+    total,
+    done,
+    remaining:Math.max(0,total-done),
+    pct:allTasksAlreadyComplete?100:(total?Math.round(done/total*100):0),
+    complete
+  };
 }
 function handInMarkup(t,checks=loadChecks()){
   if(!taskReadyToHandIn(t,checks))return "";
@@ -3762,34 +3877,44 @@ function taskDetailTriggerMarkup(t){
 
 function renderRaid(){
   const list=raidTasks(),activeList=activeRaidTasks(),completedCount=list.length-activeList.length;
+  const checks=loadChecks();
+  const raidProgress=currentRaidObjectiveProgress(list,activeMap,checks);
+  const raidPlanComplete=list.length>0&&raidProgress.complete;
+
   const req=aggregateReq(activeList),conf=conflictList(activeList);
   const hard=conf.filter(c=>c.severity==="hard"),soft=conf.filter(c=>c.severity==="soft");
   $("summaryMap").textContent=activeMap;
-  const activeObjectives=objectiveCount(activeList);
-  $("summaryMeta").textContent=`${list.length} task${list.length!==1?"s":""}${completedCount?` · ${completedCount} completed`:""} · ${activeObjectives} active objective${activeObjectives!==1?"s":""} · data ${generatedAt?`updated ${new Date(generatedAt).toLocaleDateString("en-GB")}`:"current"}`;
-  const weaponHard=hard.filter(c=>c.kind==="weapon").length;
+
+  $("summaryMeta").textContent=`${list.length} task${list.length!==1?"s":""}${completedCount?` · ${completedCount} completed`:""} · ${raidProgress.remaining} active objective${raidProgress.remaining!==1?"s":""} · data ${generatedAt?`updated ${new Date(generatedAt).toLocaleDateString("en-GB")}`:"current"}`;
+
   const readiness=!list.length
     ?{text:"ADD TASKS",cls:""}
-    :!activeList.length
-      ?{text:"✓ RAID COMPLETE",cls:"raidComplete"}
+    :raidPlanComplete
+      ?{text:"✓ RAID PLAN COMPLETE",cls:"raidComplete"}
       :hard.length
         ?{text:`⚠ ACTION REQUIRED · ${hard.length} CONFLICT${hard.length!==1?"S":""}`,cls:"actionRequired"}
         :soft.length
           ?{text:`△ REVIEW BEFORE RAID · ${soft.length}`,cls:"reviewRaid"}
           :{text:"✓ RAID READY",cls:"raidReady"};
+
   $("summaryStatus").textContent=readiness.text;
   $("summaryStatus").className=`ready ${readiness.cls}`;
   $("summaryTaskCount").textContent=completedCount?`${list.length} selected · ${completedCount} complete`:`${list.length} selected`;
 
-  const checks=loadChecks();
-  const raidCleared=list.length>0&&activeList.length===0;
-  const raidClearedBanner=raidCleared?`
+  const carryForwardCount=activeList.filter(t=>!taskReadyToHandIn(t,checks)).length;
+  const readyToCompleteCount=activeList.filter(t=>taskReadyToHandIn(t,checks)).length;
+
+  const raidClearedBanner=raidPlanComplete?`
     <div class="raidClearedPanel">
       <div class="raidClearedIcon">✓</div>
       <div class="raidClearedCopy">
-        <div class="eyebrow">${esc(activeMap.toUpperCase())} // RAID COMPLETE</div>
-        <strong>All selected tasks have been handed in.</strong>
-        <span>This raid plan is complete. Finalise it to clear the finished plan and let RaidIQ calculate your best next raid.</span>
+        <div class="eyebrow">${esc(activeMap.toUpperCase())} // RAID PLAN COMPLETE</div>
+        <strong>All available objectives for this raid are complete.</strong>
+        <span>${
+          carryForwardCount
+            ?`${carryForwardCount} quest${carryForwardCount!==1?"s still have":" still has"} objectives elsewhere and will carry forward. ${readyToCompleteCount?`${readyToCompleteCount} fully finished task${readyToCompleteCount!==1?"s will":" will"} be completed when you finalise.`:""}`
+            :`Finalise the raid to complete any finished tasks and let RaidIQ calculate your best next raid.`
+        }</span>
       </div>
       <button class="btn raidClearedCta" data-finalise-active-raid>FINALISE & SHOW NEXT RAID</button>
     </div>`:"";
@@ -3833,8 +3958,8 @@ function renderRaid(){
   html+=renderReqGroup("MUST BRING","Required by the selected tasks",must,"must");
   html+=renderSimpleGroup("RECOMMENDED","Helpful rather than mandatory",rec,"recommended");
   html+=renderSimpleGroup("OBTAIN DURING RAID","Do not waste stash space bringing these",obtain,"obtain");
-  if(raidCleared){
-    $("bringList").innerHTML='<div class="alert ok"><strong>✓ Raid requirements cleared.</strong><span class="why">All selected tasks have been handed in. Finalise the raid plan to move on to your next recommendation.</span></div>';
+  if(raidPlanComplete){
+    $("bringList").innerHTML='<div class="alert ok"><strong>✓ Current raid objectives complete.</strong><span class="why">Everything available on this map has been completed. Finalise the raid plan to complete any fully finished tasks and carry unfinished multi-map quests forward.</span></div>';
     $("bringCount").textContent="Raid complete";
   }else{
     $("bringList").innerHTML=html||'<div class="alert ok"><strong>Nothing special required.</strong><span class="why">No key, marker, weapon, wearable or FIR requirement was detected.</span></div>';
@@ -3853,13 +3978,13 @@ function renderRaid(){
     return `<div class="alert"><strong>⚠ HARD CONFLICT — ${esc(c.a.name)} ↔ ${esc(c.b.name)}</strong><span class="why">These tasks compete for the same ${esc(c.slot||"equipment")} requirement: <b>${esc(c.av)}</b> vs <b>${esc(c.bv)}</b>.</span><div class="conflictActions"><button class="btn secondary small" data-remove="${esc(c.a.id)}">REMOVE ${esc(c.a.name.toUpperCase())}</button><button class="btn secondary small" data-remove="${esc(c.b.id)}">REMOVE ${esc(c.b.name.toUpperCase())}</button></div></div>`;
   }).join(""):`<div class="alert ok"><strong>✓ Good combination.</strong><span class="why">RaidIQ found no incompatible equipment or weapon requirements among these tasks.</span></div>`;
 
-  const compat=raidCleared?[]:findCompatible(activeMap,activeList).slice(0,6);
-  $("raidCompatible").classList.toggle("hidden",raidCleared||!compat.length);
+  const compat=raidPlanComplete?[]:findCompatible(activeMap,activeList).slice(0,6);
+  $("raidCompatible").classList.toggle("hidden",raidPlanComplete||!compat.length);
   $("raidCompatibleCount").textContent=suggestionCountText(compat.length);
   $("raidCompatibleList").innerHTML=compat.map(t=>compatibleRow(t,activeMap)).join("");
   $("raidAddAllCompatible").textContent=`ADD ALL ${compat.length}`;
-  const anyOps=raidCleared?[]:findAnyRaidOpportunities(activeList,activeMap).slice(0,6);
-  $("raidAnyRaid").classList.toggle("hidden",raidCleared||!anyOps.length);
+  const anyOps=raidPlanComplete?[]:findAnyRaidOpportunities(activeList,activeMap).slice(0,6);
+  $("raidAnyRaid").classList.toggle("hidden",raidPlanComplete||!anyOps.length);
   $("raidAnyRaidCount").textContent=suggestionCountText(anyOps.length);
   $("raidAnyRaidList").innerHTML=anyOps.map(anyRaidRow).join("");
 
@@ -3896,11 +4021,14 @@ function renderSimpleGroup(title,subtitle,rows,kind){
 }
 
 function updateProgress(){
-  const boxes=[...document.querySelectorAll("#summary input[data-check-id]")];
-  const done=boxes.filter(b=>b.checked).length;
-  const pct=boxes.length?Math.round(done/boxes.length*100):0;
-  $("progressText").textContent=`${done}/${boxes.length} · ${pct}%`;
-  $("progressBar").style.width=`${pct}%`;
+  if(!activeMap){
+    $("progressText").textContent="0/0 · 0%";
+    $("progressBar").style.width="0%";
+    return;
+  }
+  const progress=currentRaidObjectiveProgress();
+  $("progressText").textContent=`${progress.done}/${progress.total} · ${progress.pct}%`;
+  $("progressBar").style.width=`${progress.pct}%`;
 }
 
 function openDetail(id){
@@ -4005,19 +4133,7 @@ function inRaidObjectiveRows(t,checks){
   return {rows,afterRaid};
 }
 function inRaidProgress(){
-  const checks=loadChecks();
-  let total=0,done=0;
-  for(const t of activeRaidTasks()){
-    const details=objectiveDetails(t);
-    (t.objectives||[]).forEach((o,i)=>{
-      const d=details.find(x=>x.text===o);
-      const relevant=d?.raidClass==="ANY_RAID"||(d?.raidClass==="MAP_BOUND"&&(d.maps||[]).includes(activeMap));
-      if(!relevant)return;
-      total++;
-      if(objectiveDoneAnywhere(t.id,i,o,checks))done++;
-    });
-  }
-  return {total,done,pct:total?Math.round(done/total*100):100};
+  return currentRaidObjectiveProgress(raidTasks(),activeMap,loadChecks());
 }
 function inRaidModeMarkup(){
   const list=raidTasks(),activeList=activeRaidTasks();
@@ -4068,6 +4184,7 @@ function inRaidModeMarkup(){
     <div class="inRaidGrid">
       <section class="inRaidPanel">
         <div class="inRaidPanelHead"><h2>TASKS & OBJECTIVES</h2><span>${progress.done}/${progress.total} complete</span></div>
+        ${progress.complete&&list.length?`<div class="inRaidPlanComplete"><strong>✓ RAID PLAN COMPLETE</strong><span>All objectives available in this raid are complete. Return to the planner to finalise the raid and generate your next recommendation.</span></div>`:""}
         ${tasks||'<div class="inRaidEmpty">No tasks selected.</div>'}
       </section>
       <div class="inRaidSide">
@@ -4179,11 +4296,17 @@ document.addEventListener("click",e=>{
       toast("Saved raid plan could not be found");
       return;
     }
-    const list=raidTasks();
-    if(!list.length||list.some(t=>!storedCompleted(t.id))){
-      toast("Hand in the remaining raid tasks first");
+
+    const progress=currentRaidObjectiveProgress();
+    if(!progress.complete){
+      toast("Finish the remaining objectives available in this raid first");
       return;
     }
+
+    // finaliseSavedRaid() is deliberately stricter at QUEST level:
+    // - fully finished quests are completed
+    // - quests with remaining objectives on another map stay unfinished
+    // - the finished current-map plan is still closed.
     finaliseSavedRaid();
     return;
   }
@@ -4298,9 +4421,21 @@ document.addEventListener("change",e=>{
       }
     });
 
-    if(box.dataset.taskId)refreshHandInControl(box.dataset.taskId);
-    updateProgress();
-    refreshInRaidMode();
+    if(box.dataset.taskId){
+      refreshHandInControl(box.dataset.taskId);
+      if(isRaidViewActive()){
+        // Re-render so ticking the final available map objective immediately
+        // transitions the raid into RAID PLAN COMPLETE.
+        renderRaid();
+      }else{
+        updateProgress();
+        refreshInRaidMode();
+      }
+    }else{
+      // Item / gear checklist ticks never affect raid-objective progress.
+      updateProgress();
+      refreshInRaidMode();
+    }
   }
 });
 
@@ -4416,12 +4551,62 @@ $("disconnectProfile").addEventListener("click",()=>{
   toast("PMC disconnected — personal filtering is off");
 });
 function removeAllPmcData(){
+  // This is intentionally a full RaidIQ local-data reset, not merely a PMC
+  // disconnect. Only RaidIQ-owned keys are removed; unrelated browser storage
+  // on the same origin is left untouched.
+  try{
+    const s=safeLocal();
+    [
+      profileStoreKey,
+      legacyProgressStoreKey,
+      checkStoreKey,
+      activeRaidStoreKey,
+      onboardingStoreKey
+    ].forEach(key=>s?.removeItem(key));
+  }catch(e){}
+
+  // Clear every in-memory planning/progression state so there is no flash of
+  // old data before the first-run screen is restored.
   PROFILE=emptyProfile();
-  try{safeLocal()?.removeItem(profileStoreKey);safeLocal()?.removeItem(legacyProgressStoreKey)}catch(e){}
+  selected.clear();
+  activeMap=null;
+  mapPlanSelection=null;
+  mode="tasks";
+
+  quickProgressAnchorIds=[];
+  quickProgressAnswers={};
+  quickProgressSkipped=new Set();
+  quickProgressAnalysis=null;
+  quickProgressFirstRun=false;
+  progressManagerMode="all";
+
+  clearRaidHash();
+
+  // Reset visible planner controls too.
+  try{
+    $("search").value="";
+    $("mapFilter").value="All maps";
+    $("traderFilter").value="All traders";
+    $("typeFilter").value="all";
+    $("profileFilter").value="all";
+    $("sortFilter").value="name-asc";
+  }catch(e){}
+
   closeModals();
-  $("profileFilter").value="all";
-  updateProfileUI();renderTaskList();renderPlanner();
-  toast("All PMC data removed");
+  $("summary").classList.add("hidden");
+  $("planner").classList.remove("hidden");
+  document.querySelectorAll(".modeBtn").forEach(btn=>btn.classList.toggle("active",btn.dataset.mode==="tasks"));
+
+  updateProfileUI();
+  renderTaskList();
+  renderPlanner();
+  renderResumeRaidCard();
+  updateSidebarMode();
+
+  // Because onboardingStoreKey was removed, this now behaves exactly like a
+  // first visit to RaidIQ.
+  $("onboardingModal").classList.add("open");
+  toast("RaidIQ reset complete");
 }
 $("removeAllPmcData").addEventListener("click",removeAllPmcData);
 $("clearProfile").addEventListener("click",removeAllPmcData);
