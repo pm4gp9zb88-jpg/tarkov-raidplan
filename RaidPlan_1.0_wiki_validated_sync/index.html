@@ -1104,12 +1104,74 @@ body.inRaidOpen{overflow:hidden}
   .onboardingSkip .btn{width:100%}
 }
 
+
+/* 1.18.3 — remaining-objective routing */
+.resumeRaid.raidPlanComplete{
+  border-color:#496d4e;
+  background:
+    linear-gradient(135deg,rgba(31,52,35,.72),rgba(17,22,18,.96))
+}
+.resumeRaidState{
+  display:inline-flex;align-items:center;gap:5px;margin-bottom:8px;
+  padding:4px 7px;border:1px solid #4d704f;border-radius:4px;
+  background:#162119;color:#a9d1a1;font-size:8px;font-weight:950;
+  letter-spacing:.55px;text-transform:uppercase
+}
+.resumeRaidState.hidden{display:none}
+.resumeRaid.raidPlanComplete .resumeRaidFill{background:#78a06f}
+.resumeRaid.raidPlanComplete #resumeRaidMap{color:#c8dfc3}
+.resumeRaid.raidPlanComplete #resumeRaidBtn{
+  border-color:#5b7d5e;background:#a7ca8f;color:#10150f
+}
+.resumeRaid.raidPlanComplete #resumeRaidBtn:hover{filter:brightness(1.05)}
+.resumeRaidCompletionNote{
+  margin-top:6px;color:#849783;font-size:8px;line-height:1.4
+}
+.resumeRaidSafetyNote{
+  margin-top:6px;color:#b59d65;font-size:8px;line-height:1.4
+}
+
+
+/* 1.18.5 — one-by-one hand-in + raid completion flow */
+.raidClearedPanel{
+  display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:12px;
+  padding:13px;margin-bottom:11px;border:1px solid #4d704f;border-radius:7px;
+  background:
+    linear-gradient(135deg,rgba(27,48,31,.94),rgba(17,24,19,.97));
+  box-shadow:inset 0 0 0 1px rgba(151,198,137,.035)
+}
+.raidClearedIcon{
+  width:39px;height:39px;border-radius:6px;display:flex;align-items:center;
+  justify-content:center;border:1px solid #537957;background:#19271c;
+  color:#aed3a6;font-size:21px;font-weight:950
+}
+.raidClearedCopy{min-width:0}
+.raidClearedCopy .eyebrow{color:#7fa17a;margin-bottom:3px}
+.raidClearedCopy strong{display:block;color:#c8dec3;font-size:12px}
+.raidClearedCopy span{
+  display:block;margin-top:4px;color:#829083;font-size:8px;line-height:1.45
+}
+.raidClearedCta{
+  min-height:41px;white-space:nowrap;border-color:#638264!important;
+  background:#a8cc92!important;color:#10150f!important
+}
+.completedTaskSummary{
+  border-color:#3b5540!important;background:linear-gradient(135deg,#141d16,#111514)!important
+}
+.completedTaskSummary .taskDetailName{color:#a9c8a4}
+.completedTaskSummary .taskCompletedBadge{border-color:#416447;color:#9bc895}
+.taskCompletedBody{border-color:#3b5b40!important}
+@media(max-width:760px){
+  .raidClearedPanel{grid-template-columns:auto 1fr}
+  .raidClearedCta{grid-column:1/-1;width:100%}
+}
+
 </style>
 </head>
 <body>
 <header>
   <div class="brandLockup"><div class="brandMark">IQ</div><div><div class="logo">RAID<span>IQ</span></div><div class="brandTagline">TACTICAL RAID INTELLIGENCE</div></div></div>
-  <div class="version">1.18 · FIRST-RUN UX</div>
+  <div class="version">1.18.5 · RAID COMPLETION</div>
   <button id="mobileTasksBtn" class="mobileHeaderBtn">☰ TASKS <b id="mobileHeaderCount">0</b></button>
   <button id="progressProfileBtn" class="progressProfileBtn">MY PMC <b id="profileLevelTop">Lv —</b></button>
   <div class="spacer"></div>
@@ -1192,6 +1254,7 @@ body.inRaidOpen{overflow:hidden}
 
 
   <div id="resumeRaid" class="section card resumeRaid hidden">
+    <div id="resumeRaidState" class="resumeRaidState hidden"></div>
     <div class="resumeRaidMain">
       <div>
         <div class="eyebrow">RAIDIQ // SAVED RAID</div>
@@ -1661,9 +1724,40 @@ function normaliseClientTask(t){
 const objectiveDetails=t=>Array.isArray(t.objectiveDetails)?t.objectiveDetails:legacyObjectiveDetails(t);
 function mapObjectives(t,map){return objectiveDetails(t).filter(o=>o.raidClass==="MAP_BOUND"&&(o.maps||[]).includes(map))}
 function anyRaidObjectives(t){return objectiveDetails(t).filter(o=>o.raidClass==="ANY_RAID")}
-function taskRequiresMap(t,map){return mapObjectives(t,map).length>0}
-function mapObjectiveCount(list,map){return list.reduce((n,t)=>n+mapObjectives(t,map).length,0)}
-function relevantObjectiveText(t,map){return mapObjectives(t,map)[0]?.text||"Map-specific raid objective"}
+
+function remainingMapObjectives(t,map,checks=loadChecks()){
+  const details=objectiveDetails(t);
+  return (t.objectives||[]).map((text,index)=>{
+    const detail=details.find(x=>x.text===text);
+    return {text,index,detail};
+  }).filter(x=>
+    x.detail?.raidClass==="MAP_BOUND" &&
+    (x.detail.maps||[]).includes(map) &&
+    !objectiveDoneAnywhere(t.id,x.index,x.text,checks)
+  ).map(x=>({...x.detail,text:x.text,index:x.index}));
+}
+function remainingAnyRaidObjectives(t,checks=loadChecks()){
+  const details=objectiveDetails(t);
+  return (t.objectives||[]).map((text,index)=>{
+    const detail=details.find(x=>x.text===text);
+    return {text,index,detail};
+  }).filter(x=>
+    x.detail?.raidClass==="ANY_RAID" &&
+    !objectiveDoneAnywhere(t.id,x.index,x.text,checks)
+  ).map(x=>({...x.detail,text:x.text,index:x.index}));
+}
+function taskHasRemainingAnyRaid(t,checks=loadChecks()){return remainingAnyRaidObjectives(t,checks).length>0}
+function taskRequiresMap(t,map,checks=loadChecks()){return remainingMapObjectives(t,map,checks).length>0}
+function remainingMapSet(t,checks=loadChecks()){
+  return uniq((t.mapBoundMaps||taskMaps(t)).filter(m=>m!=="Any"&&taskRequiresMap(t,m,checks)));
+}
+function mapObjectiveCount(list,map,checks=loadChecks()){return list.reduce((n,t)=>n+remainingMapObjectives(t,map,checks).length,0)}
+function relevantObjectiveText(t,map,checks=loadChecks()){
+  return remainingMapObjectives(t,map,checks)[0]?.text
+    || remainingAnyRaidObjectives(t,checks)[0]?.text
+    || mapObjectives(t,map)[0]?.text
+    || "Map-specific raid objective";
+}
 function taskMetaName(id){return byId[id]?.name||TASK_META[id]?.name||"a previous task"}
 const store=()=>{try{return localStorage}catch(e){return null}};
 const checkStoreKey="raidplan-concept-checks-v1";
@@ -1736,22 +1830,77 @@ function saveProfile(){
 function hasProfile(){return PROFILE.enabled===true&&profileHasData(PROFILE)}
 function storedCompleted(id){return PROFILE.completed.includes(id)}
 function isCompleted(id){return hasProfile()&&storedCompleted(id)}
+function clearProgressInferenceForCompleted(ids){
+  const doneSet=new Set(ids||[]);
+  PROFILE.progressAutoCompleted=(PROFILE.progressAutoCompleted||[]).filter(x=>!doneSet.has(x));
+  PROFILE.progressCurrent=(PROFILE.progressCurrent||[]).filter(x=>!doneSet.has(x));
+  PROFILE.progressUnavailable=(PROFILE.progressUnavailable||[]).filter(x=>!doneSet.has(x));
+  PROFILE.progressAnchors=(PROFILE.progressAnchors||[]).filter(x=>!doneSet.has(x));
+  if(PROFILE.progressAnswers&&typeof PROFILE.progressAnswers==="object"){
+    doneSet.forEach(id=>delete PROFILE.progressAnswers[id]);
+  }
+}
+function provenCompletionClosure(ids){
+  const direct=uniq((ids||[]).filter(Boolean));
+  const all=new Set(direct);
+  const prerequisites=new Set();
+
+  for(const id of direct){
+    for(const pre of prerequisiteIdsForTask(id,new Set(),new Set())){
+      all.add(pre);
+      if(!direct.includes(pre))prerequisites.add(pre);
+    }
+  }
+
+  return {direct,all:[...all],prerequisites:[...prerequisites]};
+}
+function applyCompletedWithProvenHistory(ids,{render=true,save=true}={}){
+  const closure=provenCompletionClosure(ids);
+  const before=new Set(PROFILE.completed||[]);
+  const completed=new Set(PROFILE.completed||[]);
+
+  closure.all.forEach(id=>completed.add(id));
+  PROFILE.completed=[...completed];
+
+  // Every ID in the closure is 100%-proven complete through completion-only
+  // prerequisite edges. We never infer through active/failed alternatives.
+  clearProgressInferenceForCompleted(closure.all);
+
+  PROFILE.enabled=true;
+  PROFILE.source="manual";
+  PROFILE.lastSync=new Date().toISOString();
+
+  if(save)saveProfile();
+
+  const added=closure.all.filter(id=>!before.has(id));
+  const directAdded=closure.direct.filter(id=>!before.has(id));
+  const prerequisiteAdded=closure.prerequisites.filter(id=>!before.has(id));
+
+  if(render){
+    renderTaskList();
+    renderPlanner();
+    renderProgressManager();
+    updateProfileUI();
+    if(isRaidViewActive())renderRaid();
+  }
+
+  return {closure,added,directAdded,prerequisiteAdded};
+}
 function setCompleted(id,done){
-  const s=new Set(PROFILE.completed);
-  done?s.add(id):s.delete(id);
+  if(done)return applyCompletedWithProvenHistory([id]);
+
+  // Removing a later completion does not prove its prerequisites were unfinished,
+  // so RaidIQ leaves earlier completed history intact.
+  const s=new Set(PROFILE.completed||[]);
+  s.delete(id);
   PROFILE.completed=[...s];
 
-  // A direct manual action overrides any state previously inferred by Quick Progress.
-  PROFILE.progressAutoCompleted=(PROFILE.progressAutoCompleted||[]).filter(x=>x!==id);
-  PROFILE.progressCurrent=(PROFILE.progressCurrent||[]).filter(x=>x!==id);
-  PROFILE.progressUnavailable=(PROFILE.progressUnavailable||[]).filter(x=>x!==id);
-  if(done)PROFILE.progressAnchors=(PROFILE.progressAnchors||[]).filter(x=>x!==id);
-  if(PROFILE.progressAnswers&&typeof PROFILE.progressAnswers==="object")delete PROFILE.progressAnswers[id];
-
+  clearProgressInferenceForCompleted([id]);
   PROFILE.source="manual";
   PROFILE.lastSync=new Date().toISOString();
   saveProfile();renderTaskList();renderPlanner();renderProgressManager();updateProfileUI();
   if(isRaidViewActive())renderRaid();
+  return {closure:{direct:[id],all:[id],prerequisites:[]},added:[],directAdded:[],prerequisiteAdded:[]};
 }
 function requirementNeedsCompletion(r){
   const statuses=(r?.statuses||[]).map(x=>clean(x).toLowerCase()).filter(Boolean);
@@ -2388,7 +2537,7 @@ function renderProgressManager(){
     return (order[av.state]??9)-(order[bv.state]??9)||a.name.localeCompare(b.name);
   }).slice(0,300);
 
-  $("progressManagerNote").textContent="Mark tasks complete or unfinished manually. When PMC personalisation is active, completed quests are excluded from suggestions and known prerequisites are used for eligibility.";
+  $("progressManagerNote").textContent="Mark tasks complete or unfinished manually. Completing a quest also completes any earlier quests that RaidIQ can prove through completion-only prerequisite links. Active/failed/ambiguous prerequisite states are never guessed.";
 
   const raidRows=list.map(t=>{
     const av=taskAvailability(t),done=storedCompleted(t.id),historical=av.state==="historical"&&!done;
@@ -2537,10 +2686,12 @@ function clearSavedRaid(){
 }
 function savedRaidProgress(saved){
   const checks=loadChecks();
+  const valid=(saved.tasks||[]).map(id=>byId[id]).filter(Boolean);
   let total=0,done=0;
-  for(const id of saved.tasks||[]){
-    const t=byId[id];
-    if(!t||storedCompleted(id))continue;
+
+  for(const t of valid){
+    if(storedCompleted(t.id))continue;
+
     for(const [i,o] of (t.objectives||[]).entries()){
       const d=objectiveDetails(t).find(x=>x.text===o);
       const relevant=d?.raidClass==="ANY_RAID"||(d?.raidClass==="MAP_BOUND"&&(d.maps||[]).includes(saved.map));
@@ -2549,7 +2700,28 @@ function savedRaidProgress(saved){
       if(objectiveDoneAnywhere(t.id,i,o,checks))done++;
     }
   }
-  return {total,done,pct:total?Math.round(done/total*100):100};
+
+  const allAlreadyCompleted=valid.length>0&&valid.every(t=>storedCompleted(t.id));
+  const mapProgressComplete=allAlreadyCompleted||(total>0&&done===total);
+
+  const readyToComplete=valid.filter(t=>!storedCompleted(t.id)&&taskReadyToHandIn(t,checks));
+  const alreadyCompleted=valid.filter(t=>storedCompleted(t.id));
+  const carryForward=valid.filter(t=>!storedCompleted(t.id)&&!taskReadyToHandIn(t,checks));
+
+  return {
+    total,done,
+    pct:allAlreadyCompleted?100:(total?Math.round(done/total*100):0),
+    mapProgressComplete,
+    allAlreadyCompleted,
+    readyToComplete,
+    alreadyCompleted,
+    carryForward,
+    completableCount:readyToComplete.length+alreadyCompleted.length,
+    carryForwardCount:carryForward.length,
+    // Finalise the raid PLAN when every objective relevant to this raid/map is done.
+    // Individual quests are only completed if taskReadyToHandIn() proves the whole quest is done.
+    canFinalisePlan:mapProgressComplete
+  };
 }
 function persistActiveRaid(){
   if(!activeMap||!raidTasks().length)return;
@@ -2569,9 +2741,37 @@ function renderResumeRaidCard(){
     return;
   }
   const p=savedRaidProgress({...saved,tasks:valid});
-  $("resumeRaidMap").textContent=`Resume ${saved.map}`;
-  $("resumeRaidMeta").textContent=`${valid.length} saved task${valid.length!==1?"s":""}${saved.updatedAt?` · saved ${new Date(saved.updatedAt).toLocaleString("en-GB")}`:""}`;
-  $("resumeRaidProgress").innerHTML=`<div class="resumeRaidProgressHead"><span>OBJECTIVE PROGRESS</span><b>${p.done}/${p.total} · ${p.pct}%</b></div><div class="resumeRaidTrack"><div class="resumeRaidFill" style="width:${p.pct}%"></div></div>`;
+  const state=$("resumeRaidState");
+  card.classList.toggle("raidPlanComplete",p.canFinalisePlan);
+
+  if(p.canFinalisePlan){
+    state.textContent=`✓ ${saved.map.toUpperCase()} PLAN COMPLETE`;
+    state.classList.remove("hidden");
+    $("resumeRaidMap").textContent=`Finalise ${saved.map}`;
+
+    if(p.carryForwardCount){
+      $("resumeRaidMeta").textContent=`All objectives for this ${saved.map} raid are complete · ${p.carryForwardCount} quest${p.carryForwardCount!==1?"s":""} continues elsewhere`;
+    }else{
+      $("resumeRaidMeta").textContent=`All objectives for this ${saved.map} raid are complete`;
+    }
+
+    $("resumeRaidBtn").textContent="FINALISE RAID PLAN";
+    $("resumeRaidBtn").dataset.savedRaidAction="finalise";
+
+    const completionText=p.carryForwardCount
+      ?`Finalising closes this ${saved.map} plan. Fully completed quests will be marked done, while ${p.carryForwardCount} multi-map quest${p.carryForwardCount!==1?"s":""} will stay active for its remaining objectives and can appear in your next RaidIQ suggestion.`
+      :`Finalising closes this ${saved.map} plan, marks any newly finished quests completed and immediately refreshes your next RaidIQ suggestion.`;
+
+    $("resumeRaidProgress").innerHTML=`<div class="resumeRaidProgressHead"><span>THIS RAID'S OBJECTIVES</span><b>100%</b></div><div class="resumeRaidTrack"><div class="resumeRaidFill" style="width:100%"></div></div><div class="resumeRaidCompletionNote">${completionText}</div>`;
+  }else{
+    state.classList.add("hidden");
+    $("resumeRaidMap").textContent=`Resume ${saved.map}`;
+    $("resumeRaidMeta").textContent=`${valid.length} saved task${valid.length!==1?"s":""}${saved.updatedAt?` · saved ${new Date(saved.updatedAt).toLocaleString("en-GB")}`:""}`;
+    $("resumeRaidBtn").textContent="RESUME RAID";
+    $("resumeRaidBtn").dataset.savedRaidAction="resume";
+    const denominator=p.total||0;
+    $("resumeRaidProgress").innerHTML=`<div class="resumeRaidProgressHead"><span>OBJECTIVE PROGRESS</span><b>${p.done}/${denominator} · ${p.pct}%</b></div><div class="resumeRaidTrack"><div class="resumeRaidFill" style="width:${p.pct}%"></div></div>`;
+  }
   card.classList.remove("hidden");
 }
 function resumeSavedRaid(){
@@ -2582,6 +2782,68 @@ function resumeSavedRaid(){
   renderPlanner();
   if(selected.size)buildRaid(saved.map);
   else clearSavedRaid();
+}
+function finaliseSavedRaid(){
+  const saved=loadSavedRaid();
+  if(!saved)return;
+
+  const valid=saved.tasks.map(id=>byId[id]).filter(Boolean);
+  const p=savedRaidProgress({...saved,tasks:valid.map(t=>t.id)});
+  if(!p.canFinalisePlan){
+    toast("Finish this raid's objectives before finalising the plan");
+    renderResumeRaidCard();
+    return;
+  }
+
+  // Only quests whose ENTIRE raid-required objective set is complete are
+  // marked complete. This protects multi-map tasks: a 100% Shoreline plan
+  // must not erase remaining Woods objectives.
+  const newlyCompleted=p.readyToComplete.map(t=>t.id);
+
+  // Use the global completion engine so every quest completed through
+  // FINALISE RAID PLAN also closes strictly proven prerequisite history.
+  const completionResult=newlyCompleted.length
+    ?applyCompletedWithProvenHistory(newlyCompleted,{render:false,save:true})
+    :{prerequisiteAdded:[],added:[]};
+
+  // The PLAN is finished even when a multi-map quest carries forward.
+  // Clear the finished map plan and immediately calculate the next raid.
+  try{store()?.removeItem(activeRaidStoreKey)}catch(e){}
+  selected.clear();
+  activeMap=null;
+  mapPlanSelection=null;
+  mode="tasks";
+  clearRaidHash();
+
+  $("summary").classList.add("hidden");
+  $("planner").classList.remove("hidden");
+  document.querySelectorAll(".modeBtn").forEach(btn=>btn.classList.toggle("active",btn.dataset.mode==="tasks"));
+
+  updateProfileUI();
+  renderTaskList();
+  renderPlanner();
+  renderResumeRaidCard();
+  updateSidebarMode();
+
+  const carried=p.carryForwardCount;
+  let msg=`${saved.map} plan finalised`;
+  if(newlyCompleted.length)msg+=` · ${newlyCompleted.length} task${newlyCompleted.length!==1?"s":""} completed`;
+  if(completionResult.prerequisiteAdded.length)msg+=` · ${completionResult.prerequisiteAdded.length} proven prerequisite${completionResult.prerequisiteAdded.length!==1?"s":""} added`;
+  if(carried)msg+=` · ${carried} quest${carried!==1?"s":""} carries forward`;
+  msg+=" · next raid ready";
+  toast(msg);
+
+  setTimeout(()=>{
+    const target=hasProfile()&&!$("personalRaid").classList.contains("hidden")
+      ?$("personalRaid")
+      :$("planner");
+    target?.scrollIntoView({behavior:"smooth",block:"center"});
+  },180);
+}
+function handleSavedRaidPrimaryAction(){
+  const action=$("resumeRaidBtn").dataset.savedRaidAction;
+  if(action==="finalise")finaliseSavedRaid();
+  else resumeSavedRaid();
 }
 function clearRaidHash(){
   if(location.hash.startsWith("#raid="))history.replaceState(null,"",location.pathname+location.search);
@@ -2844,7 +3106,7 @@ function showPlannerMobile(){
 }
 function recommendedMapForSelection(){
   const list=current();
-  const maps=groupCounts(list,t=>(t.mapBoundMaps||taskMaps(t)).filter(m=>m!=="Any"));
+  const maps=groupCounts(list,t=>remainingMapSet(t));
   return maps[0]?.[0]||null;
 }
 function updateMobileNav(){
@@ -2865,7 +3127,11 @@ function renderPlanner(){
   renderTaskList();
   $("selectedPills").innerHTML=list.length?list.map(t=>`<span class="pill"><button data-detail="${esc(t.id)}">${esc(t.name)}</button><button class="x" data-unselect="${esc(t.id)}">×</button></span>`).join(""):'<span class="muted">No tasks selected yet.</span>';
 
-  const maps=groupCounts(list,t=>t.raidClass==="MAP_BOUND"?(t.mapBoundMaps||taskMaps(t)):t.raidClass==="ANY_RAID"?["Any"]:[]);
+  const maps=groupCounts(list,t=>{
+    const remainingMaps=remainingMapSet(t);
+    const any=taskHasRemainingAnyRaid(t)?["Any"]:[];
+    return [...remainingMaps,...any];
+  });
   const traders=groupCounts(list,t=>[t.trader]);
   $("mapBreak").innerHTML=maps.length?maps.map(([x,n])=>`<div class="breakRow"><span>${esc(x)}</span><span class="count">${n}</span></div>`).join(""):'<div class="empty">Select tasks to see the breakdown.</div>';
   $("traderBreak").innerHTML=traders.length?traders.map(([x,n])=>`<div class="breakRow"><span>${esc(x)}</span><span class="count">${n}</span></div>`).join(""):'<div class="empty">Select tasks to see the breakdown.</div>';
@@ -2884,7 +3150,7 @@ function renderPlanner(){
 
 function renderRecommendation(list,maps){
   const candidates=maps.filter(([m])=>m!=="Any").map(([map])=>{
-    const included=list.filter(t=>taskRequiresMap(t,map)||t.raidClass==="ANY_RAID");
+    const included=list.filter(t=>taskRequiresMap(t,map)||taskHasRemainingAnyRaid(t));
     const mapBound=included.filter(t=>taskRequiresMap(t,map));
     return {map,included,mapBound,obj:mapObjectiveCount(mapBound,map)};
   }).filter(x=>x.mapBound.length).sort((a,b)=>b.obj-a.obj||b.mapBound.length-a.mapBound.length);
@@ -2910,7 +3176,7 @@ function renderMapChoices(list,maps){
   }).filter(x=>x.bound.length).sort((a,b)=>b.obj-a.obj||b.bound.length-a.bound.length);
   const best=candidates[0]?.map;
   $("mapChoices").innerHTML=candidates.length?`<div class="mapGrid">${candidates.map(({map,bound,obj})=>{
-    const anySelected=list.filter(t=>t.raidClass==="ANY_RAID");
+    const anySelected=list.filter(t=>taskHasRemainingAnyRaid(t));
     const included=[...bound,...anySelected];
     const conflicts=conflictList(included),hard=conflicts.filter(c=>c.severity==="hard").length,compatible=findCompatible(map,included).length;
     return `<div class="mapChoice ${map===best?"recommended":""}">
@@ -2951,7 +3217,7 @@ function renderCompatiblePlanner(list,maps,forcedMap){
   const map=forcedMap||maps.filter(([m])=>m!=="Any")[0]?.[0];
   const sec=$("compatibleSection");
   if(!map||!list.length){sec.classList.add("hidden");renderAnyRaidIQner(null,[]);return}
-  const included=list.filter(t=>taskRequiresMap(t,map)||t.raidClass==="ANY_RAID");
+  const included=list.filter(t=>taskRequiresMap(t,map)||taskHasRemainingAnyRaid(t));
   const compat=findCompatible(map,included).slice(0,6);
   if(!compat.length)sec.classList.add("hidden");
   else{
@@ -2973,7 +3239,7 @@ function findAnyRaidOpportunities(baseTasks=[],map=activeMap){
   const base=baseTasks||[];
   return TASKS.filter(t=>{
     if(selected.has(t.id)||historical.has(t.id))return false;
-    if(t.raidClass!=="ANY_RAID")return false;
+    if(!taskHasRemainingAnyRaid(t))return false;
     if(!eligibleForSuggestions(t))return false;
     // "Any raid" does not mean "any loadout". Keep the suggestion aligned to
     // the raid the player has already built.
@@ -3082,6 +3348,18 @@ function inferWeaponPhrasesFromObjective(value){
   return uniq(out);
 }
 function raidRelevantObjectiveTexts(t,map=activeMap){
+  const checks=loadChecks();
+  if(!map){
+    const any=remainingAnyRaidObjectives(t,checks).map(o=>clean(o.text)).filter(Boolean);
+    const mapTexts=uniq((t.mapBoundMaps||taskMaps(t)).flatMap(m=>remainingMapObjectives(t,m,checks).map(o=>clean(o.text))));
+    const all=[...mapTexts,...any].filter(Boolean);
+    if(all.length)return all;
+  }
+  const texts=[
+    ...remainingMapObjectives(t,map,checks).map(o=>clean(o.text)),
+    ...remainingAnyRaidObjectives(t,checks).map(o=>clean(o.text))
+  ].filter(Boolean);
+  if(texts.length)return texts;
   const details=objectiveDetails(t);
   if(!details.length)return (t.objectives||[]).map(clean).filter(Boolean);
   if(!map)return details.filter(o=>o.raidRequired!==false).map(o=>clean(o.text)).filter(Boolean);
@@ -3390,7 +3668,7 @@ function logicalSuggestionScore(t,map,baseTasks,{anyRaid=false}={}){
   const sharedReq=p.req.filter(r=>baseKeys.has(reqKey(r).toLowerCase())).length;
   const conflict=conflictList([...base,t]);
   const soft=conflict.filter(c=>c.severity==="soft").length;
-  const objectiveValue=anyRaid?anyRaidObjectives(t).length:mapObjectives(t,map).length;
+  const objectiveValue=anyRaid?remainingAnyRaidObjectives(t).length:remainingMapObjectives(t,map).length;
   const sameTrader=base.some(x=>clean(x.trader).toLowerCase()===clean(t.trader).toLowerCase())?1:0;
 
   // Objective coverage is the main driver. RaidIQ then favours tasks that reuse
@@ -3416,7 +3694,7 @@ function findCompatible(map,baseTasks){
   }).sort((a,b)=>{
     const scoreDiff=logicalSuggestionScore(b,map,base)-logicalSuggestionScore(a,map,base);
     if(scoreDiff)return scoreDiff;
-    const objDiff=mapObjectives(b,map).length-mapObjectives(a,map).length;
+    const objDiff=remainingMapObjectives(b,map).length-remainingMapObjectives(a,map).length;
     if(objDiff)return objDiff;
     return a.name.localeCompare(b.name);
   });
@@ -3436,9 +3714,11 @@ function recommendedItems(req){
 
 function obtainedDuringRaid(list){
   const out=[];
+  const checks=loadChecks();
   for(const t of list){
     for(const f of (t.fir||[]))out.push({name:f.name,qty:Number(f.qty)||1,task:t.name,why:"Found in Raid objective — obtain during the raid rather than bringing it in."});
-    for(const o of (t.objectives||[])){
+    const texts=raidRelevantObjectiveTexts(t,activeMap);
+    for(const o of texts){
       const m=String(o).match(/\b(?:obtain|find|retrieve|secure|pick up)\s+(.+?)(?=$|[,.;])/i);
       if(m && !/location|signal|spot|area|room|building/i.test(m[1]))out.push({name:clean(m[1]),qty:1,task:t.name,why:"Objective wording suggests this is collected during the raid."});
     }
@@ -3460,7 +3740,19 @@ function buildRaid(map){
   persistActiveRaid();
 }
 
-function raidTasks(){return current().filter(t=>taskRequiresMap(t,activeMap)||t.raidClass==="ANY_RAID")}
+function committedRaidTaskIds(){
+  const saved=loadSavedRaid();
+  if(!saved||saved.map!==activeMap)return new Set();
+  return new Set(saved.tasks||[]);
+}
+function raidTasks(){
+  const committed=committedRaidTaskIds();
+  return current().filter(t=>
+    committed.has(t.id) ||
+    taskRequiresMap(t,activeMap) ||
+    taskHasRemainingAnyRaid(t)
+  );
+}
 function activeRaidTasks(){return raidTasks().filter(t=>!storedCompleted(t.id))}
 
 
@@ -3490,7 +3782,19 @@ function renderRaid(){
   $("summaryTaskCount").textContent=completedCount?`${list.length} selected · ${completedCount} complete`:`${list.length} selected`;
 
   const checks=loadChecks();
-  $("summaryTasks").innerHTML=list.length?list.map(t=>{
+  const raidCleared=list.length>0&&activeList.length===0;
+  const raidClearedBanner=raidCleared?`
+    <div class="raidClearedPanel">
+      <div class="raidClearedIcon">✓</div>
+      <div class="raidClearedCopy">
+        <div class="eyebrow">${esc(activeMap.toUpperCase())} // RAID COMPLETE</div>
+        <strong>All selected tasks have been handed in.</strong>
+        <span>This raid plan is complete. Finalise it to clear the finished plan and let RaidIQ calculate your best next raid.</span>
+      </div>
+      <button class="btn raidClearedCta" data-finalise-active-raid>FINALISE & SHOW NEXT RAID</button>
+    </div>`:"";
+
+  $("summaryTasks").innerHTML=list.length?raidClearedBanner+list.map(t=>{
     const completed=storedCompleted(t.id);
     if(completed){
       return `<div class="taskSummary completedTaskSummary">
@@ -3499,7 +3803,7 @@ function renderRaid(){
           <div class="muted">${esc(t.trader)} · ${esc(t.type||"Other")} · saved locally</div></div>
           <button class="iconRemove" data-remove="${esc(t.id)}">×</button>
         </div>
-        <div class="taskCompletedBody"><div><strong>Task handed in</strong><div>Objectives are collapsed and this task no longer contributes items, gear or compatibility requirements to the raid.</div></div></div>
+        <div class="taskCompletedBody"><div><strong>✓ Task handed in</strong><div>This task is complete and no longer contributes items, gear or compatibility requirements. Finish handing in the remaining raid tasks, then finalise the raid plan.</div></div></div>
       </div>`;
     }
     return `<div class="taskSummary">
@@ -3529,8 +3833,13 @@ function renderRaid(){
   html+=renderReqGroup("MUST BRING","Required by the selected tasks",must,"must");
   html+=renderSimpleGroup("RECOMMENDED","Helpful rather than mandatory",rec,"recommended");
   html+=renderSimpleGroup("OBTAIN DURING RAID","Do not waste stash space bringing these",obtain,"obtain");
-  $("bringList").innerHTML=html||'<div class="alert ok"><strong>Nothing special required.</strong><span class="why">No key, marker, weapon, wearable or FIR requirement was detected.</span></div>';
-  $("bringCount").textContent=`${must.length} required · ${rec.length} recommended · ${obtain.length} obtain`;
+  if(raidCleared){
+    $("bringList").innerHTML='<div class="alert ok"><strong>✓ Raid requirements cleared.</strong><span class="why">All selected tasks have been handed in. Finalise the raid plan to move on to your next recommendation.</span></div>';
+    $("bringCount").textContent="Raid complete";
+  }else{
+    $("bringList").innerHTML=html||'<div class="alert ok"><strong>Nothing special required.</strong><span class="why">No key, marker, weapon, wearable or FIR requirement was detected.</span></div>';
+    $("bringCount").textContent=`${must.length} required · ${rec.length} recommended · ${obtain.length} obtain`;
+  }
 
   $("conflictCount").textContent=conf.length?`${conf.length} warning${conf.length!==1?"s":""}`:"Clear";
   $("conflicts").innerHTML=conf.length?conf.map(c=>{
@@ -3544,13 +3853,13 @@ function renderRaid(){
     return `<div class="alert"><strong>⚠ HARD CONFLICT — ${esc(c.a.name)} ↔ ${esc(c.b.name)}</strong><span class="why">These tasks compete for the same ${esc(c.slot||"equipment")} requirement: <b>${esc(c.av)}</b> vs <b>${esc(c.bv)}</b>.</span><div class="conflictActions"><button class="btn secondary small" data-remove="${esc(c.a.id)}">REMOVE ${esc(c.a.name.toUpperCase())}</button><button class="btn secondary small" data-remove="${esc(c.b.id)}">REMOVE ${esc(c.b.name.toUpperCase())}</button></div></div>`;
   }).join(""):`<div class="alert ok"><strong>✓ Good combination.</strong><span class="why">RaidIQ found no incompatible equipment or weapon requirements among these tasks.</span></div>`;
 
-  const compat=findCompatible(activeMap,activeList).slice(0,6);
-  $("raidCompatible").classList.toggle("hidden",!compat.length);
+  const compat=raidCleared?[]:findCompatible(activeMap,activeList).slice(0,6);
+  $("raidCompatible").classList.toggle("hidden",raidCleared||!compat.length);
   $("raidCompatibleCount").textContent=suggestionCountText(compat.length);
   $("raidCompatibleList").innerHTML=compat.map(t=>compatibleRow(t,activeMap)).join("");
   $("raidAddAllCompatible").textContent=`ADD ALL ${compat.length}`;
-  const anyOps=findAnyRaidOpportunities(activeList,activeMap).slice(0,6);
-  $("raidAnyRaid").classList.toggle("hidden",!anyOps.length);
+  const anyOps=raidCleared?[]:findAnyRaidOpportunities(activeList,activeMap).slice(0,6);
+  $("raidAnyRaid").classList.toggle("hidden",raidCleared||!anyOps.length);
   $("raidAnyRaidCount").textContent=suggestionCountText(anyOps.length);
   $("raidAnyRaidList").innerHTML=anyOps.map(anyRaidRow).join("");
 
@@ -3863,6 +4172,22 @@ document.addEventListener("click",e=>{
     return;
   }
 
+  const finaliseActiveRaid=e.target.closest("[data-finalise-active-raid]");
+  if(finaliseActiveRaid){
+    const saved=loadSavedRaid();
+    if(!saved||saved.map!==activeMap){
+      toast("Saved raid plan could not be found");
+      return;
+    }
+    const list=raidTasks();
+    if(!list.length||list.some(t=>!storedCompleted(t.id))){
+      toast("Hand in the remaining raid tasks first");
+      return;
+    }
+    finaliseSavedRaid();
+    return;
+  }
+
   const handIn=e.target.closest("[data-hand-in-task]");
   if(handIn){
     const id=handIn.dataset.handInTask,t=byId[id];
@@ -3871,8 +4196,10 @@ document.addEventListener("click",e=>{
       toast("Finish the remaining raid objectives first");
       return;
     }
-    setCompleted(id,true);
-    toast(`${t.name} handed in`);
+    const result=setCompleted(id,true);
+    const proven=result?.prerequisiteAdded?.length||0;
+    if(isRaidViewActive())persistActiveRaid();
+    toast(`${t.name} handed in${proven?` · ${proven} proven prerequisite${proven!==1?"s":""} marked complete`:""}`);
     return;
   }
 
@@ -3880,12 +4207,15 @@ document.addEventListener("click",e=>{
   if(complete){
     const id=complete.dataset.toggleComplete;
     const wasComplete=storedCompleted(id);
-    setCompleted(id,!wasComplete);
+    const result=setCompleted(id,!wasComplete);
     if(progressManagerMode==="completed")renderProgressManager();
     if($("detail").classList.contains("open"))openDetail(id);
-    toast(storedCompleted(id)
-      ?"Task marked complete"
-      :"Completion removed — task eligibility recalculated");
+    if(storedCompleted(id)){
+      const proven=result?.prerequisiteAdded?.length||0;
+      toast(`Task marked complete${proven?` · ${proven} proven prerequisite${proven!==1?"s":""} also completed`:""}`);
+    }else{
+      toast("Completion removed — earlier proven prerequisites were left unchanged");
+    }
     return;
   }
 
@@ -3995,7 +4325,7 @@ $("clear").addEventListener("click",()=>{
 $("buildRecommended").addEventListener("click",e=>buildRaid(e.currentTarget.dataset.map));
 $("addAllCompatible").addEventListener("click",()=>{
   const map=$("compatibleSection").dataset.map;
-  const base=current().filter(t=>taskRequiresMap(t,map)||t.raidClass==="ANY_RAID");
+  const base=current().filter(t=>taskRequiresMap(t,map)||taskHasRemainingAnyRaid(t));
   findCompatible(map,base).slice(0,6).forEach(t=>selected.add(t.id));renderPlanner();toast("Compatible tasks added")
 });
 $("raidAddAllCompatible").addEventListener("click",()=>{
@@ -4141,7 +4471,7 @@ $("onboardingAddPmc").addEventListener("click",()=>{
   // name/level/faction editor remains available later from MY PMC / EDIT PMC.
   openQuickProgressSetup({firstRun:true});
 });
-$("resumeRaidBtn").addEventListener("click",resumeSavedRaid);
+$("resumeRaidBtn").addEventListener("click",handleSavedRaidPrimaryAction);
 $("discardResumeRaid").addEventListener("click",()=>{
   clearSavedRaid();
   toast("Saved raid discarded");
