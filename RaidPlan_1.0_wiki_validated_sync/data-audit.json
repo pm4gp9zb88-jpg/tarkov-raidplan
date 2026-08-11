@@ -1,13 +1,423 @@
 {
-  "generatedAt": "2026-08-11T10:42:53.107Z",
+  "generatedAt": "2026-08-11T17:19:25.188Z",
   "summary": {
-    "tasks": 510,
+    "tasks": 429,
     "tasksWithCorrections": 1,
     "removedObjectives": 1,
     "wordingMismatches": 130,
     "wikiErrors": 97,
-    "unparsedWikiPages": 1
+    "unparsedWikiPages": 1,
+    "excludedNonRaidTasks": 81,
+    "mapBoundTasks": 334,
+    "anyRaidTasks": 95
   },
+  "excludedNonRaid": [
+    {
+      "id": "5ac23c6186f7741247042bad",
+      "name": "Gunsmith - Part 1",
+      "trader": "Mechanic"
+    },
+    {
+      "id": "5d24b81486f77439c92d6ba8",
+      "name": "Acquaintance",
+      "trader": "Jaeger"
+    },
+    {
+      "id": "596b36c586f77450d6045ad2",
+      "name": "Supplier",
+      "trader": "Skier"
+    },
+    {
+      "id": "5ac2426c86f774138762edfe",
+      "name": "Gunsmith - Part 2",
+      "trader": "Mechanic"
+    },
+    {
+      "id": "5ac2428686f77412450b42bf",
+      "name": "Gunsmith - Part 3",
+      "trader": "Mechanic"
+    },
+    {
+      "id": "5a27d2af86f7744e1115b323",
+      "name": "Friend From the West - Part 2",
+      "trader": "Skier"
+    },
+    {
+      "id": "639872f9decada40426d3447",
+      "name": "Gunsmith - Part 4",
+      "trader": "Mechanic"
+    },
+    {
+      "id": "5ae3267986f7742a413592fe",
+      "name": "Gunsmith - Part 5",
+      "trader": "Mechanic"
+    },
+    {
+      "id": "596760e186f7741e11214d58",
+      "name": "Postman Pat - Part 2",
+      "trader": "Therapist"
+    },
+    {
+      "id": "66058cb5ae4719735349b9e8",
+      "name": "Easy Money - Part 2 [PVP ZONE]",
+      "trader": "Ref"
+    },
+    {
+      "id": "66058cbb06ef1d50a60c1f46",
+      "name": "Surprise [PVP ZONE]",
+      "trader": "Ref"
+    },
+    {
+      "id": "697877e0c639962b2e0cf24f",
+      "name": "Arena Business [PVP ZONE]",
+      "trader": "Ref"
+    },
+    {
+      "id": "59c9392986f7742f6923add2",
+      "name": "Trust Regain",
+      "trader": "Therapist"
+    },
+    {
+      "id": "59c93e8e86f7742a406989c4",
+      "name": "Loyalty Buyout",
+      "trader": "Skier"
+    },
+    {
+      "id": "59ca1a6286f774509a270942",
+      "name": "No Offence",
+      "trader": "Prapor"
+    },
+    {
+      "id": "5a0327ba86f77456b9154236",
+      "name": "Spa Tour - Part 3",
+      "trader": "Peacekeeper"
+    },
+    {
+      "id": "5a27ba9586f7741b543d8e85",
+      "name": "Spa Tour - Part 6",
+      "trader": "Peacekeeper"
+    },
+    {
+      "id": "5ac3479086f7742880308199",
+      "name": "Insider",
+      "trader": "Mechanic"
+    },
+    {
+      "id": "596a101f86f7741ddb481582",
+      "name": "Kind of Sabotage",
+      "trader": "Skier"
+    },
+    {
+      "id": "5ae3270f86f77445ba41d4dd",
+      "name": "Gunsmith - Part 6",
+      "trader": "Mechanic"
+    },
+    {
+      "id": "5d6fbc2886f77449d825f9d3",
+      "name": "Mentor",
+      "trader": "Peacekeeper"
+    },
+    {
+      "id": "5ae448a386f7744d3730fff0",
+      "name": "Only Business",
+      "trader": "Ragman"
+    },
+    {
+      "id": "5ac244eb86f7741356335af1",
+      "name": "Gunsmith - Part 7",
+      "trader": "Mechanic"
+    },
+    {
+      "id": "665eeca92f7aedcc900b0437",
+      "name": "Thirsty - Secrets",
+      "trader": "Therapist"
+    },
+    {
+      "id": "67a096ed77dd677f600804ba",
+      "name": "Sensory Analysis - Part 2",
+      "trader": "BTR Driver"
+    },
+    {
+      "id": "5ae3277186f7745973054106",
+      "name": "Gunsmith - Part 8",
+      "trader": "Mechanic"
+    },
+    {
+      "id": "676529af9c90953d090882e7",
+      "name": "Gunsmith - Old Friend's Request",
+      "trader": "Mechanic"
+    },
+    {
+      "id": "639872fa9b4fb827b200d8e5",
+      "name": "Gunsmith - Part 9",
+      "trader": "Mechanic"
+    },
+    {
+      "id": "5ae327c886f7745c7b3f2f3f",
+      "name": "Gunsmith - Part 10",
+      "trader": "Mechanic"
+    },
+    {
+      "id": "5d6fb2c086f77449da599c24",
+      "name": "An Apple a Day Keeps the Doctor Away",
+      "trader": "Therapist"
+    },
+    {
+      "id": "68ee1c18b4e5bc9a68018cd7",
+      "name": "No Questions Asked",
+      "trader": "Prapor"
+    },
+    {
+      "id": "639872fc93ae507d5858c3a6",
+      "name": "Gunsmith - Part 11",
+      "trader": "Mechanic"
+    },
+    {
+      "id": "5b47799d86f7746c5d6a5fd8",
+      "name": "Gunsmith - Part 12",
+      "trader": "Mechanic"
+    },
+    {
+      "id": "5ac244c486f77413e12cf945",
+      "name": "Gunsmith - Part 13",
+      "trader": "Mechanic"
+    },
+    {
+      "id": "5ae4496986f774459e77beb6",
+      "name": "Sew it Good - Part 3",
+      "trader": "Ragman"
+    },
+    {
+      "id": "5ae4497b86f7744cf402ed00",
+      "name": "Sew it Good - Part 4",
+      "trader": "Ragman"
+    },
+    {
+      "id": "5ae449a586f7744bde357696",
+      "name": "No Fuss Needed",
+      "trader": "Ragman"
+    },
+    {
+      "id": "639872fe8871e1272b10ccf6",
+      "name": "Gunsmith - Part 14",
+      "trader": "Mechanic"
+    },
+    {
+      "id": "666314b0acf8442f8b0531a1",
+      "name": "Hell on Earth - Part 1",
+      "trader": "Prapor"
+    },
+    {
+      "id": "666314c10aa5c7436c00908c",
+      "name": "Camera, Action!",
+      "trader": "Mechanic"
+    },
+    {
+      "id": "5ae3280386f7742a41359364",
+      "name": "Gunsmith - Part 15",
+      "trader": "Mechanic"
+    },
+    {
+      "id": "5c112d7e86f7740d6f647486",
+      "name": "Scavenger",
+      "trader": "Ragman"
+    },
+    {
+      "id": "5ac242ab86f77412464f68b4",
+      "name": "Gunsmith - Part 16",
+      "trader": "Mechanic"
+    },
+    {
+      "id": "5b47749f86f7746c5d6a5fd4",
+      "name": "Gunsmith - Part 17",
+      "trader": "Mechanic"
+    },
+    {
+      "id": "5b477b6f86f7747290681823",
+      "name": "Gunsmith - Part 18",
+      "trader": "Mechanic"
+    },
+    {
+      "id": "5c12452c86f7744b83469073",
+      "name": "Perfect Mediator",
+      "trader": "Prapor"
+    },
+    {
+      "id": "6663149f1d3ec95634095e75",
+      "name": "Circulate",
+      "trader": "Ragman"
+    },
+    {
+      "id": "666314a50aa5c7436c00908a",
+      "name": "Old Patterns",
+      "trader": "Ragman"
+    },
+    {
+      "id": "67e993f5ed537409f009da75",
+      "name": "Postponed Reward [PVP ZONE]",
+      "trader": "Ref"
+    },
+    {
+      "id": "639873003693c63d86328f25",
+      "name": "Gunsmith - Part 19",
+      "trader": "Mechanic"
+    },
+    {
+      "id": "5b477f7686f7744d1b23c4d2",
+      "name": "Gunsmith - Part 20",
+      "trader": "Mechanic"
+    },
+    {
+      "id": "63987301e11ec11ff5504036",
+      "name": "Gunsmith - Part 21",
+      "trader": "Mechanic"
+    },
+    {
+      "id": "5b47825886f77468074618d3",
+      "name": "Gunsmith - Part 22",
+      "trader": "Mechanic"
+    },
+    {
+      "id": "64f83bb69878a0569d6ecfbe",
+      "name": "Gunsmith - Part 23",
+      "trader": "Mechanic"
+    },
+    {
+      "id": "64f83bcdde58fc437700d8fa",
+      "name": "Gunsmith - Part 24",
+      "trader": "Mechanic"
+    },
+    {
+      "id": "64f83bd983cfca080a362c82",
+      "name": "Gunsmith - Part 25",
+      "trader": "Mechanic"
+    },
+    {
+      "id": "68400926706e0a55e90b0007",
+      "name": "Fair Price - Part 1",
+      "trader": "Skier"
+    },
+    {
+      "id": "68400953506db3b4db0700e7",
+      "name": "Fair Price - Part 2",
+      "trader": "Skier"
+    },
+    {
+      "id": "5c51aac186f77432ea65c552",
+      "name": "Collector",
+      "trader": "Fence"
+    },
+    {
+      "id": "60effd818b669d08a35bfad5",
+      "name": "The Choice",
+      "trader": "Fence"
+    },
+    {
+      "id": "67af4c1405c58dc6f7056667",
+      "name": "Profitable Venture",
+      "trader": "Skier"
+    },
+    {
+      "id": "67af4c169d95ad16e004fd86",
+      "name": "Safety Guarantee",
+      "trader": "Skier"
+    },
+    {
+      "id": "67af4c17f4f1fb58a907f8f6",
+      "name": "Never Too Late To Learn",
+      "trader": "Skier"
+    },
+    {
+      "id": "67af4c1991ee75c6d7060a16",
+      "name": "Get a Foothold",
+      "trader": "Skier"
+    },
+    {
+      "id": "67af4c1a6c3ebfd8e6034916",
+      "name": "Profit Retention",
+      "trader": "Skier"
+    },
+    {
+      "id": "67af4c1cc0e59d55e2010b97",
+      "name": "A Life Lesson",
+      "trader": "Skier"
+    },
+    {
+      "id": "61e6e5e0f5b9633f6719ed95",
+      "name": "Compensation for Damage - Trust",
+      "trader": "Fence"
+    },
+    {
+      "id": "61e6e615eea2935bc018a2c5",
+      "name": "Compensation for Damage - Barkeep",
+      "trader": "Fence"
+    },
+    {
+      "id": "61e6e621bfeab00251576265",
+      "name": "Compensation for Damage - Collection",
+      "trader": "Fence"
+    },
+    {
+      "id": "625d6ff5ddc94657c21a1625",
+      "name": "Network Provider - Part 1",
+      "trader": "Mechanic"
+    },
+    {
+      "id": "626148251ed3bb5bcc5bd9ed",
+      "name": "Make Amends - Buyout",
+      "trader": "Mechanic"
+    },
+    {
+      "id": "6261482fa4eb80027c4f2e11",
+      "name": "Make Amends - Equipment",
+      "trader": "Mechanic"
+    },
+    {
+      "id": "6672d9def1c88688a707d042",
+      "name": "Establish Contact",
+      "trader": "Fence"
+    },
+    {
+      "id": "673f629c5b555b53460cf827",
+      "name": "Building Foundations",
+      "trader": "BTR Driver"
+    },
+    {
+      "id": "6740a2c17e3818d5bb0648b6",
+      "name": "Half-Empty",
+      "trader": "Prapor"
+    },
+    {
+      "id": "6744a728352b4da8e003eda9",
+      "name": "Battery Change",
+      "trader": "BTR Driver"
+    },
+    {
+      "id": "6744a9dfef61d56e020b5c4a",
+      "name": "Battery Change",
+      "trader": "BTR Driver"
+    },
+    {
+      "id": "6746053b5b555b53460d9896",
+      "name": "Key Partner",
+      "trader": "Skier"
+    },
+    {
+      "id": "69c2a2d004de49c8f0055a3d",
+      "name": "Hangover",
+      "trader": "BTR Driver"
+    },
+    {
+      "id": "61e6e60c5ca3b3783662be27",
+      "name": "Compensation for Damage - Wergild",
+      "trader": "Fence"
+    },
+    {
+      "id": "6261483ac48e6c62a440fab7",
+      "name": "Make Amends - Software",
+      "trader": "Mechanic"
+    }
+  ],
   "corrections": [
     {
       "task": "Humanitarian Supplies",
