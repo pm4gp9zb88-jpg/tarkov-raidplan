@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>RaidPlan — Escape from Tarkov Raid Task Planner</title>
+<title>RaidIQ — Smart Tarkov Raid Planner</title>
 <style>
 :root{
   --bg:#090b0c;--panel:#131718;--panel2:#181d1e;--panel3:#0f1314;
@@ -34,22 +34,27 @@ header{height:70px;padding:0 24px;display:flex;align-items:center;gap:13px;borde
 .selectedTop{font-size:12px;color:var(--muted)}.selectedTop b{color:var(--gold)}
 .layout{display:grid;grid-template-columns:365px minmax(0,1fr);min-height:calc(100vh - 70px)}
 .sidebar{border-right:1px solid var(--line);padding:18px;background:linear-gradient(180deg,#0f1213,#0d1011);position:sticky;top:70px;height:calc(100vh - 70px)}
-.main{padding:22px;max-width:1280px;width:100%;margin:0 auto}
+.main{padding:22px;max-width:1280px;width:100%;margin:0 auto;transition:padding-right .2s ease}
 h1,h2,h3,h4{margin:0}.muted{color:var(--muted)}.eyebrow{font-size:10px;letter-spacing:1.45px;color:var(--gold);text-transform:uppercase}
 .search{width:100%;padding:12px 13px;border-radius:6px;border:1px solid var(--line);background:var(--panel2);color:var(--text);outline:none}
 .search:focus{border-color:var(--gold2)}
 .filters{display:grid;grid-template-columns:1fr;gap:7px;margin:9px 0}
+#sortFilter{margin-top:2px;border-color:#484535;background:#171814;color:#d4c18f}
 select{width:100%;padding:9px;border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:5px;outline:none}
 .sideActions{display:flex;gap:7px;margin:9px 0 11px;flex-wrap:wrap}
-.taskList{display:grid;gap:7px;max-height:calc(100vh - 340px);overflow:auto;padding-right:4px}
+.taskList{display:grid;gap:6px;max-height:calc(100vh - 340px);overflow:auto;padding-right:4px}
 .taskList::-webkit-scrollbar{width:8px}.taskList::-webkit-scrollbar-thumb{background:#2b3031;border-radius:10px}
-.taskCard{display:block;width:100%;text-align:left;color:var(--text);background:var(--panel);border:1px solid var(--line2);border-radius:7px;padding:12px;cursor:pointer;transition:.14s}
+.taskCard{display:block;width:100%;text-align:left;color:var(--text);background:var(--panel);border:1px solid var(--line2);border-radius:6px;padding:10px 11px;cursor:pointer;transition:.14s;overflow:hidden}
 .taskCard:hover{border-color:#6c6048;transform:translateY(-1px)}
 .taskCard.selected{border-color:var(--gold);background:#1d1e19;box-shadow:inset 3px 0 var(--gold)}
-.taskTop{display:flex;justify-content:space-between;gap:8px}.taskName{font-weight:850;line-height:1.2}
-.taskMeta,.taskObj{font-size:12px;color:var(--muted);margin-top:5px;line-height:1.4}
-.mapTag{font-size:9px;color:var(--gold);text-transform:uppercase;white-space:nowrap;border:1px solid #49412e;padding:3px 5px;border-radius:3px}
-.firMini,.verifiedMini{font-size:8px;border-radius:3px;padding:2px 4px;margin-left:4px;vertical-align:2px}
+.taskTop{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;min-width:0}
+.taskName{font-weight:850;line-height:1.22;min-width:0;flex:1;font-size:13px;overflow-wrap:anywhere}
+.taskBadgeRow{display:flex;align-items:center;gap:4px;flex-wrap:wrap;margin-top:6px;min-height:18px}
+.taskBadge{display:inline-flex;align-items:center;justify-content:center;min-height:18px;font-size:7px;font-weight:850;line-height:1;text-transform:uppercase;letter-spacing:.25px;border-radius:3px;padding:3px 5px;margin:0!important;vertical-align:0!important;white-space:nowrap}
+.taskMeta{font-size:10px;color:#868e8b;margin-top:6px;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.taskObj{font-size:11px;color:#a0a7a4;margin-top:4px;line-height:1.35;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+.mapTag{flex:0 0 auto;max-width:92px;overflow:hidden;text-overflow:ellipsis;font-size:8px;color:var(--gold);text-transform:uppercase;white-space:nowrap;border:1px solid #49412e;padding:3px 5px;border-radius:3px}
+.firMini,.verifiedMini{font-size:7px;border-radius:3px;padding:3px 5px;margin:0;vertical-align:0}
 .firMini{color:#a9d8d0;border:1px solid #35544f}.verifiedMini{color:#a7c89b;border:1px solid #3b5639}
 .card,.hero{border:1px solid var(--line);background:rgba(19,23,24,.96);border-radius:9px;padding:17px;box-shadow:var(--shadow)}
 .hero{padding:24px;background:linear-gradient(135deg,#181d1d,#111415)}
@@ -58,7 +63,7 @@ select{width:100%;padding:9px;border:1px solid var(--line);background:var(--pane
 .modeSwitch{display:flex;gap:5px;border:1px solid var(--line);background:#0e1213;padding:4px;border-radius:7px;min-width:max-content}
 .modeBtn{border:0;background:transparent;color:var(--muted);padding:8px 10px;border-radius:5px;font-weight:800;font-size:11px;cursor:pointer}
 .modeBtn.active{background:#24251f;color:var(--gold)}
-.notice{margin-top:12px;padding:10px 12px;border:1px solid #3b382c;background:#181712;border-radius:6px;color:#c0b798;font-size:12px;display:flex;gap:9px;align-items:flex-start}
+.notice{margin-top:12px;padding:8px 11px;border:1px solid #36382f;background:#151713;border-radius:6px;color:#aaaF9d;font-size:11px;display:flex;gap:8px;align-items:center}
 .notice.bad{border-color:#65322e;background:#211413;color:#df9b95}
 .section{margin-top:14px}.sectionTitle{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:11px}.sectionTitle h3{font-size:14px}
 .selectedPills{display:flex;gap:6px;flex-wrap:wrap;max-height:120px;overflow:auto}
@@ -121,6 +126,13 @@ select{width:100%;padding:9px;border:1px solid var(--line);background:var(--pane
 .progressWrap{margin-top:11px}.progressMeta{display:flex;justify-content:space-between;font-size:10px;color:var(--muted);margin-bottom:6px}
 .progressTrack{height:6px;background:#202526;border-radius:20px;overflow:hidden}.progressBar{height:100%;background:var(--gold);width:0%;transition:.2s}
 .detail{position:fixed;right:0;top:70px;bottom:0;width:min(480px,94vw);background:#101415;border-left:1px solid var(--line);box-shadow:-20px 0 60px rgba(0,0,0,.35);z-index:40;padding:20px;overflow:auto;transform:translateX(102%);transition:.2s}
+@media(min-width:1201px){
+  body.detailOpen .main{max-width:none;padding-right:500px}
+  body.detailOpen #summary .summaryGrid{grid-template-columns:1fr}
+  body.detailOpen #summary .summaryGrid .wide{grid-column:auto}
+  body.detailOpen #summary .card{min-width:0}
+}
+
 .detail.open{transform:translateX(0)}.detailHead{display:flex;justify-content:space-between;gap:12px}
 .detailClose{background:transparent;border:1px solid var(--line);color:var(--muted);border-radius:4px;width:30px;height:30px;cursor:pointer}
 .detailSection{margin-top:18px}.detailSection h3{font-size:11px;text-transform:uppercase;letter-spacing:.9px;color:#c9cfcd;margin-bottom:8px}
@@ -178,7 +190,7 @@ select{width:100%;padding:9px;border:1px solid var(--line);background:var(--pane
   .sideActions .btn{min-height:42px}
   .search{min-height:46px;font-size:16px}
   select{min-height:44px;font-size:16px}
-  .taskCard{padding:14px;min-height:78px}
+  .taskCard{padding:11px;min-height:0}
   .card,.hero{border-radius:8px;padding:14px;box-shadow:none}
   .hero{padding:17px 14px}
   .hero h1{font-size:27px;line-height:1.05;margin-top:7px}
@@ -206,6 +218,7 @@ select{width:100%;padding:9px;border:1px solid var(--line);background:var(--pane
   .iconRemove{width:40px;height:40px;flex:0 0 auto}
   .actions{display:grid;grid-template-columns:1fr 1fr}
   .actions .btn{min-height:46px}
+  body.detailOpen .main{padding-right:12px}
   .detail{top:0;width:100vw;max-width:none;z-index:105;padding:16px;padding-top:calc(16px + env(safe-area-inset-top))}
   .mobileCard{z-index:115}
   .mobileTop{padding-top:calc(14px + env(safe-area-inset-top))}
@@ -226,13 +239,252 @@ select{width:100%;padding:9px;border:1px solid var(--line);background:var(--pane
   .notice{font-size:11px}
   .summaryHead h1{font-size:28px}
 }
+
+/* 1.2 — Personal Progress + Visual Loadout */
+.progressProfileBtn{border:1px solid var(--line);background:#15191a;color:var(--text);border-radius:6px;padding:8px 10px;font-weight:800;cursor:pointer}
+.progressProfileBtn b{color:var(--gold);margin-left:4px}
+.progressPanel{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px;align-items:start}
+.profileFields{display:flex;gap:8px;flex-wrap:wrap;align-items:end}
+.fieldGroup{display:grid;gap:5px}
+.fieldGroup label{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px}
+.fieldGroup input{min-height:42px;border:1px solid var(--line);background:#0f1314;color:var(--text);border-radius:6px;padding:9px 10px;outline:none}
+.fieldGroup input:focus{border-color:var(--gold2)}
+.progressStats{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.progressStat{border:1px solid var(--line2);background:#101415;border-radius:6px;padding:9px 11px;min-width:92px}
+.progressStat span{display:block;font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px}
+.progressStat b{display:block;margin-top:3px;font-size:17px}
+.toggleRow{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:12px;cursor:pointer;margin-top:10px}
+.toggleRow input{accent-color:var(--gold);width:17px;height:17px}
+.completeBadge{font-size:7px;color:#9bc18b;border:1px solid #3b5639;background:#172018;padding:3px 5px;border-radius:3px;margin:0;vertical-align:0}
+.lockedBadge{font-size:8px;color:#d2ad72;border:1px solid #654f2b;background:#201a11;padding:3px 5px;border-radius:3px;margin-left:5px;vertical-align:2px}
+.taskCard.completed{opacity:.56}
+.taskCard.levelLocked{opacity:.62}
+.progressActionRow{display:flex;gap:7px;flex-wrap:wrap}
+.progressActionRow .btn{min-height:40px}
+.detailProgressBox{border:1px solid var(--line2);background:#101415;border-radius:7px;padding:12px}
+.detailProgressBox .row{display:flex;justify-content:space-between;gap:10px;align-items:center}
+.detailProgressBox p{margin:6px 0 0;color:var(--muted);font-size:11px;line-height:1.45}
+
+.progressModal .modal{width:min(760px,100%)}
+.progressList{display:grid;gap:6px;max-height:340px;overflow:auto;margin-top:12px;padding-right:3px}
+.progressQuest{display:flex;justify-content:space-between;gap:10px;align-items:center;border:1px solid var(--line2);background:#101415;border-radius:6px;padding:9px}
+.progressQuest small{display:block;color:var(--muted);margin-top:2px}
+.progressQuest.done{opacity:.58}
+.progressQuest .btn{min-width:92px}
+.eligibilityNote{font-size:10px;color:var(--muted);margin-top:6px}
+@media(max-width:860px){
+  .progressProfileBtn{display:none}
+  .progressPanel{grid-template-columns:1fr}
+  .profileFields{display:grid;grid-template-columns:1fr 1fr}
+  .progressActionRow{display:grid;grid-template-columns:1fr 1fr}
+}
+@media(max-width:520px){
+  .progressStats{display:grid;grid-template-columns:repeat(3,1fr)}
+  .progressStat{min-width:0}
+}
+
+
+/* 1.6 — My PMC */
+.pmcCard{border-color:#4a4839;background:linear-gradient(135deg,#191c18,#111615)}
+.pmcDisconnected{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px;align-items:center}
+.pmcDisconnected h2{font-size:21px;margin:4px 0 6px}
+.pmcConnectActions{display:flex;gap:8px;flex-wrap:wrap}
+.pmcIdentity{display:flex;gap:12px;align-items:center}
+.pmcAvatar{width:52px;height:52px;border:1px solid #62583a;background:#20231c;border-radius:7px;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:19px;font-weight:950;flex:0 0 auto}
+.pmcName{font-size:20px;font-weight:900;line-height:1.1}
+.pmcMeta{color:var(--muted);font-size:11px;margin-top:5px;display:flex;gap:7px;flex-wrap:wrap}
+.sourceBadge,.statusBadge{font-size:8px;border:1px solid var(--line);padding:3px 5px;border-radius:3px;vertical-align:2px}
+.sourceBadge.sync{color:#a7c89b;border-color:#3b5639;background:#172018}
+.sourceBadge.manual{color:#d6bc84;border-color:#5d5135;background:#201d16}
+.statusBadge.available{color:#a7c89b;border-color:#3b5639;background:#172018}
+.statusBadge.complete{color:#91b887;border-color:#365238;background:#152018}
+.statusBadge.locked{color:#d6ad69;border-color:#654e2b;background:#211a10}
+.statusBadge.prereq{color:#d69b78;border-color:#67422d;background:#211711}
+.statusBadge.historical{color:#9ca7a3;border-color:#46504d;background:#151a19}
+.pmcConnectedHead{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+.pmcButtons{display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end}
+.pmcStats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:13px}
+.pmcStat{border:1px solid var(--line2);background:#101415;border-radius:6px;padding:9px 10px}
+.pmcStat span{display:block;color:var(--muted);font-size:8px;text-transform:uppercase;letter-spacing:.65px}
+.pmcStat b{display:block;font-size:17px;margin-top:3px}
+.pmcLastSync{font-size:9px;color:#727a77;margin-top:9px}
+.pmcPrivacy{font-size:9px;color:#7c8582;margin-top:9px;line-height:1.45}
+.personalRaid{border-color:#625738;background:linear-gradient(135deg,#1e2019,#121615)}
+.personalRaidGrid{display:block}
+.personalRaid h2{font-size:24px;margin:3px 0 5px}
+.personalRaidMain{min-width:0}
+.personalTaskNames{display:flex;gap:5px;flex-wrap:wrap;margin-top:9px}
+.personalRaidAction{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-top:13px;padding-top:12px;border-top:1px solid #474536}
+.personalRaidActionText{min-width:0}
+.personalRaidActionText strong{display:block;font-size:12px}
+.personalRaidActionText span{display:block;color:var(--muted);font-size:9px;margin-top:3px}
+.personalRaidAction .btn{min-width:210px;min-height:42px}
+.personalTaskName{font-size:9px;border:1px solid #46483c;background:#191d18;color:#b7bcae;padding:4px 6px;border-radius:3px}
+.profileFilterHint{font-size:9px;color:#747c79;margin-top:7px;line-height:1.4}
+.syncForm{display:grid;gap:10px;margin-top:13px}
+.syncToken{width:100%;min-height:46px;border:1px solid var(--line);background:#0d1112;color:var(--text);border-radius:6px;padding:10px;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;outline:none}
+.syncToken:focus{border-color:var(--gold2)}
+.syncHelp{border:1px solid var(--line2);background:#0f1314;border-radius:6px;padding:11px;color:var(--muted);font-size:11px;line-height:1.5}
+.syncHelp strong{color:var(--text)}
+.syncError{border:1px solid #63342f;background:#211413;color:#e0928a;padding:9px;border-radius:5px;font-size:11px}
+.syncWorking{display:flex;gap:8px;align-items:center;color:var(--muted);font-size:11px}
+.syncWorking .spinner{width:17px;height:17px;margin:0}
+.manualGrid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.fieldGroup select{min-height:42px}
+.taskStatusFilter{margin-top:0}
+.progressQuest.available{border-color:#2f4533}
+.progressQuest.locked{border-color:#4c3e28}
+.progressQuest .questStatus{font-size:8px;margin-top:4px;display:inline-block}
+.detailAvail{margin-top:6px;font-size:10px;color:var(--muted)}
+.reqWhy{display:block;color:#8b928f;font-size:9px;margin-top:3px}
+.mobilePmcLabel{display:none}
+@media(max-width:860px){
+  .progressProfileBtn{display:block;padding:7px 8px;font-size:9px;min-height:40px;margin-left:0}
+  .progressProfileBtn b{display:none}
+  .pmcDisconnected{grid-template-columns:1fr}
+  .personalRaidAction{align-items:stretch;flex-direction:column}
+  .personalRaidAction .btn{width:100%;min-width:0}
+  .pmcConnectActions,.pmcButtons{display:grid;grid-template-columns:1fr 1fr;width:100%}
+  .pmcButtons{justify-content:stretch;margin-top:12px}
+  .pmcStats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .manualGrid{grid-template-columns:1fr 1fr}
+  .mobilePmcLabel{display:inline}
+}
+@media(max-width:520px){
+  .progressProfileBtn{font-size:0;width:42px;padding:7px}
+  .progressProfileBtn:before{content:"PMC";font-size:9px}
+  .pmcConnectActions,.pmcButtons,.manualGrid{grid-template-columns:1fr}
+  .pmcStats{grid-template-columns:1fr 1fr}
+}
+
+
+/* 1.7 — objective-aware raid logic */
+.objectiveReason{display:block;color:#9ba39f;font-size:10px;margin-top:4px;line-height:1.4}
+.objectiveReason b{color:#d0bc86}
+.anyRaidSection{border-color:#39413f;background:linear-gradient(135deg,#141919,#101414)}
+.anyRaidTask{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;border-bottom:1px solid var(--line2);padding:10px 0}
+.anyRaidTask:last-child{border-bottom:0}
+.anyRaidTask small{display:block;color:var(--muted);margin-top:4px;line-height:1.4}
+.anyRaidBadge{font-size:8px;border:1px solid #3f5350;color:#9cbdb7;padding:3px 5px;border-radius:3px;white-space:nowrap}
+.whyRaid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin-top:10px}
+.whyRaidItem{border:1px solid #4a4739;background:#181a15;border-radius:5px;padding:8px}
+.whyRaidItem span{display:block;color:#858d89;font-size:8px;text-transform:uppercase;letter-spacing:.6px}
+.whyRaidItem b{display:block;font-size:14px;margin-top:3px;color:#e2e5df}
+.raidClassBadge{font-size:7px;border-radius:3px;padding:3px 5px;margin:0;vertical-align:0}
+.raidClassBadge.map{border:1px solid #5d5137;color:#d5bb80}
+.raidClassBadge.any{border:1px solid #39504c;color:#9fc3bd}
+.taskBadgeRow .statusBadge,.taskBadgeRow .completeBadge,.taskBadgeRow .lockedBadge,.taskBadgeRow .raidClassBadge,.taskBadgeRow .verifiedMini,.taskBadgeRow .firMini{display:inline-flex;align-items:center;justify-content:center;min-height:18px;font-size:7px;line-height:1;padding:3px 5px;margin:0;vertical-align:0;white-space:nowrap}
+@media(max-width:690px){.whyRaid{grid-template-columns:1fr 1fr}.anyRaidTask{flex-direction:column}.anyRaidTask .btn{width:100%}}
+
+
+.checkRow .labelText{min-width:0;overflow:hidden}
+.checkRow .labelText strong{display:block;overflow-wrap:anywhere}
+.checkRow .typeTag{flex:0 0 auto}
+.reqGroupTitle>div{min-width:0}
+
+/* 1.8 — RaidIQ brand system */
+:root{
+  --iq:#d3b66f;
+  --iq-soft:#8b7a50;
+  --iq-cool:#88aaa4;
+}
+.brandLockup{display:flex;align-items:center;gap:9px;min-width:max-content}
+.brandMark{
+  width:34px;height:34px;border:1px solid #62563b;border-radius:5px;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(145deg,#242318,#111514);
+  color:var(--iq);font-weight:950;font-size:12px;letter-spacing:.5px;
+  box-shadow:inset 0 0 18px rgba(211,182,111,.07)
+}
+.logo{font-size:17px;line-height:1;letter-spacing:1.8px}
+.logo span{color:var(--iq)}
+.brandTagline{font-size:6px;color:#6e7774;letter-spacing:1.35px;margin-top:4px;white-space:nowrap}
+.hero{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(circle at 86% 4%,rgba(136,170,164,.08),transparent 30%),
+    linear-gradient(135deg,#181d1d,#111415)
+}
+.hero:after{
+  content:"IQ";position:absolute;right:20px;bottom:-30px;
+  color:rgba(211,182,111,.025);font-weight:950;font-size:150px;line-height:1;
+  pointer-events:none
+}
+.hero>*{position:relative;z-index:1}
+.hero h1{max-width:760px}
+.version{border-color:#373c39;background:#0e1212}
+.btn{background:var(--iq)}
+.modeBtn.active{color:var(--iq);box-shadow:inset 0 -1px #66583a}
+.eyebrow{color:var(--iq)}
+#sortFilter{color:#dbc486}
+
+/* committed raid sidebar */
+.raidSidebarContext{
+  border:1px solid #564c35;background:linear-gradient(135deg,#1d1d17,#121514);
+  border-radius:6px;padding:9px 10px;margin:0 0 9px;display:none
+}
+.raidSidebarContext.open{display:block}
+.raidSidebarContextTop{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.raidSidebarContext strong{font-size:11px;color:#e0d1a7}
+.raidSidebarContext span{font-size:8px;color:#887d61;border:1px solid #4e4632;padding:2px 4px;border-radius:3px}
+.raidSidebarContext p{margin:5px 0 0;color:#7f8884;font-size:9px;line-height:1.4}
+.sidebar.raidCommitted{background:linear-gradient(180deg,#111411,#0d1010)}
+.sidebar.raidCommitted .taskCard{border-color:#29302d}
+.sidebar.raidCommitted .taskCard.selected{
+  border-color:#7a683f;background:linear-gradient(135deg,#222119,#181a16);
+  box-shadow:inset 3px 0 var(--iq)
+}
+.sidebar.raidCommitted .taskCard:not(.selected):hover{border-color:#64583c}
+.sidebar.raidCommitted #mapFilter{display:none}
+.sidebar.raidCommitted #selectVisible{color:#d8c48f}
+.raidTaskHint{
+  display:none;margin:-2px 0 9px;color:#7f8884;font-size:9px;line-height:1.35
+}
+.sidebar.raidCommitted .raidTaskHint{display:block}
+.raidEmptyState{
+  padding:32px 18px;border:1px dashed #464435;border-radius:6px;
+  text-align:center;background:#101411;color:#8e9692
+}
+.raidEmptyState strong{display:block;color:#d5c18a;font-size:13px;margin-bottom:5px}
+.taskCard.raidUnavailable{opacity:.5;cursor:not-allowed}
+.taskCard.raidUnavailable:hover{transform:none;border-color:var(--line2)}
+
+@media(max-width:860px){
+  .brandTagline{display:none}
+  .brandMark{width:30px;height:30px}
+  .logo{font-size:15px}
+  .sidebar.raidCommitted #mapFilter{display:none}
+}
+
+
+.dataMetaNotice{
+  margin:0 0 8px;padding:2px 3px;border:0;background:transparent;
+  color:#747d79;font-size:9px;justify-content:flex-end;min-height:18px
+}
+.dataMetaNotice b{color:#aab1ad;font-weight:750}
+.dataMetaNotice span:first-child{font-size:8px;color:#84a77f}
+.dataMetaNotice.bad{background:transparent;border:0;color:#b27b73}
+@media(max-width:860px){
+  .dataMetaNotice{justify-content:flex-start;margin-bottom:6px}
+}
+
+
+.personalRaid{position:relative;overflow:hidden}
+.personalRaid:after{
+  content:"SUGGESTED";position:absolute;right:14px;top:13px;
+  font-size:7px;letter-spacing:1px;color:#7c7359;border:1px solid #45402f;
+  padding:3px 5px;border-radius:3px;pointer-events:none
+}
+.personalRaidText b{color:#d9cfb0}
+
 </style>
 </head>
 <body>
 <header>
-  <div class="logo">RAID<span>PLAN</span></div>
-  <div class="version">1.1 · MOBILE READY</div>
+  <div class="brandLockup"><div class="brandMark">IQ</div><div><div class="logo">RAID<span>IQ</span></div><div class="brandTagline">TACTICAL RAID INTELLIGENCE</div></div></div>
+  <div class="version">1.9 · PLANNING UX</div>
   <button id="mobileTasksBtn" class="mobileHeaderBtn">☰ TASKS <b id="mobileHeaderCount">0</b></button>
+  <button id="progressProfileBtn" class="progressProfileBtn">MY PMC <b id="profileLevelTop">Lv —</b></button>
   <div class="spacer"></div>
   <div class="statusWrap">
     <div class="dataStatus"><span id="dataDot" class="dot"></span><span id="dataLabel">Loading task data…</span></div>
@@ -243,32 +495,57 @@ select{width:100%;padding:9px;border:1px solid var(--line);background:var(--pane
 <div class="layout">
 <aside id="taskSidebar" class="sidebar">
   <div class="mobileDrawerHead">
-    <div><div class="eyebrow">Task library</div><strong>Select your tasks</strong></div>
+    <div><div id="mobileSidebarEyebrow" class="eyebrow">Task library</div><strong id="mobileSidebarTitle">Select your tasks</strong></div>
     <button id="closeTaskDrawer" class="btn ghost small">DONE</button>
   </div>
-  <div class="eyebrow">Task library</div>
-  <h3 style="margin:5px 0 10px">Find tasks faster</h3>
+  <div id="sidebarEyebrow" class="eyebrow">Task library</div>
+  <h3 id="sidebarTitle" style="margin:5px 0 10px">Raid-plannable tasks</h3>
+  <div id="raidSidebarContext" class="raidSidebarContext"><div class="raidSidebarContextTop"><strong id="raidSidebarMap">RAID</strong><span>MAP LOCKED</span></div><p>Click a task to add it to this raid. Click a highlighted task again to remove it.</p></div>
   <input id="search" class="search" type="search" placeholder="Task, trader, map, item, weapon, objective…">
   <div class="filters">
     <select id="mapFilter"><option>All maps</option></select>
     <select id="traderFilter"><option>All traders</option></select>
-    <select id="typeFilter"><option>All types</option></select>
+    <select id="typeFilter" aria-label="Filter by objective type">
+      <option value="all">All objective types</option>
+      <option value="Kill">Kill</option>
+      <option value="Find">Find</option>
+      <option value="Hand over">Hand over</option>
+      <option value="Locate">Locate / Visit</option>
+      <option value="Place">Mark / Place</option>
+      <option value="Survive">Survive / Extract</option>
+      <option value="Other">Other</option>
+    </select>
+    <select id="profileFilter" class="taskStatusFilter">
+      <option value="all">My status: All tasks</option>
+      <option value="eligible">My status: Eligible now</option>
+      <option value="unfinished">My status: Unfinished</option>
+      <option value="completed">My status: Completed</option>
+      <option value="locked">My status: Locked</option>
+    </select>
+    <select id="sortFilter" aria-label="Sort task list">
+      <option value="name-asc">Sort: Alphabetical (A–Z)</option>
+      <option value="level-asc">Sort: Unlock level (low → high)</option>
+      <option value="level-desc">Sort: Unlock level (high → low)</option>
+    </select>
   </div>
+  <div id="profileFilterHint" class="profileFilterHint">Connect your PMC to make eligibility personal. Task sorting applies after your filters.</div>
+  <div class="raidTaskHint">Only tasks with objectives specifically tied to the committed raid map are shown here.</div>
   <div class="sideActions">
     <button id="selectVisible" class="btn secondary small">SELECT VISIBLE</button>
     <button id="clear" class="btn ghost small">CLEAR</button>
   </div>
-  <div id="taskList" class="taskList"><div class="loading"><div class="spinner"></div>Loading RaidPlan data…</div></div>
+  <div id="taskList" class="taskList"><div class="loading"><div class="spinner"></div>Loading RaidIQ data…</div></div>
 </aside>
 
 <main class="main">
+  <div id="dataNotice" class="notice dataMetaNotice"><span>●</span><span>Loading task data…</span></div>
 <section id="planner">
   <div class="hero">
     <div class="heroTop">
       <div>
-        <div class="eyebrow">Tarkov task planner</div>
-        <h1>Build the raid that moves you forward.</h1>
-        <p class="muted">Start from tasks or start from a map. RaidPlan finds the best raid, suggests compatible objectives, builds the loadout checklist and flags combinations worth splitting across separate raids.</p>
+        <div class="eyebrow">RAIDIQ // SMART RAID PLANNER</div>
+        <h1>Plan smarter. Make every raid count.</h1>
+        <p class="muted">Connect your PMC or plan manually. RaidIQ turns your available tasks into a focused raid: where to go, what to complete, what to bring, and which objectives are worth combining.</p>
       </div>
       <div class="modeSwitch">
         <button class="modeBtn active" data-mode="tasks">PLAN FROM TASKS</button>
@@ -276,13 +553,78 @@ select{width:100%;padding:9px;border:1px solid var(--line);background:var(--pane
       </div>
     </div>
     <div class="statRow">
-      <div class="stat">Task data<b id="statTasks">—</b></div>
-      <div class="stat">Last updated<b id="statUpdated">—</b></div>
+      <div class="stat">Raid tasks<b id="statTasks">—</b></div>
+      <div class="stat">Maps<b id="statMaps">—</b></div>
       <div class="stat">Selected<b id="statSelected">0</b></div>
     </div>
   </div>
 
-  <div id="dataNotice" class="notice"><span>●</span><span>Loading the current RaidPlan dataset. RaidPlan uses the latest locally deployed task snapshot, with GitHub as a fallback source.</span></div>
+  
+
+
+
+  <div id="progressPanel" class="section card pmcCard">
+    <div id="pmcDisconnected">
+      <div class="pmcDisconnected">
+        <div>
+          <div class="eyebrow">RAIDIQ // MY PMC</div>
+          <h2>Connect My PMC</h2>
+          <div class="muted">Sync your completed TarkovTracker tasks automatically, or set up your progression manually. RaidIQ will use it to filter completed quests, check known prerequisites and plan around your PMC.</div>
+          <div class="pmcPrivacy">RaidIQ does not need your Tarkov password. TarkovTracker syncing uses a read-progress API token; the token is kept in this browser and sent only through RaidIQ's sync endpoint when you request a refresh.</div>
+        </div>
+        <div class="pmcConnectActions">
+          <button id="connectTracker" class="btn">SYNC TARKOVTRACKER</button>
+          <button id="setupManual" class="btn secondary">MANUAL SETUP</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="pmcConnected" class="hidden">
+      <div class="pmcConnectedHead">
+        <div class="pmcIdentity">
+          <div id="pmcAvatar" class="pmcAvatar">PMC</div>
+          <div>
+            <div class="eyebrow">My PMC</div>
+            <div class="pmcName"><span id="pmcDisplayName">PMC</span> <span id="pmcSourceBadge" class="sourceBadge manual">LOCAL</span></div>
+            <div id="pmcMeta" class="pmcMeta"></div>
+          </div>
+        </div>
+        <div class="pmcButtons">
+          <button id="syncNow" class="btn good small">SYNC NOW</button>
+          <button id="openProgressManager" class="btn secondary small">MANAGE TASKS</button>
+          <button id="editProfile" class="btn ghost small">EDIT</button>
+          <button id="disconnectProfile" class="btn ghost small">DISCONNECT</button>
+        </div>
+      </div>
+      <div class="pmcStats">
+        <div class="pmcStat"><span>Completed</span><b id="completedStat">0</b></div>
+        <div class="pmcStat"><span>Eligible now</span><b id="eligibleStat">—</b></div>
+        <div class="pmcStat"><span>Locked</span><b id="lockedStat">—</b></div>
+        <div class="pmcStat"><span>Unfinished</span><b id="unfinishedStat">—</b></div>
+      </div>
+      <label class="toggleRow"><input id="hideCompleted" type="checkbox"> Hide completed tasks from the task library</label>
+      <div id="pmcLastSync" class="pmcLastSync"></div>
+    </div>
+  </div>
+
+  <div id="personalRaid" class="section card personalRaid hidden">
+    <div class="personalRaidGrid">
+      <div class="personalRaidMain">
+        <div class="eyebrow">RAIDIQ SUGGESTION</div>
+        <h2 id="personalRaidMap">—</h2>
+        <div id="personalRaidText" class="muted"></div>
+        <div id="personalWhy" class="whyRaid"></div>
+        <div id="personalTaskNames" class="personalTaskNames"></div>
+      </div>
+      <div class="personalRaidAction">
+        <div class="personalRaidActionText">
+          <strong id="personalRaidActionTitle">Use this RaidIQ suggestion</strong>
+          <span>Build the focused task combination above, then fine-tune the raid directly from the map-locked task sidebar.</span>
+        </div>
+        <button id="buildPersonalRaid" class="btn">BUILD SUGGESTED RAID</button>
+      </div>
+    </div>
+  </div>
 
   <div id="mapStart" class="section card hidden">
     <div class="sectionTitle">
@@ -332,7 +674,14 @@ select{width:100%;padding:9px;border:1px solid var(--line);background:var(--pane
     <div id="compatibleList" class="compatList"></div>
   </div>
 
-  <div class="footerNote">RaidPlan is an unofficial Escape from Tarkov planning tool and is not affiliated with Battlestate Games.</div>
+  <div id="anyRaidSection" class="section card anyRaidSection hidden">
+    <div class="sectionTitle">
+      <div><div class="eyebrow">While you're raiding</div><h2 style="margin-top:4px">Any-Raid Opportunities</h2><div class="muted" style="font-size:11px;margin-top:3px">These unfinished objectives can progress on this map, but this map is not specifically required.</div></div>
+    </div>
+    <div id="anyRaidList"></div>
+  </div>
+
+  <div class="footerNote"><b>RaidIQ</b> is an unofficial Escape from Tarkov planning tool and is not affiliated with Battlestate Games. Personal progression is stored in your browser; optional TarkovTracker sync uses a read-progress token.</div>
 </section>
 
 <section id="summary" class="hidden">
@@ -367,10 +716,17 @@ select{width:100%;padding:9px;border:1px solid var(--line);background:var(--pane
 
     <div id="raidCompatible" class="card wide hidden">
       <div class="sectionTitle">
-        <div><h3>Add Compatible Tasks</h3><div class="muted" style="font-size:11px;margin-top:3px">Extra tasks on this map that don't create a hard gear conflict.</div></div>
+        <div><h3>Add Compatible Tasks</h3><div class="muted" style="font-size:11px;margin-top:3px">Extra unfinished tasks on this map that are eligible by RaidIQ's known level/prerequisite data and don't create a hard gear conflict.</div></div>
         <button id="raidAddAllCompatible" class="btn secondary small">ADD ALL</button>
       </div>
       <div id="raidCompatibleList" class="compatList"></div>
+    </div>
+
+    <div id="raidAnyRaid" class="card wide anyRaidSection hidden">
+      <div class="sectionTitle">
+        <div><h3>Any-Raid Opportunities</h3><div class="muted" style="font-size:11px;margin-top:3px">Optional progress that can be made here, but is not tied specifically to this map.</div></div>
+      </div>
+      <div id="raidAnyRaidList"></div>
     </div>
   </div>
 
@@ -386,7 +742,7 @@ select{width:100%;padding:9px;border:1px solid var(--line);background:var(--pane
 </div>
 
 <div id="drawerBackdrop" class="drawerBackdrop"></div>
-<nav id="mobileBottomNav" class="mobileBottomNav" aria-label="Mobile RaidPlan navigation">
+<nav id="mobileBottomNav" class="mobileBottomNav" aria-label="Mobile RaidIQ navigation">
   <button id="mobilePlanNav" class="mobileNavBtn">PLAN</button>
   <button id="mobileTasksNav" class="mobileNavBtn">TASKS</button>
   <button id="mobileRaidNav" class="mobileNavBtn primary" disabled>SELECT TASKS</button>
@@ -400,18 +756,73 @@ select{width:100%;padding:9px;border:1px solid var(--line);background:var(--pane
   <div id="detailBody"></div>
 </aside>
 
-<div id="reportModal" class="modalBackdrop">
+<div id="trackerModal" class="modalBackdrop">
   <div class="modal">
     <div class="modalHead">
-      <div><div class="eyebrow">Data quality</div><h2 style="margin-top:4px">Report incorrect task data</h2></div>
+      <div><div class="eyebrow">Automatic progression</div><h2 style="margin-top:4px">Connect TarkovTracker</h2></div>
       <button class="modalClose" data-close-modal>×</button>
     </div>
-    <p class="muted">This would give players a fast way to flag wipe changes without building a full support system.</p>
-    <textarea id="reportText" class="textArea"></textarea>
-    <div class="actions">
-      <button id="copyReport" class="btn">COPY REPORT</button>
-      <button id="openGithubReport" class="btn secondary">OPEN GITHUB ISSUE</button>
+    <div class="syncHelp">
+      <strong>How it works</strong><br>
+      In TarkovTracker, sign in and create a Progress API token under <b>Settings → API Tokens</b>. Paste that token here. RaidIQ reads your player level and task-completion progress; it does not need your Tarkov login credentials.
+      <div style="margin-top:8px"><a href="https://tarkovtracker.org" target="_blank" rel="noopener" style="color:var(--gold)">OPEN TARKOVTRACKER ↗</a></div>
     </div>
+    <div class="syncForm">
+      <div class="fieldGroup"><label>Progress API token</label><input id="trackerToken" class="syncToken" type="password" autocomplete="off" placeholder="PVP_… / PVE_… / SZN_…"></div>
+      <label class="toggleRow"><input id="rememberTrackerToken" type="checkbox"> Remember token on this device <span class="muted">(otherwise this browser tab/session only)</span></label>
+      <div id="trackerError" class="syncError hidden"></div>
+      <div id="trackerWorking" class="syncWorking hidden"><span class="spinner"></span><span>Syncing TarkovTracker progression…</span></div>
+      <button id="confirmTracker" class="btn">CONNECT & SYNC</button>
+    </div>
+  </div>
+</div>
+
+<div id="manualProfileModal" class="modalBackdrop">
+  <div class="modal">
+    <div class="modalHead">
+      <div><div class="eyebrow">Manual progression</div><h2 style="margin-top:4px">Set up My PMC</h2></div>
+      <button class="modalClose" data-close-modal>×</button>
+    </div>
+    <p class="muted">Use this if you don't use TarkovTracker. You can still enter your level and mark completed quests yourself.</p>
+    <div class="manualGrid">
+      <div class="fieldGroup"><label>PMC / character name</label><input id="manualName" maxlength="32" placeholder="Optional"></div>
+      <div class="fieldGroup"><label>PMC level</label><input id="manualLevel" type="number" min="1" max="79" inputmode="numeric" placeholder="e.g. 28"></div>
+      <div class="fieldGroup"><label>Game mode</label><select id="manualMode"><option value="pvp">PvP</option><option value="pve">PvE</option><option value="seasonal">Seasonal PvP</option></select></div>
+      <div class="fieldGroup"><label>Faction</label><select id="manualFaction"><option value="">Not set</option><option value="USEC">USEC</option><option value="BEAR">BEAR</option></select></div>
+    </div>
+    <div class="actions">
+      <button id="saveManualProfile" class="btn">SAVE PMC</button>
+      <button id="openManualProgress" class="btn secondary">MANAGE COMPLETED TASKS</button>
+    </div>
+  </div>
+</div>
+
+<div id="progressModal" class="modalBackdrop progressModal">
+  <div class="modal">
+    <div class="modalHead">
+      <div><div class="eyebrow">My PMC</div><h2 style="margin-top:4px">Manage task progress</h2></div>
+      <button class="modalClose" data-close-modal>×</button>
+    </div>
+    <p id="progressManagerNote" class="muted">Mark tasks complete or unfinished. Completed quests are excluded from personal recommendations.</p>
+    <input id="progressSearch" class="search" type="search" placeholder="Search tasks…">
+    <div id="progressQuestList" class="progressList"></div>
+    <div class="actions">
+      <button id="exportProgress" class="btn secondary">EXPORT BACKUP</button>
+      <button id="importProgress" class="btn ghost">IMPORT BACKUP</button>
+      <button id="clearProfile" class="btn ghost">CLEAR PROFILE</button>
+    </div>
+  </div>
+</div>
+
+<div id="importProgressModal" class="modalBackdrop">
+  <div class="modal">
+    <div class="modalHead">
+      <div><div class="eyebrow">Progress backup</div><h2 style="margin-top:4px">Import RaidIQ profile</h2></div>
+      <button class="modalClose" data-close-modal>×</button>
+    </div>
+    <p class="muted">Paste a RaidIQ profile export below. This affects only progression stored in this browser.</p>
+    <textarea id="importProgressText" class="textArea" placeholder='{"version":2,...}'></textarea>
+    <div class="actions"><button id="confirmImportProgress" class="btn">IMPORT PROFILE</button></div>
   </div>
 </div>
 
@@ -421,7 +832,7 @@ select{width:100%;padding:9px;border:1px solid var(--line);background:var(--pane
       <div><div class="eyebrow">Squad sharing</div><h2 style="margin-top:4px">Share this raid plan</h2></div>
       <button class="modalClose" data-close-modal>×</button>
     </div>
-    <p class="muted">The prototype stores the raid in the URL hash. Once deployed on RaidPlan, sending this link would open the same selected tasks and map for a squadmate.</p>
+    <p class="muted">RaidIQ stores this raid in the URL hash. Share the link to open the same selected tasks and committed map.</p>
     <textarea id="shareText" class="textArea" style="min-height:90px"></textarea>
     <div class="actions"><button id="copyShare" class="btn">COPY SHARE LINK</button></div>
   </div>
@@ -443,7 +854,7 @@ const DATA_URLS=[
   "https://raw.githubusercontent.com/pm4gp9zb88-jpg/tarkov-raidplan/main/RaidPlan_1.0_wiki_validated_sync/tasks.snapshot.json"
 ];
 
-let TASKS=[], byId={}, generatedAt=null, activeMap=null, mode="tasks", mapPlanSelection=null, reportTask=null;
+let TASKS=[], byId={}, TASK_META={}, generatedAt=null, activeMap=null, mode="tasks", mapPlanSelection=null;
 const selected=new Set();
 
 const $=id=>document.getElementById(id);
@@ -451,8 +862,376 @@ const clean=s=>String(s??"").trim();
 const uniq=a=>[...new Set(a.filter(Boolean))];
 const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
 const taskMaps=t=>Array.isArray(t.maps)&&t.maps.length?t.maps:["Any"];
+const LEGACY_MAPS=["Ground Zero","Streets of Tarkov","The Labyrinth","The Lab","Factory","Customs","Shoreline","Reserve","Woods","Interchange","Lighthouse","Icebreaker"];
+function legacyObjectiveDetails(t){
+  return (t.objectives||[]).map(text=>{
+    const s=clean(text),lower=s.toLowerCase();
+    let maps=LEGACY_MAPS.filter(m=>lower.includes(m.toLowerCase()));
+    const taskSpecific=taskMaps(t).filter(m=>m!=="Any");
+    const strongRaid=/\b(?:eliminate|kill|survive|extract|locate|visit|discover|mark|plant|place|stash|hide|install|transit|scout|search the|pick up|retrieve|secure the package)\b/i.test(s);
+    const nonRaid=/\b(?:modify|build|assemble|craft|purchase|buy|sell|hand over|turn in|talk to|reach loyalty level|comply with .*specification)\b/i.test(s);
+    if(!maps.length&&strongRaid&&taskSpecific.length===1)maps=[taskSpecific[0]];
+    let raidClass=maps.length?"MAP_BOUND":(/\b(?:eliminate|kill|survive|extract|locate|visit|mark|plant|place|stash|hide|transit)\b/i.test(s)?"ANY_RAID":"NON_RAID");
+    if(nonRaid&&!maps.length)raidClass="NON_RAID";
+    return {text:s,maps,raidClass,raidRequired:raidClass!=="NON_RAID"};
+  });
+}
+function normaliseClientTask(t){
+  if(typeof t.raidRelevant==="boolean"&&Array.isArray(t.objectiveDetails))return t;
+  const details=legacyObjectiveDetails(t);
+  const mapBoundMaps=uniq(details.filter(o=>o.raidClass==="MAP_BOUND").flatMap(o=>o.maps||[]));
+  const hasAnyRaidObjectives=details.some(o=>o.raidClass==="ANY_RAID");
+  const raidRelevant=mapBoundMaps.length>0||hasAnyRaidObjectives;
+  return {...t,objectiveDetails:details,mapBoundMaps,hasAnyRaidObjectives,raidRelevant,
+    raidClass:mapBoundMaps.length?"MAP_BOUND":hasAnyRaidObjectives?"ANY_RAID":"NON_RAID",
+    maps:mapBoundMaps.length?mapBoundMaps:(hasAnyRaidObjectives?["Any"]:[])};
+}
+const objectiveDetails=t=>Array.isArray(t.objectiveDetails)?t.objectiveDetails:legacyObjectiveDetails(t);
+function mapObjectives(t,map){return objectiveDetails(t).filter(o=>o.raidClass==="MAP_BOUND"&&(o.maps||[]).includes(map))}
+function anyRaidObjectives(t){return objectiveDetails(t).filter(o=>o.raidClass==="ANY_RAID")}
+function taskRequiresMap(t,map){return mapObjectives(t,map).length>0}
+function mapObjectiveCount(list,map){return list.reduce((n,t)=>n+mapObjectives(t,map).length,0)}
+function relevantObjectiveText(t,map){return mapObjectives(t,map)[0]?.text||"Map-specific raid objective"}
+function taskMetaName(id){return byId[id]?.name||TASK_META[id]?.name||"a previous task"}
 const store=()=>{try{return localStorage}catch(e){return null}};
 const checkStoreKey="raidplan-concept-checks-v1";
+
+
+const legacyProgressStoreKey="raidplan-progress-v1";
+const profileStoreKey="raidplan-profile-v2";
+const trackerSessionKey="raidplan-tracker-token-session";
+const trackerLocalKey="raidplan-tracker-token-local";
+const trackerRememberKey="raidplan-tracker-remember";
+
+function safeLocal(){try{return localStorage}catch(e){return null}}
+function safeSession(){try{return sessionStorage}catch(e){return null}}
+
+function emptyProfile(){
+  return {
+    pmcName:"",level:0,faction:"",gameMode:"",gameEdition:null,
+    source:"",hideCompleted:false,completed:[],failed:[],
+    lastSync:null
+  };
+}
+function loadProfile(){
+  try{
+    const saved=JSON.parse(safeLocal()?.getItem(profileStoreKey)||"null");
+    if(saved){
+      return {...emptyProfile(),...saved,
+        level:Number(saved.level)||0,
+        completed:Array.isArray(saved.completed)?saved.completed:[],
+        failed:Array.isArray(saved.failed)?saved.failed:[]
+      };
+    }
+  }catch(e){}
+  // Migrate the earlier local-only RaidIQ progress format.
+  try{
+    const old=JSON.parse(safeLocal()?.getItem(legacyProgressStoreKey)||"null");
+    if(old){
+      return {...emptyProfile(),
+        pmcName:clean(old.pmcName||""),
+        level:Number(old.level)||0,
+        hideCompleted:!!old.hideCompleted,
+        completed:Array.isArray(old.completed)?old.completed:[],
+        source:"manual"
+      };
+    }
+  }catch(e){}
+  return emptyProfile();
+}
+let PROFILE=loadProfile();
+
+function saveProfile(){
+  try{safeLocal()?.setItem(profileStoreKey,JSON.stringify(PROFILE))}catch(e){}
+}
+function hasProfile(){
+  return !!(PROFILE.source||PROFILE.pmcName||PROFILE.level||PROFILE.completed.length);
+}
+function getTrackerToken(){
+  return clean(safeSession()?.getItem(trackerSessionKey)||safeLocal()?.getItem(trackerLocalKey)||"");
+}
+function saveTrackerToken(token,remember){
+  try{
+    safeSession()?.removeItem(trackerSessionKey);
+    safeLocal()?.removeItem(trackerLocalKey);
+    if(remember){
+      safeLocal()?.setItem(trackerLocalKey,token);
+      safeLocal()?.setItem(trackerRememberKey,"1");
+    }else{
+      safeSession()?.setItem(trackerSessionKey,token);
+      safeLocal()?.removeItem(trackerRememberKey);
+    }
+  }catch(e){}
+}
+function clearTrackerToken(){
+  try{
+    safeSession()?.removeItem(trackerSessionKey);
+    safeLocal()?.removeItem(trackerLocalKey);
+    safeLocal()?.removeItem(trackerRememberKey);
+  }catch(e){}
+}
+function validTrackerToken(token){return /^(PVP_|PVE_|SZN_)[A-Za-z0-9_-]{8,}$/.test(clean(token))}
+function isCompleted(id){return PROFILE.completed.includes(id)}
+function setCompleted(id,done){
+  const s=new Set(PROFILE.completed);
+  done?s.add(id):s.delete(id);
+  PROFILE.completed=[...s];
+  if(!PROFILE.source)PROFILE.source="manual";
+  saveProfile();renderTaskList();renderPlanner();renderProgressManager();
+}
+function requirementNeedsCompletion(r){
+  const statuses=(r?.statuses||[]).map(x=>clean(x).toLowerCase()).filter(Boolean);
+  if(!statuses.length)return true;
+  return statuses.some(x=>x.includes("complete")||x.includes("success")||x.includes("finish"));
+}
+function taskRequirementRows(id){
+  const t=byId[id]||TASK_META[id];
+  return Array.isArray(t?.taskRequirements)?t.taskRequirements:[];
+}
+function prerequisiteIdsForTask(id,out=new Set(),path=new Set()){
+  if(!id||path.has(id))return out;
+  path.add(id);
+  for(const r of taskRequirementRows(id)){
+    if(!r?.taskId||!requirementNeedsCompletion(r))continue;
+    out.add(r.taskId);
+    prerequisiteIdsForTask(r.taskId,out,path);
+  }
+  path.delete(id);
+  return out;
+}
+function completedHistoryIds(){
+  const out=new Set(PROFILE.completed);
+  for(const id of PROFILE.completed){
+    for(const pre of prerequisiteIdsForTask(id,new Set(),new Set()))out.add(pre);
+  }
+  return out;
+}
+function planningHistoricalIds(){
+  const out=completedHistoryIds();
+  for(const id of selected){
+    for(const pre of prerequisiteIdsForTask(id,new Set(),new Set()))out.add(pre);
+  }
+  for(const id of selected)out.delete(id);
+  for(const id of PROFILE.completed)out.delete(id);
+  return out;
+}
+function isHistoricalForPlanning(id){
+  return !isCompleted(id)&&planningHistoricalIds().has(id);
+}
+function taskAvailability(t,{includeSelectionInference=true}={}){
+  if(isCompleted(t.id))return {state:"completed",label:"Complete"};
+  if(includeSelectionInference&&isHistoricalForPlanning(t.id)){
+    return {
+      state:"historical",
+      label:"Earlier in chain",
+      reason:"A selected or completed later quest proves this prerequisite is already behind the player for planning."
+    };
+  }
+  if(PROFILE.level && t.minLevel && Number(t.minLevel)>PROFILE.level){
+    return {state:"level",label:`Level ${t.minLevel}`,reason:`Requires PMC level ${t.minLevel}`};
+  }
+  if(hasProfile()){
+    const reqs=(t.taskRequirements||[]).filter(r=>r?.taskId && requirementNeedsCompletion(r));
+    const history=completedHistoryIds();
+    const missing=reqs.filter(r=>!history.has(r.taskId));
+    if(missing.length){
+      return {
+        state:"prereq",label:"Prerequisite",missing,
+        reason:`Needs ${missing.map(r=>taskMetaName(r.taskId)).slice(0,2).join(", ")}${missing.length>2?"…":""}`
+      };
+    }
+  }
+  return {state:"eligible",label:hasProfile()?"Eligible":"Untracked"};
+}
+function levelEligible(t){return taskAvailability(t,{includeSelectionInference:false}).state!=="level"}
+function eligibleForSuggestions(t){
+  if(selected.has(t.id))return false;
+  if(isCompleted(t.id)||isHistoricalForPlanning(t.id))return false;
+  if(!hasProfile())return levelEligible(t);
+  return taskAvailability(t,{includeSelectionInference:false}).state==="eligible";
+}
+function profileModeLabel(v){
+  return v==="pve"?"PvE":v==="seasonal"||v==="pvp-season"?"Seasonal PvP":v==="pvp"||v==="regular"?"PvP":clean(v);
+}
+function sourceLabel(){
+  return PROFILE.source==="tarkovtracker"?"TARKOVTRACKER":PROFILE.source?"LOCAL":"";
+}
+function initials(){
+  const n=clean(PROFILE.pmcName);
+  if(!n)return "PMC";
+  return n.split(/\s+/).map(x=>x[0]).join("").slice(0,3).toUpperCase();
+}
+function profileCounts(){
+  const completed=TASKS.filter(t=>isCompleted(t.id)).length;
+  const unfinished=Math.max(0,TASKS.length-completed);
+  const eligible=TASKS.filter(t=>taskAvailability(t).state==="eligible").length;
+  const locked=TASKS.filter(t=>["level","prereq"].includes(taskAvailability(t).state)).length;
+  return {completed,unfinished,eligible,locked};
+}
+function updateProfileUI(){
+  const active=hasProfile();
+  $("pmcDisconnected").classList.toggle("hidden",active);
+  $("pmcConnected").classList.toggle("hidden",!active);
+  $("hideCompleted").checked=!!PROFILE.hideCompleted;
+  $("profileLevelTop").textContent=PROFILE.level?`Lv ${PROFILE.level}`:"SET UP";
+  $("profileFilterHint").textContent=active
+    ?`Eligibility uses your level, completed tasks and known quest-chain prerequisites.`
+    :`Connect your PMC to make eligibility personal.`;
+  if(!active){
+    $("personalRaid").classList.add("hidden");
+    return;
+  }
+  $("pmcAvatar").textContent=initials();
+  $("pmcDisplayName").textContent=PROFILE.pmcName||"My PMC";
+  const badge=$("pmcSourceBadge");
+  badge.textContent=sourceLabel();
+  badge.className=`sourceBadge ${PROFILE.source==="tarkovtracker"?"sync":"manual"}`;
+  const meta=[];
+  if(PROFILE.level)meta.push(`Level ${PROFILE.level}`);
+  if(PROFILE.faction)meta.push(PROFILE.faction);
+  if(PROFILE.gameMode)meta.push(profileModeLabel(PROFILE.gameMode));
+  if(PROFILE.gameEdition)meta.push(`Edition ${PROFILE.gameEdition}`);
+  $("pmcMeta").innerHTML=meta.map(x=>`<span>${esc(x)}</span>`).join("");
+  const c=profileCounts();
+  $("completedStat").textContent=c.completed;
+  $("eligibleStat").textContent=c.eligible;
+  $("lockedStat").textContent=c.locked;
+  $("unfinishedStat").textContent=c.unfinished;
+  const tokenAvailable=!!getTrackerToken();
+  $("syncNow").classList.toggle("hidden",PROFILE.source!=="tarkovtracker");
+  $("syncNow").textContent=tokenAvailable?"SYNC NOW":"RECONNECT";
+  $("pmcLastSync").textContent=PROFILE.lastSync
+    ?`Last ${PROFILE.source==="tarkovtracker"?"TarkovTracker sync":"profile update"}: ${new Date(PROFILE.lastSync).toLocaleString("en-GB")}${PROFILE.source==="tarkovtracker"&&!tokenAvailable?" · token not stored — reconnect to sync again":""}`
+    :"Progress saved locally.";
+  renderPersonalRaid();
+}
+function renderProgressManager(){
+  if(!TASKS.length)return;
+  const q=clean($("progressSearch")?.value).toLowerCase();
+  const list=TASKS.filter(t=>!q||searchableBlob(t).includes(q)).sort((a,b)=>{
+    const order={eligible:0,prereq:1,level:2,historical:3,completed:4};
+    const av=taskAvailability(a),bv=taskAvailability(b);
+    return (order[av.state]??9)-(order[bv.state]??9)||a.name.localeCompare(b.name);
+  }).slice(0,300);
+  $("progressManagerNote").textContent=PROFILE.source==="tarkovtracker"
+    ?"This snapshot came from TarkovTracker. You can make local adjustments here, but the next TarkovTracker sync will replace the completion list with the tracker data."
+    :"Mark tasks complete or unfinished. Completed quests are excluded from personal recommendations.";
+  const raidRows=list.map(t=>{
+    const av=taskAvailability(t),done=av.state==="completed",historical=av.state==="historical";
+    const cls=done?"done":av.state==="eligible"?"available":"locked";
+    const badgeClass=av.state==="eligible"?"available":done?"complete":historical?"historical":av.state==="prereq"?"prereq":"locked";
+    return `<div class="progressQuest ${cls}">
+      <div><strong>${esc(t.name)}</strong><small>${esc(t.trader)} · ${esc(taskMaps(t).join(" / "))}${t.minLevel?` · Lv ${t.minLevel}`:""}</small><span class="questStatus statusBadge ${badgeClass}">${esc(av.label)}</span>${av.reason?`<small>${esc(av.reason)}</small>`:""}</div>
+      <button class="btn ${done?"good":"secondary"} small" data-toggle-complete="${esc(t.id)}">${done?"✓ COMPLETE":"MARK DONE"}</button>
+    </div>`;
+  }).join("");
+  const depIds=uniq(TASKS.flatMap(t=>(t.taskRequirements||[]).map(r=>r.taskId)).filter(id=>id&&!byId[id]&&TASK_META[id]));
+  const depRows=(PROFILE.source==="tarkovtracker"?[]:depIds.filter(id=>{
+    const n=clean(TASK_META[id]?.name);
+    return !q||n.toLowerCase().includes(q);
+  })).map(id=>{
+    const meta=TASK_META[id],done=isCompleted(id);
+    return `<div class="progressQuest ${done?"done":"locked"}">
+      <div><strong>${esc(meta.name)}</strong><small>Non-raid prerequisite · hidden from the RaidIQ task library</small><span class="questStatus statusBadge prereq">PREREQUISITE ONLY</span></div>
+      <button class="btn ${done?"good":"secondary"} small" data-toggle-complete="${esc(id)}">${done?"✓ COMPLETE":"MARK DONE"}</button>
+    </div>`;
+  }).join("");
+  $("progressQuestList").innerHTML=raidRows+(depRows?`<div class="reqLabel" style="margin-top:15px">NON-RAID PREREQUISITES</div>${depRows}`:"")||'<div class="empty">No matching tasks.</div>';
+}
+function greedyCompatible(candidates,limit=5){
+  const chosen=[];
+  for(const t of candidates){
+    if(chosen.length>=limit)break;
+    if(!conflictList([...chosen,t]).some(c=>c.severity==="hard"))chosen.push(t);
+  }
+  return chosen;
+}
+function personalRaidRecommendation(){
+  if(!hasProfile())return null;
+  const eligible=TASKS.filter(t=>taskAvailability(t).state==="eligible"&&t.raidClass==="MAP_BOUND");
+  const maps=uniq(eligible.flatMap(t=>t.mapBoundMaps||taskMaps(t))).filter(m=>m!=="Any");
+  let best=null;
+  for(const map of maps){
+    const candidates=eligible.filter(t=>taskRequiresMap(t,map)).sort((a,b)=>{
+      const d=mapObjectives(b,map).length-mapObjectives(a,map).length;
+      return d||((a.requirements||[]).length-(b.requirements||[]).length)||a.name.localeCompare(b.name);
+    });
+    const chosen=greedyCompatible(candidates,5);
+    if(!chosen.length)continue;
+    const mapObjectivesTotal=mapObjectiveCount(chosen,map);
+    const soft=conflictList(chosen).filter(c=>c.severity==="soft").length;
+    const score=chosen.length*1000+mapObjectivesTotal*100-soft;
+    if(!best||score>best.score)best={map,candidates,chosen,mapObjectivesTotal,soft,score};
+  }
+  return best;
+}
+function renderPersonalRaid(){
+  const rec=personalRaidRecommendation();
+  if(!rec){$("personalRaid").classList.add("hidden");return}
+  $("personalRaidMap").textContent=rec.map;
+  $("personalRaidActionTitle").textContent=`Build the suggested ${rec.map} raid`;
+  $("personalRaidText").innerHTML=`<b>${esc(rec.map)} is RaidIQ's strongest current raid suggestion.</b> ${rec.candidates.length} available task${rec.candidates.length!==1?"s":""} specifically require the map. This suggested build combines <b>${rec.chosen.length}</b> of them and covers <b>${rec.mapObjectivesTotal}</b> map-specific objective${rec.mapObjectivesTotal!==1?"s":""}.${rec.soft?` It carries ${rec.soft} loadout warning${rec.soft!==1?"s":""} for review.`:" There are no loadout warnings in the suggested combination."}`;
+  $("personalWhy").innerHTML=`<div class="whyRaidItem"><span>Available here</span><b>${rec.candidates.length}</b></div><div class="whyRaidItem"><span>Tasks in build</span><b>${rec.chosen.length}</b></div><div class="whyRaidItem"><span>Objectives covered</span><b>${rec.mapObjectivesTotal}</b></div><div class="whyRaidItem"><span>Warnings</span><b>${rec.soft}</b></div>`;
+  $("personalTaskNames").innerHTML=rec.chosen.map(t=>`<span class="personalTaskName">${esc(t.name)} · ${mapObjectives(t,rec.map).length} obj</span>`).join("");
+  $("buildPersonalRaid").dataset.map=rec.map;
+  $("buildPersonalRaid").dataset.tasks=rec.chosen.map(t=>t.id).join(",");
+  $("personalRaid").classList.remove("hidden");
+}
+function applyTrackerProgress(payload){
+  const d=payload?.data||{};
+  const p=Array.isArray(d.tasksProgress)?d.tasksProgress:[];
+  PROFILE.pmcName=clean(d.displayName||PROFILE.pmcName||"");
+  PROFILE.level=Number(d.playerLevel)||PROFILE.level||0;
+  PROFILE.faction=clean(d.pmcFaction||PROFILE.faction||"");
+  PROFILE.gameEdition=d.gameEdition??PROFILE.gameEdition??null;
+  PROFILE.gameMode=clean(payload?.meta?.gameMode||d.gameMode||PROFILE.gameMode||"");
+  PROFILE.completed=uniq(p.filter(x=>x?.complete===true && x?.invalid!==true).map(x=>clean(x.id)).filter(Boolean));
+  PROFILE.failed=uniq(p.filter(x=>x?.failed===true && x?.invalid!==true).map(x=>clean(x.id)).filter(Boolean));
+  PROFILE.source="tarkovtracker";
+  PROFILE.lastSync=new Date().toISOString();
+  saveProfile();
+}
+async function syncTarkovTracker(token,{remember=false,silent=false}={}){
+  token=clean(token||getTrackerToken());
+  if(!validTrackerToken(token)){
+    if(!silent){$("trackerError").textContent="That does not look like a current TarkovTracker Progress API token. It should begin PVP_, PVE_ or SZN_.";$("trackerError").classList.remove("hidden")}
+    throw new Error("invalid-token");
+  }
+  if(!silent){
+    $("trackerError").classList.add("hidden");$("trackerWorking").classList.remove("hidden");$("confirmTracker").disabled=true;
+  }
+  try{
+    const r=await fetch("/.netlify/functions/tarkovtracker-progress",{
+      method:"POST",headers:{"content-type":"application/json"},
+      body:JSON.stringify({token})
+    });
+    let j={};try{j=await r.json()}catch(e){}
+    if(!r.ok||!j?.success)throw new Error(j?.error||`Sync failed (${r.status})`);
+    saveTrackerToken(token,remember);
+    applyTrackerProgress(j);
+    closeModals();updateProfileUI();renderTaskList();renderPlanner();
+    toast("TarkovTracker progress synced");
+    return true;
+  }catch(e){
+    if(!silent){
+      $("trackerError").textContent=e.message==="Failed to fetch"
+        ?"RaidIQ's TarkovTracker sync endpoint is unavailable in this preview. It will work after the Netlify function is deployed."
+        :(e.message||"TarkovTracker sync failed.");
+      $("trackerError").classList.remove("hidden");
+    }
+    throw e;
+  }finally{
+    if(!silent){$("trackerWorking").classList.add("hidden");$("confirmTracker").disabled=false}
+  }
+}
+async function maybeAutoSync(){
+  const token=getTrackerToken();
+  if(!token||PROFILE.source!=="tarkovtracker")return;
+  const last=PROFILE.lastSync?Date.parse(PROFILE.lastSync):0;
+  if(Date.now()-last<15*60*1000)return;
+  try{await syncTarkovTracker(token,{remember:!!safeLocal()?.getItem(trackerRememberKey),silent:true})}catch(e){}
+}
+
 
 function loadChecks(){try{return JSON.parse(store()?.getItem(checkStoreKey)||"{}")||{}}catch(e){return {}}}
 function saveChecks(obj){try{store()?.setItem(checkStoreKey,JSON.stringify(obj))}catch(e){}}
@@ -470,7 +1249,7 @@ async function loadData(){
       if(!r.ok)continue;
       const j=await r.json();
       if(j&&Array.isArray(j.tasks)&&j.tasks.length){
-        setData(j.tasks,j.generatedAt,"live");
+        setData(j.tasks,j.generatedAt,"live",j.dependencyCatalog||{});
         return;
       }
     }catch(e){}
@@ -478,32 +1257,31 @@ async function loadData(){
   $("dataDot").className="dot bad";
   $("dataLabel").textContent="Task data unavailable";
   $("dataNotice").className="notice bad";
-  $("dataNotice").innerHTML="<span>!</span><span>RaidPlan could not load the current task snapshot. Refresh the page; if this persists, the data sync/deploy needs checking.</span>";
+  $("dataNotice").innerHTML="<span>!</span><span>RaidIQ could not load the current task snapshot. Refresh the page; if this persists, the data sync/deploy needs checking.</span>";
   $("taskList").innerHTML='<div class="empty">Task data could not be loaded.</div>';
   $("statTasks").textContent="—";
 }
-function setData(tasks,updated,sourceMode){
-  TASKS=tasks.filter(Boolean);
+function setData(tasks,updated,sourceMode,dependencyCatalog={}){
+  TASKS=tasks.filter(Boolean).map(normaliseClientTask).filter(t=>t.raidRelevant);
   byId=Object.fromEntries(TASKS.map(t=>[t.id,t]));
+  TASK_META=dependencyCatalog||{};
   generatedAt=updated||null;
   $("dataDot").className=`dot ${sourceMode==="live"?"ok":"bad"}`;
   $("dataLabel").textContent=sourceMode==="live"?`Wiki-validated · ${TASKS.length} tasks`:`Concept demo · ${TASKS.length} tasks`;
   $("statTasks").textContent=TASKS.length;
-  $("statUpdated").textContent=generatedAt?new Date(generatedAt).toLocaleDateString("en-GB",{day:"2-digit",month:"short"}):"Unknown";
-  $("dataNotice").className=`notice${sourceMode==="live"?"":" bad"}`;
+  $("statMaps").textContent=uniq(TASKS.flatMap(taskMaps)).filter(x=>x!=="Any").length;
+  $("dataNotice").className=`notice dataMetaNotice${sourceMode==="live"?"":" bad"}`;
   $("dataNotice").innerHTML=sourceMode==="live"
-    ?`<span>✓</span><span>Loaded RaidPlan's current Wiki-validated task snapshot. <b>Last updated ${esc(new Date(generatedAt).toLocaleString("en-GB"))}</b>. Search now includes objectives, maps, keys, markers and weapon requirements.</span>`
-    :`<span>!</span><span>The concept couldn't reach the live dataset, so a small demo set is being used. All 1.1 interactions still work.</span>`;
-  buildFilters();renderTaskList();renderPlanner();restoreSharedPlan();
+    ?`<span>●</span><span>Task data updated <b>${esc(new Date(generatedAt).toLocaleString("en-GB",{day:"2-digit",month:"short",year:"numeric",hour:"2-digit",minute:"2-digit"}))}</b> · Wiki-validated</span>`
+    :`<span>!</span><span>Live task data unavailable · local fallback in use</span>`;
+  buildFilters();updateProfileUI();renderTaskList();renderPlanner();restoreSharedPlan();maybeAutoSync();
 }
 
 function buildFilters(){
   const maps=uniq(TASKS.flatMap(taskMaps)).filter(x=>x!=="Any").sort();
   const traders=uniq(TASKS.map(t=>t.trader)).sort();
-  const types=uniq(TASKS.map(t=>t.type)).sort();
   $("mapFilter").innerHTML="<option>All maps</option>"+maps.map(x=>`<option>${esc(x)}</option>`).join("");
   $("traderFilter").innerHTML="<option>All traders</option>"+traders.map(x=>`<option>${esc(x)}</option>`).join("");
-  $("typeFilter").innerHTML="<option>All types</option>"+types.map(x=>`<option>${esc(x)}</option>`).join("");
   $("mapPicker").innerHTML=maps.map(m=>`<button class="mapPick" data-map-pick="${esc(m)}">${esc(m)}</button>`).join("");
 }
 
@@ -515,28 +1293,154 @@ function searchableBlob(t){
     ...(t.fir||[]).flatMap(f=>[f.name,"found in raid","fir"])
   ].join(" ").toLowerCase();
 }
+function isRaidViewActive(){
+  return !!activeMap && !$("summary").classList.contains("hidden");
+}
+function taskSelectableInCommittedRaid(t){
+  if(!isRaidViewActive())return true;
+  if(!taskRequiresMap(t,activeMap))return false;
+  if(selected.has(t.id))return true;
+  if(isHistoricalForPlanning(t.id)||isCompleted(t.id))return false;
+  if(hasProfile())return taskAvailability(t,{includeSelectionInference:false}).state==="eligible";
+  return true;
+}
+function resetRaidPlanning(){
+  selected.clear();
+  activeMap=null;
+  mapPlanSelection=null;
+  mode="tasks";
+
+  $("search").value="";
+  $("mapFilter").value="All maps";
+  $("traderFilter").value="All traders";
+  $("typeFilter").value="all";
+  $("profileFilter").value="all";
+  $("sortFilter").value="name-asc";
+
+  document.querySelectorAll(".modeBtn").forEach(btn=>btn.classList.toggle("active",btn.dataset.mode==="tasks"));
+  $("summary").classList.add("hidden");
+  $("planner").classList.remove("hidden");
+  closeTaskDrawer();
+  updateSidebarMode();
+  renderTaskList();
+  renderPlanner();
+  window.scrollTo({top:0,behavior:"smooth"});
+  writeShareHash(false);
+}
+
+function updateSidebarMode(){
+  const committed=isRaidViewActive();
+  $("taskSidebar").classList.toggle("raidCommitted",committed);
+  $("raidSidebarContext").classList.toggle("open",committed);
+  if(committed){
+    $("sidebarEyebrow").textContent="COMMITTED RAID";
+    $("sidebarTitle").textContent=`${activeMap} raid tasks`;
+    $("mobileSidebarEyebrow").textContent="COMMITTED RAID";
+    $("mobileSidebarTitle").textContent=`${activeMap} tasks`;
+    $("raidSidebarMap").textContent=activeMap.toUpperCase();
+    $("selectVisible").textContent="ADD VISIBLE";
+    $("clear").textContent="START AGAIN";
+  }else{
+    $("sidebarEyebrow").textContent="TASK LIBRARY";
+    $("sidebarTitle").textContent="Raid-plannable tasks";
+    $("mobileSidebarEyebrow").textContent="TASK LIBRARY";
+    $("mobileSidebarTitle").textContent="Select your tasks";
+    $("selectVisible").textContent="SELECT VISIBLE";
+    $("clear").textContent="CLEAR";
+  }
+}
+
+function objectiveTypeTags(t){
+  const tags=new Set();
+  const records=objectiveDetails(t);
+  const haystacks=[
+    clean(t.type),
+    ...records.flatMap(o=>[clean(o.category),clean(o.text)]),
+    ...(t.objectives||[]).map(clean)
+  ];
+  for(const raw of haystacks){
+    const s=raw.toLowerCase();
+    if(/\bkill\b|\beliminate\b/.test(s))tags.add("Kill");
+    if(/\bfind\b|\bobtain\b|\bcollect\b|\bpick up\b|\bretrieve\b|\bsecure\b/.test(s))tags.add("Find");
+    if(/\bhand over\b|\bgive\b|\bturn in\b|\bdeliver\b/.test(s))tags.add("Hand over");
+    if(/\blocate\b|\bvisit\b|\bdiscover\b|\binspect\b|\bcheck\b|\bscout\b/.test(s))tags.add("Locate");
+    if(/\bplace\b|\bmark\b|\bplant\b|\bstash\b|\bhide\b|\binstall\b|\bdeposit\b/.test(s))tags.add("Place");
+    if(/\bsurvive\b|\bextract\b|\btransit\b/.test(s))tags.add("Survive");
+  }
+  if(!tags.size)tags.add("Other");
+  return [...tags];
+}
+
 function matches(t){
   const q=clean($("search").value).toLowerCase();
-  const mf=$("mapFilter").value,tf=$("traderFilter").value,yf=$("typeFilter").value;
+  const mf=$("mapFilter").value,tf=$("traderFilter").value,yf=$("typeFilter").value,pf=$("profileFilter").value;
+  const av=taskAvailability(t);
+  let profileMatch=true;
+  if(pf==="eligible")profileMatch=av.state==="eligible";
+  else if(pf==="unfinished")profileMatch=!["completed","historical"].includes(av.state);
+  else if(pf==="completed")profileMatch=av.state==="completed";
+  else if(pf==="locked")profileMatch=["level","prereq"].includes(av.state);
+
+  const committed=isRaidViewActive();
+  const mapMatch=committed
+    ? taskRequiresMap(t,activeMap)
+    : (mf==="All maps"||taskMaps(t).includes(mf)||taskMaps(t).includes("Any"));
+
+  // Once a map is committed, this is a raid editor rather than the global library.
+  // Synced/manual profiles only surface tasks that are actually eligible, while tasks
+  // already selected remain visible so the player can remove them.
+  const raidEligibility=!committed
+    || selected.has(t.id)
+    || (!isCompleted(t.id)&&!isHistoricalForPlanning(t.id)
+        && (!hasProfile()||taskAvailability(t,{includeSelectionInference:false}).state==="eligible"));
+
   return (!q||searchableBlob(t).includes(q))
-    &&(mf==="All maps"||taskMaps(t).includes(mf)||taskMaps(t).includes("Any"))
+    &&(!PROFILE.hideCompleted||!["completed","historical"].includes(av.state))
+    &&profileMatch
+    &&mapMatch
+    &&raidEligibility
     &&(tf==="All traders"||t.trader===tf)
-    &&(yf==="All types"||t.type===yf);
+    &&(yf==="all"||objectiveTypeTags(t).includes(yf));
 }
+function taskUnlockLevel(t){
+  const level=Number(t?.minLevel);
+  return Number.isFinite(level)&&level>0?level:0;
+}
+function sortTaskList(list){
+  const mode=$("sortFilter")?.value||"name-asc";
+  return [...list].sort((a,b)=>{
+    if(mode==="level-asc"){
+      const d=taskUnlockLevel(a)-taskUnlockLevel(b);
+      return d||a.name.localeCompare(b.name,undefined,{sensitivity:"base"});
+    }
+    if(mode==="level-desc"){
+      const d=taskUnlockLevel(b)-taskUnlockLevel(a);
+      return d||a.name.localeCompare(b.name,undefined,{sensitivity:"base"});
+    }
+    return a.name.localeCompare(b.name,undefined,{sensitivity:"base"});
+  });
+}
+
 function renderTaskList(){
   const taskListEl=$("taskList");
   const scrollPos=taskListEl.scrollTop;
-  const visible=TASKS.filter(matches);
+  const visible=sortTaskList(TASKS.filter(matches));
   taskListEl.innerHTML=visible.length?visible.map(t=>{
-    const fir=t.fir&&t.fir.length?'<span class="firMini">FIR</span>':"";
-    const verified=String(t.source||"").toLowerCase().includes("wiki")?'<span class="verifiedMini">✓ WIKI</span>':"";
-    return `<button class="taskCard ${selected.has(t.id)?"selected":""}" data-task="${esc(t.id)}">
-      <div class="taskTop"><div class="taskName">${esc(t.name)} ${fir}${verified}</div><span class="mapTag">${esc(taskMaps(t).join(" / "))}</span></div>
+    const fir=t.fir&&t.fir.length?'<span class="firMini taskBadge">FIR</span>':"";
+    const verified=String(t.source||"").toLowerCase().includes("wiki")?'<span class="verifiedMini taskBadge">✓ WIKI</span>':"";
+    const av=taskAvailability(t),done=av.state==="completed",historical=av.state==="historical",locked=["level","prereq"].includes(av.state);
+    const progressBadge=done?'<span class="completeBadge taskBadge">✓ COMPLETE</span>':historical?'<span class="statusBadge historical taskBadge">EARLIER IN CHAIN</span>':av.state==="eligible"&&hasProfile()?'<span class="statusBadge available taskBadge">AVAILABLE</span>':av.state==="level"?`<span class="lockedBadge taskBadge">LV ${esc(t.minLevel||"?")}</span>`:av.state==="prereq"?'<span class="statusBadge prereq taskBadge">PREREQ</span>':"";
+    const raidBadge=t.raidClass==="MAP_BOUND"?'<span class="raidClassBadge map taskBadge">MAP-SPECIFIC</span>':t.raidClass==="ANY_RAID"?'<span class="raidClassBadge any taskBadge">ANY RAID</span>':"";
+    const displayMap=isRaidViewActive()?activeMap:(t.raidClass==="ANY_RAID"?"Any raid":taskMaps(t).join(" / "));
+    const raidUnavailable=isRaidViewActive()&&!taskSelectableInCommittedRaid(t);
+    return `<button class="taskCard ${selected.has(t.id)?"selected":""} ${done?"completed":""} ${locked?"levelLocked":""} ${raidUnavailable?"raidUnavailable":""}" data-task="${esc(t.id)}" ${raidUnavailable?"disabled":""}>
+      <div class="taskTop"><div class="taskName">${esc(t.name)}</div><span class="mapTag" title="${esc(displayMap)}">${esc(displayMap)}</span></div>
+      <div class="taskBadgeRow">${verified}${progressBadge}${raidBadge}${fir}</div>
       <div class="taskMeta">${esc(t.trader)} · ${esc(t.type||"Other")}${t.minLevel?` · Lv ${t.minLevel}`:""}</div>
       <div class="taskObj">${esc((t.objectives&&t.objectives[0])||"View task details")}</div>
     </button>`;
   }).join(""):'<div class="empty">No matching tasks. Try a weapon, marker, key, map or objective phrase.</div>';
-  if(isMobile())requestAnimationFrame(()=>{taskListEl.scrollTop=scrollPos});
+  requestAnimationFrame(()=>{taskListEl.scrollTop=scrollPos});
 }
 
 function current(){return [...selected].map(id=>byId[id]).filter(Boolean)}
@@ -563,31 +1467,35 @@ function showPlannerMobile(){
   closeTaskDrawer();
   $("summary").classList.add("hidden");
   $("planner").classList.remove("hidden");
+  updateSidebarMode();
+  renderTaskList();
   window.scrollTo({top:0,behavior:"smooth"});
   updateMobileNav();
 }
 function recommendedMapForSelection(){
   const list=current();
-  const maps=groupCounts(list,t=>taskMaps(t)).filter(([m])=>m!=="Any");
+  const maps=groupCounts(list,t=>(t.mapBoundMaps||taskMaps(t)).filter(m=>m!=="Any"));
   return maps[0]?.[0]||null;
 }
 function updateMobileNav(){
   const count=selected.size;
   $("mobileHeaderCount").textContent=count;
   const raidVisible=!$("summary").classList.contains("hidden");
-  const map=raidVisible&&activeMap?activeMap:recommendedMapForSelection();
+  const personal=!selected.size?personalRaidRecommendation():null;
+  const map=raidVisible&&activeMap?activeMap:(recommendedMapForSelection()||personal?.map||null);
   const btn=$("mobileRaidNav");
   btn.disabled=!map;
   btn.textContent=raidVisible&&activeMap?`RAID · ${activeMap.toUpperCase()}`:map?`BUILD · ${map.toUpperCase()}`:"SELECT TASKS";
 }
 
 function renderPlanner(){
+  updateProfileUI();
   const list=current();
   $("selectedCount").textContent=$("topCount").textContent=$("statSelected").textContent=list.length;
   renderTaskList();
   $("selectedPills").innerHTML=list.length?list.map(t=>`<span class="pill"><button data-detail="${esc(t.id)}">${esc(t.name)}</button><button class="x" data-unselect="${esc(t.id)}">×</button></span>`).join(""):'<span class="muted">No tasks selected yet.</span>';
 
-  const maps=groupCounts(list,t=>taskMaps(t));
+  const maps=groupCounts(list,t=>t.raidClass==="MAP_BOUND"?(t.mapBoundMaps||taskMaps(t)):t.raidClass==="ANY_RAID"?["Any"]:[]);
   const traders=groupCounts(list,t=>[t.trader]);
   $("mapBreak").innerHTML=maps.length?maps.map(([x,n])=>`<div class="breakRow"><span>${esc(x)}</span><span class="count">${n}</span></div>`).join(""):'<div class="empty">Select tasks to see the breakdown.</div>';
   $("traderBreak").innerHTML=traders.length?traders.map(([x,n])=>`<div class="breakRow"><span>${esc(x)}</span><span class="count">${n}</span></div>`).join(""):'<div class="empty">Select tasks to see the breakdown.</div>';
@@ -605,83 +1513,138 @@ function renderPlanner(){
 }
 
 function renderRecommendation(list,maps){
-  const candidates=maps.filter(([m])=>m!=="Any");
+  const candidates=maps.filter(([m])=>m!=="Any").map(([map])=>{
+    const included=list.filter(t=>taskRequiresMap(t,map)||t.raidClass==="ANY_RAID");
+    const mapBound=included.filter(t=>taskRequiresMap(t,map));
+    return {map,included,mapBound,obj:mapObjectiveCount(mapBound,map)};
+  }).filter(x=>x.mapBound.length).sort((a,b)=>b.obj-a.obj||b.mapBound.length-a.mapBound.length);
   const sec=$("recommendSection");
   if(!list.length||!candidates.length){sec.classList.add("hidden");return}
-  const [map,count]=candidates[0];
-  const included=list.filter(t=>taskMaps(t).includes(map)||taskMaps(t).includes("Any"));
-  const req=aggregateReq(included);
-  const conf=conflictList(included);
-  const hard=conf.filter(c=>c.severity==="hard").length;
+  const best=candidates[0],map=best.map,included=best.included;
+  const req=aggregateReq(included),conf=conflictList(included),hard=conf.filter(c=>c.severity==="hard").length,soft=conf.filter(c=>c.severity==="soft").length;
   $("recommendedMap").textContent=map;
-  $("recommendedText").textContent=`${count} selected task${count!==1?"s":""} · ${objectiveCount(included)} objectives${hard?` · ${hard} hard conflict${hard!==1?"s":""}`:" · no hard conflicts"}`;
+  $("recommendedText").textContent=`${best.mapBound.length} selected task${best.mapBound.length!==1?"s":""} specifically require ${map} · ${best.obj} map objective${best.obj!==1?"s":""}${hard?` · ${hard} hard conflict${hard!==1?"s":""}`:" · no hard conflicts"}`;
   $("recommendedReasons").innerHTML=[
-    `${count} task${count!==1?"s":""} on map`,
-    `${objectiveCount(included)} objectives`,
+    `${best.mapBound.length} map-bound task${best.mapBound.length!==1?"s":""}`,
+    `${best.obj} ${map} objective${best.obj!==1?"s":""}`,
     `${req.length} detected raid requirement${req.length!==1?"s":""}`,
-    hard?"Needs conflict review":"Strong task fit"
+    hard?"Needs conflict review":soft?`${soft} loadout warning${soft!==1?"s":""}`:"Strong combination"
   ].map(x=>`<span class="reasonChip">${esc(x)}</span>`).join("");
   $("buildRecommended").dataset.map=map;
   sec.classList.remove("hidden");
 }
-
 function renderMapChoices(list,maps){
-  const candidates=maps.filter(([m])=>m!=="Any");
-  const best=candidates[0]?.[0];
-  $("mapChoices").innerHTML=candidates.length?`<div class="mapGrid">${candidates.map(([map])=>{
-    const included=list.filter(t=>taskMaps(t).includes(map)||taskMaps(t).includes("Any"));
-    const conflicts=conflictList(included);
-    const hard=conflicts.filter(c=>c.severity==="hard").length;
-    const compatible=findCompatible(map,included).length;
+  const candidates=maps.filter(([m])=>m!=="Any").map(([map])=>{
+    const bound=list.filter(t=>taskRequiresMap(t,map));
+    return {map,bound,obj:mapObjectiveCount(bound,map)};
+  }).filter(x=>x.bound.length).sort((a,b)=>b.obj-a.obj||b.bound.length-a.bound.length);
+  const best=candidates[0]?.map;
+  $("mapChoices").innerHTML=candidates.length?`<div class="mapGrid">${candidates.map(({map,bound,obj})=>{
+    const anySelected=list.filter(t=>t.raidClass==="ANY_RAID");
+    const included=[...bound,...anySelected];
+    const conflicts=conflictList(included),hard=conflicts.filter(c=>c.severity==="hard").length,compatible=findCompatible(map,included).length;
     return `<div class="mapChoice ${map===best?"recommended":""}">
       ${map===best?'<div class="recBadge">★ RECOMMENDED NEXT RAID</div>':""}
       <strong>${esc(map)}</strong>
-      <p>${included.length} selected task${included.length!==1?"s":""} · ${objectiveCount(included)} objectives · ${hard?`${hard} hard conflict${hard!==1?"s":""}`:"clean combination"}</p>
-      <div class="mapActions">
-        <button class="btn small" data-build="${esc(map)}">BUILD RAID</button>
-        ${compatible?`<button class="btn secondary small" data-show-compatible="${esc(map)}">+ ${compatible} COMPATIBLE</button>`:""}
-      </div>
+      <p>${bound.length} map-bound task${bound.length!==1?"s":""} · ${obj} ${esc(map)} objective${obj!==1?"s":""} · ${hard?`${hard} hard conflict${hard!==1?"s":""}`:"clean combination"}</p>
+      <div class="mapActions"><button class="btn small" data-build="${esc(map)}">BUILD RAID</button>${compatible?`<button class="btn secondary small" data-show-compatible="${esc(map)}">+ ${compatible} COMPATIBLE</button>`:""}</div>
     </div>`;
-  }).join("")}</div>`:'<div class="empty">Select at least one task to build a raid.</div>';
+  }).join("")}</div>`:'<div class="empty">Select at least one map-specific task to build a raid. Any-raid objectives can then travel with it.</div>';
 }
-
 function renderMapPlan(){
   const wrap=$("mapStart");
   wrap.classList.toggle("hidden",mode!=="map");
   if(mode!=="map")return;
   if(!mapPlanSelection){
-    $("mapTaskSuggestions").innerHTML='<div class="empty">Choose a map above. RaidPlan will show relevant tasks and let you add the ones you want.</div>';
+    $("mapTaskSuggestions").innerHTML='<div class="empty">Choose a map above. RaidIQ will show tasks with objectives that specifically require that map.</div>';
     return;
   }
-  const tasks=TASKS.filter(t=>taskMaps(t).includes(mapPlanSelection)||taskMaps(t).includes("Any")).slice(0,30);
-  $("mapTaskSuggestions").innerHTML=`<div class="sectionTitle"><div><h3>${esc(mapPlanSelection)} tasks</h3><div class="muted" style="font-size:11px;margin-top:3px">${tasks.length} shown · search/filter still works in the sidebar</div></div><button class="btn secondary small" data-add-map-selection="${esc(mapPlanSelection)}">ADD ALL SHOWN</button></div>
-    <div class="compatList">${tasks.map(t=>`<div class="compatTask"><div><strong>${esc(t.name)}</strong><small>${esc(t.trader)} · ${esc((t.objectives||[])[0]||"Task objective")}</small></div><button class="btn ${selected.has(t.id)?"good":"secondary"} small" data-map-add-task="${esc(t.id)}">${selected.has(t.id)?"✓ ADDED":"ADD"}</button></div>`).join("")}</div>`;
+  const tasks=TASKS.filter(t=>eligibleForSuggestions(t)&&taskRequiresMap(t,mapPlanSelection)).slice(0,40);
+  $("mapTaskSuggestions").innerHTML=`<div class="sectionTitle"><div><h3>${esc(mapPlanSelection)} map-specific tasks</h3><div class="muted" style="font-size:11px;margin-top:3px">${tasks.length} shown · only tasks that specifically require ${esc(mapPlanSelection)}</div></div><button class="btn secondary small" data-add-map-selection="${esc(mapPlanSelection)}">ADD ALL SHOWN</button></div>
+    <div class="compatList">${tasks.map(t=>`<div class="compatTask"><div><strong>${esc(t.name)}</strong><small>${esc(t.trader)}<span class="objectiveReason"><b>${esc(mapPlanSelection)}:</b> ${esc(relevantObjectiveText(t,mapPlanSelection))}</span></small></div><button class="btn ${selected.has(t.id)?"good":"secondary"} small" data-map-add-task="${esc(t.id)}">${selected.has(t.id)?"✓ ADDED":"ADD"}</button></div>`).join("")}</div>`;
 }
-
 function renderCompatiblePlanner(list,maps,forcedMap){
   const map=forcedMap||maps.filter(([m])=>m!=="Any")[0]?.[0];
   const sec=$("compatibleSection");
-  if(!map||!list.length){sec.classList.add("hidden");return}
-  const included=list.filter(t=>taskMaps(t).includes(map)||taskMaps(t).includes("Any"));
-  const compat=findCompatible(map,included).slice(0,5);
-  if(!compat.length){sec.classList.add("hidden");return}
-  sec.dataset.map=map;
-  $("compatibleList").innerHTML=compat.map(t=>compatibleRow(t,map)).join("");
-  $("addAllCompatible").textContent=`ADD ${compat.length} COMPATIBLE`;
-  sec.classList.remove("hidden");
+  if(!map||!list.length){sec.classList.add("hidden");renderAnyRaidIQner(null);return}
+  const included=list.filter(t=>taskRequiresMap(t,map)||t.raidClass==="ANY_RAID");
+  const compat=findCompatible(map,included).slice(0,6);
+  if(!compat.length)sec.classList.add("hidden");
+  else{
+    sec.dataset.map=map;
+    $("compatibleList").innerHTML=compat.map(t=>compatibleRow(t,map)).join("");
+    $("addAllCompatible").textContent=`ADD ${compat.length} COMPATIBLE`;
+    sec.classList.remove("hidden");
+  }
+  renderAnyRaidIQner(map);
 }
 function compatibleRow(t,map){
   const req=(t.requirements||[]).map(r=>r.name).filter(Boolean).slice(0,2).join(", ");
-  return `<div class="compatTask"><div><strong>${esc(t.name)}</strong><small>${esc(t.trader)} · ${esc((t.objectives||[])[0]||"Task objective")}${req?` · Bring: ${esc(req)}`:""}</small></div><div style="display:flex;gap:7px;align-items:center"><span class="compatScore">NO HARD CONFLICT</span><button class="btn secondary small" data-add-compatible="${esc(t.id)}">ADD</button></div></div>`;
+  const av=taskAvailability(t);
+  return `<div class="compatTask"><div><strong>${esc(t.name)}</strong><small>${esc(t.trader)} · ${hasProfile()?esc(av.label):"Unfinished"}<span class="objectiveReason"><b>${esc(map)}:</b> ${esc(relevantObjectiveText(t,map))}</span>${req?`<span class="objectiveReason">Bring: ${esc(req)}</span>`:""}</small></div><div style="display:flex;gap:7px;align-items:center"><span class="compatScore">MAP-SPECIFIC</span><button class="btn secondary small" data-add-compatible="${esc(t.id)}">ADD</button></div></div>`;
 }
-
+function findAnyRaidOpportunities(){
+  const historical=planningHistoricalIds();
+  return TASKS.filter(t=>{
+    if(selected.has(t.id)||historical.has(t.id))return false;
+    if(t.raidClass!=="ANY_RAID")return false;
+    return eligibleForSuggestions(t);
+  }).sort((a,b)=>anyRaidObjectives(b).length-anyRaidObjectives(a).length||a.name.localeCompare(b.name));
+}
+function anyRaidRow(t){
+  const objs=anyRaidObjectives(t);
+  return `<div class="anyRaidTask"><div><strong>${esc(t.name)}</strong><small>${esc(t.trader)}<span class="objectiveReason">${esc(objs[0]?.text||"Can progress in any raid")}</span></small></div><div style="display:flex;gap:7px;align-items:center"><span class="anyRaidBadge">ANY RAID</span><button class="btn ghost small" data-add-anyraid="${esc(t.id)}">ADD</button></div></div>`;
+}
+function renderAnyRaidIQner(map){
+  const sec=$("anyRaidSection");
+  if(!map){sec.classList.add("hidden");return}
+  const items=findAnyRaidOpportunities().slice(0,5);
+  if(!items.length){sec.classList.add("hidden");return}
+  $("anyRaidList").innerHTML=items.map(anyRaidRow).join("");
+  sec.classList.remove("hidden");
+}
 function reqKey(r){return `${r.kind}|${r.name}|${r.slot||""}`}
+function isPlacementRequirement(r){
+  if(r?.kind!=="item")return false;
+  const n=clean(r.name).toLowerCase();
+  return /marker|camera|jammer|beacon|transmitter|repeater|toolset|device|signal/i.test(n)
+    || /\b(?:mark|plant|place|stash|hide|install|leave|deposit)\b/i.test(clean(r.sourceObjective||""));
+}
+function objectiveMentionsRequirement(text,r){
+  const s=clean(text).toLowerCase(),n=clean(r.name).toLowerCase();
+  if(!s||!n)return false;
+  if(s.includes(n))return true;
+  // Conservative aliases for common consumable quest devices.
+  if(/ms2000.*marker|marker/i.test(n))return /\bms2000\b|\bmarker\b/i.test(s);
+  if(/wi-?fi.*camera|camera/i.test(n))return /\bwi-?fi\b|\bcamera\b/i.test(s);
+  if(/signal.*jammer|jammer/i.test(n))return /\bjammer\b/i.test(s);
+  if(/beacon/i.test(n))return /\bbeacon\b/i.test(s);
+  if(/transmitter/i.test(n))return /\btransmitter\b/i.test(s);
+  return false;
+}
+function effectiveTaskRequirementQty(t,r){
+  const structured=Math.max(1,Number(r.qty)||1);
+  if(!isPlacementRequirement(r))return structured;
+
+  const placement=/\b(?:mark|plant|place|stash|hide|install|leave|deposit)\b/i;
+  const matching=(t.objectives||[]).filter(o=>placement.test(clean(o))&&objectiveMentionsRequirement(o,r)).length;
+
+  // Old snapshots sometimes collapsed repeated placement requirements to qty 1.
+  // Never reduce a structured quantity; use objective count only when it proves more are needed.
+  return Math.max(structured,matching||1);
+}
 function aggregateReq(list){
   const map=new Map();
   for(const t of list)for(const r of (t.requirements||[])){
+    const qty=effectiveTaskRequirementQty(t,r);
     const k=reqKey(r),prev=map.get(k);
-    if(prev)prev.qty+=(Number(r.qty)||1);
-    else map.set(k,{...r,qty:Number(r.qty)||1});
+    if(prev){
+      prev.qty+=qty;
+      if(!prev.taskQuantities)prev.taskQuantities=[];
+      prev.taskQuantities.push({taskId:t.id,taskName:t.name,qty});
+    }else{
+      map.set(k,{...r,qty,taskQuantities:[{taskId:t.id,taskName:t.name,qty}]});
+    }
   }
   return [...map.values()];
 }
@@ -707,16 +1670,22 @@ function conflictList(list){
 }
 
 function findCompatible(map,baseTasks){
+  const historical=planningHistoricalIds();
   return TASKS.filter(t=>{
     if(selected.has(t.id))return false;
-    if(!(taskMaps(t).includes(map)||taskMaps(t).includes("Any")))return false;
+    // Never recommend a prerequisite backwards from a selected/completed downstream quest.
+    // Example: The Bunker - Part 2 means Part 1 is historical for this planner.
+    if(historical.has(t.id))return false;
+    if(!eligibleForSuggestions(t))return false;
+    if(!taskRequiresMap(t,map))return false;
     return !conflictList([...baseTasks,t]).some(c=>c.severity==="hard");
   }).sort((a,b)=>{
+    const objDiff=mapObjectives(b,map).length-mapObjectives(a,map).length;
+    if(objDiff)return objDiff;
     const aReq=(a.requirements||[]).length,bReq=(b.requirements||[]).length;
-    return aReq-bReq || a.name.localeCompare(b.name);
+    return aReq-bReq||a.name.localeCompare(b.name);
   });
 }
-
 function recommendedItems(req){
   const out=[];
   const markers=req.filter(r=>/marker/i.test(r.name));
@@ -746,25 +1715,28 @@ function buildRaid(map){
   activeMap=map;
   const list=raidTasks();
   if(!list.length)return;
-  renderRaid();
   $("planner").classList.add("hidden");$("summary").classList.remove("hidden");
+  updateSidebarMode();
+  renderTaskList();
+  renderRaid();
   window.scrollTo(0,0);
   writeShareHash(false);
 }
 
-function raidTasks(){return current().filter(t=>taskMaps(t).includes(activeMap)||taskMaps(t).includes("Any"))}
+function raidTasks(){return current().filter(t=>taskRequiresMap(t,activeMap)||t.raidClass==="ANY_RAID")}
+
 
 function renderRaid(){
   const list=raidTasks(),req=aggregateReq(list),conf=conflictList(list);
   const hard=conf.filter(c=>c.severity==="hard"),soft=conf.filter(c=>c.severity==="soft");
   $("summaryMap").textContent=activeMap;
   $("summaryMeta").textContent=`${list.length} task${list.length!==1?"s":""} · ${objectiveCount(list)} objectives · data ${generatedAt?`updated ${new Date(generatedAt).toLocaleDateString("en-GB")}`:"current"}`;
-  $("summaryStatus").textContent=hard.length?`⚠ ${hard.length} HARD CONFLICT${hard.length!==1?"S":""}`:soft.length?`△ ${soft.length} LOADOUT WARNING${soft.length!==1?"S":""}`:"✓ GOOD COMBINATION";
-  $("summaryStatus").className=`ready${hard.length?" bad":soft.length?" soft":""}`;
+  $("summaryStatus").textContent=!list.length?"ADD TASKS":hard.length?`⚠ ${hard.length} HARD CONFLICT${hard.length!==1?"S":""}`:soft.length?`△ ${soft.length} LOADOUT WARNING${soft.length!==1?"S":""}`:"✓ GOOD COMBINATION";
+  $("summaryStatus").className=`ready${list.length?(hard.length?" bad":soft.length?" soft":""):" soft"}`;
   $("summaryTaskCount").textContent=`${list.length} selected`;
 
   const checks=loadChecks();
-  $("summaryTasks").innerHTML=list.map(t=>`<div class="taskSummary">
+  $("summaryTasks").innerHTML=list.length?list.map(t=>`<div class="taskSummary">
     <div class="taskSummaryHead">
       <div><button style="all:unset;cursor:pointer;font-weight:850" data-detail="${esc(t.id)}">${esc(t.name)}</button>
       <div class="muted">${esc(t.trader)} · ${esc(t.type||"Other")} · ${String(t.source||"").toLowerCase().includes("wiki")?"✓ Wiki verified":"Structured data"}</div></div>
@@ -772,9 +1744,11 @@ function renderRaid(){
     </div>
     ${(t.objectives||[]).map((o,i)=>{
       const id=checkId("objective",t.id,i,o),done=!!checks[id];
-      return `<label class="objectiveCheck ${done?"done":""}"><input type="checkbox" data-check-id="${esc(id)}" ${done?"checked":""}><span>${esc(o)}</span></label>`;
+      const d=objectiveDetails(t).find(x=>x.text===o);
+      const relevant=d?.raidClass==="ANY_RAID"||(d?.raidClass==="MAP_BOUND"&&(d.maps||[]).includes(activeMap));
+      return `<label class="objectiveCheck ${done?"done":""}" style="${relevant?"":"opacity:.42"}"><input type="checkbox" data-check-id="${esc(id)}" ${done?"checked":""} ${relevant?"":"disabled"}><span>${esc(o)}${relevant?"":` <small class="muted">(not for this raid)</small>`}</span></label>`;
     }).join("")}
-  </div>`).join("");
+  </div>`).join(""):`<div class="raidEmptyState"><strong>No tasks selected for ${esc(activeMap)}</strong>Use the left task list to add tasks directly into this raid.</div>`;
 
   const must=req;
   const rec=recommendedItems(req);
@@ -788,7 +1762,7 @@ function renderRaid(){
 
   $("conflictCount").textContent=conf.length?`${conf.length} warning${conf.length!==1?"s":""}`:"Clear";
   $("conflicts").innerHTML=conf.length?conf.map(c=>{
-    if(c.severity==="soft")return `<div class="alert soft"><strong>△ LOADOUT WARNING — ${esc(c.a.name)} ↔ ${esc(c.b.name)}</strong><span class="why">${esc(c.a.name)} wants <b>${esc(c.av)}</b>, while ${esc(c.b.name)} wants <b>${esc(c.bv)}</b>. Technically possible, but RaidPlan recommends splitting these weapon-specific objectives unless you deliberately want to carry both setups.</span><button class="btn secondary small" style="margin-top:8px" data-remove="${esc(c.b.id)}">REMOVE ${esc(c.b.name.toUpperCase())}</button></div>`;
+    if(c.severity==="soft")return `<div class="alert soft"><strong>△ LOADOUT WARNING — ${esc(c.a.name)} ↔ ${esc(c.b.name)}</strong><span class="why">${esc(c.a.name)} wants <b>${esc(c.av)}</b>, while ${esc(c.b.name)} wants <b>${esc(c.bv)}</b>. Technically possible, but RaidIQ recommends splitting these weapon-specific objectives unless you deliberately want to carry both setups.</span><button class="btn secondary small" style="margin-top:8px" data-remove="${esc(c.b.id)}">REMOVE ${esc(c.b.name.toUpperCase())}</button></div>`;
     return `<div class="alert"><strong>⚠ HARD CONFLICT — ${esc(c.a.name)} ↔ ${esc(c.b.name)}</strong><span class="why">These tasks compete for the same ${esc(c.slot||"equipment")} requirement: <b>${esc(c.av)}</b> vs <b>${esc(c.bv)}</b>.</span><button class="btn secondary small" style="margin-top:8px" data-remove="${esc(c.b.id)}">REMOVE ${esc(c.b.name.toUpperCase())}</button></div>`;
   }).join(""):`<div class="alert ok"><strong>✓ Good combination.</strong><span class="why">No hard gear conflicts or inefficient weapon combinations were detected among these tasks.</span></div>`;
 
@@ -796,17 +1770,30 @@ function renderRaid(){
   $("raidCompatible").classList.toggle("hidden",!compat.length);
   $("raidCompatibleList").innerHTML=compat.map(t=>compatibleRow(t,activeMap)).join("");
   $("raidAddAllCompatible").textContent=`ADD ${compat.length}`;
+  const anyOps=findAnyRaidOpportunities().slice(0,5);
+  $("raidAnyRaid").classList.toggle("hidden",!anyOps.length);
+  $("raidAnyRaidList").innerHTML=anyOps.map(anyRaidRow).join("");
 
   updateProgress();
   updateMobileNav();
+  updateSidebarMode();
+  renderTaskList();
+  writeShareHash(false);
 }
 
+function requirementTaskNames(r){
+  const target=clean(r.name).toLowerCase();
+  return raidTasks().filter(t=>(t.requirements||[]).some(x=>
+    clean(x.name).toLowerCase()===target && (x.kind===r.kind || !x.kind || !r.kind)
+  )).map(t=>t.name);
+}
 function renderReqGroup(title,subtitle,rows,kind){
   if(!rows.length)return "";
   const checks=loadChecks();
   return `<div class="reqGroup"><div class="reqGroupTitle"><div><strong>${title}</strong><span class="subline">${subtitle}</span></div><span class="typeTag">${rows.length}</span></div>${rows.map((r,i)=>{
-    const id=checkId(kind,"",i,r.name),done=!!checks[id];
-    return `<label class="checkRow ${done?"done":""}"><input type="checkbox" data-check-id="${esc(id)}" ${done?"checked":""}><span class="labelText"><strong>${esc(r.name)}${r.qty>1?` ×${r.qty}`:""}</strong><span class="subline">${r.kind==="key"?"Access key":r.kind==="gear"?(r.slot==="weapon"?"Weapon setup":"Required wearable/gear"):/marker/i.test(r.name)?"Placement item":"Task item"}</span></span><span class="typeTag">${esc((r.kind||"item").toUpperCase())}</span></label>`;
+    const id=checkId(kind,"",i,r.name),done=!!checks[id],tasks=requirementTaskNames(r);
+    const type=r.kind==="key"?"Access key":r.kind==="gear"?(r.slot==="weapon"?"Weapon setup":"Required wearable/gear"):/marker/i.test(r.name)?"Placement item":"Task item";
+    return `<label class="checkRow ${done?"done":""}"><input type="checkbox" data-check-id="${esc(id)}" ${done?"checked":""}><span class="labelText"><strong>${esc(r.name)}${r.qty>1?` ×${r.qty}`:""}</strong><span class="subline">${esc(type)}</span>${tasks.length?`<span class="reqWhy">Required for: ${esc((r.taskQuantities?.length?r.taskQuantities.map(x=>`${x.taskName}${x.qty>1?` ×${x.qty}`:""}`):tasks).slice(0,3).join(" · "))}</span>`:""}</span><span class="typeTag">${esc((r.kind||"item").toUpperCase())}</span></label>`;
   }).join("")}</div>`;
 }
 function renderSimpleGroup(title,subtitle,rows,kind){
@@ -837,39 +1824,27 @@ function openDetail(id){
     <div class="detailSection">
       <div class="dataCard"><div>${verified?"✓":"•"}</div><div><b>${verified?"Wiki verified":"Structured data"}</b><span>${verified?"Current task snapshot includes Tarkov Wiki validation.":"This task did not expose a Wiki validation marker in the dataset."}</span></div></div>
     </div>
+    <div class="detailSection">
+      <div class="detailProgressBox">
+        <div class="row"><div><strong>My progression</strong><div class="detailAvail">${(()=>{const av=taskAvailability(t);return esc(av.reason||av.label)})()}</div></div><button class="btn ${isCompleted(t.id)?"good":"secondary"} small" data-toggle-complete="${esc(t.id)}">${isCompleted(t.id)?"✓ COMPLETE":"MARK COMPLETE"}</button></div>
+        <p>RaidIQ eligibility uses your PMC level plus known task prerequisites from the task dataset. Special in-game conditions may still need checking.</p>
+      </div>
+    </div>
     <div class="detailSection"><h3>Objectives</h3>${(t.objectives||[]).map(o=>`<div class="detailLine">• ${esc(o)}</div>`).join("")||'<div class="detailLine">No objective text available.</div>'}</div>
     <div class="detailSection"><h3>Requirements</h3>${[...req,...fir].map(x=>`<div class="detailLine">${esc(x)}</div>`).join("")||'<div class="detailLine">No special structured requirements detected.</div>'}</div>
     <div class="detailSection"><div class="actions">
       ${t.wikiLink?`<a class="btn secondary" href="${esc(t.wikiLink)}" target="_blank" rel="noopener" style="text-decoration:none">OPEN WIKI</a>`:""}
-      <button class="btn ghost" data-report="${esc(t.id)}">REPORT INCORRECT DATA</button>
     </div></div>`;
-  $("detail").classList.add("open");$("detail").setAttribute("aria-hidden","false");
+  $("detail").classList.add("open");$("detail").setAttribute("aria-hidden","false");document.body.classList.add("detailOpen");
 }
-function closeDetail(){$("detail").classList.remove("open");$("detail").setAttribute("aria-hidden","true")}
+function closeDetail(){$("detail").classList.remove("open");$("detail").setAttribute("aria-hidden","true");document.body.classList.remove("detailOpen")}
 
-function openReport(id){
-  reportTask=byId[id];if(!reportTask)return;
-  $("reportText").value=`RaidPlan task data report
-
-Task: ${reportTask.name}
-Trader: ${reportTask.trader}
-Map: ${taskMaps(reportTask).join(" / ")}
-Data source: ${reportTask.source||"Unknown"}
-Snapshot updated: ${generatedAt?new Date(generatedAt).toISOString():"Unknown"}
-
-What's incorrect:
-[Describe the objective, map, item, weapon or gear requirement that needs updating]
-
-Current RaidPlan objective(s):
-${(reportTask.objectives||[]).map(o=>`- ${o}`).join("\n")}`;
-  $("reportModal").classList.add("open");
-}
 function closeModals(){document.querySelectorAll(".modalBackdrop").forEach(x=>x.classList.remove("open"))}
 
 function checklist(itemsOnly=false){
   const list=raidTasks(),req=aggregateReq(list),rec=recommendedItems(req),obtain=obtainedDuringRaid(list),lines=[];
   if(!itemsOnly){
-    lines.push(`RAIDPLAN — ${activeMap.toUpperCase()} RAID`,"",`TASKS (${list.length})`);
+    lines.push(`RAIDIQ // ${activeMap.toUpperCase()} RAID`,"",`TASKS (${list.length})`);
     for(const t of list){lines.push(`☐ ${t.name} — ${t.trader}`);for(const o of (t.objectives||[]))lines.push(`   ☐ ${o}`)}
     lines.push("","MUST BRING");
   }
@@ -928,8 +1903,30 @@ function renderMobile(){
 }
 
 document.addEventListener("click",e=>{
+  const complete=e.target.closest("[data-toggle-complete]");
+  if(complete){
+    const id=complete.dataset.toggleComplete;
+    setCompleted(id,!isCompleted(id));
+    if($("detail").classList.contains("open"))openDetail(id);
+    toast(isCompleted(id)?"Task marked complete":"Task marked unfinished");
+    return;
+  }
+
   const task=e.target.closest("[data-task]");
-  if(task){const id=task.dataset.task;selected.has(id)?selected.delete(id):selected.add(id);renderPlanner();return}
+  if(task){
+    const id=task.dataset.task,t=byId[id];
+    if(!t)return;
+    if(isRaidViewActive()){
+      if(!selected.has(id)&&!taskSelectableInCommittedRaid(t))return;
+      selected.has(id)?selected.delete(id):selected.add(id);
+      renderRaid();
+      toast(selected.has(id)?`${t.name} added to ${activeMap}`:`${t.name} removed from ${activeMap}`);
+    }else{
+      selected.has(id)?selected.delete(id):selected.add(id);
+      renderPlanner();
+    }
+    return;
+  }
 
   const un=e.target.closest("[data-unselect]");
   if(un){selected.delete(un.dataset.unselect);renderPlanner();return}
@@ -951,11 +1948,16 @@ document.addEventListener("click",e=>{
   const add=e.target.closest("[data-add-compatible]");
   if(add){selected.add(add.dataset.addCompatible);renderPlanner();if(!$("summary").classList.contains("hidden"))renderRaid();toast("Compatible task added");return}
 
-  const remove=e.target.closest("[data-remove]");
-  if(remove){selected.delete(remove.dataset.remove);if(raidTasks().length)renderRaid();else{$("summary").classList.add("hidden");$("planner").classList.remove("hidden");renderPlanner()}return}
+  const addAny=e.target.closest("[data-add-anyraid]");
+  if(addAny){selected.add(addAny.dataset.addAnyraid);renderPlanner();if(!$("summary").classList.contains("hidden"))renderRaid();toast("Any-raid opportunity added");return}
 
-  const report=e.target.closest("[data-report]");
-  if(report){openReport(report.dataset.report);return}
+  const remove=e.target.closest("[data-remove]");
+  if(remove){
+    selected.delete(remove.dataset.remove);
+    if(isRaidViewActive())renderRaid();
+    else renderPlanner();
+    return;
+  }
 
   const pick=e.target.closest("[data-map-pick]");
   if(pick){
@@ -965,11 +1967,11 @@ document.addEventListener("click",e=>{
   }
 
   const mapAdd=e.target.closest("[data-map-add-task]");
-  if(mapAdd){selected.add(mapAdd.dataset.mapAddTask);renderPlanner();return}
+  if(mapAdd){selected.add(mapAdd.dataset.mapAddTask);isRaidViewActive()?renderRaid():renderPlanner();return}
 
   const addMap=e.target.closest("[data-add-map-selection]");
   if(addMap){
-    TASKS.filter(t=>taskMaps(t).includes(addMap.dataset.addMapSelection)||taskMaps(t).includes("Any")).slice(0,30).forEach(t=>selected.add(t.id));
+    TASKS.filter(t=>eligibleForSuggestions(t)&&taskRequiresMap(t,addMap.dataset.addMapSelection)).slice(0,40).forEach(t=>selected.add(t.id));
     renderPlanner();toast("Map tasks added");return;
   }
 
@@ -986,15 +1988,28 @@ document.addEventListener("change",e=>{
   }
 });
 
-for(const id of ["search","mapFilter","traderFilter","typeFilter"]){
+for(const id of ["search","mapFilter","traderFilter","typeFilter","profileFilter","sortFilter"]){
   $(id).addEventListener(id==="search"?"input":"change",renderTaskList);
 }
-$("selectVisible").addEventListener("click",()=>{TASKS.filter(matches).forEach(t=>selected.add(t.id));renderPlanner();toast("Visible tasks selected")});
-$("clear").addEventListener("click",()=>{selected.clear();renderPlanner();toast("Selection cleared")});
+$("selectVisible").addEventListener("click",()=>{
+  TASKS.filter(matches).forEach(t=>selected.add(t.id));
+  if(isRaidViewActive()){renderRaid();toast(`Visible ${activeMap} tasks added`)}
+  else{renderPlanner();toast("Visible tasks selected")}
+});
+$("clear").addEventListener("click",()=>{
+  if(isRaidViewActive()){
+    resetRaidPlanning();
+    toast("Raid cleared — start planning again");
+  }else{
+    selected.clear();
+    renderPlanner();
+    toast("Selection cleared");
+  }
+});
 $("buildRecommended").addEventListener("click",e=>buildRaid(e.currentTarget.dataset.map));
 $("addAllCompatible").addEventListener("click",()=>{
   const map=$("compatibleSection").dataset.map;
-  const base=current().filter(t=>taskMaps(t).includes(map)||taskMaps(t).includes("Any"));
+  const base=current().filter(t=>taskRequiresMap(t,map)||t.raidClass==="ANY_RAID");
   findCompatible(map,base).slice(0,5).forEach(t=>selected.add(t.id));renderPlanner();toast("Compatible tasks added")
 });
 $("raidAddAllCompatible").addEventListener("click",()=>{
@@ -1008,21 +2023,116 @@ $("copyShare").addEventListener("click",()=>copyText($("shareText").value,"Share
 $("mobileRaid").addEventListener("click",renderMobile);
 $("closeMobile").addEventListener("click",()=>$("mobileCard").classList.remove("open"));
 $("detailClose").addEventListener("click",closeDetail);
-$("copyReport").addEventListener("click",()=>copyText($("reportText").value,"Data report copied"));
-$("openGithubReport").addEventListener("click",()=>{
-  if(!reportTask)return;
-  const title=encodeURIComponent(`Task data: ${reportTask.name}`);
-  const body=encodeURIComponent($("reportText").value);
-  window.open(`https://github.com/pm4gp9zb88-jpg/tarkov-raidplan/issues/new?title=${title}&body=${body}`,"_blank","noopener");
-});
 document.querySelectorAll(".modeBtn").forEach(btn=>btn.addEventListener("click",()=>{
   mode=btn.dataset.mode;document.querySelectorAll(".modeBtn").forEach(x=>x.classList.toggle("active",x===btn));
   renderPlanner();
 }));
-$("reportModal").addEventListener("click",e=>{if(e.target===$("reportModal"))closeModals()});
 $("shareModal").addEventListener("click",e=>{if(e.target===$("shareModal"))closeModals()});
+["trackerModal","manualProfileModal","progressModal","importProgressModal"].forEach(id=>{
+  $(id).addEventListener("click",e=>{if(e.target===$(id))closeModals()});
+});
 
 
+
+function openProfilePanel(){
+  showPlannerMobile();
+  $("progressPanel").scrollIntoView({behavior:"smooth",block:"center"});
+}
+$("progressProfileBtn").addEventListener("click",openProfilePanel);
+$("connectTracker").addEventListener("click",()=>{
+  $("trackerToken").value=getTrackerToken();
+  $("rememberTrackerToken").checked=!!safeLocal()?.getItem(trackerRememberKey);
+  $("trackerError").classList.add("hidden");
+  $("trackerModal").classList.add("open");
+});
+$("setupManual").addEventListener("click",()=>{
+  $("manualName").value=PROFILE.pmcName||"";
+  $("manualLevel").value=PROFILE.level||"";
+  $("manualMode").value=PROFILE.gameMode||"pvp";
+  $("manualFaction").value=PROFILE.faction||"";
+  $("manualProfileModal").classList.add("open");
+});
+$("editProfile").addEventListener("click",()=>{
+  $("manualName").value=PROFILE.pmcName||"";
+  $("manualLevel").value=PROFILE.level||"";
+  $("manualMode").value=PROFILE.gameMode||"pvp";
+  $("manualFaction").value=PROFILE.faction||"";
+  $("manualProfileModal").classList.add("open");
+});
+$("confirmTracker").addEventListener("click",async()=>{
+  try{await syncTarkovTracker($("trackerToken").value,{remember:$("rememberTrackerToken").checked})}catch(e){}
+});
+$("syncNow").addEventListener("click",async()=>{
+  const token=getTrackerToken();
+  if(!token){$("connectTracker").click();return}
+  $("syncNow").disabled=true;$("syncNow").textContent="SYNCING…";
+  try{await syncTarkovTracker(token,{remember:!!safeLocal()?.getItem(trackerRememberKey),silent:true});updateProfileUI();renderPlanner();toast("TarkovTracker progress synced")}
+  catch(e){toast("Sync failed — reconnect your token")}
+  finally{$("syncNow").disabled=false;updateProfileUI()}
+});
+$("saveManualProfile").addEventListener("click",()=>{
+  PROFILE.pmcName=clean($("manualName").value);
+  PROFILE.level=Math.max(0,Math.min(79,Number($("manualLevel").value)||0));
+  PROFILE.gameMode=$("manualMode").value;
+  PROFILE.faction=$("manualFaction").value;
+  PROFILE.source=PROFILE.source==="tarkovtracker"?"manual":"manual";
+  PROFILE.lastSync=new Date().toISOString();
+  saveProfile();closeModals();updateProfileUI();renderTaskList();renderPlanner();toast("PMC profile saved");
+});
+$("openManualProgress").addEventListener("click",()=>{
+  closeModals();renderProgressManager();$("progressModal").classList.add("open");
+});
+$("openProgressManager").addEventListener("click",()=>{
+  renderProgressManager();$("progressModal").classList.add("open");
+});
+$("hideCompleted").addEventListener("change",e=>{
+  PROFILE.hideCompleted=e.target.checked;saveProfile();renderTaskList();updateProfileUI();
+});
+$("progressSearch").addEventListener("input",renderProgressManager);
+$("disconnectProfile").addEventListener("click",()=>{
+  clearTrackerToken();
+  if(PROFILE.source==="tarkovtracker")PROFILE.source="manual";
+  saveProfile();updateProfileUI();renderTaskList();renderPlanner();
+  toast("Disconnected — imported progress kept locally");
+});
+$("clearProfile").addEventListener("click",()=>{
+  PROFILE=emptyProfile();clearTrackerToken();
+  try{safeLocal()?.removeItem(profileStoreKey);safeLocal()?.removeItem(legacyProgressStoreKey)}catch(e){}
+  closeModals();updateProfileUI();renderTaskList();renderPlanner();toast("PMC profile cleared");
+});
+$("exportProgress").addEventListener("click",()=>{
+  const payload={version:2,exportedAt:new Date().toISOString(),profile:{...PROFILE,source:PROFILE.source==="tarkovtracker"?"tarkovtracker-snapshot":PROFILE.source}};
+  copyText(JSON.stringify(payload,null,2),"PMC profile backup copied");
+});
+$("importProgress").addEventListener("click",()=>{
+  $("importProgressText").value="";$("importProgressModal").classList.add("open");
+});
+$("confirmImportProgress").addEventListener("click",()=>{
+  try{
+    const p=JSON.parse($("importProgressText").value);
+    const raw=p.profile||p;
+    PROFILE={...emptyProfile(),
+      pmcName:clean(raw.pmcName||""),
+      level:Math.max(0,Math.min(79,Number(raw.level)||0)),
+      faction:clean(raw.faction||""),
+      gameMode:clean(raw.gameMode||""),
+      gameEdition:raw.gameEdition??null,
+      source:"manual",
+      hideCompleted:!!raw.hideCompleted,
+      completed:Array.isArray(raw.completed)?raw.completed.filter(id=>byId[id]):[],
+      failed:Array.isArray(raw.failed)?raw.failed.filter(id=>byId[id]):[],
+      lastSync:new Date().toISOString()
+    };
+    saveProfile();closeModals();updateProfileUI();renderTaskList();renderPlanner();toast("PMC profile imported");
+  }catch(e){toast("That RaidIQ profile export is not valid JSON")}
+});
+$("buildPersonalRaid").addEventListener("click",e=>{
+  const ids=clean(e.currentTarget.dataset.tasks).split(",").filter(Boolean);
+  const map=e.currentTarget.dataset.map;
+  selected.clear();ids.forEach(id=>{if(byId[id])selected.add(id)});
+  renderPlanner();
+  if(map&&ids.length)buildRaid(map);
+});
 $("mobileTasksBtn").addEventListener("click",openTaskDrawer);
 $("mobileTasksNav").addEventListener("click",openTaskDrawer);
 $("closeTaskDrawer").addEventListener("click",closeTaskDrawer);
@@ -1034,7 +2144,13 @@ $("mobileRaidNav").addEventListener("click",()=>{
     window.scrollTo({top:0,behavior:"smooth"});
     return;
   }
-  const map=recommendedMapForSelection();
+  let map=recommendedMapForSelection();
+  if(!map){
+    const rec=personalRaidRecommendation();
+    if(rec){
+      selected.clear();rec.chosen.forEach(t=>selected.add(t.id));renderPlanner();map=rec.map;
+    }
+  }
   if(map)buildRaid(map);
 });
 window.addEventListener("resize",()=>{
