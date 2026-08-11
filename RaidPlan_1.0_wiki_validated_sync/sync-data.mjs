@@ -328,25 +328,43 @@ function applyWikiValidation(task, wiki) {
       continue;
     }
 
-    // If the wiki objective list is clearly available, require a reasonable match.
-    // This removes stale structured objectives which no longer exist in the current page.
-    if (currentMatch.score >= 0.45) {
+    // If the current Wiki wording matches, use it.
+    if (currentMatch.score >= 0.40) {
       kept.push({...obj, text:currentMatch.text || obj.text});
       continue;
     }
 
-    // Avoid deleting generic survival/optional objectives too aggressively.
-    if (obj.category==="Survive" || /^optional\b/i.test(obj.text)) {
-      kept.push(obj);
-      continue;
-    }
-
-    removed.push({source:obj.text,wiki:null,reason:"not-present-in-current-wiki-objectives",score:currentMatch.score});
+    // IMPORTANT: absence/wording mismatch alone is NOT enough to delete an objective.
+    // Keep the structured Tarkov.dev objective and record the mismatch for audit.
+    // Only explicit Wiki strike-through currently removes an objective automatically.
+    kept.push({...obj, wikiMismatch:{
+      bestWikiText:currentMatch.text || null,
+      score:currentMatch.score
+    }});
   }
 
-  const cats=uniq(kept.map(x=>x.category).filter(x=>x!=="Other"));
+  // Multiple structured sub-objectives can map to the same visible Wiki objective.
+  // Merge them so the UI doesn't show duplicates, while preserving all requirements.
+  const mergedMap=new Map();
+  for(const o of kept){
+    const key=normObjective(o.text);
+    if(!mergedMap.has(key)){
+      mergedMap.set(key,{...o,
+        requirements:[...(o.requirements||[])],
+        restrictions:[...(o.restrictions||[])],
+        fir:[...(o.fir||[])]
+      });
+    }else{
+      const existing=mergedMap.get(key);
+      existing.requirements.push(...(o.requirements||[]));
+      existing.restrictions.push(...(o.restrictions||[]));
+      existing.fir.push(...(o.fir||[]));
+    }
+  }
+  const merged=[...mergedMap.values()];
+  const cats=uniq(merged.map(x=>x.category).filter(x=>x!=="Other"));
   const requirements=[],restrictions=[],fir=[];
-  for (const o of kept) {
+  for (const o of merged) {
     requirements.push(...o.requirements);
     restrictions.push(...o.restrictions);
     fir.push(...o.fir);
@@ -355,13 +373,18 @@ function applyWikiValidation(task, wiki) {
   const finalTask={
     id:task.id,name:task.name,trader:task.trader,maps:task.maps,
     type:cats.length?cats.slice(0,3).join(" / "):"Other",
-    objectives:kept.map(o=>o.text),
+    objectives:merged.map(o=>o.text),
     requirements,restrictions,fir,
     minLevel:task.minLevel,wikiLink:task.wikiLink,
     source:"json.tarkov.dev + Tarkov Wiki",
     wikiRevision:wiki.revid
   };
-  return { task:finalTask,status:"validated",removed,wikiCurrent:parsed.current,wikiRemoved:parsed.removed };
+  const mismatches=merged.filter(o=>o.wikiMismatch).map(o=>({
+    source:o.text,
+    wiki:o.wikiMismatch.bestWikiText,
+    score:o.wikiMismatch.score
+  }));
+  return { task:finalTask,status:"validated",removed,mismatches,wikiCurrent:parsed.current,wikiRemoved:parsed.removed };
 }
 
 async function pooled(items, worker, concurrency=5) {
@@ -417,6 +440,7 @@ for (let i=0;i<rawTasks.length;i++) {
     audit.push({
       task:original.name,status:r.status,wikiTitle:r.wikiTitle,revid:r.revid,
       removedObjectives:r.removed,
+      wordingMismatches:r.mismatches||[],
       struckObjectives:r.wikiRemoved
     });
   }
@@ -443,6 +467,7 @@ await writeFile("data-audit.json",JSON.stringify({
     tasks:finalTasks.length,
     tasksWithCorrections:changed.length,
     removedObjectives:changed.reduce((n,x)=>n+x.removedObjectives.length,0),
+    wordingMismatches:audit.reduce((n,x)=>n+(x.wordingMismatches?.length||0),0),
     wikiErrors:wikiErrors.length,
     unparsedWikiPages:unparsed.length
   },
