@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-11T10:36:21.248Z",
+  "generatedAt": "2026-08-11T10:42:53.107Z",
   "summary": {
     "tasks": 510,
     "tasksWithCorrections": 1,
     "removedObjectives": 1,
-    "wordingMismatches": 52,
-    "wikiErrors": 120,
-    "unparsedWikiPages": 2
+    "wordingMismatches": 130,
+    "wikiErrors": 97,
+    "unparsedWikiPages": 1
   },
   "corrections": [
     {
@@ -90,11 +90,6 @@
       "error": "The page you specified doesn't exist."
     },
     {
-      "task": "Easy Money - Part 1 [PVP ZONE]",
-      "status": "wiki-error",
-      "error": "Bad title \"Easy Money - Part 1 [PVP ZONE]\"."
-    },
-    {
       "task": "The Bunker - Part 1",
       "status": "wiki-error",
       "error": "The page you specified doesn't exist."
@@ -103,106 +98,6 @@
       "task": "Gunsmith - Part 5",
       "status": "wiki-error",
       "error": "The page you specified doesn't exist."
-    },
-    {
-      "task": "Balancing - Part 1 [PVP ZONE]",
-      "status": "wiki-error",
-      "error": "Bad title \"Balancing - Part 1 [PVP ZONE]\"."
-    },
-    {
-      "task": "Create a Distraction - Part 1 [PVP ZONE]",
-      "status": "wiki-error",
-      "error": "Bad title \"Create a Distraction - Part 1 [PVP ZONE]\"."
-    },
-    {
-      "task": "Balancing - Part 2 [PVP ZONE]",
-      "status": "wiki-error",
-      "error": "Bad title \"Balancing - Part 2 [PVP ZONE]\"."
-    },
-    {
-      "task": "Easy Money - Part 2 [PVP ZONE]",
-      "status": "wiki-error",
-      "error": "Bad title \"Easy Money - Part 2 [PVP ZONE]\"."
-    },
-    {
-      "task": "To Great Heights! - Part 4 [PVP ZONE]",
-      "status": "wiki-error",
-      "error": "Bad title \"To Great Heights! - Part 4 [PVP ZONE]\"."
-    },
-    {
-      "task": "Create a Distraction - Part 2 [PVP ZONE]",
-      "status": "wiki-error",
-      "error": "Bad title \"Create a Distraction - Part 2 [PVP ZONE]\"."
-    },
-    {
-      "task": "Between Two Fires [PVP ZONE]",
-      "status": "wiki-error",
-      "error": "Bad title \"Between Two Fires [PVP ZONE]\"."
-    },
-    {
-      "task": "Against the Conscience - Part 2 [PVP ZONE]",
-      "status": "wiki-error",
-      "error": "Bad title \"Against the Conscience - Part 2 [PVP ZONE]\"."
-    },
-    {
-      "task": "Surprise [PVP ZONE]",
-      "status": "wiki-error",
-      "error": "Bad title \"Surprise [PVP ZONE]\"."
-    },
-    {
-      "task": "To Great Heights! - Part 5 [PVP ZONE]",
-      "status": "wiki-error",
-      "error": "Bad title \"To Great Heights! - Part 5 [PVP ZONE]\"."
-    },
-    {
-      "task": "Decisions, Decisions [PVP ZONE]",
-      "status": "wiki-error",
-      "error": "Bad title \"Decisions, Decisions [PVP ZONE]\"."
-    },
-    {
-      "task": "To Great Heights! - Part 1 [PVP ZONE]",
-      "status": "wiki-error",
-      "error": "Bad title \"To Great Heights! - Part 1 [PVP ZONE]\"."
-    },
-    {
-      "task": "To Great Heights! - Part 2 [PVP ZONE]",
-      "status": "wiki-error",
-      "error": "Bad title \"To Great Heights! - Part 2 [PVP ZONE]\"."
-    },
-    {
-      "task": "To Great Heights! - Part 3 [PVP ZONE]",
-      "status": "wiki-error",
-      "error": "Bad title \"To Great Heights! - Part 3 [PVP ZONE]\"."
-    },
-    {
-      "task": "Arena Business [PVP ZONE]",
-      "status": "wiki-error",
-      "error": "Bad title \"Arena Business [PVP ZONE]\"."
-    },
-    {
-      "task": "Professional Fitness - Part 1 [PVP ZONE]",
-      "status": "wiki-error",
-      "error": "Bad title \"Professional Fitness - Part 1 [PVP ZONE]\"."
-    },
-    {
-      "task": "Professional Fitness - Part 2 [PVP ZONE]",
-      "status": "wiki-error",
-      "error": "Bad title \"Professional Fitness - Part 2 [PVP ZONE]\"."
-    },
-    {
-      "task": "To Great Heights! - Part 6 [PVP ZONE]",
-      "status": "wiki-error",
-      "error": "Bad title \"To Great Heights! - Part 6 [PVP ZONE]\"."
-    },
-    {
-      "task": "Hold the Lead [PVP ZONE]",
-      "status": "wiki-error",
-      "error": "Bad title \"Hold the Lead [PVP ZONE]\"."
-    },
-    {
-      "task": "Against the Conscience - Part 1 [PVP ZONE]",
-      "status": "wiki-error",
-      "error": "Bad title \"Against the Conscience - Part 1 [PVP ZONE]\"."
     },
     {
       "task": "Trust Regain",
@@ -570,19 +465,9 @@
       "error": "The page you specified doesn't exist."
     },
     {
-      "task": "Surprise Gift [PVP ZONE]",
-      "status": "wiki-error",
-      "error": "Bad title \"Surprise Gift [PVP ZONE]\"."
-    },
-    {
       "task": "Test Drive - Part 6",
       "status": "wiki-error",
       "error": "The page you specified doesn't exist."
-    },
-    {
-      "task": "Postponed Reward [PVP ZONE]",
-      "status": "wiki-error",
-      "error": "Bad title \"Postponed Reward [PVP ZONE]\"."
     },
     {
       "task": "Gunsmith - Part 19",
@@ -631,15 +516,6 @@
     }
   ],
   "unparsed": [
-    {
-      "task": "Reserve",
-      "status": "unparsed",
-      "wikiTitle": "Reserve",
-      "revid": 346590,
-      "removedObjectives": [],
-      "wordingMismatches": [],
-      "struckObjectives": []
-    },
     {
       "task": "Immunity",
       "status": "unparsed",
