@@ -1,0 +1,12 @@
+[build]
+  publish = "."
+
+[[headers]]
+  for = "/tasks.snapshot.json"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/data-audit.json"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"

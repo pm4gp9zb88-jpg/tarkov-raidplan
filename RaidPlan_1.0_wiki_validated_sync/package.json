@@ -1,0 +1,9 @@
+{
+  "name": "raidplan",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "sync:data": "node sync-data.mjs"
+  }
+}

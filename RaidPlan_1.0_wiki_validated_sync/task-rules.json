@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "description": "RaidPlan manual overrides. Automatic rules are generated from task objective data; add rare exceptions here when the source data cannot express a conflict cleanly.",
+  "taskOverrides": {},
+  "slotHints": {
+    "armor": [
+      "body armor",
+      "body armour",
+      "paca",
+      "untar armor",
+      "untar armour",
+      "korund",
+      "zhuk",
+      "fort armor",
+      "fort armour",
+      "6b13",
+      "6b23",
+      "6b43"
+    ],
+    "rig": [
+      "tactical rig",
+      "chest rig",
+      "scav vest",
+      "security vest",
+      "bank robber"
+    ],
+    "headwear": [
+      "helmet",
+      "ushanka",
+      "cap",
+      "hat",
+      "beanie"
+    ],
+    "facecover": [
+      "balaclava",
+      "mask",
+      "respirator",
+      "shemagh"
+    ],
+    "eyewear": [
+      "glasses",
+      "goggles",
+      "eyewear"
+    ],
+    "earpiece": [
+      "headset",
+      "earpiece",
+      "comtac",
+      "sordin",
+      "razor"
+    ]
+  }
+}
