@@ -366,17 +366,39 @@ function wikiPageCandidate(task){
   }
   return task.name.replace(/\s*\[PVP ZONE\]\s*$/i,"").trim();
 }
-async function fetchWikiPage(task) {
-  const pageName=wikiPageCandidate(task);
+async function fetchWikiPageByName(pageName) {
   const params = new URLSearchParams({
     action:"parse", format:"json", origin:"*",
     page:pageName, prop:"text|revid", redirects:"1"
   });
-  const r = await fetch(`${FANDOM_API}?${params}`, { headers:{ "User-Agent":"RaidPlan/1.0 task-validation" }});
+  const r = await fetch(`${FANDOM_API}?${params}`, { headers:{ "User-Agent":"RaidIQ/1.17 task-validation" }});
   if (!r.ok) throw new Error(`wiki ${r.status}`);
   const j = await r.json();
   if (j.error) throw new Error(j.error.info || "wiki parse error");
   return { html:j.parse?.text?.["*"] || "", revid:j.parse?.revid || null, title:j.parse?.title || pageName };
+}
+function wikiHasObjectivesSection(html){
+  return /<span[^>]+id=["']Objectives["'][^>]*>/i.test(String(html||""));
+}
+async function fetchWikiPage(task) {
+  const pageName=wikiPageCandidate(task);
+  const first=await fetchWikiPageByName(pageName);
+  if(wikiHasObjectivesSection(first.html))return first;
+
+  // Some Tarkov names collide with skill/item pages. Example: the upstream
+  // Immunity wiki link resolves to the skill page, while the quest is
+  // "Immunity (quest)". Retry the conventional disambiguated quest title.
+  const baseName=task.name.replace(/\s*\[PVP ZONE\]\s*$/i,"").trim();
+  if(baseName && !/\(quest\)$/i.test(pageName)){
+    try{
+      const second=await fetchWikiPageByName(`${baseName} (quest)`);
+      if(wikiHasObjectivesSection(second.html))return second;
+    }catch(e){
+      // Keep the first valid page and let the conservative structured-data
+      // fallback handle it below.
+    }
+  }
+  return first;
 }
 function extractObjectivesSection(html) {
   // Find the Objectives heading and stop at the next h2.
@@ -520,10 +542,44 @@ function mergeTaskRequirements(records){
   return out;
 }
 
+function publicTaskFromNormalized(task, source="json.tarkov.dev", extras={}) {
+  const fallbackMeta=taskRaidMeta(task.objectiveRecords);
+  const requirements=[],restrictions=[],fir=[];
+  for(const o of fallbackMeta.objectiveRecords){
+    requirements.push(...(o.requirements||[]));
+    restrictions.push(...(o.restrictions||[]));
+    fir.push(...(o.fir||[]));
+  }
+  const cats=uniq(fallbackMeta.objectiveRecords.map(o=>o.category).filter(x=>x!=="Other"));
+  return {
+    id:task.id,name:task.name,trader:task.trader,
+    maps:fallbackMeta.mapBoundMaps.length?fallbackMeta.mapBoundMaps:(fallbackMeta.hasAnyRaidObjectives?[RAID_MAP_ANY]:[]),
+    type:cats.slice(0,3).join(" / ")||"Other",
+    objectives:fallbackMeta.objectiveRecords.map(o=>o.text),
+    objectiveDetails:publicObjectiveDetails(fallbackMeta.objectiveRecords),
+    requirements:mergeTaskRequirements(requirements),
+    restrictions:mergeRecordsByKey(restrictions),
+    fir,
+    minLevel:task.minLevel,wikiLink:task.wikiLink,
+    taskRequirements:task.taskRequirements||[],
+    raidRelevant:fallbackMeta.raidRelevant,raidClass:fallbackMeta.raidClass,
+    mapBoundMaps:fallbackMeta.mapBoundMaps,hasAnyRaidObjectives:fallbackMeta.hasAnyRaidObjectives,
+    source,
+    ...extras
+  };
+}
+
 function applyWikiValidation(task, wiki) {
   const parsed=extractObjectivesSection(wiki.html);
   if(!parsed || !parsed.current.length){
-    return {task,status:"unparsed",removed:[],mismatches:[],wikiCurrent:[],wikiRemoved:[]};
+    return {
+      task:publicTaskFromNormalized(
+        task,
+        "json.tarkov.dev (wiki objective section unavailable)",
+        wiki?.revid?{wikiRevision:wiki.revid}:{}
+      ),
+      status:"unparsed",removed:[],mismatches:[],wikiCurrent:[],wikiRemoved:[]
+    };
   }
 
   const currentWiki=uniq(parsed.current.map(cleanWikiObjectiveText).filter(Boolean));
@@ -650,6 +706,9 @@ function runDataQA(allTasks, raidTasks, nonRaidTasks) {
   check(new Set(ids).size===ids.length,"critical","DUPLICATE_TASK_ID",null,"Task IDs must be unique.");
 
   for(const t of raidTasks){
+    check(Array.isArray(t.objectives),"critical","PUBLIC_OBJECTIVES_MISSING",t.name,"Final raid task is missing its public objectives array.");
+    check(Array.isArray(t.objectiveDetails),"critical","PUBLIC_OBJECTIVE_DETAILS_MISSING",t.name,"Final raid task is missing its public objectiveDetails array; an internal normalized task may have leaked into the snapshot.");
+    check(!Object.prototype.hasOwnProperty.call(t,"objectiveRecords"),"critical","INTERNAL_TASK_SHAPE_LEAK",t.name,"Internal objectiveRecords leaked into the public task snapshot.");
     check(!!t.raidRelevant,"critical","NON_RAID_IN_RAID_POOL",t.name,"Raid task pool contains a task classified as non-raid.");
     check((t.objectiveDetails||[]).some(o=>o.raidRequired!==false),"critical","NO_RAID_OBJECTIVE",t.name,"Raid-plannable task has no raid-required objective.");
 
@@ -768,23 +827,12 @@ const allFinalTasks=[], audit=[];
 for (let i=0;i<rawTasks.length;i++) {
   const original=rawTasks[i],r=validated[i];
   if (!r || r.error) {
-    // Conservative fallback: retain upstream task if wiki validation failed.
-    const req=[],res=[],fir=[];
-    const fallbackMeta=taskRaidMeta(original.objectiveRecords);
-    for(const o of fallbackMeta.objectiveRecords){req.push(...o.requirements);res.push(...o.restrictions);fir.push(...o.fir)}
-    const cats=uniq(fallbackMeta.objectiveRecords.map(o=>o.category).filter(x=>x!=="Other"));
-    allFinalTasks.push({
-      id:original.id,name:original.name,trader:original.trader,
-      maps:fallbackMeta.mapBoundMaps.length?fallbackMeta.mapBoundMaps:(fallbackMeta.hasAnyRaidObjectives?[RAID_MAP_ANY]:[]),
-      type:cats.slice(0,3).join(" / ")||"Other",
-      objectives:fallbackMeta.objectiveRecords.map(o=>o.text),
-      objectiveDetails:publicObjectiveDetails(fallbackMeta.objectiveRecords),
-      requirements:mergeTaskRequirements(req),restrictions:res,fir,minLevel:original.minLevel,wikiLink:original.wikiLink,
-      taskRequirements:original.taskRequirements||[],
-      raidRelevant:fallbackMeta.raidRelevant,raidClass:fallbackMeta.raidClass,
-      mapBoundMaps:fallbackMeta.mapBoundMaps,hasAnyRaidObjectives:fallbackMeta.hasAnyRaidObjectives,
-      source:"json.tarkov.dev (wiki validation unavailable)"
-    });
+    // Conservative fallback: retain structured data, but always convert it to
+    // the exact same public snapshot shape used by validated tasks.
+    allFinalTasks.push(publicTaskFromNormalized(
+      original,
+      "json.tarkov.dev (wiki validation unavailable)"
+    ));
     audit.push({task:original.name,status:"wiki-error",error:r?.error||"unknown"});
   } else {
     allFinalTasks.push(r.task);
