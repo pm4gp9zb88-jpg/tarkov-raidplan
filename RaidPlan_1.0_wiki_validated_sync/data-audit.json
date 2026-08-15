@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-08-14T08:53:05.433Z",
+  "generatedAt": "2026-08-15T06:00:12.074Z",
   "summary": {
     "tasks": 436,
     "tasksWithCorrections": 0,
     "removedObjectives": 0,
     "wordingMismatches": 236,
-    "wikiErrors": 11,
+    "wikiErrors": 10,
     "unparsedWikiPages": 0,
     "excludedNonRaidTasks": 81,
     "mapBoundTasks": 342,
@@ -478,11 +478,6 @@
     },
     {
       "task": "Secret Message",
-      "status": "wiki-error",
-      "error": "The page you specified doesn't exist."
-    },
-    {
-      "task": "Hiking",
       "status": "wiki-error",
       "error": "The page you specified doesn't exist."
     }
