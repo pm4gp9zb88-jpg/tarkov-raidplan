@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-15T06:00:12.074Z",
+  "generatedAt": "2026-08-16T06:01:49.450Z",
   "mode": "regular",
   "sources": [
     "json.tarkov.dev",
@@ -17653,7 +17653,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 354220
+      "wikiRevision": 354674
     },
     {
       "id": "5a03153686f77442d90e2171",
@@ -17999,11 +17999,7 @@
         "Locate and inspect the third BMP-2 on Reserve",
         "Mark the third BMP-2 with an MS2000 Marker",
         "Locate and inspect the fourth BMP-2 on Reserve",
-        "Mark the fourth BMP-2 with an MS2000 Marker",
-        "Locate and inspect the first LAV III on Reserve",
-        "Mark the first LAV III with an MS2000 Marker",
-        "Locate and inspect the second LAV III on Reserve",
-        "Locate and inspect the T-90 tank on Reserve"
+        "Mark the fourth BMP-2 with an MS2000 Marker"
       ],
       "objectiveDetails": [
         {
@@ -18077,49 +18073,13 @@
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
-        },
-        {
-          "text": "Locate and inspect the first LAV III on Reserve",
-          "category": "Locate",
-          "maps": [
-            "Reserve"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        },
-        {
-          "text": "Mark the first LAV III with an MS2000 Marker",
-          "category": "Place",
-          "maps": [
-            "Reserve"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        },
-        {
-          "text": "Locate and inspect the second LAV III on Reserve",
-          "category": "Locate",
-          "maps": [
-            "Reserve"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        },
-        {
-          "text": "Locate and inspect the T-90 tank on Reserve",
-          "category": "Locate",
-          "maps": [
-            "Reserve"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
         }
       ],
       "requirements": [
         {
           "kind": "item",
           "name": "MS2000 Marker",
-          "qty": 5,
+          "qty": 4,
           "slot": null,
           "itemId": "",
           "sourceObjective": "Mark the first BMP-2 with an MS2000 Marker"
@@ -18137,7 +18097,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 354301
+      "wikiRevision": 354695
     },
     {
       "id": "639135f286e646067c176a87",
@@ -25555,18 +25515,18 @@
       "maps": [
         "Reserve"
       ],
-      "type": "Survive",
+      "type": "Find / Hand over",
       "objectives": [
-        "Check the first arsenal in the eastern barracks (Black Pawn) on Reserve",
+        "Check the first armory in the eastern barracks (Black Pawn) on Reserve",
         "Check the duty room in the eastern barracks (Black Pawn) on Reserve",
-        "Check the second arsenal in the eastern barracks (Black Pawn) on Reserve",
-        "Check the first arsenal in the southern barracks (White Pawn) on Reserve",
-        "Check the second arsenal in the southern barracks (White Pawn) on Reserve",
-        "Survive and extract from the location"
+        "Check the second armory in the eastern barracks (Black Pawn) on Reserve",
+        "Check the first armory in the southern barracks (White Pawn) on Reserve",
+        "Check the second armory in the southern barracks (White Pawn) on Reserve",
+        "Hand over the gear found in the rooms"
       ],
       "objectiveDetails": [
         {
-          "text": "Check the first arsenal in the eastern barracks (Black Pawn) on Reserve",
+          "text": "Check the first armory in the eastern barracks (Black Pawn) on Reserve",
           "category": "Other",
           "maps": [
             "Reserve"
@@ -25584,7 +25544,7 @@
           "raidRequired": true
         },
         {
-          "text": "Check the second arsenal in the eastern barracks (Black Pawn) on Reserve",
+          "text": "Check the second armory in the eastern barracks (Black Pawn) on Reserve",
           "category": "Other",
           "maps": [
             "Reserve"
@@ -25593,7 +25553,7 @@
           "raidRequired": true
         },
         {
-          "text": "Check the first arsenal in the southern barracks (White Pawn) on Reserve",
+          "text": "Check the first armory in the southern barracks (White Pawn) on Reserve",
           "category": "Other",
           "maps": [
             "Reserve"
@@ -25602,7 +25562,7 @@
           "raidRequired": true
         },
         {
-          "text": "Check the second arsenal in the southern barracks (White Pawn) on Reserve",
+          "text": "Check the second armory in the southern barracks (White Pawn) on Reserve",
           "category": "Other",
           "maps": [
             "Reserve"
@@ -25611,11 +25571,11 @@
           "raidRequired": true
         },
         {
-          "text": "Survive and extract from the location",
-          "category": "Survive",
+          "text": "Hand over the gear found in the rooms",
+          "category": "Find / Hand over",
           "maps": [],
-          "raidClass": "ANY_RAID",
-          "raidRequired": true
+          "raidClass": "NON_RAID",
+          "raidRequired": false
         }
       ],
       "requirements": [],
@@ -25629,9 +25589,9 @@
       "mapBoundMaps": [
         "Reserve"
       ],
-      "hasAnyRaidObjectives": true,
+      "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 354296
+      "wikiRevision": 354687
     },
     {
       "id": "67a0967c003a9986cb0f5ac1",
@@ -32019,7 +31979,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 354233
+      "wikiRevision": 354676
     },
     {
       "id": "64f731ab83cfca080a361e42",
