@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-08-16T06:01:49.450Z",
+  "generatedAt": "2026-08-17T07:59:53.673Z",
   "summary": {
     "tasks": 436,
     "tasksWithCorrections": 0,
     "removedObjectives": 0,
-    "wordingMismatches": 235,
-    "wikiErrors": 10,
+    "wordingMismatches": 231,
+    "wikiErrors": 8,
     "unparsedWikiPages": 0,
     "excludedNonRaidTasks": 81,
     "mapBoundTasks": 342,
@@ -458,16 +458,6 @@
     },
     {
       "task": "Neuanfang",
-      "status": "wiki-error",
-      "error": "The page you specified doesn't exist."
-    },
-    {
-      "task": "Gendarmerie - Mall Cop",
-      "status": "wiki-error",
-      "error": "The page you specified doesn't exist."
-    },
-    {
-      "task": "Gendarmerie - Tickets, Please",
       "status": "wiki-error",
       "error": "The page you specified doesn't exist."
     },

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-16T06:01:49.450Z",
+  "generatedAt": "2026-08-17T07:59:53.673Z",
   "mode": "regular",
   "sources": [
     "json.tarkov.dev",
@@ -19495,7 +19495,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 354557
+      "wikiRevision": 354771
     },
     {
       "id": "69e5583240c3e6c8ba0edbd5",
@@ -20594,11 +20594,11 @@
       ],
       "type": "Kill",
       "objectives": [
-        "Eliminate any target at the stylobate building while using Pistols on Streets of Tarkov"
+        "Eliminate any 15 targets at the Stylobate building while using Pistols on Streets of Tarkov"
       ],
       "objectiveDetails": [
         {
-          "text": "Eliminate any target at the stylobate building while using Pistols on Streets of Tarkov",
+          "text": "Eliminate any 15 targets at the Stylobate building while using Pistols on Streets of Tarkov",
           "category": "Kill",
           "maps": [
             "Streets of Tarkov"
@@ -20614,7 +20614,7 @@
           "qty": 1,
           "slot": "weapon",
           "itemId": "",
-          "sourceObjective": "Eliminate any target at the stylobate building while using Pistols on Streets of Tarkov"
+          "sourceObjective": "Eliminate any 15 targets at the Stylobate building while using Pistols on Streets of Tarkov"
         }
       ],
       "restrictions": [],
@@ -20635,7 +20635,8 @@
         "Streets of Tarkov"
       ],
       "hasAnyRaidObjectives": false,
-      "source": "json.tarkov.dev (wiki validation unavailable)"
+      "source": "json.tarkov.dev + Tarkov Wiki",
+      "wikiRevision": 354833
     },
     {
       "id": "64e7b9a4aac4cd0a726562cb",
@@ -20646,11 +20647,11 @@
       ],
       "type": "Kill",
       "objectives": [
-        "Eliminate any target at the Rodina cinema while using SMGs on Streets of Tarkov"
+        "Eliminate any 25 targets at the Rodina cinema while using SMGs on Streets of Tarkov"
       ],
       "objectiveDetails": [
         {
-          "text": "Eliminate any target at the Rodina cinema while using SMGs on Streets of Tarkov",
+          "text": "Eliminate any 25 targets at the Rodina cinema while using SMGs on Streets of Tarkov",
           "category": "Kill",
           "maps": [
             "Streets of Tarkov"
@@ -20666,7 +20667,7 @@
           "qty": 1,
           "slot": "weapon",
           "itemId": "",
-          "sourceObjective": "Eliminate any target at the Rodina cinema while using SMGs on Streets of Tarkov"
+          "sourceObjective": "Eliminate any 25 targets at the Rodina cinema while using SMGs on Streets of Tarkov"
         }
       ],
       "restrictions": [],
@@ -20687,7 +20688,8 @@
         "Streets of Tarkov"
       ],
       "hasAnyRaidObjectives": false,
-      "source": "json.tarkov.dev (wiki validation unavailable)"
+      "source": "json.tarkov.dev + Tarkov Wiki",
+      "wikiRevision": 354834
     },
     {
       "id": "6574e0dedc0d635f633a5805",
@@ -24462,7 +24464,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 354018
+      "wikiRevision": 354889
     },
     {
       "id": "5ae449b386f77446d8741719",
@@ -24589,7 +24591,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 354083
+      "wikiRevision": 354859
     },
     {
       "id": "5ae4493486f7744efa289417",
@@ -27350,60 +27352,48 @@
       "name": "Bullshit",
       "trader": "Skier",
       "maps": [
-        "Customs"
+        "Lighthouse"
       ],
       "type": "Kill",
       "objectives": [
-        "Obtain the False flash drive from the specified spot on Customs",
-        "Stash the False flash drive in the trash opposite of the stairs on the 3rd floor of the dorm on Customs",
-        "Stash 1 SV-98 sniper rifle in the trash opposite of the stairs on the 3rd floor of the dorm on Customs",
-        "Stash 1 Roler Submariner gold wrist watch in the trash opposite of the stairs on the 3rd floor of the dorm on Customs",
-        "You must not kill any Scavs on Customs while the task is active"
+        "Stash an AXMC sniper rifle in the trash bags at the chalet tennis court on Lighthouse",
+        "Stash a Roler Submariner gold wrist watch in the trash bags at the chalet tennis court on Lighthouse",
+        "Stash a Military flash drive in the trash bags at the chalet tennis court on Lighthouse",
+        "You must not kill any Rogues while the task is active"
       ],
       "objectiveDetails": [
         {
-          "text": "Obtain the False flash drive from the specified spot on Customs",
+          "text": "Stash an AXMC sniper rifle in the trash bags at the chalet tennis court on Lighthouse",
           "category": "Other",
           "maps": [
-            "Customs"
+            "Lighthouse"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
         },
         {
-          "text": "Stash the False flash drive in the trash opposite of the stairs on the 3rd floor of the dorm on Customs",
+          "text": "Stash a Roler Submariner gold wrist watch in the trash bags at the chalet tennis court on Lighthouse",
           "category": "Other",
           "maps": [
-            "Customs"
+            "Lighthouse"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
         },
         {
-          "text": "Stash 1 SV-98 sniper rifle in the trash opposite of the stairs on the 3rd floor of the dorm on Customs",
+          "text": "Stash a Military flash drive in the trash bags at the chalet tennis court on Lighthouse",
           "category": "Other",
           "maps": [
-            "Customs"
+            "Lighthouse"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
         },
         {
-          "text": "Stash 1 Roler Submariner gold wrist watch in the trash opposite of the stairs on the 3rd floor of the dorm on Customs",
-          "category": "Other",
-          "maps": [
-            "Customs"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        },
-        {
-          "text": "You must not kill any Scavs on Customs while the task is active",
+          "text": "You must not kill any Rogues while the task is active",
           "category": "Kill",
-          "maps": [
-            "Customs"
-          ],
-          "raidClass": "MAP_BOUND",
+          "maps": [],
+          "raidClass": "ANY_RAID",
           "raidRequired": true
         }
       ],
@@ -27416,11 +27406,11 @@
       "raidRelevant": true,
       "raidClass": "MAP_BOUND",
       "mapBoundMaps": [
-        "Customs"
+        "Lighthouse"
       ],
-      "hasAnyRaidObjectives": false,
+      "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 353836
+      "wikiRevision": 354879
     },
     {
       "id": "657315e270bb0b8dba00cc48",
@@ -29861,7 +29851,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 354464
+      "wikiRevision": 354830
     },
     {
       "id": "669fa39c64ea11e84c0642a6",
@@ -31180,7 +31170,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 353920
+      "wikiRevision": 354828
     },
     {
       "id": "60896e28e4a85c72ef3fa301",
