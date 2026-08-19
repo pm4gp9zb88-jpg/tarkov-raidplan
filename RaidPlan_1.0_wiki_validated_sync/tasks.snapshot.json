@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-18T06:02:34.877Z",
+  "generatedAt": "2026-08-19T06:04:54.068Z",
   "mode": "regular",
   "sources": [
     "json.tarkov.dev",
@@ -9,7 +9,7 @@
   "excludedNonRaidCount": 81,
   "qa": {
     "status": "pass",
-    "checkCount": 3666,
+    "checkCount": 3658,
     "criticalCount": 0,
     "warningCount": 0
   },
@@ -749,19 +749,6 @@
         }
       ]
     },
-    "6613f307fca4f2f386029409": {
-      "name": "Drip-Out - Part 2",
-      "raidRelevant": true,
-      "taskRequirements": [
-        {
-          "taskId": "65734c186dc1e402c80dc19e",
-          "statuses": [
-            "active",
-            "complete"
-          ]
-        }
-      ]
-    },
     "666314b0acf8442f8b0531a1": {
       "name": "Hell on Earth - Part 1",
       "raidRelevant": false,
@@ -994,7 +981,6 @@
         {
           "taskId": "5bc47dbf86f7741ee74e93b9",
           "statuses": [
-            "active",
             "complete"
           ]
         }
@@ -1090,6 +1076,30 @@
       "taskRequirements": [
         {
           "taskId": "5d25e29d86f7740a22516326",
+          "statuses": [
+            "complete"
+          ]
+        }
+      ]
+    },
+    "6391372c8ba6894d155e77d7": {
+      "name": "Broadcast - Part 4",
+      "raidRelevant": true,
+      "taskRequirements": [
+        {
+          "taskId": "63a511ea30d85e10e375b045",
+          "statuses": [
+            "complete"
+          ]
+        }
+      ]
+    },
+    "64ee99639878a0569d6ec8c9": {
+      "name": "Broadcast - Part 5",
+      "raidRelevant": true,
+      "taskRequirements": [
+        {
+          "taskId": "6391372c8ba6894d155e77d7",
           "statuses": [
             "complete"
           ]
@@ -1222,18 +1232,6 @@
         }
       ]
     },
-    "639136d68ba6894d155e77cf": {
-      "name": "Green Corridor",
-      "raidRelevant": true,
-      "taskRequirements": [
-        {
-          "taskId": "5a27bafb86f7741c73584017",
-          "statuses": [
-            "complete"
-          ]
-        }
-      ]
-    },
     "59c50c8886f7745fed3193bf": {
       "name": "The Punisher - Part 3",
       "raidRelevant": true,
@@ -1325,18 +1323,6 @@
         },
         {
           "taskId": "5ae4495086f77443c122bc40",
-          "statuses": [
-            "complete"
-          ]
-        }
-      ]
-    },
-    "65733403eefc2c312a759ddb": {
-      "name": "Developer's Secrets - Part 1",
-      "raidRelevant": true,
-      "taskRequirements": [
-        {
-          "taskId": "639135e8c115f907b14700aa",
           "statuses": [
             "complete"
           ]
@@ -1507,6 +1493,11 @@
       "raidRelevant": true,
       "taskRequirements": []
     },
+    "6613f3007f6666d56807c929": {
+      "name": "Drip-Out - Part 1",
+      "raidRelevant": true,
+      "taskRequirements": []
+    },
     "66151401efb0539ae10875ae": {
       "name": "Drip-Out - Part 1",
       "raidRelevant": true,
@@ -1516,30 +1507,6 @@
       "name": "Know Your Place!",
       "raidRelevant": true,
       "taskRequirements": []
-    },
-    "6391372c8ba6894d155e77d7": {
-      "name": "Broadcast - Part 4",
-      "raidRelevant": true,
-      "taskRequirements": [
-        {
-          "taskId": "63a511ea30d85e10e375b045",
-          "statuses": [
-            "complete"
-          ]
-        }
-      ]
-    },
-    "64ee99639878a0569d6ec8c9": {
-      "name": "Broadcast - Part 5",
-      "raidRelevant": true,
-      "taskRequirements": [
-        {
-          "taskId": "6391372c8ba6894d155e77d7",
-          "statuses": [
-            "complete"
-          ]
-        }
-      ]
     },
     "5ae3280386f7742a41359364": {
       "name": "Gunsmith - AS VAL",
@@ -1748,19 +1715,6 @@
         {
           "taskId": "59ca29fb86f77445ab465c87",
           "statuses": [
-            "complete"
-          ]
-        }
-      ]
-    },
-    "6179b5b06e9dd54ac275e409": {
-      "name": "Our Own Land",
-      "raidRelevant": true,
-      "taskRequirements": [
-        {
-          "taskId": "59ca29fb86f77445ab465c87",
-          "statuses": [
-            "active",
             "complete"
           ]
         }
@@ -2063,17 +2017,15 @@
     "5e381b0286f77420e3417a74": {
       "name": "Textile - Part 1",
       "raidRelevant": true,
-      "taskRequirements": [
-        {
-          "taskId": "5ae4497b86f7744cf402ed00",
-          "statuses": [
-            "complete"
-          ]
-        }
-      ]
+      "taskRequirements": []
     },
     "5e383a6386f77465910ce1f3": {
       "name": "Textile - Part 1",
+      "raidRelevant": true,
+      "taskRequirements": []
+    },
+    "6613f307fca4f2f386029409": {
+      "name": "Drip-Out - Part 2",
       "raidRelevant": true,
       "taskRequirements": []
     },
@@ -2110,10 +2062,9 @@
           ]
         },
         {
-          "taskId": "597a0f5686f774273b74f676",
+          "taskId": "597a0e5786f77426d66c0636",
           "statuses": [
-            "complete",
-            "failed"
+            "complete"
           ]
         },
         {
@@ -2236,24 +2187,17 @@
       "raidRelevant": false,
       "taskRequirements": []
     },
+    "67af4c169d95ad16e004fd86": {
+      "name": "Safety Guarantee",
+      "raidRelevant": false,
+      "taskRequirements": []
+    },
     "60effd818b669d08a35bfad5": {
       "name": "The Choice",
       "raidRelevant": false,
       "taskRequirements": [
         {
           "taskId": "59ca2eb686f77445a80ed049",
-          "statuses": [
-            "complete"
-          ]
-        }
-      ]
-    },
-    "67af4c169d95ad16e004fd86": {
-      "name": "Safety Guarantee",
-      "raidRelevant": false,
-      "taskRequirements": [
-        {
-          "taskId": "67af4c1405c58dc6f7056667",
           "statuses": [
             "complete"
           ]
@@ -2289,7 +2233,7 @@
       "raidRelevant": false,
       "taskRequirements": [
         {
-          "taskId": "67af4c1991ee75c6d7060a16",
+          "taskId": "67af4c1cc0e59d55e2010b97",
           "statuses": [
             "complete"
           ]
@@ -2301,19 +2245,7 @@
       "raidRelevant": false,
       "taskRequirements": [
         {
-          "taskId": "67af4c1a6c3ebfd8e6034916",
-          "statuses": [
-            "complete"
-          ]
-        }
-      ]
-    },
-    "67af4c1d8c9482eca103e477": {
-      "name": "Consolation Prize",
-      "raidRelevant": true,
-      "taskRequirements": [
-        {
-          "taskId": "67af4c1cc0e59d55e2010b97",
+          "taskId": "67af4c169d95ad16e004fd86",
           "statuses": [
             "complete"
           ]
@@ -3061,6 +2993,11 @@
       "raidRelevant": false,
       "taskRequirements": []
     },
+    "6179b5b06e9dd54ac275e409": {
+      "name": "Our Own Land",
+      "raidRelevant": true,
+      "taskRequirements": []
+    },
     "6179b5eabca27a099552e052": {
       "name": "Counteraction",
       "raidRelevant": true,
@@ -3257,6 +3194,11 @@
     },
     "639135f286e646067c176a87": {
       "name": "Revision - Streets of Tarkov",
+      "raidRelevant": true,
+      "taskRequirements": []
+    },
+    "639136d68ba6894d155e77cf": {
+      "name": "Green Corridor",
       "raidRelevant": true,
       "taskRequirements": []
     },
@@ -3477,6 +3419,11 @@
       "raidRelevant": true,
       "taskRequirements": []
     },
+    "65733403eefc2c312a759ddb": {
+      "name": "Corporate Perks",
+      "raidRelevant": true,
+      "taskRequirements": []
+    },
     "6573382e557ff128bf3da536": {
       "name": "The Secret to Productivity",
       "raidRelevant": true,
@@ -3513,19 +3460,6 @@
       "name": "No Swiping",
       "raidRelevant": true,
       "taskRequirements": []
-    },
-    "6613f3007f6666d56807c929": {
-      "name": "Drip-Out - Part 1",
-      "raidRelevant": true,
-      "taskRequirements": [
-        {
-          "taskId": "5b478d0f86f7744d190d91b5",
-          "statuses": [
-            "active",
-            "complete"
-          ]
-        }
-      ]
     },
     "66631489acf8442f8b05319f": {
       "name": "Friend Among Strangers",
@@ -4151,6 +4085,11 @@
         }
       ]
     },
+    "67af4c1d8c9482eca103e477": {
+      "name": "Consolation Prize",
+      "raidRelevant": true,
+      "taskRequirements": []
+    },
     "68ee1c18b4e5bc9a68018cd7": {
       "name": "Special Order",
       "raidRelevant": false,
@@ -4584,7 +4523,7 @@
       "name": "Hot Wheels",
       "trader": "BTR Driver",
       "maps": [
-        "Any"
+        "Reserve"
       ],
       "type": "Place",
       "objectives": [
@@ -4594,8 +4533,10 @@
         {
           "text": "Locate and mark the spare BTR wheels with an MS2000 Marker",
           "category": "Place",
-          "maps": [],
-          "raidClass": "ANY_RAID",
+          "maps": [
+            "Reserve"
+          ],
+          "raidClass": "MAP_BOUND",
           "raidRequired": true
         }
       ],
@@ -4622,9 +4563,11 @@
         }
       ],
       "raidRelevant": true,
-      "raidClass": "ANY_RAID",
-      "mapBoundMaps": [],
-      "hasAnyRaidObjectives": true,
+      "raidClass": "MAP_BOUND",
+      "mapBoundMaps": [
+        "Reserve"
+      ],
+      "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
       "wikiRevision": 354084
     },
@@ -5106,7 +5049,14 @@
         "Customs",
         "Reserve",
         "Woods",
-        "Lighthouse"
+        "Lighthouse",
+        "Icebreaker",
+        "Ground Zero Tutorial",
+        "Shoreline",
+        "Streets of Tarkov",
+        "Factory",
+        "Interchange",
+        "Night Factory"
       ],
       "type": "Locate / Kill / Survive",
       "objectives": [
@@ -5209,8 +5159,20 @@
         {
           "text": "Eliminate 10 Scavs while completing the other objectives",
           "category": "Kill",
-          "maps": [],
-          "raidClass": "ANY_RAID",
+          "maps": [
+            "Icebreaker",
+            "Woods",
+            "Ground Zero Tutorial",
+            "Shoreline",
+            "Streets of Tarkov",
+            "Factory",
+            "Interchange",
+            "Reserve",
+            "Customs",
+            "Night Factory",
+            "Lighthouse"
+          ],
+          "raidClass": "MAP_BOUND",
           "raidRequired": true
         }
       ],
@@ -5239,9 +5201,16 @@
         "Customs",
         "Reserve",
         "Woods",
-        "Lighthouse"
+        "Lighthouse",
+        "Icebreaker",
+        "Ground Zero Tutorial",
+        "Shoreline",
+        "Streets of Tarkov",
+        "Factory",
+        "Interchange",
+        "Night Factory"
       ],
-      "hasAnyRaidObjectives": true,
+      "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
       "wikiRevision": 352236
     },
@@ -5253,7 +5222,14 @@
         "Customs",
         "Reserve",
         "Woods",
-        "Lighthouse"
+        "Lighthouse",
+        "Icebreaker",
+        "Ground Zero Tutorial",
+        "Shoreline",
+        "Streets of Tarkov",
+        "Factory",
+        "Interchange",
+        "Night Factory"
       ],
       "type": "Locate / Kill / Survive",
       "objectives": [
@@ -5356,8 +5332,20 @@
         {
           "text": "Eliminate 10 Scavs while completing the other objectives",
           "category": "Kill",
-          "maps": [],
-          "raidClass": "ANY_RAID",
+          "maps": [
+            "Icebreaker",
+            "Woods",
+            "Ground Zero Tutorial",
+            "Shoreline",
+            "Streets of Tarkov",
+            "Factory",
+            "Interchange",
+            "Reserve",
+            "Customs",
+            "Night Factory",
+            "Lighthouse"
+          ],
+          "raidClass": "MAP_BOUND",
           "raidRequired": true
         }
       ],
@@ -5386,9 +5374,16 @@
         "Customs",
         "Reserve",
         "Woods",
-        "Lighthouse"
+        "Lighthouse",
+        "Icebreaker",
+        "Ground Zero Tutorial",
+        "Shoreline",
+        "Streets of Tarkov",
+        "Factory",
+        "Interchange",
+        "Night Factory"
       ],
-      "hasAnyRaidObjectives": true,
+      "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
       "wikiRevision": 352236
     },
@@ -6376,7 +6371,7 @@
       "requirements": [],
       "restrictions": [],
       "fir": [],
-      "minLevel": 27,
+      "minLevel": 17,
       "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Broadcast_-_Part_4",
       "taskRequirements": [
         {
@@ -6446,7 +6441,7 @@
       "requirements": [],
       "restrictions": [],
       "fir": [],
-      "minLevel": 27,
+      "minLevel": 17,
       "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Broadcast_-_Part_5",
       "taskRequirements": [
         {
@@ -10356,7 +10351,6 @@
         {
           "taskId": "5bc47dbf86f7741ee74e93b9",
           "statuses": [
-            "active",
             "complete"
           ]
         }
@@ -12519,7 +12513,7 @@
     },
     {
       "id": "65733403eefc2c312a759ddb",
-      "name": "Developer's Secrets - Part 1",
+      "name": "Corporate Perks",
       "trader": "Mechanic",
       "maps": [
         "Streets of Tarkov"
@@ -12542,7 +12536,7 @@
         },
         {
           "text": "Unravel the secret of the firm's success",
-          "category": "Locate",
+          "category": "Other",
           "maps": [
             "Streets of Tarkov"
           ],
@@ -12560,23 +12554,17 @@
       "requirements": [],
       "restrictions": [],
       "fir": [],
-      "minLevel": 23,
-      "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Developer's_Secrets_-_Part_1",
-      "taskRequirements": [
-        {
-          "taskId": "639135e8c115f907b14700aa",
-          "statuses": [
-            "complete"
-          ]
-        }
-      ],
+      "minLevel": 0,
+      "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Corporate_Perks",
+      "taskRequirements": [],
       "raidRelevant": true,
       "raidClass": "MAP_BOUND",
       "mapBoundMaps": [
         "Streets of Tarkov"
       ],
       "hasAnyRaidObjectives": true,
-      "source": "json.tarkov.dev (wiki validation unavailable)"
+      "source": "json.tarkov.dev + Tarkov Wiki",
+      "wikiRevision": 353900
     },
     {
       "id": "6179b3a12153c15e937d52bc",
@@ -14207,7 +14195,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 354183
+      "wikiRevision": 355130
     },
     {
       "id": "67a0970744893b9f3f0d9b68",
@@ -19754,12 +19742,12 @@
       ],
       "type": "Find / Hand over",
       "objectives": [
-        "Obtain the Bronze pocket watch on a chain on Customs",
-        "Hand over the pocket watch"
+        "Obtain the bronze pocket watch on Customs",
+        "Hand over the found item"
       ],
       "objectiveDetails": [
         {
-          "text": "Obtain the Bronze pocket watch on a chain on Customs",
+          "text": "Obtain the bronze pocket watch on Customs",
           "category": "Other",
           "maps": [
             "Customs"
@@ -19768,7 +19756,7 @@
           "raidRequired": true
         },
         {
-          "text": "Hand over the pocket watch",
+          "text": "Hand over the found item",
           "category": "Find / Hand over",
           "maps": [],
           "raidClass": "NON_RAID",
@@ -19788,7 +19776,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 353795
+      "wikiRevision": 355097
     },
     {
       "id": "5967530a86f77462ba22226b",
@@ -19800,7 +19788,7 @@
       "type": "Locate / Find / Hand over / Survive",
       "objectives": [
         "Locate and obtain Secure Folder 0031 in one of the bunkhouses on Customs",
-        "Hand over the folder to Prapor",
+        "Hand over the folder",
         "Survive and extract from the location"
       ],
       "objectiveDetails": [
@@ -19814,7 +19802,7 @@
           "raidRequired": true
         },
         {
-          "text": "Hand over the folder to Prapor",
+          "text": "Hand over the folder",
           "category": "Find / Hand over",
           "maps": [],
           "raidClass": "NON_RAID",
@@ -19843,7 +19831,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 353799
+      "wikiRevision": 355122
     },
     {
       "id": "675c3507a06634b5110e3c18",
@@ -20081,7 +20069,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 353918
+      "wikiRevision": 355098
     },
     {
       "id": "59674eb386f774539f14813a",
@@ -20091,15 +20079,15 @@
         "Customs",
         "Factory"
       ],
-      "type": "Other",
+      "type": "Locate",
       "objectives": [
-        "Obtain the secure folder in the Tarcone Director's office at the Customs terminal warehouse",
+        "Locate and obtain the valuable folder in Tarcone director's office on Customs",
         "Stash the package in the break room on the 2nd floor near Gate 3 on Factory"
       ],
       "objectiveDetails": [
         {
-          "text": "Obtain the secure folder in the Tarcone Director's office at the Customs terminal warehouse",
-          "category": "Other",
+          "text": "Locate and obtain the valuable folder in Tarcone director's office on Customs",
+          "category": "Locate",
           "maps": [
             "Customs"
           ],
@@ -20130,7 +20118,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 353924
+      "wikiRevision": 355108
     },
     {
       "id": "64e7b9bffd30422ed03dad38",
@@ -20896,16 +20884,9 @@
       "requirements": [],
       "restrictions": [],
       "fir": [],
-      "minLevel": 20,
+      "minLevel": 0,
       "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Green_Corridor",
-      "taskRequirements": [
-        {
-          "taskId": "5a27bafb86f7741c73584017",
-          "statuses": [
-            "complete"
-          ]
-        }
-      ],
+      "taskRequirements": [],
       "raidRelevant": true,
       "raidClass": "MAP_BOUND",
       "mapBoundMaps": [
@@ -21024,7 +21005,7 @@
       "type": "Find / Hand over",
       "objectives": [
         "Find 3 AK-74 5.45x39 6L31 60-round magazines in raid",
-        "Hand over the 3 AK-74 5.45x39 6L31 60-round magazines"
+        "Hand over the items"
       ],
       "objectiveDetails": [
         {
@@ -21035,7 +21016,7 @@
           "raidRequired": true
         },
         {
-          "text": "Hand over the 3 AK-74 5.45x39 6L31 60-round magazines",
+          "text": "Hand over the items",
           "category": "Find / Hand over",
           "maps": [],
           "raidClass": "NON_RAID",
@@ -21053,7 +21034,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 354098
+      "wikiRevision": 355128
     },
     {
       "id": "60e71bb4e456d449cd47ca75",
@@ -21386,7 +21367,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 354218
+      "wikiRevision": 355148
     },
     {
       "id": "6179b5b06e9dd54ac275e409",
@@ -21421,17 +21402,9 @@
       "requirements": [],
       "restrictions": [],
       "fir": [],
-      "minLevel": 36,
+      "minLevel": 0,
       "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Our_Own_Land",
-      "taskRequirements": [
-        {
-          "taskId": "59ca29fb86f77445ab465c87",
-          "statuses": [
-            "active",
-            "complete"
-          ]
-        }
-      ],
+      "taskRequirements": [],
       "raidRelevant": true,
       "raidClass": "MAP_BOUND",
       "mapBoundMaps": [
@@ -21494,16 +21467,16 @@
         "Factory",
         "Night Factory"
       ],
-      "type": "Survive / Find / Hand over",
+      "type": "Locate / Survive / Find / Hand over",
       "objectives": [
-        "Obtain the letter on the messenger's body on Factory",
+        "Locate the dead messenger and obtain his letter on Factory",
         "Survive and extract from the location",
         "Hand over the letter to Therapist"
       ],
       "objectiveDetails": [
         {
-          "text": "Obtain the letter on the messenger's body on Factory",
-          "category": "Other",
+          "text": "Locate the dead messenger and obtain his letter on Factory",
+          "category": "Locate",
           "maps": [
             "Factory"
           ],
@@ -21542,7 +21515,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 354255
+      "wikiRevision": 355137
     },
     {
       "id": "63a5cf262964a7488f5243ce",
@@ -21820,15 +21793,15 @@
       "maps": [
         "Customs"
       ],
-      "type": "Find / Hand over",
+      "type": "Locate / Find / Hand over",
       "objectives": [
-        "Obtain the valuable item in dorm room 203 on Customs",
+        "Locate and obtain the valuable item in dorm room 203 on Customs",
         "Hand over the valuable item"
       ],
       "objectiveDetails": [
         {
-          "text": "Obtain the valuable item in dorm room 203 on Customs",
-          "category": "Other",
+          "text": "Locate and obtain the valuable item in dorm room 203 on Customs",
+          "category": "Locate",
           "maps": [
             "Customs"
           ],
@@ -21856,7 +21829,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 354346
+      "wikiRevision": 355147
     },
     {
       "id": "673f348dd3346c21670217e7",
@@ -21964,18 +21937,24 @@
       "name": "Shootout Picnic",
       "trader": "Prapor",
       "maps": [
-        "Woods"
+        "Ground Zero",
+        "Customs",
+        "Woods",
+        "Interchange"
       ],
       "type": "Kill",
       "objectives": [
-        "Eliminate 15 Scavs on Woods"
+        "Eliminate any 15 targets on Woods , Ground Zero , Customs , or Interchange"
       ],
       "objectiveDetails": [
         {
-          "text": "Eliminate 15 Scavs on Woods",
+          "text": "Eliminate any 15 targets on Woods , Ground Zero , Customs , or Interchange",
           "category": "Kill",
           "maps": [
-            "Woods"
+            "Ground Zero",
+            "Customs",
+            "Woods",
+            "Interchange"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
@@ -21990,11 +21969,14 @@
       "raidRelevant": true,
       "raidClass": "MAP_BOUND",
       "mapBoundMaps": [
-        "Woods"
+        "Ground Zero",
+        "Customs",
+        "Woods",
+        "Interchange"
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 354356
+      "wikiRevision": 355105
     },
     {
       "id": "66ab970848ddbe9d4a0c49a8",
@@ -22460,11 +22442,11 @@
       ],
       "type": "Kill",
       "objectives": [
-        "Eliminate 25 Scavs while using an AKS-74U series assault rifle on Customs"
+        "Eliminate 25 Scavs with AKS-74U on Customs"
       ],
       "objectiveDetails": [
         {
-          "text": "Eliminate 25 Scavs while using an AKS-74U series assault rifle on Customs",
+          "text": "Eliminate 25 Scavs with AKS-74U on Customs",
           "category": "Kill",
           "maps": [
             "Customs"
@@ -22473,16 +22455,7 @@
           "raidRequired": true
         }
       ],
-      "requirements": [
-        {
-          "kind": "gear",
-          "name": "AKS-74U series assault rifle",
-          "qty": 1,
-          "slot": "weapon",
-          "itemId": "",
-          "sourceObjective": "Eliminate 25 Scavs while using an AKS-74U series assault rifle on Customs"
-        }
-      ],
+      "requirements": [],
       "restrictions": [],
       "fir": [],
       "minLevel": 0,
@@ -22495,7 +22468,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 354457
+      "wikiRevision": 355191
     },
     {
       "id": "59c50a9e86f7745fef66f4ff",
@@ -22506,11 +22479,11 @@
       ],
       "type": "Kill",
       "objectives": [
-        "Eliminate 15 Scavs while using an AKM series weapon on Shoreline"
+        "Eliminate 15 Scavs with AKM series weapons on Shoreline"
       ],
       "objectiveDetails": [
         {
-          "text": "Eliminate 15 Scavs while using an AKM series weapon on Shoreline",
+          "text": "Eliminate 15 Scavs with AKM series weapons on Shoreline",
           "category": "Kill",
           "maps": [
             "Shoreline"
@@ -22522,19 +22495,11 @@
       "requirements": [
         {
           "kind": "gear",
-          "name": "AKM series weapon",
-          "qty": 1,
-          "slot": "weapon",
-          "itemId": "",
-          "sourceObjective": "Eliminate 15 Scavs while using an AKM series weapon on Shoreline"
-        },
-        {
-          "kind": "gear",
           "name": "AKM series weapons",
           "qty": 1,
           "slot": "weapon",
           "itemId": "",
-          "sourceObjective": "Eliminate 15 Scavs while using an AKM series weapon on Shoreline"
+          "sourceObjective": "Eliminate 15 Scavs with AKM series weapons on Shoreline"
         }
       ],
       "restrictions": [],
@@ -22556,7 +22521,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 354458
+      "wikiRevision": 355151
     },
     {
       "id": "59c50c8886f7745fed3193bf",
@@ -22569,7 +22534,7 @@
       "objectives": [
         "Eliminate 12 Scavs with 9x39mm caliber weapons on Reserve",
         "Find 7 Lower half-masks in raid",
-        "Hand over the 7 half-masks"
+        "Hand over the items"
       ],
       "objectiveDetails": [
         {
@@ -22589,7 +22554,7 @@
           "raidRequired": true
         },
         {
-          "text": "Hand over the 7 half-masks",
+          "text": "Hand over the items",
           "category": "Find / Hand over",
           "maps": [],
           "raidClass": "NON_RAID",
@@ -22633,7 +22598,7 @@
       ],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 354459
+      "wikiRevision": 355161
     },
     {
       "id": "59ca264786f77445a80ed044",
@@ -22644,14 +22609,14 @@
       ],
       "type": "Kill / Find / Hand over",
       "objectives": [
-        "Eliminate 10 Scavs while using an SVDS 7.62x54R sniper rifle or TKPD 9.3x64 carbine on Lighthouse",
+        "Eliminate 10 Scavs while using an SVDS or TKPD on Lighthouse",
         "Eliminate 10 Scavs while wearing a Scav Vest on Lighthouse",
         "Find 5 Bars A-2607 95Kh18 knives in raid",
-        "Hand over the 5 Bars A-2607 95Kh18 knives"
+        "Hand over the items"
       ],
       "objectiveDetails": [
         {
-          "text": "Eliminate 10 Scavs while using an SVDS 7.62x54R sniper rifle or TKPD 9.3x64 carbine on Lighthouse",
+          "text": "Eliminate 10 Scavs while using an SVDS or TKPD on Lighthouse",
           "category": "Kill",
           "maps": [
             "Lighthouse"
@@ -22676,7 +22641,7 @@
           "raidRequired": true
         },
         {
-          "text": "Hand over the 5 Bars A-2607 95Kh18 knives",
+          "text": "Hand over the items",
           "category": "Find / Hand over",
           "maps": [],
           "raidClass": "NON_RAID",
@@ -22684,14 +22649,6 @@
         }
       ],
       "requirements": [
-        {
-          "kind": "gear",
-          "name": "SVDS 7.62x54R sniper rifle or TKPD 9.3x64 carbine",
-          "qty": 1,
-          "slot": "weapon",
-          "itemId": "",
-          "sourceObjective": "Eliminate 10 Scavs while using an SVDS 7.62x54R sniper rifle or TKPD 9.3x64 carbine on Lighthouse"
-        },
         {
           "kind": "gear",
           "name": "Scav Vest",
@@ -22752,7 +22709,7 @@
       ],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 354460
+      "wikiRevision": 355189
     },
     {
       "id": "59ca29fb86f77445ab465c87",
@@ -22882,7 +22839,7 @@
       ],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 354461
+      "wikiRevision": 355167
     },
     {
       "id": "59ca2eb686f77445a80ed049",
@@ -22905,13 +22862,13 @@
       ],
       "type": "Kill / Find / Hand over / Locate",
       "objectives": [
-        "Eliminate 30 PMC operatives while using specified weapons ( Light Machine Guns , 9x39mm weapons such as AS Val or SR-3M, SVDS 7.62x54R sniper rifle, TKPD 9.3x64 carbine , Kalashnikov AKS-74U series weapon or Kalashnikov AKM 7.62x39 assault rifle series weapon) on Lighthouse , Shoreline , Reserve , Ground Zero or The Lab",
-        "Hand over any 10 BEAR or USEC dogtags",
-        "Locate and Neutralize any 5 Bosses"
+        "Eliminate 30 PMC operatives with the specified weapons on Lighthouse , Shoreline , Reserve , Ground Zero or The Lab",
+        "Hand over 10 BEAR or USEC Dogtags",
+        "Locate and neutralize any 5 Bosses"
       ],
       "objectiveDetails": [
         {
-          "text": "Eliminate 30 PMC operatives while using specified weapons ( Light Machine Guns , 9x39mm weapons such as AS Val or SR-3M, SVDS 7.62x54R sniper rifle, TKPD 9.3x64 carbine , Kalashnikov AKS-74U series weapon or Kalashnikov AKM 7.62x39 assault rifle series weapon) on Lighthouse , Shoreline , Reserve , Ground Zero or The Lab",
+          "text": "Eliminate 30 PMC operatives with the specified weapons on Lighthouse , Shoreline , Reserve , Ground Zero or The Lab",
           "category": "Kill",
           "maps": [
             "Ground Zero",
@@ -22924,14 +22881,14 @@
           "raidRequired": true
         },
         {
-          "text": "Hand over any 10 BEAR or USEC dogtags",
+          "text": "Hand over 10 BEAR or USEC Dogtags",
           "category": "Find / Hand over",
           "maps": [],
           "raidClass": "NON_RAID",
           "raidRequired": false
         },
         {
-          "text": "Locate and Neutralize any 5 Bosses",
+          "text": "Locate and neutralize any 5 Bosses",
           "category": "Locate",
           "maps": [
             "Streets of Tarkov",
@@ -22953,51 +22910,11 @@
       "requirements": [
         {
           "kind": "gear",
-          "name": "specified weapons ( Light Machine Guns",
-          "qty": 1,
-          "slot": "weapon",
-          "itemId": "",
-          "sourceObjective": "Eliminate 30 PMC operatives while using specified weapons ( Light Machine Guns , 9x39mm weapons such as AS Val or SR-3M, SVDS 7.62x54R sniper rifle, TKPD 9.3x64 carbine , Kalashnikov AKS-74U series weapon or Kalashnikov AKM 7.62x39 assault rifle series weapon) on Lighthouse , Shoreline , Reserve , Ground Zero or The Lab"
-        },
-        {
-          "kind": "gear",
-          "name": "9x39mm weapons such as AS Val or SR-3M",
-          "qty": 1,
-          "slot": "weapon",
-          "itemId": "",
-          "sourceObjective": "Eliminate 30 PMC operatives while using specified weapons ( Light Machine Guns , 9x39mm weapons such as AS Val or SR-3M, SVDS 7.62x54R sniper rifle, TKPD 9.3x64 carbine , Kalashnikov AKS-74U series weapon or Kalashnikov AKM 7.62x39 assault rifle series weapon) on Lighthouse , Shoreline , Reserve , Ground Zero or The Lab"
-        },
-        {
-          "kind": "gear",
-          "name": "SVDS 7.62x54R sniper rifle",
-          "qty": 1,
-          "slot": "weapon",
-          "itemId": "",
-          "sourceObjective": "Eliminate 30 PMC operatives while using specified weapons ( Light Machine Guns , 9x39mm weapons such as AS Val or SR-3M, SVDS 7.62x54R sniper rifle, TKPD 9.3x64 carbine , Kalashnikov AKS-74U series weapon or Kalashnikov AKM 7.62x39 assault rifle series weapon) on Lighthouse , Shoreline , Reserve , Ground Zero or The Lab"
-        },
-        {
-          "kind": "gear",
-          "name": "TKPD 9.3x64 carbine",
-          "qty": 1,
-          "slot": "weapon",
-          "itemId": "",
-          "sourceObjective": "Eliminate 30 PMC operatives while using specified weapons ( Light Machine Guns , 9x39mm weapons such as AS Val or SR-3M, SVDS 7.62x54R sniper rifle, TKPD 9.3x64 carbine , Kalashnikov AKS-74U series weapon or Kalashnikov AKM 7.62x39 assault rifle series weapon) on Lighthouse , Shoreline , Reserve , Ground Zero or The Lab"
-        },
-        {
-          "kind": "gear",
-          "name": "Kalashnikov AKS-74U series weapon or Kalashnikov AKM 7.62x39 assault rifle series weapon)",
-          "qty": 1,
-          "slot": "weapon",
-          "itemId": "",
-          "sourceObjective": "Eliminate 30 PMC operatives while using specified weapons ( Light Machine Guns , 9x39mm weapons such as AS Val or SR-3M, SVDS 7.62x54R sniper rifle, TKPD 9.3x64 carbine , Kalashnikov AKS-74U series weapon or Kalashnikov AKM 7.62x39 assault rifle series weapon) on Lighthouse , Shoreline , Reserve , Ground Zero or The Lab"
-        },
-        {
-          "kind": "gear",
           "name": "specified weapons",
           "qty": 1,
           "slot": "weapon",
           "itemId": "",
-          "sourceObjective": "Eliminate 30 PMC operatives while using specified weapons ( Light Machine Guns , 9x39mm weapons such as AS Val or SR-3M, SVDS 7.62x54R sniper rifle, TKPD 9.3x64 carbine , Kalashnikov AKS-74U series weapon or Kalashnikov AKM 7.62x39 assault rifle series weapon) on Lighthouse , Shoreline , Reserve , Ground Zero or The Lab"
+          "sourceObjective": "Eliminate 30 PMC operatives with the specified weapons on Lighthouse , Shoreline , Reserve , Ground Zero or The Lab"
         }
       ],
       "restrictions": [],
@@ -23031,7 +22948,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 354462
+      "wikiRevision": 355193
     },
     {
       "id": "5c0bd94186f7747a727f09b2",
@@ -24152,6 +24069,57 @@
       "wikiRevision": 353946
     },
     {
+      "id": "6613f3007f6666d56807c929",
+      "name": "Drip-Out - Part 1",
+      "trader": "Ragman",
+      "maps": [
+        "The Lab (Dark)",
+        "Reserve",
+        "The Lab"
+      ],
+      "type": "Kill / Find / Hand over",
+      "objectives": [
+        "Eliminate 100 Raiders",
+        "Hand over 50 found in raid WARTECH brand equipment"
+      ],
+      "objectiveDetails": [
+        {
+          "text": "Eliminate 100 Raiders",
+          "category": "Kill",
+          "maps": [
+            "The Lab (Dark)",
+            "Reserve",
+            "The Lab"
+          ],
+          "raidClass": "MAP_BOUND",
+          "raidRequired": true
+        },
+        {
+          "text": "Hand over 50 found in raid WARTECH brand equipment",
+          "category": "Find / Hand over",
+          "maps": [],
+          "raidClass": "NON_RAID",
+          "raidRequired": false
+        }
+      ],
+      "requirements": [],
+      "restrictions": [],
+      "fir": [],
+      "minLevel": 27,
+      "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Drip-Out_-_Part_1",
+      "taskRequirements": [],
+      "raidRelevant": true,
+      "raidClass": "MAP_BOUND",
+      "mapBoundMaps": [
+        "The Lab (Dark)",
+        "Reserve",
+        "The Lab"
+      ],
+      "hasAnyRaidObjectives": false,
+      "source": "json.tarkov.dev + Tarkov Wiki",
+      "wikiRevision": 353947
+    },
+    {
       "id": "66151401efb0539ae10875ae",
       "name": "Drip-Out - Part 1",
       "trader": "Ragman",
@@ -24203,65 +24171,6 @@
       "wikiRevision": 353947
     },
     {
-      "id": "6613f3007f6666d56807c929",
-      "name": "Drip-Out - Part 1",
-      "trader": "Ragman",
-      "maps": [
-        "The Lab (Dark)",
-        "Reserve",
-        "The Lab"
-      ],
-      "type": "Kill / Find / Hand over",
-      "objectives": [
-        "Eliminate 100 Raiders",
-        "Hand over 50 found in raid WARTECH brand equipment"
-      ],
-      "objectiveDetails": [
-        {
-          "text": "Eliminate 100 Raiders",
-          "category": "Kill",
-          "maps": [
-            "The Lab (Dark)",
-            "Reserve",
-            "The Lab"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        },
-        {
-          "text": "Hand over 50 found in raid WARTECH brand equipment",
-          "category": "Find / Hand over",
-          "maps": [],
-          "raidClass": "NON_RAID",
-          "raidRequired": false
-        }
-      ],
-      "requirements": [],
-      "restrictions": [],
-      "fir": [],
-      "minLevel": 0,
-      "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Drip-Out_-_Part_1",
-      "taskRequirements": [
-        {
-          "taskId": "5b478d0f86f7744d190d91b5",
-          "statuses": [
-            "active",
-            "complete"
-          ]
-        }
-      ],
-      "raidRelevant": true,
-      "raidClass": "MAP_BOUND",
-      "mapBoundMaps": [
-        "The Lab (Dark)",
-        "Reserve",
-        "The Lab"
-      ],
-      "hasAnyRaidObjectives": false,
-      "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 353947
-    },
-    {
       "id": "6613f307fca4f2f386029409",
       "name": "Drip-Out - Part 2",
       "trader": "Ragman",
@@ -24296,17 +24205,9 @@
       "requirements": [],
       "restrictions": [],
       "fir": [],
-      "minLevel": 12,
+      "minLevel": 42,
       "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Drip-Out_-_Part_2",
-      "taskRequirements": [
-        {
-          "taskId": "65734c186dc1e402c80dc19e",
-          "statuses": [
-            "active",
-            "complete"
-          ]
-        }
-      ],
+      "taskRequirements": [],
       "raidRelevant": true,
       "raidClass": "MAP_BOUND",
       "mapBoundMaps": [
@@ -26096,14 +25997,7 @@
       "fir": [],
       "minLevel": 42,
       "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Textile_-_Part_1",
-      "taskRequirements": [
-        {
-          "taskId": "5ae4497b86f7744cf402ed00",
-          "statuses": [
-            "complete"
-          ]
-        }
-      ],
+      "taskRequirements": [],
       "raidRelevant": true,
       "raidClass": "ANY_RAID",
       "mapBoundMaps": [],
@@ -27986,16 +27880,9 @@
       "requirements": [],
       "restrictions": [],
       "fir": [],
-      "minLevel": 50,
+      "minLevel": 0,
       "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Consolation_Prize",
-      "taskRequirements": [
-        {
-          "taskId": "67af4c1cc0e59d55e2010b97",
-          "statuses": [
-            "complete"
-          ]
-        }
-      ],
+      "taskRequirements": [],
       "raidRelevant": true,
       "raidClass": "MAP_BOUND",
       "mapBoundMaps": [
@@ -29995,15 +29882,19 @@
         {
           "text": "Stash the first Propane tank (5L)",
           "category": "Other",
-          "maps": [],
-          "raidClass": "ANY_RAID",
+          "maps": [
+            "Woods"
+          ],
+          "raidClass": "MAP_BOUND",
           "raidRequired": true
         },
         {
           "text": "Stash the second Propane tank (5L)",
           "category": "Other",
-          "maps": [],
-          "raidClass": "ANY_RAID",
+          "maps": [
+            "Customs"
+          ],
+          "raidClass": "MAP_BOUND",
           "raidRequired": true
         }
       ],
@@ -30026,7 +29917,7 @@
         "Woods",
         "Customs"
       ],
-      "hasAnyRaidObjectives": true,
+      "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
       "wikiRevision": 354508
     },
@@ -31714,12 +31605,14 @@
       "name": "Health Care Privacy - Part 6",
       "trader": "Therapist",
       "maps": [
-        "Factory"
+        "Factory",
+        "The Lab"
       ],
       "type": "Locate / Find / Hand over",
       "objectives": [
         "Locate the dead worker and take their blood sample on Factory",
-        "Hand over the blood sample"
+        "Hand over the found in raid item: LEDX Skin Transilluminator",
+        "Stash the blood sample in Sanitar's office in The Lab"
       ],
       "objectiveDetails": [
         {
@@ -31732,10 +31625,19 @@
           "raidRequired": true
         },
         {
-          "text": "Hand over the blood sample",
+          "text": "Hand over the found in raid item: LEDX Skin Transilluminator",
           "category": "Find / Hand over",
           "maps": [],
-          "raidClass": "ANY_RAID",
+          "raidClass": "NON_RAID",
+          "raidRequired": false
+        },
+        {
+          "text": "Stash the blood sample in Sanitar's office in The Lab",
+          "category": "Other",
+          "maps": [
+            "The Lab"
+          ],
+          "raidClass": "MAP_BOUND",
           "raidRequired": true
         }
       ],
@@ -31755,11 +31657,12 @@
       "raidRelevant": true,
       "raidClass": "MAP_BOUND",
       "mapBoundMaps": [
-        "Factory"
+        "Factory",
+        "The Lab"
       ],
-      "hasAnyRaidObjectives": true,
+      "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 354069
+      "wikiRevision": 355014
     },
     {
       "id": "6179afd0bca27a099552e040",

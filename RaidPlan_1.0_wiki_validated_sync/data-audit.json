@@ -1,23 +1,23 @@
 {
-  "generatedAt": "2026-08-18T06:02:34.877Z",
+  "generatedAt": "2026-08-19T06:04:54.068Z",
   "summary": {
     "tasks": 436,
     "tasksWithCorrections": 0,
     "removedObjectives": 0,
     "wordingMismatches": 231,
-    "wikiErrors": 8,
+    "wikiErrors": 7,
     "unparsedWikiPages": 0,
     "excludedNonRaidTasks": 81,
-    "mapBoundTasks": 342,
-    "anyRaidTasks": 94,
+    "mapBoundTasks": 343,
+    "anyRaidTasks": 93,
     "qaStatus": "pass",
-    "qaChecks": 3666,
+    "qaChecks": 3658,
     "qaCritical": 0,
     "qaWarnings": 0
   },
   "qa": {
     "status": "pass",
-    "checkCount": 3666,
+    "checkCount": 3658,
     "criticalCount": 0,
     "warningCount": 0,
     "issues": []
@@ -209,14 +209,14 @@
       "trader": "Skier"
     },
     {
-      "id": "60effd818b669d08a35bfad5",
-      "name": "The Choice",
-      "trader": "Fence"
-    },
-    {
       "id": "67af4c169d95ad16e004fd86",
       "name": "Safety Guarantee",
       "trader": "Skier"
+    },
+    {
+      "id": "60effd818b669d08a35bfad5",
+      "name": "The Choice",
+      "trader": "Fence"
     },
     {
       "id": "67af4c17f4f1fb58a907f8f6",
@@ -433,11 +433,6 @@
   "wikiErrors": [
     {
       "task": "Demonstration Model",
-      "status": "wiki-error",
-      "error": "The page you specified doesn't exist."
-    },
-    {
-      "task": "Developer's Secrets - Part 1",
       "status": "wiki-error",
       "error": "The page you specified doesn't exist."
     },
