@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-20T06:04:30.795Z",
+  "generatedAt": "2026-08-21T07:31:51.378Z",
   "mode": "regular",
   "sources": [
     "json.tarkov.dev",
@@ -5508,7 +5508,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 353813
+      "wikiRevision": 355359
     },
     {
       "id": "61e6e60223374d168a4576a6",
@@ -26801,7 +26801,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 353919
+      "wikiRevision": 355360
     },
     {
       "id": "697895b6c639962b2e0cf268",
@@ -27313,7 +27313,7 @@
         "Stash an AXMC sniper rifle in the trash bags at the chalet tennis court on Lighthouse",
         "Stash a Roler Submariner gold wrist watch in the trash bags at the chalet tennis court on Lighthouse",
         "Stash a Military flash drive in the trash bags at the chalet tennis court on Lighthouse",
-        "You must not kill any Rogues while the task is active"
+        "You must not kill any Rogues or The Goons while the task is active"
       ],
       "objectiveDetails": [
         {
@@ -27344,7 +27344,7 @@
           "raidRequired": true
         },
         {
-          "text": "You must not kill any Rogues while the task is active",
+          "text": "You must not kill any Rogues or The Goons while the task is active",
           "category": "Kill",
           "maps": [],
           "raidClass": "ANY_RAID",
@@ -27364,7 +27364,7 @@
       ],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 354879
+      "wikiRevision": 355355
     },
     {
       "id": "657315e270bb0b8dba00cc48",
