@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-22T06:01:15.251Z",
+  "generatedAt": "2026-08-23T06:02:41.204Z",
   "mode": "regular",
   "sources": [
     "json.tarkov.dev",
@@ -9,7 +9,7 @@
   "excludedNonRaidCount": 81,
   "qa": {
     "status": "pass",
-    "checkCount": 3658,
+    "checkCount": 3657,
     "criticalCount": 0,
     "warningCount": 0
   },
@@ -6238,7 +6238,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 353752
+      "wikiRevision": 355506
     },
     {
       "id": "600302d73b897b11364cd161",
@@ -17784,14 +17784,14 @@
       ],
       "type": "Kill",
       "objectives": [
-        "Eliminate 12 Scavs while using a UNTAR helmet , MF-UNTAR armor , and 5.56 UN weapons on Woods or Reserve",
-        "Eliminate 12 Scavs while using a UNTAR helmet , MF-UNTAR armor , and 5.56 UN weapons on Customs or Lighthouse",
-        "Eliminate 12 Scavs while using a UNTAR helmet , MF-UNTAR armor , and 5.56 UN weapons on Shoreline or Streets of Tarkov",
-        "Eliminate 12 Scavs while using a UNTAR helmet , MF-UNTAR armor , and 5.56 UN weapons on Ground Zero or Interchange"
+        "Eliminate 12 Scavs while using UNTAR helmet and armor , and 5.56x45 UN weapons on Woods or Reserve",
+        "Eliminate 12 Scavs while using UNTAR helmet and armor , and 5.56x45 UN weapons on Customs or Lighthouse",
+        "Eliminate 12 Scavs while using UNTAR helmet and armor , and 5.56x45 UN weapons on Shoreline or Streets of Tarkov",
+        "Eliminate 12 Scavs while using UNTAR helmet and armor , and 5.56x45 UN weapons on Ground Zero or Interchange"
       ],
       "objectiveDetails": [
         {
-          "text": "Eliminate 12 Scavs while using a UNTAR helmet , MF-UNTAR armor , and 5.56 UN weapons on Woods or Reserve",
+          "text": "Eliminate 12 Scavs while using UNTAR helmet and armor , and 5.56x45 UN weapons on Woods or Reserve",
           "category": "Kill",
           "maps": [
             "Reserve",
@@ -17801,7 +17801,7 @@
           "raidRequired": true
         },
         {
-          "text": "Eliminate 12 Scavs while using a UNTAR helmet , MF-UNTAR armor , and 5.56 UN weapons on Customs or Lighthouse",
+          "text": "Eliminate 12 Scavs while using UNTAR helmet and armor , and 5.56x45 UN weapons on Customs or Lighthouse",
           "category": "Kill",
           "maps": [
             "Customs",
@@ -17811,7 +17811,7 @@
           "raidRequired": true
         },
         {
-          "text": "Eliminate 12 Scavs while using a UNTAR helmet , MF-UNTAR armor , and 5.56 UN weapons on Shoreline or Streets of Tarkov",
+          "text": "Eliminate 12 Scavs while using UNTAR helmet and armor , and 5.56x45 UN weapons on Shoreline or Streets of Tarkov",
           "category": "Kill",
           "maps": [
             "Streets of Tarkov",
@@ -17821,7 +17821,7 @@
           "raidRequired": true
         },
         {
-          "text": "Eliminate 12 Scavs while using a UNTAR helmet , MF-UNTAR armor , and 5.56 UN weapons on Ground Zero or Interchange",
+          "text": "Eliminate 12 Scavs while using UNTAR helmet and armor , and 5.56x45 UN weapons on Ground Zero or Interchange",
           "category": "Kill",
           "maps": [
             "Ground Zero",
@@ -17834,11 +17834,11 @@
       "requirements": [
         {
           "kind": "gear",
-          "name": "5.56 UN weapons",
+          "name": "5.56x45 UN weapons",
           "qty": 1,
           "slot": "weapon",
           "itemId": "",
-          "sourceObjective": "Eliminate 12 Scavs while using a UNTAR helmet , MF-UNTAR armor , and 5.56 UN weapons on Woods or Reserve"
+          "sourceObjective": "Eliminate 12 Scavs while using UNTAR helmet and armor , and 5.56x45 UN weapons on Woods or Reserve"
         },
         {
           "kind": "gear",
@@ -17846,7 +17846,7 @@
           "qty": 1,
           "slot": "headwear",
           "itemId": "5aa7d03ae5b5b00016327db5",
-          "sourceObjective": "Eliminate 12 Scavs while using a UNTAR helmet , MF-UNTAR armor , and 5.56 UN weapons on Woods or Reserve"
+          "sourceObjective": "Eliminate 12 Scavs while using UNTAR helmet and armor , and 5.56x45 UN weapons on Woods or Reserve"
         },
         {
           "kind": "gear",
@@ -17854,15 +17854,7 @@
           "qty": 1,
           "slot": "armor",
           "itemId": "5ab8e4ed86f7742d8e50c7fa",
-          "sourceObjective": "Eliminate 12 Scavs while using a UNTAR helmet , MF-UNTAR armor , and 5.56 UN weapons on Woods or Reserve"
-        },
-        {
-          "kind": "gear",
-          "name": "5.56x45 UN weapons",
-          "qty": 1,
-          "slot": "weapon",
-          "itemId": "",
-          "sourceObjective": "Eliminate 12 Scavs while using a UNTAR helmet , MF-UNTAR armor , and 5.56 UN weapons on Woods or Reserve"
+          "sourceObjective": "Eliminate 12 Scavs while using UNTAR helmet and armor , and 5.56x45 UN weapons on Woods or Reserve"
         }
       ],
       "restrictions": [],
@@ -17884,7 +17876,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 354241
+      "wikiRevision": 355516
     },
     {
       "id": "6179b4d1bca27a099552e04e",

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-22T06:01:15.251Z",
+  "generatedAt": "2026-08-23T06:02:41.204Z",
   "summary": {
     "tasks": 436,
     "tasksWithCorrections": 0,
@@ -11,13 +11,13 @@
     "mapBoundTasks": 344,
     "anyRaidTasks": 92,
     "qaStatus": "pass",
-    "qaChecks": 3658,
+    "qaChecks": 3657,
     "qaCritical": 0,
     "qaWarnings": 0
   },
   "qa": {
     "status": "pass",
-    "checkCount": 3658,
+    "checkCount": 3657,
     "criticalCount": 0,
     "warningCount": 0,
     "issues": []
