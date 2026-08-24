@@ -1,23 +1,23 @@
 {
-  "generatedAt": "2026-08-23T06:02:41.204Z",
+  "generatedAt": "2026-08-24T08:06:58.215Z",
   "summary": {
-    "tasks": 436,
+    "tasks": 435,
     "tasksWithCorrections": 0,
     "removedObjectives": 0,
-    "wordingMismatches": 230,
-    "wikiErrors": 7,
+    "wordingMismatches": 231,
+    "wikiErrors": 4,
     "unparsedWikiPages": 0,
-    "excludedNonRaidTasks": 81,
+    "excludedNonRaidTasks": 82,
     "mapBoundTasks": 344,
-    "anyRaidTasks": 92,
+    "anyRaidTasks": 91,
     "qaStatus": "pass",
-    "qaChecks": 3657,
+    "qaChecks": 3649,
     "qaCritical": 0,
     "qaWarnings": 0
   },
   "qa": {
     "status": "pass",
-    "checkCount": 3657,
+    "checkCount": 3649,
     "criticalCount": 0,
     "warningCount": 0,
     "issues": []
@@ -77,6 +77,11 @@
       "id": "5ae448a386f7744d3730fff0",
       "name": "Only Business",
       "trader": "Ragman"
+    },
+    {
+      "id": "5a68667486f7742607157d28",
+      "name": "Health Care Privacy - Part 4",
+      "trader": "Therapist"
     },
     {
       "id": "5d6fb2c086f77449da599c24",
@@ -437,21 +442,6 @@
       "error": "Bad title \"Arena Business [PVP ZONE] \"."
     },
     {
-      "task": "Demonstration Model",
-      "status": "wiki-error",
-      "error": "The page you specified doesn't exist."
-    },
-    {
-      "task": "Neuanfang",
-      "status": "wiki-error",
-      "error": "The page you specified doesn't exist."
-    },
-    {
-      "task": "The Huntsman Path - Control",
-      "status": "wiki-error",
-      "error": "The page you specified doesn't exist."
-    },
-    {
       "task": "Neuanfang",
       "status": "wiki-error",
       "error": "The page you specified doesn't exist."
@@ -462,7 +452,7 @@
       "error": "The page you specified doesn't exist."
     },
     {
-      "task": "Secret Message",
+      "task": "Neuanfang",
       "status": "wiki-error",
       "error": "The page you specified doesn't exist."
     }
