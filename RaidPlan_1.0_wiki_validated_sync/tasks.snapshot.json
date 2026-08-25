@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-24T08:06:58.215Z",
+  "generatedAt": "2026-08-25T07:33:19.640Z",
   "mode": "regular",
   "sources": [
     "json.tarkov.dev",
@@ -13048,7 +13048,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 354027
+      "wikiRevision": 355908
     },
     {
       "id": "68db9c7557bc51a8c804c14b",
@@ -31501,12 +31501,11 @@
       "maps": [
         "Woods"
       ],
-      "type": "Locate / Find / Hand over / Survive",
+      "type": "Locate / Find / Hand over",
       "objectives": [
         "Locate the van of the Health Resort medical services director on Woods",
         "Take a sample of the blood",
-        "Hand over the blood sample",
-        "Survive and extract from the location"
+        "Hand over the blood sample"
       ],
       "objectiveDetails": [
         {
@@ -31533,13 +31532,6 @@
           "maps": [],
           "raidClass": "NON_RAID",
           "raidRequired": false
-        },
-        {
-          "text": "Survive and extract from the location",
-          "category": "Survive",
-          "maps": [],
-          "raidClass": "ANY_RAID",
-          "raidRequired": true
         }
       ],
       "requirements": [],
@@ -31560,9 +31552,9 @@
       "mapBoundMaps": [
         "Woods"
       ],
-      "hasAnyRaidObjectives": true,
+      "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 354066
+      "wikiRevision": 355918
     },
     {
       "id": "5a68669a86f774255929b4d4",
