@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-25T07:33:19.640Z",
+  "generatedAt": "2026-08-26T07:35:06.152Z",
   "mode": "regular",
   "sources": [
     "json.tarkov.dev",
@@ -9,7 +9,7 @@
   "excludedNonRaidCount": 82,
   "qa": {
     "status": "pass",
-    "checkCount": 3649,
+    "checkCount": 3650,
     "criticalCount": 0,
     "warningCount": 0
   },
@@ -18763,7 +18763,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 354423
+      "wikiRevision": 356264
     },
     {
       "id": "5a27b9de86f77464e5044585",
@@ -28203,42 +28203,30 @@
       "name": "From Hand to Hand",
       "trader": "Skier",
       "maps": [
-        "Any"
+        "Lighthouse"
       ],
-      "type": "Find / Hand over",
+      "type": "Other",
       "objectives": [
-        "Find 2 Virtex programmable processors in raid",
-        "Find 1 Military COFDM Wireless Signal Transmitter in raid",
-        "Hand over 2 Virtex programmable processors to Peacekeeper",
-        "Hand over 1 Military COFDM Wireless Signal Transmitter to Peacekeeper"
+        "Stash a Virtex programmable processor inside the makeshift lab on Lighthouse",
+        "Stash a Military COFDM Wireless Signal Transmitter inside the makeshift lab on Lighthouse"
       ],
       "objectiveDetails": [
         {
-          "text": "Find 2 Virtex programmable processors in raid",
-          "category": "Find / Hand over",
-          "maps": [],
-          "raidClass": "ANY_RAID",
+          "text": "Stash a Virtex programmable processor inside the makeshift lab on Lighthouse",
+          "category": "Other",
+          "maps": [
+            "Lighthouse"
+          ],
+          "raidClass": "MAP_BOUND",
           "raidRequired": true
         },
         {
-          "text": "Find 1 Military COFDM Wireless Signal Transmitter in raid",
-          "category": "Find / Hand over",
-          "maps": [],
-          "raidClass": "ANY_RAID",
-          "raidRequired": true
-        },
-        {
-          "text": "Hand over 2 Virtex programmable processors to Peacekeeper",
-          "category": "Find / Hand over",
-          "maps": [],
-          "raidClass": "ANY_RAID",
-          "raidRequired": true
-        },
-        {
-          "text": "Hand over 1 Military COFDM Wireless Signal Transmitter to Peacekeeper",
-          "category": "Find / Hand over",
-          "maps": [],
-          "raidClass": "ANY_RAID",
+          "text": "Stash a Military COFDM Wireless Signal Transmitter inside the makeshift lab on Lighthouse",
+          "category": "Other",
+          "maps": [
+            "Lighthouse"
+          ],
+          "raidClass": "MAP_BOUND",
           "raidRequired": true
         }
       ],
@@ -28249,11 +28237,13 @@
       "wikiLink": "https://escapefromtarkov.fandom.com/wiki/From_Hand_to_Hand",
       "taskRequirements": [],
       "raidRelevant": true,
-      "raidClass": "ANY_RAID",
-      "mapBoundMaps": [],
-      "hasAnyRaidObjectives": true,
+      "raidClass": "MAP_BOUND",
+      "mapBoundMaps": [
+        "Lighthouse"
+      ],
+      "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 354016
+      "wikiRevision": 356266
     },
     {
       "id": "5979eee086f774311955e614",
@@ -29975,7 +29965,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 354508
+      "wikiRevision": 356265
     },
     {
       "id": "626bd75d5bef5d7d590bd415",
