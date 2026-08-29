@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-28T21:27:02.738Z",
+  "generatedAt": "2026-08-29T05:18:33.304Z",
   "mode": "regular",
   "sources": [
     "json.tarkov.dev",
@@ -17320,7 +17320,7 @@
       "objectives": [
         "Locate the generators in the east wing of the Health Resort on Shoreline",
         "Locate the generators in the west wing of the Health Resort on Shoreline",
-        "Hand over 3 Metal fuel tanks or Expeditionary fuel tanks marked with the found in raid stats"
+        "Hand over 3 found in raid Metal fuel tanks or Expeditionary fuel tanks"
       ],
       "objectiveDetails": [
         {
@@ -17342,7 +17342,7 @@
           "raidRequired": true
         },
         {
-          "text": "Hand over 3 Metal fuel tanks or Expeditionary fuel tanks marked with the found in raid stats",
+          "text": "Hand over 3 found in raid Metal fuel tanks or Expeditionary fuel tanks",
           "category": "Find / Hand over",
           "maps": [],
           "raidClass": "NON_RAID",
@@ -17362,7 +17362,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 354097
+      "wikiRevision": 356722
     },
     {
       "id": "5c0bd01e86f7747cdd799e56",
