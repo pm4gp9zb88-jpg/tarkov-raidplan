@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-29T05:18:33.304Z",
+  "generatedAt": "2026-08-30T05:18:31.112Z",
   "mode": "regular",
   "sources": [
     "json.tarkov.dev",
@@ -9,7 +9,7 @@
   "excludedNonRaidCount": 82,
   "qa": {
     "status": "pass",
-    "checkCount": 3650,
+    "checkCount": 3649,
     "criticalCount": 0,
     "warningCount": 0
   },
@@ -10413,7 +10413,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 354484
+      "wikiRevision": 356807
     },
     {
       "id": "5bc4836986f7740c0152911c",
@@ -10466,7 +10466,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 354484
+      "wikiRevision": 356807
     },
     {
       "id": "5bc4856986f77454c317bea7",
@@ -10516,7 +10516,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 354485
+      "wikiRevision": 356806
     },
     {
       "id": "5bc4893c86f774626f5ebf3e",
@@ -10527,35 +10527,18 @@
       ],
       "type": "Kill",
       "objectives": [
-        "Eliminate 3 PMCs with a headshot and without dying while using a bolt-action rifle"
+        "Eliminate 5 PMC operatives with a bolt-action rifle without dying"
       ],
       "objectiveDetails": [
         {
-          "text": "Eliminate 3 PMCs with a headshot and without dying while using a bolt-action rifle",
+          "text": "Eliminate 5 PMC operatives with a bolt-action rifle without dying",
           "category": "Kill",
           "maps": [],
           "raidClass": "ANY_RAID",
           "raidRequired": true
         }
       ],
-      "requirements": [
-        {
-          "kind": "gear",
-          "name": "bolt-action rifle",
-          "qty": 1,
-          "slot": "weapon",
-          "itemId": "",
-          "sourceObjective": "Eliminate 3 PMCs with a headshot and without dying while using a bolt-action rifle"
-        },
-        {
-          "kind": "gear",
-          "name": "headshot and without dying while using a bolt-action rifle",
-          "qty": 1,
-          "slot": "weapon",
-          "itemId": "",
-          "sourceObjective": "Eliminate 3 PMCs with a headshot and without dying while using a bolt-action rifle"
-        }
-      ],
+      "requirements": [],
       "restrictions": [],
       "fir": [],
       "minLevel": 33,
@@ -10573,7 +10556,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 354486
+      "wikiRevision": 356751
     },
     {
       "id": "665eeacf5d86b6c8aa03c79b",
@@ -16113,7 +16096,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 354338
+      "wikiRevision": 356844
     },
     {
       "id": "67a09636b8725511260bc421",
@@ -16550,7 +16533,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 354424
+      "wikiRevision": 356809
     },
     {
       "id": "64ee9df4496db64f9b7a4432",
@@ -16561,13 +16544,13 @@
       ],
       "type": "Locate",
       "objectives": [
-        "Locate the cause of the signal jamming on Streets of Tarkov",
+        "Locate the cause of the signal interference on Streets of Tarkov",
         "Install a WI-FI Camera to watch the door",
         "Install a WI-FI Camera to watch the stairwell"
       ],
       "objectiveDetails": [
         {
-          "text": "Locate the cause of the signal jamming on Streets of Tarkov",
+          "text": "Locate the cause of the signal interference on Streets of Tarkov",
           "category": "Locate",
           "maps": [
             "Streets of Tarkov"
@@ -16607,7 +16590,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 354427
+      "wikiRevision": 356924
     },
     {
       "id": "6573382e557ff128bf3da536",
