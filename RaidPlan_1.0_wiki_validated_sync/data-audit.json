@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-08-30T05:18:31.112Z",
+  "generatedAt": "2026-08-31T05:18:41.893Z",
   "summary": {
     "tasks": 435,
     "tasksWithCorrections": 0,
     "removedObjectives": 0,
-    "wordingMismatches": 227,
+    "wordingMismatches": 219,
     "wikiErrors": 4,
     "unparsedWikiPages": 0,
     "excludedNonRaidTasks": 82,

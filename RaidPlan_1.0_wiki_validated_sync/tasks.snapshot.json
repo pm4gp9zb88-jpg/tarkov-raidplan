@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-30T05:18:31.112Z",
+  "generatedAt": "2026-08-31T05:18:41.893Z",
   "mode": "regular",
   "sources": [
     "json.tarkov.dev",
@@ -14359,71 +14359,39 @@
       ],
       "type": "Find / Hand over",
       "objectives": [
-        "Find 3 PC CPUs in raid",
-        "Hand over 3 PC CPUs to Mechanic",
-        "Find 3 Rechargeable batteries in raid",
-        "Hand over 3 Rechargeable batteries to Mechanic",
-        "Find 3 Printed circuit boards in raid",
-        "Hand over 3 Printed circuit boards to Mechanic",
-        "Find 3 Broken GPhone smartphones in raid",
-        "Hand over 3 Broken GPhone smartphones to Mechanic"
+        "Find the item in raid : PC CPU",
+        "Hand over the item",
+        "Find the item in raid : Rechargeable battery",
+        "Find the item in raid : Printed circuit board"
       ],
       "objectiveDetails": [
         {
-          "text": "Find 3 PC CPUs in raid",
+          "text": "Find the item in raid : PC CPU",
           "category": "Find / Hand over",
           "maps": [],
           "raidClass": "ANY_RAID",
           "raidRequired": true
         },
         {
-          "text": "Hand over 3 PC CPUs to Mechanic",
+          "text": "Hand over the item",
           "category": "Find / Hand over",
           "maps": [],
           "raidClass": "NON_RAID",
           "raidRequired": false
         },
         {
-          "text": "Find 3 Rechargeable batteries in raid",
+          "text": "Find the item in raid : Rechargeable battery",
           "category": "Find / Hand over",
           "maps": [],
           "raidClass": "ANY_RAID",
           "raidRequired": true
         },
         {
-          "text": "Hand over 3 Rechargeable batteries to Mechanic",
-          "category": "Find / Hand over",
-          "maps": [],
-          "raidClass": "NON_RAID",
-          "raidRequired": false
-        },
-        {
-          "text": "Find 3 Printed circuit boards in raid",
+          "text": "Find the item in raid : Printed circuit board",
           "category": "Find / Hand over",
           "maps": [],
           "raidClass": "ANY_RAID",
           "raidRequired": true
-        },
-        {
-          "text": "Hand over 3 Printed circuit boards to Mechanic",
-          "category": "Find / Hand over",
-          "maps": [],
-          "raidClass": "NON_RAID",
-          "raidRequired": false
-        },
-        {
-          "text": "Find 3 Broken GPhone smartphones in raid",
-          "category": "Find / Hand over",
-          "maps": [],
-          "raidClass": "ANY_RAID",
-          "raidRequired": true
-        },
-        {
-          "text": "Hand over 3 Broken GPhone smartphones to Mechanic",
-          "category": "Find / Hand over",
-          "maps": [],
-          "raidClass": "NON_RAID",
-          "raidRequired": false
         }
       ],
       "requirements": [],
@@ -14437,7 +14405,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 354289
+      "wikiRevision": 356989
     },
     {
       "id": "657315e4a6af4ab4b50f3459",
@@ -16945,7 +16913,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 353902
+      "wikiRevision": 357229
     },
     {
       "id": "6a5cd2178fd7c2b201032f3f",
@@ -18379,7 +18347,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 354326
+      "wikiRevision": 357233
     },
     {
       "id": "6a5ccda873f06065630d61b0",
@@ -18947,7 +18915,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 354516
+      "wikiRevision": 357232
     },
     {
       "id": "5a27bb3d86f77411ea361a21",
@@ -21381,7 +21349,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 354226
+      "wikiRevision": 357228
     },
     {
       "id": "669fa399033a3ce9870338a8",
@@ -24346,14 +24314,12 @@
       ],
       "type": "Other",
       "objectives": [
-        "Stash 1 Ghost balaclava at the sawmill docks on Woods",
-        "Stash 1 Shemagh (Green) at the sawmill docks on Woods",
-        "Stash 1 RayBench Hipster Reserve sunglasses at the sawmill docks on Woods",
-        "Stash 1 Round frame sunglasses at the sawmill docks on Woods"
+        "Stash a Shemagh (Green) at the sawmill docks on Woods",
+        "Stash RayBench Hipster Reserve sunglasses at the sawmill docks on Woods"
       ],
       "objectiveDetails": [
         {
-          "text": "Stash 1 Ghost balaclava at the sawmill docks on Woods",
+          "text": "Stash a Shemagh (Green) at the sawmill docks on Woods",
           "category": "Other",
           "maps": [
             "Woods"
@@ -24362,28 +24328,10 @@
           "raidRequired": true
         },
         {
-          "text": "Stash 1 Shemagh (Green) at the sawmill docks on Woods",
-          "category": "Other",
-          "maps": [
-            "Woods"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        },
-        {
-          "text": "Stash 1 RayBench Hipster Reserve sunglasses at the sawmill docks on Woods",
+          "text": "Stash RayBench Hipster Reserve sunglasses at the sawmill docks on Woods",
           "category": "Other",
           "maps": [
             "Reserve",
-            "Woods"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        },
-        {
-          "text": "Stash 1 Round frame sunglasses at the sawmill docks on Woods",
-          "category": "Other",
-          "maps": [
             "Woods"
           ],
           "raidClass": "MAP_BOUND",
@@ -24404,7 +24352,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 354053
+      "wikiRevision": 356963
     },
     {
       "id": "5b478b1886f7744d1b23c57d",
@@ -29100,7 +29048,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 354284
+      "wikiRevision": 356983
     },
     {
       "id": "5edabd13218d181e29451442",
