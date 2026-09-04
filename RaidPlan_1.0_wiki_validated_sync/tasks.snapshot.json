@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-03T05:42:47.388Z",
+  "generatedAt": "2026-09-04T05:23:20.780Z",
   "mode": "regular",
   "sources": [
     "json.tarkov.dev",
@@ -4944,10 +4944,10 @@
       "name": "Stick to It",
       "trader": "BTR Driver",
       "maps": [
-        "Customs",
-        "Shoreline",
         "Lighthouse",
         "Woods",
+        "Customs",
+        "Shoreline",
         "Icebreaker"
       ],
       "type": "Kill",
@@ -4959,10 +4959,10 @@
           "text": "Eliminate 30 Rogues",
           "category": "Kill",
           "maps": [
-            "Customs",
-            "Shoreline",
             "Lighthouse",
             "Woods",
+            "Customs",
+            "Shoreline",
             "Icebreaker"
           ],
           "raidClass": "MAP_BOUND",
@@ -4978,10 +4978,10 @@
       "raidRelevant": true,
       "raidClass": "MAP_BOUND",
       "mapBoundMaps": [
-        "Customs",
-        "Shoreline",
         "Lighthouse",
         "Woods",
+        "Customs",
+        "Shoreline",
         "Icebreaker"
       ],
       "hasAnyRaidObjectives": false,
@@ -5042,12 +5042,12 @@
         "Woods",
         "Lighthouse",
         "Ground Zero Tutorial",
+        "Night Factory",
         "Interchange",
         "Factory",
-        "Shoreline",
-        "Night Factory",
         "Icebreaker",
-        "Streets of Tarkov"
+        "Streets of Tarkov",
+        "Shoreline"
       ],
       "type": "Locate / Kill / Survive",
       "objectives": [
@@ -5151,17 +5151,17 @@
           "text": "Eliminate 10 Scavs while completing the other objectives",
           "category": "Kill",
           "maps": [
-            "Ground Zero Tutorial",
-            "Interchange",
-            "Customs",
-            "Factory",
-            "Shoreline",
-            "Reserve",
-            "Night Factory",
-            "Icebreaker",
             "Lighthouse",
+            "Woods",
+            "Ground Zero Tutorial",
+            "Customs",
+            "Night Factory",
+            "Interchange",
+            "Factory",
+            "Reserve",
+            "Icebreaker",
             "Streets of Tarkov",
-            "Woods"
+            "Shoreline"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
@@ -5194,12 +5194,12 @@
         "Woods",
         "Lighthouse",
         "Ground Zero Tutorial",
+        "Night Factory",
         "Interchange",
         "Factory",
-        "Shoreline",
-        "Night Factory",
         "Icebreaker",
-        "Streets of Tarkov"
+        "Streets of Tarkov",
+        "Shoreline"
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
@@ -5215,12 +5215,12 @@
         "Woods",
         "Lighthouse",
         "Ground Zero Tutorial",
+        "Night Factory",
         "Interchange",
         "Factory",
-        "Shoreline",
-        "Night Factory",
         "Icebreaker",
-        "Streets of Tarkov"
+        "Streets of Tarkov",
+        "Shoreline"
       ],
       "type": "Locate / Kill / Survive",
       "objectives": [
@@ -5324,17 +5324,17 @@
           "text": "Eliminate 10 Scavs while completing the other objectives",
           "category": "Kill",
           "maps": [
-            "Ground Zero Tutorial",
-            "Interchange",
-            "Customs",
-            "Factory",
-            "Shoreline",
-            "Reserve",
-            "Night Factory",
-            "Icebreaker",
             "Lighthouse",
+            "Woods",
+            "Ground Zero Tutorial",
+            "Customs",
+            "Night Factory",
+            "Interchange",
+            "Factory",
+            "Reserve",
+            "Icebreaker",
             "Streets of Tarkov",
-            "Woods"
+            "Shoreline"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
@@ -5367,12 +5367,12 @@
         "Woods",
         "Lighthouse",
         "Ground Zero Tutorial",
+        "Night Factory",
         "Interchange",
         "Factory",
-        "Shoreline",
-        "Night Factory",
         "Icebreaker",
-        "Streets of Tarkov"
+        "Streets of Tarkov",
+        "Shoreline"
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
@@ -7350,11 +7350,11 @@
       "name": "Stray Dogs",
       "trader": "Jaeger",
       "maps": [
-        "Customs",
-        "Shoreline",
-        "Icebreaker",
         "Lighthouse",
-        "Woods"
+        "Woods",
+        "Customs",
+        "Icebreaker",
+        "Shoreline"
       ],
       "type": "Kill",
       "objectives": [
@@ -7367,11 +7367,11 @@
           "text": "Locate and eliminate Knight",
           "category": "Kill",
           "maps": [
-            "Customs",
-            "Shoreline",
-            "Icebreaker",
             "Lighthouse",
-            "Woods"
+            "Woods",
+            "Customs",
+            "Icebreaker",
+            "Shoreline"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
@@ -7380,10 +7380,10 @@
           "text": "Locate and eliminate Big Pipe",
           "category": "Kill",
           "maps": [
-            "Customs",
-            "Shoreline",
             "Lighthouse",
-            "Woods"
+            "Woods",
+            "Customs",
+            "Shoreline"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
@@ -7392,10 +7392,10 @@
           "text": "Locate and eliminate Birdeye",
           "category": "Kill",
           "maps": [
-            "Customs",
-            "Shoreline",
             "Lighthouse",
-            "Woods"
+            "Woods",
+            "Customs",
+            "Shoreline"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
@@ -7410,11 +7410,11 @@
       "raidRelevant": true,
       "raidClass": "MAP_BOUND",
       "mapBoundMaps": [
-        "Customs",
-        "Shoreline",
-        "Icebreaker",
         "Lighthouse",
-        "Woods"
+        "Woods",
+        "Customs",
+        "Icebreaker",
+        "Shoreline"
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
@@ -9172,9 +9172,9 @@
       "name": "The Huntsman Path - Liberation",
       "trader": "Jaeger",
       "maps": [
+        "The Lab (Dark)",
         "The Lab",
-        "Reserve",
-        "The Lab (Dark)"
+        "Reserve"
       ],
       "type": "Kill",
       "objectives": [
@@ -9185,9 +9185,9 @@
           "text": "Eliminate 6 Raiders",
           "category": "Kill",
           "maps": [
+            "The Lab (Dark)",
             "The Lab",
-            "Reserve",
-            "The Lab (Dark)"
+            "Reserve"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
@@ -9202,9 +9202,9 @@
       "raidRelevant": true,
       "raidClass": "MAP_BOUND",
       "mapBoundMaps": [
+        "The Lab (Dark)",
         "The Lab",
-        "Reserve",
-        "The Lab (Dark)"
+        "Reserve"
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
@@ -9986,17 +9986,17 @@
       "name": "The Survivalist Path - Wounded Beast",
       "trader": "Jaeger",
       "maps": [
-        "Ground Zero Tutorial",
-        "Interchange",
-        "Customs",
-        "Factory",
-        "Shoreline",
-        "Reserve",
-        "Night Factory",
-        "Icebreaker",
         "Lighthouse",
+        "Woods",
+        "Ground Zero Tutorial",
+        "Customs",
+        "Night Factory",
+        "Interchange",
+        "Factory",
+        "Reserve",
+        "Icebreaker",
         "Streets of Tarkov",
-        "Woods"
+        "Shoreline"
       ],
       "type": "Kill",
       "objectives": [
@@ -10007,17 +10007,17 @@
           "text": "Eliminate 3 Scavs while suffering from pain effect",
           "category": "Kill",
           "maps": [
-            "Ground Zero Tutorial",
-            "Interchange",
-            "Customs",
-            "Factory",
-            "Shoreline",
-            "Reserve",
-            "Night Factory",
-            "Icebreaker",
             "Lighthouse",
+            "Woods",
+            "Ground Zero Tutorial",
+            "Customs",
+            "Night Factory",
+            "Interchange",
+            "Factory",
+            "Reserve",
+            "Icebreaker",
             "Streets of Tarkov",
-            "Woods"
+            "Shoreline"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
@@ -10039,17 +10039,17 @@
       "raidRelevant": true,
       "raidClass": "MAP_BOUND",
       "mapBoundMaps": [
-        "Ground Zero Tutorial",
-        "Interchange",
-        "Customs",
-        "Factory",
-        "Shoreline",
-        "Reserve",
-        "Night Factory",
-        "Icebreaker",
         "Lighthouse",
+        "Woods",
+        "Ground Zero Tutorial",
+        "Customs",
+        "Night Factory",
+        "Interchange",
+        "Factory",
+        "Reserve",
+        "Icebreaker",
         "Streets of Tarkov",
-        "Woods"
+        "Shoreline"
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
@@ -10113,16 +10113,16 @@
       "trader": "Jaeger",
       "maps": [
         "Streets of Tarkov",
-        "Ground Zero Tutorial",
-        "Interchange",
-        "Customs",
-        "Factory",
-        "Shoreline",
-        "Reserve",
-        "Night Factory",
-        "Icebreaker",
         "Lighthouse",
-        "Woods"
+        "Woods",
+        "Ground Zero Tutorial",
+        "Customs",
+        "Night Factory",
+        "Interchange",
+        "Factory",
+        "Reserve",
+        "Icebreaker",
+        "Shoreline"
       ],
       "type": "Kill",
       "objectives": [
@@ -10134,16 +10134,16 @@
           "category": "Kill",
           "maps": [
             "Streets of Tarkov",
-            "Ground Zero Tutorial",
-            "Interchange",
-            "Customs",
-            "Factory",
-            "Shoreline",
-            "Reserve",
-            "Night Factory",
-            "Icebreaker",
             "Lighthouse",
-            "Woods"
+            "Woods",
+            "Ground Zero Tutorial",
+            "Customs",
+            "Night Factory",
+            "Interchange",
+            "Factory",
+            "Reserve",
+            "Icebreaker",
+            "Shoreline"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
@@ -10168,16 +10168,16 @@
       "raidClass": "MAP_BOUND",
       "mapBoundMaps": [
         "Streets of Tarkov",
-        "Ground Zero Tutorial",
-        "Interchange",
-        "Customs",
-        "Factory",
-        "Shoreline",
-        "Reserve",
-        "Night Factory",
-        "Icebreaker",
         "Lighthouse",
-        "Woods"
+        "Woods",
+        "Ground Zero Tutorial",
+        "Customs",
+        "Night Factory",
+        "Interchange",
+        "Factory",
+        "Reserve",
+        "Icebreaker",
+        "Shoreline"
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
@@ -10637,9 +10637,9 @@
       "name": "Following the Bread Crumbs",
       "trader": "Lightkeeper",
       "maps": [
+        "The Lab (Dark)",
         "The Lab",
         "Reserve",
-        "The Lab (Dark)",
         "Lighthouse"
       ],
       "type": "Kill",
@@ -10655,9 +10655,9 @@
           "text": "Eliminate 20 Raiders",
           "category": "Kill",
           "maps": [
+            "The Lab (Dark)",
             "The Lab",
-            "Reserve",
-            "The Lab (Dark)"
+            "Reserve"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
@@ -10715,9 +10715,9 @@
       "raidRelevant": true,
       "raidClass": "MAP_BOUND",
       "mapBoundMaps": [
+        "The Lab (Dark)",
         "The Lab",
         "Reserve",
-        "The Lab (Dark)",
         "Lighthouse"
       ],
       "hasAnyRaidObjectives": false,
@@ -20871,11 +20871,11 @@
       "name": "Hell on Earth - Part 2",
       "trader": "Prapor",
       "maps": [
+        "Woods",
         "Customs",
-        "Shoreline",
         "Night Factory",
         "Ground Zero 21+",
-        "Woods"
+        "Shoreline"
       ],
       "type": "Kill",
       "objectives": [
@@ -20886,11 +20886,11 @@
           "text": "Eliminate 3 hooded men while using the double barrel shotgun",
           "category": "Kill",
           "maps": [
+            "Woods",
             "Customs",
-            "Shoreline",
             "Night Factory",
             "Ground Zero 21+",
-            "Woods"
+            "Shoreline"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
@@ -20922,11 +20922,11 @@
       "raidRelevant": true,
       "raidClass": "MAP_BOUND",
       "mapBoundMaps": [
+        "Woods",
         "Customs",
-        "Shoreline",
         "Night Factory",
         "Ground Zero 21+",
-        "Woods"
+        "Shoreline"
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
@@ -20978,17 +20978,17 @@
       "name": "Intimidator",
       "trader": "Prapor",
       "maps": [
-        "Ground Zero Tutorial",
-        "Interchange",
-        "Customs",
-        "Factory",
-        "Shoreline",
-        "Reserve",
-        "Night Factory",
-        "Icebreaker",
         "Lighthouse",
+        "Woods",
+        "Ground Zero Tutorial",
+        "Customs",
+        "Night Factory",
+        "Interchange",
+        "Factory",
+        "Reserve",
+        "Icebreaker",
         "Streets of Tarkov",
-        "Woods"
+        "Shoreline"
       ],
       "type": "Kill",
       "objectives": [
@@ -20999,17 +20999,17 @@
           "text": "Eliminate 40 Scavs with headshots",
           "category": "Kill",
           "maps": [
-            "Ground Zero Tutorial",
-            "Interchange",
-            "Customs",
-            "Factory",
-            "Shoreline",
-            "Reserve",
-            "Night Factory",
-            "Icebreaker",
             "Lighthouse",
+            "Woods",
+            "Ground Zero Tutorial",
+            "Customs",
+            "Night Factory",
+            "Interchange",
+            "Factory",
+            "Reserve",
+            "Icebreaker",
             "Streets of Tarkov",
-            "Woods"
+            "Shoreline"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
@@ -21024,17 +21024,17 @@
       "raidRelevant": true,
       "raidClass": "MAP_BOUND",
       "mapBoundMaps": [
-        "Ground Zero Tutorial",
-        "Interchange",
-        "Customs",
-        "Factory",
-        "Shoreline",
-        "Reserve",
-        "Night Factory",
-        "Icebreaker",
         "Lighthouse",
+        "Woods",
+        "Ground Zero Tutorial",
+        "Customs",
+        "Night Factory",
+        "Interchange",
+        "Factory",
+        "Reserve",
+        "Icebreaker",
         "Streets of Tarkov",
-        "Woods"
+        "Shoreline"
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
@@ -22653,17 +22653,17 @@
       "name": "The Punisher - Part 5",
       "trader": "Prapor",
       "maps": [
-        "Ground Zero Tutorial",
-        "Interchange",
-        "Customs",
-        "Factory",
-        "Shoreline",
-        "Reserve",
-        "Night Factory",
-        "Icebreaker",
         "Lighthouse",
+        "Woods",
+        "Ground Zero Tutorial",
+        "Customs",
+        "Night Factory",
+        "Interchange",
+        "Factory",
+        "Reserve",
+        "Icebreaker",
         "Streets of Tarkov",
-        "Woods"
+        "Shoreline"
       ],
       "type": "Find / Hand over / Kill",
       "objectives": [
@@ -22730,17 +22730,17 @@
           "text": "Eliminate 20 Scavs with Light machine guns",
           "category": "Kill",
           "maps": [
-            "Ground Zero Tutorial",
-            "Interchange",
-            "Customs",
-            "Factory",
-            "Shoreline",
-            "Reserve",
-            "Night Factory",
-            "Icebreaker",
             "Lighthouse",
+            "Woods",
+            "Ground Zero Tutorial",
+            "Customs",
+            "Night Factory",
+            "Interchange",
+            "Factory",
+            "Reserve",
+            "Icebreaker",
             "Streets of Tarkov",
-            "Woods"
+            "Shoreline"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
@@ -22762,17 +22762,17 @@
       "raidRelevant": true,
       "raidClass": "MAP_BOUND",
       "mapBoundMaps": [
-        "Ground Zero Tutorial",
-        "Interchange",
-        "Customs",
-        "Factory",
-        "Shoreline",
-        "Reserve",
-        "Night Factory",
-        "Icebreaker",
         "Lighthouse",
+        "Woods",
+        "Ground Zero Tutorial",
+        "Customs",
+        "Night Factory",
+        "Interchange",
+        "Factory",
+        "Reserve",
+        "Icebreaker",
         "Streets of Tarkov",
-        "Woods"
+        "Shoreline"
       ],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
@@ -22793,8 +22793,8 @@
         "Icebreaker",
         "Interchange",
         "Woods",
-        "Factory",
         "Night Factory",
+        "Factory",
         "The Lab (Dark)"
       ],
       "type": "Kill / Find / Hand over / Locate",
@@ -22833,11 +22833,11 @@
             "Icebreaker",
             "Reserve",
             "Interchange",
-            "Shoreline",
             "Lighthouse",
             "Woods",
-            "Factory",
+            "Shoreline",
             "Night Factory",
+            "Factory",
             "The Lab (Dark)"
           ],
           "raidClass": "MAP_BOUND",
@@ -22879,8 +22879,8 @@
         "Icebreaker",
         "Interchange",
         "Woods",
-        "Factory",
         "Night Factory",
+        "Factory",
         "The Lab (Dark)"
       ],
       "hasAnyRaidObjectives": false,
@@ -23772,8 +23772,8 @@
         "Interchange",
         "Woods",
         "Shoreline",
-        "Factory",
         "Night Factory",
+        "Factory",
         "Lighthouse"
       ],
       "type": "Locate",
@@ -23791,8 +23791,8 @@
             "Interchange",
             "Woods",
             "Shoreline",
-            "Factory",
             "Night Factory",
+            "Factory",
             "Lighthouse"
           ],
           "raidClass": "MAP_BOUND",
@@ -23846,8 +23846,8 @@
         "Interchange",
         "Woods",
         "Shoreline",
-        "Factory",
         "Night Factory",
+        "Factory",
         "Lighthouse"
       ],
       "hasAnyRaidObjectives": false,
@@ -24010,9 +24010,9 @@
       "name": "Drip-Out - Part 1",
       "trader": "Ragman",
       "maps": [
+        "The Lab (Dark)",
         "The Lab",
-        "Reserve",
-        "The Lab (Dark)"
+        "Reserve"
       ],
       "type": "Kill / Find / Hand over",
       "objectives": [
@@ -24024,9 +24024,9 @@
           "text": "Eliminate 100 Raiders",
           "category": "Kill",
           "maps": [
+            "The Lab (Dark)",
             "The Lab",
-            "Reserve",
-            "The Lab (Dark)"
+            "Reserve"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
@@ -24048,9 +24048,9 @@
       "raidRelevant": true,
       "raidClass": "MAP_BOUND",
       "mapBoundMaps": [
+        "The Lab (Dark)",
         "The Lab",
-        "Reserve",
-        "The Lab (Dark)"
+        "Reserve"
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
@@ -24061,9 +24061,9 @@
       "name": "Drip-Out - Part 1",
       "trader": "Ragman",
       "maps": [
+        "The Lab (Dark)",
         "The Lab",
-        "Reserve",
-        "The Lab (Dark)"
+        "Reserve"
       ],
       "type": "Kill / Find / Hand over",
       "objectives": [
@@ -24075,9 +24075,9 @@
           "text": "Eliminate 100 Raiders",
           "category": "Kill",
           "maps": [
+            "The Lab (Dark)",
             "The Lab",
-            "Reserve",
-            "The Lab (Dark)"
+            "Reserve"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
@@ -24099,9 +24099,9 @@
       "raidRelevant": true,
       "raidClass": "MAP_BOUND",
       "mapBoundMaps": [
+        "The Lab (Dark)",
         "The Lab",
-        "Reserve",
-        "The Lab (Dark)"
+        "Reserve"
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
@@ -24112,8 +24112,8 @@
       "name": "Drip-Out - Part 2",
       "trader": "Ragman",
       "maps": [
-        "Icebreaker",
-        "Lighthouse"
+        "Lighthouse",
+        "Icebreaker"
       ],
       "type": "Kill / Find / Hand over",
       "objectives": [
@@ -24125,8 +24125,8 @@
           "text": "Eliminate 100 Rogues",
           "category": "Kill",
           "maps": [
-            "Icebreaker",
-            "Lighthouse"
+            "Lighthouse",
+            "Icebreaker"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
@@ -24148,8 +24148,8 @@
       "raidRelevant": true,
       "raidClass": "MAP_BOUND",
       "mapBoundMaps": [
-        "Icebreaker",
-        "Lighthouse"
+        "Lighthouse",
+        "Icebreaker"
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
@@ -24160,8 +24160,8 @@
       "name": "Drip-Out - Part 2",
       "trader": "Ragman",
       "maps": [
-        "Icebreaker",
-        "Lighthouse"
+        "Lighthouse",
+        "Icebreaker"
       ],
       "type": "Kill / Find / Hand over",
       "objectives": [
@@ -24173,8 +24173,8 @@
           "text": "Eliminate 100 Rogues",
           "category": "Kill",
           "maps": [
-            "Icebreaker",
-            "Lighthouse"
+            "Lighthouse",
+            "Icebreaker"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
@@ -24196,8 +24196,8 @@
       "raidRelevant": true,
       "raidClass": "MAP_BOUND",
       "mapBoundMaps": [
-        "Icebreaker",
-        "Lighthouse"
+        "Lighthouse",
+        "Icebreaker"
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
@@ -25153,17 +25153,17 @@
       "name": "New Beginning",
       "trader": "Ragman",
       "maps": [
-        "Ground Zero Tutorial",
-        "Interchange",
-        "Customs",
-        "Factory",
-        "Shoreline",
-        "Reserve",
-        "Night Factory",
-        "Icebreaker",
         "Lighthouse",
-        "Streets of Tarkov",
         "Woods",
+        "Ground Zero Tutorial",
+        "Customs",
+        "Night Factory",
+        "Interchange",
+        "Factory",
+        "Reserve",
+        "Icebreaker",
+        "Streets of Tarkov",
+        "Shoreline",
         "The Lab"
       ],
       "type": "Kill / Survive / Find / Hand over",
@@ -25180,17 +25180,17 @@
           "text": "Eliminate 50 Scavs",
           "category": "Kill",
           "maps": [
-            "Ground Zero Tutorial",
-            "Interchange",
-            "Customs",
-            "Factory",
-            "Shoreline",
-            "Reserve",
-            "Night Factory",
-            "Icebreaker",
             "Lighthouse",
+            "Woods",
+            "Ground Zero Tutorial",
+            "Customs",
+            "Night Factory",
+            "Interchange",
+            "Factory",
+            "Reserve",
+            "Icebreaker",
             "Streets of Tarkov",
-            "Woods"
+            "Shoreline"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
@@ -25242,17 +25242,17 @@
       "raidRelevant": true,
       "raidClass": "MAP_BOUND",
       "mapBoundMaps": [
-        "Ground Zero Tutorial",
-        "Interchange",
-        "Customs",
-        "Factory",
-        "Shoreline",
-        "Reserve",
-        "Night Factory",
-        "Icebreaker",
         "Lighthouse",
-        "Streets of Tarkov",
         "Woods",
+        "Ground Zero Tutorial",
+        "Customs",
+        "Night Factory",
+        "Interchange",
+        "Factory",
+        "Reserve",
+        "Icebreaker",
+        "Streets of Tarkov",
+        "Shoreline",
         "The Lab"
       ],
       "hasAnyRaidObjectives": false,
@@ -26429,17 +26429,17 @@
       "name": "Balancing - Part 1 [PVP ZONE]",
       "trader": "Ref",
       "maps": [
-        "Ground Zero Tutorial",
-        "Interchange",
-        "Customs",
-        "Factory",
-        "Shoreline",
-        "Reserve",
-        "Night Factory",
-        "Icebreaker",
         "Lighthouse",
+        "Woods",
+        "Ground Zero Tutorial",
+        "Customs",
+        "Night Factory",
+        "Interchange",
+        "Factory",
+        "Reserve",
+        "Icebreaker",
         "Streets of Tarkov",
-        "Woods"
+        "Shoreline"
       ],
       "type": "Kill",
       "objectives": [
@@ -26450,17 +26450,17 @@
           "text": "Eliminate 5 Scavs while using a Steyr AUG on any location",
           "category": "Kill",
           "maps": [
-            "Ground Zero Tutorial",
-            "Interchange",
-            "Customs",
-            "Factory",
-            "Shoreline",
-            "Reserve",
-            "Night Factory",
-            "Icebreaker",
             "Lighthouse",
+            "Woods",
+            "Ground Zero Tutorial",
+            "Customs",
+            "Night Factory",
+            "Interchange",
+            "Factory",
+            "Reserve",
+            "Icebreaker",
             "Streets of Tarkov",
-            "Woods"
+            "Shoreline"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
@@ -26482,17 +26482,17 @@
       "raidRelevant": true,
       "raidClass": "MAP_BOUND",
       "mapBoundMaps": [
-        "Ground Zero Tutorial",
-        "Interchange",
-        "Customs",
-        "Factory",
-        "Shoreline",
-        "Reserve",
-        "Night Factory",
-        "Icebreaker",
         "Lighthouse",
+        "Woods",
+        "Ground Zero Tutorial",
+        "Customs",
+        "Night Factory",
+        "Interchange",
+        "Factory",
+        "Reserve",
+        "Icebreaker",
         "Streets of Tarkov",
-        "Woods"
+        "Shoreline"
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
