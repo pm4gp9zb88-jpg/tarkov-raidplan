@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-04T05:23:20.780Z",
+  "generatedAt": "2026-09-05T05:22:33.210Z",
   "mode": "regular",
   "sources": [
     "json.tarkov.dev",
@@ -14405,7 +14405,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 356989
+      "wikiRevision": 357643
     },
     {
       "id": "657315e4a6af4ab4b50f3459",
@@ -19021,7 +19021,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 354531
+      "wikiRevision": 357654
     },
     {
       "id": "5a27ba1c86f77461ea5a3c56",
@@ -27754,7 +27754,7 @@
       "type": "Find / Hand over",
       "objectives": [
         "Obtain the package with T-90M Commander control panel on Reserve",
-        "Hand over the package to Peacekeeper"
+        "Hand over the package"
       ],
       "objectiveDetails": [
         {
@@ -27767,7 +27767,7 @@
           "raidRequired": true
         },
         {
-          "text": "Hand over the package to Peacekeeper",
+          "text": "Hand over the package",
           "category": "Find / Hand over",
           "maps": [],
           "raidClass": "NON_RAID",
@@ -27787,7 +27787,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 353874
+      "wikiRevision": 357650
     },
     {
       "id": "6764174c86addd02bc033d68",
