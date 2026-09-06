@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-05T05:22:33.210Z",
+  "generatedAt": "2026-09-06T05:22:36.253Z",
   "mode": "regular",
   "sources": [
     "json.tarkov.dev",
@@ -5446,7 +5446,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 353765
+      "wikiRevision": 357681
     },
     {
       "id": "66058ccf06ef1d50a60c1f48",
@@ -26422,7 +26422,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 353766
+      "wikiRevision": 357682
     },
     {
       "id": "66058cb7c7f3584787181476",
@@ -26767,7 +26767,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 354080
+      "wikiRevision": 357684
     },
     {
       "id": "69788c2bac719606e40b4e77",
@@ -26807,7 +26807,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 354266
+      "wikiRevision": 357683
     },
     {
       "id": "69788db3878a4385d10c0718",
@@ -26847,7 +26847,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 354267
+      "wikiRevision": 357691
     },
     {
       "id": "675c15fbf7da9792a4059871",
@@ -26972,7 +26972,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 354518
+      "wikiRevision": 357690
     },
     {
       "id": "66058cc208308761cf390993",
@@ -27012,7 +27012,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 354519
+      "wikiRevision": 357689
     },
     {
       "id": "66058cc5bb83da7ba474aba9",
@@ -27052,7 +27052,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 354520
+      "wikiRevision": 357688
     },
     {
       "id": "66058cc72cee99303f1ba069",
@@ -27100,7 +27100,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 354521
+      "wikiRevision": 357687
     },
     {
       "id": "66058cc9ae4719735349b9ea",
@@ -27140,7 +27140,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 354522
+      "wikiRevision": 357686
     },
     {
       "id": "69789418b2187365e70bb947",
@@ -27180,7 +27180,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 354523
+      "wikiRevision": 357685
     },
     {
       "id": "64f5e20652fc01298e2c61e3",
