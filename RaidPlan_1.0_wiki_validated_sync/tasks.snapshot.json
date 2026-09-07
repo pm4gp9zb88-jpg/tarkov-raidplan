@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-09-06T05:22:36.253Z",
+  "generatedAt": "2026-09-07T05:24:31.562Z",
   "mode": "regular",
   "sources": [
     "json.tarkov.dev",
     "escapefromtarkov.fandom.com"
   ],
-  "taskCount": 435,
+  "taskCount": 433,
   "excludedNonRaidCount": 82,
   "qa": {
     "status": "pass",
-    "checkCount": 3649,
+    "checkCount": 3630,
     "criticalCount": 0,
     "warningCount": 0
   },
@@ -855,36 +855,6 @@
       "taskRequirements": [
         {
           "taskId": "666314c3acf8442f8b0531a3",
-          "statuses": [
-            "complete"
-          ]
-        }
-      ]
-    },
-    "669fa394e0c9f9fafa082897": {
-      "name": "Forklift Certified",
-      "raidRelevant": true,
-      "taskRequirements": [
-        {
-          "taskId": "669fa39b91b0a8c9680fc467",
-          "statuses": [
-            "complete"
-          ]
-        }
-      ]
-    },
-    "669fa3a1c26f13bd04030f37": {
-      "name": "Capacity Check",
-      "raidRelevant": true,
-      "taskRequirements": [
-        {
-          "taskId": "5ac345dc86f774288030817f",
-          "statuses": [
-            "complete"
-          ]
-        },
-        {
-          "taskId": "669fa394e0c9f9fafa082897",
           "statuses": [
             "complete"
           ]
@@ -12370,76 +12340,6 @@
       "wikiRevision": 355564
     },
     {
-      "id": "669fa3a1c26f13bd04030f37",
-      "name": "Capacity Check",
-      "trader": "Mechanic",
-      "maps": [
-        "Factory"
-      ],
-      "type": "Other",
-      "objectives": [
-        "Fix the first reactor mixer with a Toolset on Factory",
-        "Fix the second reactor mixer with a Toolset on Factory",
-        "Fix the third reactor mixer with a Toolset on Factory"
-      ],
-      "objectiveDetails": [
-        {
-          "text": "Fix the first reactor mixer with a Toolset on Factory",
-          "category": "Other",
-          "maps": [
-            "Factory"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        },
-        {
-          "text": "Fix the second reactor mixer with a Toolset on Factory",
-          "category": "Other",
-          "maps": [
-            "Factory"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        },
-        {
-          "text": "Fix the third reactor mixer with a Toolset on Factory",
-          "category": "Other",
-          "maps": [
-            "Factory"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        }
-      ],
-      "requirements": [],
-      "restrictions": [],
-      "fir": [],
-      "minLevel": 12,
-      "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Capacity_Check",
-      "taskRequirements": [
-        {
-          "taskId": "5ac345dc86f774288030817f",
-          "statuses": [
-            "complete"
-          ]
-        },
-        {
-          "taskId": "669fa394e0c9f9fafa082897",
-          "statuses": [
-            "complete"
-          ]
-        }
-      ],
-      "raidRelevant": true,
-      "raidClass": "MAP_BOUND",
-      "mapBoundMaps": [
-        "Factory"
-      ],
-      "hasAnyRaidObjectives": false,
-      "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 353841
-    },
-    {
       "id": "5f04886a3937dc337a6b8238",
       "name": "Chemistry Closet",
       "trader": "Mechanic",
@@ -12808,160 +12708,6 @@
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
       "wikiRevision": 353982
-    },
-    {
-      "id": "669fa394e0c9f9fafa082897",
-      "name": "Forklift Certified",
-      "trader": "Mechanic",
-      "maps": [
-        "Factory"
-      ],
-      "type": "Locate",
-      "objectives": [
-        "Locate the first forklift on Factory",
-        "Locate the second forklift on Factory",
-        "Locate the third forklift on Factory",
-        "Locate the fourth forklift on Factory",
-        "Locate the fifth forklift on Factory",
-        "Locate the sixth forklift on Factory",
-        "Locate the seventh forklift on Factory",
-        "Locate the eighth forklift on Factory",
-        "Locate the ninth forklift on Factory",
-        "Locate the tenth forklift on Factory",
-        "Locate the eleventh forklift on Factory",
-        "Locate the twelfth forklift on Factory"
-      ],
-      "objectiveDetails": [
-        {
-          "text": "Locate the first forklift on Factory",
-          "category": "Locate",
-          "maps": [
-            "Factory"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        },
-        {
-          "text": "Locate the second forklift on Factory",
-          "category": "Locate",
-          "maps": [
-            "Factory"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        },
-        {
-          "text": "Locate the third forklift on Factory",
-          "category": "Locate",
-          "maps": [
-            "Factory"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        },
-        {
-          "text": "Locate the fourth forklift on Factory",
-          "category": "Locate",
-          "maps": [
-            "Factory"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        },
-        {
-          "text": "Locate the fifth forklift on Factory",
-          "category": "Locate",
-          "maps": [
-            "Factory"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        },
-        {
-          "text": "Locate the sixth forklift on Factory",
-          "category": "Locate",
-          "maps": [
-            "Factory"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        },
-        {
-          "text": "Locate the seventh forklift on Factory",
-          "category": "Locate",
-          "maps": [
-            "Factory"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        },
-        {
-          "text": "Locate the eighth forklift on Factory",
-          "category": "Locate",
-          "maps": [
-            "Factory"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        },
-        {
-          "text": "Locate the ninth forklift on Factory",
-          "category": "Locate",
-          "maps": [
-            "Factory"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        },
-        {
-          "text": "Locate the tenth forklift on Factory",
-          "category": "Locate",
-          "maps": [
-            "Factory"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        },
-        {
-          "text": "Locate the eleventh forklift on Factory",
-          "category": "Locate",
-          "maps": [
-            "Factory"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        },
-        {
-          "text": "Locate the twelfth forklift on Factory",
-          "category": "Locate",
-          "maps": [
-            "Factory"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        }
-      ],
-      "requirements": [],
-      "restrictions": [],
-      "fir": [],
-      "minLevel": 12,
-      "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Forklift_Certified",
-      "taskRequirements": [
-        {
-          "taskId": "669fa39b91b0a8c9680fc467",
-          "statuses": [
-            "complete"
-          ]
-        }
-      ],
-      "raidRelevant": true,
-      "raidClass": "MAP_BOUND",
-      "mapBoundMaps": [
-        "Factory"
-      ],
-      "hasAnyRaidObjectives": false,
-      "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 354004
     },
     {
       "id": "625d700cc48e6c62a440fab5",
@@ -14306,7 +14052,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 354250
+      "wikiRevision": 357720
     },
     {
       "id": "5c0be13186f7746f016734aa",
@@ -25836,13 +25582,13 @@
       ],
       "type": "Other",
       "objectives": [
-        "Stash the Goshan cash register key at the BIZARRO store fitting rooms on Interchange.",
-        "Stash the IDEA cash register key at Register #9 on Interchange.",
-        "Stash the OLI cash register key at Register #7-8 on Interchange."
+        "Stash the Goshan cash register key at the BIZARRO store fitting rooms on Interchange",
+        "Stash the IDEA cash register key at Register #9 on Interchange",
+        "Stash the OLI cash register key at Register #7-8 on Interchange"
       ],
       "objectiveDetails": [
         {
-          "text": "Stash the Goshan cash register key at the BIZARRO store fitting rooms on Interchange.",
+          "text": "Stash the Goshan cash register key at the BIZARRO store fitting rooms on Interchange",
           "category": "Other",
           "maps": [
             "Interchange"
@@ -25851,7 +25597,7 @@
           "raidRequired": true
         },
         {
-          "text": "Stash the IDEA cash register key at Register #9 on Interchange.",
+          "text": "Stash the IDEA cash register key at Register #9 on Interchange",
           "category": "Other",
           "maps": [
             "Interchange"
@@ -25860,7 +25606,7 @@
           "raidRequired": true
         },
         {
-          "text": "Stash the OLI cash register key at Register #7-8 on Interchange.",
+          "text": "Stash the OLI cash register key at Register #7-8 on Interchange",
           "category": "Other",
           "maps": [
             "Interchange"
@@ -25882,7 +25628,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 354397
+      "wikiRevision": 357718
     },
     {
       "id": "5e381b0286f77420e3417a74",
@@ -29226,19 +28972,27 @@
       "maps": [
         "Reserve"
       ],
-      "type": "Kill",
+      "type": "Kill / Find / Hand over",
       "objectives": [
-        "Eliminate 10 Scavs in the underground warehouse on Reserve"
+        "Eliminate 5 Scavs in the underground storage warehouse on Reserve",
+        "Hand over any 3 found in raid keys for the underground storage warehouse (RB-PSP and RB-PSV)"
       ],
       "objectiveDetails": [
         {
-          "text": "Eliminate 10 Scavs in the underground warehouse on Reserve",
+          "text": "Eliminate 5 Scavs in the underground storage warehouse on Reserve",
           "category": "Kill",
           "maps": [
             "Reserve"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
+        },
+        {
+          "text": "Hand over any 3 found in raid keys for the underground storage warehouse (RB-PSP and RB-PSV)",
+          "category": "Find / Hand over",
+          "maps": [],
+          "raidClass": "NON_RAID",
+          "raidRequired": false
         }
       ],
       "requirements": [],
@@ -29254,7 +29008,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 354313
+      "wikiRevision": 357724
     },
     {
       "id": "666314bf1cd52e3d040a2e78",
