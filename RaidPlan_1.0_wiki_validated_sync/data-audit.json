@@ -1,23 +1,23 @@
 {
-  "generatedAt": "2026-09-13T10:14:15.938Z",
+  "generatedAt": "2026-09-14T10:36:27.442Z",
   "summary": {
-    "tasks": 433,
+    "tasks": 434,
     "tasksWithCorrections": 0,
     "removedObjectives": 0,
-    "wordingMismatches": 221,
+    "wordingMismatches": 220,
     "wikiErrors": 4,
     "unparsedWikiPages": 0,
-    "excludedNonRaidTasks": 82,
+    "excludedNonRaidTasks": 81,
     "mapBoundTasks": 343,
-    "anyRaidTasks": 90,
+    "anyRaidTasks": 91,
     "qaStatus": "pass",
-    "qaChecks": 3630,
+    "qaChecks": 3637,
     "qaCritical": 0,
     "qaWarnings": 0
   },
   "qa": {
     "status": "pass",
-    "checkCount": 3630,
+    "checkCount": 3637,
     "criticalCount": 0,
     "warningCount": 0,
     "issues": []
@@ -257,11 +257,6 @@
       "id": "596b36c586f77450d6045ad2",
       "name": "Supplier",
       "trader": "Skier"
-    },
-    {
-      "id": "59ca1a6286f774509a270942",
-      "name": "Ironclad Proof",
-      "trader": "Prapor"
     },
     {
       "id": "5a0327ba86f77456b9154236",
