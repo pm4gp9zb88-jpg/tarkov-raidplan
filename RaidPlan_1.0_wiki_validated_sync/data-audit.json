@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-09-16T09:55:05.623Z",
+  "generatedAt": "2026-09-17T09:58:14.164Z",
   "summary": {
     "tasks": 434,
     "tasksWithCorrections": 0,
     "removedObjectives": 0,
-    "wordingMismatches": 228,
-    "wikiErrors": 4,
+    "wordingMismatches": 229,
+    "wikiErrors": 1,
     "unparsedWikiPages": 0,
     "excludedNonRaidTasks": 81,
     "mapBoundTasks": 343,
@@ -435,21 +435,6 @@
       "task": "Arena Business [PVP ZONE]",
       "status": "wiki-error",
       "error": "Bad title \"Arena Business [PVP ZONE] \"."
-    },
-    {
-      "task": "Neuanfang",
-      "status": "wiki-error",
-      "error": "The page you specified doesn't exist."
-    },
-    {
-      "task": "Neuanfang",
-      "status": "wiki-error",
-      "error": "The page you specified doesn't exist."
-    },
-    {
-      "task": "Neuanfang",
-      "status": "wiki-error",
-      "error": "The page you specified doesn't exist."
     }
   ],
   "unparsed": []

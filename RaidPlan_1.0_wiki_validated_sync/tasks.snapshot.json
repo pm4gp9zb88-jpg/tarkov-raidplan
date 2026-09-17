@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-16T09:55:05.623Z",
+  "generatedAt": "2026-09-17T09:58:14.164Z",
   "mode": "regular",
   "sources": [
     "json.tarkov.dev",
@@ -1475,7 +1475,7 @@
       "taskRequirements": []
     },
     "6761ff17cdc36bd66102e9d0": {
-      "name": "Neuanfang",
+      "name": "New Beginning",
       "raidRelevant": true,
       "taskRequirements": []
     },
@@ -1578,7 +1578,7 @@
       "taskRequirements": []
     },
     "6848100b00afffa81f09e365": {
-      "name": "Neuanfang",
+      "name": "New Beginning",
       "raidRelevant": true,
       "taskRequirements": []
     },
@@ -1822,7 +1822,7 @@
       "taskRequirements": []
     },
     "68481881f43abfdda2058369": {
-      "name": "Neuanfang",
+      "name": "New Beginning",
       "raidRelevant": true,
       "taskRequirements": []
     },
@@ -4914,9 +4914,9 @@
       "name": "Stick to It",
       "trader": "BTR Driver",
       "maps": [
+        "Customs",
         "Lighthouse",
         "Woods",
-        "Customs",
         "Shoreline",
         "Icebreaker"
       ],
@@ -4929,9 +4929,9 @@
           "text": "Eliminate 30 Rogues",
           "category": "Kill",
           "maps": [
+            "Customs",
             "Lighthouse",
             "Woods",
-            "Customs",
             "Shoreline",
             "Icebreaker"
           ],
@@ -4948,9 +4948,9 @@
       "raidRelevant": true,
       "raidClass": "MAP_BOUND",
       "mapBoundMaps": [
+        "Customs",
         "Lighthouse",
         "Woods",
-        "Customs",
         "Shoreline",
         "Icebreaker"
       ],
@@ -5013,11 +5013,11 @@
         "Lighthouse",
         "Ground Zero Tutorial",
         "Night Factory",
-        "Interchange",
-        "Icebreaker",
         "Streets of Tarkov",
+        "Icebreaker",
         "Factory",
-        "Shoreline"
+        "Shoreline",
+        "Interchange"
       ],
       "type": "Locate / Kill / Survive",
       "objectives": [
@@ -5124,14 +5124,14 @@
             "Ground Zero Tutorial",
             "Night Factory",
             "Reserve",
+            "Customs",
+            "Streets of Tarkov",
             "Lighthouse",
             "Woods",
-            "Interchange",
             "Icebreaker",
-            "Streets of Tarkov",
             "Factory",
-            "Customs",
-            "Shoreline"
+            "Shoreline",
+            "Interchange"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
@@ -5165,11 +5165,11 @@
         "Lighthouse",
         "Ground Zero Tutorial",
         "Night Factory",
-        "Interchange",
-        "Icebreaker",
         "Streets of Tarkov",
+        "Icebreaker",
         "Factory",
-        "Shoreline"
+        "Shoreline",
+        "Interchange"
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
@@ -5186,11 +5186,11 @@
         "Lighthouse",
         "Ground Zero Tutorial",
         "Night Factory",
-        "Interchange",
-        "Icebreaker",
         "Streets of Tarkov",
+        "Icebreaker",
         "Factory",
-        "Shoreline"
+        "Shoreline",
+        "Interchange"
       ],
       "type": "Locate / Kill / Survive",
       "objectives": [
@@ -5297,14 +5297,14 @@
             "Ground Zero Tutorial",
             "Night Factory",
             "Reserve",
+            "Customs",
+            "Streets of Tarkov",
             "Lighthouse",
             "Woods",
-            "Interchange",
             "Icebreaker",
-            "Streets of Tarkov",
             "Factory",
-            "Customs",
-            "Shoreline"
+            "Shoreline",
+            "Interchange"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
@@ -5338,11 +5338,11 @@
         "Lighthouse",
         "Ground Zero Tutorial",
         "Night Factory",
-        "Interchange",
-        "Icebreaker",
         "Streets of Tarkov",
+        "Icebreaker",
         "Factory",
-        "Shoreline"
+        "Shoreline",
+        "Interchange"
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
@@ -7320,10 +7320,10 @@
       "name": "Stray Dogs",
       "trader": "Jaeger",
       "maps": [
+        "Customs",
         "Lighthouse",
         "Woods",
         "Icebreaker",
-        "Customs",
         "Shoreline"
       ],
       "type": "Kill",
@@ -7337,10 +7337,10 @@
           "text": "Locate and eliminate Knight",
           "category": "Kill",
           "maps": [
+            "Customs",
             "Lighthouse",
             "Woods",
             "Icebreaker",
-            "Customs",
             "Shoreline"
           ],
           "raidClass": "MAP_BOUND",
@@ -7350,9 +7350,9 @@
           "text": "Locate and eliminate Big Pipe",
           "category": "Kill",
           "maps": [
+            "Customs",
             "Lighthouse",
             "Woods",
-            "Customs",
             "Shoreline"
           ],
           "raidClass": "MAP_BOUND",
@@ -7362,9 +7362,9 @@
           "text": "Locate and eliminate Birdeye",
           "category": "Kill",
           "maps": [
+            "Customs",
             "Lighthouse",
             "Woods",
-            "Customs",
             "Shoreline"
           ],
           "raidClass": "MAP_BOUND",
@@ -7380,10 +7380,10 @@
       "raidRelevant": true,
       "raidClass": "MAP_BOUND",
       "mapBoundMaps": [
+        "Customs",
         "Lighthouse",
         "Woods",
         "Icebreaker",
-        "Customs",
         "Shoreline"
       ],
       "hasAnyRaidObjectives": false,
@@ -9142,9 +9142,9 @@
       "name": "The Huntsman Path - Liberation",
       "trader": "Jaeger",
       "maps": [
+        "The Lab",
         "Reserve",
-        "The Lab (Dark)",
-        "The Lab"
+        "The Lab (Dark)"
       ],
       "type": "Kill",
       "objectives": [
@@ -9155,9 +9155,9 @@
           "text": "Eliminate 6 Raiders",
           "category": "Kill",
           "maps": [
+            "The Lab",
             "Reserve",
-            "The Lab (Dark)",
-            "The Lab"
+            "The Lab (Dark)"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
@@ -9172,9 +9172,9 @@
       "raidRelevant": true,
       "raidClass": "MAP_BOUND",
       "mapBoundMaps": [
+        "The Lab",
         "Reserve",
-        "The Lab (Dark)",
-        "The Lab"
+        "The Lab (Dark)"
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
@@ -9959,14 +9959,14 @@
         "Ground Zero Tutorial",
         "Night Factory",
         "Reserve",
+        "Customs",
+        "Streets of Tarkov",
         "Lighthouse",
         "Woods",
-        "Interchange",
         "Icebreaker",
-        "Streets of Tarkov",
         "Factory",
-        "Customs",
-        "Shoreline"
+        "Shoreline",
+        "Interchange"
       ],
       "type": "Kill",
       "objectives": [
@@ -9980,14 +9980,14 @@
             "Ground Zero Tutorial",
             "Night Factory",
             "Reserve",
+            "Customs",
+            "Streets of Tarkov",
             "Lighthouse",
             "Woods",
-            "Interchange",
             "Icebreaker",
-            "Streets of Tarkov",
             "Factory",
-            "Customs",
-            "Shoreline"
+            "Shoreline",
+            "Interchange"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
@@ -10012,14 +10012,14 @@
         "Ground Zero Tutorial",
         "Night Factory",
         "Reserve",
+        "Customs",
+        "Streets of Tarkov",
         "Lighthouse",
         "Woods",
-        "Interchange",
         "Icebreaker",
-        "Streets of Tarkov",
         "Factory",
-        "Customs",
-        "Shoreline"
+        "Shoreline",
+        "Interchange"
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
@@ -10086,13 +10086,13 @@
         "Ground Zero Tutorial",
         "Night Factory",
         "Reserve",
+        "Customs",
         "Lighthouse",
         "Woods",
-        "Interchange",
         "Icebreaker",
         "Factory",
-        "Customs",
-        "Shoreline"
+        "Shoreline",
+        "Interchange"
       ],
       "type": "Kill",
       "objectives": [
@@ -10107,13 +10107,13 @@
             "Ground Zero Tutorial",
             "Night Factory",
             "Reserve",
+            "Customs",
             "Lighthouse",
             "Woods",
-            "Interchange",
             "Icebreaker",
             "Factory",
-            "Customs",
-            "Shoreline"
+            "Shoreline",
+            "Interchange"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
@@ -10141,13 +10141,13 @@
         "Ground Zero Tutorial",
         "Night Factory",
         "Reserve",
+        "Customs",
         "Lighthouse",
         "Woods",
-        "Interchange",
         "Icebreaker",
         "Factory",
-        "Customs",
-        "Shoreline"
+        "Shoreline",
+        "Interchange"
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
@@ -20578,8 +20578,8 @@
       "maps": [
         "Night Factory",
         "Ground Zero 21+",
-        "Woods",
         "Customs",
+        "Woods",
         "Shoreline"
       ],
       "type": "Kill",
@@ -20593,8 +20593,8 @@
           "maps": [
             "Night Factory",
             "Ground Zero 21+",
-            "Woods",
             "Customs",
+            "Woods",
             "Shoreline"
           ],
           "raidClass": "MAP_BOUND",
@@ -20629,8 +20629,8 @@
       "mapBoundMaps": [
         "Night Factory",
         "Ground Zero 21+",
-        "Woods",
         "Customs",
+        "Woods",
         "Shoreline"
       ],
       "hasAnyRaidObjectives": false,
@@ -20686,14 +20686,14 @@
         "Ground Zero Tutorial",
         "Night Factory",
         "Reserve",
+        "Customs",
+        "Streets of Tarkov",
         "Lighthouse",
         "Woods",
-        "Interchange",
         "Icebreaker",
-        "Streets of Tarkov",
         "Factory",
-        "Customs",
-        "Shoreline"
+        "Shoreline",
+        "Interchange"
       ],
       "type": "Kill",
       "objectives": [
@@ -20707,14 +20707,14 @@
             "Ground Zero Tutorial",
             "Night Factory",
             "Reserve",
+            "Customs",
+            "Streets of Tarkov",
             "Lighthouse",
             "Woods",
-            "Interchange",
             "Icebreaker",
-            "Streets of Tarkov",
             "Factory",
-            "Customs",
-            "Shoreline"
+            "Shoreline",
+            "Interchange"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
@@ -20732,14 +20732,14 @@
         "Ground Zero Tutorial",
         "Night Factory",
         "Reserve",
+        "Customs",
+        "Streets of Tarkov",
         "Lighthouse",
         "Woods",
-        "Interchange",
         "Icebreaker",
-        "Streets of Tarkov",
         "Factory",
-        "Customs",
-        "Shoreline"
+        "Shoreline",
+        "Interchange"
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
@@ -22410,14 +22410,14 @@
         "Ground Zero Tutorial",
         "Night Factory",
         "Reserve",
+        "Customs",
+        "Streets of Tarkov",
         "Lighthouse",
         "Woods",
-        "Interchange",
         "Icebreaker",
-        "Streets of Tarkov",
         "Factory",
-        "Customs",
-        "Shoreline"
+        "Shoreline",
+        "Interchange"
       ],
       "type": "Find / Hand over / Kill",
       "objectives": [
@@ -22487,14 +22487,14 @@
             "Ground Zero Tutorial",
             "Night Factory",
             "Reserve",
+            "Customs",
+            "Streets of Tarkov",
             "Lighthouse",
             "Woods",
-            "Interchange",
             "Icebreaker",
-            "Streets of Tarkov",
             "Factory",
-            "Customs",
-            "Shoreline"
+            "Shoreline",
+            "Interchange"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
@@ -22519,14 +22519,14 @@
         "Ground Zero Tutorial",
         "Night Factory",
         "Reserve",
+        "Customs",
+        "Streets of Tarkov",
         "Lighthouse",
         "Woods",
-        "Interchange",
         "Icebreaker",
-        "Streets of Tarkov",
         "Factory",
-        "Customs",
-        "Shoreline"
+        "Shoreline",
+        "Interchange"
       ],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
@@ -23760,9 +23760,9 @@
       "name": "Drip-Out - Part 1",
       "trader": "Ragman",
       "maps": [
+        "The Lab",
         "Reserve",
-        "The Lab (Dark)",
-        "The Lab"
+        "The Lab (Dark)"
       ],
       "type": "Kill / Find / Hand over",
       "objectives": [
@@ -23774,9 +23774,9 @@
           "text": "Eliminate 100 Raiders",
           "category": "Kill",
           "maps": [
+            "The Lab",
             "Reserve",
-            "The Lab (Dark)",
-            "The Lab"
+            "The Lab (Dark)"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
@@ -23798,9 +23798,9 @@
       "raidRelevant": true,
       "raidClass": "MAP_BOUND",
       "mapBoundMaps": [
+        "The Lab",
         "Reserve",
-        "The Lab (Dark)",
-        "The Lab"
+        "The Lab (Dark)"
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
@@ -23811,9 +23811,9 @@
       "name": "Drip-Out - Part 1",
       "trader": "Ragman",
       "maps": [
+        "The Lab",
         "Reserve",
-        "The Lab (Dark)",
-        "The Lab"
+        "The Lab (Dark)"
       ],
       "type": "Kill / Find / Hand over",
       "objectives": [
@@ -23825,9 +23825,9 @@
           "text": "Eliminate 100 Raiders",
           "category": "Kill",
           "maps": [
+            "The Lab",
             "Reserve",
-            "The Lab (Dark)",
-            "The Lab"
+            "The Lab (Dark)"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
@@ -23849,9 +23849,9 @@
       "raidRelevant": true,
       "raidClass": "MAP_BOUND",
       "mapBoundMaps": [
+        "The Lab",
         "Reserve",
-        "The Lab (Dark)",
-        "The Lab"
+        "The Lab (Dark)"
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
@@ -24610,289 +24610,6 @@
       "wikiRevision": 359479
     },
     {
-      "id": "6761ff17cdc36bd66102e9d0",
-      "name": "Neuanfang",
-      "trader": "Ragman",
-      "maps": [
-        "The Lab"
-      ],
-      "type": "Kill / Survive / Find / Hand over",
-      "objectives": [
-        "Eliminate PMC operatives",
-        "Survive and extract from The Lab",
-        "Hand over any found in raid PMC figurine",
-        "Hand over any found in raid Scav figurine",
-        "Hand over any found in raid Boss figurine",
-        "Hand over any found in raid Trader figurine"
-      ],
-      "objectiveDetails": [
-        {
-          "text": "Eliminate PMC operatives",
-          "category": "Kill",
-          "maps": [],
-          "raidClass": "ANY_RAID",
-          "raidRequired": true
-        },
-        {
-          "text": "Survive and extract from The Lab",
-          "category": "Survive",
-          "maps": [
-            "The Lab"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        },
-        {
-          "text": "Hand over any found in raid PMC figurine",
-          "category": "Find / Hand over",
-          "maps": [],
-          "raidClass": "NON_RAID",
-          "raidRequired": false
-        },
-        {
-          "text": "Hand over any found in raid Scav figurine",
-          "category": "Find / Hand over",
-          "maps": [],
-          "raidClass": "NON_RAID",
-          "raidRequired": false
-        },
-        {
-          "text": "Hand over any found in raid Boss figurine",
-          "category": "Find / Hand over",
-          "maps": [],
-          "raidClass": "NON_RAID",
-          "raidRequired": false
-        },
-        {
-          "text": "Hand over any found in raid Trader figurine",
-          "category": "Find / Hand over",
-          "maps": [],
-          "raidClass": "NON_RAID",
-          "raidRequired": false
-        }
-      ],
-      "requirements": [],
-      "restrictions": [],
-      "fir": [],
-      "minLevel": 30,
-      "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Neuanfang",
-      "taskRequirements": [],
-      "raidRelevant": true,
-      "raidClass": "MAP_BOUND",
-      "mapBoundMaps": [
-        "The Lab"
-      ],
-      "hasAnyRaidObjectives": true,
-      "source": "json.tarkov.dev (wiki validation unavailable)"
-    },
-    {
-      "id": "6848100b00afffa81f09e365",
-      "name": "Neuanfang",
-      "trader": "Ragman",
-      "maps": [
-        "The Lab",
-        "Streets of Tarkov"
-      ],
-      "type": "Kill / Survive / Find / Hand over",
-      "objectives": [
-        "Eliminate PMC operatives",
-        "Eliminate Raiders",
-        "Use the transit from The Lab to Streets of Tarkov",
-        "Survive and extract from Streets of Tarkov",
-        "Hand over any found in raid PMC figurine",
-        "Hand over any found in raid Scav figurine",
-        "Hand over any found in raid Boss figurine",
-        "Hand over any found in raid Trader figurine"
-      ],
-      "objectiveDetails": [
-        {
-          "text": "Eliminate PMC operatives",
-          "category": "Kill",
-          "maps": [],
-          "raidClass": "ANY_RAID",
-          "raidRequired": true
-        },
-        {
-          "text": "Eliminate Raiders",
-          "category": "Kill",
-          "maps": [],
-          "raidClass": "ANY_RAID",
-          "raidRequired": true
-        },
-        {
-          "text": "Use the transit from The Lab to Streets of Tarkov",
-          "category": "Other",
-          "maps": [
-            "The Lab",
-            "Streets of Tarkov"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        },
-        {
-          "text": "Survive and extract from Streets of Tarkov",
-          "category": "Survive",
-          "maps": [
-            "Streets of Tarkov"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        },
-        {
-          "text": "Hand over any found in raid PMC figurine",
-          "category": "Find / Hand over",
-          "maps": [],
-          "raidClass": "NON_RAID",
-          "raidRequired": false
-        },
-        {
-          "text": "Hand over any found in raid Scav figurine",
-          "category": "Find / Hand over",
-          "maps": [],
-          "raidClass": "NON_RAID",
-          "raidRequired": false
-        },
-        {
-          "text": "Hand over any found in raid Boss figurine",
-          "category": "Find / Hand over",
-          "maps": [],
-          "raidClass": "NON_RAID",
-          "raidRequired": false
-        },
-        {
-          "text": "Hand over any found in raid Trader figurine",
-          "category": "Find / Hand over",
-          "maps": [],
-          "raidClass": "NON_RAID",
-          "raidRequired": false
-        }
-      ],
-      "requirements": [],
-      "restrictions": [],
-      "fir": [],
-      "minLevel": 35,
-      "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Neuanfang",
-      "taskRequirements": [],
-      "raidRelevant": true,
-      "raidClass": "MAP_BOUND",
-      "mapBoundMaps": [
-        "The Lab",
-        "Streets of Tarkov"
-      ],
-      "hasAnyRaidObjectives": true,
-      "source": "json.tarkov.dev (wiki validation unavailable)"
-    },
-    {
-      "id": "68481881f43abfdda2058369",
-      "name": "Neuanfang",
-      "trader": "Ragman",
-      "maps": [
-        "The Lab",
-        "Streets of Tarkov",
-        "Interchange"
-      ],
-      "type": "Kill / Survive / Find / Hand over",
-      "objectives": [
-        "Eliminate PMC operatives",
-        "Eliminate Rogues",
-        "Use the transit from The Lab to Streets of Tarkov",
-        "Use the transit from Streets of Tarkov to Interchange",
-        "Survive and extract from Interchange",
-        "Hand over any found in raid PMC figurine",
-        "Hand over any found in raid Scav figurine",
-        "Hand over any found in raid Boss figurine",
-        "Hand over any found in raid Trader figurine"
-      ],
-      "objectiveDetails": [
-        {
-          "text": "Eliminate PMC operatives",
-          "category": "Kill",
-          "maps": [],
-          "raidClass": "ANY_RAID",
-          "raidRequired": true
-        },
-        {
-          "text": "Eliminate Rogues",
-          "category": "Kill",
-          "maps": [],
-          "raidClass": "ANY_RAID",
-          "raidRequired": true
-        },
-        {
-          "text": "Use the transit from The Lab to Streets of Tarkov",
-          "category": "Other",
-          "maps": [
-            "The Lab",
-            "Streets of Tarkov"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        },
-        {
-          "text": "Use the transit from Streets of Tarkov to Interchange",
-          "category": "Other",
-          "maps": [
-            "Streets of Tarkov",
-            "Interchange"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        },
-        {
-          "text": "Survive and extract from Interchange",
-          "category": "Survive",
-          "maps": [
-            "Interchange"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        },
-        {
-          "text": "Hand over any found in raid PMC figurine",
-          "category": "Find / Hand over",
-          "maps": [],
-          "raidClass": "NON_RAID",
-          "raidRequired": false
-        },
-        {
-          "text": "Hand over any found in raid Scav figurine",
-          "category": "Find / Hand over",
-          "maps": [],
-          "raidClass": "NON_RAID",
-          "raidRequired": false
-        },
-        {
-          "text": "Hand over any found in raid Boss figurine",
-          "category": "Find / Hand over",
-          "maps": [],
-          "raidClass": "NON_RAID",
-          "raidRequired": false
-        },
-        {
-          "text": "Hand over any found in raid Trader figurine",
-          "category": "Find / Hand over",
-          "maps": [],
-          "raidClass": "NON_RAID",
-          "raidRequired": false
-        }
-      ],
-      "requirements": [],
-      "restrictions": [],
-      "fir": [],
-      "minLevel": 40,
-      "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Neuanfang",
-      "taskRequirements": [],
-      "raidRelevant": true,
-      "raidClass": "MAP_BOUND",
-      "mapBoundMaps": [
-        "The Lab",
-        "Streets of Tarkov",
-        "Interchange"
-      ],
-      "hasAnyRaidObjectives": true,
-      "source": "json.tarkov.dev (wiki validation unavailable)"
-    },
-    {
       "id": "6761f28a022f60bb320f3e95",
       "name": "New Beginning",
       "trader": "Ragman",
@@ -24900,14 +24617,14 @@
         "Ground Zero Tutorial",
         "Night Factory",
         "Reserve",
+        "Customs",
+        "Streets of Tarkov",
         "Lighthouse",
         "Woods",
-        "Interchange",
         "Icebreaker",
-        "Streets of Tarkov",
         "Factory",
-        "Customs",
         "Shoreline",
+        "Interchange",
         "The Lab"
       ],
       "type": "Kill / Survive / Find / Hand over",
@@ -24927,14 +24644,14 @@
             "Ground Zero Tutorial",
             "Night Factory",
             "Reserve",
+            "Customs",
+            "Streets of Tarkov",
             "Lighthouse",
             "Woods",
-            "Interchange",
             "Icebreaker",
-            "Streets of Tarkov",
             "Factory",
-            "Customs",
-            "Shoreline"
+            "Shoreline",
+            "Interchange"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
@@ -24989,19 +24706,303 @@
         "Ground Zero Tutorial",
         "Night Factory",
         "Reserve",
+        "Customs",
+        "Streets of Tarkov",
         "Lighthouse",
         "Woods",
-        "Interchange",
         "Icebreaker",
-        "Streets of Tarkov",
         "Factory",
-        "Customs",
         "Shoreline",
+        "Interchange",
         "The Lab"
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
       "wikiRevision": 359494
+    },
+    {
+      "id": "6761ff17cdc36bd66102e9d0",
+      "name": "New Beginning",
+      "trader": "Ragman",
+      "maps": [
+        "The Lab"
+      ],
+      "type": "Kill / Survive / Find / Hand over",
+      "objectives": [
+        "Eliminate 10 PMC operatives",
+        "Survive and extract from The Lab",
+        "Hand over 2 found in raid PMC figurines",
+        "Hand over 2 found in raid Scav figurines",
+        "Hand over 2 found in raid Boss figurines",
+        "Hand over 2 found in raid Trader figurines"
+      ],
+      "objectiveDetails": [
+        {
+          "text": "Eliminate 10 PMC operatives",
+          "category": "Kill",
+          "maps": [],
+          "raidClass": "ANY_RAID",
+          "raidRequired": true
+        },
+        {
+          "text": "Survive and extract from The Lab",
+          "category": "Survive",
+          "maps": [
+            "The Lab"
+          ],
+          "raidClass": "MAP_BOUND",
+          "raidRequired": true
+        },
+        {
+          "text": "Hand over 2 found in raid PMC figurines",
+          "category": "Find / Hand over",
+          "maps": [],
+          "raidClass": "NON_RAID",
+          "raidRequired": false
+        },
+        {
+          "text": "Hand over 2 found in raid Scav figurines",
+          "category": "Find / Hand over",
+          "maps": [],
+          "raidClass": "NON_RAID",
+          "raidRequired": false
+        },
+        {
+          "text": "Hand over 2 found in raid Boss figurines",
+          "category": "Find / Hand over",
+          "maps": [],
+          "raidClass": "NON_RAID",
+          "raidRequired": false
+        },
+        {
+          "text": "Hand over 2 found in raid Trader figurines",
+          "category": "Find / Hand over",
+          "maps": [],
+          "raidClass": "NON_RAID",
+          "raidRequired": false
+        }
+      ],
+      "requirements": [],
+      "restrictions": [],
+      "fir": [],
+      "minLevel": 30,
+      "wikiLink": "https://escapefromtarkov.fandom.com/wiki/New_Beginning_(Prestige_2)",
+      "taskRequirements": [],
+      "raidRelevant": true,
+      "raidClass": "MAP_BOUND",
+      "mapBoundMaps": [
+        "The Lab"
+      ],
+      "hasAnyRaidObjectives": true,
+      "source": "json.tarkov.dev + Tarkov Wiki",
+      "wikiRevision": 359495
+    },
+    {
+      "id": "6848100b00afffa81f09e365",
+      "name": "New Beginning",
+      "trader": "Ragman",
+      "maps": [
+        "The Lab",
+        "Streets of Tarkov"
+      ],
+      "type": "Kill / Survive / Find / Hand over",
+      "objectives": [
+        "Eliminate 15 PMC operatives",
+        "Eliminate 20 Raiders",
+        "Survive and extract from The Lab",
+        "Survive and extract from Streets of Tarkov",
+        "Hand over 3 found in raid PMC figurines",
+        "Hand over 3 found in raid Scav figurines",
+        "Hand over 3 found in raid Boss figurines",
+        "Hand over 3 found in raid Trader figurines"
+      ],
+      "objectiveDetails": [
+        {
+          "text": "Eliminate 15 PMC operatives",
+          "category": "Kill",
+          "maps": [],
+          "raidClass": "ANY_RAID",
+          "raidRequired": true
+        },
+        {
+          "text": "Eliminate 20 Raiders",
+          "category": "Kill",
+          "maps": [],
+          "raidClass": "ANY_RAID",
+          "raidRequired": true
+        },
+        {
+          "text": "Survive and extract from The Lab",
+          "category": "Survive",
+          "maps": [
+            "The Lab"
+          ],
+          "raidClass": "MAP_BOUND",
+          "raidRequired": true
+        },
+        {
+          "text": "Survive and extract from Streets of Tarkov",
+          "category": "Survive",
+          "maps": [
+            "Streets of Tarkov"
+          ],
+          "raidClass": "MAP_BOUND",
+          "raidRequired": true
+        },
+        {
+          "text": "Hand over 3 found in raid PMC figurines",
+          "category": "Find / Hand over",
+          "maps": [],
+          "raidClass": "NON_RAID",
+          "raidRequired": false
+        },
+        {
+          "text": "Hand over 3 found in raid Scav figurines",
+          "category": "Find / Hand over",
+          "maps": [],
+          "raidClass": "NON_RAID",
+          "raidRequired": false
+        },
+        {
+          "text": "Hand over 3 found in raid Boss figurines",
+          "category": "Find / Hand over",
+          "maps": [],
+          "raidClass": "NON_RAID",
+          "raidRequired": false
+        },
+        {
+          "text": "Hand over 3 found in raid Trader figurines",
+          "category": "Find / Hand over",
+          "maps": [],
+          "raidClass": "NON_RAID",
+          "raidRequired": false
+        }
+      ],
+      "requirements": [],
+      "restrictions": [],
+      "fir": [],
+      "minLevel": 35,
+      "wikiLink": "https://escapefromtarkov.fandom.com/wiki/New_Beginning_(Prestige_3)",
+      "taskRequirements": [],
+      "raidRelevant": true,
+      "raidClass": "MAP_BOUND",
+      "mapBoundMaps": [
+        "The Lab",
+        "Streets of Tarkov"
+      ],
+      "hasAnyRaidObjectives": true,
+      "source": "json.tarkov.dev + Tarkov Wiki",
+      "wikiRevision": 359496
+    },
+    {
+      "id": "68481881f43abfdda2058369",
+      "name": "New Beginning",
+      "trader": "Ragman",
+      "maps": [
+        "The Lab",
+        "Streets of Tarkov",
+        "Interchange"
+      ],
+      "type": "Kill / Survive / Find / Hand over",
+      "objectives": [
+        "Eliminate 20 PMC operatives",
+        "Eliminate 30 Rogues",
+        "Survive and extract from The Lab",
+        "Use the transit from Streets of Tarkov to Interchange",
+        "Survive and extract from Interchange",
+        "Hand over 3 found in raid PMC figurines",
+        "Hand over 3 found in raid Scav figurines",
+        "Hand over 3 found in raid Boss figurines",
+        "Hand over 3 found in raid Trader figurines"
+      ],
+      "objectiveDetails": [
+        {
+          "text": "Eliminate 20 PMC operatives",
+          "category": "Kill",
+          "maps": [],
+          "raidClass": "ANY_RAID",
+          "raidRequired": true
+        },
+        {
+          "text": "Eliminate 30 Rogues",
+          "category": "Kill",
+          "maps": [],
+          "raidClass": "ANY_RAID",
+          "raidRequired": true
+        },
+        {
+          "text": "Survive and extract from The Lab",
+          "category": "Survive",
+          "maps": [
+            "The Lab"
+          ],
+          "raidClass": "MAP_BOUND",
+          "raidRequired": true
+        },
+        {
+          "text": "Use the transit from Streets of Tarkov to Interchange",
+          "category": "Other",
+          "maps": [
+            "Streets of Tarkov",
+            "Interchange"
+          ],
+          "raidClass": "MAP_BOUND",
+          "raidRequired": true
+        },
+        {
+          "text": "Survive and extract from Interchange",
+          "category": "Survive",
+          "maps": [
+            "Interchange"
+          ],
+          "raidClass": "MAP_BOUND",
+          "raidRequired": true
+        },
+        {
+          "text": "Hand over 3 found in raid PMC figurines",
+          "category": "Find / Hand over",
+          "maps": [],
+          "raidClass": "NON_RAID",
+          "raidRequired": false
+        },
+        {
+          "text": "Hand over 3 found in raid Scav figurines",
+          "category": "Find / Hand over",
+          "maps": [],
+          "raidClass": "NON_RAID",
+          "raidRequired": false
+        },
+        {
+          "text": "Hand over 3 found in raid Boss figurines",
+          "category": "Find / Hand over",
+          "maps": [],
+          "raidClass": "NON_RAID",
+          "raidRequired": false
+        },
+        {
+          "text": "Hand over 3 found in raid Trader figurines",
+          "category": "Find / Hand over",
+          "maps": [],
+          "raidClass": "NON_RAID",
+          "raidRequired": false
+        }
+      ],
+      "requirements": [],
+      "restrictions": [],
+      "fir": [],
+      "minLevel": 40,
+      "wikiLink": "https://escapefromtarkov.fandom.com/wiki/New_Beginning_(Prestige_4)",
+      "taskRequirements": [],
+      "raidRelevant": true,
+      "raidClass": "MAP_BOUND",
+      "mapBoundMaps": [
+        "The Lab",
+        "Streets of Tarkov",
+        "Interchange"
+      ],
+      "hasAnyRaidObjectives": true,
+      "source": "json.tarkov.dev + Tarkov Wiki",
+      "wikiRevision": 359497
     },
     {
       "id": "65802b627b44fa5e14638899",
@@ -26176,14 +26177,14 @@
         "Ground Zero Tutorial",
         "Night Factory",
         "Reserve",
+        "Customs",
+        "Streets of Tarkov",
         "Lighthouse",
         "Woods",
-        "Interchange",
         "Icebreaker",
-        "Streets of Tarkov",
         "Factory",
-        "Customs",
-        "Shoreline"
+        "Shoreline",
+        "Interchange"
       ],
       "type": "Kill",
       "objectives": [
@@ -26197,14 +26198,14 @@
             "Ground Zero Tutorial",
             "Night Factory",
             "Reserve",
+            "Customs",
+            "Streets of Tarkov",
             "Lighthouse",
             "Woods",
-            "Interchange",
             "Icebreaker",
-            "Streets of Tarkov",
             "Factory",
-            "Customs",
-            "Shoreline"
+            "Shoreline",
+            "Interchange"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
@@ -26229,14 +26230,14 @@
         "Ground Zero Tutorial",
         "Night Factory",
         "Reserve",
+        "Customs",
+        "Streets of Tarkov",
         "Lighthouse",
         "Woods",
-        "Interchange",
         "Icebreaker",
-        "Streets of Tarkov",
         "Factory",
-        "Customs",
-        "Shoreline"
+        "Shoreline",
+        "Interchange"
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
