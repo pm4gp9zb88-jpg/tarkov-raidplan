@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-19T09:28:56.420Z",
+  "generatedAt": "2026-09-20T09:47:36.939Z",
   "mode": "regular",
   "sources": [
     "json.tarkov.dev",
@@ -19353,7 +19353,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359079
+      "wikiRevision": 360742
     },
     {
       "id": "5936da9e86f7742d65037edf",
@@ -19539,7 +19539,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359110
+      "wikiRevision": 360775
     },
     {
       "id": "597a171586f77405ba6887d3",
@@ -19602,7 +19602,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359114
+      "wikiRevision": 360699
     },
     {
       "id": "60e71b9bbd90872cb85440f3",
@@ -19615,11 +19615,11 @@
       ],
       "type": "Kill",
       "objectives": [
-        "Eliminate 12 PMC operatives at any Scav base on Customs , Woods , or Shoreline"
+        "Eliminate 12 PMC operatives at the specified Scav base on Customs , Woods , or Shoreline"
       ],
       "objectiveDetails": [
         {
-          "text": "Eliminate 12 PMC operatives at any Scav base on Customs , Woods , or Shoreline",
+          "text": "Eliminate 12 PMC operatives at the specified Scav base on Customs , Woods , or Shoreline",
           "category": "Kill",
           "maps": [
             "Customs",
@@ -19645,7 +19645,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 360598
+      "wikiRevision": 360749
     },
     {
       "id": "5936d90786f7742b1420ba5b",
@@ -19786,7 +19786,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359235
+      "wikiRevision": 360780
     },
     {
       "id": "60896b7bfa70fc097863b8f5",
@@ -19867,7 +19867,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359236
+      "wikiRevision": 360746
     },
     {
       "id": "6179ac7511973d018217d0b9",
@@ -19933,7 +19933,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359252
+      "wikiRevision": 360762
     },
     {
       "id": "6179acbdc760af5ad2053585",
@@ -19984,18 +19984,20 @@
       "name": "Easy-Breezy",
       "trader": "Prapor",
       "maps": [
-        "Factory"
+        "Reserve",
+        "Lighthouse"
       ],
       "type": "Kill",
       "objectives": [
-        "Eliminate any 50 targets while using an SR-2M with suppressor and KP-SR2 sight on Factory"
+        "Eliminate any 30 targets while using an SR-2M with suppressor and KP-SR2 sight on Reserve or Lighthouse"
       ],
       "objectiveDetails": [
         {
-          "text": "Eliminate any 50 targets while using an SR-2M with suppressor and KP-SR2 sight on Factory",
+          "text": "Eliminate any 30 targets while using an SR-2M with suppressor and KP-SR2 sight on Reserve or Lighthouse",
           "category": "Kill",
           "maps": [
-            "Factory"
+            "Reserve",
+            "Lighthouse"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
@@ -20010,11 +20012,12 @@
       "raidRelevant": true,
       "raidClass": "MAP_BOUND",
       "mapBoundMaps": [
-        "Factory"
+        "Reserve",
+        "Lighthouse"
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359256
+      "wikiRevision": 360733
     },
     {
       "id": "60e71b62a0beca400d69efc4",
@@ -20135,7 +20138,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 360597
+      "wikiRevision": 360760
     },
     {
       "id": "6740a15566e6a521aa051b15",
@@ -20307,21 +20310,21 @@
       "trader": "Prapor",
       "maps": [
         "Shoreline",
-        "Woods",
-        "Interchange"
+        "Reserve",
+        "Lighthouse"
       ],
       "type": "Kill",
       "objectives": [
-        "Eliminate any 40 targets while using an RPDN with EKP-1S-03 sight on Shoreline , Interchange or Woods"
+        "Eliminate any 40 targets with an RPDN with EKP-1S-03 sight on Shoreline , Lighthouse , or Reserve"
       ],
       "objectiveDetails": [
         {
-          "text": "Eliminate any 40 targets while using an RPDN with EKP-1S-03 sight on Shoreline , Interchange or Woods",
+          "text": "Eliminate any 40 targets with an RPDN with EKP-1S-03 sight on Shoreline , Lighthouse , or Reserve",
           "category": "Kill",
           "maps": [
             "Shoreline",
-            "Woods",
-            "Interchange"
+            "Reserve",
+            "Lighthouse"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
@@ -20337,12 +20340,12 @@
       "raidClass": "MAP_BOUND",
       "mapBoundMaps": [
         "Shoreline",
-        "Woods",
-        "Interchange"
+        "Reserve",
+        "Lighthouse"
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359330
+      "wikiRevision": 360728
     },
     {
       "id": "64f5aac4b63b74469b6c14c2",
@@ -20351,11 +20354,10 @@
       "maps": [
         "Streets of Tarkov"
       ],
-      "type": "Place / Survive / Find / Hand over",
+      "type": "Place / Find / Hand over",
       "objectives": [
         "Locate the place of work of Prapor 's friend on Streets of Tarkov",
         "Obtain any information on the fate of Prapor 's friend",
-        "Survive and extract from the location",
         "Hand over the found data"
       ],
       "objectiveDetails": [
@@ -20378,13 +20380,6 @@
           "raidRequired": true
         },
         {
-          "text": "Survive and extract from the location",
-          "category": "Survive",
-          "maps": [],
-          "raidClass": "ANY_RAID",
-          "raidRequired": true
-        },
-        {
           "text": "Hand over the found data",
           "category": "Find / Hand over",
           "maps": [],
@@ -20403,9 +20398,9 @@
       "mapBoundMaps": [
         "Streets of Tarkov"
       ],
-      "hasAnyRaidObjectives": true,
+      "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359349
+      "wikiRevision": 360774
     },
     {
       "id": "639135b04ed9512be67647d7",
@@ -20516,7 +20511,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359356
+      "wikiRevision": 360770
     },
     {
       "id": "5c0d190cd09282029f5390d8",
@@ -20549,7 +20544,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359357
+      "wikiRevision": 360706
     },
     {
       "id": "666314b2a9290f9e0806cca3",
@@ -20723,7 +20718,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359422
+      "wikiRevision": 360753
     },
     {
       "id": "59ca1a6286f774509a270942",
@@ -20734,27 +20729,19 @@
       ],
       "type": "Find / Hand over / Kill",
       "objectives": [
-        "Obtain 10 M67 grenades",
-        "Hand over 10 any found in raid Russian grenades to Prapor",
-        "Eliminate any 25 targets with a GP-25 grenade launcher"
+        "Hand over 10 any in raid Russian grenades to Prapor",
+        "Eliminate any 10 targets with a GP-25 grenade launcher"
       ],
       "objectiveDetails": [
         {
-          "text": "Obtain 10 M67 grenades",
-          "category": "Other",
-          "maps": [],
-          "raidClass": "NON_RAID",
-          "raidRequired": false
-        },
-        {
-          "text": "Hand over 10 any found in raid Russian grenades to Prapor",
+          "text": "Hand over 10 any in raid Russian grenades to Prapor",
           "category": "Find / Hand over",
           "maps": [],
           "raidClass": "NON_RAID",
           "raidRequired": false
         },
         {
-          "text": "Eliminate any 25 targets with a GP-25 grenade launcher",
+          "text": "Eliminate any 10 targets with a GP-25 grenade launcher",
           "category": "Kill",
           "maps": [],
           "raidClass": "ANY_RAID",
@@ -20772,29 +20759,29 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359427
+      "wikiRevision": 360705
     },
     {
       "id": "64f5deac39e45b527a7c4232",
       "name": "Job for a Patriot",
       "trader": "Prapor",
       "maps": [
-        "Customs",
-        "Reserve",
-        "Lighthouse"
+        "Ground Zero",
+        "Streets of Tarkov",
+        "Shoreline"
       ],
       "type": "Kill",
       "objectives": [
-        "Eliminate 10 PMCs with AK-12 with the proprietary suppressor and PS-320 scope on Lighthouse , Customs , or Reserve"
+        "Eliminate 10 PMCs with AK-12 with proprietary suppressor and PS-320 scope on Streets of Tarkov , Shoreline , or Ground Zero"
       ],
       "objectiveDetails": [
         {
-          "text": "Eliminate 10 PMCs with AK-12 with the proprietary suppressor and PS-320 scope on Lighthouse , Customs , or Reserve",
+          "text": "Eliminate 10 PMCs with AK-12 with proprietary suppressor and PS-320 scope on Streets of Tarkov , Shoreline , or Ground Zero",
           "category": "Kill",
           "maps": [
-            "Customs",
-            "Reserve",
-            "Lighthouse"
+            "Ground Zero",
+            "Streets of Tarkov",
+            "Shoreline"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
@@ -20809,13 +20796,13 @@
       "raidRelevant": true,
       "raidClass": "MAP_BOUND",
       "mapBoundMaps": [
-        "Customs",
-        "Reserve",
-        "Lighthouse"
+        "Ground Zero",
+        "Streets of Tarkov",
+        "Shoreline"
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359432
+      "wikiRevision": 360726
     },
     {
       "id": "639136f086e646067c176a8b",
@@ -20852,7 +20839,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359444
+      "wikiRevision": 360773
     },
     {
       "id": "657315e1dccd301f1301416a",
@@ -20910,7 +20897,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359462
+      "wikiRevision": 360784
     },
     {
       "id": "60896bca6ee58f38c417d4f2",
@@ -20947,7 +20934,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359516
+      "wikiRevision": 360747
     },
     {
       "id": "69ce1de03e15cd80bd06f6c9",
@@ -21047,27 +21034,19 @@
       "maps": [
         "Lighthouse"
       ],
-      "type": "Kill / Find / Hand over",
+      "type": "Kill",
       "objectives": [
-        "Eliminate 20 USEC PMC operatives on Lighthouse",
-        "Hand over 20 found in raid USEC PMC dogtags"
+        "Eliminate 10 Rogues with a GP-25 grenade launcher"
       ],
       "objectiveDetails": [
         {
-          "text": "Eliminate 20 USEC PMC operatives on Lighthouse",
+          "text": "Eliminate 10 Rogues with a GP-25 grenade launcher",
           "category": "Kill",
           "maps": [
             "Lighthouse"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
-        },
-        {
-          "text": "Hand over 20 found in raid USEC PMC dogtags",
-          "category": "Find / Hand over",
-          "maps": [],
-          "raidClass": "NON_RAID",
-          "raidRequired": false
         }
       ],
       "requirements": [],
@@ -21083,7 +21062,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359536
+      "wikiRevision": 360764
     },
     {
       "id": "669fa399033a3ce9870338a8",
@@ -21186,7 +21165,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359565
+      "wikiRevision": 360687
     },
     {
       "id": "63a5cf262964a7488f5243ce",
@@ -21194,20 +21173,22 @@
       "trader": "Prapor",
       "maps": [
         "Ground Zero",
-        "Streets of Tarkov",
+        "Customs",
+        "Woods",
         "Interchange"
       ],
       "type": "Kill",
       "objectives": [
-        "Eliminate 20 PMCs using an MP5SD on Streets of Tarkov , Ground Zero or Interchange"
+        "Eliminate 5 PMC operatives with an MP5SD on Woods , Ground Zero , Interchange or Customs"
       ],
       "objectiveDetails": [
         {
-          "text": "Eliminate 20 PMCs using an MP5SD on Streets of Tarkov , Ground Zero or Interchange",
+          "text": "Eliminate 5 PMC operatives with an MP5SD on Woods , Ground Zero , Interchange or Customs",
           "category": "Kill",
           "maps": [
             "Ground Zero",
-            "Streets of Tarkov",
+            "Customs",
+            "Woods",
             "Interchange"
           ],
           "raidClass": "MAP_BOUND",
@@ -21224,12 +21205,13 @@
       "raidClass": "MAP_BOUND",
       "mapBoundMaps": [
         "Ground Zero",
-        "Streets of Tarkov",
+        "Customs",
+        "Woods",
         "Interchange"
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359568
+      "wikiRevision": 360723
     },
     {
       "id": "6573397ef3f8344c4575cd87",
@@ -21284,7 +21266,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359587
+      "wikiRevision": 360782
     },
     {
       "id": "626bd75c71bd851e971b82a5",
@@ -21295,32 +21277,12 @@
       ],
       "type": "Place / Survive",
       "objectives": [
-        "Recon the roof of the first water treatment plant facility on Lighthouse",
-        "Recon the roof of the second water treatment plant facility on Lighthouse",
-        "Recon the roof of the third water treatment plant facility on Lighthouse",
+        "Investigate the roof of any water treatment plant facility on Lighthouse",
         "Survive and extract from the location"
       ],
       "objectiveDetails": [
         {
-          "text": "Recon the roof of the first water treatment plant facility on Lighthouse",
-          "category": "Place",
-          "maps": [
-            "Lighthouse"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        },
-        {
-          "text": "Recon the roof of the second water treatment plant facility on Lighthouse",
-          "category": "Place",
-          "maps": [
-            "Lighthouse"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        },
-        {
-          "text": "Recon the roof of the third water treatment plant facility on Lighthouse",
+          "text": "Investigate the roof of any water treatment plant facility on Lighthouse",
           "category": "Place",
           "maps": [
             "Lighthouse"
@@ -21351,7 +21313,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359601
+      "wikiRevision": 360767
     },
     {
       "id": "5d4bec3486f7743cac246665",
@@ -21455,7 +21417,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359638
+      "wikiRevision": 360743
     },
     {
       "id": "5967725e86f774601a446662",
@@ -21601,7 +21563,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359668
+      "wikiRevision": 360786
     },
     {
       "id": "59674cd986f7744ab26e32f2",
@@ -21778,11 +21740,11 @@
       ],
       "type": "Kill",
       "objectives": [
-        "Eliminate 20 PMC operatives while using grenades or grenade launchers"
+        "Eliminate 20 PMC operatives with grenades or grenade launchers"
       ],
       "objectiveDetails": [
         {
-          "text": "Eliminate 20 PMC operatives while using grenades or grenade launchers",
+          "text": "Eliminate 20 PMC operatives with grenades or grenade launchers",
           "category": "Kill",
           "maps": [],
           "raidClass": "ANY_RAID",
@@ -21800,7 +21762,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359732
+      "wikiRevision": 360715
     },
     {
       "id": "5ede55112c95834b583f052a",
@@ -22269,7 +22231,7 @@
       ],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359777
+      "wikiRevision": 360692
     },
     {
       "id": "59ca264786f77445a80ed044",
@@ -22380,7 +22342,7 @@
       ],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359778
+      "wikiRevision": 360695
     },
     {
       "id": "59ca29fb86f77445ab465c87",
@@ -22658,25 +22620,27 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359796
+      "wikiRevision": 360718
     },
     {
       "id": "675c1ff1a757ddd00404f0aa",
       "name": "Unique Experience",
       "trader": "Prapor",
       "maps": [
-        "Customs"
+        "The Lab",
+        "Lighthouse"
       ],
       "type": "Kill",
       "objectives": [
-        "Eliminate any 50 targets while using an Aklys Defense Velociraptor on Customs"
+        "Eliminate any 30 targets with an Aklys Defense Velociraptor on Lighthouse or The Lab"
       ],
       "objectiveDetails": [
         {
-          "text": "Eliminate any 50 targets while using an Aklys Defense Velociraptor on Customs",
+          "text": "Eliminate any 30 targets with an Aklys Defense Velociraptor on Lighthouse or The Lab",
           "category": "Kill",
           "maps": [
-            "Customs"
+            "The Lab",
+            "Lighthouse"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
@@ -22691,11 +22655,12 @@
       "raidRelevant": true,
       "raidClass": "MAP_BOUND",
       "mapBoundMaps": [
-        "Customs"
+        "The Lab",
+        "Lighthouse"
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359866
+      "wikiRevision": 360738
     },
     {
       "id": "666314bd920800278d0f6748",
@@ -22808,7 +22773,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359897
+      "wikiRevision": 360779
     },
     {
       "id": "5ae4493d86f7744b8e15aa8f",
