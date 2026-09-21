@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-20T09:47:36.939Z",
+  "generatedAt": "2026-09-21T10:40:37.858Z",
   "mode": "regular",
   "sources": [
     "json.tarkov.dev",
@@ -9,7 +9,7 @@
   "excludedNonRaidCount": 81,
   "qa": {
     "status": "pass",
-    "checkCount": 3637,
+    "checkCount": 3636,
     "criticalCount": 0,
     "warningCount": 0
   },
@@ -5000,7 +5000,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359723
+      "wikiRevision": 360928
     },
     {
       "id": "6744af0969a58fceba101fed",
@@ -11228,7 +11228,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 360191
+      "wikiRevision": 361004
     },
     {
       "id": "63966fe7ea74a47c2d3fc0e6",
@@ -19464,11 +19464,11 @@
       ],
       "type": "Survive",
       "objectives": [
-        "Survive and extract from Customs through Railroad Passage"
+        "Survive and extract from Customs through Railroad Passage (Flare)"
       ],
       "objectiveDetails": [
         {
-          "text": "Survive and extract from Customs through Railroad Passage",
+          "text": "Survive and extract from Customs through Railroad Passage (Flare)",
           "category": "Survive",
           "maps": [
             "Customs"
@@ -19490,7 +19490,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359107
+      "wikiRevision": 360844
     },
     {
       "id": "63a9ae24009ffc6a551631a5",
@@ -20196,7 +20196,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359302
+      "wikiRevision": 360848
     },
     {
       "id": "64e7b99017ab941a6f7bf9d7",
@@ -20559,11 +20559,11 @@
       ],
       "type": "Kill",
       "objectives": [
-        "Eliminate 3 hooded men while using the double barrel shotgun"
+        "Eliminate 2 hooded men while using the double barrel shotgun"
       ],
       "objectiveDetails": [
         {
-          "text": "Eliminate 3 hooded men while using the double barrel shotgun",
+          "text": "Eliminate 2 hooded men while using the double barrel shotgun",
           "category": "Kill",
           "maps": [
             "Ground Zero 21+",
@@ -20583,7 +20583,7 @@
           "qty": 1,
           "slot": "weapon",
           "itemId": "",
-          "sourceObjective": "Eliminate 3 hooded men while using the double barrel shotgun"
+          "sourceObjective": "Eliminate 2 hooded men while using the double barrel shotgun"
         }
       ],
       "restrictions": [],
@@ -20610,7 +20610,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359373
+      "wikiRevision": 360827
     },
     {
       "id": "59675d6c86f7740a842fc482",
@@ -21107,7 +21107,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359564
+      "wikiRevision": 360837
     },
     {
       "id": "59675ea386f77414b32bded2",
@@ -21506,7 +21506,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359664
+      "wikiRevision": 360845
     },
     {
       "id": "657315df034d76585f032e01",
@@ -21622,9 +21622,7 @@
       "type": "Other",
       "objectives": [
         "Stash a Military cable at the boulder next to RUAF gate on Woods",
-        "Stash a Bulbex cable cutter at the boulder next to RUAF gate on Woods",
         "Use the transit from Woods to Reserve",
-        "Stash a Military cable at the sandbags next to LAV III above the storage warehouse on Reserve",
         "Stash a Bulbex cable cutter at the sandbags next to LAV III above the storage warehouse on Reserve"
       ],
       "objectiveDetails": [
@@ -21638,29 +21636,11 @@
           "raidRequired": true
         },
         {
-          "text": "Stash a Bulbex cable cutter at the boulder next to RUAF gate on Woods",
-          "category": "Other",
-          "maps": [
-            "Woods"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        },
-        {
           "text": "Use the transit from Woods to Reserve",
           "category": "Other",
           "maps": [
             "Reserve",
             "Woods"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        },
-        {
-          "text": "Stash a Military cable at the sandbags next to LAV III above the storage warehouse on Reserve",
-          "category": "Other",
-          "maps": [
-            "Reserve"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
@@ -21689,7 +21669,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359687
+      "wikiRevision": 360842
     },
     {
       "id": "6740a3f4eca8acb2d2055159",
@@ -21729,7 +21709,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359704
+      "wikiRevision": 360853
     },
     {
       "id": "67b45467814ab0ffa000c7e7",
@@ -21964,11 +21944,11 @@
       ],
       "type": "Kill",
       "objectives": [
-        "Eliminate 10 PMC operatives while using Colt M4A1 or M16, 6B43 body armor , and Kiver-M helmet on Factory"
+        "Eliminate 5 PMC operatives while wearing 6B43 body armor and Kiver-M helmet on Factory"
       ],
       "objectiveDetails": [
         {
-          "text": "Eliminate 10 PMC operatives while using Colt M4A1 or M16, 6B43 body armor , and Kiver-M helmet on Factory",
+          "text": "Eliminate 5 PMC operatives while wearing 6B43 body armor and Kiver-M helmet on Factory",
           "category": "Kill",
           "maps": [
             "Factory"
@@ -21980,11 +21960,19 @@
       "requirements": [
         {
           "kind": "gear",
-          "name": "Colt M4A1 or M16",
+          "name": "6B43 body armor",
           "qty": 1,
-          "slot": "weapon",
+          "slot": "armor",
           "itemId": "",
-          "sourceObjective": "Eliminate 10 PMC operatives while using Colt M4A1 or M16, 6B43 body armor , and Kiver-M helmet on Factory"
+          "sourceObjective": "Eliminate 5 PMC operatives while wearing 6B43 body armor and Kiver-M helmet on Factory"
+        },
+        {
+          "kind": "gear",
+          "name": "Kiver-M helmet",
+          "qty": 1,
+          "slot": "headwear",
+          "itemId": "",
+          "sourceObjective": "Eliminate 5 PMC operatives while wearing 6B43 body armor and Kiver-M helmet on Factory"
         },
         {
           "kind": "gear",
@@ -21992,7 +21980,7 @@
           "qty": 1,
           "slot": "armor",
           "itemId": "545cdb794bdc2d3a198b456a",
-          "sourceObjective": "Eliminate 10 PMC operatives while using Colt M4A1 or M16, 6B43 body armor , and Kiver-M helmet on Factory"
+          "sourceObjective": "Eliminate 5 PMC operatives while wearing 6B43 body armor and Kiver-M helmet on Factory"
         },
         {
           "kind": "gear",
@@ -22000,7 +21988,7 @@
           "qty": 1,
           "slot": "headwear",
           "itemId": "5645bc214bdc2d363b8b4571",
-          "sourceObjective": "Eliminate 10 PMC operatives while using Colt M4A1 or M16, 6B43 body armor , and Kiver-M helmet on Factory"
+          "sourceObjective": "Eliminate 5 PMC operatives while wearing 6B43 body armor and Kiver-M helmet on Factory"
         }
       ],
       "restrictions": [],
@@ -22015,7 +22003,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359745
+      "wikiRevision": 360832
     },
     {
       "id": "666314bafd5ca9577902e03a",
@@ -22064,7 +22052,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359746
+      "wikiRevision": 360831
     },
     {
       "id": "59c512ad86f7741f0d09de9b",
@@ -22728,7 +22716,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359871
+      "wikiRevision": 360834
     },
     {
       "id": "6391359b9444fb141f4e6ee6",
@@ -29861,7 +29849,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359039
+      "wikiRevision": 360914
     },
     {
       "id": "669fa3910c828825de06d69f",
@@ -30044,7 +30032,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359064
+      "wikiRevision": 360907
     },
     {
       "id": "669fa39ee749756c920d02c8",
@@ -30299,7 +30287,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359118
+      "wikiRevision": 360871
     },
     {
       "id": "596a218586f77420d232807c",
@@ -30356,7 +30344,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359143
+      "wikiRevision": 360889
     },
     {
       "id": "5969f90786f77420d2328015",
@@ -30367,19 +30355,19 @@
       ],
       "type": "Find / Hand over",
       "objectives": [
-        "Find 4 Morphine injectors in raid",
-        "Hand over the 4 injectors to Therapist"
+        "Find the 5 item in raid : Adrenaline injector",
+        "Hand over the 5 items"
       ],
       "objectiveDetails": [
         {
-          "text": "Find 4 Morphine injectors in raid",
+          "text": "Find the 5 item in raid : Adrenaline injector",
           "category": "Find / Hand over",
           "maps": [],
           "raidClass": "ANY_RAID",
           "raidRequired": true
         },
         {
-          "text": "Hand over the 4 injectors to Therapist",
+          "text": "Hand over the 5 items",
           "category": "Find / Hand over",
           "maps": [],
           "raidClass": "NON_RAID",
@@ -30397,7 +30385,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359153
+      "wikiRevision": 360873
     },
     {
       "id": "675c04f4db8807b75d0f38e8",
@@ -30516,7 +30504,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359182
+      "wikiRevision": 360911
     },
     {
       "id": "60e71c48c1bfa3050473b8e5",
@@ -30621,7 +30609,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359209
+      "wikiRevision": 360917
     },
     {
       "id": "63ab180c87413d64ae0ac20a",
@@ -30752,7 +30740,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359220
+      "wikiRevision": 360910
     },
     {
       "id": "60896e28e4a85c72ef3fa301",
@@ -30815,7 +30803,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359231
+      "wikiRevision": 360915
     },
     {
       "id": "626bd75b05f287031503c7f6",
@@ -30862,7 +30850,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359249
+      "wikiRevision": 360923
     },
     {
       "id": "6a5424ae135497b9df0c68be",
@@ -30959,19 +30947,19 @@
       ],
       "type": "Find / Hand over",
       "objectives": [
-        "Find 15 Cans of beef stew (Small) in raid",
-        "Hand over 15 cans to Therapist"
+        "Find 15 item in raid : Can of beef stew (Small)",
+        "Hand over the 15 items"
       ],
       "objectiveDetails": [
         {
-          "text": "Find 15 Cans of beef stew (Small) in raid",
+          "text": "Find 15 item in raid : Can of beef stew (Small)",
           "category": "Find / Hand over",
           "maps": [],
           "raidClass": "ANY_RAID",
           "raidRequired": true
         },
         {
-          "text": "Hand over 15 cans to Therapist",
+          "text": "Hand over the 15 items",
           "category": "Find / Hand over",
           "maps": [],
           "raidClass": "NON_RAID",
@@ -30989,7 +30977,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359328
+      "wikiRevision": 360888
     },
     {
       "id": "5a68661a86f774500f48afb0",
@@ -31065,7 +31053,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359366
+      "wikiRevision": 360899
     },
     {
       "id": "5a68663e86f774501078f78a",
@@ -31074,16 +31062,16 @@
       "maps": [
         "Shoreline"
       ],
-      "type": "Find / Hand over / Survive",
+      "type": "Locate / Find / Hand over / Survive",
       "objectives": [
-        "Search the room in the Health Resort for any documents about TerraGroup's research on Shoreline",
+        "Locate and obtain any info about TerraGroup's research in Health Resort west wing on Shoreline",
         "Hand over the retrieved information",
         "Survive and extract from the location"
       ],
       "objectiveDetails": [
         {
-          "text": "Search the room in the Health Resort for any documents about TerraGroup's research on Shoreline",
-          "category": "Other",
+          "text": "Locate and obtain any info about TerraGroup's research in Health Resort west wing on Shoreline",
+          "category": "Locate",
           "maps": [
             "Shoreline"
           ],
@@ -31127,7 +31115,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359367
+      "wikiRevision": 360900
     },
     {
       "id": "5a68665c86f774255929b4c7",
@@ -31241,7 +31229,7 @@
       ],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359370
+      "wikiRevision": 360901
     },
     {
       "id": "669fa3a3ad7f1eac2607ed48",
@@ -31305,7 +31293,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359371
+      "wikiRevision": 360902
     },
     {
       "id": "6179afd0bca27a099552e040",
@@ -31352,7 +31340,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359460
+      "wikiRevision": 360920
     },
     {
       "id": "59689fbd86f7740d137ebfc4",
@@ -31361,14 +31349,14 @@
       "maps": [
         "Customs"
       ],
-      "type": "Locate / Survive",
+      "type": "Locate / Find / Hand over",
       "objectives": [
-        "Locate the water hidden inside of the dorms on Customs",
-        "Survive and extract from the location"
+        "Locate the water stockpile hidden inside one of the dorms rooms on Customs",
+        "Hand over 3 any found in raid drinking water items"
       ],
       "objectiveDetails": [
         {
-          "text": "Locate the water hidden inside of the dorms on Customs",
+          "text": "Locate the water stockpile hidden inside one of the dorms rooms on Customs",
           "category": "Locate",
           "maps": [
             "Customs"
@@ -31377,11 +31365,11 @@
           "raidRequired": true
         },
         {
-          "text": "Survive and extract from the location",
-          "category": "Survive",
+          "text": "Hand over 3 any found in raid drinking water items",
+          "category": "Find / Hand over",
           "maps": [],
-          "raidClass": "ANY_RAID",
-          "raidRequired": true
+          "raidClass": "NON_RAID",
+          "raidRequired": false
         }
       ],
       "requirements": [],
@@ -31395,9 +31383,9 @@
       "mapBoundMaps": [
         "Customs"
       ],
-      "hasAnyRaidObjectives": true,
+      "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359534
+      "wikiRevision": 360869
     },
     {
       "id": "597a160786f77477531d39d2",
@@ -31460,7 +31448,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359538
+      "wikiRevision": 360906
     },
     {
       "id": "64f3176921045e77405d63b5",
@@ -31681,15 +31669,15 @@
       "maps": [
         "Customs"
       ],
-      "type": "Find / Hand over",
+      "type": "Locate / Find / Hand over",
       "objectives": [
-        "Obtain the case containing the device on Customs",
-        "Hand over the case"
+        "Locate and obtain the suitcase with the device on Customs",
+        "Hand over the suitcase"
       ],
       "objectiveDetails": [
         {
-          "text": "Obtain the case containing the device on Customs",
-          "category": "Other",
+          "text": "Locate and obtain the suitcase with the device on Customs",
+          "category": "Locate",
           "maps": [
             "Customs"
           ],
@@ -31697,7 +31685,7 @@
           "raidRequired": true
         },
         {
-          "text": "Hand over the case",
+          "text": "Hand over the suitcase",
           "category": "Find / Hand over",
           "maps": [],
           "raidClass": "NON_RAID",
@@ -31717,7 +31705,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359558
+      "wikiRevision": 360875
     },
     {
       "id": "639135d89444fb141f4e6eea",
@@ -31762,7 +31750,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359563
+      "wikiRevision": 360924
     },
     {
       "id": "5c0be5fc86f774467a116593",
@@ -32024,7 +32012,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359639
+      "wikiRevision": 360919
     },
     {
       "id": "675c047fa46173572a0bd878",
@@ -32110,7 +32098,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359671
+      "wikiRevision": 360864
     },
     {
       "id": "596a0e1686f7741ddf17dbee",
@@ -32119,15 +32107,25 @@
       "maps": [
         "Woods"
       ],
-      "type": "Find / Hand over",
+      "type": "Locate / Survive / Find / Hand over",
       "objectives": [
-        "Obtain the Secure Folder 0052 in the sawmill cabin on Woods",
+        "Locate and obtain Secure Folder 0052 in the sawmill cabin on Woods",
+        "Survive and extract from the location",
         "Hand over the folder"
       ],
       "objectiveDetails": [
         {
-          "text": "Obtain the Secure Folder 0052 in the sawmill cabin on Woods",
-          "category": "Other",
+          "text": "Locate and obtain Secure Folder 0052 in the sawmill cabin on Woods",
+          "category": "Locate",
+          "maps": [
+            "Woods"
+          ],
+          "raidClass": "MAP_BOUND",
+          "raidRequired": true
+        },
+        {
+          "text": "Survive and extract from the location",
+          "category": "Survive",
           "maps": [
             "Woods"
           ],
@@ -32155,7 +32153,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359717
+      "wikiRevision": 360877
     },
     {
       "id": "5edaba7c0c502106f869bc02",
@@ -32166,14 +32164,14 @@
       ],
       "type": "Locate / Find / Hand over",
       "objectives": [
-        "Locate and obtain Sanitar's surgery kit marked with a blue symbol on Shoreline",
+        "Locate and obtain Sanitar's surgery kit on Shoreline",
         "Hand over Sanitar's surgery kit to Therapist",
         "Locate and obtain Sanitar's ophthalmoscope on Shoreline",
         "Hand over Sanitar's ophthalmoscope to Therapist"
       ],
       "objectiveDetails": [
         {
-          "text": "Locate and obtain Sanitar's surgery kit marked with a blue symbol on Shoreline",
+          "text": "Locate and obtain Sanitar's surgery kit on Shoreline",
           "category": "Locate",
           "maps": [
             "Shoreline"
@@ -32218,7 +32216,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359726
+      "wikiRevision": 360912
     },
     {
       "id": "67a09673972c11a3f507731d",
@@ -32446,7 +32444,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359869
+      "wikiRevision": 360927
     },
     {
       "id": "69ce204c8702b378f9091e4b",
