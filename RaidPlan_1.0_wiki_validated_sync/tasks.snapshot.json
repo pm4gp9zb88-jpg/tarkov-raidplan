@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-26T09:51:11.012Z",
+  "generatedAt": "2026-09-27T10:32:35.881Z",
   "mode": "regular",
   "sources": [
     "json.tarkov.dev",
@@ -9,7 +9,7 @@
   "excludedNonRaidCount": 81,
   "qa": {
     "status": "pass",
-    "checkCount": 3636,
+    "checkCount": 3637,
     "criticalCount": 0,
     "warningCount": 0
   },
@@ -16888,7 +16888,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359377
+      "wikiRevision": 362299
     },
     {
       "id": "5a27b87686f77460de0252a8",
@@ -26992,7 +26992,7 @@
       ],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359135
+      "wikiRevision": 362258
     },
     {
       "id": "657315e270bb0b8dba00cc48",
@@ -27038,17 +27038,17 @@
       "maps": [
         "Customs"
       ],
-      "type": "Find / Hand over",
+      "type": "Locate / Find / Hand over",
       "objectives": [
-        "Obtain information about the Deputy Chief's past life on Customs",
+        "Locate and obtain any information about the Deputy Chief's past life on Customs",
         "Hand over the information to Skier",
-        "Obtain items that can help the investigation",
+        "Locate and obtain any item that could help with the investigation",
         "Hand over the items to Skier"
       ],
       "objectiveDetails": [
         {
-          "text": "Obtain information about the Deputy Chief's past life on Customs",
-          "category": "Other",
+          "text": "Locate and obtain any information about the Deputy Chief's past life on Customs",
+          "category": "Locate",
           "maps": [
             "Customs"
           ],
@@ -27063,11 +27063,11 @@
           "raidRequired": false
         },
         {
-          "text": "Obtain items that can help the investigation",
-          "category": "Other",
+          "text": "Locate and obtain any item that could help with the investigation",
+          "category": "Locate",
           "maps": [],
-          "raidClass": "NON_RAID",
-          "raidRequired": false
+          "raidClass": "ANY_RAID",
+          "raidRequired": true
         },
         {
           "text": "Hand over the items to Skier",
@@ -27088,9 +27088,9 @@
       "mapBoundMaps": [
         "Customs"
       ],
-      "hasAnyRaidObjectives": false,
+      "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 360516
+      "wikiRevision": 362222
     },
     {
       "id": "597a0b2986f77426d66c0633",
@@ -27099,17 +27099,17 @@
       "maps": [
         "Customs"
       ],
-      "type": "Find / Hand over",
+      "type": "Locate / Find / Hand over",
       "objectives": [
-        "Find any evidence on Customs that could help with the investigation",
+        "Locate and obtain any evidence on Customs that could help with the investigation",
         "Hand over the evidence to Skier",
-        "Find any information on Customs that could help with the investigation",
+        "Locate and obtain any information on Customs that could help with the investigation",
         "Hand over the info to Skier"
       ],
       "objectiveDetails": [
         {
-          "text": "Find any evidence on Customs that could help with the investigation",
-          "category": "Find / Hand over",
+          "text": "Locate and obtain any evidence on Customs that could help with the investigation",
+          "category": "Locate",
           "maps": [
             "Customs"
           ],
@@ -27124,8 +27124,8 @@
           "raidRequired": false
         },
         {
-          "text": "Find any information on Customs that could help with the investigation",
-          "category": "Find / Hand over",
+          "text": "Locate and obtain any information on Customs that could help with the investigation",
+          "category": "Locate",
           "maps": [
             "Customs"
           ],
@@ -27160,7 +27160,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359156
+      "wikiRevision": 362231
     },
     {
       "id": "597a0e5786f77426d66c0636",
@@ -27213,7 +27213,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359157
+      "wikiRevision": 362234
     },
     {
       "id": "597a0f5686f774273b74f676",
@@ -27276,7 +27276,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359158
+      "wikiRevision": 362237
     },
     {
       "id": "67460662d0fbbc74ca0f7229",
@@ -27380,27 +27380,15 @@
       "name": "Chumming",
       "trader": "Skier",
       "maps": [
-        "Interchange",
         "Customs",
         "Woods"
       ],
-      "type": "Kill",
+      "type": "Other",
       "objectives": [
-        "Stash 3 Golden neck chains under the mattress next to BTR-82A in Generic Store on Interchange",
         "Stash 3 Golden neck chains in the microwave on the 3rd floor of the dorm on Customs",
-        "Stash 3 Golden neck chains in the middle wooden cabin at the sawmill on Woods",
-        "Eliminate 5 PMC operatives in the time period of 22:00-10:00 on Interchange"
+        "Stash 3 Golden neck chains in the middle wooden cabin at the sawmill on Woods"
       ],
       "objectiveDetails": [
-        {
-          "text": "Stash 3 Golden neck chains under the mattress next to BTR-82A in Generic Store on Interchange",
-          "category": "Other",
-          "maps": [
-            "Interchange"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        },
         {
           "text": "Stash 3 Golden neck chains in the microwave on the 3rd floor of the dorm on Customs",
           "category": "Other",
@@ -27418,15 +27406,6 @@
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
-        },
-        {
-          "text": "Eliminate 5 PMC operatives in the time period of 22:00-10:00 on Interchange",
-          "category": "Kill",
-          "maps": [
-            "Interchange"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
         }
       ],
       "requirements": [],
@@ -27438,13 +27417,12 @@
       "raidRelevant": true,
       "raidClass": "MAP_BOUND",
       "mapBoundMaps": [
-        "Interchange",
         "Customs",
         "Woods"
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359172
+      "wikiRevision": 362246
     },
     {
       "id": "60896888e4a85c72ef3fa300",
@@ -27543,7 +27521,7 @@
       "type": "Survive / Kill",
       "objectives": [
         "Survive and extract from The Lab 15 times",
-        "Eliminate 100 Raiders in The Lab"
+        "Eliminate any 100 targets in The Lab"
       ],
       "objectiveDetails": [
         {
@@ -27556,7 +27534,7 @@
           "raidRequired": true
         },
         {
-          "text": "Eliminate 100 Raiders in The Lab",
+          "text": "Eliminate any 100 targets in The Lab",
           "category": "Kill",
           "maps": [
             "The Lab"
@@ -27578,7 +27556,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359198
+      "wikiRevision": 362293
     },
     {
       "id": "671a59e43d73dac1360765cc",
@@ -27829,7 +27807,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359314
+      "wikiRevision": 362239
     },
     {
       "id": "5c0d0f1886f77457b8210226",
@@ -27931,7 +27909,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359353
+      "wikiRevision": 362219
     },
     {
       "id": "674602307e3818d5bb069489",
@@ -28227,7 +28205,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359419
+      "wikiRevision": 362242
     },
     {
       "id": "671a49f77d49aea42c029b5f",
@@ -28331,17 +28309,19 @@
       "name": "Long Road",
       "trader": "Skier",
       "maps": [
+        "Shoreline",
         "Lighthouse"
       ],
       "type": "Kill",
       "objectives": [
-        "Eliminate 4 Scavs along the shore and the main road on Lighthouse"
+        "Eliminate 7 Scavs along the shore and the main road on Lighthouse or Shoreline"
       ],
       "objectiveDetails": [
         {
-          "text": "Eliminate 4 Scavs along the shore and the main road on Lighthouse",
+          "text": "Eliminate 7 Scavs along the shore and the main road on Lighthouse or Shoreline",
           "category": "Kill",
           "maps": [
+            "Shoreline",
             "Lighthouse"
           ],
           "raidClass": "MAP_BOUND",
@@ -28357,11 +28337,12 @@
       "raidRelevant": true,
       "raidClass": "MAP_BOUND",
       "mapBoundMaps": [
+        "Shoreline",
         "Lighthouse"
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359459
+      "wikiRevision": 362273
     },
     {
       "id": "666314bc1d3ec95634095e77",
@@ -28515,7 +28496,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359502
+      "wikiRevision": 362263
     },
     {
       "id": "658027799634223183395339",
@@ -28591,7 +28572,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359562
+      "wikiRevision": 362216
     },
     {
       "id": "675c3582f6ddc329a90f9c6d",
@@ -28816,7 +28797,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359616
+      "wikiRevision": 362259
     },
     {
       "id": "674600a366e6a521aa05eb66",
@@ -28964,7 +28945,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359624
+      "wikiRevision": 362260
     },
     {
       "id": "666314bf1cd52e3d040a2e78",
@@ -29126,33 +29107,33 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359651
+      "wikiRevision": 362247
     },
     {
       "id": "5c0bc91486f7746ab41857a2",
       "name": "Silent Caliber",
       "trader": "Skier",
       "maps": [
-        "Any"
+        "Ground Zero",
+        "The Lab",
+        "Reserve",
+        "Lighthouse"
       ],
       "type": "Kill",
       "objectives": [
-        "Eliminate 20 Scavs while using a suppressed 12 gauge shotgun",
-        "Eliminate 10 PMCs while using a suppressed 12 gauge shotgun"
+        "Eliminate 30 any target with a suppressed 12 gauge shotgun on Reserve , Lighthouse , Ground Zero , or The Lab"
       ],
       "objectiveDetails": [
         {
-          "text": "Eliminate 20 Scavs while using a suppressed 12 gauge shotgun",
+          "text": "Eliminate 30 any target with a suppressed 12 gauge shotgun on Reserve , Lighthouse , Ground Zero , or The Lab",
           "category": "Kill",
-          "maps": [],
-          "raidClass": "ANY_RAID",
-          "raidRequired": true
-        },
-        {
-          "text": "Eliminate 10 PMCs while using a suppressed 12 gauge shotgun",
-          "category": "Kill",
-          "maps": [],
-          "raidClass": "ANY_RAID",
+          "maps": [
+            "Ground Zero",
+            "The Lab",
+            "Reserve",
+            "Lighthouse"
+          ],
+          "raidClass": "MAP_BOUND",
           "raidRequired": true
         }
       ],
@@ -29163,7 +29144,15 @@
           "qty": 1,
           "slot": "weapon",
           "itemId": "",
-          "sourceObjective": "Eliminate 20 Scavs while using a suppressed 12 gauge shotgun"
+          "sourceObjective": "Eliminate 30 any target with a suppressed 12 gauge shotgun on Reserve , Lighthouse , Ground Zero , or The Lab"
+        },
+        {
+          "kind": "gear",
+          "name": "suppressed 12ga shotgun",
+          "qty": 1,
+          "slot": "weapon",
+          "itemId": "",
+          "sourceObjective": "Eliminate 30 any target with a suppressed 12 gauge shotgun on Reserve , Lighthouse , Ground Zero , or The Lab"
         }
       ],
       "restrictions": [],
@@ -29172,11 +29161,16 @@
       "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Silent_Caliber",
       "taskRequirements": [],
       "raidRelevant": true,
-      "raidClass": "ANY_RAID",
-      "mapBoundMaps": [],
-      "hasAnyRaidObjectives": true,
+      "raidClass": "MAP_BOUND",
+      "mapBoundMaps": [
+        "Ground Zero",
+        "The Lab",
+        "Reserve",
+        "Lighthouse"
+      ],
+      "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359675
+      "wikiRevision": 362257
     },
     {
       "id": "596b455186f77457cb50eccb",
@@ -29213,7 +29207,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359707
+      "wikiRevision": 362215
     },
     {
       "id": "5b478ff486f7744d184ecbbf",
@@ -29290,7 +29284,7 @@
       ],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359713
+      "wikiRevision": 362241
     },
     {
       "id": "596b43fb86f77457ca186186",
@@ -29299,15 +29293,15 @@
       "maps": [
         "Customs"
       ],
-      "type": "Find / Hand over",
+      "type": "Locate / Find / Hand over",
       "objectives": [
-        "Obtain the hidden valuable cargo on Customs",
-        "Hand over the valuable cargo to Skier"
+        "Locate and obtain the hidden valuable cargo on Customs",
+        "Hand over the valuable cargo"
       ],
       "objectiveDetails": [
         {
-          "text": "Obtain the hidden valuable cargo on Customs",
-          "category": "Other",
+          "text": "Locate and obtain the hidden valuable cargo on Customs",
+          "category": "Locate",
           "maps": [
             "Customs"
           ],
@@ -29315,7 +29309,7 @@
           "raidRequired": true
         },
         {
-          "text": "Hand over the valuable cargo to Skier",
+          "text": "Hand over the valuable cargo",
           "category": "Find / Hand over",
           "maps": [],
           "raidClass": "NON_RAID",
@@ -29335,7 +29329,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359744
+      "wikiRevision": 362214
     },
     {
       "id": "6745fae369a58fceba10343d",
@@ -29736,7 +29730,7 @@
       ],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359873
+      "wikiRevision": 362240
     },
     {
       "id": "5979ed3886f77431307dc512",
@@ -29747,19 +29741,19 @@
       ],
       "type": "Find / Hand over",
       "objectives": [
-        "Find 2 Secure flash drives in raid",
-        "Hand over 2 Secure flash drives to Skier"
+        "Find 2 items in raid : Secure Flash drive",
+        "Hand over 2 items"
       ],
       "objectiveDetails": [
         {
-          "text": "Find 2 Secure flash drives in raid",
+          "text": "Find 2 items in raid : Secure Flash drive",
           "category": "Find / Hand over",
           "maps": [],
           "raidClass": "ANY_RAID",
           "raidRequired": true
         },
         {
-          "text": "Hand over 2 Secure flash drives to Skier",
+          "text": "Hand over 2 items",
           "category": "Find / Hand over",
           "maps": [],
           "raidClass": "NON_RAID",
@@ -29777,7 +29771,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359888
+      "wikiRevision": 362218
     },
     {
       "id": "5edac34d0bb72a50635c2bfa",

@@ -1,23 +1,23 @@
 {
-  "generatedAt": "2026-09-26T09:51:11.012Z",
+  "generatedAt": "2026-09-27T10:32:35.881Z",
   "summary": {
     "tasks": 434,
     "tasksWithCorrections": 0,
     "removedObjectives": 0,
-    "wordingMismatches": 220,
+    "wordingMismatches": 212,
     "wikiErrors": 1,
     "unparsedWikiPages": 0,
     "excludedNonRaidTasks": 81,
-    "mapBoundTasks": 343,
-    "anyRaidTasks": 91,
+    "mapBoundTasks": 344,
+    "anyRaidTasks": 90,
     "qaStatus": "pass",
-    "qaChecks": 3636,
+    "qaChecks": 3637,
     "qaCritical": 0,
     "qaWarnings": 0
   },
   "qa": {
     "status": "pass",
-    "checkCount": 3636,
+    "checkCount": 3637,
     "criticalCount": 0,
     "warningCount": 0,
     "issues": []
