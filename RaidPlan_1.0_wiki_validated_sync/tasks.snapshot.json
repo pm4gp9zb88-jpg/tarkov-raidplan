@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-28T11:40:12.322Z",
+  "generatedAt": "2026-09-29T11:21:15.735Z",
   "mode": "regular",
   "sources": [
     "json.tarkov.dev",
@@ -9,7 +9,7 @@
   "excludedNonRaidCount": 81,
   "qa": {
     "status": "pass",
-    "checkCount": 3637,
+    "checkCount": 3636,
     "criticalCount": 0,
     "warningCount": 0
   },
@@ -5015,8 +5015,8 @@
         "Streets of Tarkov",
         "Icebreaker",
         "Ground Zero Tutorial",
-        "Factory",
         "Interchange",
+        "Factory",
         "Night Factory"
       ],
       "type": "Locate / Kill / Survive",
@@ -5125,11 +5125,11 @@
             "Lighthouse",
             "Streets of Tarkov",
             "Customs",
-            "Reserve",
             "Icebreaker",
             "Ground Zero Tutorial",
-            "Factory",
             "Interchange",
+            "Reserve",
+            "Factory",
             "Night Factory",
             "Woods"
           ],
@@ -5167,8 +5167,8 @@
         "Streets of Tarkov",
         "Icebreaker",
         "Ground Zero Tutorial",
-        "Factory",
         "Interchange",
+        "Factory",
         "Night Factory"
       ],
       "hasAnyRaidObjectives": false,
@@ -5188,8 +5188,8 @@
         "Streets of Tarkov",
         "Icebreaker",
         "Ground Zero Tutorial",
-        "Factory",
         "Interchange",
+        "Factory",
         "Night Factory"
       ],
       "type": "Locate / Kill / Survive",
@@ -5298,11 +5298,11 @@
             "Lighthouse",
             "Streets of Tarkov",
             "Customs",
-            "Reserve",
             "Icebreaker",
             "Ground Zero Tutorial",
-            "Factory",
             "Interchange",
+            "Reserve",
+            "Factory",
             "Night Factory",
             "Woods"
           ],
@@ -5340,8 +5340,8 @@
         "Streets of Tarkov",
         "Icebreaker",
         "Ground Zero Tutorial",
-        "Factory",
         "Interchange",
+        "Factory",
         "Night Factory"
       ],
       "hasAnyRaidObjectives": false,
@@ -9142,9 +9142,9 @@
       "name": "The Huntsman Path - Liberation",
       "trader": "Jaeger",
       "maps": [
+        "The Lab",
         "The Lab (Dark)",
-        "Reserve",
-        "The Lab"
+        "Reserve"
       ],
       "type": "Kill",
       "objectives": [
@@ -9155,9 +9155,9 @@
           "text": "Eliminate 6 Raiders",
           "category": "Kill",
           "maps": [
+            "The Lab",
             "The Lab (Dark)",
-            "Reserve",
-            "The Lab"
+            "Reserve"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
@@ -9172,9 +9172,9 @@
       "raidRelevant": true,
       "raidClass": "MAP_BOUND",
       "mapBoundMaps": [
+        "The Lab",
         "The Lab (Dark)",
-        "Reserve",
-        "The Lab"
+        "Reserve"
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
@@ -9904,20 +9904,18 @@
       "name": "The Survivalist Path - Unprotected but Dangerous",
       "trader": "Jaeger",
       "maps": [
-        "Woods"
+        "Any"
       ],
       "type": "Kill",
       "objectives": [
-        "Eliminate 5 Scavs without wearing any body armor on Woods"
+        "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
       ],
       "objectiveDetails": [
         {
-          "text": "Eliminate 5 Scavs without wearing any body armor on Woods",
+          "text": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers",
           "category": "Kill",
-          "maps": [
-            "Woods"
-          ],
-          "raidClass": "MAP_BOUND",
+          "maps": [],
+          "raidClass": "ANY_RAID",
           "raidRequired": true
         }
       ],
@@ -9925,10 +9923,591 @@
       "restrictions": [
         {
           "kind": "not-wearing",
-          "name": "body armor",
+          "name": "body armor or plate carriers",
           "itemId": "",
           "slot": "armor",
-          "sourceObjective": "Eliminate 5 Scavs without wearing any body armor on Woods"
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "6B43 Zabralo-Sh body armor (EMR)",
+          "itemId": "545cdb794bdc2d3a198b456a",
+          "slot": "armor",
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "BNTI Gzhel-K body armor",
+          "itemId": "5ab8e79e86f7742d8b372e78",
+          "slot": "armor",
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "MF-UNTAR body armor",
+          "itemId": "5ab8e4ed86f7742d8e50c7fa",
+          "slot": "armor",
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "6B13 assault armor (EMR)",
+          "itemId": "5c0e53c886f7747fa54205c7",
+          "slot": "armor",
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "6B13 assault armor (Flora)",
+          "itemId": "5c0e51be86f774598e797894",
+          "slot": "armor",
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "6B13 M assault armor (Killa Edition)",
+          "itemId": "5c0e541586f7747fa54205c9",
+          "slot": "armor",
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "6B23-1 body armor (EMR)",
+          "itemId": "5c0e5bab86f77461f55ed1f3",
+          "slot": "armor",
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "6B23-2 body armor (Mountain Flora)",
+          "itemId": "5c0e57ba86f7747fa141986d",
+          "slot": "armor",
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "IOTV Gen4 body armor (Full Protection Kit, MultiCam)",
+          "itemId": "5b44cd8b86f774503d30cba2",
+          "slot": "armor",
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "IOTV Gen4 body armor (Assault Kit, MultiCam)",
+          "itemId": "5b44cf1486f77431723e3d05",
+          "slot": "armor",
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "IOTV Gen4 body armor (High Mobility Kit, MultiCam)",
+          "itemId": "5b44d0de86f774503d30cba8",
+          "slot": "armor",
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "BNTI Kirasa-N body armor",
+          "itemId": "5b44d22286f774172b0c9de8",
+          "slot": "armor",
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "FORT Redut-M body armor",
+          "itemId": "5ca2151486f774244a3b8d30",
+          "slot": "armor",
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "FORT Redut-T5 body armor (Smog)",
+          "itemId": "5ca21c6986f77479963115a7",
+          "slot": "armor",
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "HighCom Trooper TFO body armor (MultiCam)",
+          "itemId": "5c0e655586f774045612eeb2",
+          "slot": "armor",
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "BNTI Zhuk body armor (Press)",
+          "itemId": "5c0e5edb86f77461f55ed1f7",
+          "slot": "armor",
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "BNTI Zhuk body armor (EMR)",
+          "itemId": "5c0e625a86f7742d77340f62",
+          "slot": "armor",
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "BNTI Module-3M body armor",
+          "itemId": "59e7635f86f7742cbf2c1095",
+          "slot": "armor",
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "PACA Soft Armor",
+          "itemId": "5648a7494bdc2d9d488b4583",
+          "slot": "armor",
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "ANA Tactical M2 plate carrier (OD Green)",
+          "itemId": "5ab8dced86f774646209ec87",
+          "slot": null,
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "6B5-15 Zh-86 Uley armored rig (Flora)",
+          "itemId": "5c0e446786f7742013381639",
+          "slot": null,
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "6B5-16 Zh-86 Uley armored rig (Khaki)",
+          "itemId": "5c0e3eb886f7742015526062",
+          "slot": null,
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "5.11 Tactical TacTec plate carrier (Ranger Green)",
+          "itemId": "5b44cad286f77402a54ae7e5",
+          "slot": null,
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "WARTECH TV-110 plate carrier (Coyote)",
+          "itemId": "5c0e746986f7741453628fe5",
+          "slot": null,
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "Crye Precision AVS plate carrier (Ranger Green)",
+          "itemId": "544a5caa4bdc2d1a388b4568",
+          "slot": null,
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "6B3TM-01 armored rig (Khaki)",
+          "itemId": "5d5d646386f7742797261fd9",
+          "slot": null,
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "FORT Defender-2 body armor",
+          "itemId": "5e9dacf986f774054d6b89f4",
+          "slot": "armor",
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "Ars Arma CPC MOD.1 plate carrier (A-TACS FG)",
+          "itemId": "5e4ac41886f77406a511c9a8",
+          "slot": null,
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "LBT-6094A Slick Plate Carrier (Black)",
+          "itemId": "5e4abb5086f77406975c9342",
+          "slot": null,
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "5.11 Tactical Hexgrid plate carrier",
+          "itemId": "5fd4c474dd870108a754b241",
+          "slot": null,
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "NPP KlASS Korund-VM body armor (Black)",
+          "itemId": "5f5f41476bdad616ad46d631",
+          "slot": "armor",
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "6B2 body armor (Flora)",
+          "itemId": "5df8a2ca86f7740bfe6df777",
+          "slot": "armor",
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "ANA Tactical M1 plate carrier (OD Green)",
+          "itemId": "5c0e722886f7740458316a57",
+          "slot": null,
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "LBT-6094A Slick Plate Carrier (Olive Drab)",
+          "itemId": "6038b4ca92ec1c3103795a0d",
+          "slot": null,
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "LBT-6094A Slick Plate Carrier (Coyote Tan)",
+          "itemId": "6038b4b292ec1c3103795a0b",
+          "slot": null,
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "CQC Osprey MK4A plate carrier (Assault, MTP)",
+          "itemId": "60a3c70cde5f453f634816a3",
+          "slot": null,
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "CQC Osprey MK4A plate carrier (Protection, MTP)",
+          "itemId": "60a3c68c37ea821725773ef5",
+          "slot": null,
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "NFM THOR Integrated Carrier body armor",
+          "itemId": "60a283193cb70855c43a381d",
+          "slot": "armor",
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "Crye Precision AVS plate carrier (Tagilla Edition)",
+          "itemId": "609e860ebd219504d8507525",
+          "slot": null,
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "NFM THOR Concealable Reinforced Vest body armor",
+          "itemId": "609e8540d5c319764c2bc2e9",
+          "slot": "armor",
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "Eagle Industries MMAC plate carrier (Ranger Green)",
+          "itemId": "61bc85697113f767765c7fe7",
+          "slot": null,
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "First Spear Strandhogg plate carrier (Ranger Green)",
+          "itemId": "61bcc89aef0f505f0c6cd0fc",
+          "slot": null,
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "DRD body armor",
+          "itemId": "62a09d79de7ac81993580530",
+          "slot": "armor",
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "S&S Precision PlateFrame plate carrier (Goons Edition)",
+          "itemId": "628b9784bcf6e2659e09b8a2",
+          "slot": null,
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "Crye Precision CPC plate carrier (Goons Edition)",
+          "itemId": "628b9c7d45122232a872358f",
+          "slot": null,
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "Tasmanian Tiger SK plate carrier (MultiCam Black)",
+          "itemId": "628cd624459354321c4b7fa2",
+          "slot": null,
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "NPP KlASS Bagariy plate carrier (EMR)",
+          "itemId": "628d0618d1ba6e4fa07ce5a4",
+          "slot": null,
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "ECLiPSE RBAV-AF plate carrier (Ranger Green)",
+          "itemId": "628dc750b910320f4c27a732",
+          "slot": null,
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "Ars Arma A18 Skanda plate carrier (MultiCam)",
+          "itemId": "5d5d87f786f77427997cfaef",
+          "slot": null,
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "Shellback Tactical Banshee plate carrier (A-TACS AU)",
+          "itemId": "639343fce101f4caa40a4ef3",
+          "slot": null,
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "Hexatac HPC Plate Carrier (MultiCam Black)",
+          "itemId": "63737f448b28897f2802b874",
+          "slot": null,
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "NPP KlASS Kora-Kulon body armor (Black)",
+          "itemId": "64be79c487d1510151095552",
+          "slot": "armor",
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "NPP KlASS Kora-Kulon body armor (EMR)",
+          "itemId": "64be79e2bf8412471d0d9bcc",
+          "slot": "armor",
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "Interceptor OTV body armor (UCP)",
+          "itemId": "64abd93857958b4249003418",
+          "slot": "armor",
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "Eagle Allied Industries MBSS plate carrier (Coyote Brown)",
+          "itemId": "64a5366719bab53bd203bf33",
+          "slot": null,
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "WARTECH TV-115 plate carrier (Olive Drab)",
+          "itemId": "64a536392d2c4e6e970f4121",
+          "slot": null,
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "Stich Profi Plate Carrier V2 (Black)",
+          "itemId": "66b6296d7994640992013b17",
+          "slot": null,
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "Tasmanian Tiger Plate Carrier MKIII (Coyote Brown)",
+          "itemId": "66b6295a8ca68c6461709efa",
+          "slot": null,
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "Stich Profi Stich Defense mod.2 plate carrier (MultiCam)",
+          "itemId": "66b6295178bbc0200425f995",
+          "slot": null,
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "6B13 M assault armor (Christmas Edition)",
+          "itemId": "674d91ce6e862d5a95059ed6",
+          "slot": "armor",
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "Spiritus Systems LV-119 Plate Carrier (Black Division V1)",
+          "itemId": "689479a4a733b1602007e2eb",
+          "slot": null,
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "Spiritus Systems LV-119 Plate Carrier (Black Division V2)",
+          "itemId": "689479eb30cc5ba7be00f5ff",
+          "slot": null,
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "Ferro Concepts FCPC V5 Plate Carrier (Black Division)",
+          "itemId": "689479cb47e5acd1e10be986",
+          "slot": null,
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "First Spear Siege-R Optimized M.A.S.S. Plate Carrier (Black Division)",
+          "itemId": "68947a4be4bf255d1b0ca746",
+          "slot": null,
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "6B45 armored rig (General Purpose, EMR)",
+          "itemId": "68948ad72c87773b9f06d73f",
+          "slot": null,
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "6B45 armored rig (Medic, EMR)",
+          "itemId": "68948aebd8f2b85fb705e2b0",
+          "slot": null,
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "6B45 armored rig (Assault, EMR)",
+          "itemId": "68948b118c57a8a52301d7ae",
+          "slot": null,
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "6B45 body armor (EMR)",
+          "itemId": "68948a95d8f2b85fb705e2a6",
+          "slot": "armor",
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "Crye Precision JPC Plate Carrier (MultiCam)",
+          "itemId": "693fd0e9deee848f70054999",
+          "slot": null,
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "Tac-Kek JayPC plate carrier (Black)",
+          "itemId": "693fd1200ec97e98040bd3f9",
+          "slot": null,
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "Tac-Kek JayPC plate carrier (OD Green)",
+          "itemId": "693fd13aa490096a05028cc8",
+          "slot": null,
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "ANA Tactical M2 plate carrier (MultiCam Alpine)",
+          "itemId": "69412e5573dcf473e50be464",
+          "slot": null,
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "Stich Profi Plate Carrier V2 (MARPAT Woodland)",
+          "itemId": "68a99207aa809946e507c2f6",
+          "slot": null,
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "First Spear Strandhogg plate carrier (ABUPAT)",
+          "itemId": "68a85ab8ef22d08bf401fa68",
+          "slot": null,
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "5.11 Tactical TacTec plate carrier (Storm)",
+          "itemId": "67ab4b2d6f7ae4aa550bbcf6",
+          "slot": null,
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "Crye Precision AVS plate carrier (MultiCam)",
+          "itemId": "67ab49aab9c7a1e18c095686",
+          "slot": null,
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "NPP KlASS Korund-VM body armor (Kamysh)",
+          "itemId": "68a97093431252e29a02dc06",
+          "slot": "armor",
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "Interceptor OTV body armor (Woodland)",
+          "itemId": "68a89942431252e29a02dbf6",
+          "slot": "armor",
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "NFM THOR Concealable Reinforced Vest body armor (Head Eyes)",
+          "itemId": "68a89146212dbbeead0d5636",
+          "slot": "armor",
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "HighCom Trooper TFO body armor (Coyote)",
+          "itemId": "67ab2f94dafe3b22670c912c",
+          "slot": "armor",
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "FORT Redut-M body armor (SK Woodland)",
+          "itemId": "67ab2f5adafe3b22670c911f",
+          "slot": "armor",
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "BNTI Kirasa-N body armor (Green)",
+          "itemId": "67ab2f28dafe3b22670c9116",
+          "slot": "armor",
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
+        },
+        {
+          "kind": "not-wearing",
+          "name": "Hexatac HPC Plate Carrier (MultiCam)",
+          "itemId": "67ab2eecfe82855dcc0f2af6",
+          "slot": null,
+          "sourceObjective": "Eliminate 5 PMC operatives without wearing any body armor or plate carriers"
         }
       ],
       "fir": [],
@@ -9943,13 +10522,11 @@
         }
       ],
       "raidRelevant": true,
-      "raidClass": "MAP_BOUND",
-      "mapBoundMaps": [
-        "Woods"
-      ],
-      "hasAnyRaidObjectives": false,
+      "raidClass": "ANY_RAID",
+      "mapBoundMaps": [],
+      "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359791
+      "wikiRevision": 362348
     },
     {
       "id": "5d25c81b86f77443e625dd71",
@@ -9960,11 +10537,11 @@
         "Lighthouse",
         "Streets of Tarkov",
         "Customs",
-        "Reserve",
         "Icebreaker",
         "Ground Zero Tutorial",
-        "Factory",
         "Interchange",
+        "Reserve",
+        "Factory",
         "Night Factory",
         "Woods"
       ],
@@ -9981,11 +10558,11 @@
             "Lighthouse",
             "Streets of Tarkov",
             "Customs",
-            "Reserve",
             "Icebreaker",
             "Ground Zero Tutorial",
-            "Factory",
             "Interchange",
+            "Reserve",
+            "Factory",
             "Night Factory",
             "Woods"
           ],
@@ -10013,11 +10590,11 @@
         "Lighthouse",
         "Streets of Tarkov",
         "Customs",
-        "Reserve",
         "Icebreaker",
         "Ground Zero Tutorial",
-        "Factory",
         "Interchange",
+        "Reserve",
+        "Factory",
         "Night Factory",
         "Woods"
       ],
@@ -10086,11 +10663,11 @@
         "Shoreline",
         "Lighthouse",
         "Customs",
-        "Reserve",
         "Icebreaker",
         "Ground Zero Tutorial",
-        "Factory",
         "Interchange",
+        "Reserve",
+        "Factory",
         "Night Factory",
         "Woods"
       ],
@@ -10107,11 +10684,11 @@
             "Shoreline",
             "Lighthouse",
             "Customs",
-            "Reserve",
             "Icebreaker",
             "Ground Zero Tutorial",
-            "Factory",
             "Interchange",
+            "Reserve",
+            "Factory",
             "Night Factory",
             "Woods"
           ],
@@ -10141,11 +10718,11 @@
         "Shoreline",
         "Lighthouse",
         "Customs",
-        "Reserve",
         "Icebreaker",
         "Ground Zero Tutorial",
-        "Factory",
         "Interchange",
+        "Reserve",
+        "Factory",
         "Night Factory",
         "Woods"
       ],
@@ -20670,11 +21247,11 @@
         "Lighthouse",
         "Streets of Tarkov",
         "Customs",
-        "Reserve",
         "Icebreaker",
         "Ground Zero Tutorial",
-        "Factory",
         "Interchange",
+        "Reserve",
+        "Factory",
         "Night Factory",
         "Woods"
       ],
@@ -20691,11 +21268,11 @@
             "Lighthouse",
             "Streets of Tarkov",
             "Customs",
-            "Reserve",
             "Icebreaker",
             "Ground Zero Tutorial",
-            "Factory",
             "Interchange",
+            "Reserve",
+            "Factory",
             "Night Factory",
             "Woods"
           ],
@@ -20716,11 +21293,11 @@
         "Lighthouse",
         "Streets of Tarkov",
         "Customs",
-        "Reserve",
         "Icebreaker",
         "Ground Zero Tutorial",
-        "Factory",
         "Interchange",
+        "Reserve",
+        "Factory",
         "Night Factory",
         "Woods"
       ],
@@ -22349,11 +22926,11 @@
         "Lighthouse",
         "Streets of Tarkov",
         "Customs",
-        "Reserve",
         "Icebreaker",
         "Ground Zero Tutorial",
-        "Factory",
         "Interchange",
+        "Reserve",
+        "Factory",
         "Night Factory",
         "Woods"
       ],
@@ -22426,11 +23003,11 @@
             "Lighthouse",
             "Streets of Tarkov",
             "Customs",
-            "Reserve",
             "Icebreaker",
             "Ground Zero Tutorial",
-            "Factory",
             "Interchange",
+            "Reserve",
+            "Factory",
             "Night Factory",
             "Woods"
           ],
@@ -22458,11 +23035,11 @@
         "Lighthouse",
         "Streets of Tarkov",
         "Customs",
-        "Reserve",
         "Icebreaker",
         "Ground Zero Tutorial",
-        "Factory",
         "Interchange",
+        "Reserve",
+        "Factory",
         "Night Factory",
         "Woods"
       ],
@@ -23717,9 +24294,9 @@
       "name": "Drip-Out - Part 1",
       "trader": "Ragman",
       "maps": [
+        "The Lab",
         "The Lab (Dark)",
-        "Reserve",
-        "The Lab"
+        "Reserve"
       ],
       "type": "Kill / Find / Hand over",
       "objectives": [
@@ -23731,9 +24308,9 @@
           "text": "Eliminate 100 Raiders",
           "category": "Kill",
           "maps": [
+            "The Lab",
             "The Lab (Dark)",
-            "Reserve",
-            "The Lab"
+            "Reserve"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
@@ -23755,9 +24332,9 @@
       "raidRelevant": true,
       "raidClass": "MAP_BOUND",
       "mapBoundMaps": [
+        "The Lab",
         "The Lab (Dark)",
-        "Reserve",
-        "The Lab"
+        "Reserve"
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
@@ -23768,9 +24345,9 @@
       "name": "Drip-Out - Part 1",
       "trader": "Ragman",
       "maps": [
+        "The Lab",
         "The Lab (Dark)",
-        "Reserve",
-        "The Lab"
+        "Reserve"
       ],
       "type": "Kill / Find / Hand over",
       "objectives": [
@@ -23782,9 +24359,9 @@
           "text": "Eliminate 100 Raiders",
           "category": "Kill",
           "maps": [
+            "The Lab",
             "The Lab (Dark)",
-            "Reserve",
-            "The Lab"
+            "Reserve"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
@@ -23806,9 +24383,9 @@
       "raidRelevant": true,
       "raidClass": "MAP_BOUND",
       "mapBoundMaps": [
+        "The Lab",
         "The Lab (Dark)",
-        "Reserve",
-        "The Lab"
+        "Reserve"
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
@@ -24575,11 +25152,11 @@
         "Lighthouse",
         "Streets of Tarkov",
         "Customs",
-        "Reserve",
         "Icebreaker",
         "Ground Zero Tutorial",
-        "Factory",
         "Interchange",
+        "Reserve",
+        "Factory",
         "Night Factory",
         "Woods",
         "The Lab"
@@ -24602,11 +25179,11 @@
             "Lighthouse",
             "Streets of Tarkov",
             "Customs",
-            "Reserve",
             "Icebreaker",
             "Ground Zero Tutorial",
-            "Factory",
             "Interchange",
+            "Reserve",
+            "Factory",
             "Night Factory",
             "Woods"
           ],
@@ -24664,11 +25241,11 @@
         "Lighthouse",
         "Streets of Tarkov",
         "Customs",
-        "Reserve",
         "Icebreaker",
         "Ground Zero Tutorial",
-        "Factory",
         "Interchange",
+        "Reserve",
+        "Factory",
         "Night Factory",
         "Woods",
         "The Lab"
@@ -26124,7 +26701,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359063
+      "wikiRevision": 362362
     },
     {
       "id": "66058cb7c7f3584787181476",
@@ -26135,11 +26712,11 @@
         "Lighthouse",
         "Streets of Tarkov",
         "Customs",
-        "Reserve",
         "Icebreaker",
         "Ground Zero Tutorial",
-        "Factory",
         "Interchange",
+        "Reserve",
+        "Factory",
         "Night Factory",
         "Woods"
       ],
@@ -26156,11 +26733,11 @@
             "Lighthouse",
             "Streets of Tarkov",
             "Customs",
-            "Reserve",
             "Icebreaker",
             "Ground Zero Tutorial",
-            "Factory",
             "Interchange",
+            "Reserve",
+            "Factory",
             "Night Factory",
             "Woods"
           ],
@@ -26188,11 +26765,11 @@
         "Lighthouse",
         "Streets of Tarkov",
         "Customs",
-        "Reserve",
         "Icebreaker",
         "Ground Zero Tutorial",
-        "Factory",
         "Interchange",
+        "Reserve",
+        "Factory",
         "Night Factory",
         "Woods"
       ],
