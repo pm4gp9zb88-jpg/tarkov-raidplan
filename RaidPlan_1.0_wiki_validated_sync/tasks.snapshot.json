@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-05T12:14:57.467Z",
+  "generatedAt": "2026-10-06T12:00:41.482Z",
   "mode": "regular",
   "sources": [
     "json.tarkov.dev",
@@ -11484,19 +11484,19 @@
       ],
       "type": "Kill",
       "objectives": [
-        "Reach the required Bolt-action Rifles skill level",
-        "Eliminate Sniper Scavs from over 350 meters away"
+        "Reach the required Bolt-action Rifles skill level of 10",
+        "Eliminate 10 Sniper Scavs from over 200 meters away"
       ],
       "objectiveDetails": [
         {
-          "text": "Reach the required Bolt-action Rifles skill level",
+          "text": "Reach the required Bolt-action Rifles skill level of 10",
           "category": "Kill",
           "maps": [],
           "raidClass": "ANY_RAID",
           "raidRequired": true
         },
         {
-          "text": "Eliminate Sniper Scavs from over 350 meters away",
+          "text": "Eliminate 10 Sniper Scavs from over 200 meters away",
           "category": "Kill",
           "maps": [
             "Streets of Tarkov"
@@ -11524,7 +11524,8 @@
         "Streets of Tarkov"
       ],
       "hasAnyRaidObjectives": true,
-      "source": "json.tarkov.dev (wiki validation unavailable)"
+      "source": "json.tarkov.dev + Tarkov Wiki",
+      "wikiRevision": 362772
     },
     {
       "id": "63966fbeea19ac7ed845db2e",
@@ -11666,17 +11667,16 @@
       "maps": [
         "Reserve"
       ],
-      "type": "Kill / Survive",
+      "type": "Locate / Survive",
       "objectives": [
-        "Locate and neutralize Glukhar",
-        "Eliminate Glukhar's guards",
-        "Shoot a yellow signal flare at the radar station",
-        "Survive and extract from Reserve through Cliff Descent"
+        "Locate and neutralize Glukhar or his guards for 4 kills total on Reserve (In one raid)",
+        "Shoot a yellow signal flare at the radar station on Reserve (In one raid)",
+        "Survive and extract from Reserve through Cliff Descent (In one raid)"
       ],
       "objectiveDetails": [
         {
-          "text": "Locate and neutralize Glukhar",
-          "category": "Kill",
+          "text": "Locate and neutralize Glukhar or his guards for 4 kills total on Reserve (In one raid)",
+          "category": "Locate",
           "maps": [
             "Reserve"
           ],
@@ -11684,16 +11684,7 @@
           "raidRequired": true
         },
         {
-          "text": "Eliminate Glukhar's guards",
-          "category": "Kill",
-          "maps": [
-            "Reserve"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        },
-        {
-          "text": "Shoot a yellow signal flare at the radar station",
+          "text": "Shoot a yellow signal flare at the radar station on Reserve (In one raid)",
           "category": "Other",
           "maps": [
             "Reserve"
@@ -11702,7 +11693,7 @@
           "raidRequired": true
         },
         {
-          "text": "Survive and extract from Reserve through Cliff Descent",
+          "text": "Survive and extract from Reserve through Cliff Descent (In one raid)",
           "category": "Survive",
           "maps": [
             "Reserve"
@@ -11730,7 +11721,8 @@
         "Reserve"
       ],
       "hasAnyRaidObjectives": false,
-      "source": "json.tarkov.dev (wiki validation unavailable)"
+      "source": "json.tarkov.dev + Tarkov Wiki",
+      "wikiRevision": 360188
     },
     {
       "id": "63966ff54c3ef01b6f3ffad8",
@@ -11943,7 +11935,7 @@
         "Lighthouse",
         "Reserve"
       ],
-      "type": "Survive / Find / Hand over / Place",
+      "type": "Survive / Place",
       "objectives": [
         "Extract from Lighthouse",
         "Obtain the forged intelligence at the Rogue base on Lighthouse",
@@ -11963,7 +11955,7 @@
         },
         {
           "text": "Obtain the forged intelligence at the Rogue base on Lighthouse",
-          "category": "Find / Hand over",
+          "category": "Other",
           "maps": [
             "Lighthouse"
           ],
@@ -11972,7 +11964,7 @@
         },
         {
           "text": "Obtain the original intelligence in the repair station on Reserve",
-          "category": "Find / Hand over",
+          "category": "Other",
           "maps": [
             "Reserve"
           ],
@@ -11990,7 +11982,7 @@
         },
         {
           "text": "Bring the original intelligence to Lightkeeper",
-          "category": "Find / Hand over",
+          "category": "Other",
           "maps": [
             "Lighthouse"
           ],
@@ -12018,7 +12010,8 @@
         "Reserve"
       ],
       "hasAnyRaidObjectives": false,
-      "source": "json.tarkov.dev (wiki validation unavailable)"
+      "source": "json.tarkov.dev + Tarkov Wiki",
+      "wikiRevision": 362768
     },
     {
       "id": "6396700fea19ac7ed845db32",
@@ -12027,10 +12020,10 @@
       "maps": [
         "Streets of Tarkov"
       ],
-      "type": "Locate / Find / Hand over / Survive",
+      "type": "Locate / Survive",
       "objectives": [
         "Locate a good sniping position in Concordia overlooking the construction site",
-        "Hide AI Tactical Sound Moderator .338 LM near the red table",
+        "Hide AI .338 LM Tactical Sound Moderator near the red table",
         "Locate a good sniping position at Primorsky overlooking the movie theater",
         "Hide Trijicon REAP-IR thermal scope under Makhors' bed",
         "Survive and extract from the location"
@@ -12046,8 +12039,8 @@
           "raidRequired": true
         },
         {
-          "text": "Hide AI Tactical Sound Moderator .338 LM near the red table",
-          "category": "Find / Hand over",
+          "text": "Hide AI .338 LM Tactical Sound Moderator near the red table",
+          "category": "Other",
           "maps": [
             "Streets of Tarkov"
           ],
@@ -12065,7 +12058,7 @@
         },
         {
           "text": "Hide Trijicon REAP-IR thermal scope under Makhors' bed",
-          "category": "Find / Hand over",
+          "category": "Other",
           "maps": [
             "Streets of Tarkov"
           ],
@@ -12101,7 +12094,8 @@
         "Streets of Tarkov"
       ],
       "hasAnyRaidObjectives": false,
-      "source": "json.tarkov.dev (wiki validation unavailable)"
+      "source": "json.tarkov.dev + Tarkov Wiki",
+      "wikiRevision": 362771
     },
     {
       "id": "67e993b1ac26bf29380a320b",
@@ -12491,43 +12485,65 @@
       "name": "Assessment - Part 3",
       "trader": "Mechanic",
       "maps": [
-        "The Lab",
-        "The Lab (Dark)"
+        "The Lab"
       ],
       "type": "Kill / Find / Hand over",
       "objectives": [
-        "Eliminate Raiders in The Lab",
-        "Hand over the found in raid SJ1 TGLabs combat stimulant injector",
-        "Hand over the found in raid SJ6 TGLabs combat stimulant injector",
-        "Hand over the found in raid SJ9 TGLabs combat stimulant injector"
+        "Eliminate 7 Raiders in The Lab",
+        "Find 15 SJ1 TGLabs combat stimulant injector in raid",
+        "Find 5 SJ6 TGLabs combat stimulant injector in raid",
+        "Find 1 SJ9 TGLabs combat stimulant injector in raid",
+        "Hand over 15 SJ1 TGLabs combat stimulant injector to Mechanic",
+        "Hand over 5 SJ6 TGLabs combat stimulant injector to Mechanic",
+        "Hand over 1 SJ9 TGLabs combat stimulant injector to Mechanic"
       ],
       "objectiveDetails": [
         {
-          "text": "Eliminate Raiders in The Lab",
+          "text": "Eliminate 7 Raiders in The Lab",
           "category": "Kill",
           "maps": [
-            "The Lab",
-            "The Lab (Dark)"
+            "The Lab"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
         },
         {
-          "text": "Hand over the found in raid SJ1 TGLabs combat stimulant injector",
+          "text": "Find 15 SJ1 TGLabs combat stimulant injector in raid",
+          "category": "Find / Hand over",
+          "maps": [],
+          "raidClass": "ANY_RAID",
+          "raidRequired": true
+        },
+        {
+          "text": "Find 5 SJ6 TGLabs combat stimulant injector in raid",
+          "category": "Find / Hand over",
+          "maps": [],
+          "raidClass": "ANY_RAID",
+          "raidRequired": true
+        },
+        {
+          "text": "Find 1 SJ9 TGLabs combat stimulant injector in raid",
+          "category": "Find / Hand over",
+          "maps": [],
+          "raidClass": "ANY_RAID",
+          "raidRequired": true
+        },
+        {
+          "text": "Hand over 15 SJ1 TGLabs combat stimulant injector to Mechanic",
           "category": "Find / Hand over",
           "maps": [],
           "raidClass": "NON_RAID",
           "raidRequired": false
         },
         {
-          "text": "Hand over the found in raid SJ6 TGLabs combat stimulant injector",
+          "text": "Hand over 5 SJ6 TGLabs combat stimulant injector to Mechanic",
           "category": "Find / Hand over",
           "maps": [],
           "raidClass": "NON_RAID",
           "raidRequired": false
         },
         {
-          "text": "Hand over the found in raid SJ9 TGLabs combat stimulant injector",
+          "text": "Hand over 1 SJ9 TGLabs combat stimulant injector to Mechanic",
           "category": "Find / Hand over",
           "maps": [],
           "raidClass": "NON_RAID",
@@ -12550,11 +12566,11 @@
       "raidRelevant": true,
       "raidClass": "MAP_BOUND",
       "mapBoundMaps": [
-        "The Lab",
-        "The Lab (Dark)"
+        "The Lab"
       ],
-      "hasAnyRaidObjectives": false,
-      "source": "json.tarkov.dev (wiki validation unavailable)"
+      "hasAnyRaidObjectives": true,
+      "source": "json.tarkov.dev + Tarkov Wiki",
+      "wikiRevision": 359088
     },
     {
       "id": "6089736efa70fc097863b8f6",
@@ -12612,51 +12628,19 @@
       ],
       "type": "Find / Hand over",
       "objectives": [
-        "Find 5 Malboro cigarettes in raid",
-        "Find 5 Strike cigarettes in raid",
-        "Find 5 Wilston cigarettes in raid",
-        "Hand over 5 Malboro cigarettes to Mechanic",
-        "Hand over 5 Strike cigarettes to Mechanic",
-        "Hand over 5 Wilston cigarettes to Mechanic"
+        "Find the item in raid : 15 Malboro , Wilston , or Strike cigarettes",
+        "Hand over the items"
       ],
       "objectiveDetails": [
         {
-          "text": "Find 5 Malboro cigarettes in raid",
+          "text": "Find the item in raid : 15 Malboro , Wilston , or Strike cigarettes",
           "category": "Find / Hand over",
           "maps": [],
           "raidClass": "ANY_RAID",
           "raidRequired": true
         },
         {
-          "text": "Find 5 Strike cigarettes in raid",
-          "category": "Find / Hand over",
-          "maps": [],
-          "raidClass": "ANY_RAID",
-          "raidRequired": true
-        },
-        {
-          "text": "Find 5 Wilston cigarettes in raid",
-          "category": "Find / Hand over",
-          "maps": [],
-          "raidClass": "ANY_RAID",
-          "raidRequired": true
-        },
-        {
-          "text": "Hand over 5 Malboro cigarettes to Mechanic",
-          "category": "Find / Hand over",
-          "maps": [],
-          "raidClass": "NON_RAID",
-          "raidRequired": false
-        },
-        {
-          "text": "Hand over 5 Strike cigarettes to Mechanic",
-          "category": "Find / Hand over",
-          "maps": [],
-          "raidClass": "NON_RAID",
-          "raidRequired": false
-        },
-        {
-          "text": "Hand over 5 Wilston cigarettes to Mechanic",
+          "text": "Hand over the items",
           "category": "Find / Hand over",
           "maps": [],
           "raidClass": "NON_RAID",
@@ -12674,7 +12658,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359097
+      "wikiRevision": 363225
     },
     {
       "id": "669fa39b91b0a8c9680fc467",
@@ -13087,7 +13071,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359279
+      "wikiRevision": 363205
     },
     {
       "id": "5ac3460c86f7742880308185",
@@ -13543,16 +13527,26 @@
       "maps": [
         "Shoreline"
       ],
-      "type": "Locate / Survive",
+      "type": "Locate / Place",
       "objectives": [
         "Locate the first signal source on Shoreline",
+        "Place a Signal jammer on the first signal source",
         "Locate the second signal source on Shoreline",
-        "Survive and extract from the location"
+        "Place a Signal jammer on the second signal source"
       ],
       "objectiveDetails": [
         {
           "text": "Locate the first signal source on Shoreline",
           "category": "Locate",
+          "maps": [
+            "Shoreline"
+          ],
+          "raidClass": "MAP_BOUND",
+          "raidRequired": true
+        },
+        {
+          "text": "Place a Signal jammer on the first signal source",
+          "category": "Place",
           "maps": [
             "Shoreline"
           ],
@@ -13569,10 +13563,12 @@
           "raidRequired": true
         },
         {
-          "text": "Survive and extract from the location",
-          "category": "Survive",
-          "maps": [],
-          "raidClass": "ANY_RAID",
+          "text": "Place a Signal jammer on the second signal source",
+          "category": "Place",
+          "maps": [
+            "Shoreline"
+          ],
+          "raidClass": "MAP_BOUND",
           "raidRequired": true
         }
       ],
@@ -13587,9 +13583,9 @@
       "mapBoundMaps": [
         "Shoreline"
       ],
-      "hasAnyRaidObjectives": true,
+      "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359407
+      "wikiRevision": 363217
     },
     {
       "id": "5c139eb686f7747878361a6f",
@@ -13896,17 +13892,17 @@
       "maps": [
         "Lighthouse"
       ],
-      "type": "Find / Hand over / Locate",
+      "type": "Find / Hand over",
       "objectives": [
         "Obtain the V3 Flash drive on Lighthouse",
         "Reflash the Radio transmitter",
-        "Hand over the flash drive",
+        "Hand over the flash drive to Mechanic",
         "Visit the Lighthouse building"
       ],
       "objectiveDetails": [
         {
           "text": "Obtain the V3 Flash drive on Lighthouse",
-          "category": "Find / Hand over",
+          "category": "Other",
           "maps": [
             "Lighthouse"
           ],
@@ -13915,13 +13911,13 @@
         },
         {
           "text": "Reflash the Radio transmitter",
-          "category": "Find / Hand over",
+          "category": "Other",
           "maps": [],
           "raidClass": "NON_RAID",
           "raidRequired": false
         },
         {
-          "text": "Hand over the flash drive",
+          "text": "Hand over the flash drive to Mechanic",
           "category": "Find / Hand over",
           "maps": [],
           "raidClass": "NON_RAID",
@@ -13929,7 +13925,7 @@
         },
         {
           "text": "Visit the Lighthouse building",
-          "category": "Locate",
+          "category": "Other",
           "maps": [
             "Lighthouse"
           ],
@@ -13956,7 +13952,8 @@
         "Lighthouse"
       ],
       "hasAnyRaidObjectives": false,
-      "source": "json.tarkov.dev (wiki validation unavailable)"
+      "source": "json.tarkov.dev + Tarkov Wiki",
+      "wikiRevision": 359464
     },
     {
       "id": "6391d912f8e5dd32bf4e3ab2",
@@ -14568,7 +14565,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359560
+      "wikiRevision": 363204
     },
     {
       "id": "5c0be13186f7746f016734aa",
@@ -14667,7 +14664,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359600
+      "wikiRevision": 363218
     },
     {
       "id": "657315e4a6af4ab4b50f3459",
@@ -14728,7 +14725,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359632
+      "wikiRevision": 363203
     },
     {
       "id": "5ac3477486f7741d651d6885",
@@ -14889,35 +14886,35 @@
       ],
       "type": "Find / Hand over",
       "objectives": [
-        "Find 3 Graphics cards in raid",
-        "Find 15 CPU fans in raid",
-        "Hand over 3 Graphics cards to Mechanic",
-        "Hand over 15 CPU fans to Mechanic"
+        "Find the item in raid : 1 Graphics card",
+        "Hand over the item",
+        "Find the item in raid : 8 CPU fan",
+        "Hand over the items"
       ],
       "objectiveDetails": [
         {
-          "text": "Find 3 Graphics cards in raid",
+          "text": "Find the item in raid : 1 Graphics card",
           "category": "Find / Hand over",
           "maps": [],
           "raidClass": "ANY_RAID",
           "raidRequired": true
         },
         {
-          "text": "Find 15 CPU fans in raid",
-          "category": "Find / Hand over",
-          "maps": [],
-          "raidClass": "ANY_RAID",
-          "raidRequired": true
-        },
-        {
-          "text": "Hand over 3 Graphics cards to Mechanic",
+          "text": "Hand over the item",
           "category": "Find / Hand over",
           "maps": [],
           "raidClass": "NON_RAID",
           "raidRequired": false
         },
         {
-          "text": "Hand over 15 CPU fans to Mechanic",
+          "text": "Find the item in raid : 8 CPU fan",
+          "category": "Find / Hand over",
+          "maps": [],
+          "raidClass": "ANY_RAID",
+          "raidRequired": true
+        },
+        {
+          "text": "Hand over the items",
           "category": "Find / Hand over",
           "maps": [],
           "raidClass": "NON_RAID",
@@ -14935,7 +14932,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359646
+      "wikiRevision": 363212
     },
     {
       "id": "6942b44f891369fc790e385a",
@@ -18340,13 +18337,13 @@
       ],
       "type": "Locate / Survive",
       "objectives": [
-        "Determine the ambush spot",
         "Locate the cargo convoy on Streets of Tarkov",
+        "Determine the ambush spot",
         "Survive and extract from the location"
       ],
       "objectiveDetails": [
         {
-          "text": "Determine the ambush spot",
+          "text": "Locate the cargo convoy on Streets of Tarkov",
           "category": "Locate",
           "maps": [
             "Streets of Tarkov"
@@ -18355,8 +18352,8 @@
           "raidRequired": true
         },
         {
-          "text": "Locate the cargo convoy on Streets of Tarkov",
-          "category": "Locate",
+          "text": "Determine the ambush spot",
+          "category": "Other",
           "maps": [
             "Streets of Tarkov"
           ],
@@ -18385,7 +18382,8 @@
         "Streets of Tarkov"
       ],
       "hasAnyRaidObjectives": false,
-      "source": "json.tarkov.dev (wiki validation unavailable)"
+      "source": "json.tarkov.dev + Tarkov Wiki",
+      "wikiRevision": 363116
     },
     {
       "id": "5edac020218d181e29451446",
@@ -19753,7 +19751,7 @@
       "objectiveDetails": [
         {
           "text": "Obtain the digital storage device from the car dealership manager's office on Streets of Tarkov",
-          "category": "Find / Hand over",
+          "category": "Other",
           "maps": [
             "Streets of Tarkov"
           ],
@@ -19780,7 +19778,8 @@
         "Streets of Tarkov"
       ],
       "hasAnyRaidObjectives": false,
-      "source": "json.tarkov.dev (wiki validation unavailable)"
+      "source": "json.tarkov.dev + Tarkov Wiki",
+      "wikiRevision": 363122
     },
     {
       "id": "5eda19f0edce541157209cee",
@@ -19846,7 +19845,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 361744
+      "wikiRevision": 363282
     },
     {
       "id": "5936da9e86f7742d65037edf",
@@ -19891,7 +19890,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 361721
+      "wikiRevision": 363258
     },
     {
       "id": "5967530a86f77462ba22226b",
@@ -19946,7 +19945,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 361725
+      "wikiRevision": 363264
     },
     {
       "id": "675c3507a06634b5110e3c18",
@@ -20233,7 +20232,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 361723
+      "wikiRevision": 363262
     },
     {
       "id": "64e7b9bffd30422ed03dad38",
@@ -20360,7 +20359,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 361746
+      "wikiRevision": 363283
     },
     {
       "id": "6179ac7511973d018217d0b9",
@@ -20426,7 +20425,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 361751
+      "wikiRevision": 363287
     },
     {
       "id": "6179acbdc760af5ad2053585",
@@ -20510,7 +20509,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 361740
+      "wikiRevision": 363278
     },
     {
       "id": "60e71b62a0beca400d69efc4",
@@ -20631,7 +20630,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 363163
+      "wikiRevision": 363286
     },
     {
       "id": "6740a15566e6a521aa051b15",
@@ -20838,7 +20837,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 363186
+      "wikiRevision": 363277
     },
     {
       "id": "64f5aac4b63b74469b6c14c2",
@@ -21037,7 +21036,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 361734
+      "wikiRevision": 363272
     },
     {
       "id": "666314b2a9290f9e0806cca3",
@@ -21144,7 +21143,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 361726
+      "wikiRevision": 363267
     },
     {
       "id": "60e71bb4e456d449cd47ca75",
@@ -21211,7 +21210,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 363099
+      "wikiRevision": 363285
     },
     {
       "id": "59ca1a6286f774509a270942",
@@ -21252,7 +21251,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 363093
+      "wikiRevision": 363271
     },
     {
       "id": "64f5deac39e45b527a7c4232",
@@ -21295,7 +21294,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 363096
+      "wikiRevision": 363276
     },
     {
       "id": "639136f086e646067c176a8b",
@@ -21427,7 +21426,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 361747
+      "wikiRevision": 363284
     },
     {
       "id": "69ce1de03e15cd80bd06f6c9",
@@ -21518,7 +21517,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 361724
+      "wikiRevision": 363263
     },
     {
       "id": "6179b5b06e9dd54ac275e409",
@@ -21658,7 +21657,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 361727
+      "wikiRevision": 363268
     },
     {
       "id": "63a5cf262964a7488f5243ce",
@@ -21704,7 +21703,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 361737
+      "wikiRevision": 363275
     },
     {
       "id": "6573397ef3f8344c4575cd87",
@@ -21863,7 +21862,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 363098
+      "wikiRevision": 363280
     },
     {
       "id": "5fd9fad9c1ce6b1a3b486d00",
@@ -21955,7 +21954,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 361728
+      "wikiRevision": 363270
     },
     {
       "id": "673f348dd3346c21670217e7",
@@ -22102,7 +22101,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 361722
+      "wikiRevision": 363259
     },
     {
       "id": "66ab970848ddbe9d4a0c49a8",
@@ -22235,7 +22234,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 363095
+      "wikiRevision": 363273
     },
     {
       "id": "5ede55112c95834b583f052a",
@@ -22332,7 +22331,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 361743
+      "wikiRevision": 363281
     },
     {
       "id": "5ede567cfa6dc072ce15d6e3",
@@ -23101,7 +23100,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 361736
+      "wikiRevision": 363274
     },
     {
       "id": "675c1ff1a757ddd00404f0aa",
@@ -23141,7 +23140,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 362801
+      "wikiRevision": 363279
     },
     {
       "id": "666314bd920800278d0f6748",

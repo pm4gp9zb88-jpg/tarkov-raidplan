@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-05T12:14:57.467Z",
+  "generatedAt": "2026-10-06T12:00:41.482Z",
   "summary": {
     "tasks": 434,
     "tasksWithCorrections": 0,
     "removedObjectives": 0,
-    "wordingMismatches": 192,
-    "wikiErrors": 8,
+    "wordingMismatches": 183,
+    "wikiErrors": 0,
     "unparsedWikiPages": 0,
     "excludedNonRaidTasks": 81,
     "mapBoundTasks": 344,
@@ -430,47 +430,6 @@
     }
   ],
   "corrections": [],
-  "wikiErrors": [
-    {
-      "task": "Assessment - Part 3",
-      "status": "wiki-error",
-      "error": "wiki 502"
-    },
-    {
-      "task": "Your Car Needs a Service",
-      "status": "wiki-error",
-      "error": "wiki 500"
-    },
-    {
-      "task": "Make Amends",
-      "status": "wiki-error",
-      "error": "wiki 500"
-    },
-    {
-      "task": "Road Closed",
-      "status": "wiki-error",
-      "error": "wiki 500"
-    },
-    {
-      "task": "Snatch",
-      "status": "wiki-error",
-      "error": "wiki 500"
-    },
-    {
-      "task": "Payback",
-      "status": "wiki-error",
-      "error": "wiki 500"
-    },
-    {
-      "task": "Spotter",
-      "status": "wiki-error",
-      "error": "wiki 500"
-    },
-    {
-      "task": "Make an Impression",
-      "status": "wiki-error",
-      "error": "wiki 500"
-    }
-  ],
+  "wikiErrors": [],
   "unparsed": []
 }
