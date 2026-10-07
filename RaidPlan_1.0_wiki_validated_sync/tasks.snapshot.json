@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-06T12:00:41.482Z",
+  "generatedAt": "2026-10-07T11:46:10.134Z",
   "mode": "regular",
   "sources": [
     "json.tarkov.dev",
     "escapefromtarkov.fandom.com"
   ],
-  "taskCount": 434,
-  "excludedNonRaidCount": 81,
+  "taskCount": 427,
+  "excludedNonRaidCount": 77,
   "qa": {
     "status": "pass",
-    "checkCount": 3635,
+    "checkCount": 3565,
     "criticalCount": 0,
     "warningCount": 0
   },
@@ -58,6 +58,11 @@
     },
     "669fa39ee749756c920d02c8": {
       "name": "All Is Revealed",
+      "raidRelevant": true,
+      "taskRequirements": []
+    },
+    "6a91840a740be0cff50e0310": {
+      "name": "Preliminary Survey",
       "raidRelevant": true,
       "taskRequirements": []
     },
@@ -1305,6 +1310,18 @@
       "raidRelevant": true,
       "taskRequirements": []
     },
+    "6a959d33b9b22567ed0d0a4e": {
+      "name": "Can't Drink Away Skill",
+      "raidRelevant": true,
+      "taskRequirements": [
+        {
+          "taskId": "66d9cbb67b491f9d5304f6e6",
+          "statuses": [
+            "complete"
+          ]
+        }
+      ]
+    },
     "5ac244eb86f7741356335af1": {
       "name": "Gunsmith - M4A1",
       "raidRelevant": false,
@@ -2140,6 +2157,11 @@
     },
     "60e71b62a0beca400d69efc4": {
       "name": "Escort",
+      "raidRelevant": true,
+      "taskRequirements": []
+    },
+    "67af4c1d8c9482eca103e477": {
+      "name": "Consolation Prize",
       "raidRelevant": true,
       "taskRequirements": []
     },
@@ -2994,120 +3016,6 @@
       "raidRelevant": false,
       "taskRequirements": []
     },
-    "625d6ff5ddc94657c21a1625": {
-      "name": "Network Provider - Part 1",
-      "raidRelevant": false,
-      "taskRequirements": []
-    },
-    "625d6ffaf7308432be1d44c5": {
-      "name": "Network Provider - Part 2",
-      "raidRelevant": true,
-      "taskRequirements": [
-        {
-          "taskId": "625d6ff5ddc94657c21a1625",
-          "statuses": [
-            "complete"
-          ]
-        }
-      ]
-    },
-    "625d6ffcaa168e51321d69d7": {
-      "name": "Assessment - Part 1",
-      "raidRelevant": true,
-      "taskRequirements": [
-        {
-          "taskId": "625d6ffaf7308432be1d44c5",
-          "statuses": [
-            "complete"
-          ]
-        }
-      ]
-    },
-    "625d6fff4149f1149b5b12c9": {
-      "name": "Assessment - Part 2",
-      "raidRelevant": true,
-      "taskRequirements": [
-        {
-          "taskId": "625d6ffcaa168e51321d69d7",
-          "statuses": [
-            "complete"
-          ]
-        }
-      ]
-    },
-    "625d7001c4874104f230c0c5": {
-      "name": "Assessment - Part 3",
-      "raidRelevant": true,
-      "taskRequirements": [
-        {
-          "taskId": "625d6fff4149f1149b5b12c9",
-          "statuses": [
-            "complete"
-          ]
-        }
-      ]
-    },
-    "625d70031ed3bb5bcc5bd9e5": {
-      "name": "Key to the Tower",
-      "raidRelevant": true,
-      "taskRequirements": [
-        {
-          "taskId": "625d7001c4874104f230c0c5",
-          "statuses": [
-            "complete"
-          ]
-        }
-      ]
-    },
-    "625d7005a4eb80027c4f2e09": {
-      "name": "Knock-Knock",
-      "raidRelevant": true,
-      "taskRequirements": [
-        {
-          "taskId": "625d70031ed3bb5bcc5bd9e5",
-          "statuses": [
-            "complete"
-          ]
-        }
-      ]
-    },
-    "625d700cc48e6c62a440fab5": {
-      "name": "Getting Acquainted",
-      "raidRelevant": true,
-      "taskRequirements": [
-        {
-          "taskId": "625d7005a4eb80027c4f2e09",
-          "statuses": [
-            "complete"
-          ]
-        }
-      ]
-    },
-    "626148251ed3bb5bcc5bd9ed": {
-      "name": "Make Amends - Buyout",
-      "raidRelevant": false,
-      "taskRequirements": [
-        {
-          "taskId": "625d700cc48e6c62a440fab5",
-          "statuses": [
-            "complete",
-            "failed"
-          ]
-        }
-      ]
-    },
-    "6261482fa4eb80027c4f2e11": {
-      "name": "Make Amends - Equipment",
-      "raidRelevant": false,
-      "taskRequirements": [
-        {
-          "taskId": "626148251ed3bb5bcc5bd9ed",
-          "statuses": [
-            "complete"
-          ]
-        }
-      ]
-    },
     "626bd75b05f287031503c7f6": {
       "name": "Drug Trafficking",
       "raidRelevant": true,
@@ -3168,18 +3076,6 @@
       "raidRelevant": true,
       "taskRequirements": []
     },
-    "6391d90f4ed9512be67647df": {
-      "name": "Make Amends",
-      "raidRelevant": true,
-      "taskRequirements": [
-        {
-          "taskId": "6261482fa4eb80027c4f2e11",
-          "statuses": [
-            "complete"
-          ]
-        }
-      ]
-    },
     "639282134ed9512be67647ed": {
       "name": "Road Closed",
       "raidRelevant": true,
@@ -3188,14 +3084,7 @@
     "63966faeea19ac7ed845db2c": {
       "name": "Information Source",
       "raidRelevant": true,
-      "taskRequirements": [
-        {
-          "taskId": "625d7005a4eb80027c4f2e09",
-          "statuses": [
-            "complete"
-          ]
-        }
-      ]
+      "taskRequirements": []
     },
     "63966fbeea19ac7ed845db2e": {
       "name": "Missing Informant",
@@ -4046,11 +3935,6 @@
         }
       ]
     },
-    "67af4c1d8c9482eca103e477": {
-      "name": "Consolation Prize",
-      "raidRelevant": true,
-      "taskRequirements": []
-    },
     "6a5ccda873f06065630d61b0": {
       "name": "Secret Message",
       "raidRelevant": true,
@@ -4137,82 +4021,30 @@
         }
       ]
     },
+    "6a7ae35b2dbf91eb050af95a": {
+      "name": "Invasive Therapy",
+      "raidRelevant": true,
+      "taskRequirements": []
+    },
+    "6a7af2e48fddc3979d0510b8": {
+      "name": "Akimbo",
+      "raidRelevant": true,
+      "taskRequirements": []
+    },
+    "6a7aef2360157cb5e3029a5f": {
+      "name": "Stimulating Demand",
+      "raidRelevant": true,
+      "taskRequirements": []
+    },
+    "6a7b0df31ea00c9a980e2742": {
+      "name": "Sisyphus",
+      "raidRelevant": true,
+      "taskRequirements": []
+    },
     "61e6e60c5ca3b3783662be27": {
       "name": "Compensation for Damage - Wergild",
       "raidRelevant": false,
       "taskRequirements": []
-    },
-    "626148334149f1149b5b12ca": {
-      "name": "Make Amends - Security",
-      "raidRelevant": true,
-      "taskRequirements": [
-        {
-          "taskId": "6391d90f4ed9512be67647df",
-          "statuses": [
-            "complete"
-          ]
-        }
-      ]
-    },
-    "62614836f7308432be1d44cc": {
-      "name": "Make Amends - Sweep Up",
-      "raidRelevant": true,
-      "taskRequirements": [
-        {
-          "taskId": "626148334149f1149b5b12ca",
-          "statuses": [
-            "complete"
-          ]
-        }
-      ]
-    },
-    "6391d912f8e5dd32bf4e3ab2": {
-      "name": "Make Amends",
-      "raidRelevant": true,
-      "taskRequirements": [
-        {
-          "taskId": "62614836f7308432be1d44cc",
-          "statuses": [
-            "complete"
-          ]
-        }
-      ]
-    },
-    "6261483ac48e6c62a440fab7": {
-      "name": "Make Amends - Software",
-      "raidRelevant": false,
-      "taskRequirements": [
-        {
-          "taskId": "6391d912f8e5dd32bf4e3ab2",
-          "statuses": [
-            "complete"
-          ]
-        }
-      ]
-    },
-    "6261483dc4874104f230c0cd": {
-      "name": "Make Amends - Quarantine",
-      "raidRelevant": true,
-      "taskRequirements": [
-        {
-          "taskId": "6261483ac48e6c62a440fab7",
-          "statuses": [
-            "complete"
-          ]
-        }
-      ]
-    },
-    "6391d9144b15ca31f76bc323": {
-      "name": "Make Amends",
-      "raidRelevant": true,
-      "taskRequirements": [
-        {
-          "taskId": "6261483dc4874104f230c0cd",
-          "statuses": [
-            "complete"
-          ]
-        }
-      ]
     },
     "69ce213a298a6529b30d7134": {
       "name": "Biochemistry",
@@ -5011,13 +4843,13 @@
         "Reserve",
         "Woods",
         "Lighthouse",
+        "Night Factory",
         "Factory",
         "Shoreline",
-        "Night Factory",
         "Ground Zero Tutorial",
-        "Streets of Tarkov",
+        "Interchange",
         "Icebreaker",
-        "Interchange"
+        "Streets of Tarkov"
       ],
       "type": "Locate / Kill / Survive",
       "objectives": [
@@ -5121,17 +4953,17 @@
           "text": "Eliminate 10 Scavs while completing the other objectives",
           "category": "Kill",
           "maps": [
+            "Reserve",
+            "Night Factory",
             "Factory",
             "Woods",
             "Shoreline",
-            "Lighthouse",
-            "Night Factory",
-            "Customs",
             "Ground Zero Tutorial",
-            "Reserve",
-            "Streets of Tarkov",
+            "Interchange",
+            "Lighthouse",
+            "Customs",
             "Icebreaker",
-            "Interchange"
+            "Streets of Tarkov"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
@@ -5163,17 +4995,17 @@
         "Reserve",
         "Woods",
         "Lighthouse",
+        "Night Factory",
         "Factory",
         "Shoreline",
-        "Night Factory",
         "Ground Zero Tutorial",
-        "Streets of Tarkov",
+        "Interchange",
         "Icebreaker",
-        "Interchange"
+        "Streets of Tarkov"
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 352236
+      "wikiRevision": 363376
     },
     {
       "id": "6745cbee909d2013670a4a55",
@@ -5184,13 +5016,13 @@
         "Reserve",
         "Woods",
         "Lighthouse",
+        "Night Factory",
         "Factory",
         "Shoreline",
-        "Night Factory",
         "Ground Zero Tutorial",
-        "Streets of Tarkov",
+        "Interchange",
         "Icebreaker",
-        "Interchange"
+        "Streets of Tarkov"
       ],
       "type": "Locate / Kill / Survive",
       "objectives": [
@@ -5294,17 +5126,17 @@
           "text": "Eliminate 10 Scavs while completing the other objectives",
           "category": "Kill",
           "maps": [
+            "Reserve",
+            "Night Factory",
             "Factory",
             "Woods",
             "Shoreline",
-            "Lighthouse",
-            "Night Factory",
-            "Customs",
             "Ground Zero Tutorial",
-            "Reserve",
-            "Streets of Tarkov",
+            "Interchange",
+            "Lighthouse",
+            "Customs",
             "Icebreaker",
-            "Interchange"
+            "Streets of Tarkov"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
@@ -5336,17 +5168,17 @@
         "Reserve",
         "Woods",
         "Lighthouse",
+        "Night Factory",
         "Factory",
         "Shoreline",
-        "Night Factory",
         "Ground Zero Tutorial",
-        "Streets of Tarkov",
+        "Interchange",
         "Icebreaker",
-        "Interchange"
+        "Streets of Tarkov"
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 352236
+      "wikiRevision": 363376
     },
     {
       "id": "66058ccbc7f3584787181478",
@@ -6914,7 +6746,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359519
+      "wikiRevision": 363468
     },
     {
       "id": "608a768d82e40b3c727fd17d",
@@ -9142,9 +8974,9 @@
       "name": "The Huntsman Path - Liberation",
       "trader": "Jaeger",
       "maps": [
+        "Reserve",
         "The Lab (Dark)",
-        "The Lab",
-        "Reserve"
+        "The Lab"
       ],
       "type": "Kill",
       "objectives": [
@@ -9155,9 +8987,9 @@
           "text": "Eliminate 6 Raiders",
           "category": "Kill",
           "maps": [
+            "Reserve",
             "The Lab (Dark)",
-            "The Lab",
-            "Reserve"
+            "The Lab"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
@@ -9172,9 +9004,9 @@
       "raidRelevant": true,
       "raidClass": "MAP_BOUND",
       "mapBoundMaps": [
+        "Reserve",
         "The Lab (Dark)",
-        "The Lab",
-        "Reserve"
+        "The Lab"
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
@@ -10533,17 +10365,17 @@
       "name": "The Survivalist Path - Wounded Beast",
       "trader": "Jaeger",
       "maps": [
+        "Reserve",
+        "Night Factory",
         "Factory",
         "Woods",
         "Shoreline",
-        "Lighthouse",
-        "Night Factory",
-        "Customs",
         "Ground Zero Tutorial",
-        "Reserve",
-        "Streets of Tarkov",
+        "Interchange",
+        "Lighthouse",
+        "Customs",
         "Icebreaker",
-        "Interchange"
+        "Streets of Tarkov"
       ],
       "type": "Kill",
       "objectives": [
@@ -10554,17 +10386,17 @@
           "text": "Eliminate 3 Scavs while suffering from pain effect",
           "category": "Kill",
           "maps": [
+            "Reserve",
+            "Night Factory",
             "Factory",
             "Woods",
             "Shoreline",
-            "Lighthouse",
-            "Night Factory",
-            "Customs",
             "Ground Zero Tutorial",
-            "Reserve",
-            "Streets of Tarkov",
+            "Interchange",
+            "Lighthouse",
+            "Customs",
             "Icebreaker",
-            "Interchange"
+            "Streets of Tarkov"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
@@ -10586,17 +10418,17 @@
       "raidRelevant": true,
       "raidClass": "MAP_BOUND",
       "mapBoundMaps": [
+        "Reserve",
+        "Night Factory",
         "Factory",
         "Woods",
         "Shoreline",
-        "Lighthouse",
-        "Night Factory",
-        "Customs",
         "Ground Zero Tutorial",
-        "Reserve",
-        "Streets of Tarkov",
+        "Interchange",
+        "Lighthouse",
+        "Customs",
         "Icebreaker",
-        "Interchange"
+        "Streets of Tarkov"
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
@@ -10660,16 +10492,16 @@
       "trader": "Jaeger",
       "maps": [
         "Streets of Tarkov",
+        "Reserve",
+        "Night Factory",
         "Factory",
         "Woods",
         "Shoreline",
-        "Lighthouse",
-        "Night Factory",
-        "Customs",
         "Ground Zero Tutorial",
-        "Reserve",
-        "Icebreaker",
-        "Interchange"
+        "Interchange",
+        "Lighthouse",
+        "Customs",
+        "Icebreaker"
       ],
       "type": "Kill",
       "objectives": [
@@ -10681,16 +10513,16 @@
           "category": "Kill",
           "maps": [
             "Streets of Tarkov",
+            "Reserve",
+            "Night Factory",
             "Factory",
             "Woods",
             "Shoreline",
-            "Lighthouse",
-            "Night Factory",
-            "Customs",
             "Ground Zero Tutorial",
-            "Reserve",
-            "Icebreaker",
-            "Interchange"
+            "Interchange",
+            "Lighthouse",
+            "Customs",
+            "Icebreaker"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
@@ -10715,16 +10547,16 @@
       "raidClass": "MAP_BOUND",
       "mapBoundMaps": [
         "Streets of Tarkov",
+        "Reserve",
+        "Night Factory",
         "Factory",
         "Woods",
         "Shoreline",
-        "Lighthouse",
-        "Night Factory",
-        "Customs",
         "Ground Zero Tutorial",
-        "Reserve",
-        "Icebreaker",
-        "Interchange"
+        "Interchange",
+        "Lighthouse",
+        "Customs",
+        "Icebreaker"
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
@@ -11358,14 +11190,7 @@
       "fir": [],
       "minLevel": 0,
       "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Information_Source",
-      "taskRequirements": [
-        {
-          "taskId": "625d7005a4eb80027c4f2e09",
-          "statuses": [
-            "complete"
-          ]
-        }
-      ],
+      "taskRequirements": [],
       "raidRelevant": true,
       "raidClass": "MAP_BOUND",
       "mapBoundMaps": [
@@ -11480,7 +11305,9 @@
       "name": "Make an Impression",
       "trader": "Lightkeeper",
       "maps": [
-        "Streets of Tarkov"
+        "Streets of Tarkov",
+        "Woods",
+        "Lighthouse"
       ],
       "type": "Kill",
       "objectives": [
@@ -11499,7 +11326,9 @@
           "text": "Eliminate 10 Sniper Scavs from over 200 meters away",
           "category": "Kill",
           "maps": [
-            "Streets of Tarkov"
+            "Streets of Tarkov",
+            "Woods",
+            "Lighthouse"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
@@ -11521,7 +11350,9 @@
       "raidRelevant": true,
       "raidClass": "MAP_BOUND",
       "mapBoundMaps": [
-        "Streets of Tarkov"
+        "Streets of Tarkov",
+        "Woods",
+        "Lighthouse"
       ],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
@@ -12068,10 +11899,8 @@
         {
           "text": "Survive and extract from the location",
           "category": "Survive",
-          "maps": [
-            "Streets of Tarkov"
-          ],
-          "raidClass": "MAP_BOUND",
+          "maps": [],
+          "raidClass": "ANY_RAID",
           "raidRequired": true
         }
       ],
@@ -12093,7 +11922,7 @@
       "mapBoundMaps": [
         "Streets of Tarkov"
       ],
-      "hasAnyRaidObjectives": false,
+      "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
       "wikiRevision": 362771
     },
@@ -12218,9 +12047,11 @@
         {
           "text": "Launch a yellow flare near the armored convoy",
           "category": "Other",
-          "maps": [],
-          "raidClass": "NON_RAID",
-          "raidRequired": false
+          "maps": [
+            "Streets of Tarkov"
+          ],
+          "raidClass": "MAP_BOUND",
+          "raidRequired": true
         }
       ],
       "requirements": [
@@ -12352,225 +12183,6 @@
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
       "wikiRevision": 359065
-    },
-    {
-      "id": "625d6ffcaa168e51321d69d7",
-      "name": "Assessment - Part 1",
-      "trader": "Mechanic",
-      "maps": [
-        "Lighthouse"
-      ],
-      "type": "Kill",
-      "objectives": [
-        "Eliminate 15 PMC operatives near the Lighthouse peninsula"
-      ],
-      "objectiveDetails": [
-        {
-          "text": "Eliminate 15 PMC operatives near the Lighthouse peninsula",
-          "category": "Kill",
-          "maps": [
-            "Lighthouse"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        }
-      ],
-      "requirements": [],
-      "restrictions": [],
-      "fir": [],
-      "minLevel": 0,
-      "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Assessment_-_Part_1",
-      "taskRequirements": [
-        {
-          "taskId": "625d6ffaf7308432be1d44c5",
-          "statuses": [
-            "complete"
-          ]
-        }
-      ],
-      "raidRelevant": true,
-      "raidClass": "MAP_BOUND",
-      "mapBoundMaps": [
-        "Lighthouse"
-      ],
-      "hasAnyRaidObjectives": false,
-      "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359086
-    },
-    {
-      "id": "625d6fff4149f1149b5b12c9",
-      "name": "Assessment - Part 2",
-      "trader": "Mechanic",
-      "maps": [
-        "Woods"
-      ],
-      "type": "Place",
-      "objectives": [
-        "Locate and mark the first bunker with an MS2000 marker on Woods",
-        "Locate and mark the second bunker with an MS2000 marker on Woods",
-        "Locate and mark the third bunker with an MS2000 marker on Woods",
-        "Locate and mark the fourth bunker with an MS2000 marker on Woods"
-      ],
-      "objectiveDetails": [
-        {
-          "text": "Locate and mark the first bunker with an MS2000 marker on Woods",
-          "category": "Place",
-          "maps": [
-            "Woods"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        },
-        {
-          "text": "Locate and mark the second bunker with an MS2000 marker on Woods",
-          "category": "Place",
-          "maps": [
-            "Woods"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        },
-        {
-          "text": "Locate and mark the third bunker with an MS2000 marker on Woods",
-          "category": "Place",
-          "maps": [
-            "Woods"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        },
-        {
-          "text": "Locate and mark the fourth bunker with an MS2000 marker on Woods",
-          "category": "Place",
-          "maps": [
-            "Woods"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        }
-      ],
-      "requirements": [
-        {
-          "kind": "item",
-          "name": "MS2000 Marker",
-          "qty": 4,
-          "slot": null,
-          "itemId": "",
-          "sourceObjective": "Locate and mark the first bunker with an MS2000 marker on Woods"
-        }
-      ],
-      "restrictions": [],
-      "fir": [],
-      "minLevel": 0,
-      "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Assessment_-_Part_2",
-      "taskRequirements": [
-        {
-          "taskId": "625d6ffcaa168e51321d69d7",
-          "statuses": [
-            "complete"
-          ]
-        }
-      ],
-      "raidRelevant": true,
-      "raidClass": "MAP_BOUND",
-      "mapBoundMaps": [
-        "Woods"
-      ],
-      "hasAnyRaidObjectives": false,
-      "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359087
-    },
-    {
-      "id": "625d7001c4874104f230c0c5",
-      "name": "Assessment - Part 3",
-      "trader": "Mechanic",
-      "maps": [
-        "The Lab"
-      ],
-      "type": "Kill / Find / Hand over",
-      "objectives": [
-        "Eliminate 7 Raiders in The Lab",
-        "Find 15 SJ1 TGLabs combat stimulant injector in raid",
-        "Find 5 SJ6 TGLabs combat stimulant injector in raid",
-        "Find 1 SJ9 TGLabs combat stimulant injector in raid",
-        "Hand over 15 SJ1 TGLabs combat stimulant injector to Mechanic",
-        "Hand over 5 SJ6 TGLabs combat stimulant injector to Mechanic",
-        "Hand over 1 SJ9 TGLabs combat stimulant injector to Mechanic"
-      ],
-      "objectiveDetails": [
-        {
-          "text": "Eliminate 7 Raiders in The Lab",
-          "category": "Kill",
-          "maps": [
-            "The Lab"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        },
-        {
-          "text": "Find 15 SJ1 TGLabs combat stimulant injector in raid",
-          "category": "Find / Hand over",
-          "maps": [],
-          "raidClass": "ANY_RAID",
-          "raidRequired": true
-        },
-        {
-          "text": "Find 5 SJ6 TGLabs combat stimulant injector in raid",
-          "category": "Find / Hand over",
-          "maps": [],
-          "raidClass": "ANY_RAID",
-          "raidRequired": true
-        },
-        {
-          "text": "Find 1 SJ9 TGLabs combat stimulant injector in raid",
-          "category": "Find / Hand over",
-          "maps": [],
-          "raidClass": "ANY_RAID",
-          "raidRequired": true
-        },
-        {
-          "text": "Hand over 15 SJ1 TGLabs combat stimulant injector to Mechanic",
-          "category": "Find / Hand over",
-          "maps": [],
-          "raidClass": "NON_RAID",
-          "raidRequired": false
-        },
-        {
-          "text": "Hand over 5 SJ6 TGLabs combat stimulant injector to Mechanic",
-          "category": "Find / Hand over",
-          "maps": [],
-          "raidClass": "NON_RAID",
-          "raidRequired": false
-        },
-        {
-          "text": "Hand over 1 SJ9 TGLabs combat stimulant injector to Mechanic",
-          "category": "Find / Hand over",
-          "maps": [],
-          "raidClass": "NON_RAID",
-          "raidRequired": false
-        }
-      ],
-      "requirements": [],
-      "restrictions": [],
-      "fir": [],
-      "minLevel": 0,
-      "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Assessment_-_Part_3",
-      "taskRequirements": [
-        {
-          "taskId": "625d6fff4149f1149b5b12c9",
-          "statuses": [
-            "complete"
-          ]
-        }
-      ],
-      "raidRelevant": true,
-      "raidClass": "MAP_BOUND",
-      "mapBoundMaps": [
-        "The Lab"
-      ],
-      "hasAnyRaidObjectives": true,
-      "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359088
     },
     {
       "id": "6089736efa70fc097863b8f6",
@@ -13211,76 +12823,6 @@
       "wikiRevision": 359282
     },
     {
-      "id": "625d700cc48e6c62a440fab5",
-      "name": "Getting Acquainted",
-      "trader": "Mechanic",
-      "maps": [
-        "Lighthouse"
-      ],
-      "type": "Find / Hand over",
-      "objectives": [
-        "Obtain the V3 Flash drive on Lighthouse",
-        "Reflash the Radio transmitter using the V3 Flash drive",
-        "Hand over the flash drive",
-        "Visit the Lighthouse building"
-      ],
-      "objectiveDetails": [
-        {
-          "text": "Obtain the V3 Flash drive on Lighthouse",
-          "category": "Other",
-          "maps": [
-            "Lighthouse"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        },
-        {
-          "text": "Reflash the Radio transmitter using the V3 Flash drive",
-          "category": "Other",
-          "maps": [],
-          "raidClass": "NON_RAID",
-          "raidRequired": false
-        },
-        {
-          "text": "Hand over the flash drive",
-          "category": "Find / Hand over",
-          "maps": [],
-          "raidClass": "NON_RAID",
-          "raidRequired": false
-        },
-        {
-          "text": "Visit the Lighthouse building",
-          "category": "Other",
-          "maps": [
-            "Lighthouse"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        }
-      ],
-      "requirements": [],
-      "restrictions": [],
-      "fir": [],
-      "minLevel": 0,
-      "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Getting_Acquainted",
-      "taskRequirements": [
-        {
-          "taskId": "625d7005a4eb80027c4f2e09",
-          "statuses": [
-            "complete"
-          ]
-        }
-      ],
-      "raidRelevant": true,
-      "raidClass": "MAP_BOUND",
-      "mapBoundMaps": [
-        "Lighthouse"
-      ],
-      "hasAnyRaidObjectives": false,
-      "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 360181
-    },
-    {
       "id": "68db9c7557bc51a8c804c14b",
       "name": "Goals and Means",
       "trader": "Mechanic",
@@ -13700,564 +13242,6 @@
       "wikiRevision": 359424
     },
     {
-      "id": "625d70031ed3bb5bcc5bd9e5",
-      "name": "Key to the Tower",
-      "trader": "Mechanic",
-      "maps": [
-        "Lighthouse"
-      ],
-      "type": "Find / Hand over",
-      "objectives": [
-        "Find 2 Pieces of plexiglass in raid",
-        "Find 1 Insulating tape in raid",
-        "Find 2 Military circuit boards in raid",
-        "Find 1 Military COFDM Wireless Signal Transmitter in raid",
-        "Find 1 Working LCD in raid",
-        "Obtain 1 Radio transmitter body on Lighthouse",
-        "Hand over 2 Pieces of plexiglass to Mechanic",
-        "Hand over 1 Insulating tape to Mechanic",
-        "Hand over 2 Military circuit boards to Mechanic",
-        "Hand over 1 Military COFDM Wireless Signal Transmitter to Mechanic",
-        "Hand over 1 Working LCD to Mechanic",
-        "Hand over 1 Radio transmitter body to Mechanic"
-      ],
-      "objectiveDetails": [
-        {
-          "text": "Find 2 Pieces of plexiglass in raid",
-          "category": "Find / Hand over",
-          "maps": [],
-          "raidClass": "ANY_RAID",
-          "raidRequired": true
-        },
-        {
-          "text": "Find 1 Insulating tape in raid",
-          "category": "Find / Hand over",
-          "maps": [],
-          "raidClass": "ANY_RAID",
-          "raidRequired": true
-        },
-        {
-          "text": "Find 2 Military circuit boards in raid",
-          "category": "Find / Hand over",
-          "maps": [],
-          "raidClass": "ANY_RAID",
-          "raidRequired": true
-        },
-        {
-          "text": "Find 1 Military COFDM Wireless Signal Transmitter in raid",
-          "category": "Find / Hand over",
-          "maps": [],
-          "raidClass": "ANY_RAID",
-          "raidRequired": true
-        },
-        {
-          "text": "Find 1 Working LCD in raid",
-          "category": "Find / Hand over",
-          "maps": [],
-          "raidClass": "ANY_RAID",
-          "raidRequired": true
-        },
-        {
-          "text": "Obtain 1 Radio transmitter body on Lighthouse",
-          "category": "Other",
-          "maps": [
-            "Lighthouse"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        },
-        {
-          "text": "Hand over 2 Pieces of plexiglass to Mechanic",
-          "category": "Find / Hand over",
-          "maps": [],
-          "raidClass": "NON_RAID",
-          "raidRequired": false
-        },
-        {
-          "text": "Hand over 1 Insulating tape to Mechanic",
-          "category": "Find / Hand over",
-          "maps": [],
-          "raidClass": "NON_RAID",
-          "raidRequired": false
-        },
-        {
-          "text": "Hand over 2 Military circuit boards to Mechanic",
-          "category": "Find / Hand over",
-          "maps": [],
-          "raidClass": "NON_RAID",
-          "raidRequired": false
-        },
-        {
-          "text": "Hand over 1 Military COFDM Wireless Signal Transmitter to Mechanic",
-          "category": "Find / Hand over",
-          "maps": [],
-          "raidClass": "NON_RAID",
-          "raidRequired": false
-        },
-        {
-          "text": "Hand over 1 Working LCD to Mechanic",
-          "category": "Find / Hand over",
-          "maps": [],
-          "raidClass": "NON_RAID",
-          "raidRequired": false
-        },
-        {
-          "text": "Hand over 1 Radio transmitter body to Mechanic",
-          "category": "Find / Hand over",
-          "maps": [],
-          "raidClass": "NON_RAID",
-          "raidRequired": false
-        }
-      ],
-      "requirements": [],
-      "restrictions": [],
-      "fir": [],
-      "minLevel": 0,
-      "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Key_to_the_Tower",
-      "taskRequirements": [
-        {
-          "taskId": "625d7001c4874104f230c0c5",
-          "statuses": [
-            "complete"
-          ]
-        }
-      ],
-      "raidRelevant": true,
-      "raidClass": "MAP_BOUND",
-      "mapBoundMaps": [
-        "Lighthouse"
-      ],
-      "hasAnyRaidObjectives": true,
-      "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359439
-    },
-    {
-      "id": "625d7005a4eb80027c4f2e09",
-      "name": "Knock-Knock",
-      "trader": "Mechanic",
-      "maps": [
-        "Lighthouse"
-      ],
-      "type": "Survive",
-      "objectives": [
-        "Check if the radio transmitter works near the Lighthouse peninsula",
-        "Survive and extract from the location"
-      ],
-      "objectiveDetails": [
-        {
-          "text": "Check if the radio transmitter works near the Lighthouse peninsula",
-          "category": "Other",
-          "maps": [
-            "Lighthouse"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        },
-        {
-          "text": "Survive and extract from the location",
-          "category": "Survive",
-          "maps": [
-            "Lighthouse"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        }
-      ],
-      "requirements": [],
-      "restrictions": [],
-      "fir": [],
-      "minLevel": 0,
-      "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Knock-Knock",
-      "taskRequirements": [
-        {
-          "taskId": "625d70031ed3bb5bcc5bd9e5",
-          "statuses": [
-            "complete"
-          ]
-        }
-      ],
-      "raidRelevant": true,
-      "raidClass": "MAP_BOUND",
-      "mapBoundMaps": [
-        "Lighthouse"
-      ],
-      "hasAnyRaidObjectives": false,
-      "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359448
-    },
-    {
-      "id": "6391d90f4ed9512be67647df",
-      "name": "Make Amends",
-      "trader": "Mechanic",
-      "maps": [
-        "Lighthouse"
-      ],
-      "type": "Find / Hand over",
-      "objectives": [
-        "Obtain the V3 Flash drive on Lighthouse",
-        "Reflash the Radio transmitter",
-        "Hand over the flash drive to Mechanic",
-        "Visit the Lighthouse building"
-      ],
-      "objectiveDetails": [
-        {
-          "text": "Obtain the V3 Flash drive on Lighthouse",
-          "category": "Other",
-          "maps": [
-            "Lighthouse"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        },
-        {
-          "text": "Reflash the Radio transmitter",
-          "category": "Other",
-          "maps": [],
-          "raidClass": "NON_RAID",
-          "raidRequired": false
-        },
-        {
-          "text": "Hand over the flash drive to Mechanic",
-          "category": "Find / Hand over",
-          "maps": [],
-          "raidClass": "NON_RAID",
-          "raidRequired": false
-        },
-        {
-          "text": "Visit the Lighthouse building",
-          "category": "Other",
-          "maps": [
-            "Lighthouse"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        }
-      ],
-      "requirements": [],
-      "restrictions": [],
-      "fir": [],
-      "minLevel": 0,
-      "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Make_Amends",
-      "taskRequirements": [
-        {
-          "taskId": "6261482fa4eb80027c4f2e11",
-          "statuses": [
-            "complete"
-          ]
-        }
-      ],
-      "raidRelevant": true,
-      "raidClass": "MAP_BOUND",
-      "mapBoundMaps": [
-        "Lighthouse"
-      ],
-      "hasAnyRaidObjectives": false,
-      "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359464
-    },
-    {
-      "id": "6391d912f8e5dd32bf4e3ab2",
-      "name": "Make Amends",
-      "trader": "Mechanic",
-      "maps": [
-        "Lighthouse"
-      ],
-      "type": "Find / Hand over",
-      "objectives": [
-        "Obtain the V3 Flash drive on Lighthouse",
-        "Reflash the Radio transmitter",
-        "Hand over the flash drive to Mechanic",
-        "Visit the Lighthouse building"
-      ],
-      "objectiveDetails": [
-        {
-          "text": "Obtain the V3 Flash drive on Lighthouse",
-          "category": "Other",
-          "maps": [
-            "Lighthouse"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        },
-        {
-          "text": "Reflash the Radio transmitter",
-          "category": "Other",
-          "maps": [],
-          "raidClass": "NON_RAID",
-          "raidRequired": false
-        },
-        {
-          "text": "Hand over the flash drive to Mechanic",
-          "category": "Find / Hand over",
-          "maps": [],
-          "raidClass": "NON_RAID",
-          "raidRequired": false
-        },
-        {
-          "text": "Visit the Lighthouse building",
-          "category": "Other",
-          "maps": [
-            "Lighthouse"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        }
-      ],
-      "requirements": [],
-      "restrictions": [],
-      "fir": [],
-      "minLevel": 0,
-      "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Make_Amends",
-      "taskRequirements": [
-        {
-          "taskId": "62614836f7308432be1d44cc",
-          "statuses": [
-            "complete"
-          ]
-        }
-      ],
-      "raidRelevant": true,
-      "raidClass": "MAP_BOUND",
-      "mapBoundMaps": [
-        "Lighthouse"
-      ],
-      "hasAnyRaidObjectives": false,
-      "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359464
-    },
-    {
-      "id": "6391d9144b15ca31f76bc323",
-      "name": "Make Amends",
-      "trader": "Mechanic",
-      "maps": [
-        "Lighthouse"
-      ],
-      "type": "Find / Hand over",
-      "objectives": [
-        "Obtain the V3 Flash drive on Lighthouse",
-        "Reflash the Radio transmitter",
-        "Hand over the flash drive to Mechanic",
-        "Visit the Lighthouse building"
-      ],
-      "objectiveDetails": [
-        {
-          "text": "Obtain the V3 Flash drive on Lighthouse",
-          "category": "Other",
-          "maps": [
-            "Lighthouse"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        },
-        {
-          "text": "Reflash the Radio transmitter",
-          "category": "Other",
-          "maps": [],
-          "raidClass": "NON_RAID",
-          "raidRequired": false
-        },
-        {
-          "text": "Hand over the flash drive to Mechanic",
-          "category": "Find / Hand over",
-          "maps": [],
-          "raidClass": "NON_RAID",
-          "raidRequired": false
-        },
-        {
-          "text": "Visit the Lighthouse building",
-          "category": "Other",
-          "maps": [
-            "Lighthouse"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        }
-      ],
-      "requirements": [],
-      "restrictions": [],
-      "fir": [],
-      "minLevel": 0,
-      "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Make_Amends",
-      "taskRequirements": [
-        {
-          "taskId": "6261483dc4874104f230c0cd",
-          "statuses": [
-            "complete"
-          ]
-        }
-      ],
-      "raidRelevant": true,
-      "raidClass": "MAP_BOUND",
-      "mapBoundMaps": [
-        "Lighthouse"
-      ],
-      "hasAnyRaidObjectives": false,
-      "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359464
-    },
-    {
-      "id": "6261483dc4874104f230c0cd",
-      "name": "Make Amends - Quarantine",
-      "trader": "Mechanic",
-      "maps": [
-        "The Lab"
-      ],
-      "type": "Place",
-      "objectives": [
-        "Place a WI-FI Camera inside the quarantine zone in The Lab"
-      ],
-      "objectiveDetails": [
-        {
-          "text": "Place a WI-FI Camera inside the quarantine zone in The Lab",
-          "category": "Place",
-          "maps": [
-            "The Lab"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        }
-      ],
-      "requirements": [],
-      "restrictions": [],
-      "fir": [],
-      "minLevel": 0,
-      "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Make_Amends_-_Quarantine",
-      "taskRequirements": [
-        {
-          "taskId": "6261483ac48e6c62a440fab7",
-          "statuses": [
-            "complete"
-          ]
-        }
-      ],
-      "raidRelevant": true,
-      "raidClass": "MAP_BOUND",
-      "mapBoundMaps": [
-        "The Lab"
-      ],
-      "hasAnyRaidObjectives": false,
-      "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359467
-    },
-    {
-      "id": "626148334149f1149b5b12ca",
-      "name": "Make Amends - Security",
-      "trader": "Mechanic",
-      "maps": [
-        "Lighthouse"
-      ],
-      "type": "Place",
-      "objectives": [
-        "Place a WI-FI Camera at the yellow bus on the southern bridge approaching the water treatment plant on Lighthouse",
-        "Place a WI-FI Camera at the yellow bulldozer in the south-eastern part of the water treatment plant on Lighthouse",
-        "Place a WI-FI Camera at the police truck in the western part of the water treatment plant on Lighthouse",
-        "Place a WI-FI Camera at the army truck near the industrial zone in the northern part of the water treatment plant on Lighthouse"
-      ],
-      "objectiveDetails": [
-        {
-          "text": "Place a WI-FI Camera at the yellow bus on the southern bridge approaching the water treatment plant on Lighthouse",
-          "category": "Place",
-          "maps": [
-            "Lighthouse"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        },
-        {
-          "text": "Place a WI-FI Camera at the yellow bulldozer in the south-eastern part of the water treatment plant on Lighthouse",
-          "category": "Place",
-          "maps": [
-            "Lighthouse"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        },
-        {
-          "text": "Place a WI-FI Camera at the police truck in the western part of the water treatment plant on Lighthouse",
-          "category": "Place",
-          "maps": [
-            "Lighthouse"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        },
-        {
-          "text": "Place a WI-FI Camera at the army truck near the industrial zone in the northern part of the water treatment plant on Lighthouse",
-          "category": "Place",
-          "maps": [
-            "Lighthouse"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        }
-      ],
-      "requirements": [],
-      "restrictions": [],
-      "fir": [],
-      "minLevel": 0,
-      "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Make_Amends_-_Security",
-      "taskRequirements": [
-        {
-          "taskId": "6391d90f4ed9512be67647df",
-          "statuses": [
-            "complete"
-          ]
-        }
-      ],
-      "raidRelevant": true,
-      "raidClass": "MAP_BOUND",
-      "mapBoundMaps": [
-        "Lighthouse"
-      ],
-      "hasAnyRaidObjectives": false,
-      "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359468
-    },
-    {
-      "id": "62614836f7308432be1d44cc",
-      "name": "Make Amends - Sweep Up",
-      "trader": "Mechanic",
-      "maps": [
-        "Reserve"
-      ],
-      "type": "Kill",
-      "objectives": [
-        "Eliminate 25 Raiders on Reserve"
-      ],
-      "objectiveDetails": [
-        {
-          "text": "Eliminate 25 Raiders on Reserve",
-          "category": "Kill",
-          "maps": [
-            "Reserve"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        }
-      ],
-      "requirements": [],
-      "restrictions": [],
-      "fir": [],
-      "minLevel": 0,
-      "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Make_Amends_-_Sweep_Up",
-      "taskRequirements": [
-        {
-          "taskId": "626148334149f1149b5b12ca",
-          "statuses": [
-            "complete"
-          ]
-        }
-      ],
-      "raidRelevant": true,
-      "raidClass": "MAP_BOUND",
-      "mapBoundMaps": [
-        "Reserve"
-      ],
-      "hasAnyRaidObjectives": false,
-      "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359470
-    },
-    {
       "id": "67a0964e972c11a3f507731b",
       "name": "Needle in a Haystack",
       "trader": "Mechanic",
@@ -14356,80 +13340,6 @@
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
       "wikiRevision": 359490
-    },
-    {
-      "id": "625d6ffaf7308432be1d44c5",
-      "name": "Network Provider - Part 2",
-      "trader": "Mechanic",
-      "maps": [
-        "Lighthouse"
-      ],
-      "type": "Place",
-      "objectives": [
-        "Set up the radio repeater inside the MI-8 helicopter at the water treatment plant on Lighthouse",
-        "Set up the radio repeater inside the abandoned USEC cottage on Lighthouse",
-        "Set up the radio repeater at a high elevation overlooking the lighthouse on Lighthouse",
-        "Set up the radio repeater on the roof of the sunken building at the shore on Lighthouse"
-      ],
-      "objectiveDetails": [
-        {
-          "text": "Set up the radio repeater inside the MI-8 helicopter at the water treatment plant on Lighthouse",
-          "category": "Place",
-          "maps": [
-            "Lighthouse"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        },
-        {
-          "text": "Set up the radio repeater inside the abandoned USEC cottage on Lighthouse",
-          "category": "Other",
-          "maps": [
-            "Lighthouse"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        },
-        {
-          "text": "Set up the radio repeater at a high elevation overlooking the lighthouse on Lighthouse",
-          "category": "Other",
-          "maps": [
-            "Lighthouse"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        },
-        {
-          "text": "Set up the radio repeater on the roof of the sunken building at the shore on Lighthouse",
-          "category": "Other",
-          "maps": [
-            "Lighthouse"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        }
-      ],
-      "requirements": [],
-      "restrictions": [],
-      "fir": [],
-      "minLevel": 0,
-      "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Network_Provider_-_Part_2",
-      "taskRequirements": [
-        {
-          "taskId": "625d6ff5ddc94657c21a1625",
-          "statuses": [
-            "complete"
-          ]
-        }
-      ],
-      "raidRelevant": true,
-      "raidClass": "MAP_BOUND",
-      "mapBoundMaps": [
-        "Lighthouse"
-      ],
-      "hasAnyRaidObjectives": false,
-      "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359492
     },
     {
       "id": "67a0970744893b9f3f0d9b68",
@@ -18642,7 +17552,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 363125
+      "wikiRevision": 363382
     },
     {
       "id": "5a03173786f77451cb427172",
@@ -21043,11 +19953,11 @@
       "name": "Hell on Earth - Part 2",
       "trader": "Prapor",
       "maps": [
+        "Night Factory",
         "Woods",
         "Shoreline",
-        "Night Factory",
-        "Customs",
-        "Ground Zero 21+"
+        "Ground Zero 21+",
+        "Customs"
       ],
       "type": "Kill",
       "objectives": [
@@ -21058,11 +19968,11 @@
           "text": "Eliminate 2 hooded men while using the double barrel shotgun",
           "category": "Kill",
           "maps": [
+            "Night Factory",
             "Woods",
             "Shoreline",
-            "Night Factory",
-            "Customs",
-            "Ground Zero 21+"
+            "Ground Zero 21+",
+            "Customs"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
@@ -21094,11 +20004,11 @@
       "raidRelevant": true,
       "raidClass": "MAP_BOUND",
       "mapBoundMaps": [
+        "Night Factory",
         "Woods",
         "Shoreline",
-        "Night Factory",
-        "Customs",
-        "Ground Zero 21+"
+        "Ground Zero 21+",
+        "Customs"
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
@@ -21150,17 +20060,17 @@
       "name": "Intimidator",
       "trader": "Prapor",
       "maps": [
+        "Reserve",
+        "Night Factory",
         "Factory",
         "Woods",
         "Shoreline",
-        "Lighthouse",
-        "Night Factory",
-        "Customs",
         "Ground Zero Tutorial",
-        "Reserve",
-        "Streets of Tarkov",
+        "Interchange",
+        "Lighthouse",
+        "Customs",
         "Icebreaker",
-        "Interchange"
+        "Streets of Tarkov"
       ],
       "type": "Kill",
       "objectives": [
@@ -21171,17 +20081,17 @@
           "text": "Eliminate 40 Scavs with headshots",
           "category": "Kill",
           "maps": [
+            "Reserve",
+            "Night Factory",
             "Factory",
             "Woods",
             "Shoreline",
-            "Lighthouse",
-            "Night Factory",
-            "Customs",
             "Ground Zero Tutorial",
-            "Reserve",
-            "Streets of Tarkov",
+            "Interchange",
+            "Lighthouse",
+            "Customs",
             "Icebreaker",
-            "Interchange"
+            "Streets of Tarkov"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
@@ -21196,17 +20106,17 @@
       "raidRelevant": true,
       "raidClass": "MAP_BOUND",
       "mapBoundMaps": [
+        "Reserve",
+        "Night Factory",
         "Factory",
         "Woods",
         "Shoreline",
-        "Lighthouse",
-        "Night Factory",
-        "Customs",
         "Ground Zero Tutorial",
-        "Reserve",
-        "Streets of Tarkov",
+        "Interchange",
+        "Lighthouse",
+        "Customs",
         "Icebreaker",
-        "Interchange"
+        "Streets of Tarkov"
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
@@ -22495,7 +21405,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 360832
+      "wikiRevision": 363430
     },
     {
       "id": "666314bafd5ca9577902e03a",
@@ -22829,17 +21739,17 @@
       "name": "The Punisher - Part 5",
       "trader": "Prapor",
       "maps": [
+        "Reserve",
+        "Night Factory",
         "Factory",
         "Woods",
         "Shoreline",
-        "Lighthouse",
-        "Night Factory",
-        "Customs",
         "Ground Zero Tutorial",
-        "Reserve",
-        "Streets of Tarkov",
+        "Interchange",
+        "Lighthouse",
+        "Customs",
         "Icebreaker",
-        "Interchange"
+        "Streets of Tarkov"
       ],
       "type": "Find / Hand over / Kill",
       "objectives": [
@@ -22906,17 +21816,17 @@
           "text": "Eliminate 20 Scavs with Light machine guns",
           "category": "Kill",
           "maps": [
+            "Reserve",
+            "Night Factory",
             "Factory",
             "Woods",
             "Shoreline",
-            "Lighthouse",
-            "Night Factory",
-            "Customs",
             "Ground Zero Tutorial",
-            "Reserve",
-            "Streets of Tarkov",
+            "Interchange",
+            "Lighthouse",
+            "Customs",
             "Icebreaker",
-            "Interchange"
+            "Streets of Tarkov"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
@@ -22938,21 +21848,21 @@
       "raidRelevant": true,
       "raidClass": "MAP_BOUND",
       "mapBoundMaps": [
+        "Reserve",
+        "Night Factory",
         "Factory",
         "Woods",
         "Shoreline",
-        "Lighthouse",
-        "Night Factory",
-        "Customs",
         "Ground Zero Tutorial",
-        "Reserve",
-        "Streets of Tarkov",
+        "Interchange",
+        "Lighthouse",
+        "Customs",
         "Icebreaker",
-        "Interchange"
+        "Streets of Tarkov"
       ],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359779
+      "wikiRevision": 363472
     },
     {
       "id": "59ca2eb686f77445a80ed049",
@@ -22969,8 +21879,8 @@
         "Icebreaker",
         "Interchange",
         "Woods",
-        "Factory",
         "Night Factory",
+        "Factory",
         "The Lab (Dark)"
       ],
       "type": "Kill / Find / Hand over / Locate",
@@ -23011,8 +21921,8 @@
             "Interchange",
             "Woods",
             "Shoreline",
-            "Factory",
             "Night Factory",
+            "Factory",
             "The Lab (Dark)"
           ],
           "raidClass": "MAP_BOUND",
@@ -23054,8 +21964,8 @@
         "Icebreaker",
         "Interchange",
         "Woods",
-        "Factory",
         "Night Factory",
+        "Factory",
         "The Lab (Dark)"
       ],
       "hasAnyRaidObjectives": false,
@@ -23355,6 +22265,70 @@
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
       "wikiRevision": 359041
+    },
+    {
+      "id": "6a7af2e48fddc3979d0510b8",
+      "name": "Akimbo",
+      "trader": "Ragman",
+      "maps": [
+        "Lighthouse"
+      ],
+      "type": "Kill",
+      "objectives": [
+        "Eliminate any 3 targets with Thorax or Stomach shots using 7.62x39 caliber weapons on Lighthouse (In one raid)",
+        "Eliminate any 3 targets with Thorax or Stomach shots using 7.62x51 caliber weapons on Lighthouse (In one raid)"
+      ],
+      "objectiveDetails": [
+        {
+          "text": "Eliminate any 3 targets with Thorax or Stomach shots using 7.62x39 caliber weapons on Lighthouse (In one raid)",
+          "category": "Kill",
+          "maps": [
+            "Lighthouse"
+          ],
+          "raidClass": "MAP_BOUND",
+          "raidRequired": true
+        },
+        {
+          "text": "Eliminate any 3 targets with Thorax or Stomach shots using 7.62x51 caliber weapons on Lighthouse (In one raid)",
+          "category": "Kill",
+          "maps": [
+            "Lighthouse"
+          ],
+          "raidClass": "MAP_BOUND",
+          "raidRequired": true
+        }
+      ],
+      "requirements": [
+        {
+          "kind": "gear",
+          "name": "7.62x39 caliber weapons",
+          "qty": 1,
+          "slot": "weapon",
+          "itemId": "",
+          "sourceObjective": "Eliminate any 3 targets with Thorax or Stomach shots using 7.62x39 caliber weapons on Lighthouse (In one raid)"
+        },
+        {
+          "kind": "gear",
+          "name": "7.62x51 caliber weapons",
+          "qty": 1,
+          "slot": "weapon",
+          "itemId": "",
+          "sourceObjective": "Eliminate any 3 targets with Thorax or Stomach shots using 7.62x51 caliber weapons on Lighthouse (In one raid)"
+        }
+      ],
+      "restrictions": [],
+      "fir": [],
+      "minLevel": 0,
+      "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Akimbo",
+      "taskRequirements": [],
+      "raidRelevant": true,
+      "raidClass": "MAP_BOUND",
+      "mapBoundMaps": [
+        "Lighthouse"
+      ],
+      "hasAnyRaidObjectives": false,
+      "source": "json.tarkov.dev + Tarkov Wiki",
+      "wikiRevision": 359901
     },
     {
       "id": "6740b60c60a98cad1b0e0aa0",
@@ -23910,6 +22884,86 @@
       "wikiRevision": 359124
     },
     {
+      "id": "6a959d33b9b22567ed0d0a4e",
+      "name": "Can't Drink Away Skill",
+      "trader": "Ragman",
+      "maps": [
+        "Any"
+      ],
+      "type": "Find / Hand over",
+      "objectives": [
+        "Find 10 Golden neck chains in raid",
+        "Hand over the items",
+        "Find 5 Golden rooster figurines in raid",
+        "Find 5 Golden 1GPhone smartphones in raid",
+        "Find 10 Simple wallets in raid",
+        "Find 5 WZ Wallets in raid"
+      ],
+      "objectiveDetails": [
+        {
+          "text": "Find 10 Golden neck chains in raid",
+          "category": "Find / Hand over",
+          "maps": [],
+          "raidClass": "ANY_RAID",
+          "raidRequired": true
+        },
+        {
+          "text": "Hand over the items",
+          "category": "Find / Hand over",
+          "maps": [],
+          "raidClass": "NON_RAID",
+          "raidRequired": false
+        },
+        {
+          "text": "Find 5 Golden rooster figurines in raid",
+          "category": "Find / Hand over",
+          "maps": [],
+          "raidClass": "ANY_RAID",
+          "raidRequired": true
+        },
+        {
+          "text": "Find 5 Golden 1GPhone smartphones in raid",
+          "category": "Find / Hand over",
+          "maps": [],
+          "raidClass": "ANY_RAID",
+          "raidRequired": true
+        },
+        {
+          "text": "Find 10 Simple wallets in raid",
+          "category": "Find / Hand over",
+          "maps": [],
+          "raidClass": "ANY_RAID",
+          "raidRequired": true
+        },
+        {
+          "text": "Find 5 WZ Wallets in raid",
+          "category": "Find / Hand over",
+          "maps": [],
+          "raidClass": "ANY_RAID",
+          "raidRequired": true
+        }
+      ],
+      "requirements": [],
+      "restrictions": [],
+      "fir": [],
+      "minLevel": 25,
+      "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Can't_Drink_Away_Skill",
+      "taskRequirements": [
+        {
+          "taskId": "66d9cbb67b491f9d5304f6e6",
+          "statuses": [
+            "complete"
+          ]
+        }
+      ],
+      "raidRelevant": true,
+      "raidClass": "ANY_RAID",
+      "mapBoundMaps": [],
+      "hasAnyRaidObjectives": true,
+      "source": "json.tarkov.dev + Tarkov Wiki",
+      "wikiRevision": 359140
+    },
+    {
       "id": "5ae4499a86f77449783815db",
       "name": "Charisma Brings Success",
       "trader": "Ragman",
@@ -23966,8 +23020,8 @@
         "Interchange",
         "Woods",
         "Shoreline",
-        "Factory",
-        "Night Factory"
+        "Night Factory",
+        "Factory"
       ],
       "type": "Locate",
       "objectives": [
@@ -23984,8 +23038,8 @@
             "Interchange",
             "Woods",
             "Shoreline",
-            "Factory",
-            "Night Factory"
+            "Night Factory",
+            "Factory"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
@@ -24038,8 +23092,8 @@
         "Interchange",
         "Woods",
         "Shoreline",
-        "Factory",
-        "Night Factory"
+        "Night Factory",
+        "Factory"
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
@@ -24201,9 +23255,9 @@
       "name": "Drip-Out - Part 1",
       "trader": "Ragman",
       "maps": [
+        "Reserve",
         "The Lab (Dark)",
-        "The Lab",
-        "Reserve"
+        "The Lab"
       ],
       "type": "Kill / Find / Hand over",
       "objectives": [
@@ -24215,9 +23269,9 @@
           "text": "Eliminate 100 Raiders",
           "category": "Kill",
           "maps": [
+            "Reserve",
             "The Lab (Dark)",
-            "The Lab",
-            "Reserve"
+            "The Lab"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
@@ -24239,9 +23293,9 @@
       "raidRelevant": true,
       "raidClass": "MAP_BOUND",
       "mapBoundMaps": [
+        "Reserve",
         "The Lab (Dark)",
-        "The Lab",
-        "Reserve"
+        "The Lab"
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
@@ -24252,9 +23306,9 @@
       "name": "Drip-Out - Part 1",
       "trader": "Ragman",
       "maps": [
+        "Reserve",
         "The Lab (Dark)",
-        "The Lab",
-        "Reserve"
+        "The Lab"
       ],
       "type": "Kill / Find / Hand over",
       "objectives": [
@@ -24266,9 +23320,9 @@
           "text": "Eliminate 100 Raiders",
           "category": "Kill",
           "maps": [
+            "Reserve",
             "The Lab (Dark)",
-            "The Lab",
-            "Reserve"
+            "The Lab"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
@@ -24290,9 +23344,9 @@
       "raidRelevant": true,
       "raidClass": "MAP_BOUND",
       "mapBoundMaps": [
+        "Reserve",
         "The Lab (Dark)",
-        "The Lab",
-        "Reserve"
+        "The Lab"
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
@@ -24303,7 +23357,11 @@
       "name": "Drip-Out - Part 2",
       "trader": "Ragman",
       "maps": [
-        "Icebreaker"
+        "Icebreaker",
+        "Lighthouse",
+        "Woods",
+        "Shoreline",
+        "Customs"
       ],
       "type": "Kill / Find / Hand over",
       "objectives": [
@@ -24315,7 +23373,11 @@
           "text": "Eliminate 100 Rogues",
           "category": "Kill",
           "maps": [
-            "Icebreaker"
+            "Icebreaker",
+            "Lighthouse",
+            "Woods",
+            "Shoreline",
+            "Customs"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
@@ -24337,7 +23399,11 @@
       "raidRelevant": true,
       "raidClass": "MAP_BOUND",
       "mapBoundMaps": [
-        "Icebreaker"
+        "Icebreaker",
+        "Lighthouse",
+        "Woods",
+        "Shoreline",
+        "Customs"
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
@@ -25055,17 +24121,17 @@
       "name": "New Beginning",
       "trader": "Ragman",
       "maps": [
+        "Reserve",
+        "Night Factory",
         "Factory",
         "Woods",
         "Shoreline",
-        "Lighthouse",
-        "Night Factory",
-        "Customs",
         "Ground Zero Tutorial",
-        "Reserve",
-        "Streets of Tarkov",
-        "Icebreaker",
         "Interchange",
+        "Lighthouse",
+        "Customs",
+        "Icebreaker",
+        "Streets of Tarkov",
         "The Lab"
       ],
       "type": "Kill / Survive / Find / Hand over",
@@ -25082,17 +24148,17 @@
           "text": "Eliminate 50 Scavs",
           "category": "Kill",
           "maps": [
+            "Reserve",
+            "Night Factory",
             "Factory",
             "Woods",
             "Shoreline",
-            "Lighthouse",
-            "Night Factory",
-            "Customs",
             "Ground Zero Tutorial",
-            "Reserve",
-            "Streets of Tarkov",
+            "Interchange",
+            "Lighthouse",
+            "Customs",
             "Icebreaker",
-            "Interchange"
+            "Streets of Tarkov"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
@@ -25144,17 +24210,17 @@
       "raidRelevant": true,
       "raidClass": "MAP_BOUND",
       "mapBoundMaps": [
+        "Reserve",
+        "Night Factory",
         "Factory",
         "Woods",
         "Shoreline",
-        "Lighthouse",
-        "Night Factory",
-        "Customs",
         "Ground Zero Tutorial",
-        "Reserve",
-        "Streets of Tarkov",
-        "Icebreaker",
         "Interchange",
+        "Lighthouse",
+        "Customs",
+        "Icebreaker",
+        "Streets of Tarkov",
         "The Lab"
       ],
       "hasAnyRaidObjectives": false,
@@ -25809,6 +24875,89 @@
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
       "wikiRevision": 359653
+    },
+    {
+      "id": "6a7b0df31ea00c9a980e2742",
+      "name": "Sisyphus",
+      "trader": "Ragman",
+      "maps": [
+        "Woods",
+        "Reserve",
+        "Lighthouse"
+      ],
+      "type": "Locate / Survive",
+      "objectives": [
+        "Locate and obtain the first smuggler case in the ZB-014 bunker on Woods",
+        "Stash the first case in the guard booth near the Woods transit on Reserve",
+        "Locate and obtain the second smuggler case behind the shack at the USEC checkpoint on Woods",
+        "Stash the second case in the railcar with the Ural truck at the train platform on Lighthouse",
+        "Extract from Lighthouse or Reserve through the Armored Train"
+      ],
+      "objectiveDetails": [
+        {
+          "text": "Locate and obtain the first smuggler case in the ZB-014 bunker on Woods",
+          "category": "Locate",
+          "maps": [
+            "Woods"
+          ],
+          "raidClass": "MAP_BOUND",
+          "raidRequired": true
+        },
+        {
+          "text": "Stash the first case in the guard booth near the Woods transit on Reserve",
+          "category": "Other",
+          "maps": [
+            "Reserve",
+            "Woods"
+          ],
+          "raidClass": "MAP_BOUND",
+          "raidRequired": true
+        },
+        {
+          "text": "Locate and obtain the second smuggler case behind the shack at the USEC checkpoint on Woods",
+          "category": "Locate",
+          "maps": [
+            "Woods"
+          ],
+          "raidClass": "MAP_BOUND",
+          "raidRequired": true
+        },
+        {
+          "text": "Stash the second case in the railcar with the Ural truck at the train platform on Lighthouse",
+          "category": "Other",
+          "maps": [
+            "Lighthouse"
+          ],
+          "raidClass": "MAP_BOUND",
+          "raidRequired": true
+        },
+        {
+          "text": "Extract from Lighthouse or Reserve through the Armored Train",
+          "category": "Survive",
+          "maps": [
+            "Reserve",
+            "Lighthouse"
+          ],
+          "raidClass": "MAP_BOUND",
+          "raidRequired": true
+        }
+      ],
+      "requirements": [],
+      "restrictions": [],
+      "fir": [],
+      "minLevel": 0,
+      "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Sisyphus",
+      "taskRequirements": [],
+      "raidRelevant": true,
+      "raidClass": "MAP_BOUND",
+      "mapBoundMaps": [
+        "Woods",
+        "Reserve",
+        "Lighthouse"
+      ],
+      "hasAnyRaidObjectives": false,
+      "source": "json.tarkov.dev + Tarkov Wiki",
+      "wikiRevision": 360501
     },
     {
       "id": "5c10f94386f774227172c572",
@@ -26615,17 +25764,17 @@
       "name": "Balancing - Part 1 [PVP ZONE]",
       "trader": "Ref",
       "maps": [
+        "Reserve",
+        "Night Factory",
         "Factory",
         "Woods",
         "Shoreline",
-        "Lighthouse",
-        "Night Factory",
-        "Customs",
         "Ground Zero Tutorial",
-        "Reserve",
-        "Streets of Tarkov",
+        "Interchange",
+        "Lighthouse",
+        "Customs",
         "Icebreaker",
-        "Interchange"
+        "Streets of Tarkov"
       ],
       "type": "Kill",
       "objectives": [
@@ -26636,17 +25785,17 @@
           "text": "Eliminate 5 Scavs while using a Steyr AUG on any location",
           "category": "Kill",
           "maps": [
+            "Reserve",
+            "Night Factory",
             "Factory",
             "Woods",
             "Shoreline",
-            "Lighthouse",
-            "Night Factory",
-            "Customs",
             "Ground Zero Tutorial",
-            "Reserve",
-            "Streets of Tarkov",
+            "Interchange",
+            "Lighthouse",
+            "Customs",
             "Icebreaker",
-            "Interchange"
+            "Streets of Tarkov"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
@@ -26668,17 +25817,17 @@
       "raidRelevant": true,
       "raidClass": "MAP_BOUND",
       "mapBoundMaps": [
+        "Reserve",
+        "Night Factory",
         "Factory",
         "Woods",
         "Shoreline",
-        "Lighthouse",
-        "Night Factory",
-        "Customs",
         "Ground Zero Tutorial",
-        "Reserve",
-        "Streets of Tarkov",
+        "Interchange",
+        "Lighthouse",
+        "Customs",
         "Icebreaker",
-        "Interchange"
+        "Streets of Tarkov"
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
@@ -26954,6 +26103,53 @@
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
       "wikiRevision": 359384
+    },
+    {
+      "id": "6a91840a740be0cff50e0310",
+      "name": "Preliminary Survey",
+      "trader": "Ref",
+      "maps": [
+        "The Lab"
+      ],
+      "type": "Locate",
+      "objectives": [
+        "Locate the testing area blueprint flash drive in The Lab",
+        "Obtain the testing area blueprint flash drive in The Lab"
+      ],
+      "objectiveDetails": [
+        {
+          "text": "Locate the testing area blueprint flash drive in The Lab",
+          "category": "Locate",
+          "maps": [
+            "The Lab"
+          ],
+          "raidClass": "MAP_BOUND",
+          "raidRequired": true
+        },
+        {
+          "text": "Obtain the testing area blueprint flash drive in The Lab",
+          "category": "Other",
+          "maps": [
+            "The Lab"
+          ],
+          "raidClass": "MAP_BOUND",
+          "raidRequired": true
+        }
+      ],
+      "requirements": [],
+      "restrictions": [],
+      "fir": [],
+      "minLevel": 5,
+      "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Preliminary_Survey",
+      "taskRequirements": [],
+      "raidRelevant": true,
+      "raidClass": "MAP_BOUND",
+      "mapBoundMaps": [
+        "The Lab"
+      ],
+      "hasAnyRaidObjectives": false,
+      "source": "json.tarkov.dev + Tarkov Wiki",
+      "wikiRevision": 362353
     },
     {
       "id": "69788c2bac719606e40b4e77",
@@ -27857,7 +27053,7 @@
       ],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 362565
+      "wikiRevision": 363378
     },
     {
       "id": "5b4795fb86f7745876267770",
@@ -28021,7 +27217,7 @@
       "requirements": [],
       "restrictions": [],
       "fir": [],
-      "minLevel": 0,
+      "minLevel": 46,
       "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Consolation_Prize",
       "taskRequirements": [],
       "raidRelevant": true,
@@ -28172,7 +27368,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 362429
+      "wikiRevision": 363466
     },
     {
       "id": "669fa395c4c5c04798002497",
@@ -28680,7 +27876,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 362242
+      "wikiRevision": 363408
     },
     {
       "id": "671a49f77d49aea42c029b5f",
@@ -29101,7 +28297,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 362476
+      "wikiRevision": 363384
     },
     {
       "id": "666314c3acf8442f8b0531a3",
@@ -29655,6 +28851,61 @@
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
       "wikiRevision": 363173
+    },
+    {
+      "id": "6a7aef2360157cb5e3029a5f",
+      "name": "Stimulating Demand",
+      "trader": "Skier",
+      "maps": [
+        "Lighthouse"
+      ],
+      "type": "Kill / Locate / Find / Hand over",
+      "objectives": [
+        "Eliminate 5 Rogues or The Goons with 7.62x54R caliber weapons on Lighthouse",
+        "Locate and obtain the cargo package at the Rogue chalets on Lighthouse",
+        "Hand over the package"
+      ],
+      "objectiveDetails": [
+        {
+          "text": "Eliminate 5 Rogues or The Goons with 7.62x54R caliber weapons on Lighthouse",
+          "category": "Kill",
+          "maps": [
+            "Lighthouse"
+          ],
+          "raidClass": "MAP_BOUND",
+          "raidRequired": true
+        },
+        {
+          "text": "Locate and obtain the cargo package at the Rogue chalets on Lighthouse",
+          "category": "Locate",
+          "maps": [
+            "Lighthouse"
+          ],
+          "raidClass": "MAP_BOUND",
+          "raidRequired": true
+        },
+        {
+          "text": "Hand over the package",
+          "category": "Find / Hand over",
+          "maps": [],
+          "raidClass": "NON_RAID",
+          "raidRequired": false
+        }
+      ],
+      "requirements": [],
+      "restrictions": [],
+      "fir": [],
+      "minLevel": 0,
+      "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Stimulating_Demand",
+      "taskRequirements": [],
+      "raidRelevant": true,
+      "raidClass": "MAP_BOUND",
+      "mapBoundMaps": [
+        "Lighthouse"
+      ],
+      "hasAnyRaidObjectives": false,
+      "source": "json.tarkov.dev + Tarkov Wiki",
+      "wikiRevision": 360041
     },
     {
       "id": "596b455186f77457cb50eccb",
@@ -30427,7 +29678,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 361814
+      "wikiRevision": 363427
     },
     {
       "id": "59c9392986f7742f6923add2",
@@ -30764,7 +30015,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 361695
+      "wikiRevision": 363425
     },
     {
       "id": "596a218586f77420d232807c",
@@ -31773,6 +31024,79 @@
       "wikiRevision": 361703
     },
     {
+      "id": "6a7ae35b2dbf91eb050af95a",
+      "name": "Invasive Therapy",
+      "trader": "Therapist",
+      "maps": [
+        "Lighthouse"
+      ],
+      "type": "Find / Hand over",
+      "objectives": [
+        "Hand over 5 found in raid P22 (Product 22) stimulant injectors",
+        "Hand over 5 found in raid XTG-12 antidote injectors",
+        "Stash any Obdolbos cocktail injector in the med bay at the upper Rogue chalet on Lighthouse",
+        "Stash any Obdolbos cocktail injector in the guest hall supplies at the upper Rogue chalet on Lighthouse",
+        "Stash any Obdolbos cocktail injector in the ammo stockpile at the lower Rogue chalet on Lighthouse"
+      ],
+      "objectiveDetails": [
+        {
+          "text": "Hand over 5 found in raid P22 (Product 22) stimulant injectors",
+          "category": "Find / Hand over",
+          "maps": [],
+          "raidClass": "NON_RAID",
+          "raidRequired": false
+        },
+        {
+          "text": "Hand over 5 found in raid XTG-12 antidote injectors",
+          "category": "Find / Hand over",
+          "maps": [],
+          "raidClass": "NON_RAID",
+          "raidRequired": false
+        },
+        {
+          "text": "Stash any Obdolbos cocktail injector in the med bay at the upper Rogue chalet on Lighthouse",
+          "category": "Other",
+          "maps": [
+            "Lighthouse"
+          ],
+          "raidClass": "MAP_BOUND",
+          "raidRequired": true
+        },
+        {
+          "text": "Stash any Obdolbos cocktail injector in the guest hall supplies at the upper Rogue chalet on Lighthouse",
+          "category": "Other",
+          "maps": [
+            "Lighthouse"
+          ],
+          "raidClass": "MAP_BOUND",
+          "raidRequired": true
+        },
+        {
+          "text": "Stash any Obdolbos cocktail injector in the ammo stockpile at the lower Rogue chalet on Lighthouse",
+          "category": "Other",
+          "maps": [
+            "Lighthouse"
+          ],
+          "raidClass": "MAP_BOUND",
+          "raidRequired": true
+        }
+      ],
+      "requirements": [],
+      "restrictions": [],
+      "fir": [],
+      "minLevel": 0,
+      "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Invasive_Therapy",
+      "taskRequirements": [],
+      "raidRelevant": true,
+      "raidClass": "MAP_BOUND",
+      "mapBoundMaps": [
+        "Lighthouse"
+      ],
+      "hasAnyRaidObjectives": false,
+      "source": "json.tarkov.dev + Tarkov Wiki",
+      "wikiRevision": 361829
+    },
+    {
       "id": "6179afd0bca27a099552e040",
       "name": "Lost Contact",
       "trader": "Therapist",
@@ -31925,7 +31249,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 360906
+      "wikiRevision": 363471
     },
     {
       "id": "64f3176921045e77405d63b5",
@@ -32182,7 +31506,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 361697
+      "wikiRevision": 363426
     },
     {
       "id": "639135d89444fb141f4e6eea",
@@ -32575,7 +31899,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 361692
+      "wikiRevision": 363424
     },
     {
       "id": "596a0e1686f7741ddf17dbee",

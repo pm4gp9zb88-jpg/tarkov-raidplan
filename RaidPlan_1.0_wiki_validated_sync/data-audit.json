@@ -1,23 +1,23 @@
 {
-  "generatedAt": "2026-10-06T12:00:41.482Z",
+  "generatedAt": "2026-10-07T11:46:10.134Z",
   "summary": {
-    "tasks": 434,
+    "tasks": 427,
     "tasksWithCorrections": 0,
     "removedObjectives": 0,
-    "wordingMismatches": 183,
+    "wordingMismatches": 169,
     "wikiErrors": 0,
     "unparsedWikiPages": 0,
-    "excludedNonRaidTasks": 81,
-    "mapBoundTasks": 344,
-    "anyRaidTasks": 90,
+    "excludedNonRaidTasks": 77,
+    "mapBoundTasks": 336,
+    "anyRaidTasks": 91,
     "qaStatus": "pass",
-    "qaChecks": 3635,
+    "qaChecks": 3565,
     "qaCritical": 0,
     "qaWarnings": 0
   },
   "qa": {
     "status": "pass",
-    "checkCount": 3635,
+    "checkCount": 3565,
     "criticalCount": 0,
     "warningCount": 0,
     "issues": []
@@ -344,21 +344,6 @@
       "trader": "Fence"
     },
     {
-      "id": "625d6ff5ddc94657c21a1625",
-      "name": "Network Provider - Part 1",
-      "trader": "Mechanic"
-    },
-    {
-      "id": "626148251ed3bb5bcc5bd9ed",
-      "name": "Make Amends - Buyout",
-      "trader": "Mechanic"
-    },
-    {
-      "id": "6261482fa4eb80027c4f2e11",
-      "name": "Make Amends - Equipment",
-      "trader": "Mechanic"
-    },
-    {
       "id": "639872f9decada40426d3447",
       "name": "Gunsmith - OP-SKS",
       "trader": "Mechanic"
@@ -422,11 +407,6 @@
       "id": "61e6e60c5ca3b3783662be27",
       "name": "Compensation for Damage - Wergild",
       "trader": "Fence"
-    },
-    {
-      "id": "6261483ac48e6c62a440fab7",
-      "name": "Make Amends - Software",
-      "trader": "Mechanic"
     }
   ],
   "corrections": [],
