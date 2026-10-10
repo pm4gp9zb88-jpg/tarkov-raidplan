@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-09T11:53:03.449Z",
+  "generatedAt": "2026-10-10T11:09:51.551Z",
   "mode": "regular",
   "sources": [
     "json.tarkov.dev",
@@ -4845,8 +4845,8 @@
         "Lighthouse",
         "Ground Zero Tutorial",
         "Shoreline",
-        "Night Factory",
         "Factory",
+        "Night Factory",
         "Streets of Tarkov",
         "Interchange",
         "Icebreaker"
@@ -4957,10 +4957,10 @@
             "Customs",
             "Ground Zero Tutorial",
             "Shoreline",
-            "Night Factory",
             "Factory",
-            "Streets of Tarkov",
             "Reserve",
+            "Night Factory",
+            "Streets of Tarkov",
             "Interchange",
             "Icebreaker",
             "Woods"
@@ -4997,8 +4997,8 @@
         "Lighthouse",
         "Ground Zero Tutorial",
         "Shoreline",
-        "Night Factory",
         "Factory",
+        "Night Factory",
         "Streets of Tarkov",
         "Interchange",
         "Icebreaker"
@@ -5018,8 +5018,8 @@
         "Lighthouse",
         "Ground Zero Tutorial",
         "Shoreline",
-        "Night Factory",
         "Factory",
+        "Night Factory",
         "Streets of Tarkov",
         "Interchange",
         "Icebreaker"
@@ -5130,10 +5130,10 @@
             "Customs",
             "Ground Zero Tutorial",
             "Shoreline",
-            "Night Factory",
             "Factory",
-            "Streets of Tarkov",
             "Reserve",
+            "Night Factory",
+            "Streets of Tarkov",
             "Interchange",
             "Icebreaker",
             "Woods"
@@ -5170,8 +5170,8 @@
         "Lighthouse",
         "Ground Zero Tutorial",
         "Shoreline",
-        "Night Factory",
         "Factory",
+        "Night Factory",
         "Streets of Tarkov",
         "Interchange",
         "Icebreaker"
@@ -10369,10 +10369,10 @@
         "Customs",
         "Ground Zero Tutorial",
         "Shoreline",
-        "Night Factory",
         "Factory",
-        "Streets of Tarkov",
         "Reserve",
+        "Night Factory",
+        "Streets of Tarkov",
         "Interchange",
         "Icebreaker",
         "Woods"
@@ -10390,10 +10390,10 @@
             "Customs",
             "Ground Zero Tutorial",
             "Shoreline",
-            "Night Factory",
             "Factory",
-            "Streets of Tarkov",
             "Reserve",
+            "Night Factory",
+            "Streets of Tarkov",
             "Interchange",
             "Icebreaker",
             "Woods"
@@ -10422,10 +10422,10 @@
         "Customs",
         "Ground Zero Tutorial",
         "Shoreline",
-        "Night Factory",
         "Factory",
-        "Streets of Tarkov",
         "Reserve",
+        "Night Factory",
+        "Streets of Tarkov",
         "Interchange",
         "Icebreaker",
         "Woods"
@@ -10496,9 +10496,9 @@
         "Customs",
         "Ground Zero Tutorial",
         "Shoreline",
-        "Night Factory",
         "Factory",
         "Reserve",
+        "Night Factory",
         "Interchange",
         "Icebreaker",
         "Woods"
@@ -10517,9 +10517,9 @@
             "Customs",
             "Ground Zero Tutorial",
             "Shoreline",
-            "Night Factory",
             "Factory",
             "Reserve",
+            "Night Factory",
             "Interchange",
             "Icebreaker",
             "Woods"
@@ -10551,9 +10551,9 @@
         "Customs",
         "Ground Zero Tutorial",
         "Shoreline",
-        "Night Factory",
         "Factory",
         "Reserve",
+        "Night Factory",
         "Interchange",
         "Icebreaker",
         "Woods"
@@ -18892,7 +18892,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 361690
+      "wikiRevision": 363807
     },
     {
       "id": "63a9ae24009ffc6a551631a5",
@@ -19004,7 +19004,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 360699
+      "wikiRevision": 363841
     },
     {
       "id": "60e71b9bbd90872cb85440f3",
@@ -19047,7 +19047,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 361748
+      "wikiRevision": 363843
     },
     {
       "id": "5936d90786f7742b1420ba5b",
@@ -19093,7 +19093,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 361720
+      "wikiRevision": 363834
     },
     {
       "id": "59674eb386f774539f14813a",
@@ -19188,7 +19188,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 361759
+      "wikiRevision": 363846
     },
     {
       "id": "60896b7bfa70fc097863b8f5",
@@ -19598,7 +19598,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 360848
+      "wikiRevision": 363808
     },
     {
       "id": "64e7b99017ab941a6f7bf9d7",
@@ -19913,7 +19913,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 361754
+      "wikiRevision": 363844
     },
     {
       "id": "5c0d190cd09282029f5390d8",
@@ -20064,10 +20064,10 @@
         "Customs",
         "Ground Zero Tutorial",
         "Shoreline",
-        "Night Factory",
         "Factory",
-        "Streets of Tarkov",
         "Reserve",
+        "Night Factory",
+        "Streets of Tarkov",
         "Interchange",
         "Icebreaker",
         "Woods"
@@ -20085,10 +20085,10 @@
             "Customs",
             "Ground Zero Tutorial",
             "Shoreline",
-            "Night Factory",
             "Factory",
-            "Streets of Tarkov",
             "Reserve",
+            "Night Factory",
+            "Streets of Tarkov",
             "Interchange",
             "Icebreaker",
             "Woods"
@@ -20110,10 +20110,10 @@
         "Customs",
         "Ground Zero Tutorial",
         "Shoreline",
-        "Night Factory",
         "Factory",
-        "Streets of Tarkov",
         "Reserve",
+        "Night Factory",
+        "Streets of Tarkov",
         "Interchange",
         "Icebreaker",
         "Woods"
@@ -20381,7 +20381,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359527
+      "wikiRevision": 363811
     },
     {
       "id": "59c124d686f774189b3c843f",
@@ -20509,7 +20509,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 361688
+      "wikiRevision": 363848
     },
     {
       "id": "59675ea386f77414b32bded2",
@@ -20819,7 +20819,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 361745
+      "wikiRevision": 363842
     },
     {
       "id": "5967725e86f774601a446662",
@@ -20908,7 +20908,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 360845
+      "wikiRevision": 363806
     },
     {
       "id": "657315df034d76585f032e01",
@@ -21071,7 +21071,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 361689
+      "wikiRevision": 363803
     },
     {
       "id": "6740a3f4eca8acb2d2055159",
@@ -21111,7 +21111,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 360853
+      "wikiRevision": 363810
     },
     {
       "id": "67b45467814ab0ffa000c7e7",
@@ -21544,7 +21544,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359776
+      "wikiRevision": 363835
     },
     {
       "id": "59c50c8886f7745fed3193bf",
@@ -21621,7 +21621,7 @@
       ],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 361729
+      "wikiRevision": 363837
     },
     {
       "id": "59ca264786f77445a80ed044",
@@ -21732,7 +21732,7 @@
       ],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 361730
+      "wikiRevision": 363838
     },
     {
       "id": "59ca29fb86f77445ab465c87",
@@ -21743,10 +21743,10 @@
         "Customs",
         "Ground Zero Tutorial",
         "Shoreline",
-        "Night Factory",
         "Factory",
-        "Streets of Tarkov",
         "Reserve",
+        "Night Factory",
+        "Streets of Tarkov",
         "Interchange",
         "Icebreaker",
         "Woods"
@@ -21820,10 +21820,10 @@
             "Customs",
             "Ground Zero Tutorial",
             "Shoreline",
-            "Night Factory",
             "Factory",
-            "Streets of Tarkov",
             "Reserve",
+            "Night Factory",
+            "Streets of Tarkov",
             "Interchange",
             "Icebreaker",
             "Woods"
@@ -21852,17 +21852,17 @@
         "Customs",
         "Ground Zero Tutorial",
         "Shoreline",
-        "Night Factory",
         "Factory",
-        "Streets of Tarkov",
         "Reserve",
+        "Night Factory",
+        "Streets of Tarkov",
         "Interchange",
         "Icebreaker",
         "Woods"
       ],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 363472
+      "wikiRevision": 363839
     },
     {
       "id": "59ca2eb686f77445a80ed049",
@@ -21879,8 +21879,8 @@
         "Icebreaker",
         "Interchange",
         "Woods",
-        "Night Factory",
         "Factory",
+        "Night Factory",
         "The Lab (Dark)"
       ],
       "type": "Kill / Find / Hand over / Locate",
@@ -21921,8 +21921,8 @@
             "Interchange",
             "Shoreline",
             "Woods",
-            "Night Factory",
             "Factory",
+            "Night Factory",
             "The Lab (Dark)"
           ],
           "raidClass": "MAP_BOUND",
@@ -21964,13 +21964,13 @@
         "Icebreaker",
         "Interchange",
         "Woods",
-        "Night Factory",
         "Factory",
+        "Night Factory",
         "The Lab (Dark)"
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359780
+      "wikiRevision": 363840
     },
     {
       "id": "5c0bd94186f7747a727f09b2",
@@ -22163,7 +22163,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 361758
+      "wikiRevision": 363845
     },
     {
       "id": "5ae4493d86f7744b8e15aa8f",
@@ -23020,8 +23020,8 @@
         "Interchange",
         "Woods",
         "Shoreline",
-        "Night Factory",
-        "Factory"
+        "Factory",
+        "Night Factory"
       ],
       "type": "Locate",
       "objectives": [
@@ -23038,8 +23038,8 @@
             "Interchange",
             "Woods",
             "Shoreline",
-            "Night Factory",
-            "Factory"
+            "Factory",
+            "Night Factory"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
@@ -23092,8 +23092,8 @@
         "Interchange",
         "Woods",
         "Shoreline",
-        "Night Factory",
-        "Factory"
+        "Factory",
+        "Night Factory"
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
@@ -24125,10 +24125,10 @@
         "Customs",
         "Ground Zero Tutorial",
         "Shoreline",
-        "Night Factory",
         "Factory",
-        "Streets of Tarkov",
         "Reserve",
+        "Night Factory",
+        "Streets of Tarkov",
         "Interchange",
         "Icebreaker",
         "Woods",
@@ -24152,10 +24152,10 @@
             "Customs",
             "Ground Zero Tutorial",
             "Shoreline",
-            "Night Factory",
             "Factory",
-            "Streets of Tarkov",
             "Reserve",
+            "Night Factory",
+            "Streets of Tarkov",
             "Interchange",
             "Icebreaker",
             "Woods"
@@ -24214,10 +24214,10 @@
         "Customs",
         "Ground Zero Tutorial",
         "Shoreline",
-        "Night Factory",
         "Factory",
-        "Streets of Tarkov",
         "Reserve",
+        "Night Factory",
+        "Streets of Tarkov",
         "Interchange",
         "Icebreaker",
         "Woods",
@@ -24957,7 +24957,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 360501
+      "wikiRevision": 363778
     },
     {
       "id": "5c10f94386f774227172c572",
@@ -25768,10 +25768,10 @@
         "Customs",
         "Ground Zero Tutorial",
         "Shoreline",
-        "Night Factory",
         "Factory",
-        "Streets of Tarkov",
         "Reserve",
+        "Night Factory",
+        "Streets of Tarkov",
         "Interchange",
         "Icebreaker",
         "Woods"
@@ -25789,10 +25789,10 @@
             "Customs",
             "Ground Zero Tutorial",
             "Shoreline",
-            "Night Factory",
             "Factory",
-            "Streets of Tarkov",
             "Reserve",
+            "Night Factory",
+            "Streets of Tarkov",
             "Interchange",
             "Icebreaker",
             "Woods"
@@ -25821,10 +25821,10 @@
         "Customs",
         "Ground Zero Tutorial",
         "Shoreline",
-        "Night Factory",
         "Factory",
-        "Streets of Tarkov",
         "Reserve",
+        "Night Factory",
+        "Streets of Tarkov",
         "Interchange",
         "Icebreaker",
         "Woods"
@@ -29588,7 +29588,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 360914
+      "wikiRevision": 363878
     },
     {
       "id": "669fa3910c828825de06d69f",
@@ -29771,7 +29771,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 361704
+      "wikiRevision": 363874
     },
     {
       "id": "669fa39ee749756c920d02c8",
@@ -30015,7 +30015,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 363425
+      "wikiRevision": 363852
     },
     {
       "id": "596a218586f77420d232807c",
@@ -30072,7 +30072,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 361700
+      "wikiRevision": 363866
     },
     {
       "id": "5969f90786f77420d2328015",
@@ -30113,7 +30113,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 361696
+      "wikiRevision": 363859
     },
     {
       "id": "675c04f4db8807b75d0f38e8",
@@ -30232,7 +30232,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 361706
+      "wikiRevision": 363876
     },
     {
       "id": "60e71c48c1bfa3050473b8e5",
@@ -30337,7 +30337,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 363177
+      "wikiRevision": 363880
     },
     {
       "id": "63ab180c87413d64ae0ac20a",
@@ -30468,7 +30468,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 363176
+      "wikiRevision": 363875
     },
     {
       "id": "60896e28e4a85c72ef3fa301",
@@ -30531,7 +30531,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 361708
+      "wikiRevision": 363879
     },
     {
       "id": "626bd75b05f287031503c7f6",
@@ -30578,7 +30578,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 361715
+      "wikiRevision": 363883
     },
     {
       "id": "6a5424ae135497b9df0c68be",
@@ -30664,7 +30664,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 361766
+      "wikiRevision": 363854
     },
     {
       "id": "596a1e6c86f7741ddc2d3206",
@@ -30675,12 +30675,12 @@
       ],
       "type": "Find / Hand over",
       "objectives": [
-        "Find 15 item in raid : Can of beef stew (Small)",
+        "Find 15 Cans of beef stew (Small) in raid",
         "Hand over the 15 items"
       ],
       "objectiveDetails": [
         {
-          "text": "Find 15 item in raid : Can of beef stew (Small)",
+          "text": "Find 15 Cans of beef stew (Small) in raid",
           "category": "Find / Hand over",
           "maps": [],
           "raidClass": "ANY_RAID",
@@ -30705,7 +30705,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 361699
+      "wikiRevision": 363865
     },
     {
       "id": "5a68661a86f774500f48afb0",
@@ -30843,7 +30843,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 361702
+      "wikiRevision": 363867
     },
     {
       "id": "5a68665c86f774255929b4c7",
@@ -30905,7 +30905,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359368
+      "wikiRevision": 363868
     },
     {
       "id": "5a68669a86f774255929b4d4",
@@ -30957,7 +30957,7 @@
       ],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 363187
+      "wikiRevision": 363870
     },
     {
       "id": "669fa3a3ad7f1eac2607ed48",
@@ -31021,7 +31021,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 361703
+      "wikiRevision": 363871
     },
     {
       "id": "6a7ae35b2dbf91eb050af95a",
@@ -31141,7 +31141,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 361712
+      "wikiRevision": 363882
     },
     {
       "id": "59689fbd86f7740d137ebfc4",
@@ -31186,7 +31186,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 363091
+      "wikiRevision": 363853
     },
     {
       "id": "597a160786f77477531d39d2",
@@ -31249,7 +31249,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 363471
+      "wikiRevision": 363873
     },
     {
       "id": "64f3176921045e77405d63b5",
@@ -31304,7 +31304,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 361763
+      "wikiRevision": 363887
     },
     {
       "id": "64f731ab83cfca080a361e42",
@@ -31389,7 +31389,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 361761
+      "wikiRevision": 363886
     },
     {
       "id": "6573387d0b26ed4fde798de3",
@@ -31551,7 +31551,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 361717
+      "wikiRevision": 363884
     },
     {
       "id": "5c0be5fc86f774467a116593",
@@ -31667,7 +31667,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 361769
+      "wikiRevision": 363888
     },
     {
       "id": "59689ee586f7740d1570bbd5",
@@ -31720,7 +31720,7 @@
       ],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 361693
+      "wikiRevision": 363850
     },
     {
       "id": "596a204686f774576d4c95de",
@@ -31813,7 +31813,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 361711
+      "wikiRevision": 363881
     },
     {
       "id": "675c047fa46173572a0bd878",
@@ -31954,7 +31954,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 361698
+      "wikiRevision": 363858
     },
     {
       "id": "5edaba7c0c502106f869bc02",
@@ -32017,7 +32017,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 361707
+      "wikiRevision": 363877
     },
     {
       "id": "67a09673972c11a3f507731d",
@@ -32128,7 +32128,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 361773
+      "wikiRevision": 363889
     },
     {
       "id": "67a0972e77dd677f600804bd",
@@ -32245,7 +32245,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 361719
+      "wikiRevision": 363885
     },
     {
       "id": "69ce204c8702b378f9091e4b",
