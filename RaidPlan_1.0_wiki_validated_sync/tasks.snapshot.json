@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-12T13:07:44.049Z",
+  "generatedAt": "2026-10-13T12:41:25.041Z",
   "mode": "regular",
   "sources": [
     "json.tarkov.dev",
@@ -9120,7 +9120,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359763
+      "wikiRevision": 364283
     },
     {
       "id": "5edab4b1218d181e29451435",
@@ -17552,7 +17552,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 363382
+      "wikiRevision": 364018
     },
     {
       "id": "5a03173786f77451cb427172",
@@ -19017,11 +19017,11 @@
       ],
       "type": "Kill",
       "objectives": [
-        "Eliminate 12 PMC operatives at the specified Scav base on Customs , Woods , or Shoreline"
+        "Eliminate 12 PMC operatives at the specified Scav bases on Customs , Shoreline , or Woods"
       ],
       "objectiveDetails": [
         {
-          "text": "Eliminate 12 PMC operatives at the specified Scav base on Customs , Woods , or Shoreline",
+          "text": "Eliminate 12 PMC operatives at the specified Scav bases on Customs , Shoreline , or Woods",
           "category": "Kill",
           "maps": [
             "Customs",
@@ -19047,7 +19047,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 363843
+      "wikiRevision": 364012
     },
     {
       "id": "5936d90786f7742b1420ba5b",
@@ -19924,11 +19924,11 @@
       ],
       "type": "Kill",
       "objectives": [
-        "Eliminate 5 of any target with grenades or grenade launchers"
+        "Eliminate any 5 targets with hand grenades or grenade launchers"
       ],
       "objectiveDetails": [
         {
-          "text": "Eliminate 5 of any target with grenades or grenade launchers",
+          "text": "Eliminate any 5 targets with hand grenades or grenade launchers",
           "category": "Kill",
           "maps": [],
           "raidClass": "ANY_RAID",
@@ -19946,7 +19946,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 363272
+      "wikiRevision": 364001
     },
     {
       "id": "666314b2a9290f9e0806cca3",
