@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-13T12:41:25.041Z",
+  "generatedAt": "2026-10-14T10:09:39.183Z",
   "mode": "regular",
   "sources": [
     "json.tarkov.dev",
@@ -9,7 +9,7 @@
   "excludedNonRaidCount": 77,
   "qa": {
     "status": "pass",
-    "checkCount": 3565,
+    "checkCount": 3564,
     "criticalCount": 0,
     "warningCount": 0
   },
@@ -2973,7 +2973,7 @@
     },
     "6179b3bdc7560e13d23eeb8d": {
       "name": "Corporate Secrets",
-      "raidRelevant": false,
+      "raidRelevant": true,
       "taskRequirements": []
     },
     "6179b5b06e9dd54ac275e409": {
@@ -3452,7 +3452,7 @@
     },
     "673f348dd3346c21670217e7": {
       "name": "Shipping Delay - Part 1",
-      "raidRelevant": true,
+      "raidRelevant": false,
       "taskRequirements": [
         {
           "taskId": "6752f6d83038f7df520c83e8",
@@ -6047,18 +6047,26 @@
       "name": "All This Filth...",
       "trader": "Jaeger",
       "maps": [
-        "Any"
+        "Ground Zero",
+        "Customs",
+        "Woods",
+        "Interchange"
       ],
       "type": "Kill",
       "objectives": [
-        "Eliminate Shturman 20 times"
+        "Eliminate 20 Scavs on Interchange , Ground Zero , Woods or Customs"
       ],
       "objectiveDetails": [
         {
-          "text": "Eliminate Shturman 20 times",
+          "text": "Eliminate 20 Scavs on Interchange , Ground Zero , Woods or Customs",
           "category": "Kill",
-          "maps": [],
-          "raidClass": "ANY_RAID",
+          "maps": [
+            "Ground Zero",
+            "Customs",
+            "Woods",
+            "Interchange"
+          ],
+          "raidClass": "MAP_BOUND",
           "raidRequired": true
         }
       ],
@@ -6069,11 +6077,16 @@
       "wikiLink": "https://escapefromtarkov.fandom.com/wiki/All_This_Filth...",
       "taskRequirements": [],
       "raidRelevant": true,
-      "raidClass": "ANY_RAID",
-      "mapBoundMaps": [],
-      "hasAnyRaidObjectives": true,
+      "raidClass": "MAP_BOUND",
+      "mapBoundMaps": [
+        "Ground Zero",
+        "Customs",
+        "Woods",
+        "Interchange"
+      ],
+      "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359074
+      "wikiRevision": 364441
     },
     {
       "id": "63a511ea30d85e10e375b045",
@@ -6652,31 +6665,29 @@
       "name": "Hunting Trip",
       "trader": "Jaeger",
       "maps": [
-        "Woods"
+        "Any"
       ],
       "type": "Locate",
       "objectives": [
-        "Locate and neutralize Shturman with a headshot from over 40 meters away while using an M700 sniper rifle with the specified scope"
+        "Locate and neutralize any 20 Bosses with a bolt-action rifle"
       ],
       "objectiveDetails": [
         {
-          "text": "Locate and neutralize Shturman with a headshot from over 40 meters away while using an M700 sniper rifle with the specified scope",
+          "text": "Locate and neutralize any 20 Bosses with a bolt-action rifle",
           "category": "Locate",
-          "maps": [
-            "Woods"
-          ],
-          "raidClass": "MAP_BOUND",
+          "maps": [],
+          "raidClass": "ANY_RAID",
           "raidRequired": true
         }
       ],
       "requirements": [
         {
           "kind": "gear",
-          "name": "M700 sniper rifle with the specified scope",
+          "name": "bolt-action rifle",
           "qty": 1,
           "slot": "weapon",
           "itemId": "",
-          "sourceObjective": "Locate and neutralize Shturman with a headshot from over 40 meters away while using an M700 sniper rifle with the specified scope"
+          "sourceObjective": "Locate and neutralize any 20 Bosses with a bolt-action rifle"
         }
       ],
       "restrictions": [],
@@ -6685,13 +6696,11 @@
       "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Hunting_Trip",
       "taskRequirements": [],
       "raidRelevant": true,
-      "raidClass": "MAP_BOUND",
-      "mapBoundMaps": [
-        "Woods"
-      ],
-      "hasAnyRaidObjectives": false,
+      "raidClass": "ANY_RAID",
+      "mapBoundMaps": [],
+      "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359396
+      "wikiRevision": 364452
     },
     {
       "id": "5d25e4ad86f77443e625e387",
@@ -12138,7 +12147,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359043
+      "wikiRevision": 364341
     },
     {
       "id": "666314b8312343839d032d24",
@@ -12182,7 +12191,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359065
+      "wikiRevision": 364332
     },
     {
       "id": "6089736efa70fc097863b8f6",
@@ -12191,15 +12200,15 @@
       "maps": [
         "Reserve"
       ],
-      "type": "Find / Hand over / Survive",
+      "type": "Locate / Survive",
       "objectives": [
-        "Find the unpowered secret exit on Reserve",
+        "Locate the secret underground bunker exit on Reserve",
         "Survive and extract from the location through the secret exit"
       ],
       "objectiveDetails": [
         {
-          "text": "Find the unpowered secret exit on Reserve",
-          "category": "Find / Hand over",
+          "text": "Locate the secret underground bunker exit on Reserve",
+          "category": "Locate",
           "maps": [
             "Reserve"
           ],
@@ -12229,7 +12238,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359093
+      "wikiRevision": 364303
     },
     {
       "id": "5ac3475486f7741d6224abd3",
@@ -12316,7 +12325,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 360499
+      "wikiRevision": 364334
     },
     {
       "id": "626bd75e47ea7f506e5493c5",
@@ -12363,7 +12372,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359127
+      "wikiRevision": 364316
     },
     {
       "id": "63913715f8e5dd32bf4e3aaa",
@@ -12417,7 +12426,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 362664
+      "wikiRevision": 364317
     },
     {
       "id": "60e71d23c1bfa3050473b8e6",
@@ -12450,7 +12459,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359138
+      "wikiRevision": 364305
     },
     {
       "id": "5f04886a3937dc337a6b8238",
@@ -12459,24 +12468,14 @@
       "maps": [
         "Shoreline"
       ],
-      "type": "Locate / Survive",
+      "type": "Locate",
       "objectives": [
-        "Locate Sanitar's office in the health resort on Shoreline",
-        "Survive and extract from the location"
+        "Locate Sanitar's office in the health resort on Shoreline"
       ],
       "objectiveDetails": [
         {
           "text": "Locate Sanitar's office in the health resort on Shoreline",
           "category": "Locate",
-          "maps": [
-            "Shoreline"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        },
-        {
-          "text": "Survive and extract from the location",
-          "category": "Survive",
           "maps": [
             "Shoreline"
           ],
@@ -12497,7 +12496,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359160
+      "wikiRevision": 364300
     },
     {
       "id": "65733403eefc2c312a759ddb",
@@ -12552,7 +12551,62 @@
       ],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359200
+      "wikiRevision": 364322
+    },
+    {
+      "id": "6179b3bdc7560e13d23eeb8d",
+      "name": "Corporate Secrets",
+      "trader": "Mechanic",
+      "maps": [
+        "Lighthouse"
+      ],
+      "type": "Locate / Find / Hand over",
+      "objectives": [
+        "Locate and obtain the data on water pump operation on Lighthouse",
+        "Hand over the extracted data",
+        "Locate and obtain the data on pumping station operation on Lighthouse"
+      ],
+      "objectiveDetails": [
+        {
+          "text": "Locate and obtain the data on water pump operation on Lighthouse",
+          "category": "Locate",
+          "maps": [
+            "Lighthouse"
+          ],
+          "raidClass": "MAP_BOUND",
+          "raidRequired": true
+        },
+        {
+          "text": "Hand over the extracted data",
+          "category": "Find / Hand over",
+          "maps": [],
+          "raidClass": "NON_RAID",
+          "raidRequired": false
+        },
+        {
+          "text": "Locate and obtain the data on pumping station operation on Lighthouse",
+          "category": "Locate",
+          "maps": [
+            "Lighthouse"
+          ],
+          "raidClass": "MAP_BOUND",
+          "raidRequired": true
+        }
+      ],
+      "requirements": [],
+      "restrictions": [],
+      "fir": [],
+      "minLevel": 0,
+      "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Corporate_Secrets",
+      "taskRequirements": [],
+      "raidRelevant": true,
+      "raidClass": "MAP_BOUND",
+      "mapBoundMaps": [
+        "Lighthouse"
+      ],
+      "hasAnyRaidObjectives": false,
+      "source": "json.tarkov.dev + Tarkov Wiki",
+      "wikiRevision": 364310
     },
     {
       "id": "6179b3a12153c15e937d52bc",
@@ -12628,7 +12682,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359257
+      "wikiRevision": 364314
     },
     {
       "id": "5ac3462b86f7741d6118b983",
@@ -12774,36 +12828,28 @@
       ],
       "type": "Find / Hand over",
       "objectives": [
-        "Find 5 Bundle of wires in raid",
-        "Find 5 Capacitors in raid",
-        "Handover 5 Bundle of wires to Mechanic",
-        "Handover 5 Capacitors to Mechanic"
+        "Find the item in raid : 10 Bundle of wires",
+        "Find the item in raid : 6 Capacitors",
+        "Hand over the items"
       ],
       "objectiveDetails": [
         {
-          "text": "Find 5 Bundle of wires in raid",
+          "text": "Find the item in raid : 10 Bundle of wires",
           "category": "Find / Hand over",
           "maps": [],
           "raidClass": "ANY_RAID",
           "raidRequired": true
         },
         {
-          "text": "Find 5 Capacitors in raid",
+          "text": "Find the item in raid : 6 Capacitors",
           "category": "Find / Hand over",
           "maps": [],
           "raidClass": "ANY_RAID",
           "raidRequired": true
         },
         {
-          "text": "Handover 5 Bundle of wires to Mechanic",
-          "category": "Other",
-          "maps": [],
-          "raidClass": "NON_RAID",
-          "raidRequired": false
-        },
-        {
-          "text": "Handover 5 Capacitors to Mechanic",
-          "category": "Other",
+          "text": "Hand over the items",
+          "category": "Find / Hand over",
           "maps": [],
           "raidClass": "NON_RAID",
           "raidRequired": false
@@ -12820,7 +12866,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359282
+      "wikiRevision": 364294
     },
     {
       "id": "68db9c7557bc51a8c804c14b",
@@ -12862,7 +12908,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359352
+      "wikiRevision": 364340
     },
     {
       "id": "67a096577e86e067eb045733",
@@ -12916,7 +12962,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359374
+      "wikiRevision": 364350
     },
     {
       "id": "684009026ceedc792c09b2a7",
@@ -13005,7 +13051,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 360436
+      "wikiRevision": 364356
     },
     {
       "id": "67a0970f05d1611ed90be75d",
@@ -13060,7 +13106,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359399
+      "wikiRevision": 364355
     },
     {
       "id": "5ac3467986f7741d6224abc2",
@@ -13138,35 +13184,27 @@
       ],
       "type": "Find / Hand over",
       "objectives": [
-        "Find 1 UHF RFID Fixed Reader in raid",
-        "Find 1 VPX Flash Storage Module in raid",
-        "Hand over 1 UHF RFID Fixed Reader to Mechanic",
-        "Hand over 1 VPX Flash Storage Module to Mechanic"
+        "Find the item in raid : 1 UHF RFID Reader",
+        "Find the item in raid : 1 VPX Flash Storage Module",
+        "Hand over the item"
       ],
       "objectiveDetails": [
         {
-          "text": "Find 1 UHF RFID Fixed Reader in raid",
+          "text": "Find the item in raid : 1 UHF RFID Reader",
           "category": "Find / Hand over",
           "maps": [],
           "raidClass": "ANY_RAID",
           "raidRequired": true
         },
         {
-          "text": "Find 1 VPX Flash Storage Module in raid",
+          "text": "Find the item in raid : 1 VPX Flash Storage Module",
           "category": "Find / Hand over",
           "maps": [],
           "raidClass": "ANY_RAID",
           "raidRequired": true
         },
         {
-          "text": "Hand over 1 UHF RFID Fixed Reader to Mechanic",
-          "category": "Find / Hand over",
-          "maps": [],
-          "raidClass": "NON_RAID",
-          "raidRequired": false
-        },
-        {
-          "text": "Hand over 1 VPX Flash Storage Module to Mechanic",
+          "text": "Hand over the item",
           "category": "Find / Hand over",
           "maps": [],
           "raidClass": "NON_RAID",
@@ -13184,7 +13222,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359411
+      "wikiRevision": 364289
     },
     {
       "id": "5d2495a886f77425cd51e403",
@@ -13239,7 +13277,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359424
+      "wikiRevision": 364298
     },
     {
       "id": "67a0964e972c11a3f507731b",
@@ -13339,7 +13377,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359490
+      "wikiRevision": 364349
     },
     {
       "id": "67a0970744893b9f3f0d9b68",
@@ -13383,7 +13421,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359526
+      "wikiRevision": 364351
     },
     {
       "id": "675c1570526ff496850895d9",
@@ -13428,7 +13466,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359546
+      "wikiRevision": 364338
     },
     {
       "id": "5ac345dc86f774288030817f",
@@ -13517,7 +13555,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359593
+      "wikiRevision": 364295
     },
     {
       "id": "5ac346a886f7744e1b083d67",
@@ -13715,7 +13753,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 360492
+      "wikiRevision": 364287
     },
     {
       "id": "66aa74571e5e199ecd094f18",
@@ -13725,11 +13763,10 @@
         "Customs",
         "Factory"
       ],
-      "type": "Locate / Kill",
+      "type": "Locate",
       "objectives": [
         "Locate and obtain the precision tools package in the laboratory on Customs",
         "Use the transit from Customs to Factory (In one raid)",
-        "Eliminate 3 Scavs on Factory (In one raid)",
         "Stash the package at the laboratory storage room on Factory"
       ],
       "objectiveDetails": [
@@ -13748,15 +13785,6 @@
           "maps": [
             "Factory",
             "Customs"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        },
-        {
-          "text": "Eliminate 3 Scavs on Factory (In one raid)",
-          "category": "Kill",
-          "maps": [
-            "Factory"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
@@ -13785,7 +13813,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359642
+      "wikiRevision": 364337
     },
     {
       "id": "5ac3464c86f7741d651d6877",
@@ -15233,7 +15261,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359650
+      "wikiRevision": 364385
     },
     {
       "id": "67a09636b8725511260bc421",
@@ -15291,7 +15319,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359657
+      "wikiRevision": 364346
     },
     {
       "id": "5c0bde0986f77479cf22c2f8",
@@ -15393,7 +15421,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 363165
+      "wikiRevision": 364297
     },
     {
       "id": "5ac346cf86f7741d63233a02",
@@ -15543,7 +15571,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359702
+      "wikiRevision": 364330
     },
     {
       "id": "6089732b59b92115597ad789",
@@ -15588,7 +15616,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359718
+      "wikiRevision": 364302
     },
     {
       "id": "639135e8c115f907b14700aa",
@@ -15633,7 +15661,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359721
+      "wikiRevision": 364318
     },
     {
       "id": "60e71d6d7fcf9c556f325055",
@@ -15644,11 +15672,11 @@
       ],
       "type": "Other",
       "objectives": [
-        "Stash a Trijicon REAP-IR scope behind the trash containers at the \"new\" gas station on Customs"
+        "Stash a Trijicon REAP-IR scope behind the trash containers at the new gas station on Customs"
       ],
       "objectiveDetails": [
         {
-          "text": "Stash a Trijicon REAP-IR scope behind the trash containers at the \"new\" gas station on Customs",
+          "text": "Stash a Trijicon REAP-IR scope behind the trash containers at the new gas station on Customs",
           "category": "Other",
           "maps": [
             "Customs"
@@ -15670,7 +15698,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359740
+      "wikiRevision": 364307
     },
     {
       "id": "64ee9df4496db64f9b7a4432",
@@ -15727,7 +15755,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359743
+      "wikiRevision": 364321
     },
     {
       "id": "6573382e557ff128bf3da536",
@@ -15772,7 +15800,7 @@
       ],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359783
+      "wikiRevision": 364323
     },
     {
       "id": "639136fa9444fb141f4e6eee",
@@ -15827,7 +15855,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359876
+      "wikiRevision": 364320
     },
     {
       "id": "5a27bb1e86f7741f27621b7e",
@@ -17720,7 +17748,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 362759
+      "wikiRevision": 364457
     },
     {
       "id": "5edac63b930f5454f51e128b",
@@ -20865,50 +20893,6 @@
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
       "wikiRevision": 363270
-    },
-    {
-      "id": "673f348dd3346c21670217e7",
-      "name": "Shipping Delay - Part 1",
-      "trader": "Prapor",
-      "maps": [
-        "Woods"
-      ],
-      "type": "Find / Hand over",
-      "objectives": [
-        "Hand over the package from the depot on Woods"
-      ],
-      "objectiveDetails": [
-        {
-          "text": "Hand over the package from the depot on Woods",
-          "category": "Find / Hand over",
-          "maps": [
-            "Woods"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        }
-      ],
-      "requirements": [],
-      "restrictions": [],
-      "fir": [],
-      "minLevel": 0,
-      "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Shipping_Delay_-_Part_1",
-      "taskRequirements": [
-        {
-          "taskId": "6752f6d83038f7df520c83e8",
-          "statuses": [
-            "active"
-          ]
-        }
-      ],
-      "raidRelevant": true,
-      "raidClass": "MAP_BOUND",
-      "mapBoundMaps": [
-        "Woods"
-      ],
-      "hasAnyRaidObjectives": false,
-      "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 363806
     },
     {
       "id": "657315df034d76585f032e01",
@@ -27180,7 +27164,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 363170
+      "wikiRevision": 364386
     },
     {
       "id": "67af4c1d8c9482eca103e477",

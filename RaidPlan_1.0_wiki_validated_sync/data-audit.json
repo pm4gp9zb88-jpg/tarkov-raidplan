@@ -1,23 +1,23 @@
 {
-  "generatedAt": "2026-10-13T12:41:25.041Z",
+  "generatedAt": "2026-10-14T10:09:39.183Z",
   "summary": {
     "tasks": 427,
     "tasksWithCorrections": 0,
     "removedObjectives": 0,
-    "wordingMismatches": 169,
-    "wikiErrors": 0,
+    "wordingMismatches": 161,
+    "wikiErrors": 1,
     "unparsedWikiPages": 0,
     "excludedNonRaidTasks": 77,
     "mapBoundTasks": 336,
     "anyRaidTasks": 91,
     "qaStatus": "pass",
-    "qaChecks": 3565,
+    "qaChecks": 3564,
     "qaCritical": 0,
     "qaWarnings": 0
   },
   "qa": {
     "status": "pass",
-    "checkCount": 3565,
+    "checkCount": 3564,
     "criticalCount": 0,
     "warningCount": 0,
     "issues": []
@@ -324,11 +324,6 @@
       "trader": "Jaeger"
     },
     {
-      "id": "6179b3bdc7560e13d23eeb8d",
-      "name": "Corporate Secrets",
-      "trader": "Mechanic"
-    },
-    {
       "id": "61e6e5e0f5b9633f6719ed95",
       "name": "Compensation for Damage - Trust",
       "trader": "Fence"
@@ -362,6 +357,11 @@
       "id": "6672d9def1c88688a707d042",
       "name": "Establish Contact",
       "trader": "Fence"
+    },
+    {
+      "id": "673f348dd3346c21670217e7",
+      "name": "Shipping Delay - Part 1",
+      "trader": "Prapor"
     },
     {
       "id": "673f629c5b555b53460cf827",
@@ -410,6 +410,12 @@
     }
   ],
   "corrections": [],
-  "wikiErrors": [],
+  "wikiErrors": [
+    {
+      "task": "Shipping Delay - Part 1",
+      "status": "wiki-error",
+      "error": "fetch failed"
+    }
+  ],
   "unparsed": []
 }
