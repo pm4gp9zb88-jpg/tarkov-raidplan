@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-14T10:09:39.183Z",
+  "generatedAt": "2026-10-15T09:52:26.338Z",
   "mode": "regular",
   "sources": [
     "json.tarkov.dev",
     "escapefromtarkov.fandom.com"
   ],
-  "taskCount": 427,
-  "excludedNonRaidCount": 77,
+  "taskCount": 428,
+  "excludedNonRaidCount": 76,
   "qa": {
     "status": "pass",
-    "checkCount": 3564,
+    "checkCount": 3573,
     "criticalCount": 0,
     "warningCount": 0
   },
@@ -3452,7 +3452,7 @@
     },
     "673f348dd3346c21670217e7": {
       "name": "Shipping Delay - Part 1",
-      "raidRelevant": false,
+      "raidRelevant": true,
       "taskRequirements": [
         {
           "taskId": "6752f6d83038f7df520c83e8",
@@ -20895,6 +20895,50 @@
       "wikiRevision": 363270
     },
     {
+      "id": "673f348dd3346c21670217e7",
+      "name": "Shipping Delay - Part 1",
+      "trader": "Prapor",
+      "maps": [
+        "Woods"
+      ],
+      "type": "Find / Hand over",
+      "objectives": [
+        "Hand over the package from the depot on Woods"
+      ],
+      "objectiveDetails": [
+        {
+          "text": "Hand over the package from the depot on Woods",
+          "category": "Find / Hand over",
+          "maps": [
+            "Woods"
+          ],
+          "raidClass": "MAP_BOUND",
+          "raidRequired": true
+        }
+      ],
+      "requirements": [],
+      "restrictions": [],
+      "fir": [],
+      "minLevel": 0,
+      "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Shipping_Delay_-_Part_1",
+      "taskRequirements": [
+        {
+          "taskId": "6752f6d83038f7df520c83e8",
+          "statuses": [
+            "active"
+          ]
+        }
+      ],
+      "raidRelevant": true,
+      "raidClass": "MAP_BOUND",
+      "mapBoundMaps": [
+        "Woods"
+      ],
+      "hasAnyRaidObjectives": false,
+      "source": "json.tarkov.dev + Tarkov Wiki",
+      "wikiRevision": 363806
+    },
+    {
       "id": "657315df034d76585f032e01",
       "name": "Shooting Cans",
       "trader": "Prapor",
@@ -21966,11 +22010,11 @@
       ],
       "type": "Kill",
       "objectives": [
-        "Eliminate PMCs with SR-25 with Hybrid 46 suppressor and S&B PM II 1-8x24 scope on Lighthouse or Reserve"
+        "Eliminate 6 PMCs with SR-25 with Hybrid 46 suppressor and S&B PM II 1-8x24 scope on Lighthouse or Reserve"
       ],
       "objectiveDetails": [
         {
-          "text": "Eliminate PMCs with SR-25 with Hybrid 46 suppressor and S&B PM II 1-8x24 scope on Lighthouse or Reserve",
+          "text": "Eliminate 6 PMCs with SR-25 with Hybrid 46 suppressor and S&B PM II 1-8x24 scope on Lighthouse or Reserve",
           "category": "Kill",
           "maps": [
             "Reserve",
@@ -21994,7 +22038,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 363274
+      "wikiRevision": 364460
     },
     {
       "id": "675c1ff1a757ddd00404f0aa",

@@ -1,23 +1,23 @@
 {
-  "generatedAt": "2026-10-14T10:09:39.183Z",
+  "generatedAt": "2026-10-15T09:52:26.338Z",
   "summary": {
-    "tasks": 427,
+    "tasks": 428,
     "tasksWithCorrections": 0,
     "removedObjectives": 0,
     "wordingMismatches": 161,
-    "wikiErrors": 1,
+    "wikiErrors": 0,
     "unparsedWikiPages": 0,
-    "excludedNonRaidTasks": 77,
-    "mapBoundTasks": 336,
+    "excludedNonRaidTasks": 76,
+    "mapBoundTasks": 337,
     "anyRaidTasks": 91,
     "qaStatus": "pass",
-    "qaChecks": 3564,
+    "qaChecks": 3573,
     "qaCritical": 0,
     "qaWarnings": 0
   },
   "qa": {
     "status": "pass",
-    "checkCount": 3564,
+    "checkCount": 3573,
     "criticalCount": 0,
     "warningCount": 0,
     "issues": []
@@ -359,11 +359,6 @@
       "trader": "Fence"
     },
     {
-      "id": "673f348dd3346c21670217e7",
-      "name": "Shipping Delay - Part 1",
-      "trader": "Prapor"
-    },
-    {
       "id": "673f629c5b555b53460cf827",
       "name": "Building Foundations",
       "trader": "BTR Driver"
@@ -410,12 +405,6 @@
     }
   ],
   "corrections": [],
-  "wikiErrors": [
-    {
-      "task": "Shipping Delay - Part 1",
-      "status": "wiki-error",
-      "error": "fetch failed"
-    }
-  ],
+  "wikiErrors": [],
   "unparsed": []
 }
