@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-18T09:33:40.987Z",
+  "generatedAt": "2026-10-19T10:43:52.783Z",
   "mode": "regular",
   "sources": [
     "json.tarkov.dev",
     "escapefromtarkov.fandom.com"
   ],
-  "taskCount": 428,
+  "taskCount": 427,
   "excludedNonRaidCount": 76,
   "qa": {
     "status": "pass",
-    "checkCount": 3573,
+    "checkCount": 3565,
     "criticalCount": 0,
     "warningCount": 0
   },
@@ -58,11 +58,6 @@
     },
     "669fa39ee749756c920d02c8": {
       "name": "All Is Revealed",
-      "raidRelevant": true,
-      "taskRequirements": []
-    },
-    "6a91840a740be0cff50e0310": {
-      "name": "Preliminary Survey",
       "raidRelevant": true,
       "taskRequirements": []
     },
@@ -26131,53 +26126,6 @@
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
       "wikiRevision": 359384
-    },
-    {
-      "id": "6a91840a740be0cff50e0310",
-      "name": "Preliminary Survey",
-      "trader": "Ref",
-      "maps": [
-        "The Lab"
-      ],
-      "type": "Locate",
-      "objectives": [
-        "Locate the testing area blueprint flash drive in The Lab",
-        "Obtain the testing area blueprint flash drive in The Lab"
-      ],
-      "objectiveDetails": [
-        {
-          "text": "Locate the testing area blueprint flash drive in The Lab",
-          "category": "Locate",
-          "maps": [
-            "The Lab"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        },
-        {
-          "text": "Obtain the testing area blueprint flash drive in The Lab",
-          "category": "Other",
-          "maps": [
-            "The Lab"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        }
-      ],
-      "requirements": [],
-      "restrictions": [],
-      "fir": [],
-      "minLevel": 5,
-      "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Preliminary_Survey",
-      "taskRequirements": [],
-      "raidRelevant": true,
-      "raidClass": "MAP_BOUND",
-      "mapBoundMaps": [
-        "The Lab"
-      ],
-      "hasAnyRaidObjectives": false,
-      "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 362353
     },
     {
       "id": "69788c2bac719606e40b4e77",
