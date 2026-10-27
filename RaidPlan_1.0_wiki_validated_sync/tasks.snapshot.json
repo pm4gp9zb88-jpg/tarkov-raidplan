@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-26T11:03:03.683Z",
+  "generatedAt": "2026-10-27T10:30:49.066Z",
   "mode": "regular",
   "sources": [
     "json.tarkov.dev",
@@ -9,7 +9,7 @@
   "excludedNonRaidCount": 76,
   "qa": {
     "status": "pass",
-    "checkCount": 3565,
+    "checkCount": 3571,
     "criticalCount": 0,
     "warningCount": 0
   },
@@ -6409,7 +6409,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359203
+      "wikiRevision": 365112
     },
     {
       "id": "669fa3a08b4a64b332041ff7",
@@ -6514,13 +6514,13 @@
       ],
       "type": "Find / Hand over",
       "objectives": [
-        "Find 4 items from the Medkits category Found In Raid",
+        "Find 4 items from the Medkits category in raid",
         "Hand over the items",
-        "Find 4 items from the Injury treatment category Found In Raid"
+        "Find 4 items from the Injury treatment category in raid"
       ],
       "objectiveDetails": [
         {
-          "text": "Find 4 items from the Medkits category Found In Raid",
+          "text": "Find 4 items from the Medkits category in raid",
           "category": "Find / Hand over",
           "maps": [],
           "raidClass": "ANY_RAID",
@@ -6534,7 +6534,7 @@
           "raidRequired": false
         },
         {
-          "text": "Find 4 items from the Injury treatment category Found In Raid",
+          "text": "Find 4 items from the Injury treatment category in raid",
           "category": "Find / Hand over",
           "maps": [],
           "raidClass": "ANY_RAID",
@@ -6552,7 +6552,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359287
+      "wikiRevision": 365109
     },
     {
       "id": "5d25e4b786f77408251c4bfc",
@@ -6593,7 +6593,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359292
+      "wikiRevision": 365111
     },
     {
       "id": "66ab9da7eb102b9bcd08591c",
@@ -6707,7 +6707,7 @@
       "type": "Locate / Find / Hand over",
       "objectives": [
         "Locate Jaeger's Health Resort room with a view of the bay on Shoreline",
-        "Obtain Jaeger's Photo album",
+        "Locate and obtain Jaeger's Photo album",
         "Hand over the Photo album to Jaeger"
       ],
       "objectiveDetails": [
@@ -6721,8 +6721,8 @@
           "raidRequired": true
         },
         {
-          "text": "Obtain Jaeger's Photo album",
-          "category": "Other",
+          "text": "Locate and obtain Jaeger's Photo album",
+          "category": "Locate",
           "maps": [
             "Shoreline"
           ],
@@ -6750,7 +6750,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 363468
+      "wikiRevision": 365110
     },
     {
       "id": "608a768d82e40b3c727fd17d",
@@ -6834,7 +6834,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359606
+      "wikiRevision": 365113
     },
     {
       "id": "675c1ec7a46173572a0bf20a",
@@ -8638,7 +8638,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359752
+      "wikiRevision": 365090
     },
     {
       "id": "64e7b971f9d6fa49d6769b44",
@@ -8738,7 +8738,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359754
+      "wikiRevision": 365102
     },
     {
       "id": "5d25e2d886f77442734d335e",
@@ -8778,7 +8778,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359755
+      "wikiRevision": 365082
     },
     {
       "id": "6578eb36e5020875d64645cd",
@@ -8823,26 +8823,36 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359756
+      "wikiRevision": 365085
     },
     {
       "id": "5d25e44f86f77443e625e385",
       "name": "The Huntsman Path - Eraser",
       "trader": "Jaeger",
       "maps": [
-        "Any"
+        "Reserve"
       ],
-      "type": "Kill",
+      "type": "Locate / Find / Hand over",
       "objectives": [
-        "Eliminate Glukhar"
+        "Locate and neutralize Glukhar",
+        "Hand over 2 found in raid Glukhar 's guards' helmets"
       ],
       "objectiveDetails": [
         {
-          "text": "Eliminate Glukhar",
-          "category": "Kill",
-          "maps": [],
-          "raidClass": "ANY_RAID",
+          "text": "Locate and neutralize Glukhar",
+          "category": "Locate",
+          "maps": [
+            "Reserve"
+          ],
+          "raidClass": "MAP_BOUND",
           "raidRequired": true
+        },
+        {
+          "text": "Hand over 2 found in raid Glukhar 's guards' helmets",
+          "category": "Find / Hand over",
+          "maps": [],
+          "raidClass": "NON_RAID",
+          "raidRequired": false
         }
       ],
       "requirements": [],
@@ -8852,11 +8862,13 @@
       "wikiLink": "https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Eraser",
       "taskRequirements": [],
       "raidRelevant": true,
-      "raidClass": "ANY_RAID",
-      "mapBoundMaps": [],
-      "hasAnyRaidObjectives": true,
+      "raidClass": "MAP_BOUND",
+      "mapBoundMaps": [
+        "Reserve"
+      ],
+      "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359757
+      "wikiRevision": 365094
     },
     {
       "id": "60c0c018f7afb4354815096a",
@@ -8912,18 +8924,26 @@
       "name": "The Huntsman Path - Forest Cleaning",
       "trader": "Jaeger",
       "maps": [
-        "Any"
+        "Streets of Tarkov",
+        "Shoreline",
+        "Reserve",
+        "Lighthouse"
       ],
       "type": "Kill",
       "objectives": [
-        "Eliminate 50 Scavs all over the Tarkov territory"
+        "Eliminate 50 Scavs on Streets of Tarkov , Reserve , Lighthouse , or Shoreline"
       ],
       "objectiveDetails": [
         {
-          "text": "Eliminate 50 Scavs all over the Tarkov territory",
+          "text": "Eliminate 50 Scavs on Streets of Tarkov , Reserve , Lighthouse , or Shoreline",
           "category": "Kill",
-          "maps": [],
-          "raidClass": "ANY_RAID",
+          "maps": [
+            "Streets of Tarkov",
+            "Shoreline",
+            "Reserve",
+            "Lighthouse"
+          ],
+          "raidClass": "MAP_BOUND",
           "raidRequired": true
         }
       ],
@@ -8934,30 +8954,45 @@
       "wikiLink": "https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Forest_Cleaning",
       "taskRequirements": [],
       "raidRelevant": true,
-      "raidClass": "ANY_RAID",
-      "mapBoundMaps": [],
-      "hasAnyRaidObjectives": true,
+      "raidClass": "MAP_BOUND",
+      "mapBoundMaps": [
+        "Streets of Tarkov",
+        "Shoreline",
+        "Reserve",
+        "Lighthouse"
+      ],
+      "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359759
+      "wikiRevision": 365079
     },
     {
       "id": "5d25e43786f7740a212217fa",
       "name": "The Huntsman Path - Justice",
       "trader": "Jaeger",
       "maps": [
-        "Any"
+        "Customs"
       ],
-      "type": "Kill",
+      "type": "Kill / Find / Hand over",
       "objectives": [
-        "Eliminate 3 Scavs dressed in police uniform ( Reshala's bodyguards)"
+        "Eliminate 3 Reshala 's guards",
+        "Hand over one of Reshala 's guards' armor vest"
       ],
       "objectiveDetails": [
         {
-          "text": "Eliminate 3 Scavs dressed in police uniform ( Reshala's bodyguards)",
+          "text": "Eliminate 3 Reshala 's guards",
           "category": "Kill",
-          "maps": [],
-          "raidClass": "ANY_RAID",
+          "maps": [
+            "Customs"
+          ],
+          "raidClass": "MAP_BOUND",
           "raidRequired": true
+        },
+        {
+          "text": "Hand over one of Reshala 's guards' armor vest",
+          "category": "Find / Hand over",
+          "maps": [],
+          "raidClass": "NON_RAID",
+          "raidRequired": false
         }
       ],
       "requirements": [],
@@ -8967,11 +9002,13 @@
       "wikiLink": "https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Justice",
       "taskRequirements": [],
       "raidRelevant": true,
-      "raidClass": "ANY_RAID",
-      "mapBoundMaps": [],
-      "hasAnyRaidObjectives": true,
+      "raidClass": "MAP_BOUND",
+      "mapBoundMaps": [
+        "Customs"
+      ],
+      "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359760
+      "wikiRevision": 365091
     },
     {
       "id": "5d25e45e86f77408251c4bfa",
@@ -9014,7 +9051,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359761
+      "wikiRevision": 365095
     },
     {
       "id": "6179ad0a6e9dd54ac275e3f2",
@@ -9133,9 +9170,10 @@
       "maps": [
         "Any"
       ],
-      "type": "Kill",
+      "type": "Kill / Find / Hand over",
       "objectives": [
-        "Eliminate Sanitar"
+        "Eliminate Sanitar",
+        "Hand over the found in raid Sanitar's bag"
       ],
       "objectiveDetails": [
         {
@@ -9144,6 +9182,13 @@
           "maps": [],
           "raidClass": "ANY_RAID",
           "raidRequired": true
+        },
+        {
+          "text": "Hand over the found in raid Sanitar's bag",
+          "category": "Find / Hand over",
+          "maps": [],
+          "raidClass": "NON_RAID",
+          "raidRequired": false
         }
       ],
       "requirements": [],
@@ -9157,7 +9202,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359764
+      "wikiRevision": 365101
     },
     {
       "id": "5d25e2b486f77409de05bba0",
@@ -9168,11 +9213,11 @@
       ],
       "type": "Kill",
       "objectives": [
-        "Eliminate 6 PMСs in the office area (any floor) on Factory"
+        "Eliminate 6 PMС operatives on Factory"
       ],
       "objectiveDetails": [
         {
-          "text": "Eliminate 6 PMСs in the office area (any floor) on Factory",
+          "text": "Eliminate 6 PMС operatives on Factory",
           "category": "Kill",
           "maps": [
             "Factory"
@@ -9194,27 +9239,29 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359765
+      "wikiRevision": 365075
     },
     {
       "id": "5d25e2e286f77444001e2e48",
       "name": "The Huntsman Path - Sellout",
       "trader": "Jaeger",
       "maps": [
-        "Any"
+        "Interchange"
       ],
-      "type": "Kill / Find / Hand over",
+      "type": "Locate / Find / Hand over",
       "objectives": [
-        "Eliminate Killa",
+        "Locate and neutralize Killa",
         "Find 1 Killa's Maska-1SCh bulletproof helmet in raid",
         "Hand over 1 Killa's Maska-1SCh bulletproof helmet to Jaeger"
       ],
       "objectiveDetails": [
         {
-          "text": "Eliminate Killa",
-          "category": "Kill",
-          "maps": [],
-          "raidClass": "ANY_RAID",
+          "text": "Locate and neutralize Killa",
+          "category": "Locate",
+          "maps": [
+            "Interchange"
+          ],
+          "raidClass": "MAP_BOUND",
           "raidRequired": true
         },
         {
@@ -9239,42 +9286,38 @@
       "wikiLink": "https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Sellout",
       "taskRequirements": [],
       "raidRelevant": true,
-      "raidClass": "ANY_RAID",
-      "mapBoundMaps": [],
+      "raidClass": "MAP_BOUND",
+      "mapBoundMaps": [
+        "Interchange"
+      ],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359766
+      "wikiRevision": 365084
     },
     {
       "id": "5d25e2c386f77443e7549029",
       "name": "The Huntsman Path - Trophy",
       "trader": "Jaeger",
       "maps": [
-        "Any"
+        "Customs"
       ],
-      "type": "Kill / Find / Hand over",
+      "type": "Locate / Find / Hand over",
       "objectives": [
-        "Eliminate Reshala",
-        "Find 1 Reshala's Golden TT in raid",
-        "Hand over 1 Reshala's Golden TT to Jaeger"
+        "Locate and neutralize Reshala",
+        "Hand over the found in raid Reshala's Golden TT-33 pistol to Jaeger"
       ],
       "objectiveDetails": [
         {
-          "text": "Eliminate Reshala",
-          "category": "Kill",
-          "maps": [],
-          "raidClass": "ANY_RAID",
+          "text": "Locate and neutralize Reshala",
+          "category": "Locate",
+          "maps": [
+            "Customs"
+          ],
+          "raidClass": "MAP_BOUND",
           "raidRequired": true
         },
         {
-          "text": "Find 1 Reshala's Golden TT in raid",
-          "category": "Find / Hand over",
-          "maps": [],
-          "raidClass": "ANY_RAID",
-          "raidRequired": true
-        },
-        {
-          "text": "Hand over 1 Reshala's Golden TT to Jaeger",
+          "text": "Hand over the found in raid Reshala's Golden TT-33 pistol to Jaeger",
           "category": "Find / Hand over",
           "maps": [],
           "raidClass": "NON_RAID",
@@ -9288,36 +9331,40 @@
       "wikiLink": "https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Trophy",
       "taskRequirements": [],
       "raidRelevant": true,
-      "raidClass": "ANY_RAID",
-      "mapBoundMaps": [],
-      "hasAnyRaidObjectives": true,
+      "raidClass": "MAP_BOUND",
+      "mapBoundMaps": [
+        "Customs"
+      ],
+      "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359767
+      "wikiRevision": 365077
     },
     {
       "id": "5d25e2ee86f77443e35162ea",
       "name": "The Huntsman Path - Woods Keeper",
       "trader": "Jaeger",
       "maps": [
-        "Any"
+        "Woods"
       ],
-      "type": "Kill / Find / Hand over",
+      "type": "Locate / Find / Hand over",
       "objectives": [
-        "Eliminate Shturman",
-        "Find 1 Shturman's stash key in raid",
+        "Locate and neutralize Shturman",
+        "Search Shturman for his stash key",
         "Hand over 1 Shturman's stash key to Jaeger"
       ],
       "objectiveDetails": [
         {
-          "text": "Eliminate Shturman",
-          "category": "Kill",
-          "maps": [],
-          "raidClass": "ANY_RAID",
+          "text": "Locate and neutralize Shturman",
+          "category": "Locate",
+          "maps": [
+            "Woods"
+          ],
+          "raidClass": "MAP_BOUND",
           "raidRequired": true
         },
         {
-          "text": "Find 1 Shturman's stash key in raid",
-          "category": "Find / Hand over",
+          "text": "Search Shturman for his stash key",
+          "category": "Other",
           "maps": [],
           "raidClass": "ANY_RAID",
           "raidRequired": true
@@ -9337,11 +9384,13 @@
       "wikiLink": "https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Woods_Keeper",
       "taskRequirements": [],
       "raidRelevant": true,
-      "raidClass": "ANY_RAID",
-      "mapBoundMaps": [],
+      "raidClass": "MAP_BOUND",
+      "mapBoundMaps": [
+        "Woods"
+      ],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359768
+      "wikiRevision": 365086
     },
     {
       "id": "5d25d2c186f77443e35162e5",
@@ -9381,7 +9430,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359785
+      "wikiRevision": 365064
     },
     {
       "id": "5d25e2a986f77409dd5cdf2a",
@@ -9578,7 +9627,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359787
+      "wikiRevision": 365070
     },
     {
       "id": "5eaaaa7c93afa0558f3b5a1c",
@@ -9622,7 +9671,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359788
+      "wikiRevision": 365066
     },
     {
       "id": "5d25b6be86f77444001e1b89",
@@ -9689,7 +9738,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359789
+      "wikiRevision": 365117
     },
     {
       "id": "5d25cf2686f77443e75488d4",
@@ -9733,7 +9782,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359790
+      "wikiRevision": 365063
     },
     {
       "id": "5d25aed386f77442734d25d2",
@@ -10362,7 +10411,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 362348
+      "wikiRevision": 365055
     },
     {
       "id": "5d25c81b86f77443e625dd71",
@@ -10436,7 +10485,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359792
+      "wikiRevision": 365062
     },
     {
       "id": "5d25bfd086f77442734d3007",
@@ -10488,7 +10537,7 @@
       ],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 359794
+      "wikiRevision": 365061
     },
     {
       "id": "5bc4776586f774512d07cf05",
