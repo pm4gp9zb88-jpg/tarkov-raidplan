@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T11:18:57.203Z",
+  "generatedAt": "2026-10-29T11:29:59.662Z",
   "mode": "regular",
   "sources": [
     "json.tarkov.dev",
@@ -12587,7 +12587,7 @@
       ],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365333
+      "wikiRevision": 366143
     },
     {
       "id": "6179b3bdc7560e13d23eeb8d",
@@ -13209,7 +13209,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365545
+      "wikiRevision": 366136
     },
     {
       "id": "5c139eb686f7747878361a6f",
@@ -15607,7 +15607,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365846
+      "wikiRevision": 366133
     },
     {
       "id": "6089732b59b92115597ad789",
@@ -15836,7 +15836,7 @@
       ],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365925
+      "wikiRevision": 366142
     },
     {
       "id": "639136fa9444fb141f4e6eee",
@@ -23266,18 +23266,11 @@
       ],
       "type": "Find / Hand over",
       "objectives": [
-        "Find the item in raid : 2 any Ushanka hat",
         "Find the item in raid : 2 Kinda cowboy hat",
-        "Hand over the items"
+        "Hand over the items",
+        "Find the item in raid : 2 any Ushanka hat"
       ],
       "objectiveDetails": [
-        {
-          "text": "Find the item in raid : 2 any Ushanka hat",
-          "category": "Find / Hand over",
-          "maps": [],
-          "raidClass": "ANY_RAID",
-          "raidRequired": true
-        },
         {
           "text": "Find the item in raid : 2 Kinda cowboy hat",
           "category": "Find / Hand over",
@@ -23291,6 +23284,13 @@
           "maps": [],
           "raidClass": "NON_RAID",
           "raidRequired": false
+        },
+        {
+          "text": "Find the item in raid : 2 any Ushanka hat",
+          "category": "Find / Hand over",
+          "maps": [],
+          "raidClass": "ANY_RAID",
+          "raidRequired": true
         }
       ],
       "requirements": [],
@@ -23304,7 +23304,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365382
+      "wikiRevision": 366119
     },
     {
       "id": "6613f3007f6666d56807c929",
@@ -23923,15 +23923,15 @@
         "Find 2 Bronze lion figurines in raid",
         "Find 2 Horse figurines in raid",
         "Find 2 Golden rooster figurines in raid",
-        "Find 2 Cat figurine in raid",
-        "Find 2 Roler Submariner gold wrist watch in raid",
-        "Find 2 Golden egg in raid",
+        "Find 2 Cat figurines in raid",
+        "Find 2 Roler Submariner gold wrist watches in raid",
+        "Find 2 Golden eggs in raid",
         "Hand over 2 Bronze lion figurines to Ragman",
         "Hand over 2 Horse figurines to Ragman",
         "Hand over 2 Golden rooster figurines to Ragman",
-        "Hand over 2 Cat figurine to Ragman",
-        "Hand over 2 Roler Submariner gold wrist watch to Ragman",
-        "Hand over 2 Golden egg to Ragman"
+        "Hand over 2 Cat figurines to Ragman",
+        "Hand over 2 Roler Submariner gold wrist watches to Ragman",
+        "Hand over 2 Golden eggs to Ragman"
       ],
       "objectiveDetails": [
         {
@@ -23956,21 +23956,21 @@
           "raidRequired": true
         },
         {
-          "text": "Find 2 Cat figurine in raid",
+          "text": "Find 2 Cat figurines in raid",
           "category": "Find / Hand over",
           "maps": [],
           "raidClass": "ANY_RAID",
           "raidRequired": true
         },
         {
-          "text": "Find 2 Roler Submariner gold wrist watch in raid",
+          "text": "Find 2 Roler Submariner gold wrist watches in raid",
           "category": "Find / Hand over",
           "maps": [],
           "raidClass": "ANY_RAID",
           "raidRequired": true
         },
         {
-          "text": "Find 2 Golden egg in raid",
+          "text": "Find 2 Golden eggs in raid",
           "category": "Find / Hand over",
           "maps": [],
           "raidClass": "ANY_RAID",
@@ -23998,21 +23998,21 @@
           "raidRequired": false
         },
         {
-          "text": "Hand over 2 Cat figurine to Ragman",
+          "text": "Hand over 2 Cat figurines to Ragman",
           "category": "Find / Hand over",
           "maps": [],
           "raidClass": "NON_RAID",
           "raidRequired": false
         },
         {
-          "text": "Hand over 2 Roler Submariner gold wrist watch to Ragman",
+          "text": "Hand over 2 Roler Submariner gold wrist watches to Ragman",
           "category": "Find / Hand over",
           "maps": [],
           "raidClass": "NON_RAID",
           "raidRequired": false
         },
         {
-          "text": "Hand over 2 Golden egg to Ragman",
+          "text": "Hand over 2 Golden eggs to Ragman",
           "category": "Find / Hand over",
           "maps": [],
           "raidClass": "NON_RAID",
@@ -24030,7 +24030,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365596
+      "wikiRevision": 366109
     },
     {
       "id": "60e71dc0a94be721b065bbfc",
@@ -25087,7 +25087,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365826
+      "wikiRevision": 366134
     },
     {
       "id": "666314a1920800278d0f6746",
@@ -26689,7 +26689,7 @@
       ],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365267
+      "wikiRevision": 366147
     },
     {
       "id": "657315e270bb0b8dba00cc48",
@@ -27119,7 +27119,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365305
+      "wikiRevision": 366144
     },
     {
       "id": "60896888e4a85c72ef3fa300",
@@ -28186,7 +28186,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365644
+      "wikiRevision": 366150
     },
     {
       "id": "658027799634223183395339",
@@ -28494,7 +28494,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365759
+      "wikiRevision": 366148
     },
     {
       "id": "674600a366e6a521aa05eb66",
@@ -28642,7 +28642,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365767
+      "wikiRevision": 366149
     },
     {
       "id": "666314bf1cd52e3d040a2e78",
@@ -28804,7 +28804,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365794
+      "wikiRevision": 366145
     },
     {
       "id": "5c0bc91486f7746ab41857a2",
@@ -28867,7 +28867,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365818
+      "wikiRevision": 366146
     },
     {
       "id": "6a7aef2360157cb5e3029a5f",
@@ -30595,7 +30595,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365385
+      "wikiRevision": 366135
     },
     {
       "id": "6a5424ae135497b9df0c68be",
