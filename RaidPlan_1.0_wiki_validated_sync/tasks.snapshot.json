@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T11:22:58.615Z",
+  "generatedAt": "2026-10-31T10:54:30.914Z",
   "mode": "regular",
   "sources": [
     "json.tarkov.dev",
@@ -4734,7 +4734,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365807
+      "wikiRevision": 366622
     },
     {
       "id": "69c26c07683c9831020018c7",
@@ -5755,9 +5755,8 @@
       ],
       "type": "Find / Hand over",
       "objectives": [
-        "Find a Ded Moroz figurine in raid",
-        "Hand over the item to Fence",
         "Find a Politician Mutkevich figurine in raid",
+        "Hand over the item to Fence",
         "Find a Killa figurine in raid",
         "Find a Reshala figurine in raid",
         "Find a Ryzhy figurine in raid",
@@ -5768,7 +5767,7 @@
       ],
       "objectiveDetails": [
         {
-          "text": "Find a Ded Moroz figurine in raid",
+          "text": "Find a Politician Mutkevich figurine in raid",
           "category": "Find / Hand over",
           "maps": [],
           "raidClass": "ANY_RAID",
@@ -5780,13 +5779,6 @@
           "maps": [],
           "raidClass": "NON_RAID",
           "raidRequired": false
-        },
-        {
-          "text": "Find a Politician Mutkevich figurine in raid",
-          "category": "Find / Hand over",
-          "maps": [],
-          "raidClass": "ANY_RAID",
-          "raidRequired": true
         },
         {
           "text": "Find a Killa figurine in raid",
@@ -5856,7 +5848,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 366062
+      "wikiRevision": 366460
     },
     {
       "id": "6663149196a9349baa021baa",
@@ -6141,7 +6133,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365261
+      "wikiRevision": 366601
     },
     {
       "id": "6391372c8ba6894d155e77d7",
@@ -6195,7 +6187,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365262
+      "wikiRevision": 366602
     },
     {
       "id": "64ee99639878a0569d6ec8c9",
@@ -6204,12 +6196,11 @@
       "maps": [
         "Streets of Tarkov"
       ],
-      "type": "Kill / Locate / Survive",
+      "type": "Kill / Locate",
       "objectives": [
         "Eliminate Priest",
         "Locate the ritual spot on Chekannaya st. on Streets of Tarkov",
-        "Stash a Cultist knife at the ritual spot",
-        "Survive and extract from the location"
+        "Stash a Cultist knife at the ritual spot"
       ],
       "objectiveDetails": [
         {
@@ -6236,13 +6227,6 @@
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
-        },
-        {
-          "text": "Survive and extract from the location",
-          "category": "Survive",
-          "maps": [],
-          "raidClass": "ANY_RAID",
-          "raidRequired": true
         }
       ],
       "requirements": [],
@@ -6265,7 +6249,7 @@
       ],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365263
+      "wikiRevision": 366606
     },
     {
       "id": "639136e84ed9512be67647db",
@@ -6302,7 +6286,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365282
+      "wikiRevision": 366600
     },
     {
       "id": "669fa3979b0ce3feae01a130",
@@ -6313,11 +6297,11 @@
       ],
       "type": "Kill",
       "objectives": [
-        "Eliminate any 5 targets in the old cellars while using a shotgun on Factory"
+        "Eliminate any 5 targets in the basement tunnel network on Factory"
       ],
       "objectiveDetails": [
         {
-          "text": "Eliminate any 5 targets in the old cellars while using a shotgun on Factory",
+          "text": "Eliminate any 5 targets in the basement tunnel network on Factory",
           "category": "Kill",
           "maps": [
             "Factory"
@@ -6326,16 +6310,7 @@
           "raidRequired": true
         }
       ],
-      "requirements": [
-        {
-          "kind": "gear",
-          "name": "shotgun",
-          "qty": 1,
-          "slot": "weapon",
-          "itemId": "",
-          "sourceObjective": "Eliminate any 5 targets in the old cellars while using a shotgun on Factory"
-        }
-      ],
+      "requirements": [],
       "restrictions": [],
       "fir": [],
       "minLevel": 0,
@@ -6348,7 +6323,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365308
+      "wikiRevision": 366615
     },
     {
       "id": "5d25e48186f77443e625e386",
@@ -6460,7 +6435,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365381
+      "wikiRevision": 366614
     },
     {
       "id": "66b38e144f2ab7cc530c3fe7",
@@ -6659,7 +6634,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365440
+      "wikiRevision": 366616
     },
     {
       "id": "5d25e4ca86f77409dd5cdf2c",
@@ -6767,11 +6742,11 @@
       ],
       "type": "Kill",
       "objectives": [
-        "Eliminate 10 Scavs inside the main barracks on Reserve"
+        "Eliminate 10 Scavs around the main barracks on Reserve"
       ],
       "objectiveDetails": [
         {
-          "text": "Eliminate 10 Scavs inside the main barracks on Reserve",
+          "text": "Eliminate 10 Scavs around the main barracks on Reserve",
           "category": "Kill",
           "maps": [
             "Reserve"
@@ -6793,7 +6768,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365697
+      "wikiRevision": 366584
     },
     {
       "id": "5d25e4d586f77443e625e388",
@@ -6951,7 +6926,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365764
+      "wikiRevision": 366613
     },
     {
       "id": "5d25e48d86f77408251c4bfb",
@@ -7155,7 +7130,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365822
+      "wikiRevision": 366604
     },
     {
       "id": "626bdcc3a371ee3a7a3514c5",
@@ -7170,13 +7145,13 @@
       ],
       "type": "Kill",
       "objectives": [
-        "Locate and eliminate Knight",
-        "Locate and eliminate Big Pipe",
-        "Locate and eliminate Birdeye"
+        "Locate and eliminate Knight (in one raid)",
+        "Locate and eliminate Big Pipe (in one raid)",
+        "Locate and eliminate Birdeye (in one raid)"
       ],
       "objectiveDetails": [
         {
-          "text": "Locate and eliminate Knight",
+          "text": "Locate and eliminate Knight (in one raid)",
           "category": "Kill",
           "maps": [
             "Customs",
@@ -7189,7 +7164,7 @@
           "raidRequired": true
         },
         {
-          "text": "Locate and eliminate Big Pipe",
+          "text": "Locate and eliminate Big Pipe (in one raid)",
           "category": "Kill",
           "maps": [
             "Customs",
@@ -7201,7 +7176,7 @@
           "raidRequired": true
         },
         {
-          "text": "Locate and eliminate Birdeye",
+          "text": "Locate and eliminate Birdeye (in one raid)",
           "category": "Kill",
           "maps": [
             "Customs",
@@ -7230,7 +7205,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365854
+      "wikiRevision": 366598
     },
     {
       "id": "60e729cf5698ee7b05057439",
@@ -7241,11 +7216,11 @@
       ],
       "type": "Kill",
       "objectives": [
-        "Eliminate 15 PMCs without using any armor or helmets on Woods"
+        "Eliminate 10 PMCs without using any armor or helmets on Woods"
       ],
       "objectiveDetails": [
         {
-          "text": "Eliminate 15 PMCs without using any armor or helmets on Woods",
+          "text": "Eliminate 10 PMCs without using any armor or helmets on Woods",
           "category": "Kill",
           "maps": [
             "Woods"
@@ -7261,1064 +7236,1064 @@
           "name": "6B43 Zabralo-Sh body armor (EMR)",
           "itemId": "545cdb794bdc2d3a198b456a",
           "slot": "armor",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "BNTI Gzhel-K body armor",
           "itemId": "5ab8e79e86f7742d8b372e78",
           "slot": "armor",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "MF-UNTAR body armor",
           "itemId": "5ab8e4ed86f7742d8e50c7fa",
           "slot": "armor",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "6B13 assault armor (EMR)",
           "itemId": "5c0e53c886f7747fa54205c7",
           "slot": "armor",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "6B13 assault armor (Flora)",
           "itemId": "5c0e51be86f774598e797894",
           "slot": "armor",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "6B13 M assault armor (Killa Edition)",
           "itemId": "5c0e541586f7747fa54205c9",
           "slot": "armor",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "6B23-1 body armor (EMR)",
           "itemId": "5c0e5bab86f77461f55ed1f3",
           "slot": "armor",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "6B23-2 body armor (Mountain Flora)",
           "itemId": "5c0e57ba86f7747fa141986d",
           "slot": "armor",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "IOTV Gen4 body armor (Full Protection Kit, MultiCam)",
           "itemId": "5b44cd8b86f774503d30cba2",
           "slot": "armor",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "IOTV Gen4 body armor (Assault Kit, MultiCam)",
           "itemId": "5b44cf1486f77431723e3d05",
           "slot": "armor",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "IOTV Gen4 body armor (High Mobility Kit, MultiCam)",
           "itemId": "5b44d0de86f774503d30cba8",
           "slot": "armor",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "BNTI Kirasa-N body armor",
           "itemId": "5b44d22286f774172b0c9de8",
           "slot": "armor",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "FORT Redut-M body armor",
           "itemId": "5ca2151486f774244a3b8d30",
           "slot": "armor",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "FORT Redut-T5 body armor (Smog)",
           "itemId": "5ca21c6986f77479963115a7",
           "slot": "armor",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "HighCom Trooper TFO body armor (MultiCam)",
           "itemId": "5c0e655586f774045612eeb2",
           "slot": "armor",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "BNTI Zhuk body armor (Press)",
           "itemId": "5c0e5edb86f77461f55ed1f7",
           "slot": "armor",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "BNTI Zhuk body armor (EMR)",
           "itemId": "5c0e625a86f7742d77340f62",
           "slot": "armor",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "BNTI Module-3M body armor",
           "itemId": "59e7635f86f7742cbf2c1095",
           "slot": "armor",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "PACA Soft Armor",
           "itemId": "5648a7494bdc2d9d488b4583",
           "slot": "armor",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "ANA Tactical M2 plate carrier (OD Green)",
           "itemId": "5ab8dced86f774646209ec87",
           "slot": null,
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "6B5-15 Zh-86 Uley armored rig (Flora)",
           "itemId": "5c0e446786f7742013381639",
           "slot": null,
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "6B5-16 Zh-86 Uley armored rig (Khaki)",
           "itemId": "5c0e3eb886f7742015526062",
           "slot": null,
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "5.11 Tactical TacTec plate carrier (Ranger Green)",
           "itemId": "5b44cad286f77402a54ae7e5",
           "slot": null,
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "WARTECH TV-110 plate carrier (Coyote)",
           "itemId": "5c0e746986f7741453628fe5",
           "slot": null,
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "Crye Precision AVS plate carrier (Ranger Green)",
           "itemId": "544a5caa4bdc2d1a388b4568",
           "slot": null,
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "6B3TM-01 armored rig (Khaki)",
           "itemId": "5d5d646386f7742797261fd9",
           "slot": null,
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "FORT Defender-2 body armor",
           "itemId": "5e9dacf986f774054d6b89f4",
           "slot": "armor",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "Ars Arma CPC MOD.1 plate carrier (A-TACS FG)",
           "itemId": "5e4ac41886f77406a511c9a8",
           "slot": null,
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "LBT-6094A Slick Plate Carrier (Black)",
           "itemId": "5e4abb5086f77406975c9342",
           "slot": null,
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "5.11 Tactical Hexgrid plate carrier",
           "itemId": "5fd4c474dd870108a754b241",
           "slot": null,
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "NPP KlASS Korund-VM body armor (Black)",
           "itemId": "5f5f41476bdad616ad46d631",
           "slot": "armor",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "6B2 body armor (Flora)",
           "itemId": "5df8a2ca86f7740bfe6df777",
           "slot": "armor",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "ANA Tactical M1 plate carrier (OD Green)",
           "itemId": "5c0e722886f7740458316a57",
           "slot": null,
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "LBT-6094A Slick Plate Carrier (Olive Drab)",
           "itemId": "6038b4ca92ec1c3103795a0d",
           "slot": null,
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "LBT-6094A Slick Plate Carrier (Coyote Tan)",
           "itemId": "6038b4b292ec1c3103795a0b",
           "slot": null,
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "CQC Osprey MK4A plate carrier (Assault, MTP)",
           "itemId": "60a3c70cde5f453f634816a3",
           "slot": null,
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "CQC Osprey MK4A plate carrier (Protection, MTP)",
           "itemId": "60a3c68c37ea821725773ef5",
           "slot": null,
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "NFM THOR Integrated Carrier body armor",
           "itemId": "60a283193cb70855c43a381d",
           "slot": "armor",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "Crye Precision AVS plate carrier (Tagilla Edition)",
           "itemId": "609e860ebd219504d8507525",
           "slot": null,
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "NFM THOR Concealable Reinforced Vest body armor",
           "itemId": "609e8540d5c319764c2bc2e9",
           "slot": "armor",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "FORT Kiver-M bulletproof helmet",
           "itemId": "5645bc214bdc2d363b8b4571",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "6B47 Ratnik-BSh helmet (EMR cover)",
           "itemId": "5aa7cfc0e5b5b00015693143",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "Altyn assault helmet (Olive Drab)",
           "itemId": "5aa7e276e5b5b000171d0647",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "TSh-4M-L soft tank crew helmet",
           "itemId": "5df8a58286f77412631087ed",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "Kolpak-1S riot helmet",
           "itemId": "59e7711e86f7746cae05fbe1",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "MSA ACH TC-2001 MICH Series helmet (Olive Drab)",
           "itemId": "5d5e7d28a4b936645d161203",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "MSA ACH TC-2002 MICH Series helmet (Olive Drab)",
           "itemId": "5d5e9c74a4b9364855191c40",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "Ops-Core FAST MT Super High Cut helmet (Black)",
           "itemId": "5a154d5cfcdbcb001a3b00da",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "Ops-Core FAST MT Super High Cut helmet (Urban Tan)",
           "itemId": "5ac8d6885acfc400180ae7b0",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "6B47 Ratnik-BSh helmet (Olive Drab)",
           "itemId": "5a7c4850e899ef00150be885",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "SSSh-94 SFERA-S helmet",
           "itemId": "5aa7d193e5b5b000171d063f",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "UNTAR helmet",
           "itemId": "5aa7d03ae5b5b00016327db5",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "ZSh-1-2M helmet (Olive Drab)",
           "itemId": "5aa7e454e5b5b0214e506fa2",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "ZSh-1-2M helmet (Black cover)",
           "itemId": "5aa7e4a4e5b5b000137b76f2",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "DevTac Ronin Respirator",
           "itemId": "5b4329f05acfc47a86086aa1",
           "slot": "facecover",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "HighCom Striker ACHHC IIIA helmet (Black)",
           "itemId": "5b40e3f35acfc40016388218",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "HighCom Striker ACHHC IIIA helmet (Olive Drab)",
           "itemId": "5b40e4035acfc47a87740943",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "LShZ lightweight helmet (Olive Drab)",
           "itemId": "5b432d215acfc4771e1c6624",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "HighCom Striker ULACH IIIA helmet (Black)",
           "itemId": "5b40e1525acfc4771e1c6611",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "HighCom Striker ULACH IIIA helmet (Desert Tan)",
           "itemId": "5b40e2bc5acfc40016388216",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "Crye Precision AirFrame helmet (Tan)",
           "itemId": "5c17a7ed2e2216152142459c",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "Diamond Age Bastion helmet (Black)",
           "itemId": "5ea17ca01412a1425304d1c0",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "Galvion Caiman Hybrid helmet (Grey)",
           "itemId": "5f60b34a41e30a4ab12a6947",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "Tac-Kek FAST MT helmet (Replica)",
           "itemId": "5ea05cf85ad9772e6624305d",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "BNTI LShZ-2DTM helmet (Black)",
           "itemId": "5d6d3716a4b9361bc8618872",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "Maska-1SCh bulletproof helmet (Olive Drab)",
           "itemId": "5c091a4e0db834001d5addc8",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "Maska-1SCh bulletproof helmet (Killa Edition)",
           "itemId": "5c0e874186f7745dc7616606",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "PSh-97 DJETA riot helmet",
           "itemId": "5c0d2727d174af02a012cf58",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "Rys-T assault helmet (Black)",
           "itemId": "5f60c74e3b85f6263c145586",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "ShPM Firefighter helmet",
           "itemId": "5c08f87c0db8340019124324",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "SSh-68 steel helmet (Olive Drab)",
           "itemId": "5c06c6a80db834001b735491",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "MSA Gallet TC 800 High Cut combat helmet (Black)",
           "itemId": "5e4bfc1586f774264f7582d3",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "Team Wendy EXFIL Ballistic Helmet (Black)",
           "itemId": "5e00c1ad86f774747333222c",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "Team Wendy EXFIL Ballistic Helmet (Coyote Brown)",
           "itemId": "5e01ef6886f77445f643baa4",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "Vulkan-5 LShZ-5 bulletproof helmet (Black)",
           "itemId": "5ca20ee186f774799474abc2",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "Eagle Industries MMAC plate carrier (Ranger Green)",
           "itemId": "61bc85697113f767765c7fe7",
           "slot": null,
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "First Spear Strandhogg plate carrier (Ranger Green)",
           "itemId": "61bcc89aef0f505f0c6cd0fc",
           "slot": null,
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "DRD body armor",
           "itemId": "62a09d79de7ac81993580530",
           "slot": "armor",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "S&S Precision PlateFrame plate carrier (Goons Edition)",
           "itemId": "628b9784bcf6e2659e09b8a2",
           "slot": null,
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "Crye Precision CPC plate carrier (Goons Edition)",
           "itemId": "628b9c7d45122232a872358f",
           "slot": null,
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "Tasmanian Tiger SK plate carrier (MultiCam Black)",
           "itemId": "628cd624459354321c4b7fa2",
           "slot": null,
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "NPP KlASS Bagariy plate carrier (EMR)",
           "itemId": "628d0618d1ba6e4fa07ce5a4",
           "slot": null,
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "ECLiPSE RBAV-AF plate carrier (Ranger Green)",
           "itemId": "628dc750b910320f4c27a732",
           "slot": null,
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "Glorious E mask",
           "itemId": "62a09e08de7ac81993580532",
           "slot": "facecover",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "Death Knight mask",
           "itemId": "62963c18dbc8ab5f0d382d0b",
           "slot": "facecover",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "Shattered mask",
           "itemId": "5b432b2f5acfc4771e1c6622",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "Ars Arma A18 Skanda plate carrier (MultiCam)",
           "itemId": "5d5d87f786f77427997cfaef",
           "slot": null,
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "Shellback Tactical Banshee plate carrier (A-TACS AU)",
           "itemId": "639343fce101f4caa40a4ef3",
           "slot": null,
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "Hexatac HPC Plate Carrier (MultiCam Black)",
           "itemId": "63737f448b28897f2802b874",
           "slot": null,
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "Eagle Allied Industries MBSS plate carrier (Coyote Brown)",
           "itemId": "64a5366719bab53bd203bf33",
           "slot": null,
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "WARTECH TV-115 plate carrier (Olive Drab)",
           "itemId": "64a536392d2c4e6e970f4121",
           "slot": null,
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "Interceptor OTV body armor (UCP)",
           "itemId": "64abd93857958b4249003418",
           "slot": "armor",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "NPP KlASS Kora-Kulon body armor (Black)",
           "itemId": "64be79c487d1510151095552",
           "slot": "armor",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "NPP KlASS Kora-Kulon body armor (EMR)",
           "itemId": "64be79e2bf8412471d0d9bcc",
           "slot": "armor",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "NPP KlASS Tor-2 helmet (Olive Drab)",
           "itemId": "65719f0775149d62ce0a670b",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "Diamond Age NeoSteel High Cut helmet (Black)",
           "itemId": "65709d2d21b9f815e208ff95",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "Atomic Defense CQCM ballistic mask (Black)",
           "itemId": "657089638db3adca1009f4ca",
           "slot": "facecover",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "Death Shadow mask",
           "itemId": "6570aead4d84f81fd002a033",
           "slot": "facecover",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "Stich Profi Plate Carrier V2 (Black)",
           "itemId": "66b6296d7994640992013b17",
           "slot": null,
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "Tasmanian Tiger Plate Carrier MKIII (Coyote Brown)",
           "itemId": "66b6295a8ca68c6461709efa",
           "slot": null,
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "Stich Profi Stich Defense mod.2 plate carrier (MultiCam)",
           "itemId": "66b6295178bbc0200425f995",
           "slot": null,
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "Ballistic Armor Co. Bastion helmet (MultiCam)",
           "itemId": "66b5f666cad6f002ab7214c2",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "Ballistic Armor Co. Bastion helmet (OD Green)",
           "itemId": "66b5f661af44ca0014063c05",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "Ballistic Armor Co. Bastion helmet (Armor Black)",
           "itemId": "66b5f65ca7f72d197e70bcd6",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "DevTac Ronin helmet",
           "itemId": "66bdc28a0b603c26902b2011",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "6B13 M assault armor (Christmas Edition)",
           "itemId": "674d91ce6e862d5a95059ed6",
           "slot": "armor",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "Maska-1SCh bulletproof helmet (Christmas Edition)",
           "itemId": "6759af0f9c8a538dd70bfae6",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "MTEK STRIKE Ballistic helmet (Coyote/MultiCam Arid)",
           "itemId": "67597d241d5a44f2f605df06",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "MTEK STRIKE Ballistic helmet (Coyote)",
           "itemId": "67597ceea35600b4c10cea86",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "MTEK FLUX Ballistic helmet (Olive Drab)",
           "itemId": "6759655674aa5e0825040d62",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "MTEK FLUX Ballistic helmet (MultiCam Alpine)",
           "itemId": "675956062f6ddfe8ff0e2806",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "5.11 Tactical TacTec plate carrier (Storm)",
           "itemId": "67ab4b2d6f7ae4aa550bbcf6",
           "slot": null,
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "ANA Tactical Alpha chest rig (MultiCam)",
           "itemId": "67ab3ea96d7ece17bf0096f6",
           "slot": "rig",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "Crye Precision AVS plate carrier (MultiCam)",
           "itemId": "67ab49aab9c7a1e18c095686",
           "slot": null,
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "Hexatac HPC Plate Carrier (MultiCam)",
           "itemId": "67ab2eecfe82855dcc0f2af6",
           "slot": null,
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "BNTI Kirasa-N body armor (Green)",
           "itemId": "67ab2f28dafe3b22670c9116",
           "slot": "armor",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "FORT Redut-M body armor (SK Woodland)",
           "itemId": "67ab2f5adafe3b22670c911f",
           "slot": "armor",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "HighCom Trooper TFO body armor (Coyote)",
           "itemId": "67ab2f94dafe3b22670c912c",
           "slot": "armor",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "Spiritus Systems LV-119 Plate Carrier (Black Division V1)",
           "itemId": "689479a4a733b1602007e2eb",
           "slot": null,
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "Ferro Concepts FCPC V5 Plate Carrier (Black Division)",
           "itemId": "689479cb47e5acd1e10be986",
           "slot": null,
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "First Spear Siege-R Optimized M.A.S.S. Plate Carrier (Black Division)",
           "itemId": "68947a4be4bf255d1b0ca746",
           "slot": null,
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "Spiritus Systems LV-119 Plate Carrier (Black Division V2)",
           "itemId": "689479eb30cc5ba7be00f5ff",
           "slot": null,
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "6B45 armored rig (Medic, EMR)",
           "itemId": "68948aebd8f2b85fb705e2b0",
           "slot": null,
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "6B45 armored rig (General Purpose, EMR)",
           "itemId": "68948ad72c87773b9f06d73f",
           "slot": null,
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "6B45 armored rig (Assault, EMR)",
           "itemId": "68948b118c57a8a52301d7ae",
           "slot": null,
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "6B45 body armor (EMR)",
           "itemId": "68948a95d8f2b85fb705e2a6",
           "slot": "armor",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "Interceptor OTV body armor (Woodland)",
           "itemId": "68a89942431252e29a02dbf6",
           "slot": "armor",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "NFM THOR Concealable Reinforced Vest body armor (Head Eyes)",
           "itemId": "68a89146212dbbeead0d5636",
           "slot": "armor",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "NPP KlASS Korund-VM body armor (Kamysh)",
           "itemId": "68a97093431252e29a02dc06",
           "slot": "armor",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "ANA Tactical M2 plate carrier (MultiCam Alpine)",
           "itemId": "69412e5573dcf473e50be464",
           "slot": null,
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "Tac-Kek JayPC plate carrier (OD Green)",
           "itemId": "693fd13aa490096a05028cc8",
           "slot": null,
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "Tac-Kek JayPC plate carrier (Black)",
           "itemId": "693fd1200ec97e98040bd3f9",
           "slot": null,
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "Crye Precision JPC Plate Carrier (MultiCam)",
           "itemId": "693fd0e9deee848f70054999",
           "slot": null,
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "First Spear Strandhogg plate carrier (ABUPAT)",
           "itemId": "68a85ab8ef22d08bf401fa68",
           "slot": null,
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "Stich Profi Plate Carrier V2 (MARPAT Woodland)",
           "itemId": "68a99207aa809946e507c2f6",
           "slot": null,
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "Vulkan-5 LShZ-5 bulletproof helmet (Eight-ball)",
           "itemId": "68a986ca5c0073fa2d0d8cb8",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "Vulkan-5 LShZ-5 bulletproof helmet (Flame)",
           "itemId": "68a98762609a5cb2120ebd26",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "Vulkan-5 LShZ-5 bulletproof helmet (Camouflage)",
           "itemId": "68a987a1609a5cb2120ebd2f",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "DevTac Ronin Respirator (Beast)",
           "itemId": "68a9a85c3e1ee5a70504c12e",
           "slot": "facecover",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "DevTac Ronin Respirator (Eternal Green)",
           "itemId": "68a9a92b838d65bcb3050176",
           "slot": "facecover",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "Galvion Caiman Hybrid helmet (MultiCam)",
           "itemId": "68a9b3ca0a9c4f9398032c46",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "Galvion Caiman Hybrid helmet (Mutualist)",
           "itemId": "68a9b5a5863d2a71fa0494a6",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "Diamond Age NeoSteel High Cut helmet (Orange Stains)",
           "itemId": "68a9be93f260f4e1c2038686",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "Diamond Age NeoSteel High Cut helmet (Aces)",
           "itemId": "68a9beecbba00932ed0bc256",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "Champion's helmet",
           "itemId": "68bee28f79c8186398098e6f",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "HighCom Striker ULACH IIIA helmet (Sand)",
           "itemId": "68bee2ccd6da72c13f03db95",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "HighCom Striker ULACH IIIA helmet (Green Stripes)",
           "itemId": "68bee2d9af253218c00ebbb4",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "HighCom Striker ULACH IIIA helmet (Mesh Spray)",
           "itemId": "68bee2e0ede5c8489f08e1b5",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "HighCom Striker ULACH IIIA helmet (Coyote Stripes)",
           "itemId": "68bee2e876e02b9e340ef113",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "Galvion Caiman Hybrid helmet (MultiCam Alpine)",
           "itemId": "693be003582cc8870b090b41",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "HighCom Striker ULACH IIIA helmet (Winter Mesh Spray)",
           "itemId": "693be8f650fafa102607aed4",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         },
         {
           "kind": "not-wearing",
           "name": "Maska-1SCh bulletproof helmet (Vida Edition)",
           "itemId": "697c79b1daf4828686033fcb",
           "slot": "headwear",
-          "sourceObjective": "Eliminate 15 PMCs without using any armor or helmets on Woods"
+          "sourceObjective": "Eliminate 10 PMCs without using any armor or helmets on Woods"
         }
       ],
       "fir": [],
@@ -8332,7 +8307,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365865
+      "wikiRevision": 366585
     },
     {
       "id": "63a88045abf76d719f42d715",
@@ -8407,7 +8382,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365885
+      "wikiRevision": 366599
     },
     {
       "id": "61904daa7d0d857927447b9c",
@@ -8469,7 +8444,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365892
+      "wikiRevision": 366590
     },
     {
       "id": "639136df4b15ca31f76bc31f",
@@ -8538,7 +8513,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365894
+      "wikiRevision": 366603
     },
     {
       "id": "6a45208043b8d7604d00b8d5",
@@ -8607,7 +8582,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365894
+      "wikiRevision": 366603
     },
     {
       "id": "5d25e44386f77409453bce7b",
@@ -8655,37 +8630,11 @@
       ],
       "type": "Kill",
       "objectives": [
-        "Locate and eliminate Kaban",
-        "Locate and eliminate Basmach",
-        "Locate and eliminate Gus",
-        "Eliminate 5 of Kaban 's guards at the car dealership on Streets of Tarkov"
+        "Locate and eliminate Kaban"
       ],
       "objectiveDetails": [
         {
           "text": "Locate and eliminate Kaban",
-          "category": "Kill",
-          "maps": [
-            "Streets of Tarkov"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        },
-        {
-          "text": "Locate and eliminate Basmach",
-          "category": "Kill",
-          "maps": [],
-          "raidClass": "ANY_RAID",
-          "raidRequired": true
-        },
-        {
-          "text": "Locate and eliminate Gus",
-          "category": "Kill",
-          "maps": [],
-          "raidClass": "ANY_RAID",
-          "raidRequired": true
-        },
-        {
-          "text": "Eliminate 5 of Kaban 's guards at the car dealership on Streets of Tarkov",
           "category": "Kill",
           "maps": [
             "Streets of Tarkov"
@@ -8705,9 +8654,9 @@
       "mapBoundMaps": [
         "Streets of Tarkov"
       ],
-      "hasAnyRaidObjectives": true,
+      "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365896
+      "wikiRevision": 366605
     },
     {
       "id": "6a4532e48e82d8ffea0c3eae",
@@ -8881,20 +8830,22 @@
       "name": "The Huntsman Path - Factory Chief",
       "trader": "Jaeger",
       "maps": [
-        "Any"
+        "Factory"
       ],
-      "type": "Kill / Find / Hand over",
+      "type": "Locate / Find / Hand over",
       "objectives": [
-        "Eliminate Tagilla",
+        "Locate and neutralize Tagilla",
         "Find 1 BOSS cap in raid",
         "Hand over 1 BOSS cap to Jaeger"
       ],
       "objectiveDetails": [
         {
-          "text": "Eliminate Tagilla",
-          "category": "Kill",
-          "maps": [],
-          "raidClass": "ANY_RAID",
+          "text": "Locate and neutralize Tagilla",
+          "category": "Locate",
+          "maps": [
+            "Factory"
+          ],
+          "raidClass": "MAP_BOUND",
           "raidRequired": true
         },
         {
@@ -8919,11 +8870,13 @@
       "wikiLink": "https://escapefromtarkov.fandom.com/wiki/The_Huntsman_Path_-_Factory_Chief",
       "taskRequirements": [],
       "raidRelevant": true,
-      "raidClass": "ANY_RAID",
-      "mapBoundMaps": [],
+      "raidClass": "MAP_BOUND",
+      "mapBoundMaps": [
+        "Factory"
+      ],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365901
+      "wikiRevision": 366587
     },
     {
       "id": "5d25e2cc86f77443e47ae019",
@@ -9094,7 +9047,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365905
+      "wikiRevision": 366597
     },
     {
       "id": "60e71e8ed54b755a3b53eb67",
@@ -9167,7 +9120,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365906
+      "wikiRevision": 366586
     },
     {
       "id": "5edab4b1218d181e29451435",
@@ -10625,7 +10578,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365940
+      "wikiRevision": 366562
     },
     {
       "id": "5bc479e586f7747f376c7da3",
@@ -10698,7 +10651,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365941
+      "wikiRevision": 366565
     },
     {
       "id": "5bc47dbf86f7741ee74e93b9",
@@ -10747,7 +10700,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365942
+      "wikiRevision": 366567
     },
     {
       "id": "5bc480a686f7741af0342e29",
@@ -10758,11 +10711,11 @@
       ],
       "type": "Kill",
       "objectives": [
-        "Eliminate 5 PMC operatives from over 80 meters away while using a bolt-action rifle"
+        "Eliminate 15 any target with a bolt-action rifle"
       ],
       "objectiveDetails": [
         {
-          "text": "Eliminate 5 PMC operatives from over 80 meters away while using a bolt-action rifle",
+          "text": "Eliminate 15 any target with a bolt-action rifle",
           "category": "Kill",
           "maps": [],
           "raidClass": "ANY_RAID",
@@ -10776,7 +10729,7 @@
           "qty": 1,
           "slot": "weapon",
           "itemId": "",
-          "sourceObjective": "Eliminate 5 PMC operatives from over 80 meters away while using a bolt-action rifle"
+          "sourceObjective": "Eliminate 15 any target with a bolt-action rifle"
         }
       ],
       "restrictions": [],
@@ -10796,7 +10749,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365943
+      "wikiRevision": 366577
     },
     {
       "id": "5bc4826c86f774106d22d88b",
@@ -10857,7 +10810,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365944
+      "wikiRevision": 366579
     },
     {
       "id": "5bc4836986f7740c0152911c",
@@ -10910,7 +10863,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365944
+      "wikiRevision": 366579
     },
     {
       "id": "5bc4856986f77454c317bea7",
@@ -10960,7 +10913,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365945
+      "wikiRevision": 366581
     },
     {
       "id": "5bc4893c86f774626f5ebf3e",
@@ -11000,7 +10953,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365946
+      "wikiRevision": 366582
     },
     {
       "id": "665eeacf5d86b6c8aa03c79b",
@@ -11037,7 +10990,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365970
+      "wikiRevision": 366610
     },
     {
       "id": "675c1cf4a757ddd00404f0a3",
@@ -11074,7 +11027,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 366044
+      "wikiRevision": 366618
     },
     {
       "id": "639670029113f06a7c3b2377",
