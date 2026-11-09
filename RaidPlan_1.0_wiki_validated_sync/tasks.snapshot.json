@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-08T11:54:51.059Z",
+  "generatedAt": "2026-11-09T13:51:44.408Z",
   "mode": "regular",
   "sources": [
     "json.tarkov.dev",
@@ -6249,7 +6249,7 @@
       ],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 366606
+      "wikiRevision": 367739
     },
     {
       "id": "639136e84ed9512be67647db",
@@ -6323,7 +6323,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 366615
+      "wikiRevision": 367735
     },
     {
       "id": "5d25e48186f77443e625e386",
@@ -8458,8 +8458,8 @@
       "objectives": [
         "Launch a yellow signal flare at the train depot on Reserve",
         "Eliminate any 6 targets at the train depot on Reserve",
-        "Eliminate any 6 targets at the train station territory on Lighthouse",
-        "Launch a yellow signal flare at the train station on Lighthouse"
+        "Launch a yellow signal flare at the train station on Lighthouse",
+        "Eliminate any 6 targets at the train station territory on Lighthouse"
       ],
       "objectiveDetails": [
         {
@@ -8481,8 +8481,8 @@
           "raidRequired": true
         },
         {
-          "text": "Eliminate any 6 targets at the train station territory on Lighthouse",
-          "category": "Kill",
+          "text": "Launch a yellow signal flare at the train station on Lighthouse",
+          "category": "Other",
           "maps": [
             "Lighthouse"
           ],
@@ -8490,8 +8490,8 @@
           "raidRequired": true
         },
         {
-          "text": "Launch a yellow signal flare at the train station on Lighthouse",
-          "category": "Other",
+          "text": "Eliminate any 6 targets at the train station territory on Lighthouse",
+          "category": "Kill",
           "maps": [
             "Lighthouse"
           ],
@@ -8513,7 +8513,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 366603
+      "wikiRevision": 367687
     },
     {
       "id": "6a45208043b8d7604d00b8d5",
@@ -8527,8 +8527,8 @@
       "objectives": [
         "Launch a yellow signal flare at the train depot on Reserve",
         "Eliminate any 6 targets at the train depot on Reserve",
-        "Eliminate any 6 targets at the train station territory on Lighthouse",
-        "Launch a yellow signal flare at the train station on Lighthouse"
+        "Launch a yellow signal flare at the train station on Lighthouse",
+        "Eliminate any 6 targets at the train station territory on Lighthouse"
       ],
       "objectiveDetails": [
         {
@@ -8550,8 +8550,8 @@
           "raidRequired": true
         },
         {
-          "text": "Eliminate any 6 targets at the train station territory on Lighthouse",
-          "category": "Kill",
+          "text": "Launch a yellow signal flare at the train station on Lighthouse",
+          "category": "Other",
           "maps": [
             "Lighthouse"
           ],
@@ -8559,8 +8559,8 @@
           "raidRequired": true
         },
         {
-          "text": "Launch a yellow signal flare at the train station on Lighthouse",
-          "category": "Other",
+          "text": "Eliminate any 6 targets at the train station territory on Lighthouse",
+          "category": "Kill",
           "maps": [
             "Lighthouse"
           ],
@@ -8582,7 +8582,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 366603
+      "wikiRevision": 367687
     },
     {
       "id": "5d25e44386f77409453bce7b",
@@ -8656,7 +8656,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 366605
+      "wikiRevision": 367749
     },
     {
       "id": "6a4532e48e82d8ffea0c3eae",
@@ -9172,11 +9172,11 @@
       ],
       "type": "Kill",
       "objectives": [
-        "Eliminate 6 PMС operatives on Factory"
+        "Eliminate 6 PMC operatives on Factory"
       ],
       "objectiveDetails": [
         {
-          "text": "Eliminate 6 PMС operatives on Factory",
+          "text": "Eliminate 6 PMC operatives on Factory",
           "category": "Kill",
           "maps": [
             "Factory"
@@ -9198,7 +9198,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365908
+      "wikiRevision": 367744
     },
     {
       "id": "5d25e2e286f77444001e2e48",
@@ -10711,11 +10711,11 @@
       ],
       "type": "Kill",
       "objectives": [
-        "Eliminate 15 any target with a bolt-action rifle"
+        "Eliminate any 15 targets with a bolt-action rifle"
       ],
       "objectiveDetails": [
         {
-          "text": "Eliminate 15 any target with a bolt-action rifle",
+          "text": "Eliminate any 15 targets with a bolt-action rifle",
           "category": "Kill",
           "maps": [],
           "raidClass": "ANY_RAID",
@@ -10729,7 +10729,7 @@
           "qty": 1,
           "slot": "weapon",
           "itemId": "",
-          "sourceObjective": "Eliminate 15 any target with a bolt-action rifle"
+          "sourceObjective": "Eliminate any 15 targets with a bolt-action rifle"
         }
       ],
       "restrictions": [],
@@ -10749,7 +10749,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 366577
+      "wikiRevision": 367698
     },
     {
       "id": "5bc4826c86f774106d22d88b",
@@ -10913,7 +10913,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 366581
+      "wikiRevision": 367697
     },
     {
       "id": "5bc4893c86f774626f5ebf3e",
@@ -12250,12 +12250,12 @@
       ],
       "type": "Find / Hand over",
       "objectives": [
-        "Find the item in raid : 15 Malboro , Wilston , or Strike cigarettes",
+        "Find 15 Malboro , Wilston or Strike cigarettes in raid",
         "Hand over the items"
       ],
       "objectiveDetails": [
         {
-          "text": "Find the item in raid : 15 Malboro , Wilston , or Strike cigarettes",
+          "text": "Find 15 Malboro , Wilston or Strike cigarettes in raid",
           "category": "Find / Hand over",
           "maps": [],
           "raidClass": "ANY_RAID",
@@ -12280,7 +12280,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365229
+      "wikiRevision": 367770
     },
     {
       "id": "669fa39b91b0a8c9680fc467",
@@ -12460,7 +12460,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365270
+      "wikiRevision": 367721
     },
     {
       "id": "5f04886a3937dc337a6b8238",
@@ -13556,7 +13556,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365736
+      "wikiRevision": 367750
     },
     {
       "id": "5ac346a886f7744e1b083d67",
@@ -16054,7 +16054,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365327
+      "wikiRevision": 367741
     },
     {
       "id": "6179b5eabca27a099552e052",
@@ -16301,7 +16301,7 @@
       "type": "Place / Kill",
       "objectives": [
         "Locate and mark the TerraGroup cargo with an MS2000 Marker on Lighthouse",
-        "Eliminate 10 of any targets using M203 40mm underbarrel grenade launcher on Lighthouse or Reserve"
+        "Eliminate any 10 targets with an M203 40mm underbarrel grenade launcher on Lighthouse or Reserve"
       ],
       "objectiveDetails": [
         {
@@ -16314,7 +16314,7 @@
           "raidRequired": true
         },
         {
-          "text": "Eliminate 10 of any targets using M203 40mm underbarrel grenade launcher on Lighthouse or Reserve",
+          "text": "Eliminate any 10 targets with an M203 40mm underbarrel grenade launcher on Lighthouse or Reserve",
           "category": "Kill",
           "maps": [
             "Reserve",
@@ -16347,7 +16347,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 367471
+      "wikiRevision": 367711
     },
     {
       "id": "6a5c1578f2689567c30eb0f3",
@@ -16511,7 +16511,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 367453
+      "wikiRevision": 367734
     },
     {
       "id": "5c0bd01e86f7747cdd799e56",
@@ -16660,7 +16660,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 367447
+      "wikiRevision": 367733
     },
     {
       "id": "66aa58245ab22944110db6e9",
@@ -16783,7 +16783,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 367494
+      "wikiRevision": 367725
     },
     {
       "id": "5a03153686f77442d90e2171",
@@ -16831,12 +16831,12 @@
       ],
       "type": "Kill / Find / Hand over",
       "objectives": [
-        "Eliminate 10 any targets around the chalets on Lighthouse",
+        "Eliminate any 10 targets around the chalets on Lighthouse",
         "Hand over 5 Topographic survey maps , Intelligence folder , or TerraGroup \"Blue Folders\" materials marked with the Found in raid status"
       ],
       "objectiveDetails": [
         {
-          "text": "Eliminate 10 any targets around the chalets on Lighthouse",
+          "text": "Eliminate any 10 targets around the chalets on Lighthouse",
           "category": "Kill",
           "maps": [
             "Lighthouse"
@@ -16865,7 +16865,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 367474
+      "wikiRevision": 367706
     },
     {
       "id": "69ce1f84ebbdbf36a200627c",
@@ -17083,7 +17083,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 367468
+      "wikiRevision": 367740
     },
     {
       "id": "6086c852c945025d41566124",
@@ -17807,7 +17807,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 367466
+      "wikiRevision": 367726
     },
     {
       "id": "60e71c9ad54b755a3b53eb66",
@@ -17894,7 +17894,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 367449
+      "wikiRevision": 367729
     },
     {
       "id": "5c0d4e61d09282029f53920e",
@@ -17919,7 +17919,7 @@
         "Survive and extract from Shoreline or Reserve with the \"Survived\" exit status",
         "Survive and extract from The Lab or Lighthouse with the \"Survived\" exit status",
         "Survive and extract from Ground Zero or Streets of Tarkov with the \"Survived\" exit status",
-        "Eliminate 15 any targets"
+        "Eliminate any 15 targets"
       ],
       "objectiveDetails": [
         {
@@ -17973,7 +17973,7 @@
           "raidRequired": true
         },
         {
-          "text": "Eliminate 15 any targets",
+          "text": "Eliminate any 15 targets",
           "category": "Kill",
           "maps": [],
           "raidClass": "ANY_RAID",
@@ -18002,7 +18002,7 @@
       ],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 367022
+      "wikiRevision": 367704
     },
     {
       "id": "5a27b7a786f774579c3eb376",
@@ -18176,7 +18176,7 @@
       "objectives": [
         "Locate and mark the first ritual spot with an MS2000 Marker on Woods",
         "Locate and mark the second ritual spot with an MS2000 Marker on Woods",
-        "Locate and mark the the ritual spot with an MS2000 Marker on Shoreline"
+        "Locate and mark the ritual spot with an MS2000 Marker on Shoreline"
       ],
       "objectiveDetails": [
         {
@@ -18198,7 +18198,7 @@
           "raidRequired": true
         },
         {
-          "text": "Locate and mark the the ritual spot with an MS2000 Marker on Shoreline",
+          "text": "Locate and mark the ritual spot with an MS2000 Marker on Shoreline",
           "category": "Place",
           "maps": [
             "Shoreline"
@@ -18230,7 +18230,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 367450
+      "wikiRevision": 367742
     },
     {
       "id": "5a27bb8386f7741c770d2d0a",
@@ -18673,7 +18673,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 367478
+      "wikiRevision": 367723
     },
     {
       "id": "639135534b15ca31f76bc317",
@@ -18718,7 +18718,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 367479
+      "wikiRevision": 367724
     },
     {
       "id": "5eda19f0edce541157209cee",
@@ -19182,11 +19182,11 @@
       ],
       "type": "Kill",
       "objectives": [
-        "Eliminate any 20 any target using Assault rifles or Assault carbines on Streets of Tarkov"
+        "Eliminate any 20 targets using Assault rifles or Assault carbines on Streets of Tarkov"
       ],
       "objectiveDetails": [
         {
-          "text": "Eliminate any 20 any target using Assault rifles or Assault carbines on Streets of Tarkov",
+          "text": "Eliminate any 20 targets using Assault rifles or Assault carbines on Streets of Tarkov",
           "category": "Kill",
           "maps": [
             "Streets of Tarkov"
@@ -19202,7 +19202,7 @@
           "qty": 1,
           "slot": "weapon",
           "itemId": "",
-          "sourceObjective": "Eliminate any 20 any target using Assault rifles or Assault carbines on Streets of Tarkov"
+          "sourceObjective": "Eliminate any 20 targets using Assault rifles or Assault carbines on Streets of Tarkov"
         }
       ],
       "restrictions": [],
@@ -19217,7 +19217,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365369
+      "wikiRevision": 367700
     },
     {
       "id": "60896b7bfa70fc097863b8f5",
@@ -19569,7 +19569,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365396
+      "wikiRevision": 367747
     },
     {
       "id": "6740a15566e6a521aa051b15",
@@ -20997,7 +20997,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365810
+      "wikiRevision": 367746
     },
     {
       "id": "59674cd986f7744ab26e32f2",
@@ -21273,7 +21273,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365879
+      "wikiRevision": 367693
     },
     {
       "id": "5ede567cfa6dc072ce15d6e3",
@@ -21897,7 +21897,7 @@
       ],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365921
+      "wikiRevision": 367713
     },
     {
       "id": "59ca2eb686f77445a80ed049",
@@ -22012,7 +22012,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365922
+      "wikiRevision": 367715
     },
     {
       "id": "5c0bd94186f7747a727f09b2",
@@ -22160,7 +22160,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 366012
+      "wikiRevision": 367730
     },
     {
       "id": "6391359b9444fb141f4e6ee6",
@@ -24065,11 +24065,11 @@
       ],
       "type": "Kill",
       "objectives": [
-        "Eliminate 10 any target on Interchange"
+        "Eliminate any 10 targets on Interchange"
       ],
       "objectiveDetails": [
         {
-          "text": "Eliminate 10 any target on Interchange",
+          "text": "Eliminate any 10 targets on Interchange",
           "category": "Kill",
           "maps": [
             "Interchange"
@@ -24091,7 +24091,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365612
+      "wikiRevision": 367707
     },
     {
       "id": "5b478d0f86f7744d190d91b5",
@@ -27115,7 +27115,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 366144
+      "wikiRevision": 367736
     },
     {
       "id": "60896888e4a85c72ef3fa300",
@@ -27289,7 +27289,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 367426
+      "wikiRevision": 367720
     },
     {
       "id": "639dbaf17c898a131e1cffff",
@@ -27593,7 +27593,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 366073
+      "wikiRevision": 367731
     },
     {
       "id": "674602307e3818d5bb069489",
@@ -27889,7 +27889,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 366081
+      "wikiRevision": 367732
     },
     {
       "id": "671a49f77d49aea42c029b5f",
@@ -27934,7 +27934,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 367425
+      "wikiRevision": 367719
     },
     {
       "id": "674605df60a98cad1b0ec799",
@@ -28194,11 +28194,11 @@
       ],
       "type": "Kill",
       "objectives": [
-        "Eliminate 10 any target at the smuggler bases on Shoreline or Interchange"
+        "Eliminate any 10 targets at the smuggler bases on Shoreline or Interchange"
       ],
       "objectiveDetails": [
         {
-          "text": "Eliminate 10 any target at the smuggler bases on Shoreline or Interchange",
+          "text": "Eliminate any 10 targets at the smuggler bases on Shoreline or Interchange",
           "category": "Kill",
           "maps": [
             "Shoreline",
@@ -28222,7 +28222,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 366083
+      "wikiRevision": 367718
     },
     {
       "id": "5979f8bb86f7743ec214c7a6",
@@ -28424,7 +28424,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 367415
+      "wikiRevision": 367751
     },
     {
       "id": "5edabd13218d181e29451442",
@@ -28814,11 +28814,11 @@
       ],
       "type": "Kill",
       "objectives": [
-        "Eliminate 30 any target with a suppressed 12 gauge shotgun on Reserve , Lighthouse , Ground Zero , or The Lab"
+        "Eliminate any 30 targets with a suppressed 12 gauge shotgun on Reserve , Lighthouse , Ground Zero , or The Lab"
       ],
       "objectiveDetails": [
         {
-          "text": "Eliminate 30 any target with a suppressed 12 gauge shotgun on Reserve , Lighthouse , Ground Zero , or The Lab",
+          "text": "Eliminate any 30 targets with a suppressed 12 gauge shotgun on Reserve , Lighthouse , Ground Zero , or The Lab",
           "category": "Kill",
           "maps": [
             "Ground Zero",
@@ -28837,7 +28837,7 @@
           "qty": 1,
           "slot": "weapon",
           "itemId": "",
-          "sourceObjective": "Eliminate 30 any target with a suppressed 12 gauge shotgun on Reserve , Lighthouse , Ground Zero , or The Lab"
+          "sourceObjective": "Eliminate any 30 targets with a suppressed 12 gauge shotgun on Reserve , Lighthouse , Ground Zero , or The Lab"
         },
         {
           "kind": "gear",
@@ -28845,7 +28845,7 @@
           "qty": 1,
           "slot": "weapon",
           "itemId": "",
-          "sourceObjective": "Eliminate 30 any target with a suppressed 12 gauge shotgun on Reserve , Lighthouse , Ground Zero , or The Lab"
+          "sourceObjective": "Eliminate any 30 targets with a suppressed 12 gauge shotgun on Reserve , Lighthouse , Ground Zero , or The Lab"
         }
       ],
       "restrictions": [],
@@ -28863,7 +28863,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 366146
+      "wikiRevision": 367702
     },
     {
       "id": "6a7aef2360157cb5e3029a5f",
@@ -28918,7 +28918,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 367439
+      "wikiRevision": 367738
     },
     {
       "id": "596b455186f77457cb50eccb",
@@ -29403,7 +29403,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 367408
+      "wikiRevision": 367737
     },
     {
       "id": "5b478eca86f7744642012254",
@@ -30085,7 +30085,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365276
+      "wikiRevision": 367761
     },
     {
       "id": "5969f90786f77420d2328015",
@@ -30406,11 +30406,11 @@
       ],
       "type": "Kill",
       "objectives": [
-        "Eliminate 40 any target from less than 60 meters away while wearing a gas mask or respirator on The Lab"
+        "Eliminate any 40 targets from less than 60 meters away while wearing a gas mask or respirator on The Lab"
       ],
       "objectiveDetails": [
         {
-          "text": "Eliminate 40 any target from less than 60 meters away while wearing a gas mask or respirator on The Lab",
+          "text": "Eliminate any 40 targets from less than 60 meters away while wearing a gas mask or respirator on The Lab",
           "category": "Kill",
           "maps": [
             "The Lab"
@@ -30426,7 +30426,7 @@
           "qty": 1,
           "slot": "facecover",
           "itemId": "",
-          "sourceObjective": "Eliminate 40 any target from less than 60 meters away while wearing a gas mask or respirator on The Lab"
+          "sourceObjective": "Eliminate any 40 targets from less than 60 meters away while wearing a gas mask or respirator on The Lab"
         },
         {
           "kind": "gear",
@@ -30434,7 +30434,7 @@
           "qty": 1,
           "slot": "facecover",
           "itemId": "59e7715586f7742ee5789605",
-          "sourceObjective": "Eliminate 40 any target from less than 60 meters away while wearing a gas mask or respirator on The Lab"
+          "sourceObjective": "Eliminate any 40 targets from less than 60 meters away while wearing a gas mask or respirator on The Lab"
         },
         {
           "kind": "gear",
@@ -30442,7 +30442,7 @@
           "qty": 1,
           "slot": "facecover",
           "itemId": "5b432c305acfc40019478128",
-          "sourceObjective": "Eliminate 40 any target from less than 60 meters away while wearing a gas mask or respirator on The Lab"
+          "sourceObjective": "Eliminate any 40 targets from less than 60 meters away while wearing a gas mask or respirator on The Lab"
         },
         {
           "kind": "gear",
@@ -30450,7 +30450,7 @@
           "qty": 1,
           "slot": "facecover",
           "itemId": "60363c0c92ec1c31037959f5",
-          "sourceObjective": "Eliminate 40 any target from less than 60 meters away while wearing a gas mask or respirator on The Lab"
+          "sourceObjective": "Eliminate any 40 targets from less than 60 meters away while wearing a gas mask or respirator on The Lab"
         },
         {
           "kind": "gear",
@@ -30458,7 +30458,7 @@
           "qty": 1,
           "slot": "facecover",
           "itemId": "689b404db49f27df1c0873f6",
-          "sourceObjective": "Eliminate 40 any target from less than 60 meters away while wearing a gas mask or respirator on The Lab"
+          "sourceObjective": "Eliminate any 40 targets from less than 60 meters away while wearing a gas mask or respirator on The Lab"
         },
         {
           "kind": "gear",
@@ -30466,7 +30466,7 @@
           "qty": 1,
           "slot": "facecover",
           "itemId": "689b880fff8b4adc420f5b56",
-          "sourceObjective": "Eliminate 40 any target from less than 60 meters away while wearing a gas mask or respirator on The Lab"
+          "sourceObjective": "Eliminate any 40 targets from less than 60 meters away while wearing a gas mask or respirator on The Lab"
         }
       ],
       "restrictions": [],
@@ -30481,7 +30481,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365354
+      "wikiRevision": 367701
     },
     {
       "id": "60896e28e4a85c72ef3fa301",
@@ -30544,7 +30544,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365365
+      "wikiRevision": 367752
     },
     {
       "id": "626bd75b05f287031503c7f6",
@@ -30718,7 +30718,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365467
+      "wikiRevision": 367762
     },
     {
       "id": "5a68661a86f774500f48afb0",
@@ -31912,7 +31912,7 @@
       "mapBoundMaps": [],
       "hasAnyRaidObjectives": true,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365813
+      "wikiRevision": 367764
     },
     {
       "id": "596a0e1686f7741ddf17dbee",
@@ -32203,7 +32203,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365974
+      "wikiRevision": 367716
     },
     {
       "id": "639135e0fa894f0a866afde6",
