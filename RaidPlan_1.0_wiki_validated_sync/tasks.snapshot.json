@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-11T12:42:09.195Z",
+  "generatedAt": "2026-11-12T13:44:10.711Z",
   "mode": "regular",
   "sources": [
     "json.tarkov.dev",
@@ -6990,10 +6990,7 @@
         "Factory",
         "Streets of Tarkov",
         "Lighthouse",
-        "Woods",
         "Shoreline",
-        "Interchange",
-        "Customs",
         "Reserve",
         "Ground Zero"
       ],
@@ -7002,10 +6999,7 @@
         "Eliminate 10 Scavs while using melee weapons on daytime Factory",
         "Eliminate 10 Scavs while using melee weapons on Streets of Tarkov",
         "Eliminate 10 Scavs while using melee weapons on Lighthouse",
-        "Eliminate 10 Scavs while using melee weapons on Woods",
         "Eliminate 10 Scavs while using melee weapons on Shoreline",
-        "Eliminate 10 Scavs while using melee weapons on Interchange",
-        "Eliminate 10 Scavs while using melee weapons on Customs",
         "Eliminate 10 Scavs while using melee weapons on Reserve",
         "Eliminate 10 Scavs while using melee weapons on Ground Zero"
       ],
@@ -7038,37 +7032,10 @@
           "raidRequired": true
         },
         {
-          "text": "Eliminate 10 Scavs while using melee weapons on Woods",
-          "category": "Kill",
-          "maps": [
-            "Woods"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        },
-        {
           "text": "Eliminate 10 Scavs while using melee weapons on Shoreline",
           "category": "Kill",
           "maps": [
             "Shoreline"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        },
-        {
-          "text": "Eliminate 10 Scavs while using melee weapons on Interchange",
-          "category": "Kill",
-          "maps": [
-            "Interchange"
-          ],
-          "raidClass": "MAP_BOUND",
-          "raidRequired": true
-        },
-        {
-          "text": "Eliminate 10 Scavs while using melee weapons on Customs",
-          "category": "Kill",
-          "maps": [
-            "Customs"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
@@ -7121,16 +7088,13 @@
         "Factory",
         "Streets of Tarkov",
         "Lighthouse",
-        "Woods",
         "Shoreline",
-        "Interchange",
-        "Customs",
         "Reserve",
         "Ground Zero"
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 366604
+      "wikiRevision": 367872
     },
     {
       "id": "626bdcc3a371ee3a7a3514c5",
@@ -16054,7 +16018,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 367741
+      "wikiRevision": 367839
     },
     {
       "id": "6179b5eabca27a099552e052",
@@ -16148,7 +16112,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365359
+      "wikiRevision": 367844
     },
     {
       "id": "5a27b80086f774429a5d7e20",
@@ -16384,7 +16348,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365517
+      "wikiRevision": 367842
     },
     {
       "id": "5a27b87686f77460de0252a8",
@@ -16731,7 +16695,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365642
+      "wikiRevision": 367837
     },
     {
       "id": "669fa38fad7f1eac2607ed46",
@@ -16917,7 +16881,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365693
+      "wikiRevision": 367841
     },
     {
       "id": "5c0d4c12d09282029f539173",
@@ -17531,7 +17495,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365784
+      "wikiRevision": 367843
     },
     {
       "id": "675c1d6d59b0575973008fc7",
@@ -17581,7 +17545,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365787
+      "wikiRevision": 367838
     },
     {
       "id": "5a03173786f77451cb427172",
@@ -18618,7 +18582,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 366041
+      "wikiRevision": 367840
     },
     {
       "id": "63a9b229813bba58a50c9ee5",
@@ -22590,7 +22554,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365223
+      "wikiRevision": 367869
     },
     {
       "id": "638fcd23dc65553116701d33",
