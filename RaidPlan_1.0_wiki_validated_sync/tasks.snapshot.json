@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-15T12:42:18.031Z",
+  "generatedAt": "2026-11-16T13:36:30.617Z",
   "mode": "regular",
   "sources": [
     "json.tarkov.dev",
@@ -9,7 +9,7 @@
   "excludedNonRaidCount": 76,
   "qa": {
     "status": "pass",
-    "checkCount": 3571,
+    "checkCount": 3572,
     "criticalCount": 0,
     "warningCount": 0
   },
@@ -6641,7 +6641,7 @@
       "name": "Hunting Trip",
       "trader": "Jaeger",
       "maps": [
-        "Any"
+        "Woods"
       ],
       "type": "Locate",
       "objectives": [
@@ -6651,8 +6651,10 @@
         {
           "text": "Locate and neutralize any 20 Bosses with a bolt-action rifle",
           "category": "Locate",
-          "maps": [],
-          "raidClass": "ANY_RAID",
+          "maps": [
+            "Woods"
+          ],
+          "raidClass": "MAP_BOUND",
           "raidRequired": true
         }
       ],
@@ -6672,9 +6674,11 @@
       "wikiLink": "https://escapefromtarkov.fandom.com/wiki/Hunting_Trip",
       "taskRequirements": [],
       "raidRelevant": true,
-      "raidClass": "ANY_RAID",
-      "mapBoundMaps": [],
-      "hasAnyRaidObjectives": true,
+      "raidClass": "MAP_BOUND",
+      "mapBoundMaps": [
+        "Woods"
+      ],
+      "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
       "wikiRevision": 365534
     },
@@ -22655,14 +22659,13 @@
       "maps": [
         "Interchange"
       ],
-      "type": "Locate / Survive",
+      "type": "Locate",
       "objectives": [
         "Locate the AVOKADO store on Interchange",
         "Locate the KOSTIN store on Interchange",
         "Locate the tRend store on Interchange",
         "Locate the DINO CLOTHES store on Interchange",
-        "Locate the TOP BRAND store on Interchange",
-        "Survive and extract from the location"
+        "Locate the TOP BRAND store on Interchange"
       ],
       "objectiveDetails": [
         {
@@ -22709,13 +22712,6 @@
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
-        },
-        {
-          "text": "Survive and extract from the location",
-          "category": "Survive",
-          "maps": [],
-          "raidClass": "ANY_RAID",
-          "raidRequired": true
         }
       ],
       "requirements": [],
@@ -22729,9 +22725,9 @@
       "mapBoundMaps": [
         "Interchange"
       ],
-      "hasAnyRaidObjectives": true,
+      "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365247
+      "wikiRevision": 368107
     },
     {
       "id": "60e71dc67fcf9c556f325056",
