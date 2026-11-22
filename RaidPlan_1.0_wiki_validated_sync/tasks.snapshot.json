@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-21T13:26:41.727Z",
+  "generatedAt": "2026-11-22T13:18:10.389Z",
   "mode": "regular",
   "sources": [
     "json.tarkov.dev",
@@ -19958,11 +19958,11 @@
       ],
       "type": "Kill",
       "objectives": [
-        "Eliminate 2 hooded men while using the double barrel shotgun"
+        "Eliminate 2 hooded men with the double barrel shotgun"
       ],
       "objectiveDetails": [
         {
-          "text": "Eliminate 2 hooded men while using the double barrel shotgun",
+          "text": "Eliminate 2 hooded men with the double barrel shotgun",
           "category": "Kill",
           "maps": [
             "Ground Zero 21+",
@@ -19982,7 +19982,7 @@
           "qty": 1,
           "slot": "weapon",
           "itemId": "",
-          "sourceObjective": "Eliminate 2 hooded men while using the double barrel shotgun"
+          "sourceObjective": "Eliminate 2 hooded men with the double barrel shotgun"
         }
       ],
       "restrictions": [],
@@ -20009,7 +20009,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 365512
+      "wikiRevision": 368437
     },
     {
       "id": "59675d6c86f7740a842fc482",
@@ -27075,7 +27075,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 367736
+      "wikiRevision": 368431
     },
     {
       "id": "60896888e4a85c72ef3fa300",
