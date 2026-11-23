@@ -1,23 +1,23 @@
 {
-  "generatedAt": "2026-11-22T13:18:10.389Z",
+  "generatedAt": "2026-11-23T15:55:50.197Z",
   "summary": {
-    "tasks": 427,
+    "tasks": 428,
     "tasksWithCorrections": 0,
     "removedObjectives": 0,
     "wordingMismatches": 140,
     "wikiErrors": 0,
     "unparsedWikiPages": 0,
-    "excludedNonRaidTasks": 76,
+    "excludedNonRaidTasks": 75,
     "mapBoundTasks": 344,
-    "anyRaidTasks": 83,
+    "anyRaidTasks": 84,
     "qaStatus": "pass",
-    "qaChecks": 3572,
+    "qaChecks": 3580,
     "qaCritical": 0,
     "qaWarnings": 0
   },
   "qa": {
     "status": "pass",
-    "checkCount": 3572,
+    "checkCount": 3580,
     "criticalCount": 0,
     "warningCount": 0,
     "issues": []
@@ -296,11 +296,6 @@
     {
       "id": "5ae4495c86f7744e87761355",
       "name": "Sew it Good - Part 3",
-      "trader": "Ragman"
-    },
-    {
-      "id": "5ae4496986f774459e77beb6",
-      "name": "Sew it Good - Part 4",
       "trader": "Ragman"
     },
     {
