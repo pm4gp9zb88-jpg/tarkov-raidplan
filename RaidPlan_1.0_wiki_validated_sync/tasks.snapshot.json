@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-24T15:49:54.510Z",
+  "generatedAt": "2026-11-25T15:33:32.039Z",
   "mode": "regular",
   "sources": [
     "json.tarkov.dev",
@@ -4838,7 +4838,6 @@
         "Reserve",
         "Woods",
         "Lighthouse",
-        "Infected Factory",
         "Factory",
         "Interchange",
         "Ground Zero Tutorial",
@@ -4949,7 +4948,6 @@
           "text": "Eliminate 10 Scavs while completing the other objectives",
           "category": "Kill",
           "maps": [
-            "Infected Factory",
             "Factory",
             "Interchange",
             "Reserve",
@@ -4992,7 +4990,6 @@
         "Reserve",
         "Woods",
         "Lighthouse",
-        "Infected Factory",
         "Factory",
         "Interchange",
         "Ground Zero Tutorial",
@@ -5014,7 +5011,6 @@
         "Reserve",
         "Woods",
         "Lighthouse",
-        "Infected Factory",
         "Factory",
         "Interchange",
         "Ground Zero Tutorial",
@@ -5125,7 +5121,6 @@
           "text": "Eliminate 10 Scavs while completing the other objectives",
           "category": "Kill",
           "maps": [
-            "Infected Factory",
             "Factory",
             "Interchange",
             "Reserve",
@@ -5168,7 +5163,6 @@
         "Reserve",
         "Woods",
         "Lighthouse",
-        "Infected Factory",
         "Factory",
         "Interchange",
         "Ground Zero Tutorial",
@@ -10352,7 +10346,6 @@
       "name": "The Survivalist Path - Wounded Beast",
       "trader": "Jaeger",
       "maps": [
-        "Infected Factory",
         "Factory",
         "Interchange",
         "Reserve",
@@ -10374,7 +10367,6 @@
           "text": "Eliminate 3 Scavs while suffering from pain effect",
           "category": "Kill",
           "maps": [
-            "Infected Factory",
             "Factory",
             "Interchange",
             "Reserve",
@@ -10407,7 +10399,6 @@
       "raidRelevant": true,
       "raidClass": "MAP_BOUND",
       "mapBoundMaps": [
-        "Infected Factory",
         "Factory",
         "Interchange",
         "Reserve",
@@ -10482,7 +10473,6 @@
       "trader": "Jaeger",
       "maps": [
         "Streets of Tarkov",
-        "Infected Factory",
         "Factory",
         "Interchange",
         "Reserve",
@@ -10504,7 +10494,6 @@
           "category": "Kill",
           "maps": [
             "Streets of Tarkov",
-            "Infected Factory",
             "Factory",
             "Interchange",
             "Reserve",
@@ -10539,7 +10528,6 @@
       "raidClass": "MAP_BOUND",
       "mapBoundMaps": [
         "Streets of Tarkov",
-        "Infected Factory",
         "Factory",
         "Interchange",
         "Reserve",
@@ -20064,7 +20052,6 @@
       "name": "Intimidator",
       "trader": "Prapor",
       "maps": [
-        "Infected Factory",
         "Factory",
         "Interchange",
         "Reserve",
@@ -20086,7 +20073,6 @@
           "text": "Eliminate 40 Scavs with headshots",
           "category": "Kill",
           "maps": [
-            "Infected Factory",
             "Factory",
             "Interchange",
             "Reserve",
@@ -20112,7 +20098,6 @@
       "raidRelevant": true,
       "raidClass": "MAP_BOUND",
       "mapBoundMaps": [
-        "Infected Factory",
         "Factory",
         "Interchange",
         "Reserve",
@@ -21746,7 +21731,6 @@
       "name": "The Punisher - Part 5",
       "trader": "Prapor",
       "maps": [
-        "Infected Factory",
         "Factory",
         "Interchange",
         "Reserve",
@@ -21824,7 +21808,6 @@
           "text": "Eliminate 20 Scavs with Light machine guns",
           "category": "Kill",
           "maps": [
-            "Infected Factory",
             "Factory",
             "Interchange",
             "Reserve",
@@ -21857,7 +21840,6 @@
       "raidRelevant": true,
       "raidClass": "MAP_BOUND",
       "mapBoundMaps": [
-        "Infected Factory",
         "Factory",
         "Interchange",
         "Reserve",
@@ -21889,11 +21871,9 @@
         "Icebreaker",
         "Interchange",
         "Woods",
-        "The Lab (Dark)",
-        "Infected Factory",
         "Factory",
-        "Infected Lab",
-        "Night Factory"
+        "Night Factory",
+        "The Lab (Dark)"
       ],
       "type": "Kill / Find / Hand over / Locate",
       "objectives": [
@@ -21934,11 +21914,9 @@
             "Shoreline",
             "Lighthouse",
             "Woods",
-            "The Lab (Dark)",
-            "Infected Factory",
             "Factory",
-            "Infected Lab",
-            "Night Factory"
+            "Night Factory",
+            "The Lab (Dark)"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
@@ -21979,11 +21957,9 @@
         "Icebreaker",
         "Interchange",
         "Woods",
-        "The Lab (Dark)",
-        "Infected Factory",
         "Factory",
-        "Infected Lab",
-        "Night Factory"
+        "Night Factory",
+        "The Lab (Dark)"
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
@@ -23029,11 +23005,9 @@
         "Interchange",
         "Woods",
         "Shoreline",
-        "Lighthouse",
-        "Infected Factory",
         "Factory",
-        "Infected Lab",
-        "Night Factory"
+        "Night Factory",
+        "Lighthouse"
       ],
       "type": "Locate",
       "objectives": [
@@ -23050,11 +23024,9 @@
             "Interchange",
             "Woods",
             "Shoreline",
-            "Lighthouse",
-            "Infected Factory",
             "Factory",
-            "Infected Lab",
-            "Night Factory"
+            "Night Factory",
+            "Lighthouse"
           ],
           "raidClass": "MAP_BOUND",
           "raidRequired": true
@@ -23107,11 +23079,9 @@
         "Interchange",
         "Woods",
         "Shoreline",
-        "Lighthouse",
-        "Infected Factory",
         "Factory",
-        "Infected Lab",
-        "Night Factory"
+        "Night Factory",
+        "Lighthouse"
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
@@ -24139,7 +24109,6 @@
       "name": "New Beginning",
       "trader": "Ragman",
       "maps": [
-        "Infected Factory",
         "Factory",
         "Interchange",
         "Reserve",
@@ -24167,7 +24136,6 @@
           "text": "Eliminate 50 Scavs",
           "category": "Kill",
           "maps": [
-            "Infected Factory",
             "Factory",
             "Interchange",
             "Reserve",
@@ -24230,7 +24198,6 @@
       "raidRelevant": true,
       "raidClass": "MAP_BOUND",
       "mapBoundMaps": [
-        "Infected Factory",
         "Factory",
         "Interchange",
         "Reserve",
@@ -25852,7 +25819,6 @@
       "name": "Balancing - Part 1 [PVP ZONE]",
       "trader": "Ref",
       "maps": [
-        "Infected Factory",
         "Factory",
         "Interchange",
         "Reserve",
@@ -25874,7 +25840,6 @@
           "text": "Eliminate 5 Scavs while using a Steyr AUG on any location",
           "category": "Kill",
           "maps": [
-            "Infected Factory",
             "Factory",
             "Interchange",
             "Reserve",
@@ -25907,7 +25872,6 @@
       "raidRelevant": true,
       "raidClass": "MAP_BOUND",
       "mapBoundMaps": [
-        "Infected Factory",
         "Factory",
         "Interchange",
         "Reserve",
