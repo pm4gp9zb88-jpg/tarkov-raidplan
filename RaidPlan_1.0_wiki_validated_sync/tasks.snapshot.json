@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T15:00:24.382Z",
+  "generatedAt": "2026-11-28T14:09:11.176Z",
   "mode": "regular",
   "sources": [
     "json.tarkov.dev",
@@ -18193,7 +18193,7 @@
       ],
       "hasAnyRaidObjectives": false,
       "source": "json.tarkov.dev + Tarkov Wiki",
-      "wikiRevision": 367742
+      "wikiRevision": 368883
     },
     {
       "id": "5a27bb8386f7741c770d2d0a",
